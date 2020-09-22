@@ -1,0 +1,202 @@
+TestData_MasterPolicy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON'],
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM-7M>,
+  Case Profile: index=1,
+  Product: Long Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM-7M>,
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Participant Contribution %: 50,
+    Sponsor Payment Mode: 12,
+    Member Payment Mode: 12,
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Maximum Monthly Benefit Amount: 6000,
+    Minimum Monthly Benefit Percentage: '10%',
+  },
+  Options: {
+    Terminal Illness Benefit: '3 Months',
+    Pay Terminal Illness Benefit Gross: No,
+  }
+}
+
+TestData_Claim: {
+  LossEventTab: {
+    Date of Loss: '$<today-6M>'
+  },
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  AdditionalPartiesAdditionalPartyTab: ['@Party1', '@Party2']
+}
+
+BenefitsLTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-6M-5d:MM/dd/yyyy>
+}
+
+Party1: {
+  Benefit: 'contains=John',
+  Party Name: 'contains=John',
+  First Name: 'Participant self',
+  Social Security Number (SSN): 111-11-1111
+}
+
+Party2: {
+  Add Additional Party: CLICK,
+  Party Name: 'Other Company',
+  Company Name: 'Additional Party',
+  Contact Preference: Mail,
+  Add Additional Party Association Address: CLICK,
+  Zip / Postal Code: '32011',
+  Address Line 1: '$<static:customerAddressLine1:[rx:Address\d{8}]>',
+  City: '$<static:customerCity:[rx:City\d{8}]>',
+  State / Province: CA
+}
+
+
+TestData_OtherIncomeBenefit_F1: {
+  CoveragesActionTab: {
+    Associated Insurable Risk: 'contains=Terminal Illness Benefit',
+    Coverage: 'LTD Core - CON',
+    Indemnity Reserve: 20000
+  }
+}
+
+
+TestData_OtherIncomeBenefit_F2: {
+  CoveragesActionTab: '@CoveragesActionTabF2',
+  OtherIncomeBenefitActionTab: '@OtherIncomeBenefitActionTabF2'
+}
+
+CoveragesActionTabF2: {
+  Associated Insurable Risk: 'contains=Participant self',
+  Coverage: 'LTD Core - CON',
+  Indemnity Reserve: 20000
+}
+
+OtherIncomeBenefitActionTabF2: {
+  Type of Offset: index=1,
+  Payment Amount: 30,
+  Beginning Date: $<today+10d>,
+  Through Date: $<today+2M+14d>
+}
+
+
+TestData_PaymentDetails_Payment1: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Participant self',
+    Non Provider Payment Type: index=1
+  },
+  PaymentPaymentPaymentAllocationTab:{
+    Associated Insurable Risk: 'Terminal Illness Benefit',
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    'Pull Check?': 'Yes',
+  }
+}
+
+
+TestData_PaymentDetails_Payment2: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Participant self',
+    Non Provider Payment Type: index=1
+  },
+  PaymentPaymentPaymentAllocationTab:{
+    Associated Insurable Risk: 'Smith',
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    'Pull Check?': 'Yes',
+    Payment From Date: $<today>,
+    Payment Through Date: $<today+1M-1d>,
+  }
+}
+
+
+TestData_PaymentDetails_Payment3: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Participant self',
+    Non Provider Payment Type: index=1
+  },
+  PaymentPaymentPaymentAllocationTab:{
+    Associated Insurable Risk: 'Smith',
+    Reserve Type: Expense,
+    Allocation Amount: 100,
+    Final Payment: 'Yes',
+  }
+}
+
+
+TestData_PaymentDetails_Payment4: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Participant self',
+    Non Provider Payment Type: index=1
+  },
+  PaymentPaymentPaymentAllocationTab:{
+    Associated Insurable Risk: 'Smith',
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    'Pull Check?': 'Yes',
+    Payment From Date: $<today+2M>,
+    Payment Through Date: $<today+2M+10d>,
+  }
+}
+
+
+TestData_PaymentDetails_Payment5: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Additional Party',
+    Non Provider Payment Type: index=1
+  },
+  PaymentPaymentPaymentAllocationTab:{
+    Associated Insurable Risk: 'Terminal Illness Benefit',
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+  }
+}
+
+
+TestData_PaymentDetails_Payment5_Update: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Participant self',
+  },
+  PaymentPaymentPaymentAllocationTab: {}
+}

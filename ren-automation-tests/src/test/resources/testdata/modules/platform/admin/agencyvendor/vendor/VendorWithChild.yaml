@@ -1,0 +1,21 @@
+TestData: {
+  VendorInfoTab: '@VendorInfoTab',
+  ContactInfoTab: '@ContactInfoTab'
+}
+
+VendorInfoTab: {
+  Name: 'Vendor$<rx:\d{8}>',
+  Tax ID: 'Tax$<rx:\d{8}>',
+  Country: United States,
+  Add Child Vendor: {
+    Status: Active,
+  }
+}
+
+ContactInfoTab: {
+  Zip / Postal Code: 94596,
+  Address Line 1: Address Line 1,
+  City: Walnut Creek,
+  State / Province: CA,
+  'Is Mailing Address the same as Physical Address?': 'Yes',
+}

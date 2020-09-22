@@ -1,0 +1,34 @@
+TestData_Student: {
+  SelectGroupRelationshipTypeActionTab: {
+    Relationship Type: Student
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Student Start Date: $<today-1d>,
+    Student Status: Active,
+    Student ID: '004',
+    Student Type: ' Part Time',
+    Division ID: '9835',
+    Field of Study: 'psychology',
+    Student Athlete: ' No',
+    Address Details: {
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: Address Line 1
+    }
+  },
+  RelationshipTab: {},
+}
+
+StudentInfoResponse: {
+  "type": "STU",
+  "studentId": "004",
+  "studentStartDate": "$<today-1d:yyyy-MM-dd>",
+  "studentType": "PART_TIME",
+  "studentStatus": "ACT",
+  "divisionId": "9835",
+  "fieldOfStudy": "psychology",
+  "athlete": false
+}

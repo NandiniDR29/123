@@ -1,0 +1,21 @@
+TestData: {
+  PaymentDeficiencyTab: {
+    Direct: 'true',
+    Enable Payment Deficiency: 'true'
+  }
+}
+
+TestData_Cancellations: {
+  CancellationsTab: {
+    Direct: 'true',
+    Mortgagee: 'true',
+    Agency: 'true',
+    Calendar: Default,
+    Multiple invoices per month: 'No',
+    'Cancel X days after bill due date if Policy is Effective >= threshold:': 3,
+    'Set cancellation reason:': index=1,
+    'Reinstate automatically if debt is recovered within X days after cancellation effective date: ': 20,
+    'Reinstate automatically if cancellation reason was:': Non Payment of Premium,
+    Reinstatement Reason: 'Lapse: payment received within the lapse period'
+  }
+}

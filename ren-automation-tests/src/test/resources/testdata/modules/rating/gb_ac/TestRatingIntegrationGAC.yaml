@@ -1,0 +1,313 @@
+TestDataEnhancedAndBasic: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanBASEBU', '@PlanDefinitionTab_BASEBU_EnhancedAccident', '@PlanDefinitionTab_BASEBU_BasicAccident'],
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: ['@PlanKeyBasebuBaseBuyUp'],
+  EnhancedBenefitsDtoFTab: ['@PlanKeyBasebuBaseBuyUp'],
+  EnhancedBenefitsHtoLTab: ['@PlanKeyBasebuBaseBuyUp'],
+  EnhancedBenefitsMtoTTab: ['@PlanKeyBasebuBaseBuyUp'],
+  OptionalBenefitTab: ['@PlanKeyBasebuBaseBuyUp', '@OptionalBenefitTab_EnhancedAccident'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_EnhancedAccident', '@ClassificationManagementTab_BasicAccident'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  Rate Basis: 'Per Month',
+  Situs State: GA,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Total Number of Eligible Lives: 100,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlanBASEBU: {
+  Plan: Base Buy-Up
+}
+
+PlanDefinitionTab_BASEBU_EnhancedAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: 'Enhanced Accident',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Code: 6311,
+  SIC Description: 'Direct Life Insurance Carriers',
+  Number of Units: 20,
+  Coverage Basis: '24-hour Coverage',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_BASEBU_BasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: 'Basic Accident',
+  SIC Code: 6311,
+  SIC Description: 'Direct Life Insurance Carriers',
+  Number of Units: 4,
+  Coverage Basis: 'Non Occupational Coverage',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Voluntary',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  }
+}
+
+PlanKeyBasebuBaseBuyUp: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+OptionalBenefitTab_EnhancedAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: 'Enhanced Accident',
+  'Include Optional Benefits?': 'Yes',
+  Number of Units: 10,
+  "Enhanced Physician's Office/Urgent Care Treatment Benefit": {
+    "Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit": true
+  },
+  Hospital ICU Confinement Benefit: {
+    'Apply Benefit Hospital ICU Confinement Benefit': true,
+  },
+  'Waiver Of Premium Benefit': {
+    'Apply Benefit Waiver Of Premium Benefit': false
+  },
+  'Health Screening Benefit': {
+    'Apply Benefit?': false
+  }
+}
+
+ClassificationManagementTab_EnhancedAccident: {
+   Plan: BASEBU-Base Buy-Up,
+   Add Classification Group Relationship: CLICK,
+   Classification Group Name: 'index=1',
+   'Use Classification Sub-Groups?': 'No',
+   Coverage Tier: Employee Only,
+   Number of Participants: 1
+}
+
+ClassificationManagementTab_BasicAccident: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 2
+}
+
+RequestDataEnhancedAndBasic: {
+  'quoteType': 'New Business',
+  'rateBasis': 'MTPPP',
+  'coverages[0].coverageName': 'BASIC',
+  'coverages[0].planName': 'BASEBU',
+  'coverages[0].hasOptionalCoverages': 'false',
+  'coverages[0].contributionType': 'VOLUNTARY',
+  'coverages[0].participantContributionPct': '1.00000000',
+  'coverages[0].coverageBasis': 'NonOccupational',
+  'coverages[0].commission.commissionPct':'0.05000000',
+  'coverages[0].coverageTiers[0]': 'EEO',
+  'coverages[0].coverageTiers[1]': 'EES',
+  'coverages[0].coverageTiers[2]': 'EEC',
+  'coverages[0].coverageTiers[3]': 'EEF',
+  'coverages[1].coverageName': 'ENHANCED',
+  'coverages[1].planName': 'BASEBU',
+  'coverages[1].hasOptionalCoverages': 'true',
+  'coverages[1].optionalCoverages.benefitNames[0]': 'HOS_ICU_CON_BNF_OPT',
+  'coverages[1].optionalCoverages.benefitNames[1]': 'EMERGENCY_CARE_BENEFIT',
+  'coverages[1].optionalCoverages.units': '10',
+  'coverages[1].contributionType': 'NON_CONTRIBUTORY',
+  'coverages[1].participantContributionPct': '0E-8',
+  'coverages[1].coverageBasis': '24hour',
+  'coverages[1].commission.commissionPct':'0.05000000',
+  'coverages[1].coverageTiers[0]': 'EEO',
+}
+
+ResponseDataEnhancedAndBasic: {
+  'policyID': MP0000001,
+  'coverageRates[0].coverageName': 'BASIC',
+  'coverageRates[0].planName': 'BASEBU',
+  'coverageRates[0].tolerableLossRatio': '0.853',
+  'coverageRates[0].tierRates[0].coverageTier': 'EEO',
+  'coverageRates[0].tierRates[0].tierRate': '2,79',
+  'coverageRates[0].tierRates[0].optionalTierRate': '2.02',
+  'coverageRates[0].tierRates[1].coverageTier': 'EES',
+  'coverageRates[0].tierRates[1].tierRate': '2,79',
+  'coverageRates[0].tierRates[1].optionalTierRate': '2.02',
+  'coverageRates[0].tierRates[2].coverageTier': 'EEC',
+  'coverageRates[0].tierRates[2].tierRate': '2,79',
+  'coverageRates[0].tierRates[2].optionalTierRate': '2.02',
+  'coverageRates[0].tierRates[3].coverageTier': 'EEF',
+  'coverageRates[0].tierRates[3].tierRate': '2,79',
+  'coverageRates[0].tierRates[3].optionalTierRate': '2.02',
+  'coverageRates[1].coverageName': 'ENHANCED',
+  'coverageRates[1].planName': 'BASEBU',
+  'coverageRates[1].tolerableLossRatio': '0.853',
+  'coverageRates[1].tierRates[0].coverageTier': 'EEO',
+  'coverageRates[1].tierRates[0].tierRate': '12.03',
+  'coverageRates[1].tierRates[0].optionalTierRate': '2.02',
+}
+
+ResponseCheckRatingPremium: {
+  'coverageRates[0].coverageName':'BASIC',
+  'coverageRates[0].planName':'BASEBU',
+  'coverageRates[0].tolerableLossRatio':'0.8029999999999999',
+  'coverageRates[0].tierRates[0].coverageTier':'EEO',
+  'coverageRates[0].tierRates[0].tierRate':'2.96',
+  'coverageRates[0].tierRates[0].optionalTierRate':'null',
+  'coverageRates[0].tierRates[1].coverageTier':'EES',
+  'coverageRates[0].tierRates[1].tierRate':'5.72',
+  'coverageRates[0].tierRates[1].optionalTierRate':'null',
+  'coverageRates[0].tierRates[2].coverageTier':'EEC',
+  'coverageRates[0].tierRates[2].tierRate':'7.09',
+  'coverageRates[0].tierRates[2].optionalTierRate':'null',
+  'coverageRates[0].tierRates[3].coverageTier':'EEF',
+  'coverageRates[0].tierRates[3].tierRate':'9.85',
+  'coverageRates[0].tierRates[3].optionalTierRate':'null',
+  'coverageRates[1].coverageName':'ENHANCED',
+  'coverageRates[1].planName':'BASEBU',
+  'coverageRates[1].tolerableLossRatio':'0.8029999999999999',
+  'coverageRates[1].tierRates[0].coverageTier':'EEO',
+  'coverageRates[1].tierRates[0].tierRate':'12.78',
+  'coverageRates[1].tierRates[0].optionalTierRate':'2.14',
+}
+
+TestDataEnhanced: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTabEnhanced',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanEnhanced10Units', '@PlanDefinitionTab_ENHANCED10'],
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefits_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefits_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefits_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefits_ENHANCED10'],
+  OptionalBenefitTab: ['@EnhancedBenefits_ENHANCED10','@OptionalBenefitTab_Enhanced'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTabEnhanced: {
+  Policy Effective Date: $<today>,
+  Rate Basis: 'Per Month',
+  Situs State: 'VT',
+  'Allow Independent Commissionable Producers?': 'Yes',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Total Number of Eligible Lives: 100,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlanEnhanced10Units: {
+  Plan: Enhanced 10 Units
+}
+
+PlanDefinitionTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  Coverage Tiers: ['Employee Only','Employee + Family'],
+  Coverage Tiers Change Confirmation: click,
+  SIC Code: 6311,
+  SIC Description: 'Other Direct Insurance (except Life, Health, and Medical) Carriers',
+  Number of Units: 20,
+  Coverage Basis: '24-hour Coverage',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Sponsor/Participant Split',
+    'Participant Contribution % Employee Coverage': '20',
+    'Participant Contribution % Dependent Coverage': '10',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '10',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+EnhancedBenefits_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+OptionalBenefitTab_Enhanced: {
+  'PlanKey': 'ENHANCED10-Enhanced 10 Units',
+  'CoverageKey': 'Enhanced Accident',
+  'Include Optional Benefits?': 'Yes',
+  Number of Units: 1,
+  "Accidental Death Benefit": {
+    "Apply Benefit Accidental Death Benefit": true
+  },
+  Enhanced Emergency Room Treatment Benefit: {
+    'Apply Benefit Enhanced Emergency Room Treatment Benefit': true,
+  }
+}
+
+ClassificationManagementTab_ENHANCED10: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+RequestDataEnhanced: {
+  'quoteType': 'New Business',
+  'rateBasis': 'MTPPP',
+  'coverages[0].coverageName': 'ENHANCED',
+  'coverages[0].planName': 'ENHANCED10',
+  'coverages[0].hasOptionalCoverages': 'true',
+  'coverages[0].optionalCoverages.benefitNames[0]': 'EMERGENCY_CARE_BENEFIT_OPT',
+  'coverages[0].optionalCoverages.benefitNames[1]': 'ACC_DEATH_BNF_OPT',
+  'coverages[0].optionalCoverages.benefitNames[2]': 'WAIVER_OF_PREMIUM',
+  'coverages[0].optionalCoverages.units': '1',
+  'coverages[0].contributionType': 'CONTRIBUTORY',
+  'coverages[0].participantContributionPct': '0E-8',
+  'coverages[0].participantContributionPctEE': '0.20000000',
+  'coverages[0].participantContributionPctDP': '0.10000000',
+  'coverages[0].commission.commissionPct':'0.05000000',
+  'coverages[0].coverageBasis': '24hour',
+  'coverages[0].coverageTiers[0]': 'EEO',
+  'coverages[0].coverageTiers[1]': 'EEF',
+}
+
+ResponseDataEnhanced: {
+  'policyID': MP0000001,
+  'coverageRates[0].coverageName': 'ENHANCED',
+  'coverageRates[0].planName': 'ENHANCED10',
+  'coverageRates[0].tolerableLossRatio': '0.853',
+  'coverageRates[0].tierRates[0].coverageTier': 'EEO',
+  'coverageRates[0].tierRates[0].tierRate': '12.03',
+  'coverageRates[0].tierRates[0].optionalTierRate': '2.02',
+  'coverageRates[0].tierRates[1].coverageTier': 'EEF',
+  'coverageRates[0].tierRates[1].tierRate': '2,79',
+  'coverageRates[0].tierRates[1].optionalTierRate': '2.02',
+}

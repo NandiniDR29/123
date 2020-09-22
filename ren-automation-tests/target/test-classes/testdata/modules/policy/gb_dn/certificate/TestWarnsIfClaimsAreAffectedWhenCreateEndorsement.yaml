@@ -1,0 +1,14 @@
+TestData_Provider: {
+    TIN: '134006748',
+    'License #': '58405',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Endodontist,
+    Zip/Postal Code: '100073914',
+    Address Line 1: '225 Broadway Ste 101',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+}
+

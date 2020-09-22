@@ -1,0 +1,149 @@
+TestData: {
+  GeneralTab: {
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:newPhoneNumber:[rx:\d{10}]>'
+    }
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+Adjustment_NewAddress: {
+  GeneralTab: {
+    Address Details: {
+      Address Type: Residence,
+      Country: United States,
+      Zip/Post Code: '12345',
+      City: As,
+      State/Province: CA,
+      Address Line 1: EISGROUP,
+      Address Line 2: ''
+    }
+  }
+}
+
+Adjustment_NewChat: {
+  GeneralTab: {
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: 1
+    }
+  }
+}
+
+Adjustment_NewEmail: {
+  GeneralTab: {
+    Email Details: {
+      Email Type: Personal,
+      Email Address: eis@eis.com
+    }
+  }
+}
+
+Adjustment_NewSocialNet: {
+  GeneralTab: {
+    Social Net Details: {
+      Social Net Type: Facebook,
+      Social Net ID: 1
+    }
+  }
+}
+
+Adjustment_NewWebUrl: {
+  GeneralTab: {
+    Web URL Details: {
+      Web URL Type: Personal,
+      Web URL: 1
+    }
+  } 
+}
+
+Adjustment_NewProduct: {
+  GeneralTab: {
+    Add New Product Details: {
+      Policy Type: Auto,
+      Carrier Name: AIGM
+    }
+  }
+}
+
+Adjustment_UpdateAddressType: {
+  GeneralTab: {
+    Address Details: {
+      Address Type: Residence,
+      Country: United States,
+      Zip/Post Code: '12345',
+      City: As,
+      State/Province: CA,
+      Address Line 1: EISGROUP
+    }
+  }
+}
+
+Adjustment_UpdatePhoneNumber: {
+  GeneralTab: {
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:updatePhoneNumberIn:[rx:\d{10}]>'
+    }
+  }
+}
+
+Adjustment_UpdateChatId: {
+  GeneralTab: {
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: 2
+    }
+  }
+}
+
+Adjustment_UpdateWebUrl: {
+  GeneralTab: {
+    Web URL Details: {
+      Web URL Type: Personal,
+      Web URL: 2
+    }
+  }
+}
+
+Adjustment_UpdateSocialNetId: {
+  GeneralTab: {
+    Social Net Details:{
+      Social Net Type: Facebook,
+      Social Net ID: 2
+    }
+  }
+}
+
+Adjustment_UpdateEmailAddress: {
+  GeneralTab: {
+    Email Details: {
+      Email Type: Work,
+      Email Address: 'InEmailUp@eisgroup.com'
+    }
+  }
+}
+
+REST_AddChat: {
+    "contactMethod": "CHAT",
+    "contactType": "SKYPE",
+    "preferredInd": null,
+    "doNotSolicitInd": false,
+    "comment": null,
+    "communicationPreferences": [],
+    "extensionFields": {},
+    "chatId": "chat1.post"
+}
+
+REST_UpdateChat: {
+    "contactMethod": "CHAT",
+    "contactType": "SKYPE",
+    "preferredInd": true,
+    "doNotSolicitInd": false,
+    "comment": "comment",
+    "communicationPreferences": [],
+    "extensionFields": {},
+    "chatId": "chat1.put"
+}

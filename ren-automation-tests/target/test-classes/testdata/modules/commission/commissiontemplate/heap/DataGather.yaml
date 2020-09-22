@@ -1,0 +1,9 @@
+TestData: {
+  CommissionTemplateTab: {
+    AddCommissionTemplate: {
+      Template Name: '$<rx:Template-\d{5}>',
+      End Year: '2',
+      'Commission %': 20.00
+    }
+  }
+}

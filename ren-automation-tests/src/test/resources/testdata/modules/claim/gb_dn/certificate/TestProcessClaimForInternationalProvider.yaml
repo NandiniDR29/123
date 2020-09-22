@@ -1,0 +1,107 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: {},
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+TestData_WithoutProvider: {
+  LossEventTab: {},
+  LossContextTab: {},
+  IntakeInformationTab: '@IntakeInformationTab2',
+}
+
+TestData_WithProvider: {
+  LossEventTab: {},
+  LossContextTab: {},
+  IntakeInformationTab: '@IntakeInformationTab3',
+}
+
+Data1: {
+  LossEventTab: {},
+  LossContextTab: {},
+  IntakeInformationTab: '@IntakeInformationTabWithoutPayment',
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '$<rx:\d{10}>',
+    'License #': '$<rx:\d{5}>',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '10001',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+}
+
+IntakeInformationTab2: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Type of Transaction: 'Predetermination',
+  Source: index=1,
+  Submitted Services: {
+    CDT Code: 'D0160',
+    Charge: '400.40'
+  }
+}
+
+IntakeInformationTabWithoutPayment: {
+  Patient: {
+    Name: contains=Insured
+  },
+  International Provider: {
+    Last Name: 'LastName',
+    First Name: 'FirstName',
+    Practice Name: 'PracticeName'
+  },
+  International Provider Address: {
+    'Zip / Postal Code': '22122',
+    'Address Line 1': 'Address Line 1',
+    'State / Province': 'AK',
+    City: 'Providence'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D2971',
+    Charge: 100,
+    Tooth: 3
+  }
+}
+
+IntakeInformationTab3: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '$<rx:\d{10}>',
+    'License #': '$<rx:\d{5}>',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '10001',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Payee Type: index=1,
+  Source: index=1,
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D2971',
+    Charge: 100,
+    Tooth: 3
+  }
+}

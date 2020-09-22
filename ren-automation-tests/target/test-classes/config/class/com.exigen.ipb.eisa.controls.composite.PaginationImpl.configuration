@@ -1,0 +1,5 @@
+{
+  "currentPageLocator": {
+    "xpath": ".//*[(contains(@class,'ui-paginator-page') and contains(@class,'ui-state-active')) or contains(@class,'rf-ds-act') or (contains(@class,'current') and not(contains(text(),'of')))]"
+  }
+}

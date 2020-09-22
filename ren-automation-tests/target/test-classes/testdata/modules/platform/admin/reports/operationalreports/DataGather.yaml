@@ -1,0 +1,54 @@
+TestData: {
+  OperationalReportsTab: {
+    Category: Policy,
+    Type: Policy Status,
+    Name: Active (In Force) Policies Report,
+    Activity Date From: '$<today-1d:MM/dd/yyyy>',
+    Activity Date To: '$<today:MM/dd/yyyy>',
+    Policy: '',
+    Delivery type: Download,
+    Report Format: HTML
+  }
+}
+
+TestData_Schedule: {
+  OperationalReportsTab: {
+    Category: Policy,
+    Type: Policy Status,
+    Name: Active (In Force) Policies Report,
+    Activity Date From: '$<today:MM/dd/yyyy>',
+    Activity Date To: '$<today:MM/dd/yyyy>',
+    Delivery type: EFolder,
+    Report Format: HTML,
+    'Do you want to schedule?': Yes,
+    Report Name: 'ReportName$<rx:\d{8}>',
+    Schedule Type: index=0,
+    Schedule Interval: 5,
+    Schedule Interval Type: index=0
+  }
+}
+
+TestData_EFolded_Pdf: {
+  OperationalReportsTab: {
+    Category: Policy,
+    Type: Policy Status,
+    Name: 'Active (In Force) Policies Report',
+    Activity Date From: '$<today-1y>',
+    Activity Date To: '$<today>',
+    Delivery type: EFolder,
+    Report Format: PDF
+  }
+}
+
+TestData_Format: {
+  OperationalReportsTab: {
+     Report Format: ''
+  }
+}
+
+TestData_Download: {
+  OperationalReportsTab: {
+    Delivery type: Download,
+    Report Format: ''
+  }
+}

@@ -1,0 +1,61 @@
+TestDataVoluntaryLife: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionVoluntaryLifeInsurance', '@PlanDefinitionBasicAccidentalDeath',
+                      '@PlanDefinitionSpouseVoluntaryLifeInsurance', '@PlanDefinitionChildVoluntaryLifeInsurance', '@PlanDefinitionDependentVoluntaryLife'],
+}
+
+SelectPlan: {
+  Plan: Voluntary Life
+}
+
+PlanDefinitionVoluntaryLifeInsurance: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Required Participation %: 5%,
+  Age Reduction Schedule: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance: {
+  CoverageKey: Child Voluntary Life Insurance,
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionDependentVoluntaryLife: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Census Type: index=1,
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}

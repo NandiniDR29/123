@@ -1,0 +1,30 @@
+TestData_CertificatePolicy_TwoInsured: {
+  PlansTab: {
+    Plan Name: index=1,
+    Coverage Tier: Employee + Spouse,
+    Enrollment Date: $<today>,
+    Participants: [
+    {
+      Participant Selection: index=0
+    },
+    {
+      Participant Selection: New Person,
+      General Information: {
+        First Name: 'Martha$<rx:\d{8}>',
+        Last Name: 'Stewart$<rx:\d{8}>',
+        Date of Birth: $<today-24y>,
+        Relationship to Insured: Spouse/Domestic Partner
+      },
+      Address Information: {
+        "Use Primary Insured's Address": No,
+        Address Type: Mailing,
+        Zip / Post Code: '94500',
+        State / Province: CA,
+        Country: United States,
+        City: Walnace,
+        Address Line 1: 'MAddr$<rx:\d{8}>'
+      }
+    }
+    ]
+  }
+}

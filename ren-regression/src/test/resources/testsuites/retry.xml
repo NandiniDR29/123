@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default Suite RETRY">
+  <test name="ren-automation">
+    <classes>
+      <class name="com.exigen.ren.modules.caseprofile.TestCaseCreation">
+        <methods>
+          <include name="testCaseCreation"/>
+        </methods>
+      </class>
+    </classes>
+  </test> <!-- ren-automation -->
+</suite> <!-- Default Suite RETRY -->

@@ -1,0 +1,51 @@
+TestData_EFT_Bank_Account_Type_Other: {
+  AcceptPaymentActionTab:{
+    Manage Payment Methods:{
+      Add Payment Method: 'click',
+      Payment Method: EFT,
+      'Routing#/Transit #': 121122676,
+      'Account #': '$<rx:\d{5}>',
+      Bank Name: '$<rx:BankName\d{5}>',
+      Bank Account Type: Other,
+      Add/Update: 'click' ,
+      Back: 'click'
+    },
+    Payment Method: 'contains=EFT Account',
+    Amount: 100,
+    'Suspend Remaining?': 'Yes'
+  }
+}
+
+TestData_ACH_Bank_Account_Type_Other: {
+  AcceptPaymentActionTab:{
+    Manage Payment Methods:{
+      Add Payment Method: 'click',
+      Payment Method: ACH,
+      'Routing#/Transit #': 121122676,
+      'Account #': '$<rx:\d{5}>',
+      Bank Name: '$<rx:BankName\d{5}>',
+      Bank Account Type: Other,
+      Add/Update: 'click' ,
+      Back: 'click'
+    },
+    Payment Method: 'contains=ACH Account',
+    Amount: 100,
+    'Suspend Remaining?': 'Yes'
+  }
+}
+
+TestData_ACH_Update: {
+  AcceptPaymentActionTab:{
+    Payment Method: 'contains=ACH Account',
+    Amount: 100,
+    'Suspend Remaining?': 'Yes'
+  }
+}
+
+TestData_EFT_Update: {
+  AcceptPaymentActionTab:{
+    Payment Method: 'contains=EFT Account',
+    Amount: 100,
+    'Suspend Remaining?': 'Yes'
+  }
+}

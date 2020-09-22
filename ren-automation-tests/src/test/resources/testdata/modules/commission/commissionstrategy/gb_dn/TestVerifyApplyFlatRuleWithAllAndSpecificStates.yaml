@@ -1,0 +1,147 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@Flat_CommissionRule_1', '@Flat_CommissionRule_2']
+}
+
+TestData_DN_Quote: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+TestData_DN_Quote_Update: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {
+    Rate:{
+      Brochure Rate Program: 'index=1'
+    }
+  }
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_DN - Group Dental',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+}
+
+Flat_CommissionRule_1: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Agency',
+    Geography Selection: 'Defined for All locations',
+    Coverages: [Dental],
+    Commission Rate: 5
+  }
+}
+
+Flat_CommissionRule_2: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Agency',
+    Geography Selection: 'Defined by Master Policy State',
+    SelectGeographyMetaData: {
+      Countries: United States,
+      States: CA
+    },
+    Coverages: [Dental],
+    Commission Rate: 15
+  }
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Policy Effective Date: $<today>,
+  'Allow Independent Commissionable Producers?': Yes,
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '1',
+  'Agency / Producer': 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  'Independent Commissionable Producer (ICP)?': Yes
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+SelectTwoPlans: {
+  Plan: [A La Carte, Major EPOS]
+}
+
+PlanDefinitionTab_ALACARTE: {
+  'PPO/EPO Plan?': 'Yes',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'Yes',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    'Does Min Hourly Requirement Apply?': 'No',
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{
+  },
+  Dental Deductible:{
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Fluoride Treatment: 'Not Covered',
+    }
+  },
+  Basic: '@BasicTab',
+  Major: '@MajorTab'
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Number of Participants: '32',
+  Coverage Tier: Employee Only,
+  Rate: 200
+}
+
+BasicTab: {
+}
+
+MajorTab: {
+}

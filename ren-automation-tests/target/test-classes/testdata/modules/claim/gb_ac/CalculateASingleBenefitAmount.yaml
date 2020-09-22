@@ -1,0 +1,16 @@
+TestData_AccidentalDeath: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+TestData_CriticalIllness: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+TestData_PremiumWaiver: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: index=1
+}

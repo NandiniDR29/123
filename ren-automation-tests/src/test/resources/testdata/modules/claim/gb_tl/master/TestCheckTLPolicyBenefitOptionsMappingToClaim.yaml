@@ -1,0 +1,388 @@
+TestData: {
+  InitiniateDialog: '@<tl_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<tl_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectAllPlans', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife', '@PlanDefinitionDependentBasicAccidentalDeath',
+                      '@PlanDefinitionEmployeeVoluntaryLifeInsuranceVL', '@PlanDefinitionEmployeeVoluntaryDeathVL', '@PlanDefinitionSpouseVoluntaryVL', '@PlanDefinitionChildVoluntaryVL',
+                      '@PlanDefinitionDependentVoluntaryAccidentalSpouseVL'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife', '@ClassificationMgmtDependentBasicAccidentalDeath',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL', '@ClassificationMgmtEmployeeVoluntaryDeathVL', '@ClassificationMgmtSpouseVoluntaryVL',
+                                '@ClassificationMgmtChildVoluntaryVL', '@ClassificationMgmtDependentVoluntaryAccidentalSpouseVL'],
+  PremiumSummaryTab: '@<tl_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_Multiple: {
+  InitiniateDialog: '@<tl_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<tl_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectAllPlans', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife1', '@PlanDefinitionDependentBasicAccidentalDeath1',
+                      '@PlanDefinitionEmployeeVoluntaryLifeInsuranceVL1', '@PlanDefinitionEmployeeVoluntaryDeathVL1', '@PlanDefinitionSpouseVoluntaryVL1', '@PlanDefinitionChildVoluntaryVL1',
+                      '@PlanDefinitionDependentVoluntaryAccidentalSpouseVL1'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife', '@ClassificationMgmtDependentBasicAccidentalDeath',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL', '@ClassificationMgmtEmployeeVoluntaryDeathVL', '@ClassificationMgmtSpouseVoluntaryVL',
+                                '@ClassificationMgmtChildVoluntaryVL', '@ClassificationMgmtDependentVoluntaryAccidentalSpouseVL'],
+  PremiumSummaryTab: '@<tl_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+SelectAllPlans: {
+  Plan: [Basic Life, Voluntary Life]
+}
+
+SelectPlan: {
+  Plan: Voluntary Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  PlanKey: BL-Basic Life,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '200000',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  PlanKey: BL-Basic Life,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Coverage Type: index=1,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '200000',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  PlanKey: BL-Basic Life,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  'Self-administered?': 'Yes',
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '10000',
+  },
+  Benefit Schedule - Child: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '5000',
+  }
+}
+
+PlanDefinitionDependentBasicAccidentalDeath: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child),
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '10000',
+  },
+  Benefit Schedule - Child: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '5000',
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsuranceVL: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '500000',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryDeathVL: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  PlanKey: VL-Voluntary Life,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '500000',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionSpouseVoluntaryVL: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Self-administered?': 'Yes',
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '100000',
+  },
+}
+
+PlanDefinitionChildVoluntaryVL: {
+  CoverageKey: Child Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Benefit Schedule - Child: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '10000',
+  },
+}
+
+PlanDefinitionDependentVoluntaryAccidentalSpouseVL: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '100000',
+  },
+  Benefit Schedule - Child: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '10000',
+  }
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Plan: BL-Basic Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryDeathVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtSpouseVoluntaryVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtChildVoluntaryVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalSpouseVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Plan: BL-Basic Life,
+  Classification Group Name: 1
+}
+
+PlanDefinitionDependentBasicLife1: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  PlanKey: BL-Basic Life,
+  Required Participation %: 5%,
+  'Self-administered?': 'Yes',
+  Member Payment Mode: 12,
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Benefit Schedule - Child: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  }
+}
+
+PlanDefinitionDependentBasicAccidentalDeath1: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child),
+  'Enhanced AD&D?': 'No',
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Self-administered?': 'Yes',
+  Member Payment Mode: 12,
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Benefit Schedule - Child: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryDeathVL1: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  PlanKey: VL-Voluntary Life,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsuranceVL1: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Self-administered?': 'Yes',
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentVoluntaryAccidentalSpouseVL1: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Benefit Schedule - Child: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  }
+}
+
+PlanDefinitionSpouseVoluntaryVL1: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Self-administered?': 'Yes',
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+}
+
+PlanDefinitionChildVoluntaryVL1: {
+  CoverageKey: Child Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Benefit Schedule - Child: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+}

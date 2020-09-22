@@ -1,0 +1,400 @@
+TestData_EFT: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    preferredSettlementMethodCd: 'EFT',
+    bankName: 'B1',
+    branchCity: 'BB1-1',
+    bankNumber: '234',
+    accountNumber: '234',
+    accountStatus: 'ACTIVE',
+    accountName: '$<rx:\d{5}>',
+    bulkPaymentDay: '1',
+    bankAccountTypeCd: 'CHECKING',
+    paymentAddress: {
+      addressLine1: 'Address$<rx:\d{8}>',
+      city: 'string',
+      county: 'string',
+      countryCd: 'US'
+    },
+    defaultInd: true,
+    holderName: 'string',
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+      expiration: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z'
+    }
+  }]
+}
+
+TestData_NoValidityTerm: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [
+    {
+    preferredSettlementMethodCd: 'EFT',
+    defaultInd: true
+    }
+  ]
+}
+
+TestData_NotEnoughFinancialInfo: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    preferredSettlementMethodCd: 'EFT',
+    defaultInd: true,
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}
+
+TestData_EarlyExpiration: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [
+  {
+    preferredSettlementMethodCd: 'EFT',
+    bankName: 'B1',
+    branchCity: 'BB1-1',
+    bankNumber: '234',
+    accountNumber: '234',
+    accountStatus: 'ACTIVE',
+    accountName: '$<rx:\d{6}>',
+    bulkPaymentDay: '1',
+    bankAccountTypeCd: 'CHECKING',
+    paymentAddress: {
+      addressLine1: 'Address$<rx:\d{8}>',
+      city: 'string',
+      county: 'string',
+      countryCd: 'US'
+    },
+    defaultInd: true,
+    holderName: 'string',
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+      expiration: '$<today-12d:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}
+
+TestData_IncorrectValue: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    preferredSettlementMethodCd: 'Test',
+    bankName: 'B1',
+    branchCity: 'BB1-1',
+    bankNumber: '234',
+    accountNumber: '$<rx:\d{6}>',
+    accountStatus: 'ACTIVE',
+    accountName: '234',
+    bulkPaymentDay: '1',
+    bankAccountTypeCd: 'CHECKING',
+    paymentAddress: {
+      addressLine1: 'Address$<rx:\d{8}>',
+      city: 'string',
+      county: 'string',
+      countryCd: 'US'
+    },
+    defaultInd: true,
+    holderName: 'string',
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+      expiration: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}
+
+TestData_WithoutFinancialInfo: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S'
+}
+
+TestData_WithoutPreferredSettlementMethodCd: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    bankName: 'B1',
+    branchCity: 'BB1-1',
+    bankNumber: '234',
+    accountNumber: '$<rx:\d{6}>',
+    accountStatus: 'ACTIVE',
+    accountName: '234',
+    bulkPaymentDay: '1',
+    bankAccountTypeCd: 'CHECKING',
+    paymentAddress: {
+      addressLine1: '15',
+      city: 'string',
+      county: 'string',
+      countryCd: 'US'
+    },
+    "defaultInd": true,
+    holderName: 'string',
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+      expiration: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}
+
+TestData_Check: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    preferredSettlementMethodCd: 'CHECK',
+    "defaultInd": true,
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}
+
+TestData_WithOptional: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    preferredSettlementMethodCd: 'EFT',
+    bankName: 'B1',
+    branchCity: 'BB1-1',
+    bankNumber: '234',
+    accountNumber: '$<rx:\d{6}>',
+    accountStatus: 'ACTIVE',
+    accountName: '234',
+    bulkPaymentDay: '1',
+    bankAccountTypeCd: 'CHECKING',
+    paymentAddress: {
+      addressLine1: 'Address$<rx:\d{8}>',
+      addressLine2: 'Address$<rx:\d{8}>',
+      addressLine3: 'Address$<rx:\d{8}>',
+      city: 'string',
+      county: 'string',
+      countryCd: 'US',
+      postalCode: '90210',
+      stateProvCd: 'CA'
+    },
+    defaultInd: true,
+    holderName: 'string',
+    externalId: 'testExtId$<rx:\d{5}>',
+    achFormattingInd: false,
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+      expiration: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}
+
+TestData_WithVendorFinancialInfoDtoAndOptional: {
+  taxId: 'Non_Ind_Tax$<rx:\d{5}>',
+  name: 'NonIndividProvider$<rx:\d{5}>',
+  countryCd: 'US',
+  zipCd: '10001',
+  addressLine1: 'AddrLine$<rx:\d{8}>',
+  city: 'New York',
+  state: 'NY',
+  phoneNo: '$<rx:\d{10}>',
+  contactFirstName: 'Katy',
+  contactLastName: 'Turner',
+  mailingAddressSame: true,
+  vendorProfileType: 'nonIndividual',
+  startDate: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+  finishDate: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+  vendorRating: 'SILVER',
+  status: 'ACTIVE',
+  regionCd: 'NY',
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'type1',
+  vendorTypeCd: 'S',
+  financialInfo: [{
+    preferredSettlementMethodCd: 'EFT',
+    bankName: 'B1',
+    branchCity: 'BB1-1',
+    bankNumber: '234',
+    accountNumber: '$<rx:\d{6}>',
+    accountStatus: 'ACTIVE',
+    accountName: '234',
+    bulkPaymentDay: '1',
+    bankAccountTypeCd: 'CHECKING',
+    paymentAddress: {
+      addressLine1: 'Address$<rx:\d{8}>',
+      addressLine2: 'Address$<rx:\d{8}>',
+      addressLine3: 'Address$<rx:\d{8}>',
+      city: 'string',
+      county: 'string',
+      countryCd: 'US',
+      postalCode: '90210',
+      stateProvCd: 'CA'
+    },
+    defaultInd: true,
+    holderName: 'string',
+    defaultInd: true,
+    externalId: 'testExtId$<rx:\d{5}>',
+    achFormattingInd: false,
+    validityTerm: {
+      effective: '$<today-10d:yyyy-MM-dd>T00:00:00.000Z',
+      expiration: '$<today+2y:yyyy-MM-dd>T00:00:00.000Z',
+    }
+  }]
+}

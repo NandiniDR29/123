@@ -1,0 +1,19 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab'
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  Situs State: GA,
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Work injury: true,
+  Workers comp: true,
+  Total Number of Eligible Lives: '1'
+}

@@ -1,0 +1,15 @@
+TestData_PortalFileUpload: {
+  AddFileTab: {
+    File: '$<file:Ren_Enrollement_ALLProducts_Initial.xlsx>',
+    Name: 'File1.xlsx',
+    Type: 'Enrollment File'
+  }
+}
+
+TestData_XML: {
+  AddFileTab: {
+    File: '$<file:testReport.xml>',
+    Name: 'File2.xml',
+    Type: 'Enrollment File'
+  }
+}

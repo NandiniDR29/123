@@ -1,0 +1,6 @@
+TestData: {
+  ReinstateActionTab: {
+    Reason: Other,
+    Other: 'ReinstatementReason$<rx:\d{8}>'
+  }
+}

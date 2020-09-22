@@ -1,0 +1,23 @@
+TestData_Claim_MultipleCoverages: {
+  PolicyInformationParticipantParticipantCoverageTab: ['@PolicyInformationParticipantParticipantCoverageTab_CON','@PolicyInformationParticipantParticipantCoverageTab_NC','@PolicyInformationParticipantParticipantCoverageTab_SGR','@PolicyInformationParticipantParticipantCoverageTab_VOL']
+}
+
+PolicyInformationParticipantParticipantCoverageTab_CON: {
+  Plan: 'CON',
+  Coverage Name: 'STD Core - CON'
+}
+
+PolicyInformationParticipantParticipantCoverageTab_NC: {
+  Plan: 'NC',
+  Coverage Name: 'STD Core - NC'
+}
+
+PolicyInformationParticipantParticipantCoverageTab_SGR: {
+  Plan: 'SGR',
+  Coverage Name: 'STD Core - SGR'
+}
+
+PolicyInformationParticipantParticipantCoverageTab_VOL: {
+  Plan: 'VOL',
+  Coverage Name: 'STD Core - VOL'
+}

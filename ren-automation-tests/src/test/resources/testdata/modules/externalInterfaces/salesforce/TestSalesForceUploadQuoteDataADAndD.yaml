@@ -1,0 +1,115 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionSpouseChild', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionVolLifeIns'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtVolLifeIns', '@ClassificationMgmtVolAccDeath']
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionSpouseChild: {
+  CoverageKeyRemove:  Dependent Basic Life Insurance (Spouse & Child)
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Required Participation %: 5%,
+  Contribution Type: 'Non-contributory',
+  Sponsor Payment Mode: 12,
+  Census Type: 'Enrolled',
+  Total Number of Eligible Lives: 10,
+  'Age Reduction?': true,
+  Age Reduction Schedule: '50%@70',
+  SIC Code: 5411,
+  Waiver of Premium: 'Not Included',
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Single Value',
+    Flat Benefit Amount: '10000.0'
+  },
+  Guaranteed Issue: {
+    GI Amount: '200000.0'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Required Participation %: 5%,
+  Contribution Type: 'Non-contributory',
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVolLifeIns: {
+  Add Coverage: 'click',
+  Plan ComboBox: Basic Life,
+  Coverage Name: 'Employee Voluntary Life Insurance',
+  Contribution Type: 'Voluntary',
+  Census Type: 'Enrolled',
+  Total Number of Eligible Lives: 5,
+  Required Participation %: 5%,
+  SIC Code: 5411,
+  Member Payment Mode: 12,
+  'Age Reduction?': true,
+  Age Reduction Schedule: 'ADEA1',
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Benefit Maximum Amount: '250000.0'
+  },
+  Guaranteed Issue: {
+    GI Amount: '190000.0'
+  },
+  Option: {
+    Waiver of Premium: 'Included'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVolAccDeath: {
+  PlanDefinitionTab: {
+    Add Coverage: 'click',
+    Plan ComboBox: Basic Life,
+    Coverage Name: 'Employee Voluntary Accidental Death and Dismemberment Insurance',
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+    'Enhanced AD&D?': 'No',
+    Contribution Type: 'Voluntary',
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtVolLifeIns: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtVolAccDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+}

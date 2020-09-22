@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Policy" verbose="1" parallel="tests" thread-count="1024">
+    <listeners>
+        <listener class-name="com.exigen.ipb.eisa.utils.listener.ISBAListener"/>
+        <listener class-name="com.exigen.istf.exec.testng.TimeShiftTestNgListener"/>
+    </listeners>
+    <suite-files>
+        <suite-file path="policy_without_timeshift.xml"/>
+        <suite-file path="policy_with_timeshift.xml"/>
+    </suite-files>
+</suite>

@@ -1,0 +1,14 @@
+TestData: {
+  CreateJobTab: {
+    Name: '$<static:updatedJobName:[rx:ChangedJobName\d{5}]>',
+    Enabled: 'true',
+    AdditionalJobs:['@JobTwo','@JobThree']
+    }
+}
+JobTwo: {
+  '2.': 'renewalRatingJob',
+}
+JobThree: {
+  '3.': 'renewalProposingJob',
+}
+

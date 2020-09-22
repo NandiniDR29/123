@@ -1,0 +1,28 @@
+TestData: {
+  VendorInfoTab: '@VendorInfoTab',
+  ContactInfoTab: '@ContactInfoTab'
+}
+
+VendorInfoTab: {
+  Name: '$<static:vendor:[rx:Vendor\d{8}]>',
+  Tax ID: '$<static:tax:[rx:Tax\d{8}]>',
+  Country: United States
+}
+
+ContactInfoTab: {
+  Zip / Postal Code: 94596,
+  Address Line 1: Address Line 1,
+  City: Walnut Creek,
+  State / Province: CA,
+  'Is Mailing Address the same as Physical Address?': 'Yes',
+}
+
+TestData_Update: {
+  VendorInfoTab: {
+    Tax ID: 'TEST TAX ID',
+    Vendor Rating: Gold,
+  },
+  ContactInfoTab: {
+    Email: test@fostest.net
+  }
+}

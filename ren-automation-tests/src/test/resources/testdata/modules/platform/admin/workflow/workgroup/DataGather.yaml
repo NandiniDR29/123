@@ -1,0 +1,14 @@
+CreateTestData: {
+  WorkGroupTab: {
+     Code: '$<static:WorkGroupCode:[rx:Code\d{5}]>',
+     Name: '$<static:WorkGroupName:[rx:Name\d{5}]>',
+     Save: 'click'
+   }
+}
+
+UpdateTestData: {
+  WorkGroupTab: {
+    Name: '$<static:UpdatedWorkGroupName:[rx:UpdatedName\d{5}]>',
+    Update: 'click'
+  }
+}

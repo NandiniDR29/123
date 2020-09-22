@@ -1,0 +1,232 @@
+TestData_Policy: {
+  InitiniateDialog: '@<ac_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<ac_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<ac_master>@DataGather@SelectPlanBASEBU', '@<ac_master>@DataGather@PlanDefinitionTab_BASEBU_BasicBenefits', '@PlanDefinitionTabEnhancedAccident'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: '@EnhancedBenefitsAtoCTab',
+  EnhancedBenefitsDtoFTab: '@EnhancedBenefitsDtoFTab',
+  EnhancedBenefitsHtoLTab: '@EnhancedBenefitsHtoLTab',
+  EnhancedBenefitsMtoTTab: '@EnhancedBenefitsMtoTTab',
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU', '@OptionalBenefitTab_BASEBU_Enhanced'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_EnhancedAccident', '@ClassificationManagementTab_BasicAccident'],
+  PremiumSummaryTab: {}
+}
+
+PlanDefinitionTabEnhancedAccident: {
+  CoverageKey: Enhanced Accident,
+  SIC Description: index=1,
+  Sponsor/Participant Funding Structure: {
+    'Self-administered?': 'No',
+    Minimum Number of Participants: 10
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period: '10',
+    Waiting Period Mode: 'Days',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  },
+}
+
+BasicBenefitsTab_BasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Air Ambulance Benefit: {
+    Air Ambulance Benefit Amount: 2000
+  },
+  Ground Ambulance Benefit: {
+    Ground Ambulance Benefit Amount: 400
+  },
+  Emergency Room Treatment Benefit: {
+    Emergency Room Benefit Amount: 200
+  },
+  Hospital Admission Benefit: {
+    Hospital Admission Benefit Amount: 2000,
+    Intensive Care Unit Admission Benefit Amount: 4000
+  },
+  Major Diagnostic Benefit: {
+    Major Diagnostic Benefit Amount: 400
+  },
+  Physical Therapy Service Benefit: {
+    Physical Therapy Services Benefit Amount: 100
+  }
+}
+
+EnhancedBenefitsAtoCTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Air Ambulance Benefit: {
+    Air Ambulance Benefit Amount: 1200
+  },
+  Ground Ambulance Benefit: {
+    Ground Ambulance Benefit Amount: 400
+  },
+  Accidental Death Benefit: {
+    Accidental Death Benefit Amount for Covered Person: 50000,
+    Accidental Death Benefit Amount for Covered Spouse: 50000,
+    Accidental Death Benefit Amount for each Covered Dependent Child: 15000,
+  }
+}
+
+EnhancedBenefitsDtoFTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Emergency Room Treatment Benefit: {
+    Emergency Room Benefit Amount: 50
+  }
+}
+
+EnhancedBenefitsHtoLTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Hospital Admission Benefit: {
+    Hospital Admission Benefit Amount: 2000,
+    Intensive Care Unit Admission Benefit Amount: 4000
+  },
+  Hospital ICU Confinement Benefit: {
+    Intensive Care Unit Confinement Benefit Amount per day: 500
+  }
+}
+
+EnhancedBenefitsMtoTTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Major Diagnostic Benefit: {
+    Major Diagnostic Benefit Amount: 600
+  },
+  Physical Therapy Service Benefit: {
+    Physical Therapy Services Benefit Amount: 50
+  },
+  Physician’s Office/Urgent Care Treatment Benefit: {
+    Physicians Office/Urgent Care Benefit Amount: 50
+  }
+}
+
+OptionalBenefitTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident
+}
+
+OptionalBenefitTab_BASEBU_Enhanced: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+    Accidental Death Benefit: {
+    Apply Benefit Accidental Death Benefit: true,
+    Accidental Death Benefit Amount - Employee: 5000,
+    Accidental Death Benefit Amount - Spouse: 5000,
+    Accidental Death Benefit Amount - Child: 1000,
+  },
+  Enhanced Emergency Room Treatment Benefit: {
+    Apply Benefit Enhanced Emergency Room Treatment Benefit: true,
+    Enhanced Emergency Room Treatment Benefit Amount: 100
+  },
+  Enhanced Physician's Office/Urgent Care Treatment Benefit: {
+    Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit: true,
+    Enhanced Physician's Office/Urgent Care Treatment Benefit Amount: 25
+  },
+  Hospital ICU Confinement Benefit: {
+    Apply Benefit Hospital ICU Confinement Benefit: true,
+    Hospital ICU Confinement Benefit Amount: 100
+  },
+}
+
+ClassificationManagementTab_BasicAccident: {
+  Coverage Name: Basic Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_EnhancedAccident: {
+  Coverage Name: Enhanced Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+
+
+TestData_Claim: {
+  PolicyInformationParticipantParticipantCoverageTab: ['@ParticipantParticipantCoverageEA', '@ParticipantParticipantCoverageBA'],
+  BenefitsAccidentalDismembermentInjuryPartyInformationTab: '@BenefitInjuryPartyInformationTabAccidentalDismemberment',
+}
+
+ParticipantParticipantCoverageEA: {
+  Plan: 'Base Buy-Up',
+  Coverage Name: 'Enhanced Accident - Base Buy-Up',
+  Limit Level: Per Occurrence,
+  Limit Amount: 100
+}
+
+ParticipantParticipantCoverageBA: {
+  Plan: 'Base Buy-Up',
+  Coverage Name: 'Basic Accident - Base Buy-Up',
+}
+
+BenefitInjuryPartyInformationTabAccidentalDismemberment: {
+  Date of Birth: 10/10/1985,
+  Itemized Injury/Illness:
+    [  {
+         Associated Benefits: Air Ambulance Benefit,
+         Associated Scheduled Item: 'contains=Air Ambulance Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Ground Ambulance Benefit,
+         Associated Scheduled Item: 'contains=Ground Ambulance Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Emergency Room Treatment Benefit,
+         Associated Scheduled Item: 'contains=Emergency Room Treatment Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Hospital Admission Benefit,
+         Associated Scheduled Item: 'contains=Hospital Admission Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Intensive Care Unit Admission Benefit,
+         Associated Scheduled Item: 'contains=Intensive Care Unit Admission Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Major Diagnostic Benefit,
+         Associated Scheduled Item: 'contains=Major Diagnostic Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Physical Therapy Service Benefit,
+         Associated Scheduled Item: 'contains=Physical Therapy Services Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Physician’s Office/Urgent Care Treatment Benefit,
+         Associated Scheduled Item: 'contains=Office/Urgent Care Treatment Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Hospital ICU Confinement Benefit,
+         Associated Scheduled Item: 'contains=Hospital ICU Confinement Benefit',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Accidental Death Benefit,
+         Associated Scheduled Item: 'contains=Accidental Death Benefit - Child',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Accidental Death Benefit,
+         Associated Scheduled Item: 'contains=Accidental Death Benefit - Employee',
+         Date of Service: $<today>
+       },{
+         Associated Benefits: Accidental Death Benefit,
+         Associated Scheduled Item: 'contains=Accidental Death Benefit - Spouse',
+         Date of Service: $<today>
+       }]
+}
+
+TestData_Payment: {
+  PaymentPaymentPaymentDetailsTab: {
+    Gross Amount: 100,
+    Payment To: index=1,
+    Non Provider Payment Type: index=1
+  },
+  PaymentPaymentPaymentAllocationTab: {
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    Allocation Amount: 1000
+  }
+}
+

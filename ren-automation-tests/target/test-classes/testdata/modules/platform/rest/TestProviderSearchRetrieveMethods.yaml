@@ -1,0 +1,58 @@
+NonIndividualProviderForSearch: {
+  taxId: 'NonIndividualTax$<rx:\d{4}>',
+  status: ACTIVE,
+  name: 'nonIndTest$<rx:\d{8}>',
+  countryCd: US,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  zipCd: 11111,
+  state: CA,
+  serviceTypes: [
+    'ACCOUNTANT',
+    'AMBULANCE',
+    'ANTIQUES'
+  ],
+  mailingAddressSame: true,
+  externalSourceType: 'ExtST$<rx:\d{4}>',
+  startDate: null,
+  finishDate: null,
+  vendorProfileType: 'nonIndividual',
+  identities:{
+    EXTERNAL: 'external$<rx:\d{8}>'
+  }
+}
+
+IndividualProviderForSearch: {
+  taxId: 'IndividualTax$<rx:\d{4}>',
+  name: 'IndTest$<rx:\d{8}>',
+  countryCd: US,
+  zipCd: 94303,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  state: AK,
+  serviceTypes: [
+    'ACCOUNTANT',
+    'AMBULANCE',
+    'CLINIC'
+  ],
+  mailingAddressSame: true,
+  serviceProviderCreateDTO: {
+    firstName: 'John$<rx:\d{8}>',
+    lastName: 'Smith$<rx:\d{8}>',
+    code: 'code$<rx:\d{4}>'
+  },
+  startDate: '$<today-10d:yyyy-MM-dd>',
+  finishDate: '$<today+2y:yyyy-MM-dd>',
+  vendorRating: SILVER,
+  status: ACTIVE,
+  regionCd: AL,
+  insuredCorrespondenceRequired: true,
+  externalSourceType: 'ExtST$<rx:\d{4}>',
+  startDate: null,
+  finishDate: null,
+  vendorProfileType: 'individual',
+  identities: {
+    NPI: 'npi$<rx:\d{8}>',
+    EXTERNAL: 'external$<rx:\d{8}>'
+  }
+}

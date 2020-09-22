@@ -1,0 +1,43 @@
+CreateTestData: {
+  CatastropheTab: {
+    Catastrophe ID: '$<static:catastropheId:[rx:catastropheId\d{6}]>',
+    Catastrophe Name: '$<static:catastropheName:[rx:catastropheName\d{6}]>',
+    Catastrophe Type: 'Flood',
+    Event Start Date: $<today>,
+    Event End Date: $<today+1d>
+  }
+}
+SearchTestDataForNew: {
+  CatastropheSearchTab: {
+    Catastrophe ID: '$<static:catastropheId:[rx:catastropheId\d{6}]>'
+  }
+}
+
+SearchTestDataForUpdate: {
+  CatastropheSearchTab: {
+    Catastrophe ID: '$<static:updateCatastropheId:[rx:updateCatastropheId\d{6}]>'
+  }
+}
+
+UpdateTestData: {
+  CatastropheTab: {
+      Catastrophe ID: '$<static:updateCatastropheId:[rx:updateCatastropheId\d{6}]>',
+      Catastrophe Name: '$<static:updateCatastropheName:[rx:updateCatastropheName\d{6}]>',
+      Event Start Date: $<today-5d>,
+      Event End Date: $<today-1d>
+  }
+}
+
+TestData_Riot: {
+  CatastropheTab: {
+    Catastrophe ID: 'CatastropheID$<rx:\d{8}>',
+    Catastrophe Name: '$<static:catastropheName:[rx:CatastropheName\d{6}]>',
+    Catastrophe Type: 'Riot',
+    Impacted Countries: United States,
+    Impacted States: 'United States - IL',
+    Impacted Cities: Alden,
+    Impacted Zip Codes: 60003,
+    Event Start Date: $<today-14d>,
+    Event End Date: $<today+14d>
+  }
+}

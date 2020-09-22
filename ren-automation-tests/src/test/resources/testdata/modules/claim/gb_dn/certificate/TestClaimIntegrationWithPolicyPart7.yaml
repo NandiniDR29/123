@@ -1,0 +1,16 @@
+TestData_AddTwoServices: {
+  IntakeInformationTab: {
+    Submitted Services: [{
+      },
+      {
+        DOS: $<today-4d>,
+        CDT Code: 'D8010',
+        Charge: 700
+      },
+      {
+        DOS: $<today-3d>,
+        CDT Code: 'D8210',
+        Charge: 100
+      }]
+  }
+}

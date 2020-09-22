@@ -1,0 +1,121 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@SelectPlanMaster', '@PlanDefinition_EVL', '@PlanDefinition_SVL', '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+                      '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove', '@PlanDefinitionEmployeeVoluntary_Remove'],
+  ClassificationManagementTab: ['@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife', '@ClassificationMgmtSpouseVoluntaryLife'],
+}
+
+SelectPlanMaster: {
+  Plan: Voluntary Life
+}
+
+PlanDefinition_EVL: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'No',
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Total Number of Eligible Lives: 10,
+  Member Payment Mode: 12,
+  Accelerated Benefit Maximum Percentage: 50%,
+  Accelerated Benefit Minimum Amount: 15000,
+  Accelerated Benefit Minimum Percentage: 20%,
+  Continuation: 'Total Disability',
+  Portability: 'Included',
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Rounding Method: 'None',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '500000',
+    Increment: '$10,000.00',
+    Maximum Salary Multiple: '5x',
+    Earning Definition: 'Salary'
+  },
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinition_SVL: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Self-administered?': 'No',
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Benefit Minimum Amount: '5000',
+    Benefit Maximum Amount: '50000',
+    Increment: '$5,000.00',
+    Coverage up to Max of Employee Coverage: 50%
+  }
+}
+
+PlanDefinitionEmployeeVoluntary_Remove: {
+  CoverageKeyRemove: Employee Voluntary Accidental Death and Dismemberment Insurance
+}
+
+ClassificationMgmtSpouseVoluntaryLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+TestData_CertificatePolicy: {
+  CoveragesTab: ['@SelectPlanCertificate', '@CoveragesTabVoluntaryLifeInsurance', '@CoveragesTabSpouseVoluntaryLifeInsurance']
+}
+
+SelectPlanCertificate: {
+  Plan Name: Voluntary Life
+}
+
+CoveragesTabVoluntaryLifeInsurance: {
+  Coverage Name: Employee Voluntary Life Insurance,
+  Enrollment Date: $<today>,
+  'EOI Required?': 'No',
+  Current Effective Amount: '$100,000.00',
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+CoveragesTabSpouseVoluntaryLifeInsurance: {
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Enrollment Date: $<today>,
+  Benefit Spouse: {
+    Elected Benefit Amount: 2000,
+    'EOI - Spouse Required?': 'No',
+    'Current Effective Amount - Spouse Combobox': '$20,000.00'
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Participant General Info: {
+    First Name: 'Martha<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-25y>
+  }
+}
+
+TestData_MinimumBenefitAmount: {
+  PlanDefinitionTab: {
+    CoverageKey: Spouse Voluntary Life Insurance,
+    'Benefit Schedule - Spouse': {
+      'Minimum Benefit Amount': '$10,000.00'
+    }
+  }
+}
+
+TestData_Admin: {
+  CascadingProcessingSearchTab: {
+    Master Policy Number: number
+  }
+}

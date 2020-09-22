@@ -1,0 +1,5 @@
+TestData: {
+  CampaignTab: {
+    Campaign Name: 'Updated$<rx:\d{8}>',
+  }
+}

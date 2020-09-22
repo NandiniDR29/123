@@ -1,0 +1,46 @@
+TestData_PlanWA1: {
+  PlanDefinitionTab: ['@SelectPlanWA1', '@PlanDefinitionTabWA1'],
+  ClassificationManagementTab: '@ClassificationManagementTabWA1',
+}
+
+SelectPlanWA1: {
+  Plan: 'WA Plan 1'
+}
+
+PlanDefinitionTabWA1: {
+  PlanKey: 'WA1-WA Plan 1',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+ClassificationManagementTabWA1: {
+  Plan: 'WA1-WA Plan 1',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+}
+
+TestData_Issue: {
+  PlanDefinitionIssueActionTab: '@PlanDefinitionIssueActionTab',
+}
+
+PlanDefinitionIssueActionTab: {
+  Include Retirees: 'No',
+  Minimum Hourly Requirement (hours per week): '25',
+  'Eligibility Waiting Period Waived For Current Employees?': 'No',
+  Eligibility Waiting Period Definition: 'None',
+  Dependent Maximum Age: '20',
+  'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+  Benefits End On: 'Last date of employment'
+}

@@ -1,0 +1,11 @@
+TestData: {
+  StartPremiumAdjustmentActionTab: {
+    Premium Adjustment Date: $<BOM>
+  },
+  ClassificationManagementActionTab: {
+    Plan Tier And Rating Info: {
+      Number of Participants: 100,
+    },
+  },
+  PremiumSummaryAdjustPremiumActionTab: {}
+}

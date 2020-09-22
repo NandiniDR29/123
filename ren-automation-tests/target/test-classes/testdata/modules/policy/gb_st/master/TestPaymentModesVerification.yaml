@@ -1,0 +1,15 @@
+TestData: {
+  PlanDefinitionTab: [
+    '@PlanDefinitionEnhancedNY',
+    '@PlanDefinitionPFLNY']
+}
+
+PlanDefinitionEnhancedNY: {
+  Action: Add Coverage,
+  Coverage Name: Enhanced NY
+}
+
+PlanDefinitionPFLNY: {
+  Action: Add Coverage,
+  Coverage Name: PFL NY
+}

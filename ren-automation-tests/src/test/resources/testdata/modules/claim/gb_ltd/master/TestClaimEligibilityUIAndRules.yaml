@@ -1,0 +1,23 @@
+TestData_Claim_MultipleCoverages: {
+  PolicyInformationParticipantParticipantCoverageTab: ['@PolicyInformationParticipantParticipantCoverageTab_CON','@PolicyInformationParticipantParticipantCoverageTab_NC','@PolicyInformationParticipantParticipantCoverageTab_SGR','@PolicyInformationParticipantParticipantCoverageTab_VOL']
+}
+
+PolicyInformationParticipantParticipantCoverageTab_CON: {
+  Plan: 'CON',
+  Coverage Name: 'LTD Core - CON'
+}
+
+PolicyInformationParticipantParticipantCoverageTab_NC: {
+  Plan: 'NC',
+  Coverage Name: 'LTD Core - NC'
+}
+
+PolicyInformationParticipantParticipantCoverageTab_SGR: {
+  Plan: 'SGR',
+  Coverage Name: 'LTD Core - SGR'
+}
+
+PolicyInformationParticipantParticipantCoverageTab_VOL: {
+  Plan: 'VOL',
+  Coverage Name: 'LTD Core - VOL'
+}

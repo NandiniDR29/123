@@ -1,0 +1,11 @@
+PlanDefinitionTabWithThreePlans: {
+  PlanDefinitionTab: ['@PlanDefinitionTab'],
+}
+
+PlanDefinitionTab: {
+  Plan: [NC, CON, VOL],
+  Total Number of Eligible Lives: 1,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12,
+  },
+}

@@ -1,0 +1,41 @@
+TestData: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': MaritalStatusCd
+  }
+}
+
+TestData_Branch: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': Branch
+  }
+}
+
+TestData_Country: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': Country
+  }
+}
+
+TestData_Citizenship: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': Citizenship
+  }
+}
+
+TestData_Gender_Type: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': GenderType
+  }
+}
+
+TestData_StateTimeZone: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': stateTimeZone
+  }
+}
+
+TestData_TimeZones: {
+  DBLookupsSearchTab: {
+    'LookupList Name: ': supportedBusinessTimeZones
+  }
+}

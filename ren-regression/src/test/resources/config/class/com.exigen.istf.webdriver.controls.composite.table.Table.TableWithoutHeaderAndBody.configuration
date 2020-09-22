@@ -1,0 +1,5 @@
+{
+    "headerLocator": "",
+    "columnByIndexTemplate": "//tr/td[%s]",
+    "rowThatTemplate": "//tr[%s]"
+}

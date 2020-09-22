@@ -1,0 +1,191 @@
+TestData_Policy: {
+  PlanDefinitionTab: ['@SelectPlanBASEBU', '@PlanDefinitionTab_BASEBU'],
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_BASEBU'],
+}
+
+SelectPlanBASEBU: {
+  Plan: Base Buy-Up
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+OptionalBenefitTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Hospital Confinement Benefit: {
+    Apply Benefit Hospital Confinement Benefit: true,
+    Hospital Confinement Benefit Amount: 40
+  }
+}
+
+ClassificationManagementTab_BASEBU: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+TestData_Claim: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: '@PolicyInformationPolicyTab',
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationDependentDependentInformationTab: {},
+  PolicyInformationDependentDependentCoverageTab: {},
+  PolicyInformationSponsorTab: {},
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabDiagnosisAndTreatment'],
+  BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab: '@BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab',
+  BenefitsDiagnosisAndTreatmentIncidentTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: index=1
+}
+
+PolicyInformationPolicyTab: {
+  Original Effective Date: $<BOM>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Plan: Base Buy-Up,
+  Coverage Name: Enhanced Accident - Base Buy-Up,
+  Limit Level: Per Occurrence,
+  Limit Amount: 100
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabDiagnosisAndTreatment: {
+  Damage: Diagnosis and Treatment
+}
+
+BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab: {
+  Associated Policy Party: index=1,
+  Date of Birth: $<today-40y>,
+  'Itemized Injury/Illness': [
+    {
+      Associated Benefits: Lodging Benefit,
+      Associated Scheduled Item: index=0,
+      Estimated Cost/Value: 100,
+      'Number of Units (Days, Visits, Tests)': 1,
+      Date of Service: $<today>
+    },
+    {
+      Associated Benefits: Physical Therapy Service Benefit,
+      Associated Scheduled Item: index=0,
+      Estimated Cost/Value: 100,
+      'Number of Units (Days, Visits, Tests)': 2,
+      Date of Service: $<today>
+    },
+    {
+      Associated Benefits: Rehabilitation Unit Benefit,
+      Associated Scheduled Item: index=0,
+      Estimated Cost/Value: 400,
+      'Number of Units (Days, Visits, Tests)': 2,
+      Date of Service: $<today>
+    },
+    {
+      Associated Benefits: Hospital Confinement Benefit,
+      Associated Scheduled Item: index=0,
+      Estimated Cost/Value: 80,
+      'Number of Units (Days, Visits, Tests)': 2,
+      Date of Service: $<today>
+    },
+    {
+      Associated Benefits: Health Screening Benefit,
+      Associated Scheduled Item: index=0,
+      Estimated Cost/Value: 25,
+      'Number of Units (Days, Visits, Tests)': 1,
+      Date of Service: $<today>
+    },
+  ]
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>',
+}
+
+EAPServicesServiceRequestTab: {
+  Damage: index=1,
+  Service Type: index=1,
+  Add: 'click'
+}
+
+TestData_CalculateSingleBenefitAmount: {
+  CoveragesActionTab: {
+    Associated Insurable Risk: contains=Physical Therapy Services Benefit,
+    Coverage: Enhanced Physical Therapy Services Benefit - Base Buy-Up
+  }
+}
+
+TestData_Payment: {
+  PaymentPaymentPaymentAllocationTab: {
+    Benefit: index=0,
+    Coverage: Enhanced Physical Therapy Services Benefit - Base Buy-Up,
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    'Pull Check?': 'Yes'
+  }
+}

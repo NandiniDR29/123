@@ -1,0 +1,6 @@
+TestData: {
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  }    
+}

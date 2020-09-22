@@ -1,0 +1,41 @@
+TestData: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus7Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+7M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus10Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+10M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus2Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+2M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus1Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+1M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus5Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+5M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}

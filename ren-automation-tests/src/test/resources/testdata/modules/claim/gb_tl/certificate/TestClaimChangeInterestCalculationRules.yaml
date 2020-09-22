@@ -1,0 +1,296 @@
+TestDataCaseProfile: {
+  CaseProfileDetailsTab: '@CaseProfileDetailsTab',
+  ProductAndPlanManagementTab: '@ProductAndPlanManagementTabGBGB',
+  ClassificationManagementTab: ['@ClassificationManagementTabClass2'],
+  LocationManagementTab: {},
+  FileIntakeManagementTab: ['@FileIntakeManagementTab']
+}
+
+CaseProfileDetailsTab: {
+  Case Profile Name: __first_one,
+  Effective Date: $<today-1y>,
+  Group Domicile State: CA,
+  Agency / Producer: [QAG - QA Agency]
+}
+
+ProductAndPlanManagementTabGBGB: {
+  Product: Group Benefits
+}
+
+ClassificationManagementTabClass2: {
+  Classification Group: {
+    Class Name: 1,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'No'
+  }
+}
+
+FileIntakeManagementTab: {
+  Intake Profile Name: 'IntakeProfile$<rx:\d{8}>',
+  Effective Date: $<today-1y>,
+  Product: [ALL],
+  File Type: 'Quote',
+  Record Type: 'Eligibility',
+  Upload File Dialog: {
+    File Name: 'UploadedFile$<rx:\d{8}>',
+    File Upload: '$<file:REN_Rating_Census_Sample_File_latest.xlsx>',
+  }
+}
+
+TestDataPolicyMaster: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Situs State: CT,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Total Number of Eligible Lives: '1',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  Tier: Spouse and/or Child
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}
+
+TestDataPolicyCertificate: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: ['@SelectPlan_For_Certificate', '@CoveragesTabBasicAccidentalDeathBeneficiary', '@CoveragesTabBasicLifeBeneficiary'],
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CT
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Date of Birth: $<today-25y>,
+  Gender: Male,
+  Tobacco: 'Yes',
+  Tax Identification: '$<rx:\d{9}>',
+  Address Type: index=1,
+  Country: United States,
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CT,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  Original Hire Date: $<BOM>,
+  Employment Type: index=1,
+  Payroll Frequency: index=1,
+  Job Title: 'Banking',
+  Annual Earnings: 5000,
+  Classification Group: index=1
+}
+
+CoveragesTabBasicAccidentalDeathBeneficiary: {
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+  Beneficiaries: {
+    Add Beneficiary: CLICK,
+    Role Percent: 100,
+    Beneficiary Selection: New Person,
+    Member Payment Mode: index=1,
+    Beneficiary General Info: {
+      First Name: 'Mary$<rx:\d{8}>',
+      Last Name: 'Smith$<rx:\d{8}>',
+      Tax Identification: '$<rx:\d{9}>',
+      Relationship to Insured: index=1
+    },
+    Beneficiary Address Info: {
+      Address Type: index=1,
+      Country: United States,
+      City: Walnut Creek,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      State / Province: CT,
+      Zip / Post Code: 94956
+    }
+  }
+}
+
+CoveragesTabBasicLifeBeneficiary: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+  Beneficiaries: {
+    Add Beneficiary: CLICK,
+    Role Percent: 100,
+    Beneficiary Selection: New Person,
+    Member Payment Mode: index=1,
+    Beneficiary General Info: {
+      First Name: 'Mary$<rx:\d{8}>',
+      Last Name: 'Smith$<rx:\d{8}>',
+      Tax Identification: '$<rx:\d{9}>',
+      Relationship to Insured: index=1
+    },
+    Beneficiary Address Info: {
+      Address Type: index=1,
+      Country: United States,
+      City: Walnut Creek,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      State / Province: CT,
+      Zip / Post Code: 94956
+    }
+  }
+}
+
+TestDataClaimFinalPayment: {
+  PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabFinalPayment',
+  PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabFinalPayment',
+  PaymentPaymentAdditionalPayeeTab: {},
+  PaymentInvoiceInvoicedFromTab: {},
+  PaymentInvoiceInvoiceDetailsTab: {},
+  PaymentCalculatorTab: {}
+}
+
+PaymentPaymentPaymentDetailsTabFinalPayment: {
+  Gross Amount: 1000,
+  Payment Post Date: $<today+30d>,
+  'Payment To': index=1,
+  'Non Provider Payment Type': index=1
+}
+
+PaymentPaymentPaymentAllocationTabFinalPayment: {
+  Reserve Type: Indemnity,
+  Final Payment: 'Yes',
+  Allocation Amount: 1000
+}
+
+
+TestData_Accidental_Death_OtherValues: {
+  BenefitDeathDecedentTab: '@BenefitAccidentalDeathDecedentTab'
+}
+
+BenefitAccidentalDeathDecedentTab: {
+  'Add Benefit: Accidental Death': 'click',
+  Associated Policy Party: index=1,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+}
+
+TestData_Accidental_Death: {
+  BenefitDeathDecedentTab: '@BenefitAccidentalDeathDecedentTab',
+  BenefitDeathIncidentTab: {},
+  BenefitDeathDeathCertificateTab: '@BenefitsDeathDeathCertificateTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab',
+  BenefitDeathBeneficiaryTab: {
+    Party Name: index=1,
+    Relationship To Decedent: index=1,
+    Contact Preference: Email,
+    Email: test@test.com,
+    Preferred Payment method: Check,
+    Coverage: index=1
+  }
+}
+
+BenefitsDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today>
+}
+
+SelectPlan_For_Certificate: {
+  Plan Name: Basic Life
+}

@@ -1,0 +1,54 @@
+TestData_WithOtherPayee: {
+  LossEventTab: {},
+  LossContextTab: {
+    Save Loss As: index=1
+  },
+  IntakeInformationTab: '@IntakeInformationTabWithOtherPayee',
+}
+
+IntakeInformationTabWithOtherPayee: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '$<rx:\d{10}>',
+    'License #': '$<rx:\d{5}>',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '10001',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: 'Other',
+  Company Name: 'company',
+  Tax Identification Number: '36346',
+  Other Payee Address: {
+    Zip / Postal Code: '10003',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State / Province: 'NY',
+  },
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D2971',
+    Tooth: '3',
+    Charge: 1000
+  }
+}
+
+TestData_Other: {
+  Company Name: 'company',
+  Tax Identification Number: '36346',
+  Other Payee Address: {
+    Zip / Postal Code: '10003',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State / Province: 'NY',
+  }
+}

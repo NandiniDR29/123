@@ -1,0 +1,31 @@
+EmploymentInfo: {
+ EmploymentTab: {
+    Employer Name: 'John Smith',
+    Occupation: 'Other',
+    Occupation-Description: 'other_description',
+    Occupation Status: 'Other',
+    Job Title: 'Other',
+    Job Title-Description: 'other_job_title',
+    As of Date: '$<today>'
+  }
+}
+
+REST_AddEmployment: {
+    "employerName": "hanna_one_employment_post",
+    "occupationCd": "Other",
+    "occupationDescription": "other_description_post",
+    "occupationStatusCd": "OTHER",
+    "jobTitleCd": "OTHER",
+    "jobTitleDescription": "other_job_title_post",
+    "asOfDate": "$<today:yyyy-MM-dd>"
+  }
+
+REST_UpdateEmployment: {
+    "employerName": "hanna_one_employment_updated",
+    "occupationCd": "Other",
+    "occupationDescription": "other_description_updated",
+    "occupationStatusCd": "OTHER",
+    "jobTitleCd": "OTHER",
+    "jobTitleDescription": "other_job_title_updated",
+    "asOfDate": "$<today+1d:yyyy-MM-dd>"
+}

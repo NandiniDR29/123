@@ -1,0 +1,92 @@
+TestData_REN_25770: {
+  PlanDefinitionTab: ['@SelectPlan_CON', '@PlanDefinitionTab_Policy_REN_25770']
+}
+
+SelectPlan_CON: {
+  Plan: CON
+}
+
+PlanDefinitionTab_Policy_REN_25770: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Participant Contribution %: 50,
+    Sponsor Payment Mode: 12,
+    Member Payment Mode: 12,
+  },
+  Eligibility:{
+    Minimum Hourly Requirement (hours per week): 15.00,
+    'Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Employer Benefits: {
+    Workplace Modification Benefit: Included,
+    Workplace modification benefit %: 100,
+    Workplace modification benefit Maximum: $2000
+  }
+}
+
+TestData_Claim: {
+  BenefitsLTDInjuryPartyInformationTab: {
+    Reported Expense Amount: 3000
+  },
+  AdditionalPartiesAdditionalPartyTab: ['@Party1', '@Party2']
+}
+
+Party1: {
+  Benefit: 'contains=John',
+  Party Name: 'contains=John',
+  Social Security Number (SSN): 111-11-1111
+}
+
+Party2: {
+  Add Additional Party: CLICK,
+  Party Name: 'Other Company',
+  Company Name: 'Test Company Name',
+  Contact Preference: Mail,
+  Add Additional Party Association Address: CLICK,
+  Zip / Postal Code: '32011',
+  Address Line 1: '$<static:customerAddressLine1:[rx:Address\d{8}]>',
+  City: '$<static:customerCity:[rx:City\d{8}]>',
+  State / Province: CA
+}
+
+TestData_PaymentDetails: {
+  PaymentPaymentPaymentDetailsTab: {
+    Payment To: 'contains=Test Company Name',
+  },
+  PaymentPaymentPaymentAllocationTab:{
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    'Pull Check?': 'Yes',
+  }
+}
+
+
+TestData_REN_26249: {
+  PlanDefinitionTab: ['@SelectPlan_CON', '@PlanDefinitionTab_Policy_REN_26249']
+}
+
+PlanDefinitionTab_Policy_REN_26249: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Participant Contribution %: 50,
+    Sponsor Payment Mode: 12,
+    Member Payment Mode: 12,
+  },
+  Eligibility:{
+    Minimum Hourly Requirement (hours per week): 15.00,
+    'Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Employer Benefits: {
+    Workplace Modification Benefit: 'Not Included'
+  }
+}

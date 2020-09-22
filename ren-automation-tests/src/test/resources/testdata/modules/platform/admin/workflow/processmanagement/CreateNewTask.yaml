@@ -1,0 +1,15 @@
+TestData_TaskDefinition: {
+  ManualTaskDefinitionTab: {
+    Definition Key: '$<static:processKey>',
+    Entity Type: '$<static:entityType>',
+    Task Name: 'Source User Task 1',
+    Effective Date: $<today>,
+    Priority: 1
+  }
+}
+
+TestData_LinkedTask: {
+}
+
+TestData_Body: {
+}

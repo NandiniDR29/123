@@ -1,0 +1,44 @@
+UpdateCaseProfile: {
+  CaseProfileDetailsTab: {},
+  ProductAndPlanManagementTab: {},
+  ClassificationManagementTab: {},
+  LocationManagementTab: '@LocationManagementTab',
+  FileIntakeManagementTab: []
+}
+
+LocationManagementTab: {
+  Add Billing Location:
+    {
+      Location Name: 'Billing Location 1',
+      Location Number: '10000',
+      Tax Identification: '12-3456789'
+    }
+}
+
+TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: 'Add Billing Location'
+  },
+  BillingLocationsMappingTab: {
+    Classification Group: index=1,
+    Billing Location: 'Billing Location 1'
+  },
+  BillingGroupsTab: ['@BasicAccidentBASEBU'],
+  BillingAccountSetupTab: {}
+}
+
+BasicAccidentBASEBU: {
+  Classification Group: 'Employment'
+}
+
+TestData_AdditionalParties: {
+  AdditionalPartiesAdditionalPartyTab: {
+    Party Name: index=1,
+    Contact Preference: Mail,
+    Zip / Postal Code: '32011',
+    Address Line 1: 'Address$<rx:\d{8}>',
+    City: Walnut Creek,
+    State / Province: FL
+  }
+}

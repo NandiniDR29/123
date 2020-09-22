@@ -1,0 +1,71 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab',
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Paid Family Leave,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  Situs State: FL,
+  'Rate Guarantee (Months)': 12,
+  Internal Team: {
+    Sales Representative: index=1,
+    Underwriter: index=1
+  }
+}
+
+PlanDefinitionTab: {
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Mandatory,
+    Member Payment Mode: 12
+  },
+  Rating: {
+    Rate Basis: Percent of Taxable Wage,
+  },
+  Options: {
+    FICA Match: None,
+    W2: Not Included,
+  }
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: 10,
+  Total Volume: '15000'
+}
+
+NonFillableRequestData: {
+  'quoteType': New Business,
+  'plans[0].planID': FLB,
+  'plans[0].coverageType': New Jersey PFL,
+  'plans[0].ratingBasis': Percent of Taxable Wage,
+  'plans[0].censusType': None,
+  'plans[0].benefitType': Percent of Salary,
+  'plans[0].benefitPct': 0.6667,
+  'plans[0].benefitMax': 650,
+  'plans[0].w2Preparation': false,
+  'plans[0].erFICAMatch': Not Included,
+  'plans[0].eeContrPct': '1.00000000'
+}
+
+ResponseData: {
+  'policyID': MP0000001,
+  'planCalcs[0].premiumRate': '8.0E-4'
+}
+
+#Hardcoded premium values that were provided by OpenL Team for quote with automation test data
+ResponseCheckRatingPremium: {
+  'planCalcs[0].premiumRate': '0.0016'
+}

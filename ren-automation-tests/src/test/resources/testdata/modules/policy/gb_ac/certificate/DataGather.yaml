@@ -1,0 +1,184 @@
+TestData: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: ['@CoveragesTab', '@CoveragesTab_EnhancedAccident'],
+  PremiumSummaryTab: {}
+}
+
+TestData_PlanBASEBU: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: ['@CoveragesTab', '@CoveragesTab_EnhancedAccident'],
+  PremiumSummaryTab: {}
+}
+
+TestData_WithoutNewCustomer: {
+  CertificatePolicyTab: {},
+  InsuredTab: '@InsuredTabWithoutNewCustomer',
+  CoveragesTab: '@CoveragesTab',
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Tobacco: 'Yes',
+  Tax Identification: '$<rx:\d{9}>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  General Information: {
+    Title: Mr,
+    Suffix: Jr.,
+    Gender: Male,
+    Date of Birth: $<today-25y>
+  },
+  Address Information:{
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Country: United States
+  },
+  Relationship Information:{
+    Job Code: Any Work,
+    Employment Status: Active,
+    Job Title: just a job,
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Pay Class: Full-Time,
+    Pay Type: Salary,
+    Payroll Frequency: Monthly
+  },
+}
+
+InsuredTabWithoutNewCustomer: {
+  'Create New Customer?': 'No',
+  Search Customer: {
+    First Name: '',
+    Last Name: ''
+  },
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Classification Group: index=1
+}
+
+CoveragesTab: {
+  Plan: index=1,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants:{
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  }
+}
+
+CoveragesTab_EnhancedAccident: {
+  Coverage Name: Enhanced Accident,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants:{
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  }
+}
+
+CoveragesTab_WithBenefit: {
+  Plan: index=1,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants:{
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  },
+  Beneficiaries:{
+    Add Beneficiary: CLICK,
+    Beneficiary Selection: index=0,
+    Role Percent: 100
+  }
+}
+
+CoveragesTab_PlanBASEBU: {
+  CoveragesTab: {
+    Plan: Base Buy-Up,
+    Coverage Tier: Employee Only,
+    Enrollment Date: $<today>,
+    Participants:{
+      Add Participant: CLICK,
+      Participant Selection: index=0
+    }
+  }
+}
+
+CoveragesTab_PlanEnhanced: {
+  CoveragesTab: {
+    Plan: Enhanced 10 Units,
+    Coverage Tier: Employee Only,
+    Enrollment Date: $<today>,
+    Participants:{
+      Add Participant: CLICK,
+      Participant Selection: index=0
+    }
+  }
+}
+
+CoveragesTab_PlanCopiedFromEnhanced: {
+  CoveragesTab: {
+    Plan: TestEnhanced 10 Units,
+    Coverage Tier: Employee Only,
+    Enrollment Date: $<today>,
+    Participants:{
+      Add Participant: CLICK,
+      Participant Selection: index=0
+    }
+  }
+}
+
+CoveragesTab_PlanVoluntary: {
+  CoveragesTab: {
+    Plan: Voluntary 10 Units,
+    Coverage Tier: Employee Only,
+    Enrollment Date: $<today>,
+    Participants:{
+      Add Participant: CLICK,
+      Participant Selection: index=0
+    }
+  }
+}
+
+Adjustment_BackDated: {
+  CerfiticatePolicyTab: {
+    Effective Date: $<BOM-2M>,
+    Issue State: CA
+  }
+}
+
+
+TestData_Endorsement: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    Relationship Information:{
+      Salary Amount: 10000
+    }
+  },
+  CoveragesTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_AddNewParticipant: {
+  CoveragesTab: {
+    Participants: {
+      Participant Selection: New Person,
+      Role Name: Spouse Participant,
+      Participant General Info: {
+        First Name: 'John$<rx:\d{8}>',
+        Last Name: 'Smith$<rx:\d{8}>',
+        Date of Birth: $<today-25y>
+      }
+    }
+  }
+}

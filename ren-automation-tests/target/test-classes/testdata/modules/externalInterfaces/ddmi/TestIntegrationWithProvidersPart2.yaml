@@ -1,0 +1,31 @@
+Adjustment_Provider1: {
+  TIN: '411854946',
+  'License #': 'D12824',
+  License NPI: '1881914182',
+  License State/Province: 'MN',
+  Specialty: 'General Practitioner',
+  Zip/Postal Code: '553374524',
+  Address Line 1: '40 W Nicollet Blvd',
+  City: 'Burnsville',
+  State/Province: 'MN',
+  Search Vendor: 'click',
+  Add Vendor: 'click'
+}
+
+Adjustment_Provider2: {
+  TIN: '351386985',
+  'License #': '6947',
+  License NPI: '1225145550',
+  Provider Name: 'ROBERT HOLLOWAY',
+  Practice Name: 'ROBERT L HOLLOWAY DDS',
+  'Phone #': '3177730278',
+  Address: '1104 Conner St. , Noblesville, IN, 46060, US',
+  Alternative Payee: 'ROBERT L HOLLOWAY DDS, PO Box 1173, Noblesville, IN, 46061-1173, US',
+  Alternative Payee Name: 'ROBERT L HOLLOWAY DDS',
+  License State/Province: 'IN',
+  Specialty: 'General Practitioner',
+  Zip/Postal Code: '46060',
+  Address Line 1: '1104 Conner St.',
+  City: 'Noblesville',
+  State/Province: 'IN'
+}

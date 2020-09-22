@@ -1,0 +1,38 @@
+TestData: {
+  GeneralTab: {
+   Agency Assignment:[
+     {},
+     {
+       Agency/Producer: {
+         Agency Name: Broker1Name
+       }
+     }
+    ]
+   },
+   DivisionsTab: {},
+   RelationshipTab: {}
+ }
+
+TestData_Optional: {
+  GeneralTab: {
+    Agency Assignment:[
+      {
+        Agency/Producer: {
+          Agency Name: '$<static:agency1>'
+        }
+      },
+      {
+        Agency/Producer: {
+          Agency Name: '$<static:agency2>'
+        }
+      }
+    ]
+  },
+  RelationshipTab: {}
+}
+
+Add_Agency_By_AgencyName: {
+  Agency/Producer: {
+    Agency Name: ''
+  }
+}

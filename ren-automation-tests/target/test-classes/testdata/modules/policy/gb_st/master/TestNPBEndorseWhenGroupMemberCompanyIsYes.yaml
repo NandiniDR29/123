@@ -1,0 +1,31 @@
+TestDataCustomer: {
+  RelationshipTab: ['@RelationshipWithNonIndividualTypeDivision','@RelationshipWithNonIndividualTypeDivision']
+}
+
+RelationshipWithNonIndividualTypeDivision: {
+  Type: Non-Individual,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Relationship to Customer: Member Company,
+  Date business started: $<today-10y>
+}
+
+
+TestDataPolicy: {
+  PolicyInformationTab: {
+    Situs State: 'NY',
+    Group is Member Company: 'Yes',
+    Member Company Name: 'index=1',
+    'Short Term?': 'No',
+    'Prior Claims Allowed?': 'false',
+    Prior Carrier Name: 'None',
+    'Under 50 Lives?': 'No',
+    County Code: '001 - Albany County',
+    'Has Continuity of Coverage?': 'Yes',
+    'Separate Or Combined Experience Rating?': 'Combined',
+    Internal Team: {
+      Sales Representative: index=1,
+      Underwriter: index=1,
+      Sales Support Associate: index=1
+    }
+  }
+}

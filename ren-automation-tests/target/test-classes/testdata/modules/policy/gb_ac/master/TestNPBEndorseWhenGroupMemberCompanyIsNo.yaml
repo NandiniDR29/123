@@ -1,0 +1,13 @@
+TestDataPolicy: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    Situs State: 'GA',
+    Group is Member Company: 'No',
+    'Prior Claims Allowed?': 'true',
+    Total Number of Eligible Lives: '2',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    }
+  }
+}

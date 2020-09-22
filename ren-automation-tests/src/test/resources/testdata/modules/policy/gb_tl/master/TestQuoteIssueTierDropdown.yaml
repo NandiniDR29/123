@@ -1,0 +1,10 @@
+TestData: {
+  PlanDefinitionTab: ['@DependentBasicLifeInsurance']
+}
+
+DependentBasicLifeInsurance: {
+  Census Type: index=1,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%
+}

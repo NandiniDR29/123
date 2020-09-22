@@ -1,0 +1,8 @@
+TestData_RelationshipWithPhoneDetails: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: index=1,
+    Phone Details: {}
+  }
+}

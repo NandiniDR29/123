@@ -1,0 +1,1015 @@
+{
+  "restTargets": {
+    "EMPLOYER.PROFILE": {
+      "target": "/employer/v1/profile",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MEMBER.PROFILE": {
+      "target": "/employer/v1/members/{customerNumber}/profile",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MEMBERS.ADDRESSES": {
+      "target": "/employer/v1/members/{customerNumber}/addresses",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MEMBERS.ADDRESSES.ADDRESS": {
+      "target": "/employer/v1/members/{customerNumber}/addresses/{addressId}",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MEMBERS.CERTIFICATES": {
+      "target": "/employer/v1/members/{customerNumber}/certificates",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS.STATEMENTS.GENERATE.DRAFT": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/statements/generate-draft",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS.SELF.BILLING.INVOICE.COVERAGE.PERIODS": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/self-billing/invoice-coverage-periods",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS.INVOICES": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/invoices/{invoiceNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS.SELF.BILLING.INVOICE.COVERAGE.PERIODS.WITH.DATE": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/self-billing/invoice-coverage-periods/{startDate}/{endDate}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS.SELF.BILLING.INVOICE.COVERAGE.PERIODS.WITH.DATE.SUBMIT": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/self-billing/invoice-coverage-periods/{startDate}/{endDate}/submit",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS": {
+      "target": "/employer/v1/billing/{groupCustomerNumber}/accounts",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.PAYMENT.METHODS": {
+      "target": "/employer/v1/billing/groups/{groupCustomerNumber}/payment-methods",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.GROUPS.STATEMENTS": {
+      "target": "/employer/v1/billing/groups/{groupCustomerNumber}/statements",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.RECURRING.PAYMENTS.SETTINGS": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/recurring-payments-settings",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.MAKE.PAYMENT": {
+      "target": "/employer/v1/billing/accounts/{accountNumber}/make-payment",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.BILLING.ACCOUNTS.STATEMENTS.GENERATE": {
+       "target": "/employer/v1/billing/accounts/{accountNumber}/statements/generate",
+       "methods": {
+         "POST": {
+           "mediaType": "application/json"
+         }
+       }
+     },
+    "EMPLOYER.BILLING.ACCOUNTS.STATEMENTS.GENERATION.STATUS": {
+      "target": "/employer/v1/billing/accounts/documents/{docgenTicket}/generation-status",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUP.MASTER.POLICIES": {
+      "target": "/employer/v1/groups/{customerNumber}/master-policies",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE": {
+      "target": "/member/v1/profile",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.EMAILS": {
+      "target": "/member/v1/profile/emails",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.PAPERLESS": {
+      "target": "/member/v1/profile/paperless",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.ACKNOWLEDGMENTS": {
+      "target": "/member/v1/profile/acknowledgments",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.PROFILE.ACKNOWLEDGMENTS": {
+      "target": "/employer/v1/profile/acknowledgments",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.CUSTOMER.NUMBER.EMAILS": {
+      "target": "/employer/v1/members/{customerNumber}/emails",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MEMBER.CUSTOMER.NUMBER.PHONES": {
+      "target": "/employer/v1/members/{customerNumber}/phones",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MEMBER.CUSTOMER.NUMBER.CLAIMS": {
+      "target": "/employer/v1/members/{customerNumber}/claims",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.CUSTOMER.NUMBER.EMAILS.EMAIL": {
+      "target": "/employer/v1/members/{customerNumber}/emails/{emailId}",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.EMAILS.ID": {
+      "target": "/member/v1/profile/emails/{emailId}",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.EMAILS.ID.COMMUNICATION.PREFERENCES": {
+      "target": "/member/v1/profile/emails/{emailId}/communication-preferences",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.ADDRESSES.ID.COMMUNICATION.PREFERENCES": {
+      "target": "/member/v1/profile/addresses/{addressId}/communication-preferences",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.PHONES": {
+      "target": "/member/v1/profile/phones",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.PHONES.ID": {
+      "target": "/member/v1/profile/phones/{phoneId}",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.PROFILE.COMMUNICATION-PREFERENCES": {
+      "target": "/member/v1/profile/communication-preferences",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS": {
+      "target": "/employer/v1/groups",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.NUMBER.MEMBER": {
+      "target": "/employer/v1/groups/{groupNumber}/members",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.CONTACT.PERSONS.PHONES": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-persons/{customerNumber}/phones",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.CONTACT.PERSONS.PHONES.ID": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-persons/{customerNumber}/phones/{phoneId}",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.CONTACT.PERSONS.EMAILS": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-persons/{customerNumber}/emails",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.CONTACT.PERSONS.EMAILS.ID": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-persons/{customerNumber}/emails/{emailId}",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.CONTACT.PERSONS.PAPERLESS": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-persons/{customerNumber}/paperless",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP.CONTACT.PERSONS.COMMUNICATION-PREFERENCES": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-persons/{customerNumber}/communication-preferences",
+      "methods": {
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP_NUMBER.CONTACTS": {
+      "target": "/employer/v1/groups/{groupNumber}/contacts",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP_NUMBER.CONTACT-RELATIONSHIPS": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-relationships",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.GROUPS.GROUP_NUMBER.CONTACT-RELATIONSHIPS.CONTACT_RELATIONSHIP_ID": {
+      "target": "/employer/v1/groups/{groupNumber}/contact-relationships/{contactRelationshipId}",
+      "methods": {
+        "DELETE": {
+          "mediaType": "application/json"
+        },
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES": {
+      "target": "/member/v1/certificates",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.VISION.PLAN.DETAILS": {
+      "target": "/member/v1/certificates-vision/{certificateNumber}/plan-details",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.DENTAL.PLAN.DETAILS": {
+      "target": "/member/v1/certificates-dental/{certificateNumber}/plan-details",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.ACCIDENT.PLAN.DETAILS": {
+      "target": "/member/v1/certificates-accident/{certificateNumber}/plan-details",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.STD": {
+      "target": "/member/v1/certificates-short-term-disability/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.LTD": {
+      "target": "/member/v1/certificates-long-term-disability/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.ACCIDENT": {
+      "target": "/member/v1/certificates-accident/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.LIFE": {
+      "target": "/member/v1/certificates-life/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.VISION": {
+      "target": "/member/v1/certificates-vision/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.REGISTRATION.MEMBERS": {
+      "target": "/employer/v1/registration/members",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.FOLDERS": {
+      "target": "/employer/v1/folders/{entityType}/{entityRefNo}/{folderUuid}",
+      "methods": {
+        "POST": {
+          "mediaType": "multipart/form-data"
+        }
+      }
+    },
+    "EMPLOYER.FOLDERS.ENTITY.TYPE": {
+      "target": "/employer/v1/folders/{entityType}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.FOLDERS.ENTITY.TYPE.ENTITYREFNO": {
+      "target": "/employer/v1/folders/{entityType}/{entityRefNo}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.LTD": {
+      "target": "/employer/v1/master-policies-long-term-disability/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.LIFE": {
+      "target": "/employer/v1/master-policies-life/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.ACCIDENT": {
+      "target": "/employer/v1/master-policies-accident/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.DENTAL": {
+      "target": "/employer/v1/master-policies-dental/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.STD": {
+      "target": "/employer/v1/master-policies-short-term-disability/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.VISION": {
+      "target": "/employer/v1/master-policies-vision/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.STATUTORY": {
+      "target": "/employer/v1/master-policies-statutory/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.MASTER.POLICIES.PFL": {
+      "target": "/employer/v1/master-policies-paid-family-leave/{masterPolicyNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.TERMINATE.ACCIDENT": {
+      "target": "/employer/v1/certificates-accident/{certificatePolicyNumber}/terminate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.TERMINATE.DENTAL": {
+      "target": "/employer/v1/certificates-dental/{certificatePolicyNumber}/terminate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.TERMINATE.LIFE": {
+      "target": "/employer/v1/certificates-life/{certificatePolicyNumber}/terminate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.TERMINATE.LTD": {
+      "target": "/employer/v1/certificates-long-term-disability/{certificatePolicyNumber}/terminate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.TERMINATE.STD": {
+      "target": "/employer/v1/certificates-short-term-disability/{certificatePolicyNumber}/terminate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.TERMINATE.VISION": {
+      "target": "/employer/v1/certificates-vision/{certificatePolicyNumber}/terminate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.SUMMARY.LIFE": {
+      "target": "/employer/v1/certificates-life/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.SUMMARY.DENTAL": {
+      "target": "/employer/v1/certificates-dental/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.SUMMARY.VISION": {
+      "target": "/employer/v1/certificates-vision/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.SUMMARY.ACCIDENT": {
+      "target": "/employer/v1/certificates-accident/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.SUMMARY.STD": {
+      "target": "/employer/v1/certificates-short-term-disability/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.SUMMARY.LTD": {
+      "target": "/employer/v1/certificates-long-term-disability/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.PREMIUM.SUMMARY.LIFE": {
+      "target": "/employer/v1/certificates-life/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.PREMIUM.SUMMARY.DENTAL": {
+      "target": "/employer/v1/certificates-dental/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.PREMIUM.SUMMARY.VISION": {
+      "target": "/employer/v1/certificates-vision/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.PREMIUM.SUMMARY.ACCIDENT": {
+      "target": "/employer/v1/certificates-accident/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.PREMIUM.SUMMARY.STD": {
+      "target": "/employer/v1/certificates-short-term-disability/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.PREMIUM.SUMMARY.LTD": {
+      "target": "/employer/v1/certificates-long-term-disability/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.PREMIUM.SUMMARY.LIFE": {
+      "target": "/member/v1/certificates-life/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.PREMIUM.SUMMARY.DENTAL": {
+      "target": "/member/v1/certificates-dental/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.DENTAL": {
+      "target": "/member/v1/certificates-dental/{certificateNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.PREMIUM.SUMMARY.VISION": {
+      "target": "/member/v1/certificates-vision/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.PREMIUM.SUMMARY.ACCIDENT": {
+      "target": "/member/v1/certificates-accident/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.PREMIUM.SUMMARY.STD": {
+      "target": "/member/v1/certificates-short-term-disability/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CERTIFICATES.PREMIUM.SUMMARY.LTD": {
+      "target": "/member/v1/certificates-long-term-disability/{certificateNumber}/premium-summary",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.RESCIND.CANCELLATION.ACCIDENT": {
+      "target": "/employer/v1/certificates-accident/{certificatePolicyNumber}/rescind-cancellation",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.RESCIND.CANCELLATION.DENTAL": {
+      "target": "/employer/v1/certificates-dental/{certificatePolicyNumber}/rescind-cancellation",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.RESCIND.CANCELLATION.LIFE": {
+      "target": "/employer/v1/certificates-life/{certificatePolicyNumber}/rescind-cancellation",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.RESCIND.CANCELLATION.LTD": {
+      "target": "/employer/v1/certificates-long-term-disability/{certificatePolicyNumber}/rescind-cancellation",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.RESCIND.CANCELLATION.STD": {
+      "target": "/employer/v1/certificates-short-term-disability/{certificatePolicyNumber}/rescind-cancellation",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CERTIFICATES.RESCIND.CANCELLATION.VISION": {
+      "target": "/employer/v1/certificates-vision/{certificatePolicyNumber}/rescind-cancellation",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.FOLDERS.DOCUMENTS": {
+      "target": "/employer/v1/folders/documents/{uuid}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.FOLDERS.DOCUMENTS": {
+      "target": "/member/v1/folders/documents/{uuid}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.FOLDERS": {
+      "target": "/member/v1/folders/{entityType}/{entityRefNo}/{folderUuid}",
+      "methods": {
+        "POST": {
+          "mediaType": "multipart/form-data"
+        }
+      }
+    },
+    "MEMBER.FOLDERS.ENTITY.TYPE.ENTITYREFNO": {
+      "target": "/member/v1/folders/{entityType}/{entityRefNo}",
+      "methods": {
+       "GET": {
+         "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.FOLDERS.ENTITY.TYPE": {
+      "target": "/member/v1/folders/{entityType}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.REGISTRATION.MEMBERS": {
+      "target": "/member/v1/registration/members",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.ACCIDENT": {
+      "target": "/employer/v1/claims-accident/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.ACCIDENT": {
+      "target": "/member/v1/claims-accident/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.TERM.LIFE": {
+      "target": "/member/v1/claims-term-life/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.DISABILITY": {
+      "target": "/employer/v1/claims-disability/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.DISABILITY": {
+      "target": "/member/v1/claims-disability/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.ACCIDENT.FNOL": {
+      "target": "/member/v1/claims-accident/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.DENTAL": {
+      "target": "/member/v1/claims-dental/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.DENTAL.FNOL": {
+      "target": "/member/v1/claims-dental/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.ACCIDENT.FNOL": {
+      "target": "/employer/v1/claims-accident/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.TERM.LIFE": {
+      "target": "/employer/v1/claims-term-life/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.TERM.LIFE.FNOL": {
+      "target": "/employer/v1/claims-term-life/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.DISABILITY.FNOL": {
+      "target": "/member/v1/claims-disability/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.DISABILITY.FNOL": {
+      "target": "/employer/v1/claims-disability/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS": {
+      "target": "/member/v1/claims",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.NOTES": {
+      "target": "/employer/v1/claims/{claimNumber}/notes",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "EMPLOYER.CLAIMS.PAYMENTS": {
+      "target": "/employer/v1/claims/{claimNumber}/payments",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.NOTES": {
+      "target": "/member/v1/claims/{claimNumber}/notes",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "MEMBER.CLAIMS.RECOVERIES": {
+      "target": "/member/v1/claims/{claimNumber}/recoveries",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    }
+  }
+}

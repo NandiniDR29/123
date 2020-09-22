@@ -1,0 +1,12 @@
+TestData: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    General Information: {
+      First Name: 'John$<rx:\d{8}>',
+      Last Name: 'Smith$<rx:\d{8}>'
+    }
+  },
+  PlansTab: {},
+  CoveragesTab: {},
+  PremiumSummaryTab: {}
+}

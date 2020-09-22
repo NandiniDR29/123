@@ -1,0 +1,75 @@
+TestData_Update: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingGroupsTab: ['@BasicAccidentBASEBU', '@EnhancedAccidentEnhanced', '@BasicAccidentEnhancedCopyed'],
+  BillingAccountSetupTab: {}
+}
+
+TestData_Update_With_Location: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingLocationsMappingTab: {
+    Classification Group: index=1,
+    Billing Location: [LOC1]
+  },
+  BillingGroupsTab: {
+    Classification Group: 1
+  },
+  BillingAccountSetupTab: {}
+}
+
+
+
+BasicAccidentBASEBU: {
+  Group: BG001,
+  Coverage: Enhanced Accident - Base Buy-Up
+}
+
+EnhancedAccidentEnhanced: {
+  Group: BG002
+}
+
+BasicAccidentBASEBUCopyed: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG003,
+  Billing Group Type: Employment,
+  Payor: Sponsor,
+  Payment Mode: 12,
+  Coverage: Enhanced Accident - TestBase Buy-Up
+}
+
+
+BasicAccidentEnhancedCopyed: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG003,
+  Billing Group Type: Employment,
+  Payor: Member,
+  Payment Mode: 12,
+  Coverage: Enhanced Accident - Enhanced 10 Units
+}
+
+TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingGroupsTab: {},
+  BillingAccountSetupTab: {}
+}
+
+BasicAccidentBASEBURemove: {
+  Remove: CLICK
+}
+
+TestData_Add_With_Remove: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingGroupsTab: ['@BasicAccidentEnhancedCopyed', '@BasicAccidentBASEBURemove'],
+  BillingAccountSetupTab: {}
+}

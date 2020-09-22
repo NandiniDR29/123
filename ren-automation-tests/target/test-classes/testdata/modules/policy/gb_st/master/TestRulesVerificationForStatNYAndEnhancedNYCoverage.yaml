@@ -1,0 +1,137 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@PlanDefinitionTab_Stat_NY', '@PlanDefinitionTab_Enhanced_NY'],
+  ClassificationManagementTab: ['@ClassificationMgmt_StatNY', '@ClassificationMgmt_StatNY_Enhanced']
+}
+
+PolicyInformationTab: {
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NY,
+  Assigned Agencies: ['@QA_Agency']
+}
+
+QA_Agency: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_Stat_NY: {
+  Plan: NY Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+PlanDefinitionTab_Enhanced_NY: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: Enhanced NY,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+ClassificationMgmt_StatNY: {
+  CoverageKey: 'Stat NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [                                    {
+                                                                                    Classification SubGroup Name: Male,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }, {
+                                                                                    Classification SubGroup Name: Female,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }, {
+                                                                                    Classification SubGroup Name: Proprietor,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }]
+}
+
+ClassificationMgmt_StatNY_Enhanced: {
+  CoverageKey: 'Enhanced NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [                                    {
+                                                                                    Classification SubGroup Name: Male,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }, {
+                                                                                    Classification SubGroup Name: Female,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }, {
+                                                                                    Classification SubGroup Name: Proprietor,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }]}

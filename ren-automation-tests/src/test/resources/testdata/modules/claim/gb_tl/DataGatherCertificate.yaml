@@ -1,0 +1,138 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabDeath'],
+  BenefitsDeathDecedentTab: '@BenefitsDeathDecedentTab',
+  BenefitsDeathIncidentTab: {},
+  BenefitsDeathDeathCertificateTab: '@BenefitsDeathDeathCertificateTab',
+  BenefitsDeathBeneficiaryTab: '@BenefitsDeathBeneficiaryTab',
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+TestData_Without_Benefits: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: [],
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: {},
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+TestData_PremiumWaiverBenefit: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabPremiumWaiver'],
+  BenefitsPremiumWaiverInjuryPartyInformationTab: '@BenefitsPremiumWaiverInjuryPartyInformationTab',
+  BenefitsPremiumWaiverIncidentTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: 'contains=Participant',
+  Relationship To Participant: Self,
+  Contact Preference: index=1,
+  Email: test@test.com
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabDeath: {
+  Damage: Death
+}
+
+BenefitsDeathDecedentTab: {
+  Associated Policy Party: index=1,
+  Relationship To Participant: Self,
+  Contact Preference: index=1,
+  Date of Birth: $<today>,
+  Email: test@test.com
+}
+
+BenefitsDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+BenefitsDeathBeneficiaryTab: {
+  Add Death Beneficiary: CLICK,
+  Party Name: index=1,
+  Relationship To Decedent: index=1,
+  Contact Preference: Email,
+  Email: test@test.com,
+  Preferred Payment method: Check,
+  Coverage: index=1,
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: 'contains=Customer',
+  Relationship To Decedent/Injury Party: Spouse,
+  Contact Preference: 'Mail'
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1,
+  Preferred Payment method: Check
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Participant',
+  Phone: '123456'
+}
+
+EAPServicesServiceRequestTab: {
+  Benefit: index=1,
+  Service Type: index=1,
+  #'Create New Vendor?': 'Yes',
+  #Company Name: '$<rx:CompanyName\d{5}>',
+  #Tax Identification Number: '$<rx:\d{10}>',
+  #Zip/Postal Code: 94596,
+  #Address Line 1: Address Line 1,
+  #Settlement Method: index=1
+  Add: 'click'
+}
+
+BenefitsBenefitSummaryTabPremiumWaiver: {
+  Damage: 'Premium Waiver'
+}
+
+BenefitsPremiumWaiverInjuryPartyInformationTab: {
+  Associate Policy Party: index=1,
+  Date of Birth: '12/01/1986',
+  Preferred Payment method: Check,
+}

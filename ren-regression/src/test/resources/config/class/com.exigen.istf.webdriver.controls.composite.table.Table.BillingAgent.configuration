@@ -1,0 +1,5 @@
+{
+    "headerLocator": "//div[@class='ant-table-header']//thead",
+    "columnByIndexTemplate": "//div[@class='ant-table-body']//tbody[1]/tr/td[%s]",
+    "rowThatTemplate": "//div[@class='ant-table-body']//tbody/tr[%s]"
+}

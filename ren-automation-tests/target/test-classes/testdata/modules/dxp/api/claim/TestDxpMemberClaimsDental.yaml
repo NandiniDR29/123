@@ -1,0 +1,43 @@
+TestData_TwoServices: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTabTwoServices',
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+IntakeInformationTabTwoServices: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '134006748',
+    'License #': '58405',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '100073914',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: [{
+                         DOS: $<today>,
+                         CDT Code: 'D3410',
+                         Tooth: '3',
+                         Charge: 200
+                       },
+                       {
+                         DOS: $<today-1d>,
+                         CDT Code: 'D0160',
+                         Charge: 400
+                       }
+  ]
+}

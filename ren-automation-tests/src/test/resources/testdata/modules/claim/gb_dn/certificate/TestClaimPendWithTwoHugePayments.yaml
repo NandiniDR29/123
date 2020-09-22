@@ -1,0 +1,26 @@
+AdjustOneService: {
+  IntakeInformationTab: {
+    Submitted Services: {
+                           DOS: $<today>,
+                           CDT Code: 'D0160',
+                           Charge: '1000.01'
+                         }
+  }
+}
+
+AdjustTwoService: {
+  IntakeInformationTab: {
+    Submitted Services: [{
+                           DOS: $<today>,
+                           CDT Code: 'D2971',
+                           Tooth: '3',
+                           Charge: '1000.01'
+                         },
+                         {
+                           DOS: $<today>,
+                           CDT Code: 'D0160',
+                           Charge: 1000
+                         }
+    ]
+  }
+}

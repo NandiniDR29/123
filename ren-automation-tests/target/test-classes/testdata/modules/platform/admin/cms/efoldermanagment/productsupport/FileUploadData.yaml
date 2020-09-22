@@ -1,0 +1,14 @@
+TestData: {
+  SupportUploadTab: {
+    Subsystem: 'Policy Product',
+    Product: 'Auto (Preconfigured)',
+    Document Type: 'Product Brochure',
+    File to upload: '$<file:test2.jpg>'
+  }
+}
+
+TestData_NewVersion: {
+  SupportUploadTab: {
+     File to upload: '$<file:test3.docx>'
+  }
+}

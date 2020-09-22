@@ -1,0 +1,40 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@Tiered_CommissionRule']
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_DN - Group Dental',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date'
+}
+
+Tiered_CommissionRule: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '250.00', 15]
+  }
+}
+
+TestDataMasterPolicy: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    'Allow Independent Commissionable Producers?': No,
+    Prior Dental Coverage: 'No',
+    Total Number of Eligible Lives: 1,
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Agency / Producer:  'index=1',
+  }
+}

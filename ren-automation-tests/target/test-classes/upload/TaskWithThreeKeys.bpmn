@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:eis="http://www.exigeninsurance.com/bpmn" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="com.exigen.eis.bpm.definitions.TasksWithThreeKeys.bpmn" name="Process Containing Tasks With Three Keys" isExecutable="true">
+    <startEvent id="startevent1" name="Start"></startEvent>
+    <userTask id="usertask1" name="Source User Task 1" activiti:assignee="isba" activiti:priority="1">
+    	<extensionElements>
+        	<eis:links>
+			<eis:link targetProcessKey="test1"></eis:link>
+			<eis:link targetProcessKey="com.exigen.eis.bpm.definitions.SimpleReviewProcess.bpmn"></eis:link>
+			<eis:link targetProcessKey="com.exigen.eis.bpm.definitions.TestProcess.bpmn"></eis:link>
+        	</eis:links>
+        	   <eis:suspendEnabled xmlns:eis="http://www.exigeninsurance.com/bpmn" value="true"></eis:suspendEnabled>
+    	</extensionElements>
+    </userTask>
+    <sequenceFlow id="flow1" sourceRef="startevent1" targetRef="usertask1"></sequenceFlow>
+    <userTask id="usertask2" name="User Task 2" activiti:assignee="isba" activiti:priority="2">
+    	<extensionElements>
+        	<eis:links>
+				<eis:link targetProcessKey="com.exigen.eis.bpm.definitions.TasksWithThreeKeys.bpmn"></eis:link>
+        	</eis:links>
+    	</extensionElements>
+    </userTask>
+    <sequenceFlow id="flow2" sourceRef="usertask1" targetRef="usertask2"></sequenceFlow>
+    <endEvent id="endevent1" name="End"></endEvent>
+    <sequenceFlow id="flow3" sourceRef="usertask2" targetRef="endevent1"></sequenceFlow>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_com.exigen.eis.bpm.definitions.TasksWithThreeKeys.bpmn">
+    <bpmndi:BPMNPlane bpmnElement="com.exigen.eis.bpm.definitions.TasksWithThreeKeys.bpmn" id="BPMNPlane_com.exigen.eis.bpm.definitions.TasksWithThreeKeys.bpmn">
+      <bpmndi:BPMNShape bpmnElement="startevent1" id="BPMNShape_startevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="160.0" y="300.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask1" id="BPMNShape_usertask1">
+        <omgdc:Bounds height="55.0" width="105.0" x="240.0" y="290.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="usertask2" id="BPMNShape_usertask2">
+        <omgdc:Bounds height="55.0" width="105.0" x="390.0" y="290.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endevent1" id="BPMNShape_endevent1">
+        <omgdc:Bounds height="35.0" width="35.0" x="540.0" y="300.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="195.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="240.0" y="317.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="345.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="390.0" y="317.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="495.0" y="317.0"></omgdi:waypoint>
+        <omgdi:waypoint x="540.0" y="317.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

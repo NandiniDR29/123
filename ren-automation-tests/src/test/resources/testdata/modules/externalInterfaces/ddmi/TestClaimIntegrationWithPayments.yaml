@@ -1,0 +1,300 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_FLEX'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_FLEX'],
+  ProposalActionTab: {}
+}
+
+SelectPlan: {
+  Plan: Flex Plus
+}
+
+PlanDefinitionTab_FLEX: {
+  PlanKey: FLEX-Flex Plus,
+  Coverage Tiers: ['Employee Only', 'Employee + 1', 'Employee + Family'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  }
+}
+
+ClassificationManagementTab_FLEX: {
+  Plan: 'FLEX-Flex Plus',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+TestData_CertificatePolicy_TwoInsured: {
+  CertificatePolicyTab: {
+    Effective Date: $<BOM>,
+    Situs State: NY
+  },
+  InsuredTab: '@InsuredTab',
+  PlansTab: '@PlansTab'
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{9}>',
+  Last Name: 'Smith22$<rx:\d{9}>',
+  Tobacco: 'Yes',
+  Tax Identification: '$<rx:\d{9}>',
+  Address Type: Mailing,
+  Zip / Post Code: '94500',
+  State / Province: NY,
+  Country: United States,
+  City: Walnuce,
+  Address Line 1: 'JAddr1$<rx:\d{9}>',
+  Address Line 2: 'JAddr2_Init',
+  Address Line 3: 'JAddr3_Init',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  General Information: {
+    Date of Birth: $<today-25y>,
+    Gender: Male
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Title: just a job,
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Payroll Frequency: Monthly
+  }
+}
+
+PlansTab: {
+  Plan Name: index=1,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: [
+  {
+    Participant Selection: index=0
+  },
+  {
+    Participant Selection: New Person,
+    General Information: {
+      First Name: 'Martha$<rx:\d{9}>',
+      Last Name: 'Smith$<rx:\d{9}>',
+      Date of Birth: $<today-24y>,
+      Relationship to Insured: Spouse/Domestic Partner
+    },
+    Address Information: {
+      "Use Primary Insured's Address": No,
+      Address Type: Mailing,
+      Zip / Post Code: '94501',
+      State / Province: NY,
+      Country: United States,
+      City: Walnut Creek,
+      Address Line 1: 'AddressLine1<rx:\d{9}>',
+      Address Line 2: 'AddressLine2',
+      Address Line 3: 'AddressLine3>'
+    }
+  }
+  ]
+}
+
+TestData_Claim0: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab_Claim0',
+}
+
+TestData_Claim4: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab_Claim4',
+}
+
+TestData_Claim6: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab_Claim6',
+}
+
+TestData_Claim8: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab_Claim8',
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+IntakeInformationTab_Claim0: {
+  Patient: {
+    Name: contains=John
+  },
+  Search Provider: {
+    TIN: '821394606',
+    'License #': '4317',
+    License NPI: '1518160951',
+    License State/Province: 'NV',
+    Specialty: 'General Practitioner',
+    Zip/Postal Code: '89128',
+    Address Line 1: '7670 W Lake Mead Blvd Ste 130',
+    City: 'Las Vegas',
+    State/Province: 'NV',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: 'Service Provider',
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D0145'
+  }
+}
+
+IntakeInformationTab_Claim4: {
+  Patient: {
+    Name: contains=Martha
+  },
+  Search Provider: {
+    TIN: '611345391',
+    'License #': '6308',
+    License NPI: '1558351072',
+    License State/Province: 'KY',
+    Specialty: 'General Practitioner',
+    Zip/Postal Code: '40069',
+    Address Line 1: '108 Commercial Ave',
+    City: 'Springfield',
+    State/Province: 'KY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: 'Service Provider',
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D0145',
+    Charge: 400
+  }
+}
+
+IntakeInformationTab_Claim6: {
+  Patient: {
+    Name: contains=John
+  },
+  Search Provider: {
+    TIN: '821394606',
+    'License #': '4317',
+    License NPI: '1518160951',
+    License State/Province: 'NV',
+    Specialty: 'General Practitioner',
+    Zip/Postal Code: '89128',
+    Address Line 1: '7670 W Lake Mead Blvd Ste 130',
+    City: 'Las Vegas',
+    State/Province: 'NV',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: 'Service Provider',
+  Submitted Services: {
+    DOS: $<today-1d>,
+    CDT Code: 'D1110',
+    Charge: 200
+  }
+}
+
+IntakeInformationTab_Claim8: {
+  Patient: {
+    Name: contains=Martha
+  },
+  Search Provider: {
+    TIN: '431726317',
+    'License #': '15082',
+    License NPI: '1104046556',
+    License State/Province: 'MO',
+    Specialty: 'General Practitioner',
+    Zip/Postal Code: '65041',
+    Address Line 1: '154 State Route 100 W',
+    City: 'Las Hermann',
+    State/Province: 'MO',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: 'Service Provider',
+  Submitted Services: {
+    DOS: $<today-2d>,
+    CDT Code: 'D1110',
+    Charge: 300
+  }
+}
+
+TestData_LineOverride: {
+  LineOverrideTab: {
+    Override Line Values:  {
+      Coinsurance %: 50
+    },
+    Reason: "Any Reason"
+  }
+}
+
+TestData_Claim8_Adjust1: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '821394606',
+      'License #': '4317',
+      License NPI: '1518160951',
+      License State/Province: 'NV',
+      Specialty: 'General Practitioner',
+      Zip/Postal Code: '89128',
+      Address Line 1: '7670 W Lake Mead Blvd Ste 130',
+      City: 'Las Vegas',
+      State/Province: 'NV',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Submitted Services: {
+      Charge: 0
+    }
+  }
+}
+
+TestData_Claim8_Adjust2: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '611345391',
+      'License #': '6308',
+      License NPI: '1558351072',
+      License State/Province: 'KY',
+      Specialty: 'General Practitioner',
+      Zip/Postal Code: '40069',
+      Address Line 1: '108 Commercial Ave',
+      City: 'Springfield',
+      State/Province: 'KY',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    }
+  }
+}

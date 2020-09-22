@@ -1,0 +1,86 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeathAndDismemberment', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  County Code: '001 - Albany County',
+  Situs State: 'NY',
+  'Zip Code': '90210',
+   'Rate Guarantee (Months)': 18,
+   'Prior Life Coverage': 'No',
+   'Has Continuity of Coverage?': 'Yes',
+   'Use Experience Rating ?': 'Yes',
+   'Small Group?': 'No',
+   'Separate Or Combined Experience Rating?': 'Combined',
+   Internal Team: {
+     Sales Representative: index=1,
+     Sales Support Associate: index=1
+   },
+   Assigned Agencies: {
+    'Primary Agency?': 'Yes',
+     Agent Sub Producer: 'index=1'
+   }
+}
+
+SelectPlan: {
+  Plan: 'Basic Life'
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Population Type: 'Active',
+  'Total Number of Eligible Lives': 60,
+  'Assumed Participation %': '100%',
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+     Eligibility waiting period definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  'Age Reduction?': true,
+  #Options
+  Portability: 'Included',
+  'Waiver of Premium': 'Included',
+  'Waiver disabled prior to age': 60,
+  'Termination age': 65,
+  'Premium Waiver Elimination Period': '6 Months'
+}
+
+PlanDefinitionBasicAccidentalDeathAndDismemberment: {
+  CoverageKeyRemove: 'Employee Basic Accidental Death and Dismemberment Insurance',
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKeyRemove: 'Dependent Basic Life Insurance (Spouse & Child)'
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+PremiumSummaryTab: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}

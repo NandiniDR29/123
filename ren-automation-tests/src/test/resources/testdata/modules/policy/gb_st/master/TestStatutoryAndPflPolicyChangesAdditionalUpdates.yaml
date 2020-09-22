@@ -1,0 +1,98 @@
+TestData: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab_NJ',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab_NJ',
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab'
+}
+
+TestData_NY: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab_NY',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@PlanDefinitionTab_NY', '@PlanDefinitionTab_NYPFL'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_NY','@ClassificationManagementTab_NYPFL'],
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab'
+}
+
+PlanDefinitionTab_NY: {
+  Plan: NY Stat,
+  Total Number of Eligible Lives: 30,
+  Member Payment Mode: 12,
+  Rating: {
+    Rate Basis: Per Employee Per Month,
+    'Use Experience Rating?': 'No',
+    SIC Code: 1521
+  }
+}
+
+PlanDefinitionTab_NYPFL: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: PFL NY,
+  Total Number of Eligible Lives: 30,
+  Member Payment Mode: 12,
+  Rating: {
+    SIC Code: 1521
+  }
+}
+
+ClassificationManagementTab_NY: {
+  CoverageKey: 'Stat NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [                                    {
+                                                                                    Classification SubGroup Name: Male,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }, {
+                                                                                    Classification SubGroup Name: Female,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }, {
+                                                                                    Classification SubGroup Name: Proprietor,
+                                                                                    Number of Participants: 1,
+                                                                                    Total Volume: 5
+                                                                                  }]
+}
+
+ClassificationManagementTab_NYPFL: {
+  CoverageKey: 'PFL NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [                              {
+                                                                              Classification SubGroup Name: Male,
+                                                                              Number of Participants: 1,
+                                                                              Total Volume: 5
+                                                                            }, {
+                                                                              Classification SubGroup Name: Female,
+                                                                              Number of Participants: 1,
+                                                                              Total Volume: 5
+                                                                            }, {
+                                                                              Classification SubGroup Name: Other/Not Specified,
+                                                                              Number of Participants: 1,
+                                                                              Total Volume: 5
+                                                                            }]}
+
+PlanDefinitionTab_NJ: {
+  Plan: NJ Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    Rate Basis: Percent of Taxable Wage,
+    'Use Experience Rating?': 'No',
+    SIC Code: 1521
+  }
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  #  Uni-Tobacco: Yes,
+  #  Unisex: Yes,
+  Number of Participants: 1,
+}
+
+

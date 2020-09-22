@@ -1,0 +1,3 @@
+{
+  "assetLocator": "//div[contains(@class,'ant-col') and span[normalize-space(.)=%s]]"
+}

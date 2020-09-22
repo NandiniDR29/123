@@ -1,0 +1,38 @@
+TestData_CommunicationThread: {
+  CommunicationActionTab: {
+    Entity Type: Lead/Customer,
+    Subject: subject,
+    Communication Description: description,
+    Communication Outcome: Outcome,
+    Category: Billing/Premiums,
+    Language: Arabic,
+    Status: Unread
+  }
+}
+
+REST_UpdateCommunicationThread: {
+  "categoryCd": null,
+  "subCategoryCd": null,
+  "sourceCd": null,
+  "languageCd": "ENG",
+  "internalCallerCd": null,
+  "subject": "Enter some value",
+  "statusCd": "READ",
+  "entityTypeCd": "CUSTOMER",
+  "entityReferenceId": "",
+  "description": null,
+  "outcome": null
+}
+
+TestData_Check: {
+    Entity Type: Lead/Customer,
+    Category: '',
+    Sub-Category: '',
+    Status: Read,
+    Language: 'English',
+    Subject: 'Enter some value',
+    Communication Description: '',
+    Communication Outcome: '',
+    Source: '',
+    Internal Caller ID: ''
+}

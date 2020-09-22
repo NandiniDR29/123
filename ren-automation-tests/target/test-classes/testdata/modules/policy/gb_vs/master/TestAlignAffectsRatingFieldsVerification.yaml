@@ -1,0 +1,77 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTabASO',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanASO', '@PlanDefinitionTab_AsoALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_AsoALACARTE',
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTabASO: {
+  Policy Effective Date: $<today>,
+  Rate Guarantee (Months): 12,
+  ASO Plan: Yes,
+  Prior Carrier Name: 'EyeMed',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectPlanASO: {
+  Plan: [ASO A La Carte]
+}
+
+PlanDefinitionTab_AsoALACARTE: {
+  PlanKey: ASO A La Carte-ASO A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+    'Assumed Participation %': 100,
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Special Plan Features: {
+    Photochromic Lenses Factor: 2,
+    Scratch Coating Factor: 3,
+    Safety Glasses Factor: 4
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+ClassificationManagementTab_AsoALACARTE: {
+  Plan: ASOALACARTE-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '32',
+  Coverage Tier: Employee Only
+}
+
+PremiumSummaryTab: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}

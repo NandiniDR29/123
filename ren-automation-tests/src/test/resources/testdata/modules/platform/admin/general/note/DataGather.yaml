@@ -1,0 +1,53 @@
+TestData: {
+  NoteCategoryTab: {
+    Type: Account,
+    Status: Active,
+    New Category: 'NewCategory$<rx:\d{8}>',
+    Title: AT New Category
+  }
+}
+
+TestData_Customer: {
+  NoteCategoryTab: {
+    Type: Customer,
+    Status: Active,
+    New Category: 'NewCategory$<rx:\d{8}>',
+    Title: AT New Category
+  }
+}
+
+TestData_Customer_Active: {
+  NoteCategoryTab: {
+    Type: Customer,
+    Status: Active,
+    New Category: 'Customer_Active_$<rx:\d{8}>',
+    Title: AT New Category Verify
+  }
+}
+
+TestData_Customer_Disabled: {
+  NoteCategoryTab: {
+    Type: Customer,
+    Status: Disabled,
+    New Category: 'Customer_Disabled_$<rx:\d{8}>',
+    Title: AT New Category Verify
+  }
+}
+
+TestData_Policy_Active: {
+  NoteCategoryTab: {
+    Type: Policy,
+    Status: Active,
+    New Category: 'Policy_Active_$<rx:\d{8}>',
+    Title: AT New Category Verify
+  }
+}
+
+TestData_Policy_Disabled: {
+  NoteCategoryTab: {
+    Type: Policy,
+    Status: Disabled,
+    New Category: 'Policy_Disabled_$<rx:\d{8}>',
+    Title: AT New Category Verify
+  }
+}

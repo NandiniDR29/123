@@ -1,0 +1,3469 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet failOnError="false" id="1" author="mburyak" runOnChange="true">
+        <comment>Add Agency</comment>
+        <delete tableName="ThirdPartContact">
+            <where>id = 1</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>userProfile_fk IN (1, 2, 3)</where>
+        </delete>
+        <delete tableName="ThirdParty">
+            <where>id = 1</where>
+        </delete>
+        <delete tableName="PaymentDetails">
+            <where>id = 1</where>
+        </delete>
+        <delete tableName="ThirdPartContact">
+            <where>ThirdParty_ID IN (SELECT id FROM ThirdParty WHERE Address_ID IN (1, 2))</where>
+        </delete>
+        <delete tableName="ThirdParty_AssignedUWAgents">
+            <where>ThirdParty_ID IN (SELECT id FROM ThirdParty WHERE Address_ID IN (1, 2))</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>ThirdParty_ID IN (SELECT id FROM ThirdParty WHERE Address_ID IN (1, 2))</where>
+        </delete>
+        <delete tableName="ThirdPartyRelationship">
+            <where>sourceParty_id IN (SELECT id FROM ThirdParty WHERE Address_ID IN (1, 2))</where>
+        </delete>
+        <delete tableName="CommissionRate">
+            <where>CommissionAgreement_ID IN (SELECT id FROM CommissionAgreement WHERE BrokerAgency_ID IN (SELECT id FROM ThirdParty WHERE Address_ID IN (1, 2)))</where>
+        </delete>
+        <delete tableName="CommissionAgreement">
+            <where>BrokerAgency_ID IN (SELECT id FROM ThirdParty WHERE Address_ID IN (1, 2))</where>
+        </delete>
+        <delete tableName="ThirdParty">
+            <where>Address_ID IN (1, 2)</where>
+        </delete>
+        <delete tableName="ThirdPartyAddress">
+            <where>id IN (1, 2)</where>
+        </delete>
+        <delete tableName="BrokerAgencyExtendedInfo">
+            <where>id = 1</where>
+        </delete>
+
+        <insert tableName="PaymentDetails">
+            <column name="id" value="1"/>
+            <column name="DTYPE" value="PaymentDetailsCheque"/>
+        </insert>
+        <insert tableName="BrokerAgencyExtendedInfo">
+            <column name="id" value="1"/>
+        </insert>
+        <insert tableName="ThirdPartyAddress">
+            <column name="id" value="1"/>
+            <column name="addressLine1" value="Address Line 1"/>
+            <column name="city" value="Walnut Creek"/>
+            <column name="countryCd" value="US"/>
+            <column name="postalCode" value="94596"/>
+            <column name="stateProvCd" value="CA"/>
+            <column name="DTYPE" value="ThirdPartyAddress"/>
+        </insert>
+        <insert tableName="ThirdPartyAddress">
+            <column name="id" value="2"/>
+            <column name="DTYPE" value="ThirdPartyAddress"/>
+        </insert>
+        <insert tableName="ThirdParty">
+            <column name="id" value="1"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="Test Agency Inter"/>
+            <column name="name" value="Test Agency Inter"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" value="1"/>
+            <column name="channelCd" value="corporate"/>
+            <column name="locationTypeCd" value="corporate_callcenter"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" value="1"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" value="1"/>
+            <column name="Mailing_Address_ID" value="2"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+        <insert tableName="ThirdPartContact">
+            <column name="id" value="1"/>
+            <column name="phoneType1" value="1"/>
+            <column name="phoneType2" value="3"/>
+            <column name="ThirdParty_ID" value="1"/>
+            <column name="seqIdx" value="0"/>
+            <column name="isPreferred" value="0"/>
+            <column name="contactMediaType" value="defaultContact"/>
+            <column name="contactType" value="defaultContact"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="303" author="ymaliarevich" runOnChange="true">
+        <comment>Add Agency Sourse for BOR Transfer</comment>
+        <insert tableName="PaymentDetails">
+            <column name="id" value="303"/>
+            <column name="DTYPE" value="PaymentDetailsCheque"/>
+        </insert>
+        <insert tableName="BrokerAgencyExtendedInfo">
+            <column name="id" value="303"/>
+        </insert>
+        <insert tableName="ThirdPartyAddress">
+            <column name="id" value="303"/>
+            <column name="addressLine1" value="Address Line 1"/>
+            <column name="city" value="Walnut Creek"/>
+            <column name="countryCd" value="US"/>
+            <column name="postalCode" value="94596"/>
+            <column name="stateProvCd" value="CA"/>
+            <column name="DTYPE" value="ThirdPartyAddress"/>
+        </insert>
+        <insert tableName="ThirdParty">
+            <column name="id" value="303"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="BOR Transfer Sourse"/>
+            <column name="name" value="BOR Transfer Sourse"/>
+            <column name="taxIdentity" value="123456789"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="0"/>
+            <column name="PaymentDetails_id" value="1"/>
+            <column name="channelCd" value="corporate"/>
+            <column name="locationTypeCd" value="corporate_callcenter"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" value="303"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" value="303"/>
+            <column name="Mailing_Address_ID" value="303"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="0"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="0"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+        <insert tableName="ThirdPartContact">
+            <column name="id" value="303"/>
+            <column name="phoneType1" value="1"/>
+            <column name="phoneType2" value="3"/>
+            <column name="ThirdParty_ID" value="303"/>
+            <column name="seqIdx" value="0"/>
+            <column name="isPreferred" value="0"/>
+            <column name="contactMediaType" value="defaultContact"/>
+            <column name="contactType" value="defaultContact"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="304" author="ymaliarevich" runOnChange="true">
+        <comment>Add Agency Target for BOR Transfer</comment>
+        <insert tableName="PaymentDetails">
+            <column name="id" value="304"/>
+            <column name="DTYPE" value="PaymentDetailsCheque"/>
+        </insert>
+        <insert tableName="BrokerAgencyExtendedInfo">
+            <column name="id" value="304"/>
+        </insert>
+        <insert tableName="ThirdPartyAddress">
+            <column name="id" value="304"/>
+            <column name="addressLine1" value="Address Line 1"/>
+            <column name="city" value="Walnut Creek"/>
+            <column name="countryCd" value="US"/>
+            <column name="postalCode" value="94596"/>
+            <column name="stateProvCd" value="CA"/>
+            <column name="DTYPE" value="ThirdPartyAddress"/>
+        </insert>
+        <insert tableName="ThirdParty">
+            <column name="id" value="304"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="BOR Transfer Target"/>
+            <column name="name" value="BOR Transfer Target"/>
+            <column name="taxIdentity" value="123456789"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" value="1"/>
+            <column name="channelCd" value="corporate"/>
+            <column name="locationTypeCd" value="corporate_callcenter"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" value="304"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" value="304"/>
+            <column name="Mailing_Address_ID" value="304"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="0"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="0"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+        <insert tableName="ThirdPartContact">
+            <column name="id" value="304"/>
+            <column name="phoneType1" value="1"/>
+            <column name="phoneType2" value="3"/>
+            <column name="ThirdParty_ID" value="304"/>
+            <column name="seqIdx" value="0"/>
+            <column name="isPreferred" value="0"/>
+            <column name="contactMediaType" value="defaultContact"/>
+            <column name="contactType" value="defaultContact"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="101" author="ymaliarevich" runOnChange="true">
+        <comment>Add Profile for ISBA</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'isba'</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 101</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 101</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 101</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 101</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 101</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=101</where>
+        </delete>
+
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="101"/>
+            <column name="loginName" value="isba"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="101"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="isba"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="ISBA"/>
+            <column name="lastName" value="ISBA"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="101"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="101"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="101"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="101"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="101"/>
+            <column name="login" value="corporate\isba"/>
+            <column name="pwdNtHashHex" value="23b3dd3bc9559a55bacf835107030cb0"/>
+            <column name="pwdSHA1Hex" value="86eff953e783eacec8623383d1c917753d1de5e6"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="101"/>
+            <column name="firstName" value="ISBA"/>
+            <column name="lastName" value="ISBA"/>
+            <column name="userProfile_fk" value="101"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code101"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="101"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="101"/>
+        </insert>
+    </changeSet>
+
+    <changeSet failOnError="false" id="105" author="ikisly" runOnChange="true">
+        <comment>Add Profile for TestUserAll1</comment>
+        <delete tableName="UserLogin">
+            <where>id=105</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 105</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 105</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 105</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 105</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id=105</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=105</where>
+        </delete>
+
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="105"/>
+            <column name="loginName" value="TestUserAll1"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="105"/>
+            <column name="domain" value="agency"/>
+            <column name="name" value="TestUserAll1"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="TestUserAll1"/>
+            <column name="lastName" value="TestUserAll1"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="Test Agency Inter"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="105"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="105"/>
+            <column name="agencyCode" value="Test Agency Inter"/>
+            <column name="userProfile_id" value="105"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="105"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="105"/>
+            <column name="login" value="corporate\TestUserAll1"/>
+            <column name="pwdNtHashHex" value="23b3dd3bc9559a55bacf835107030cb0"/>
+            <column name="pwdSHA1Hex" value="86eff953e783eacec8623383d1c917753d1de5e6"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="105"/>
+            <column name="firstName" value="TestUserAll1"/>
+            <column name="lastName" value="TestUserAll1"/>
+            <column name="userProfile_fk" value="105"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'Test Agency Inter')"/>
+            <column name="code" value="code105"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="105"/>
+        </insert>
+    </changeSet>
+
+    <changeSet failOnError="false" id="104" author="ikisly" runOnChange="true">
+        <comment>Add Profile for TestUserAll2</comment>
+        <delete tableName="UserLogin">
+            <where>id=104</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 104</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 104</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 104</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 104</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id=104</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=104</where>
+        </delete>
+
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="104"/>
+            <column name="loginName" value="TestUserAll2"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="104"/>
+            <column name="domain" value="agency"/>
+            <column name="name" value="TestUserAll2"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="TestUserAll2"/>
+            <column name="lastName" value="TestUserAll2"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="104"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="104"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="104"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="104"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="104"/>
+            <column name="login" value="corporate\TestUserAll2"/>
+            <column name="pwdNtHashHex" value="23b3dd3bc9559a55bacf835107030cb0"/>
+            <column name="pwdSHA1Hex" value="86eff953e783eacec8623383d1c917753d1de5e6"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="104"/>
+            <column name="firstName" value="TestUserAll2"/>
+            <column name="lastName" value="TestUserAll2"/>
+            <column name="userProfile_fk" value="104"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code104"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="104"/>
+        </insert>
+    </changeSet>
+
+    <changeSet failOnError="false" id="2" author="mburyak" runOnChange="true">
+        <comment>Add Profiles</comment>
+        <delete tableName="UserLogin">
+            <where>loginName in ('TestAgencyIntra1','TestAgencyIntra2','TestAgencyIntra')</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>login IN ('corporate\TestAgencyIntra1', 'corporate\TestAgencyIntra2', 'corporate\TestAgencyIntraInter')</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id IN (1, 2, 3)</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id IN (1, 2, 3)</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id IN (1, 2, 3)</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id IN (1, 2, 3)</where>
+        </delete>
+        <insert tableName="UserLogin">
+            <column name="id" value="1"/>
+            <column name="loginName" value="TestAgencyIntra1"/>
+        </insert>
+        <insert tableName="UserLogin">
+            <column name="id" value="2"/>
+            <column name="loginName" value="TestAgencyIntra2"/>
+        </insert>
+        <insert tableName="UserLogin">
+            <column name="id" value="3"/>
+            <column name="loginName" value="TestAgencyIntra"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="1"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestAgencyIntra1"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test Agency Intra1"/>
+            <column name="lastName" value="Test Agency Intra1"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level1"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL0"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="1"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="2"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestAgencyIntra2"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test Agency Intra2"/>
+            <column name="lastName" value="Test Agency Intra2"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level1"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL0"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="2"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="3"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestAgencyIntra"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test Agency Intra"/>
+            <column name="lastName" value="Test Agency Intra"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level4"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="Test Agency Inter"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="3"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="1"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="1"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="2"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="2"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="3"/>
+            <column name="agencyCode" value="Test Agency Inter"/>
+            <column name="userProfile_id" value="3"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="1"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="2"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="3"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="1"/>
+            <column name="login" value="corporate\TestAgencyIntra1"/>
+            <column name="pwdNtHashHex" value="eccd2f174f1e6317c9a75896f7f8f77d"/>
+            <column name="pwdSHA1Hex" value="2f4d43b1b73efc119ab3b89752286d5da146c1dd"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="2"/>
+            <column name="login" value="corporate\TestAgencyIntra2"/>
+            <column name="pwdNtHashHex" value="eccd2f174f1e6317c9a75896f7f8f77d"/>
+            <column name="pwdSHA1Hex" value="2f4d43b1b73efc119ab3b89752286d5da146c1dd"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="3"/>
+            <column name="login" value="corporate\TestAgencyIntra"/>
+            <column name="pwdNtHashHex" value="eccd2f174f1e6317c9a75896f7f8f77d"/>
+            <column name="pwdSHA1Hex" value="2f4d43b1b73efc119ab3b89752286d5da146c1dd"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="1"/>
+            <column name="firstName" value="Test Agency Intra1"/>
+            <column name="lastName" value="Test Agency Intra1"/>
+            <column name="userProfile_fk" value="1"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code01"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="2"/>
+            <column name="firstName" value="Test Agency Intra2"/>
+            <column name="lastName" value="Test Agency Intra2"/>
+            <column name="userProfile_fk" value="2"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code02"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="3"/>
+            <column name="firstName" value="Test Agency Intra_Inter"/>
+            <column name="lastName" value="Test Agency Intra_Inter"/>
+            <column name="userProfile_fk" value="3"/>
+            <column name="ThirdParty_ID" value="1"/>
+            <column name="code" value="code03"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="3" author="mburyak" runOnChange="true">
+        <comment>Add Profile for Claim Approval</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForClaimApproval'</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 4</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 4</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 4</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 4</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="4"/>
+            <column name="loginName" value="TestUserForClaimApproval"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="4"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForClaimApproval"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User For Claim Approval"/>
+            <column name="lastName" value="Test User For Claim Approval"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level1"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="4"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="4"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="4"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="4"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="4"/>
+            <column name="login" value="corporate\TestUserForClaimApproval"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="4" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Notes Rest Test with all privileges except Set Note As Confidential</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestNotes1'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 5</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 5</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 5</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 5</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 5</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA RestNotes1'</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="5"/>
+            <column name="loginName" value="TestUserForRestNotes1"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="5"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestNotes1"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User1"/>
+            <column name="lastName" value="For Notes Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="5"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="5"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="5"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA RestNotes1"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA RestNotes1' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All') and priv_id!=(Select id from S_AUTHORITY where name='Set Note As Confidential' and DTYPE='PRIV');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="5"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA RestNotes1' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="5"/>
+            <column name="login" value="corporate\TestUserForRestNotes1"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="5" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Notes Rest Test with all privileges except "Add Note"</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestNotes2'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 6</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 6</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 6</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 6</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 6</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA RestNotes2'</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="6"/>
+            <column name="loginName" value="TestUserForRestNotes2"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="6"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestNotes2"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User2"/>
+            <column name="lastName" value="For Notes Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="6"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="6"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="6"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA RestNotes2"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA RestNotes2' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All') and priv_id!=(Select id from S_AUTHORITY where name='Add Note' and DTYPE='PRIV');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="6"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA RestNotes2' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="6"/>
+            <column name="login" value="corporate\TestUserForRestNotes2"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="6" author="iguliam" runOnChange="true">
+        <comment>Add agency for Rest Tasks tests</comment>
+        <sql>
+            delete from ThirdPartyAgent where ThirdParty_ID in (select id from ThirdParty where code in ('TaskRestAgency1','TaskRestAgency2','TaskRestAgency3'));
+        </sql>
+        <sql>
+            delete from ThirdPartContact where phoneTypeDescription1='Rest phone type';
+        </sql>
+        <sql>
+            delete from ThirdParty where code='Test Agency Rest 1';
+        </sql>
+        <sql>
+            delete from ThirdPartyAddress where addressLine1 in ('RESTAutoTest','RESTAutoTestMailing');
+        </sql>
+        <sql>
+            delete from BrokerAgencyExtendedInfo where ownerName='RESTAutoTest' and id = '2';
+        </sql>
+        <sql>
+            delete from PaymentDetails where statusUpdatedBy = 'RESTAutoTest' and id='2';
+        </sql>
+
+        <sql>
+            insert into PaymentDetails (DTYPE,statusUpdatedBy,id) values ('PaymentDetailsCheque','RESTAutoTest','2');
+        </sql>
+        <sql>
+            insert into BrokerAgencyExtendedInfo (ownerName, id) values ('RESTAutoTest','2');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,city,countryCd,postalCode,stateProvCd,DTYPE,id) values
+            ('RESTAutoTest','Walnut Creek','US','94596','CA','ThirdPartyAddress','8');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,DTYPE,id) values
+            ('RESTAutoTestMailing','ThirdPartyAddress','9');
+        </sql>
+        <insert tableName="ThirdParty">
+            <column name="id" value="3"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="TaskRestAgency1"/>
+            <column name="name" value="TaskRestAgency1"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='RESTAutoTest')"/>
+            <column name="channelCd" value="corporate"/>
+            <column name="locationTypeCd" value="corporate_callcenter"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='RESTAutoTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='RESTAutoTest')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='RESTAutoTestMailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+        <insert tableName="ThirdParty">
+            <column name="id" value="4"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="TaskRestAgency2"/>
+            <column name="name" value="TaskRestAgency2"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='RESTAutoTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='RESTAutoTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='RESTAutoTest')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='RESTAutoTestMailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+        <insert tableName="ThirdParty">
+            <column name="id" value="5"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="TaskRestAgency3"/>
+            <column name="name" value="TaskRestAgency3"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='RESTAutoTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='RESTAutoTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='RESTAutoTest')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='RESTAutoTestMailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('2','1','2',
+            'Rest phone type',
+            (select id from ThirdParty where code='TaskRestAgency1'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('3','1','2',
+            'Rest phone type',
+            (select id from ThirdParty where code='TaskRestAgency2'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('4','1','2',
+            'Rest phone type',
+            (select id from ThirdParty where code='TaskRestAgency3'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+    </changeSet>
+    <changeSet failOnError="false" id="7" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Tasks Rest Tests</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestTasks1'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 7</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 7</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 7</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id in(7,8)</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 7</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA TaskRest1'</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="7"/>
+            <column name="loginName" value="TestUserForRestTasks1"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="7"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestTasks1"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User"/>
+            <column name="lastName" value="For Tasks Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="TaskRestAgency1"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="7"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="7"/>
+            <column name="agencyCode" value="TaskRestAgency1"/>
+            <column name="userProfile_id" value="7"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="8"/>
+            <column name="agencyCode" value="TaskRestAgency2"/>
+            <column name="userProfile_id" value="7"/>
+            <column name="seqIdx" value="1"/>
+        </insert>
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA TaskRest1"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA TaskRest1' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="7"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA TaskRest1' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="7"/>
+            <column name="login" value="corporate\TestUserForRestTasks1"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="8" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Notes Rest Test IPBQA-22464</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestNotes3'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 8</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 8</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 8</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id in(9)</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 8</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA RestNotes3'</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="8"/>
+            <column name="loginName" value="TestUserForRestNotes3"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="8"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestNotes3"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User"/>
+            <column name="lastName" value="For Notes Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="8"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="9"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="8"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA RestNotes3"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA RestNotes3' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All') and priv_id!=(Select id from S_AUTHORITY where name='Notes Inquiry' and DTYPE='PRIV');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="8"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA RestNotes3' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="8"/>
+            <column name="login" value="corporate\TestUserForRestNotes3"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="9" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Notes Rest Test IPBQA-22466</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestNotes4'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 9</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 9</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 9</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id in(10)</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 9</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA RestNotes4'</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="9"/>
+            <column name="loginName" value="TestUserForRestNotes4"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="9"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestNotes4"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User"/>
+            <column name="lastName" value="For Notes Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="9"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="9"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA RestNotes4"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA RestNotes4' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All') and priv_id!=(Select id from S_AUTHORITY where name='Update Note' and DTYPE='PRIV');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="9"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA RestNotes4' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="9"/>
+            <column name="login" value="corporate\TestUserForRestNotes4"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="13" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Tasks Rest Tests the same as qa user</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestTasks'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 19</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 19</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 22</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 19</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA TaskRest'</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="19"/>
+            <column name="loginName" value="TestUserForRestTasks"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="19"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestTasks"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User"/>
+            <column name="lastName" value="For Tasks Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="19"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="22"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="19"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA TaskRest"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA TaskRest' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="19"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA TaskRest' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="19"/>
+            <column name="login" value="corporate\TestUserForRestTasks"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="14" author="iguliam" runOnChange="true">
+        <comment>Add agencies for Rest Party Search tests</comment>
+        <sql>
+            delete from ThirdPartyAgent where ThirdParty_ID in (select id from ThirdParty where code in ('PSRA1','PSRA2','PSRA3'));
+        </sql>
+        <sql>
+            delete from ThirdPartContact where phoneTypeDescription1='PSRA phone type';
+        </sql>
+        <sql>
+            delete from ThirdParty where code='PSRA1';
+        </sql>
+        <sql>
+            delete from ThirdPartyAddress where addressLine1 in ('PSRA1','PSRA1Mailing');
+        </sql>
+        <sql>
+            delete from BrokerAgencyExtendedInfo where ownerName='PSRA1RESTTest' and id = '5';
+        </sql>
+        <sql>
+            delete from PaymentDetails where statusUpdatedBy = 'PSRA1RESTTest' and id='5';
+        </sql>
+
+        <sql>
+            insert into PaymentDetails (DTYPE,statusUpdatedBy,id) values ('PaymentDetailsCheque','PSRA1RESTTest','5');
+        </sql>
+        <sql>
+            insert into BrokerAgencyExtendedInfo (ownerName, id) values ('PSRA1RESTTest','5');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,city,countryCd,postalCode,stateProvCd,DTYPE,id) values
+            ('PSRA1','Walnut Creek','US','94596','CA','ThirdPartyAddress','12');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,DTYPE,id) values
+            ('PSRA1Mailing','ThirdPartyAddress','13');
+        </sql>
+        <insert tableName="ThirdParty">
+            <column name="id" value="14"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="PSRA1"/>
+            <column name="name" value="PSRA1"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='PSRA1RESTTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='PSRA1RESTTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='PSRA1')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='PSRA1Mailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('13','1','2',
+            'PSRA phone type',
+            (select id from ThirdParty where code='PSRA1'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+
+        <insert tableName="ThirdParty">
+            <column name="id" value="15"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="PSRA2"/>
+            <column name="name" value="PSRA2"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='PSRA1RESTTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='PSRA1RESTTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='PSRA1')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='PSRA1Mailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('14','1','2',
+            'PSRA phone type',
+            (select id from ThirdParty where code='PSRA2'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+
+        <insert tableName="ThirdParty">
+            <column name="id" value="16"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="PSRA3"/>
+            <column name="name" value="PSRA3"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='PSRA1RESTTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='PSRA1RESTTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='PSRA1')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='PSRA1Mailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('15','1','2',
+            'PSRA phone type',
+            (select id from ThirdParty where code='PSRA3'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+    </changeSet>
+    <changeSet failOnError="false" id="16" author="iguliam" runOnChange="true">
+        <comment>Add agencies for Rest Customer tests</comment>
+        <sql>
+            delete from ThirdParty_BrandList where id=1;
+        </sql>
+        <sql>
+            delete from ThirdPartyAgent where ThirdParty_ID in (select id from ThirdParty where code in ('CCRA1'));
+        </sql>
+        <sql>
+            delete from ThirdPartContact where phoneTypeDescription1='CCRA phone type';
+        </sql>
+        <sql>
+            delete from ThirdParty where code='CCRA1';
+        </sql>
+        <sql>
+            delete from ThirdPartyAddress where addressLine1 in ('CCRA1','CCRA1Mailing');
+        </sql>
+        <sql>
+            delete from BrokerAgencyExtendedInfo where ownerName='CCRA1RESTTest' and id = '6';
+        </sql>
+        <sql>
+            delete from PaymentDetails where statusUpdatedBy = 'CCRA1RESTTest' and id='6';
+        </sql>
+
+        <sql>
+            insert into PaymentDetails (DTYPE,statusUpdatedBy,id) values ('PaymentDetailsCheque','CCRA1RESTTest','6');
+        </sql>
+        <sql>
+            insert into BrokerAgencyExtendedInfo (ownerName, id) values ('CCRA1RESTTest','6');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,city,countryCd,postalCode,stateProvCd,DTYPE,id) values
+            ('CCRA1','Walnut Creek','US','94596','CA','ThirdPartyAddress','14');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,DTYPE,id) values
+            ('CCRA1Mailing','ThirdPartyAddress','15');
+        </sql>
+        <insert tableName="ThirdParty">
+            <column name="id" value="17"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="CCRA1"/>
+            <column name="name" value="CCRA1"/>
+            <column name="taxIdentity" value="1234567"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='CCRA1RESTTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='CCRA1RESTTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='CCRA1')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='CCRA1Mailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('16','1','2',
+            'PSRA phone type',
+            (select id from ThirdParty where code='CCRA1'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+
+        <sql>
+            insert into ThirdParty_BrandList (id,BrokerAgency_id,Brand_id) values
+            (1,
+            (select id from ThirdParty where code='CCRA1'),
+            (select id from Brand where code='001')
+            );
+        </sql>
+    </changeSet>
+    <changeSet failOnError="false" id="17" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Customer Rest Tests</comment>
+        <comment>Clean up process</comment>
+        <delete tableName="UserLogin">
+            <where>loginName in ('CCRUser1')</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id in(25)</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id in(25)</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>id in(29)</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id in(25)</where>
+        </delete>
+        <delete tableName="S_ROLE_PRIVILEGES">
+            <where>role_id = (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA CCR1' and DTYPE='ROLE')</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA CCR1'</where>
+        </delete>
+        <insert tableName="UserLogin">
+            <column name="id" value="25"/>
+            <column name="loginName" value="CCRUser1"/>
+        </insert>
+        <comment>CCRUser1 user creation</comment>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="25"/>
+            <column name="domain" value="agency"/>
+            <column name="name" value="CCRUser1"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User"/>
+            <column name="lastName" value="Customer REST"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="CCRA1"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="25"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="29"/>
+            <column name="agencyCode" value="CCRA1"/>
+            <column name="userProfile_id" value="25"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA CCR1"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA CCR1' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="25"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA CCR1' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="25"/>
+            <column name="login" value="corporate\CCRUser1"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="18" author="iguliam" runOnChange="true">
+        <comment>Add Profile(s) for Create Tasks Rest Tests</comment>
+        <comment>Clean up process</comment>
+        <delete tableName="UserLogin">
+            <where>loginName in ('CTRUser1')</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id in(26)</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id in(26)</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>id in(30)</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id in(26)</where>
+        </delete>
+        <delete tableName="S_ROLE_PRIVILEGES">
+            <where>role_id = (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA CTR1' and DTYPE='ROLE')</where>
+        </delete>
+        <delete tableName="S_AUTHORITY">
+            <where>name = 'QA CTR1'</where>
+        </delete>
+        <insert tableName="UserLogin">
+            <column name="id" value="26"/>
+            <column name="loginName" value="CTRUser1"/>
+        </insert>
+        <comment>CTRUser1 user creation</comment>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="26"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="CTRUser1"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User"/>
+            <column name="lastName" value="Tasks REST"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="26"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="30"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="26"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA CTR1"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA CTR1' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All') and priv_id!=(Select id from S_AUTHORITY where name='MyWork Create Manual Task' and DTYPE='PRIV');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="26"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA CTR1' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="26"/>
+            <column name="login" value="corporate\CTRUser1"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="20" author="iguliam" runOnChange="true">
+        <comment>Add agencies for Rest Assign Tasks tests</comment>
+        <sql>
+            delete from ThirdPartyAgent where ThirdParty_ID in (select id from ThirdParty where code in ('TRAT1','TRAT2'));
+        </sql>
+        <sql>
+            delete from ThirdPartContact where phoneTypeDescription1 in ('TRAT1 phone type','TRAT2 phone type');
+        </sql>
+        <sql>
+            delete from ThirdParty where code in ('TRAT1','TRAT2');
+        </sql>
+        <sql>
+            delete from ThirdPartyAddress where addressLine1 in ('TRAT','TRATMailing');
+        </sql>
+        <sql>
+            delete from BrokerAgencyExtendedInfo where ownerName='TRAT1RESTTest' and id = '7';
+        </sql>
+        <sql>
+            delete from PaymentDetails where statusUpdatedBy = 'TRAT1RESTTest' and id='7';
+        </sql>
+
+        <sql>
+            insert into PaymentDetails (DTYPE,statusUpdatedBy,id) values ('PaymentDetailsCheque','TRAT1RESTTest','7');
+        </sql>
+        <sql>
+            insert into BrokerAgencyExtendedInfo (ownerName, id) values ('TRAT1RESTTest','7');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,city,countryCd,postalCode,stateProvCd,DTYPE,id) values
+            ('TRAT','Walnut Creek','US','94596','CA','ThirdPartyAddress','16');
+        </sql>
+        <sql>
+            insert into ThirdPartyAddress (addressLine1,DTYPE,id) values
+            ('TRATMailing','ThirdPartyAddress','17');
+        </sql>
+        <insert tableName="ThirdParty">
+            <column name="id" value="18"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="TRAT1"/>
+            <column name="name" value="TRAT1name"/>
+            <column name="taxIdentity" value="22630TRAT1"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='TRAT1RESTTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='TRAT1RESTTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='TRAT')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='TRATMailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('17','1','2',
+            'TRAT1 phone type',
+            (select id from ThirdParty where code='TRAT1'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+
+        <sql>
+            insert into PaymentDetails (DTYPE,statusUpdatedBy,id) values ('PaymentDetailsCheque','TRAT2RESTTest','8');
+        </sql>
+        <sql>
+            insert into BrokerAgencyExtendedInfo (ownerName, id) values ('TRAT2RESTTest','8');
+        </sql>
+        <insert tableName="ThirdParty">
+            <column name="id" value="19"/>
+            <column name="DTYPE" value="BrokerAgency"/>
+            <column name="createdBy" value="qa"/>
+            <column name="createdOn" valueDate="2010-01-01"/>
+            <column name="code" value="TRAT2"/>
+            <column name="name" value="TRAT2name"/>
+            <column name="taxIdentity" value="22630TRAT2"/>
+            <column name="effective" valueDate="2010-01-01"/>
+            <column name="commissionsExtract" value="1"/>
+            <column name="PaymentDetails_id" valueComputed="(select id from PaymentDetails where statusUpdatedBy='TRAT2RESTTest')"/>
+            <column name="channelCd" value="agency"/>
+            <column name="locationTypeCd" value="agency_agency"/>
+            <column name="commisionLevelType" value="agency"/>
+            <column name="mailingAddressTheSame" value="1"/>
+            <column name="BrokerAgencyExtendedInfo_id" valueComputed="(select id from BrokerAgencyExtendedInfo where ownerName='TRAT2RESTTest')"/>
+            <column name="commissionDeliveryMethod" value="mail"/>
+            <column name="Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='TRAT')"/>
+            <column name="Mailing_Address_ID" valueComputed="(select id from ThirdPartyAddress where addressLine1='TRATMailing')"/>
+            <column name="dueDate" value="7"/>
+            <column name="retainCommsionFromPay" value="1"/>
+            <column name="feeDisbursementLevel" value="recipientOffice"/>
+            <column name="applicableForAgencyBilling" value="1"/>
+            <column name="isPrimary" value="1"/>
+            <column name="paymentStatus" value="active"/>
+            <column name="billingExcludeCommissionMode" value="0"/>
+        </insert>
+
+        <sql>
+            insert into ThirdPartContact (id,phoneType1,phoneType2,phoneTypeDescription1,ThirdParty_ID,seqIdx,isPreferred,contactMediaType,contactType) values
+            ('18','1','2',
+            'TRAT1 phone type',
+            (select id from ThirdParty where code='TRAT2'),
+            '0','1','defaultContact','defaultContact');
+        </sql>
+    </changeSet>
+
+    <changeSet failOnError="false" id="24" author="lgu2" runOnChange="true">
+        <comment>Add Profile(s) for Notes Rest Test with all privileges except 'Add Note', 'Update Note' and 'Notes Inquiry' privileges</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'TestUserForRestNotes5'</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 45</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 45</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 45</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 45</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 45</where>
+        </delete>
+        <delete tableName="S_ROLE_PRIVILEGES">
+            <where>role_id = (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA RestNotes5')</where>
+        </delete>
+
+        <insert tableName="UserLogin">
+            <column name="id" value="45"/>
+            <column name="loginName" value="TestUserForRestNotes5"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="45"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="TestUserForRestNotes5"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="Test User5"/>
+            <column name="lastName" value="For Notes Rest"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="underwritingAuthorityLevel" value="4"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="0"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="45"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="45"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="45"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+
+        <insert tableName="S_AUTHORITY">
+            <column name="domain" value="corporate"/>
+            <column name="name" value="QA RestNotes5"/>
+            <column name="DTYPE" value="ROLE"/>
+        </insert>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (role_id,priv_id)
+            SELECT (SELECT id as role_id FROM S_AUTHORITY WHERE name = 'QA RestNotes5' and DTYPE='ROLE') as role_id, priv_id FROM
+            S_ROLE_PRIVILEGES where role_id=(SELECT id FROM S_AUTHORITY WHERE name = 'QA All') and priv_id!=(Select id from S_AUTHORITY where name='Add Note' and DTYPE='PRIV')
+            and priv_id!=(Select id from S_AUTHORITY where name='Update Note' and DTYPE='PRIV') and priv_id!=(Select id from S_AUTHORITY where name='Notes Inquiry' and DTYPE='PRIV');
+        </sql>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="45"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA RestNotes5' and DTYPE='ROLE')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="45"/>
+            <column name="login" value="corporate\TestUserForRestNotes5"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10001" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10001 (Available, Eff Date is today - 1), Policy Sales &amp; Service - Basic (Sales Reps)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10001'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10001</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10001</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10001</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10001</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10001</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10001</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10001</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10001"/>
+            <column name="loginName" value="User10001"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10001"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10001_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User10001_FirstName"/>
+            <column name="lastName" value="User10001_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10001"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10001"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10001"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10001"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10001"/>
+            <column name="login" value="corporate\User10001"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10001"/>
+            <column name="firstName" value="User10001_FName"/>
+            <column name="lastName" value="User10001_LastName"/>
+            <column name="userProfile_fk" value="10001"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10001"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10001"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10001"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10001"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Basic (Sales Reps)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10002" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10002 (Unavailable, Eff Date = today + 1 year), Policy Sales &amp; Service - Basic (Sales Reps)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10002'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10002</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10002</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10002</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10002</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10002</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10002</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10002</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10002"/>
+            <column name="loginName" value="User10002"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10002"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10002_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User10002_FirstName"/>
+            <column name="lastName" value="User10002_LastName"/>
+            <column name="activationDate" value="2030-01-01"/>
+            <column name="availableForWorkInd" value="0"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10002"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10002"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10002"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10002"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10002"/>
+            <column name="login" value="corporate\User10002"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10002"/>
+            <column name="firstName" value="User10002_FirstName"/>
+            <column name="lastName" value="User10002_LastName"/>
+            <column name="userProfile_fk" value="10002"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10002"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10002"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10002"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10002"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Basic (Sales Reps)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10003" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10003 (Disabled, Expiration Date = today - 1), Policy Sales &amp; Service - Basic (Sales Reps)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10003'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10003</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10003</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10003</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10003</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10003</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10003</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10003</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10003"/>
+            <column name="loginName" value="User10003"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10003"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10003_Name"/>
+            <column name="enabled" value="0"/>
+            <column name="firstName" value="User10003_FirstName"/>
+            <column name="lastName" value="User10003_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10003"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10003"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10003"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10003"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10003"/>
+            <column name="login" value="corporate\User10003"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10003"/>
+            <column name="firstName" value="User10003_FirstName"/>
+            <column name="lastName" value="User10003_LastName"/>
+            <column name="userProfile_fk" value="10003"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10003"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10003"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10003"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10003"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Basic (Sales Reps)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10004" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10004 (Available, Eff Date is today - 1), Policy Sales &amp; Service - Intermediate (Sales Support)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10004'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10004</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10004</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10004</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10004</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10004</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10004</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10004</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10004"/>
+            <column name="loginName" value="User10004"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10004"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10004_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User10004_FirstName"/>
+            <column name="lastName" value="User10004_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10004"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10004"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10004"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10004"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10004"/>
+            <column name="login" value="corporate\User10004"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10004"/>
+            <column name="firstName" value="User10004_FName"/>
+            <column name="lastName" value="User10004_LastName"/>
+            <column name="userProfile_fk" value="10004"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10004"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10004"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10004"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10004"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Intermediate (Sales Support)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10005" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10005 (Unavailable, Eff Date = today + 1 year), Policy Sales &amp; Service - Intermediate (Sales Support)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10005'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10005</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10005</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10005</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10005</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10005</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10005</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10005</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10005"/>
+            <column name="loginName" value="User10005"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10005"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10005_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User10005_FirstName"/>
+            <column name="lastName" value="User10005_LastName"/>
+            <column name="activationDate" value="2030-01-01"/>
+            <column name="availableForWorkInd" value="0"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10005"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10005"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10005"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10005"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10005"/>
+            <column name="login" value="corporate\User10005"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10005"/>
+            <column name="firstName" value="User10005_FirstName"/>
+            <column name="lastName" value="User10005_LastName"/>
+            <column name="userProfile_fk" value="10005"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10005"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10005"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10005"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10005"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Intermediate (Sales Support)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10006" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10006 (Disabled, Expiration Date = today - 1), Policy Sales &amp; Service - Intermediate (Sales Support)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10006'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10006</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10006</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10006</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10006</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10006</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10006</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10006</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10006"/>
+            <column name="loginName" value="User10006"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10006"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10006_Name"/>
+            <column name="enabled" value="0"/>
+            <column name="firstName" value="User10006_FirstName"/>
+            <column name="lastName" value="User10006_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10006"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10006"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10006"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10006"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10006"/>
+            <column name="login" value="corporate\User10006"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10006"/>
+            <column name="firstName" value="User10006_FirstName"/>
+            <column name="lastName" value="User10006_LastName"/>
+            <column name="userProfile_fk" value="10006"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10006"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10006"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10006"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10006"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Intermediate (Sales Support)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10007" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10007 (Available, Eff Date is today - 1), Policy Sales &amp; Service -Advanced (Underwriting)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10007'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10007</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10007</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10007</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10007</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10007</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10007</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10007</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10007"/>
+            <column name="loginName" value="User10007"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10007"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10007_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User10007_FirstName"/>
+            <column name="lastName" value="User10007_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10007"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10007"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10007"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10007"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10007"/>
+            <column name="login" value="corporate\User10007"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10007"/>
+            <column name="firstName" value="User10007_FName"/>
+            <column name="lastName" value="User10007_LastName"/>
+            <column name="userProfile_fk" value="10007"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10007"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10007"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10007"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10007"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service -Advanced (Underwriting)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10008" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10008 (Unavailable, Eff Date = today + 1 year), Policy Sales &amp; Service -Advanced (Underwriting)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10008'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10008</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10008</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10008</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10008</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10008</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10008</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10008</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10008"/>
+            <column name="loginName" value="User10008"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10008"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10008_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User10008_FirstName"/>
+            <column name="lastName" value="User10008_LastName"/>
+            <column name="activationDate" value="2030-01-01"/>
+            <column name="availableForWorkInd" value="0"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10008"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10008"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10008"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10008"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10008"/>
+            <column name="login" value="corporate\User10008"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10008"/>
+            <column name="firstName" value="User10008_FirstName"/>
+            <column name="lastName" value="User10008_LastName"/>
+            <column name="userProfile_fk" value="10008"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10008"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10008"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10008"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10008"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service -Advanced (Underwriting)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="10009" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User10009 (Disabled, Expiration Date = today - 1), Policy Sales &amp; Service -Advanced (Underwriting)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User10009'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 10009</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 10009</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 10009</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 10009</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=10009</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 10009</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 10009</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="10009"/>
+            <column name="loginName" value="User10009"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="10009"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User10009_Name"/>
+            <column name="enabled" value="0"/>
+            <column name="firstName" value="User10009_FirstName"/>
+            <column name="lastName" value="User10009_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="10009"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="10009"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="10009"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="10009"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="10009"/>
+            <column name="login" value="corporate\User10009"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="10009"/>
+            <column name="firstName" value="User10009_FirstName"/>
+            <column name="lastName" value="User10009_LastName"/>
+            <column name="userProfile_fk" value="10009"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code10009"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="10009"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="10009"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="10009"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service -Advanced (Underwriting)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="100010" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User100010 with Underwriting Authority Level = 0</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User100010'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 100010</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 100010</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 100010</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 100010</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=100010</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 100010</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 100010</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="100010"/>
+            <column name="loginName" value="User100010"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="100010"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User100010_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User100010_FirstName"/>
+            <column name="lastName" value="User100010_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="100010"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="100010"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="100010"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="100010"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="100010"/>
+            <column name="login" value="corporate\User100010"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="100010"/>
+            <column name="firstName" value="User100010_FirstName"/>
+            <column name="lastName" value="User100010_LastName"/>
+            <column name="userProfile_fk" value="100010"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code100010"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="0"/>
+            <column name="userId" value="100010"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="100011" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User100011 (First Name + Last Name is more than 19 symbols), Policy Sales &amp; Service - Basic (Sales Reps)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User100011'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 100011</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 100011</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 100011</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 100011</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=100011</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 100011</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 100011</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="100011"/>
+            <column name="loginName" value="User100011"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="100011"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User100011_Name"/>
+            <column name="firstName" value="User100011_FirstName_123456789"/>
+            <column name="lastName" value="User100011_LastName_123456789"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="100011"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="100011"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="100011"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="100011"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="100011"/>
+            <column name="login" value="corporate\User100011"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="100011"/>
+            <column name="firstName" value="User100011_FirstName_123456789"/>
+            <column name="lastName" value="User100011_LastName_123456789"/>
+            <column name="userProfile_fk" value="100011"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code100011"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="100011"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="100011"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="100011"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Basic (Sales Reps)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="100012" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User100012 (First Name + Last Name is more than 19 symbols), Policy Sales &amp; Service - Intermediate (Sales Support)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User100012'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 100012</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 100012</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 100012</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 100012</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=100012</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 100012</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 100012</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="100012"/>
+            <column name="loginName" value="User100012"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="100012"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User100012_Name"/>
+            <column name="firstName" value="User100012_FirstName_123456789"/>
+            <column name="lastName" value="User100012_LastName_123456789"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="100012"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="100012"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="100012"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="100012"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="100012"/>
+            <column name="login" value="corporate\User100012"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="100012"/>
+            <column name="firstName" value="User100012_FirstName_123456789"/>
+            <column name="lastName" value="User100012_LastName_123456789"/>
+            <column name="userProfile_fk" value="100012"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code100012"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="100012"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="100012"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="100012"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Intermediate (Sales Support)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="100013" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User100013 (First Name + Last Name is more than 19 symbols), Policy Sales &amp; Service -Advanced (Underwriting)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User100013'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 100013</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 100013</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 100013</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 100013</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=100013</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 100013</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 100013</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="100013"/>
+            <column name="loginName" value="User100013"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="100013"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User100013_Name"/>
+            <column name="firstName" value="User100013_FirstName_123456789"/>
+            <column name="lastName" value="User100013_LastName_123456789"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="100013"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="100013"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="100013"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="100013"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="100013"/>
+            <column name="login" value="corporate\User100013"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="100013"/>
+            <column name="firstName" value="User100013_FirstName_123456789"/>
+            <column name="lastName" value="User100013_LastName_123456789"/>
+            <column name="userProfile_fk" value="100013"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code100013"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="100013"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="100013"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="100013"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service -Advanced (Underwriting)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="11002" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User11002 (Expired), Policy Sales &amp; Service -Advanced (Underwriting) and Policy Sales &amp; Service - Intermediate (Sales Support)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User11002'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 11002</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 11002</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 11002</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 11002</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=11002</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 11002</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 11002</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="11002"/>
+            <column name="loginName" value="User11002"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="11002"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User11002_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User11002_FirstName"/>
+            <column name="lastName" value="User11002_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="expirationDate" value="2010-01-02"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="11002"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="11002"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="11002"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="11002"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="11002"/>
+            <column name="login" value="corporate\User11002"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="11002"/>
+            <column name="firstName" value="User11002_FName"/>
+            <column name="lastName" value="User11002_LastName"/>
+            <column name="userProfile_fk" value="11002"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code11002"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="11002"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="11002"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="11002"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Intermediate (Sales Support)')"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="11002"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service -Advanced (Underwriting)')"/>
+        </insert>
+    </changeSet>
+    <changeSet failOnError="false" id="11003" author="ybandarenka" runOnChange="true">
+        <comment>Add Profile User11003 (Expired), Policy Sales &amp; Service - Basic (Sales Reps)</comment>
+        <delete tableName="UserLogin">
+            <where>loginName = 'User11003'</where>
+        </delete>
+        <delete tableName="S_PERMISSIONS">
+            <where>principal_id = 11003</where>
+        </delete>
+        <delete tableName="UserAgencyLocation">
+            <where>userProfile_id = 11003</where>
+        </delete>
+        <delete tableName="S_USER_CREDENTIALS">
+            <where>id = 11003</where>
+        </delete>
+        <delete tableName="ThirdPartyAgent">
+            <where>id = 11003</where>
+        </delete>
+        <delete tableName="S_AssignedAuthorityLevel">
+            <where>userId=11003</where>
+        </delete>
+        <delete tableName="S_USER_GROUP">
+            <where>user_id = 11003</where>
+        </delete>
+        <delete tableName="S_PRINCIPAL">
+            <where>id = 11003</where>
+        </delete>
+        <sql>
+            DELETE FROM S_ROLE_PRIVILEGES WHERE role_id = (SELECT id FROM S_AUTHORITY WHERE name ='QA All');
+        </sql>
+        <sql>
+            insert into S_ROLE_PRIVILEGES (priv_id, role_id) (select s1.id, s2.id from S_AUTHORITY s1 join (select id from S_AUTHORITY where name ='QA All') s2 on 1=1  where s1.DTYPE ='PRIV');
+        </sql>
+        <insert tableName="UserLogin">
+            <column name="id" value="11003"/>
+            <column name="loginName" value="User11003"/>
+        </insert>
+        <insert tableName="S_PRINCIPAL">
+            <column name="DTYPE" value="USERPROFILE"/>
+            <column name="id" value="11003"/>
+            <column name="domain" value="corporate"/>
+            <column name="name" value="User11003_Name"/>
+            <column name="enabled" value="1"/>
+            <column name="firstName" value="User11003_FirstName"/>
+            <column name="lastName" value="User11003_LastName"/>
+            <column name="availableForWorkInd" value="1"/>
+            <column name="activationDate" value="2010-01-01"/>
+            <column name="expirationDate" value="2010-01-02"/>
+            <column name="billingAuthorityLevel" value="level5"/>
+            <column name="claimsAuthorityLevel" value="CLAIMS_AUTHORITY_LVL3"/>
+            <column name="systemUserInd" value="0"/>
+            <column name="type" value="Front Office"/>
+            <column name="ipbUser" value="1"/>
+            <column name="agencyNumber" value="QAG"/>
+            <column name="commissionable" value="1"/>
+            <column name="sellsInsuranceProducts" value="1"/>
+            <column name="restrictAccess" value="0"/>
+            <column name="loginID" value="11003"/>
+        </insert>
+        <insert tableName="UserAgencyLocation">
+            <column name="id" value="11003"/>
+            <column name="agencyCode" value="QAG"/>
+            <column name="userProfile_id" value="11003"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_PERMISSIONS">
+            <column name="principal_id" value="11003"/>
+            <column name="allowed" value="1"/>
+            <column name="auth_id" valueComputed="(SELECT id FROM S_AUTHORITY WHERE name = 'QA All')"/>
+            <column name="seqIdx" value="0"/>
+        </insert>
+        <insert tableName="S_USER_CREDENTIALS">
+            <column name="id" value="11003"/>
+            <column name="login" value="corporate\User11003"/>
+            <column name="pwdNtHashHex" value="aa8cea2a92b3ce52e8362a64302ea129"/>
+            <column name="pwdSHA1Hex" value="d3c583412a36313ab5e24293924c39a36b842c56"/>
+        </insert>
+        <insert tableName="ThirdPartyAgent">
+            <column name="DTYPE" value="BrokerAgent"/>
+            <column name="id" value="11003"/>
+            <column name="firstName" value="User11003_FName"/>
+            <column name="lastName" value="User11003_LastName"/>
+            <column name="userProfile_fk" value="11003"/>
+            <column name="ThirdParty_ID" valueComputed="(SELECT id FROM ThirdParty WHERE code = 'QAG')"/>
+            <column name="code" value="code11003"/>
+            <column name="commissionable" value="0"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="UNDRW"/>
+            <column name="auth_level" value="4"/>
+            <column name="userId" value="11003"/>
+        </insert>
+        <insert tableName="S_AssignedAuthorityLevel">
+            <column name="id" valueComputed="(select max(id)+10000 from S_AssignedAuthorityLevel)"/>
+            <column name="type" value="BILLING"/>
+            <column name="auth_level" value="5"/>
+            <column name="userId" value="11003"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id" value="11003"/>
+            <column name="group_id" valueComputed="(select id from S_PRINCIPAL where name = 'Policy Sales &amp; Service - Basic (Sales Reps)')"/>
+        </insert>
+    </changeSet>
+
+    <changeSet author="alebediev"  id="REN-22838-1-1" runOnChange="true">
+        <preConditions onFail="MARK_RAN" onError="CONTINUE">
+            <sqlCheck expectedResult="3">
+                select count(*) from S_PRINCIPAL where DTYPE='GROUP' and domain='corporate' and name in
+                ('Policy Sales &amp; Service - Basic (Sales Reps)','Policy Sales &amp; Service - Intermediate (Sales Support)','Policy Sales &amp; Service -Advanced (Underwriting)')
+            </sqlCheck>
+        </preConditions>
+        <comment>REN-22838-1 Assign groups to QA user for smoke tests</comment>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id"
+                    valueComputed="(SELECT id FROM S_PRINCIPAL WHERE DTYPE = 'USERPROFILE' AND domain='corporate' AND name='qa')"/>
+            <column name="group_id"
+                    valueComputed="(SELECT id FROM S_PRINCIPAL WHERE DTYPE='GROUP' and domain='corporate' and name='Policy Sales &amp; Service - Basic (Sales Reps)')"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id"
+                    valueComputed="(SELECT id FROM S_PRINCIPAL WHERE DTYPE = 'USERPROFILE' AND domain='corporate' AND name='qa')"/>
+            <column name="group_id"
+                    valueComputed="(SELECT id FROM S_PRINCIPAL WHERE DTYPE='GROUP' and domain='corporate' and name='Policy Sales &amp; Service - Intermediate (Sales Support)')"/>
+        </insert>
+        <insert tableName="S_USER_GROUP">
+            <column name="user_id"
+                    valueComputed="(SELECT id FROM S_PRINCIPAL WHERE DTYPE = 'USERPROFILE' AND domain='corporate' AND name='qa')"/>
+            <column name="group_id"
+                    valueComputed="(SELECT id FROM S_PRINCIPAL WHERE DTYPE='GROUP' and domain='corporate' and name='Policy Sales &amp; Service -Advanced (Underwriting)')"/>
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>

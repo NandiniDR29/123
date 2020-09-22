@@ -1,0 +1,83 @@
+CaseProfile_TestData: {
+  CaseProfileDetailsTab: {
+    Case Profile Name: __first_one,
+    Effective Date: $<today-1y>,
+    Group Domicile State: CA,
+    Agency / Producer: [QAG - QA Agency]
+  },
+  ProductAndPlanManagementTab: {
+    Product: Group Benefits
+  },
+  ClassificationManagementTab: ['@ClassificationManagementTabEmployment'],
+  LocationManagementTab: [{
+                            Add Billing Location: {
+                              Location Name: 'LOC1',
+                              Location Number: '1',
+                              Tax Identification: '11-6543201'
+                            }
+                          },
+                          {
+                            Add Billing Location: {
+                              Location Name: 'LOC2',
+                              Location Number: '2',
+                              Tax Identification: '22-6543201'
+                            }
+                          }],
+  FileIntakeManagementTab: []
+}
+
+ClassificationManagementTabEmployment: {
+  Classification Group: {
+    Class Name: Employment,
+    Class Number: Employment,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'No'
+  },
+  Sub Groups: ['@Sub1']
+}
+
+Sub1: {
+  Classification Sub-Group: {
+    Sub-Group Name: '$<static:ClassificationSubGroup:[rx:SubGroup\d{8}]>',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Gender: Male,
+    Tobacco: 'Yes',
+    Min Age: '20',
+    Max Age: '50'
+  }
+}
+
+SetupBillingGroups_ForTwoLocs_TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<today>,
+    Reason: index=1
+  },
+  BillingLocationsMappingTab: {
+    Classification Group: 'Employment',
+    Billing Location: [LOC1, LOC2]
+  },
+  BillingGroupsTab: [{
+                       Group: BG001,
+                       Classification Group: 'Employment',
+                       Billing Location: [LOC1]
+                     },
+                     {
+                       Add Billing Group: CLICK,
+                       Billing Group Name: BG002,
+                       Billing Group Type: Employment,
+                       Payor: Sponsor,
+                       Payment Mode: 12,
+                       Coverage: 'Enhanced Accident - Enhanced 10 Units',
+                       Classification Group: 'Employment',
+                       Billing Location: [LOC2]
+                     }],
+  BillingAccountSetupTab: [{
+                             Billing Group Name: BG002,
+                             Select Action: 'Create New Account'
+                           }]
+}

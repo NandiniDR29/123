@@ -1,0 +1,8 @@
+TestData: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: index=2
+}

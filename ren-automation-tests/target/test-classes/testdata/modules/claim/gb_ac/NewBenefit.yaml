@@ -1,0 +1,50 @@
+TestData_AccidentalDeath: {
+  BenefitAccidentalDeathDecedentTab:{
+    'Add Benefit: Accidental Death': 'click',
+    Associated Policy Party: 'contains=John',
+    Relationship To Participant: Self,
+  }
+}
+
+TestData_AccidentalDeath_OtherValues: {
+  BenefitAccidentalDeathDecedentTab: {
+    'Add Benefit: Accidental Death': 'click',
+    Associated Policy Party: 'contains=John',
+    First Name: '$<static:customerFirstName:[rx:John\d{8}]>',
+    Last Name:  '$<static:customerLastName:[rx:Smith\d{8}]>'
+  }
+}
+
+TestData_CriticalIllness: {
+  BenefitCriticalIllnessInjuryPartyInformationTab: {
+    'Add Benefit: Critical Illness': 'click',
+    Associated Policy Party: 'contains=John',
+    Date of Birth: 10/10/1985
+  }
+}
+
+TestData_PremiumWaiver: {
+  BenefitPremiumWaiverInjuryPartyInformationTab: {
+    'Add Benefit: Premium Waiver': 'click',
+    Premium Waiver Party: {
+      Associate Policy Party: 'contains=John',
+      Preferred Payment method: Check
+    }
+  },
+}
+
+TestData_AccidentalDismemberment: {
+  BenefitAccidentalDismembermentInjuryPartyInformationTab: {
+    'Add Benefit: Accidental Dismemberment': 'click',
+    Associated Policy Party: 'contains=John',
+    Date of Service: $<today>
+  },
+}
+
+TestData_DiagnosisAndTreatment: {
+  BenefitDiagnosisAndTreatmentInjuryPartyInformationTab: {
+    'Add Benefit: Diagnosis and Treatment': 'click',
+    Associated Policy Party: 'contains=John',
+    Date of Service: $<today>
+  },
+}

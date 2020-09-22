@@ -1,0 +1,175 @@
+BillingAccountTab_Type5: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Address Line 2: '$<static:AddressLine2:[rx:Address\d{8}]>',
+    Address Line 3: '$<static:AddressLine3:[rx:Address\d{8}]>',
+    Invoicing Calendar: 'contains=Default Invoicing Calendar',
+    Invoice document template: 'STATUTORY_INVOICE_TYPE_5'
+  }
+}
+
+PlanDefinitionTab_NJ: {
+  Plan: NJ Stat,
+  Coverage Name: Stat NJ,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Rate Basis': 'Percent of Taxable Wage',
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+ClassificationManagementTab_NJ: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee,
+    Number of Participants: 5
+  },
+  {
+    Coverage Tier Key: Employer,
+    Number of Participants: 5
+  }
+  ]
+}
+
+BillingAccountTab_Type6: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Address Line 2: 'Address2$<rx:\d{8}>',
+    Address Line 3: 'Address3$<rx:\d{8}>',
+    Invoicing Calendar: 'contains=Default Invoicing Calendar',
+    Invoice document template: 'STATUTORY_INVOICE_TYPE_6'
+  }
+}
+
+TestData_Type2: {
+  PolicyInformationTab: '@PolicyInformationTab_NY_Type2',
+  PlanDefinitionTab: ['@PlanDefinitionTab_NY_Type2', '@PlanDefinitionTab_PFLNY_Type2'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_StatNY_Type2', '@ClassificationManagementTab_FPLNY_Type2'],
+  BillingAccountTab: '@BillingAccountTab_Type2'
+}
+
+PolicyInformationTab_NY_Type2: {
+  County Code: '001 - Albany County',
+  'Allow Independent Commissionable Producers?': 'No',
+  Rate Guarantee (Months): '12',
+  'Under 50 Lives?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NY,
+  Underwriting Company: Renaissance Life & Health Insurance Company of New York,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_NY_Type2: {
+  Plan: NY Stat,
+  Coverage Name: 'Stat NY',
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+}
+
+PlanDefinitionTab_PFLNY_Type2: {
+  Add Coverage: 'click',
+  Coverage Name: PFL NY,
+  Contribution Type: Mandatory,
+  'Self-administered?': 'Yes',
+  Taxability: Benefits Taxable,
+  Premiums Paid-Post Tax: Yes,
+  Benefit Schedule: {
+    Benefit Percentage: '55%',
+    Maximum Benefit period: 10,
+  },
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+}
+
+ClassificationManagementTab_StatNY_Type2: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Stat NY,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10
+  },
+  {
+    Classification SubGroup Name: Proprietor,
+    Number of Participants: 10
+  }
+  ]
+}
+
+ClassificationManagementTab_FPLNY_Type2: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: PFL NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: 'Other/Not Specified',
+    Number of Participants: 0,
+    Total Volume: 0
+  }
+  ]
+}
+
+BillingAccountTab_Type2: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Address Line 2: 'Address2$<rx:\d{8}>',
+    Address Line 3: 'Address3$<rx:\d{8}>',
+    Invoicing Calendar: 'contains=Default Invoicing Calendar',
+    Invoice document template: 'STATUTORY_INVOICE_TYPE_2'
+  }
+}

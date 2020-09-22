@@ -1,0 +1,9 @@
+Test_Data_FNOL: {
+  "claim": {
+    "productCd": "CLAIM_ACC_HEALTH",
+    "customerNumber": num,
+    "policyNumber": num,
+    "lossDt": '$<today:yyyy-MM-dd>',
+    "reportedDt": '$<today:yyyy-MM-dd>',
+  }
+}

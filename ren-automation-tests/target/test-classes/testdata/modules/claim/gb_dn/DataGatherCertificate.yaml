@@ -1,0 +1,235 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+TestData_TwoServices: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTabTwoServices',
+}
+
+TestData_ThreeServices: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTabThreeServices',
+}
+
+TestData_WithPayment: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTabWithPayment',
+}
+
+TestData_WithoutPayment: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTabWithoutPayment',
+}
+
+TestData_PardisRajabi_Provider: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab_PardisRajabi_Provider',
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '351517384',
+    'License #': '8724',
+    License NPI: '1063628917',
+    License State/Province: 'IN',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '46237',
+    Address Line 1: '4034 E Southport Rd',
+    City: 'Indianapolis',
+    State/Province: 'IN',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Predetermination',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    CDT Code: 'D0160',
+    Charge: '400.40'
+  }
+}
+
+IntakeInformationTabTwoServices: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '351517384',
+    'License #': '8724',
+    License NPI: '1063628917',
+    License State/Province: 'IN',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '46237',
+    Address Line 1: '4034 E Southport Rd',
+    City: 'Indianapolis',
+    State/Province: 'IN',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: [{
+     DOS: $<today>,
+     CDT Code: 'D0160',
+     Charge: 200
+   },
+   {
+     DOS: $<today>,
+     CDT Code: 'D0160',
+     Charge: 400
+   }
+  ]
+}
+
+IntakeInformationTabThreeServices: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '$<rx:\d{10}>',
+    'License #': '$<rx:\d{5}>',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '10001',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: [{
+     DOS: $<today>,
+     CDT Code: 'D0160',
+     Charge: 200
+   },
+   {
+     DOS: $<today>,
+     CDT Code: 'D0160',
+     Charge: 400
+   },
+   {
+     DOS: $<today>,
+     CDT Code: 'D0160',
+     Charge: 600
+   }
+  ]
+}
+
+IntakeInformationTabWithPayment: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '$<rx:\d{10}>',
+    'License #': '$<rx:\d{5}>',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '10001',
+    Address Line 1: '$<rx:Address\d{8}>',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D0160',
+    Charge: 200
+  }
+}
+
+IntakeInformationTabWithoutPayment: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '351517384',
+    'License #': '8724',
+    License NPI: '1063628917',
+    License State/Province: 'IN',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '46237',
+    Address Line 1: '4034 E Southport Rd',
+    City: 'Indianapolis',
+    State/Province: 'IN',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    DOS: $<today>,
+    CDT Code: 'D2971',
+    Tooth: '3',
+    Charge: 1000
+  }
+}
+
+Adjust_UpdateIntakeInformationTab: {
+  IntakeInformationTab: {
+    Patient: {
+      Name: contains=Insured
+    },
+    Submitted Services: [{
+                           CDT Code: 'D0160',
+                           Charge: 200
+                         },
+                         {
+                           DOS: $<today>,
+                           CDT Code: 'D0160',
+                           Charge: 400
+                         }
+    ]
+  }
+}
+
+IntakeInformationTab_PardisRajabi_Provider: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '134006748',
+    'License #': '58405',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '100073914',
+    Address Line 1: '225 Broadway Ste 101',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Predetermination',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    CDT Code: 'D0160',
+    Charge: '400.40'
+  }
+}

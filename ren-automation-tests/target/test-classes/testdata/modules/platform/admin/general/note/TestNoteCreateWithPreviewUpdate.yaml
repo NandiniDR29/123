@@ -1,0 +1,15 @@
+TestData: {
+  NotesAndAlertsTab: {
+    'Note/Alert': ' Note',
+    Title: Simple Title,
+    'Confid.': 'No',
+    Note: 'Test Note',
+    Category: ''
+  }
+}
+
+TestData_Update: {
+  NotesAndAlertsTab: {
+    Note: 'NEW TEST NOTE'
+  }
+}

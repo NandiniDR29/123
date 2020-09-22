@@ -1,0 +1,55 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan_TwoPlans', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL'],
+  ClassificationManagementTab: ['@<std_master>@DataGather@ClassificationManagementTab', '@<std_master>@DataGather@ClassificationManagementTab']
+}
+
+SelectPlan_TwoPlans: {
+  Plan: [CON, VOL]
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Participant Contribution %: 50,
+    Sponsor Payment Mode: 12,
+    Member Payment Mode: 12,
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings
+  },
+  Options: {
+  },
+  Employer Benefits: {}
+}
+
+PlanDefinitionTab_VOL: {
+  PlanKey: VOL-VOL,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Member Payment Mode: 12,
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings
+  }
+}

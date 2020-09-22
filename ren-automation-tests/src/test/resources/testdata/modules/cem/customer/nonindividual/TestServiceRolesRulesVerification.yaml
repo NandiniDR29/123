@@ -1,0 +1,114 @@
+GeneralTabCustomer1: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: 'G - Retail Trade',
+    Industry: '54 - Food Stores',
+    SIC Description: index=1,
+    Primary Contact Preference: 'Mail',
+    Address Details: ['@AddressLegal', '@AddressMailing'],
+    Email Details: {
+      Email Address: 'test@test.com'
+    },
+    Group Sponsor: 'true',
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+GeneralTabCustomer2: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: 'G - Retail Trade',
+    Industry: '54 - Food Stores',
+    SIC Description: index=1,
+    Primary Contact Preference: 'Email',
+    Address Details: {
+      Address Type: 'Legal',
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Email Details: {
+      Email Address: 'test@test.com'
+    },
+    Group Sponsor: 'true',
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+GeneralTabCustomer3: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: 'G - Retail Trade',
+    Industry: '54 - Food Stores',
+    SIC Description: index=1,
+    Primary Contact Preference: 'Mail',
+    Address Details: ['@AddressLegal', '@AddressMailing'],
+    Group Sponsor: 'true',
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+GeneralTabCustomer4: {
+  GeneralTab: {
+    First Name: '$<static:customerFirstName:[rx:John\d{8}]>',
+    Middle Name: 'Middle$<rx:\d{8}>',
+    Last Name: '$<static:customerLastName:[rx:Smith\d{8}]>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Primary Contact Preference: 'Mail',
+    Address Details: {
+      Address Type: 'Mailing',
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: '$<static:Address:[rx:Address\d{8}]>'
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    }
+  }
+}
+
+AddressLegal: {
+  Address Type: 'Legal',
+  Country: United States,
+  Zip/Post Code: '90210',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>'
+}
+
+AddressMailing: {
+  Address Type: 'Mailing',
+  Country: United States,
+  Zip/Post Code: '90210',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>'
+}
+

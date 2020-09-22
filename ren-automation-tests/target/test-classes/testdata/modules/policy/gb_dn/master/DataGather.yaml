@@ -1,0 +1,405 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+TestDataASO: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTabASO',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanASO', '@PlanDefinitionTabASO_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTabASO_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+TestData_PlanTripleAdvantage: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTabTripleAdvantage',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanTripleAdvantage', '@PlanDefinitionTabTripleAdvantage'],
+  ClassificationManagementTab: '@ClassificationManagementTabTripleAdvantage',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: 'User10001_FirstName User10001_LastName',
+    Sales Support Associate: 'User10004_FirstName User10004_LastName'
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '2',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PolicyInformationTabASO: {
+  ASO Plan: Yes,
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '2',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PolicyInformationTabTripleAdvantage: {
+  ASO Plan: No,
+  Policy Effective Date: $<today>,
+  Situs State: 'NV',
+  Zip Code: '89102',
+  'Rate Guarantee (Months)': 24,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Allow Independent Commissionable Producers?': 'Yes',
+  'Prior Carrier Name': 'Aetna',
+  Prior Dental Coverage: 'Yes',
+  Total Number of Eligible Lives: '100',
+  'Group is an Association?': 'No',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+SelectPlanASO: {
+  Plan: ASO A La Carte
+}
+
+SelectTwoPlans: {
+  Plan: [A La Carte, Major EPOS]
+}
+
+SelectPlanTripleAdvantage: {
+  Plan: Triple Advantage
+}
+
+PlanDefinitionTab_ALACARTE: {
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{
+    #    Network Arrangement: index=1
+  },
+  Dental Deductible:{
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTabASO_ALACARTE: {
+  PlanKey: ASOALC-ASO A La Carte,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTabTripleAdvantage: {
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Sponsor/Participant Split',
+    'Participant Contribution % Employee Coverage': '60',
+    'Participant Contribution % Dependent Coverage': '40',
+    'Assumed Participation %': 60,
+    'Sponsor Payment Mode': 12,
+    'Required Participation %': 30
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    Use Brochure Rates: 'No',
+    'SIC Code': '7997',
+    SIC Description: 'Other Nonscheduled Air Transportation'
+  },
+  Benefit Waiting Periods: {
+    Preventive Waiting Period: 'None',
+    Radiographs Waiting Period: 'None',
+    Basic Waiting Period: 'None',
+    Major Waiting Period: 'None',
+    Prosthodontics Waiting Period: '6 months',
+    EPCOS Waiting Period: 'None',
+    'Documentation of Waiting Period received?': 'No'
+  },
+  Dental Maximum: {
+    'Maximum Expense Period': 'Benefit Year',
+  },
+  Dental Deductible:{
+    'Deductible Expense Period': 'Benefit Year',
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+    }
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  }
+}
+
+PreventativeAndDiagnosticTab: {
+  Fluoride Treatment: 'Not Covered'
+}
+
+BasicTab: {
+}
+
+MajorTab: {
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 32
+  }
+}
+
+ClassificationManagementTab_MAJEPOS: {
+  Plan: 'MAJEPOS-Major EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 32
+  }
+}
+
+ClassificationManagementTabASO_ALACARTE: {
+  Plan: ASOALC-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '32',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTabTripleAdvantage: {
+  Plan: 'TRIPADV-Triple Advantage',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  },
+  {
+    Coverage Tier Key: Employee + Spouse,
+    Number of Participants: 4
+  },
+  {
+    Coverage Tier Key: Employee + Child(ren),
+    Number of Participants: 5
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 6
+  }
+  ]
+}
+
+PremiumSummaryTabTripleAdvantage: {
+  Select Rating Census:  'index=1',
+  Apply: 'click',
+  Experience Rating: {
+    Experience Claim Amount: '0.5',
+    Credibility Factor: '0.000003'
+  }
+}
+
+Adjustment_BackDated: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-2M>,
+    Case Profile: index=1,
+    Product: Group Dental,
+    Delivery Model: Group
+  },
+  PolicyInformationTab: {
+    Policy Effective Date: $<BOM-2M>,
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Prior Dental Coverage: 'No',
+    Total Number of Eligible Lives: '1',
+    'Group is an Association?': 'No',
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1'
+  }
+}
+
+TestData_CopyFromPolicy: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement: {
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Rate: 100 },
+  PremiumSummaryTab: {}
+}
+
+VersionDialog: {
+  Description: 'Desc$<rx:\d{8}>'
+}
+
+TestData_TwoPlans: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans', '@PlanDefinitionTab_ALACARTE','@PlanDefinitionTab_MAJEPOS'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_MAJEPOS'],
+  PremiumSummaryTab: {}
+}
+
+TestDataUpdateSomething: {
+  InitiniateDialog: {},
+  PolicyInformationTab: '@PolicyInformationTabUpdate',
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Number of Participants: '100'
+  },
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTabUpdate: {
+  Total Number of Eligible Lives: '3',
+}
+
+PlanDefinitionTab_MAJEPOS: {
+  PlanKey: MAJEPOS-Major EPOS,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{
+    #    Network Arrangement: index=1
+  },
+  Dental Deductible:{
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}

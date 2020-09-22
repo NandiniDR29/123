@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<import xmlns="http://exigenservices.com/ipb/crm/integration">
+	<businessLead>
+		<leadStatus>quaLiFied </leadStatus>
+		<legalName>Firewall33</legalName>
+		<businessType>SLPR</businessType>
+		<PhoneContact>
+			<phoneNumber>1234567855</phoneNumber>
+		</PhoneContact>
+		<Address>
+			<type>legal</type>
+			<city>Minsk</city>
+			<country>US</country>
+			<postalCode>12345</postalCode>
+			<stateProvince>IL</stateProvince>
+			<addressLine>address line 1</addressLine>
+		</Address>
+	</businessLead>
+</import>

@@ -1,0 +1,91 @@
+TestData: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@DataGather@ClassificationMgmtBasicAccidentalDeath', '@DataGather@ClassificationMgmtBasicLifeInsraunce', '@DataGather@ClassificationMgmtDependentBasicLife'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_UseCensusFile: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce_1', '@ClassificationMgmtBasicAccidentalDeath_1', '@ClassificationMgmtDependentBasicLife_1'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+ClassificationMgmtBasicLifeInsraunce_1: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: index=1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Confirm using subgroups: 'Yes',
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes'
+}
+
+ClassificationMgmtBasicAccidentalDeath_1: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: index=1
+}
+
+ClassificationMgmtDependentBasicLife_1: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: index=1,
+  Tier: Spouse and/or Child
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}

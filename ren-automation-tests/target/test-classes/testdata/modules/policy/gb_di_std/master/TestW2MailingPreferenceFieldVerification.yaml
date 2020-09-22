@@ -1,0 +1,20 @@
+TestData: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTab']
+}
+
+PlanDefinitionTab: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Options: {
+    W2: 'Included'
+  }
+}

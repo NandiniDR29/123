@@ -1,0 +1,216 @@
+TestData_DN: {
+  InitiniateDialog: '@<dn_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_DN',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_TwoPlans_DN', '@PlanDefinitionTab_FlexPlus_DN', '@PlanDefinitionTab_ALaCarte_DN'],
+  ClassificationManagementTab: ['@<dn_master>@DataGather@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_FLEX'],
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTab_DN: {
+  Situs State: 'WA',
+  Rate Guarantee (Months): 24,
+  Total Number of Eligible Lives: '150',
+  ASO Plan: No,
+  Internal Team: {
+    Sales Representative: 'User10001_FirstName User10001_LastName',
+    Sales Support Associate: 'User10004_FirstName User10004_LastName'
+  },
+  Prior Dental Coverage: 'No',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan_TwoPlans_DN: {
+  Plan: ["Flex Plus", "A La Carte"],
+}
+
+PlanDefinitionTab_FlexPlus_DN: {
+  PlanKey: FLEX-Flex Plus,
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Sponsor/Participant Split',
+    'Is Contribution Percentage Based?': 'Yes',
+    'Participant Contribution % Employee Coverage': '30',
+    'Participant Contribution % Dependent Coverage': '30',
+    'Assumed Participation %': 56,
+    'Sponsor Payment Mode': 12,
+  },
+  Rating: {
+    Rate Type: 'Area + Tier',
+    Rate Cap: '2nd Year & 3rd Year',
+    SIC Description: 'index=1',
+    '2nd Year Cap %': 15,
+    '3rd Year Cap %': 15,
+  },
+  Benefit Waiting Periods: {
+    Preventive Waiting Period: '6 months',
+    Radiographs Waiting Period: '6 months',
+    Basic Waiting Period: '6 months',
+    Major Waiting Period: '6 months',
+    Prosthodontics Waiting Period: '6 months',
+    EPCOS Waiting Period: '6 months',
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Brush Biopsy: 'Covered',
+    },
+    Major: {
+      TMD: 'Covered (Surgical)',
+      'TMD Maximum': '$500',
+    }
+  },
+  Orthodontia: {
+    Ortho Coverage: 'Yes',
+    Ortho Waiting Period: '6 months',
+    Ortho Availability: 'Child Only',
+    Lifetime Deductible: 'Yes',
+    Co-Insurance - In Network: '50%',
+    Co-Insurance - Out of Network: '50%',
+    Lifetime Maximum - In Network: '$1,000',
+  },
+  Dental Deductible:{
+    Lifetime Deductible: 'No',
+    Deductible - In Network: '$50',
+    Family Deductible - In Network: '3X',
+  },
+  Exclusions: {
+    Missing Tooth: true,
+  },
+  Service Categories: {
+    1A - Oral Exams: Major,
+    1B - Emergency Palliative Treatment: Preventive,
+    1D - Cleanings: Preventive,
+    1C - Fluorides: Basic,
+    1E - Sealants: Preventive,
+    2A - Bitewing Radiographs: Preventive,
+    2B - Full Mouth Radiographs: Preventive,
+    2C - All Other Radiographs: Preventive,
+    2O - Other Adjunctive: Preventive,
+    2H - Periodontics Prophy: Preventive,
+    2G - Simple Periodontics: Preventive,
+    2F - Major Periodontics: Basic,
+    2E - Other Restorative: Preventive,
+    2I - Root Canals (Endodontic): Preventive,
+    2J - All Other Endodontic: Basic,
+    2K - Simple Extractions: Preventive,
+    2L - Complex Extractions: Preventive,
+    2M - All Other Oral Surgery: Basic,
+    2D - Major Restorative: Major,
+    2N - Denture Repair: Basic,
+    3B - Partial Dentures: Major,
+  },
+  Dental Maximum: {
+    Maximum Roll Over: 'Yes',
+    'Maximum Extender': 'true',
+    'Maximum Expense Period': 'Calendar Year',
+    'Plan Maximum - In Network': '$1,500',
+  },
+  Co-Insurance: {
+    Preventive - In Network: '100%',
+    Preventive - Out of Network: '100%',
+    Basic - In Network: '100%',
+    Basic - Out of Network: '100%',
+    Major - In Network: '60%',
+    Major - Out of Network: '60%',
+  },
+}
+
+PlanDefinitionTab_ALaCarte_DN: {
+  PlanKey: ALACARTE-A La Carte,
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Required Participation %: 100%,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Sponsor/Participant Split',
+    'Is Contribution Percentage Based?': 'No',
+    'Assumed Participation %': 56,
+    'Sponsor Payment Mode': 12,
+    'Sponsor Contribution Amount Employee Coverage (monthly)': 12,
+    'Sponsor Contribution Amount Dependent Coverage (monthly)': 12,
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    SIC Description: 'index=1',
+  },
+  Benefit Waiting Periods: {
+    Preventive Waiting Period: '6 months',
+    Radiographs Waiting Period: '6 months',
+    Basic Waiting Period: '6 months',
+    Major Waiting Period: '6 months',
+    Prosthodontics Waiting Period: '6 months',
+    EPCOS Waiting Period: '6 months',
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Brush Biopsy: 'Not Covered',
+    },
+    Major: {
+      TMD: 'Not Covered',
+    }
+  },
+  Orthodontia: {
+    Ortho Coverage: 'No',
+  },
+  Dental Deductible:{
+    Lifetime Deductible: 'No',
+    Deductible - In Network: '$50',
+    Family Deductible - In Network: '3X',
+  },
+  Exclusions: {
+    Missing Tooth: false,
+  },
+  Service Categories: {
+    1A - Oral Exams: Basic,
+    1B - Emergency Palliative Treatment: Basic,
+    1D - Cleanings: Basic,
+    1C - Fluorides: Preventive,
+    1E - Sealants: Preventive,
+    2A - Bitewing Radiographs: Major,
+    2B - Full Mouth Radiographs: Major,
+    2C - All Other Radiographs: Major,
+    2O - Other Adjunctive: Major,
+    2H - Periodontics Prophy: Major,
+    2G - Simple Periodontics: Major,
+    2F - Major Periodontics: Basic,
+    2E - Other Restorative: Basic,
+    2I - Root Canals (Endodontic): Basic,
+    2J - All Other Endodontic: Preventive,
+    2K - Simple Extractions: Major,
+    2L - Complex Extractions: Major,
+    2M - All Other Oral Surgery: Basic,
+    3B - Partial Dentures: Basic,
+  },
+  Dental Maximum: {
+    Maximum Roll Over: 'No',
+    'Maximum Extender': 'false',
+    'Maximum Expense Period': 'Calendar Year',
+    Plan Maximum - In Network: '$1,500',
+  },
+  Co-Insurance: {
+    Preventive - In Network: '100%',
+    Preventive - Out of Network: '100%',
+    Basic - In Network: '80%',
+    Basic - Out of Network: '80%',
+    Major - In Network: '50%',
+    Major - Out of Network: '50%',
+  },
+}
+
+ClassificationManagementTab_FLEX: {
+  Plan: 'FLEX-Flex Plus',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+TestData_Proposal: {
+  ProposalActionTab: {
+    Override Rules List: ["Proposal with an A La Carte Plan requires Underwriter approval",
+                          "Proposal requires Underwriter approval because Sponsor Contribution is not pe...",
+                          "Proposal requires Underwriter approval because Master Quote contains Rate Cap..."]
+  }
+}

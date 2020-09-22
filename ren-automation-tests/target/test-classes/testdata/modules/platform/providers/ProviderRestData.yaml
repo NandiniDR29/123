@@ -1,0 +1,141 @@
+TestData_NonIndividual: {
+  taxId: '$<static:nonIndTaxId:[rx:\d{8}]>',
+  status: ACTIVE,
+  name: 'nonIndTest$<rx:\d{8}>',
+  countryCd: US,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: New York,
+  zipCd: 10001,
+  state: NY,
+  mailingAddressSame: true,
+  startDate: '$<today-1y:yyyy-MM-dd>',
+  finishDate: '$<today+3y:yyyy-MM-dd>',
+  identities:{
+    NPI: '$<static:nonIndNpi:[rx:\d{10}]>',
+    EXTERNAL: 'external$<rx:\d{8}>'
+  },
+  externalSourceType: "PPO",
+  serviceTypes: ['10', '20', '00']
+}
+
+TestData_Individual: {
+  taxId: '$<static:indTaxId:[rx:\d{8}]>',
+  name: 'IndTest$<rx:\d{8}>',
+  countryCd: US,
+  zipCd: 10001,
+  addressLine1: '$<static:indProviderAddress:[rx:Address\d{8}]>',
+  city: New York,
+  state: NY,
+  mailingAddressSame: true,
+  vendorProfileType: individual,
+  serviceProviderCreateDTO: {
+    firstName: 'John$<rx:\d{8}>',
+    lastName: 'Smith$<rx:\d{8}>',
+    code: 'code$<rx:\d{4}>'
+  },
+  startDate: '$<today-1y:yyyy-MM-dd>',
+  finishDate: '$<today+3y:yyyy-MM-dd>',
+  vendorRating: SILVER,
+  status: ACTIVE,
+  externalSourceType: "PPO",
+  identities: {
+    NPI: '$<static:indNpi:[rx:\d{10}]>',
+    EXTERNAL: 'external$<rx:\d{8}>'
+  },
+  licenceOptions: [{
+    effective: '$<today-1y:yyyy-MM-dd>',
+    expiration: '$<today+3y:yyyy-MM-dd>',
+    licensePermitNumber: "12321321",
+    licenseTypeCd: 'licenseTypeCd'
+  }],
+  serviceTypes: ['10', '20', '00']
+}
+
+TestData_Facility: {
+  facilityName: 'facilityName$<rx:\d{8}>',
+  addressDTO: {
+     addressLine1: 'Address$<rx:\d{8}>',
+     city: New York,
+     stateProvCd: NY,
+     postalCode: 10001,
+     countryCd: US
+  },
+  externalId: '$<static:facilityExternalId:[rx:ID\d{8}]>',
+  phoneNumber: 1111111111,
+  term:{
+    effective: '$<today-1y:yyyy-MM-dd>',
+    expiration: '$<today+2y:yyyy-MM-dd>'
+  }
+}
+
+TestData_IndAssignment: {
+  id: '$<rx:\d{6}>',
+  oid: 'oid$<rx:\d{8}>',
+  assignmentType: '',
+  externalId: '$<rx:\d{6}>',
+  effective: '$<today-1y:yyyy-MM-dd>',
+  expiration: '$<today+2y:yyyy-MM-dd>',
+  nonIndividualProviderIdentifiers: {
+    id: '$<static:nonIndId>',
+    identities: {
+      NPI: '$<static:nonIndNpi>'
+    },
+    taxId: '$<static:nonIndTaxId>'
+  },
+  individualProviderIdentifiers: {
+    id: '$<static:indId>',
+    identities: {
+      NPI: '$<static:indNpi>'
+    },
+    taxId: '$<static:indTaxId>'
+  },
+  facilityID: '$<static:facilityId>',
+  facilityExternalId: '$<static:facilityExternalId>',
+  serviceFacilityOID: '$<static:facilityOid>'
+}
+
+TestData_NonIndAssignment: {
+    serviceFacilityOID: '$<static:facilityOid>',
+    providerFinancialInfoOID: null,
+    providerIdentifiers: {
+      oid: '$<static:nonIndOid>',
+      taxId: '$<static:nonIndTaxId>',
+      identities: {
+        NPI: '$<static:nonIndNpi>'
+      }
+    },
+    externalId: 'FN1$<rx:\d{6}>',
+    term:{
+      effective: '$<today-1y:yyyy-MM-dd>',
+      expiration: '$<today+2y:yyyy-MM-dd>'
+    }
+}
+
+TestData_FinancialInfo: {
+    preferredSettlementMethodCd: "CHECK",
+    bankName: 'BankName$<rx:\d{8}>',
+    branchCity: 'City$<rx:\d{8}>',
+    bankNumber: '$<rx:\d{5}>',
+    accountNumber: '$<rx:\d{8}>',
+    accountStatus: "ACTIVE",
+    accountName: 'AccName$<rx:\d{5}>',
+    paymentAddress: {
+      addressLine1: 'Address$<rx:\d{8}>',
+      city: 'City$<rx:\d{8}>',
+      county: 'US',
+      postalCode: "10001",
+      stateProvCd: "NY",
+      countryCd: "US"
+    },
+    holderName: "holderName",
+    validityTerm: {
+      effective: '$<today-1d:yyyy-MM-dd>',
+      expiration: '$<today+2d:yyyy-MM-dd>'
+    },
+    bulkPaymentDay: 10,
+    externalId: 'Id$<rx:\d{8}>',
+    bulkPaymentInd: true,
+    bankAccountTypeCd: "bankAccountTypeCd",
+    achFormattingInd: true,
+    defaultInd: true
+}

@@ -1,0 +1,62 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@Tiered_CommissionRule']
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_VS - Group Vision',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date'
+}
+
+Tiered_CommissionRule: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '40.00', 30]
+  }
+}
+
+TestDataMasterPolicy: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    'Allow Independent Commissionable Producers?': No,
+    Prior Carrier Name: 'index=1',
+    Prior Dental Coverage: 'No',
+    Total Number of Eligible Lives: 1,
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Assigned Agencies: ['@Agency1', '@Agency2']
+  }
+}
+
+Agency1: {
+  Agency / Producer: '',
+  Agent Sub Producer: 'index=1',
+  'Primary Agency?': 'Yes',
+  'Commission Split?': 'Yes',
+  Split Percentage: '60'
+}
+
+Agency2: {
+  Agency / Producer: '',
+  Agent Sub Producer: 'index=1',
+  'Primary Agency?': 'No',
+  'Commission Split?': 'Yes',
+  Split Percentage: '40'
+}
+
+TestDataIssue: {
+  PlanDefinitionIssueActionTab: {
+    PlanKey: A La Carte-A La Carte,
+    Minimum Hourly Requirement (hours per week): 30.00,
+    Include Retirees: 'Yes'
+  }
+}

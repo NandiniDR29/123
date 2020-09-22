@@ -1,0 +1,18 @@
+TestDataInter_Other: {
+  ChangeAgencyActionTab: {
+    Transfer Type: Inter-agency,
+    Reason: index=1,
+    Commission Impact: 'No',
+    'Agency / Producer': Test Agency Inter,
+    Agent Sub Producer: Test Agency Intra_Inter Test Agency Intra_Inter
+  }
+}
+
+TestDataIntra_OtherNameAgencyB: {
+  ChangeAgencyActionTab: {
+    Transfer Type: Intra-agency,
+    Reason: index=1,
+    Commission Impact: 'No',
+    Agent Sub Producer: TestUserAll1 TestUserAll1
+  }
+}

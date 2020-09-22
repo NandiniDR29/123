@@ -1,0 +1,32 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab'
+}
+
+PolicyInformationTab: {
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NY,
+  Assigned Agencies: ['@QA_Agency1', '@QA_Agency2', '@QA_Agency3']
+}
+
+QA_Agency1: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+QA_Agency2: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+QA_Agency3: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}

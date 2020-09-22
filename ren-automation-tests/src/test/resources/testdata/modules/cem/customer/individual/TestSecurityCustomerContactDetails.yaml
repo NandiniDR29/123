@@ -1,0 +1,26 @@
+TestData_SocialNet: {
+  GeneralTab: {
+    Social Net Details:{
+      Social Net Type: Facebook,
+      Social Net ID: '"\"><img src=x onerror=alert(1)>"'
+    }
+  }
+}
+
+TestData_WebUrl: {
+  GeneralTab: {
+    Web URL Details: {
+      Web URL Type: Personal,
+      Web URL: '"\"><img src=x onerror=alert(1)>"'
+    }
+  }
+}
+
+TestData_Chat: {
+  GeneralTab: {
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: '"\"><img src=x onerror=alert(1)>"'
+    }
+  }
+}

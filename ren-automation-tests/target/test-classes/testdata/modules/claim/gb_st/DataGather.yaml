@@ -1,0 +1,212 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: {},
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationSponsorTab: {},
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabST'],
+  BenefitsStatutorySTDInjuryPartyInformationTab: '@BenefitsSTInjuryPartyInformationTab',
+  BenefitsStatutorySTDIncidentTab: '@BenefitsSTIncidentTab',
+  BenefitCoverageDeterminationTab: '@BenefitCoverageDeterminationTab',
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_With_PFL_Benefit: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: {},
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationSponsorTab: {},
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabPFL'],
+  BenefitsPFLParticipantInformationTab: '@BenefitsPFLParticipantInformationTab',
+  BenefitsPFLQualifyingEventTab: '@BenefitsPFLQualifyingEventTab',
+  BenefitCoverageDeterminationTab: '@BenefitCoverageDeterminationTab',
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditiTestData_With_PFL_BenefitonalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_Without_Benefits: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: {},
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationSponsorTab: {},
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: [],
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: {},
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_Without_AdditionalParties: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: {},
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationSponsorTab: {},
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabST'],
+  BenefitsStatutorySTDInjuryPartyInformationTab: '@BenefitsSTInjuryPartyInformationTab',
+  BenefitsStatutorySTDIncidentTab: '@BenefitsSTIncidentTab',
+  BenefitCoverageDeterminationTab: '@BenefitCoverageDeterminationTab',
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: Mail
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Date of Birth: $<today-25y>,
+  Contact Preference: Mail,
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  Preferred Payment method: Check,
+  Covered Earnings: 1000,
+  Work State: NY,
+  State / Province: NY,
+  Participant Prior Earnings: {
+    'Week no.': 1,
+    Number of days worked: 4,
+    Gross amount paid: 1000
+  }
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Plan: index=1,
+  Coverage Name: index=1,
+  Percentage of Taxable: 50
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  Disability Reason: index=1,
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabST: {
+  Damage: Statutory Short Term Disability,
+}
+
+BenefitsSTInjuryPartyInformationTab: {
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check,
+  State / Province: NY,
+}
+
+BenefitsSTIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today>
+}
+
+# workaround for smoke because of REN-33101
+BenefitCoverageDeterminationTab: {
+  'Insured Person Coverage Effective Date': $<today>
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  'Relationship To Decedent/Injury Party': index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1,
+  Social Security Number (SSN): 111-11-1111
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>'
+}
+
+EAPServicesServiceRequestTab: {
+  Service Type: index=1,
+  Add: 'click'
+}
+
+BenefitsBenefitSummaryTabPFL: {
+  Damage: Paid Family Leave,
+}
+
+BenefitsPFLParticipantInformationTab: {
+  Associate Policy Party: index=1,
+  Social Security Number (SSN): 111-11-1111,
+  Date of Birth: 10/10/1985,
+  Gender: Male,
+  State / Province: NY,
+  Participant Work Days: {
+    Average Hours Worked Per Week: 20
+  },
+  Preferred language: 'English',
+  Origin/ Ethnicity: 'Unknown',
+  Race: 'White'
+}
+
+BenefitsPFLQualifyingEventTab: {
+  PFL Reason: index=1,
+  "The family member is employee's:": index=1,
+  Continuous or Periodic: index=1,
+  Type: index=1,
+  "If providing less than 30 day's advance notice to the employer, please explain:": 'Information<rx:\d{8}>',
+  Form submitted in Advance: Yes,
+  Date of hire: $<today-1y>,
+  Occupation Code: 11-1111,
+  "If employee received or will receive full wages while on PFL, will employer be requesting reimbursement?": Yes,
+  "Other Disability/ PFL in last 52 weeks": index=1,
+  Child's date of birth: $<today>,
+  Child's gender: index=1,
+  'Live with participant?': Yes,
+  Relationship to Participant: index=1
+}

@@ -1,0 +1,15 @@
+TestData: {
+  DeclineByCompanyActionTab: {
+    Decline Date: $<today>,
+    Decline Reason: Other,
+    Other Reason: 'Reason$<rx:\d{8}>'
+  }
+}
+
+TestData_Plus1Year: {
+  DeclineByCompanyActionTab: {
+    Decline Date: $<today+1y>,
+    Decline Reason: Other,
+    Other Reason: 'Reason$<rx:\d{8}>'
+  }
+}

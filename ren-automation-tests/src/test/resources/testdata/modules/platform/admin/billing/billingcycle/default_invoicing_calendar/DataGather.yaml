@@ -1,0 +1,28 @@
+TestData: {
+  DefaultInvoicingCalendarTab: ['@DefaultInvoicingCalendarTab']
+}
+
+DefaultInvoicingCalendarTab: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: INC1,
+  Self Administered: 'true',
+  List Bill: 'true',
+  Products: 'All',
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 31,
+  Generation Date Rule: 30
+}
+
+
+DefaultInvoicingCalendarTab2: {
+  Billing Calendar: Quarterly,
+  Calendar Name: INC2,
+  Self Administered: 'true',
+  List Bill: 'true',
+  Products: 'All',
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 31,
+  Generation Date Rule: 30
+}

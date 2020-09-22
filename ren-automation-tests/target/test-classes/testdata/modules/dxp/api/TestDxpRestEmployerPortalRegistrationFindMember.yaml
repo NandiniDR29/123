@@ -1,0 +1,57 @@
+TestData: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+CustomerType: {
+  Customer Type: Individual
+}
+
+GeneralTab: {
+  First Name: '$<static:FirstName_REN_22432:[rx:John\d{8}]>',
+  Middle Name: 'Middle$<rx:\d{8}>',
+  Last Name: '$<static:LastName_REN_22432:[rx:Smith\d{8}]>',
+  SSN/Tax Identification: '58739347',
+  Associate Business Entities: true,
+  Date of Birth: 10/10/1985,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '94596',
+    City: Walnut Creek,
+    State/Province: CA,
+    Address Line 1: 'Address1',
+    Address Line 2: 'Address2',
+    Address Line 3: 'Address3',
+    Communication Preferences: ["Administrative", "Claims"]
+  },
+  Agency Assignment:['@QAGAgency'],
+  Phone Details: ['@ContactDetails_Phone_Work', '@ContactDetails_Phone_Home'],
+  Email Details: {
+    Contact Details Type: 'Email',
+    Email Type: 'Personal',
+    Email Address: 'test@test.com',
+    'Make Preferred?': Yes
+  }
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+ContactDetails_Phone_Work: {
+  Phone Type: Work,
+  Phone Number: '0123456789',
+  Consent Status: Not Requested,
+  'Make Preferred?': Yes
+}
+
+ContactDetails_Phone_Home: {
+  Phone Type: Home,
+  Phone Number: '9876543210',
+  Consent Status: Not Requested,
+  'Make Preferred?': No
+}

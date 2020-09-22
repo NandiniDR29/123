@@ -1,0 +1,131 @@
+TestData_WithTwoSubGroups: {
+  CaseProfileDetailsTab: '@CaseProfileDetailsTab',
+  ProductAndPlanManagementTab: '@ProductAndPlanManagementTabGBGB',
+  ClassificationManagementTab: ['@ClassificationManagementTabClass1', '@ClassificationManagementTabClass2'],
+  LocationManagementTab: {},
+  FileIntakeManagementTab: [],
+}
+
+TestData_Endorsement: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+CaseProfileDetailsTab: {
+  Case Profile Name: __first_one,
+  Effective Date: $<today-1y>,
+  Group Domicile State: NJ,
+  Applicable Payment Modes: [1,12],
+  Agency / Producer: [QAG - QA Agency]
+}
+
+ProductAndPlanManagementTabGBGB: {
+  Product: Group Benefits
+}
+
+ClassificationManagementTabClass1: {
+  Classification Group: {
+    Class Name: Class1,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'No'
+  },
+  Sub Groups: ['@Sub1','@Sub2']
+}
+
+ClassificationManagementTabClass2: {
+  Classification Group: {
+    Class Name: Class2,
+    Class Number: 2,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'No'
+  },
+  Sub Groups: ['@Sub3','@Sub4']
+}
+
+ClassificationManagementTabEmployment_AutoSubGroupClass1: {
+  Classification Group: {
+    Class Name: 1,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'Yes'
+  }
+}
+
+ClassificationManagementTabEmployment_AutoSubGroupClass2: {
+  Classification Group: {
+    Class Name: 2,
+    Class Number: 2,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'Yes'
+  }
+}
+
+Sub1: {
+  Classification Sub-Group: {
+    Sub-Group Name: '$<static:ClassificationSubGroup:[rx:SubGroup\d{8}]>',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Gender: Male,
+    Tobacco: 'Yes',
+    Min Age: '20',
+    Max Age: '50'
+  }
+}
+
+Sub2: {
+  Classification Sub-Group: {
+    Sub-Group Name: 'SubGroup$<rx:\d{8}>',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Gender: Male,
+    Tobacco: 'No',
+    Min Age: '30',
+    Max Age: '40'
+  }
+}
+
+Sub3: {
+  Classification Sub-Group: {
+    Sub-Group Name: 'SubGroup3',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Tobacco: 'Yes'
+  }
+}
+
+Sub4: {
+  Classification Sub-Group: {
+    Sub-Group Name: 'SubGroup4',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Tobacco: 'No'
+  }
+}
+
+ClassificationManagementTab: {
+  Plan: PFL NJ,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: 10,
+  Total Volume: 1000
+}

@@ -1,0 +1,85 @@
+TestData: {
+  CertificatePolicyTab: {},
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: '@CoveragesTab',
+  PremiumSummaryTab: {}
+}
+
+TestData_WithoutNewCustomer: {
+  CertificatePolicyTab: {},
+  InsuredTab: '@InsuredTabWithoutNewCustomer',
+  CoveragesTab: '@CoveragesTab',
+  PremiumSummaryTab: {}
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Tobacco: 'Yes',
+  Tax Identification: '$<rx:\d{9}>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  Original Hire Date: $<today-5y>,
+  Classification Group: index=1,
+  General Information: {
+    Date of Birth: $<today-25y>,
+    Gender: Male
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Code: Any Work,
+    Employment Status: Active,
+    Job Title: 'Banking',
+    Annual Earnings: 50000,
+    Employment Type: index=1,
+    Pay Class: Full-Time,
+    Payroll Frequency: 'Monthly',
+  }
+}
+
+InsuredTabWithoutNewCustomer: {
+  'Create New Customer?': 'No',
+  Search Customer: {
+    First Name: '',
+    Last Name: ''
+  },
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Classification Group: index=1
+}
+
+CoveragesTab: {
+  Plan: index=1,
+  Enrollment Date: $<today>,
+  Approved %: 10,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+  Participant General Info: {
+    Relationship to Insured: Self
+  }
+}
+
+Adjustment_BackDated: {
+  CertificatePolicyTab: {
+    Effective Date: $<BOM-2M>,
+    Situs State: CA
+  }
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+TestData_Endorsement: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    Annual Earnings: 100000
+  },
+  CoveragesTab: {},
+  PremiumSummaryTab: {}
+}

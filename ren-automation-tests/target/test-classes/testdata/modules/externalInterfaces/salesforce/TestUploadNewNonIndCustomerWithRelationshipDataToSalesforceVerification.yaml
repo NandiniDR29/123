@@ -1,0 +1,43 @@
+TestData: {
+  RelationshipTab: '@RelationshipWithIndividualType'
+}
+
+RelationshipWithIndividualType: {
+  Type: Individual,
+  Salutation: 'Doctor',
+  First Name: '$<rx:[a-z]{8}\d{5}>',
+  Middle Name: '$<rx:[a-z]{8}\d{5}>',
+  Last Name:  '$<rx:[a-z]{8}\d{5}>',
+  Suffix: 'Jr.',
+  Date of Birth: '$<today-25y>',
+  Relationship to Customer: 'Service Roles',
+  Service Role: ["Administrative", "Billing", "Claims"],
+  Primary Contact Preference: 'Email',
+  Email Details: {
+    Contact Details Type: 'Email',
+    Email Type: 'Work',
+    Email Address: 'test@test.com',
+    'Make Preferred?': Yes
+  },
+  Address Details: ['@Address1', '@Address2']
+}
+
+Address1: {
+  Address Type: Residence,
+  Country: Canada,
+  Zip/Post Code: 'A1A 1A1',
+  City: Quebec,
+  State/Province: AB,
+  Address Line 1: '$<static:addressLine1:[rx:Address1\d{8}]>',
+  'Make Preferred?': 'Yes'
+}
+
+Address2: {
+  Address Type: Previous,
+  Country: United States,
+  Zip/Post Code: '10001',
+  City: New York,
+  State/Province: NY,
+  Address Line 1: '$<static:addressLine1:[rx:Address\d{8}]>',
+  'Make Preferred?': 'No'
+}

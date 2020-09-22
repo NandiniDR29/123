@@ -1,0 +1,145 @@
+TestData_Policy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@<ac_master>@DataGather@SelectPlanBASEBU', '@PlanDefinitionTab', '@<ac_master>@DataGather@PlanDefinitionTab_BASEBU_Enhanced'],
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@<ac_master>@DataGather@OptionalBenefitTab_BASEBU', '@<ac_master>@DataGather@OptionalBenefitTab_BASEBU_Enhanced'],
+  ClassificationManagementTab: ['@<ac_master>@DataGather@ClassificationManagementTab_BASEBU', '@<ac_master>@DataGather@ClassificationManagementTab_BASEBU']
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-2d>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today-2d>,
+  Situs State: GA,
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  }
+}
+
+
+TestData_REST: {
+  "fileMetaData": '@FileMetaData',
+  "enrollmentCensusRecords": '@EnrollmentCensusRecords'
+}
+
+FileMetaData: {
+  "masterPolicyNumber": "ENTER YOUR MASTER POLICY NUMBER",
+  "participantCount": "1",
+  "timestamp": '$<today:yyyy-MM-dd>T00:00:00Z',
+  "fileIdentifier": 'F$<rx:\d{5}>',
+  "fileName": "File8",
+  "fileId": 'F$<rx:\d{5}>',
+  "enrollmentTerm": "INITIAL_ENROLLMENT",
+  "enrollmentFileType": "XML_ELIGIBILITY",
+  "enrollmentSource": "GROUP",
+  "enrollmentDataType": "FULL",
+  "fullyEnrolledInd": "1"
+}
+
+EnrollmentCensusRecords: {
+  "referenceID": 'R$<rx:\d{5}>',
+  "certificate": {
+    "effectiveDt": "2020-03-01T00:00:00Z",
+    "coverages": {
+      "participants": {
+        "personOID": "P10015",
+        "roleName": "PRIMARY_P",
+        "relationshipToInsured": "SELF",
+      },
+      "benefitAmount": "",
+      "coverageCd": "ENHANCED",
+      "planCd": "BASEBU",
+      "coverageTierCd": {
+        "tiersType": "EEO",
+        "amountEmployee": "",
+      },
+      "enrollmentDt": '$<today:yyyy-MM-dd>T00:00:00Z',
+    },
+    "primaryParticipant": {
+      "personOID": "P10015",
+      "relationship": {
+        "employment": {
+          "departmentId": "Department ID",
+          "divisionId": "Division ID",
+          "employeeId": "EmployeeID",
+          "employmentStatus": "ACT",
+          "employmentType": "EXE",
+          "jobCode": "ANY",
+          "jobTitle": "Teacher",
+          "originalHireDt": "2020-02-11T00:00:00Z",
+          "payClass": "FULL_TIME",
+          "payType": "SALARY",
+          "payrollFreq": "MONTHLY",
+          "salaryAmt": "100000",
+        },
+        "classificationGroup": {
+          "code": "Employment"
+        }
+      }
+    },
+    "enrollmentType": "INITIAL"
+  },
+  "allParticipants": {
+    "oid": "P10015",
+    "title": "1",
+    "suffix": "2",
+    "firstName": 'FirstName$<rx:\d{4}>',
+    "lastName": 'LastName$<rx:\d{4}>',
+    "middleName": 'MiddleName$<rx:\d{4}>',
+    "maritalStatusCd": "M",
+    "gender": "male",
+    "dob": "1985-08-01T09:30:47Z",
+    "taxId": '$<rx:\d{9}>',
+    "tobaccoUsage": "false",
+    "email": "test1@mail.com",
+    "addresses": {
+      "addressType": "mailing",
+      "addressLine1": "AddressLine1",
+      "addressLine2": "AddressLine2",
+      "addressLine3": "AddressLine3",
+      "zipCode": "10001",
+      "city": "City",
+      "state": "CA",
+      "country": "US",
+    }
+  }
+}

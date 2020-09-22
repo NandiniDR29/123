@@ -1,0 +1,190 @@
+TestDataCoverages: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanEmployeeBasicAccidentalDeath', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionDependentBasicLife']
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Total Number of Eligible Lives: 35,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanEmployeeBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  Sponsor Payment Mode: 12,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+TestDataAddPlanWithBasicLifeCoverage: {
+  CoveragesTab: ['@SelectPlanCertificatePolicy', '@CoveragesTabBasicLife']
+}
+
+SelectPlanCertificatePolicy: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLife: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+TestDataAddDependentBasicLifeInsuranceCoverage: {
+  CoveragesTab:{
+    Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+    Enrollment Date: $<today>,
+    Coverage Selection: Spouse and Child,
+    Benefit Spouse:{
+      Elected Benefit Amount: 2000
+    },
+    Benefit Child:{
+      Elected Benefit Amount: 2000
+    },
+    Add Participant: CLICK,
+    Participant Selection: New Person,
+    Role Name: Spouse Participant,
+    Participant General Info: {
+      First Name: 'John$<rx:\d{8}>',
+      Last Name: 'Smith$<rx:\d{8}>',
+      Tax Identification: '$<rx:\d{9}>',
+      Date of Birth: 12/05/1984,
+    },
+  }
+}
+
+TestDataAddEmployeeBasicAccidentalDeathCoverage: {
+  CoveragesTab:{
+    Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+    Enrollment Date: $<today>,
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  }
+}
+
+TestDataBeneficiaryCoverageBTL: {
+  CoveragesTab: {
+    Coverage Name: Employee Basic Life Insurance,
+    Beneficiaries:['@TestDataBeneficiaryCoverage1','@TestDataBeneficiaryCoverage2', '@TestDataBeneficiaryCoverage3', '@TestDataBeneficiaryCoverage4']
+  }
+}
+
+TestDataBeneficiaryCoverageDEP_BTL: {
+  CoveragesTab: {
+    Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+    Beneficiaries:['@TestDataBeneficiaryCoverage5', '@TestDataBeneficiaryCoverage6', '@TestDataBeneficiaryCoverage2', '@TestDataBeneficiaryCoverage3', '@TestDataBeneficiaryCoverage7']
+  }
+}
+
+TestDataBeneficiaryCoverage1: {
+  Beneficiary Selection: 'New Person',
+  Role Percent: '100',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Dependent Child',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+TestDataBeneficiaryCoverage2: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '30',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Disabled Dependent',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+TestDataBeneficiaryCoverage3: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '30',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Spouse/Domestic Partner',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+TestDataBeneficiaryCoverage4: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Non-Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '40',
+  Beneficiary General Info Non-Person: {
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Insured: 'Trust/Charity/Other'
+  },
+  Beneficiary Address Info Non-Person:{
+    City: Walnut Creek,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    State / Province: CA,
+    Zip / Post Code: 94956
+  }
+}
+
+
+TestDataBeneficiaryCoverage5: {
+  Beneficiary Selection: contains=Self,
+  Role Percent: '100'
+}
+
+TestDataBeneficiaryCoverage6:  {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '20',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Dependent Child',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+TestDataBeneficiaryCoverage7:  {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Non-Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '20',
+  Beneficiary General Info Non-Person: {
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Insured: 'Trust/Charity/Other'
+  },
+  Beneficiary Address Info Non-Person:{
+    City: Walnut Creek,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    State / Province: CA,
+    Zip / Post Code: 94956
+  }
+}

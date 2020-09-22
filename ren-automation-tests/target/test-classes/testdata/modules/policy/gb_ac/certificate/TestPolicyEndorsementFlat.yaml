@@ -1,0 +1,51 @@
+TestData: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+  },
+  CoveragesTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_AddCoverage: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+  },
+  CoveragesTab: ['@CoveragesBasicTermLife', '@CoveragesBasicAccident'],
+  PremiumSummaryTab: {}
+}
+
+CoveragesBasicTermLife: {
+  Member Payment Mode: index=1
+}
+
+CoveragesBasicAccident: {
+  Coverage Name: Basic Accident,
+  Tier: index=1,
+  Participants: {
+    Participant Selection: index=0
+  },
+  Beneficiaries: {
+    Add Beneficiary: 'click',
+    Beneficiary Selection: New Person,
+    Role Percent: 100,
+    Member Payment Mode: index=1,
+    Beneficiary General Info: {
+      First Name: 'John$<rx:\d{8}>',
+      Last Name: 'Smith$<rx:\d{8}>',
+      Tax Identification: '$<rx:\d{9}>',
+      Relationship to Insured: Trust
+    },
+    Beneficiary Address Info: {
+      Address Type: index=1,
+      Country: United States,
+      City: Walnut Creek,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      State / Province: CA,
+      Zip / Post Code: 94956
+    }
+  }
+}

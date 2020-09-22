@@ -1,0 +1,44 @@
+TestData_Endorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {
+    Rate: '500'
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_OOSEndorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {
+    Rate: '600'
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_CertificateBTL: {
+  CoveragesTab: {
+    Plan: index=1,
+    Coverage Tier: Employee Only,
+    Enrollment Date: $<today>,
+    Participants:{
+      Add Participant: CLICK,
+      Participant Selection: index=0
+    }
+  }
+}
+

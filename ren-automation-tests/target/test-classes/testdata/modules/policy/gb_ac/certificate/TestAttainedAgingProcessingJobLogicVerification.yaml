@@ -1,0 +1,135 @@
+TestDataMaster: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@SelectPlanBASEBU', '@PlanDefinitionTab_Enhanced', '@PlanDefinitionTab_Basic'],
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_Basic', '@ClassificationManagementTab_Enhanced']
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  Situs State: GA,
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlanBASEBU: {
+  Plan: Base Buy-Up
+}
+
+PlanDefinitionTab_Enhanced: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_Basic: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  'Sponsor/Participant Funding Structure': {
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+OptionalBenefitTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  Hospital Confinement Benefit: {
+    Apply Benefit Hospital Confinement Benefit: true,
+    Hospital Confinement Benefit Amount: 40
+  }
+}
+
+ClassificationManagementTab_Basic: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_Enhanced: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Number of Participants: 1
+}
+
+TestDataCertificate: {
+  CoveragesTab: ['@CoveragesTab', '@CoveragesTab_EnhancedAccident'],
+}
+
+CoveragesTab: {
+  Plan: index=1,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants:{
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  }
+}
+
+CoveragesTab_EnhancedAccident: {
+  Coverage Name: Enhanced Accident,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: ['@TestDataSelf','@TestDataParticipantsSpouse', '@TestDataParticipantsChild1']
+  }
+
+TestDataSelf: {
+  Participant Selection: index=0
+}
+
+TestDataParticipantsSpouse: {
+  Participant Selection: 'New Person',
+  Role Name: Spouse Participant,
+  Participant General Info:{
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-75y+10d>
+  }
+}
+
+TestDataParticipantsChild1: {
+  Participant Selection: 'New Person',
+  Role Name:  Child Participant,
+  Participant General Info:{
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-26y+5d>
+  }
+}

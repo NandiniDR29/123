@@ -1,0 +1,20 @@
+TestDataPolicy: {
+  PolicyInformationTab: {
+    Situs State: 'NY',
+    Group is Member Company: 'Yes',
+    Member Company Name: 'index=1',
+    'Short Term?': 'No',
+    'Prior Claims Allowed?': 'true',
+    Prior Carrier Name: 'None',
+    County Code: '001 - Albany County',
+    Total Number of Eligible Lives: '2',
+    'Has Continuity of Coverage?': 'Yes',
+    'Group is an Association?': 'No',
+    'Small Group?': 'No',
+    'Separate Or Combined Experience Rating?': 'Combined',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    }
+  }
+}

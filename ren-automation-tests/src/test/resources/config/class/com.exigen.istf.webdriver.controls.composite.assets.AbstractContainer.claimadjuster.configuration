@@ -1,0 +1,3 @@
+{
+  "warningLocator": ".//ancestor::div[@class='ant-form-item-control has-feedback has-error']//div[@class='ant-form-explain']"
+}

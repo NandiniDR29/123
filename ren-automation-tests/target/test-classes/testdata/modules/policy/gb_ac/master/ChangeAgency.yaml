@@ -1,0 +1,14 @@
+TestData_ChangeAgency: {
+  ChangeAgencyTab: {
+    Transfer Type: 'Inter-agency',
+    Commission Impact: 'Yes',
+    Reason: 'index=1',
+    Transfer Effective Date: '',
+    Transfer - Target: {
+      Agency / Producer: '',
+      'Primary Agency?': 'Yes',
+      Agent Sub Producer: 'index=1',
+      Split Percentage: '100'
+    }
+  }
+}

@@ -1,0 +1,58 @@
+TestData: {
+  PolicyInformationParticipantParticipantInformationTab: {
+    Party Name: index=1,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-25y>,
+    Contact Preference: Mail,
+    Zip / Postal Code: '94596',
+    Address Line 1: Address Line 1,
+    Preferred Payment method: Check,
+    Covered Earnings: 32.5,
+    Work State: NY,
+    State / Province: NY,
+    Participant Prior Earnings: [
+    {
+      'Week no.': 1,
+      Number of days worked: 5,
+      Gross amount paid: 20
+    },
+    {
+      'Week no.': 2,
+      Number of days worked: 4,
+      Gross amount paid: 20
+    },
+    {
+      'Week no.': 3,
+      Number of days worked: 6,
+      Gross amount paid: 40
+    },
+    {
+      'Week no.': 4,
+      Number of days worked: 7,
+      Gross amount paid: 80
+    },
+    {
+      'Week no.': 5,
+      Number of days worked: 4,
+      Gross amount paid: 30
+    },
+    {
+      'Week no.': 6,
+      Number of days worked: 5,
+      Gross amount paid: 40
+    },
+    {
+
+      'Week no.': 7,
+      Number of days worked: 2,
+      Gross amount paid: 10
+    },
+    {
+      'Week no.': 8,
+      Number of days worked: 3,
+      Gross amount paid: 20
+    }]
+  },
+  AdditionalPartiesAdditionalPartyTab: {}
+}

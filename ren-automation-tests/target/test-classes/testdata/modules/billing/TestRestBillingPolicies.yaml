@@ -1,0 +1,54 @@
+TestData_InstallmentStartDates: {
+  "billingAccountNumber": "",
+  "dueDayConfig": {
+    "type": "monthly",
+    "dueDays": [
+      22
+    ]
+  },
+  "effectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "expirationDate": "$<today+1y:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "suffix": null,
+  "planCd": "OncePerMonth",
+  "productCd": "All",
+  "brandCd": "All",
+  "countryCd": "All",
+  "riskStateCd": "CA"
+}
+
+TestData_CalculateSchedule: {
+    "effectiveDate": "$<today:yyyy-MM-dd>",
+    "suffix": "string",
+    "expirationDate": "$<today+1y:yyyy-MM-dd>",
+    "scheduleEffectiveDate": "$<today:yyyy-MM-dd>",
+    "transactionDate": "$<today:yyyy-MM-dd>",
+    "downPaymentAmount": 0,
+    "billingAccountNumber": "",
+    "dueDayConfig": {
+      "type": "monthly",
+      "dueDays": [
+        22
+      ]
+    },
+    "paymentPlans": [
+    {
+      "planCd": "OncePerMonth",
+      "installmentStartDate": "$<today:yyyy-MM-dd>",
+      "dueDateStartFrom": "$<today:yyyy-MM-dd>"
+    }
+    ],
+    "balanceChangeAmounts": [
+    {
+      "amountType": "FEE",
+      "code": "ServiceFee",
+      "amount": 50
+    }
+    ],
+    "currencyCd": "USD",
+    "overpaidAmountOption": "nextInstallments"
+}
+
+TestData_PrecalculateInstallments: {
+    "policyNumber": "",
+    "effectiveDate": "$<today:yyyy-MM-dd>"
+}

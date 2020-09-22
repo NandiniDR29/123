@@ -1,0 +1,28 @@
+TestData_IndAssignment: {
+  id: '$<rx:\d{4}>',
+  oid: 'oid$<rx:\d{8}>',
+  assignmentType: string,
+  externalId: 'aaa',
+  effective: '$<today:yyyy-MM-dd>',
+  expiration: '$<today+2M:yyyy-MM-dd>',
+  nonIndividualProviderIdentifiers: {
+    id: '$<static:nonIndId>',
+    identities: {},
+    taxId: '$<static:nonIndTaxId>'
+  },
+  individualProviderIdentifiers: {
+    id: '$<static:indId>',
+    identities: {},
+    taxId: '$<static:indTaxId>'
+  },
+  facilityID: '$<static:facilityId>',
+  facilityExternalId: '$<static:facilityExternalId>',
+  serviceFacilityOID: '$<static:facilityOid>'
+}
+
+Query: {
+ query: {
+    serviceFacilityOID: '$<static:facilityOid>',
+    maxQueryResultCount: null
+ }
+}

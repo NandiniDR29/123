@@ -1,0 +1,131 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab',
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Paid Family Leave,
+  Delivery Model: Group
+}
+
+InitiniateDialogToday: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<today>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  }
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Underwriter: index=1
+  }
+}
+
+PolicyInformationTabToday: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    Internal Team: {
+      Sales Representative: index=1,
+      Underwriter: index=1
+    },
+  }
+}
+
+PlanDefinitionTab: {
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12'
+  }
+}
+
+ClassificationManagementTab: {
+  Plan: PFL NJ,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: 10,
+  Total Volume: 1000
+}
+
+TestData_CopyFromPolicy: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Number of Participants: 50
+  },
+  PremiumSummaryTab: {}
+}
+
+VersionDialog: {
+  Description: 'Desc$<rx:\d{8}>'
+}
+
+InitiateDialogDatePlusMonth: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM+1M>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  }
+}
+
+InitiateDialogMinus7Months: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-7M>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  }
+}
+
+Adjustment_BackDated: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-1M>,
+    Case Profile: index=1,
+    Product: Paid Family Leave,
+    Delivery Model: Group
+  },
+  PolicyInformationTab: {
+    Policy Effective Date: $<BOM-1M>,
+    Internal Team: {
+      Sales Representative: index=1,
+      Underwriter: index=1
+    },
+  }
+}
+
+TestDataUpdateSomething: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: '@ClassificationManagementTabUpdate',
+  PremiumSummaryTab: {}
+}
+
+ClassificationManagementTabUpdate: {
+  Total Volume: 1500
+}

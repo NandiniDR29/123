@@ -1,0 +1,218 @@
+TestData_Policy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  PlanDefinitionTab: ['@PlanDefinitionTab_StatNY', '@PlanDefinitionTab_PFLNY'],
+  ClassificationManagementTab: ['@ClassificationMgmt_StatNY', '@ClassificationMgmt_PFLNY']
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM-6M>,
+  Case Profile: index=1,
+  Product: Statutory Disability Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  Policy Effective Date: $<BOM-6M>,
+  County Code: '001 - Albany County',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user',
+    Underwriter: 'QA QA user'
+  },
+  Situs State: NY,
+  Underwriting Company: Renaissance Life & Health Insurance Company of New York,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_StatNY: {
+  Plan: NY Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+PlanDefinitionTab_PFLNY: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: PFL NY,
+  Contribution Type: Mandatory,
+  Taxability: Benefits Taxable,
+  Premiums Paid-Post Tax: Yes,
+  Benefit Schedule: {
+    Benefit Percentage: '55%',
+    Maximum Benefit period: 10,
+  },
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+}
+
+ClassificationMgmt_StatNY: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Stat NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Proprietor,
+    Number of Participants: 10,
+    Total Volume: 250
+  }]
+}
+
+ClassificationMgmt_PFLNY: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: PFL NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Other/Not Specified,
+    Number of Participants: 0,
+    Total Volume: 0
+  }]
+}
+
+
+TestData_Claim: {
+  LossEventTab: {
+    Date of Loss: $<today-6M>,
+  },
+  PolicyInformationParticipantParticipantInformationTab: {
+    Party Name: index=1,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-25y>,
+    Contact Preference: Mail,
+    Zip / Postal Code: '94596',
+    Address Line 1: Address Line 1,
+    Preferred Payment method: Check,
+    Covered Earnings: 1000,
+    Work State: NY,
+    State / Province: NY,
+    Participant Prior Earnings: [
+    {
+      'Week no.': 1,
+      Number of days worked: 4,
+      Gross amount paid: 1000
+    },
+    {
+      'Week no.': 2,
+      Number of days worked: 6,
+      Gross amount paid: 2000
+    }]
+  },
+}
+
+
+TestData_Benefit: {
+  BenefitsPFLParticipantInformationTab: '@BenefitsPFLParticipantInformationTab',
+  BenefitsPFLQualifyingEventTab: '@BenefitsPFLQualifyingEventTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+BenefitsPFLParticipantInformationTab: {
+  Associate Policy Party: index=1,
+  Social Security Number (SSN): 111-11-1111,
+  Date of Birth: 10/10/1985,
+  Gender: Male,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>',
+  Participant Work Days: {
+    Sunday: true,
+    Monday: true,
+    Tuesday: true,
+    Wednesday: true,
+    Thursday: true,
+    Friday: true,
+    Saturday: true
+  },
+  Preferred language: 'English',
+  Origin/ Ethnicity: 'Unknown',
+  Race: 'Chinese'
+}
+
+BenefitsPFLQualifyingEventTab: {
+  PFL Reason: index=1,
+  "The family member is employee's:": index=1,
+  Continuous or Periodic: Continuous,
+  Type: index=1,
+  "If providing less than 30 day's advance notice to the employer, please explain:": 'Information<rx:\d{8}>',
+  Form submitted in Advance: Yes,
+  Date of hire: $<today-1y>,
+  Occupation Code: 11-1111,
+  "If employee received or will receive full wages while on PFL, will employer be requesting reimbursement?": Yes,
+  "Other Disability/ PFL in last 52 weeks": index=1,
+  Child's date of birth: $<today>,
+  Child's gender: index=1,
+  'Live with participant?': Yes,
+  Relationship to Participant: index=1
+}
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today-6M>,
+  Liability Decision: index=1,
+  Approved Through Date: $<today+50y>,
+}
+
+
+TestData_Benefit_Update: {
+  BenefitsPFLParticipantInformationTab: {},
+  BenefitsPFLQualifyingEventTab: {
+    Continuous or Periodic: Periodic,
+  }
+}

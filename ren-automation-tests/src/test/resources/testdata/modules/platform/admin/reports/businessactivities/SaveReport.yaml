@@ -1,0 +1,39 @@
+TestData_PDF_File: {
+  BusinessActivitiesTab: {
+    Save Report: {
+     Save Report To: File,
+     Template: PDF With Graphs
+    }
+  }
+}
+
+TestData_Excel_File: {
+  BusinessActivitiesTab: {
+    Save Report: {
+     Save Report To: File,
+     Template: Data Only
+    }
+  }
+}
+
+TestData_Efolder: {
+  BusinessActivitiesTab: {
+    Save Report: {
+     Save Report To: eFolder,
+     Template: PDF With Graphs,
+     Folder: Miscellaneous,
+     Description: '$<static:Description:[rx:Description\d{5}]>'
+    }
+  }
+}
+
+TestData_Efolder_Location: {
+  BusinessActivitiesTab: {
+    Save Report: {
+     Save Report To: eFolder,
+     Template: PDF With Graphs,
+     Folder: Miscellaneous,
+     Description: '$<static:Description:[rx:Description\d{5}]>'
+    }
+  }
+}

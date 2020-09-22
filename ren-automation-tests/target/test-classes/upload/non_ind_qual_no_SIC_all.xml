@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<import xmlns="http://exigenservices.com/ipb/crm/integration">
+	<businessLead>
+		<leadStatus> quaLified </leadStatus>
+		<legalId>12-3456789</legalId>
+		<legalName>Cocosik</legalName>
+		<dateStarted>2012-12-13T12:12:12</dateStarted>
+		<businessType>LLC</businessType>
+		<PhoneContact>
+			<phoneNumber>1234567855</phoneNumber>
+		</PhoneContact>
+		<Address>
+			<type>legal</type>
+			<city>Minsk</city>
+			<country>US</country>
+			<postalCode>12345</postalCode>
+			<stateProvince>IL</stateProvince>
+			<addressLine>address line 1</addressLine>
+		</Address>
+	</businessLead>
+</import>

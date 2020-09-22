@@ -1,0 +1,30 @@
+TestData_Endorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte',
+    Plan Tier And Rating Info: {
+      Rate: '500'
+    }
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_OOSEndorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte',
+    Plan Tier And Rating Info: {
+      Rate: '600'
+    }
+  },
+  PremiumSummaryTab: {}
+}
+

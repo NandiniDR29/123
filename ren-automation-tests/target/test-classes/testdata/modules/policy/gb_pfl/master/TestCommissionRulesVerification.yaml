@@ -1,0 +1,62 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  ClassificationManagementTab: '@ClassificationManagementTab',
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Underwriter: index=1
+  },
+  Assigned Agencies: ['@QA_Agency1']
+}
+
+QA_Agency1: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+ClassificationManagementTab: {
+  Plan: FLB,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: 10,
+  Total Volume: 1000
+}
+
+TestDataUpdate: {
+  PolicyInformationTab: {
+    Assigned Agencies: ['@QA_Agency3', '@QA_Agency4', '@QA_Agency5', '@QA_Agency6']
+  }
+}
+
+QA_Agency3: {
+  Add Agency: 'click',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+QA_Agency4: {
+  Add Agency: 'click',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+QA_Agency5: {
+  Add Agency: 'click',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+QA_Agency6: {
+  Add Agency: 'click',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}

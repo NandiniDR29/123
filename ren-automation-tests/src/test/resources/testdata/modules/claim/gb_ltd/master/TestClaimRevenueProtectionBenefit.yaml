@@ -1,0 +1,62 @@
+TestData_MasterPolicy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_NC']
+}
+
+PolicyInformationTab: {
+  Situs State: AL,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: NC
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Partial Disability Benefit: Proportionate Loss
+  },
+  Options: {
+  },
+  Employer Benefits: {
+    None: false,
+    Revenue Protection Benefit Maximum: '$3,000',
+    Revenue protection benefit %: '10%'
+  }
+}
+
+TestData_CalculateASingleBenefitAmount: {
+  DeductionsActionTab: '@DeductionsActionTab'
+}
+
+DeductionsActionTab: {
+  Type of Deduction: Revenue Protection Benefit,
+  Beginning Date: $<today>,
+  Through Date: $<today+10y>,
+  Party: index=1,
+  Non Provider Payment Type: index=1,
+  Apply Pre-tax: No
+}

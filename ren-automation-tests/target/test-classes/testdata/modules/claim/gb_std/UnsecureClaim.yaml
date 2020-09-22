@@ -1,0 +1,5 @@
+TestData: {
+  UnsecureClaimActionTab: {    
+    Details: 'Details$<rx:\d{8}>'
+  }
+}

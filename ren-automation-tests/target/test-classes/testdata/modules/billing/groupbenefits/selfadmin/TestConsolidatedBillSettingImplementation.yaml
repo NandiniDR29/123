@@ -1,0 +1,51 @@
+TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingGroupsTab: ['@BasicAccidentBASEBU',  '@EnhancedAccidentEnhanced', '@BasicAccidentEnhancedCopyed'],
+  BillingAccountTab: [ '@BillingAccountTab3']
+}
+
+BasicAccidentBASEBU: {
+  Group: BG001
+}
+
+EnhancedAccidentEnhanced: {
+  Group: BG002,
+  Coverage: Enhanced Accident - Enhanced 10 Units
+}
+
+BasicAccidentEnhancedCopyed: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG003,
+  Billing Group Type: Employment,
+  Payor: Member,
+  Payment Mode: 12,
+  Coverage: Enhanced Accident - Voluntary 10 Units
+}
+
+BillingAccountTab1: {
+  Billing Group Name Key: BG001
+}
+
+BillingAccountTab2: {
+  Billing Group Name Key: BG002
+}
+
+BillingAccountTab3: {
+  Billing Group Name Key: BG003,
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Default',
+    Billing Account Name: BA3
+  }
+}
+
+BillingAccountTab: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Default',
+    Billing Account Name: test
+  }
+}

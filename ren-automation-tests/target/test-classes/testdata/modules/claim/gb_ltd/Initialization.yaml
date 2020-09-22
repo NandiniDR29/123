@@ -1,0 +1,78 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab'
+}
+
+TestDataWithoutPolicy: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTabWithoutPolicy'
+}
+
+TestData_TwoLossContexts: {
+  LossEventTab: {},
+  LossContextTab: ['@LossContextTabShortTermDisability','@LossContextTabLongTermDisability']
+}
+
+TestData_TwoLossContextsWithoutPolicy: {
+  LossEventTab: {},
+  LossContextTab: ['@LossContextTabShortTermDisabilityWithoutPolicy','@LossContextTabLongTermDisabilityWithoutPolicy']
+}
+
+TestData_LossContextTab: {
+  LossContextTab: '@LossContextTab'
+}
+
+TestData_LossEventTab_IncorrectDateOfLoss: {
+  LossEventTab: {
+    Date of Loss: '$<today+4d:MM/dd/yyyy h:mm a>'
+  }
+}
+
+LossContextTabShortTermDisability: {
+  Type of Claim: Disability Claim,
+  Type of Loss: Short Term Disability,
+  Save Loss As: index=1
+}
+
+LossContextTabLongTermDisability: {
+  Type of Claim: Disability Claim,
+  Type of Loss: Long Term Disability,
+  Save Loss As: index=1
+}
+
+LossContextTab: {
+  Type of Claim: Disability Claim,
+  Save Loss As: index=1
+}
+
+LossEventTabLossEventSection: {
+  LossEventTab: {
+    Date of Loss: '$<today:MM/dd/yyyy h:mm a>',
+    Reporting Method: Phone,
+    Previously Reported: 'Yes',
+    Description of Loss Event: Description of Loss Event
+  }
+}
+
+LossContextTabWithoutPolicy: {
+  Policy LOB: 'Disability Insurance',
+  Policy Product: 'Long Term Disability',
+  Type of Claim: 'Disability Claim',
+  Save Loss As: index=1
+}
+
+LossContextTabShortTermDisabilityWithoutPolicy: {
+  Policy LOB: 'Disability Insurance',
+  Policy Product: 'Long Term Disability',
+  Type of Claim: 'Disability Claim',
+  Type of Loss: Short Term Disability,
+  Save Loss As: index=1
+}
+
+LossContextTabLongTermDisabilityWithoutPolicy: {
+  Policy LOB: 'Disability Insurance',
+  Policy Product: 'Long Term Disability',
+  Type of Claim: 'Disability Claim',
+  Type of Loss: Long Term Disability,
+  Save Loss As: index=1
+}

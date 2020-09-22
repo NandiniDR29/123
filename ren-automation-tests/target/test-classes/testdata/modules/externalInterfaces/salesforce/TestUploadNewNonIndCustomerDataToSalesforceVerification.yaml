@@ -1,0 +1,65 @@
+TestData: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: '@GeneralTab',
+  RelationshipTab: {}
+}
+
+GeneralTab: {
+  Non-Individual Type: 'Association',
+  Name - Legal: '$<rx:[a-z]{8}\d{5}>',
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: 'Grocery Stores',
+  SIC Code: '5411',
+  EIN: '$<static[rx:\d{2}-\d{7}]>',
+  Number of Employees: '10',
+  Address Details: ['@Address1', '@Address2'],
+  Agency Assignment:['@QAGAgency'],
+  Phone Details: ['@ContactDetails_Phone_Work', '@ContactDetails_Phone_Mobile'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+Address1: {
+  Address Type: Legal,
+  Country: United States,
+  Zip/Post Code: '43452-8245',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: '$<static:addressLine1:[rx:Address1\d{8}]>',
+  'Make Preferred?': 'Yes'
+}
+
+Address2: {
+  Address Type: Mailing,
+  Country: United States,
+  Zip/Post Code: '10001',
+  City: New York,
+  State/Province: NY,
+  Address Line 1: '$<static:addressLine1:[rx:Address\d{8}]>',
+  'Make Preferred?': 'No'
+}
+
+ContactDetails_Phone_Work: {
+  Phone Type: Work,
+  Phone Number: '0123456789',
+  Consent Status: Not Requested,
+  'Make Preferred?': Yes
+}
+
+ContactDetails_Phone_Mobile: {
+  Phone Type: Mobile,
+  Phone Number: '9876543210',
+  Consent Status: Not Requested,
+  'Make Preferred?': No
+}

@@ -1,0 +1,57 @@
+TestData: {
+  BenefitStatutorySTDInjuryPartyInformationTab: '@BenefitStatutorySTDInjuryPartyInformationTab',
+  BenefitStatutorySTDIncidentTab: '@BenefitStatutorySTDIncidentTab',
+  BenefitCoverageEvaluationTab: '@ST_BenefitCoverageEvaluationTab'
+}
+
+TestData_STD_OtherValues: {
+  BenefitSTDInjuryPartyInformationTab: '@BenefitSTDInjuryPartyInformationTab',
+  BenefitSTDIncidentTab: '@BenefitSTDIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+BenefitStatutorySTDInjuryPartyInformationTab: {
+  'Add Benefit: Statutory Short Term Disability': 'click',
+  Associate Policy Party: index=1,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>',
+  Employment Type: 'Unknown'
+
+}
+
+BenefitStatutorySTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}
+
+BenefitSTDInjuryPartyInformationTab: {
+  'Add Benefit: Short Term Disability': 'click',
+  Associate Policy Party: index=1,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+}
+
+BenefitSTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>,
+  'Week no.': 1,
+  Gross amount paid: 1
+}
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today>,
+  Approved Through Date: $<today>
+}
+
+ST_BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today>,
+  Approved Through Date: $<today+1y>
+}

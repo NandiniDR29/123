@@ -1,0 +1,53 @@
+TestData_AddressPreferredYes: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+CustomerType: {
+  Customer Type: Non-Individual
+}
+
+GeneralTab: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Date business started: $<today-10y>,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Address Details: ['@Address1', '@Address2'],
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}
+
+Address1: {
+  Address Type: Mailing,
+  Country: United States,
+  Zip/Post Code: '63745',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  'Make Preferred?': 'Yes'
+}
+
+Address2: {
+  Address Type: Legal,
+  Country: United States,
+  Zip/Post Code: '63794',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>'
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}

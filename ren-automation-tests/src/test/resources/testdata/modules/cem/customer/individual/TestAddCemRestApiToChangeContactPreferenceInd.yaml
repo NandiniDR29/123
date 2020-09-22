@@ -1,0 +1,84 @@
+TestData: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+CustomerType: {
+  Customer Type: Individual
+}
+
+GeneralTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Middle Name: 'Middle$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Associate Business Entities: true,
+  Date of Birth: 10/10/1985,
+  Address Details: ['@Address1', '@Address2', '@Address3'],
+  Agency Assignment:['@QAGAgency'],
+  Email Details:['@Email1', '@Email2', '@Email3'],
+  Phone Details: {
+    Phone Type: Home,
+    Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  },
+  Additional Information: {
+    eSigned Doc(s): ["Electronic Consent Agreement v.1"]
+  }
+}
+
+Email_Common: {
+  Email Type: Common,
+  Email Address: email1_personal@email.com
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+Address1: {
+  Address Type: Residence,
+  Country: United States,
+  Zip/Post Code: '94596',
+  City: Walnut Creek,
+  State/Province: CA,
+  Address Line 1: '$<static:Address1:[rx:Address1\d{8}]>'
+}
+
+Address2: {
+  Address Type: Mailing,
+  Country: United States,
+  Zip/Post Code: '94596',
+  City: Walnut Creek,
+  State/Province: CA,
+  Address Line 1: '$<static:Address2:[rx:Address2\d{8}]>',
+  Communication Preferences: ["Administrative", "Claims"]
+}
+
+Address3: {
+  Address Type: Mailing,
+  Country: United States,
+  Zip/Post Code: '94596',
+  City: Walnut Creek,
+  State/Province: CA,
+  Address Line 1: '$<static:Address3:[rx:Address3\d{8}]>',
+  Communication Preferences: []
+}
+
+Email1: {
+  Email Type: "",
+  Email Address: email1_personal@email.com
+}
+
+Email2: {
+  Email Type: Work,
+  Email Address: email2_work@email.com
+}
+
+Email3: {
+  Email Type: index=1,
+  Email Address: email3@email.com
+}
+

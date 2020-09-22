@@ -1,0 +1,164 @@
+TestData_Policy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE'
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Group is Member Company: Yes,
+  Member Company Name: 'index=1',
+  Situs State: 'FL',
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '10',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 90,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 10.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: '18',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last day of the month when employment is terminated',
+    Include Disabled Dependents: 'Yes',
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes',
+    Preventive Waiting Period: '6 months',
+    Radiographs Waiting Period: '6 months',
+    Basic Waiting Period: '6 months',
+    Major Waiting Period: '6 months',
+  },
+  Dental Maximum: {
+    Plan Maximum - In Network: '$1,400',
+    Plan Maximum - Out of Network: '$1,400',
+    'Maximum Extender': 'true',
+    Maximum Roll Over: 'Yes',
+    Roll Over Threshold: '$750',
+    Roll Over Benefit: '375',
+    Roll Over Benefit Limit: '1500',
+  },
+  Co-Insurance: {
+    U&C Percentile Level: 'PPO Schedule',
+    Preventive - In Network: '90%',
+    Preventive - Out of Network: '90%',
+    Basic - In Network: '80%',
+    Basic - Out of Network: '80%',
+    Major - In Network: '60%',
+    Major - Out of Network: '60%',
+  },
+  Dental Deductible: {
+    Deductible - In Network: '$50',
+    Deductible - Out Of Network: '$50',
+    Lifetime Deductible: 'Yes',
+    Lifetime Deductible - In Network: '$100',
+    Family Deductible - In Network: '3X',
+    Family Deductible - Out Of Network: '3X',
+    Is it graded Dental Deductible: 'No',
+    Apply Deductible In Network: ['Basic','Major'],
+    Apply Deductible Out of Network: ['Basic','Major'],
+  },
+  Orthodontia: {
+    Ortho Coverage: 'Yes',
+    Co-Insurance - In Network: '60%',
+    Co-Insurance - Out of Network: '60%',
+    Ortho Availability: 'Child Only',
+    Ortho Age Limit: '15',
+    Lifetime Maximum: 'Yes',
+    Lifetime Maximum - In Network: '$1,400',
+    Lifetime Maximum - Out of Network: '$1,400',
+    Ortho Waiting Period: '6 months',
+  },
+  Service Categories: {
+    1A - Oral Exams: Major,
+    1B - Emergency Palliative Treatment: Basic,
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Prophylaxes: '1 Per Year',
+      Fluoride Treatment: '2 Per Year',
+      Oral Examination: '2 Per Year',
+      Fluoride Treatment Age Limit: 20,
+      Space Maintainers: '1 Per Year',
+      Space Maintainers Age Limit: 14,
+      Sealants: '1 Per Year',
+      Sealants Age Limit: 16,
+      Brush Biopsy: Covered,
+    },
+    Radiographs: {
+      Full Mouth Radiographs: '1 Per Year',
+    },
+      #    Basic: '@BasicTab',
+      Major: {
+        Limited Occlusal Adjustments: '1 Per Year',
+        Crowns: '1 Per Year',
+        Inlays: '1 Per Year',
+        Veneers: '1 Per Year',
+      },
+    Prosthodontics: {
+      Relines: '1 Per Year',
+      Dentures: '1 Per Year',
+      Bridgework: '1 Per Year',
+      Implants: '1 Per Year',
+    }
+  },
+    Missing Tooth: true,
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + Spouse,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + Child(ren),
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 20
+  }
+  ]
+}
+
+TestData_Proposal: {
+  ProposalActionTab: {
+    Override Rules List: ["Proposal with an A La Carte Plan requires Underwriter approval",
+                          "Proposal requires Underwriter approval because Minimum Hourly Requirement (ho..."]
+  }
+}

@@ -1,0 +1,686 @@
+CaseProfile: {
+  CaseProfileDetailsTab: {
+    Case Profile Name: __first_one,
+    Effective Date: $<today>,
+    Group Domicile State: NY,
+  },
+  ProductAndPlanManagementTab: {
+    Product: 'Statutory Disability Insurance'
+  },
+  ClassificationManagementTab: {
+    Classification Group: {
+      Class Name: 1,
+      Class Number: 1,
+      Relationship Type: Employment
+    },
+    Group Details: {
+      'Create Sub-Groups?': 'Yes',
+      'Create Sub-Groups Automatically?': 'Yes',
+      'Job Code': 'Any Work',
+      'Employment Type': 'Directors',
+      'Employment Status': 'Active',
+      'Expatriate': 'No',
+      'Pay Type': 'Hourly',
+      'Pay Class': 'Full-Time',
+      'Union Membe': 'Yes',
+      'Class Description': 'Class 1'
+    }
+  },
+  LocationManagementTab: {},
+  FileIntakeManagementTab: {
+    Intake Profile Name: 'File1',
+    Effective Date: $<today>,
+    Product: [ALL],
+    File Type: 'Quote',
+    Record Type: 'Eligibility',
+    Upload File Dialog: {
+      File Name: 'File1',
+      File Upload: '$<file:REN_Rating_Census_File_ST.xlsx>',
+    }
+  }
+}
+
+TestData_NY: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab_NY',
+  ClassificationManagementTab: '@ClassificationManagementTab_NY',
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+TestData_NJ: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NJ',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab_NJ',
+  ClassificationManagementTab: '@ClassificationManagementTab_NJ',
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+TestData_NYPFL: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NYPFL',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@PlanDefinitionTab_NYSTAT', '@PlanDefinitionTab_NYPFL'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_NYSTAT', '@ClassificationManagementTab_NYPFL'],
+  PremiumSummaryTab: '@PremiumSummaryTab_NYPFL'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Statutory Disability Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  'Rate Guarantee (Months)': 48,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: AK,
+  Zip Code: '99501',
+  'Under 50 Lives?': 'No',
+  'Primary Agency?': 'Yes',
+  #Agent Sub Producer: 'index=1'
+}
+
+PolicyInformationTab_NJ: {
+  'Rate Guarantee (Months)': 36,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: TX,
+  Zip Code: '76201',
+  'Under 50 Lives?': 'No',
+  'Primary Agency?': 'Yes',
+  #Agent Sub Producer: 'index=1'
+}
+
+PolicyInformationTab_NYPFL: {
+  'Rate Guarantee (Months)': 36,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: WA,
+  Zip Code: '98501',
+  'Under 50 Lives?': 'Yes',
+  'Primary Agency?': 'Yes',
+  #Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_NY: {
+  Plan: 'NY Stat',
+  'Coverage Name': 'Stat NY',
+  'Census Type': 'Enrolled',
+  Total Number of Eligible Lives: 20,
+  Member Payment Mode: 12,
+  Rating: {
+    SIC Code: 3675,
+    Rate Basis: 'Per $100 Monthly Covered Payroll',
+    'Use Experience Rating?': 'Yes',
+    'Annual Premium': '10000',
+    'Number of Lives - Male': 5,
+    'Number of Lives - Female': 4,
+    'Inforce Rate - Male': '1.5',
+    'Inforce Rate - Female': '2.6',
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '08/26/2020',
+    Period End Date: '09/30/2020',
+    Premium: 9000,
+    Experience Period Adjustment: 0.8,
+  },
+
+  Rate History - Male: {
+    Rate 1: 3,
+    Number of Months Rate 1: 1,
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+  },
+  Historical Claim: {
+    Claims: 700,
+    Claim Reserves: 150,
+    Underwriter Adjustment: 0.5
+  },
+  Options: {
+    W2: 'Not Included',
+    FICA Match: 'None'
+  }
+}
+
+PlanDefinitionTab_NJ: {
+  Plan: 'NJ Stat',
+  'Coverage Name': 'Stat NJ',
+  'Census Type': 'Enrolled',
+  Total Number of Eligible Lives: 17,
+  Member Payment Mode: 12,
+  Rating: {
+    SIC Code: 2429,
+    Rate Basis: 'Percent of Taxable Wage',
+    'Use Experience Rating?': 'Yes',
+    'Annual Premium': '10000',
+    'Number of Lives - Male': 5,
+    'Number of Lives - Female': 4,
+    'Inforce Rate - Male': '1.5',
+    'Inforce Rate - Female': '2.6',
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '08/26/2020',
+    Period End Date: '09/30/2020',
+    Premium: 9000,
+    Experience Period Adjustment: 0.8,
+  },
+
+  Rate History - Male: {
+    Rate 1: 3,
+    Number of Months Rate 1: 1,
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+  },
+  Historical Claim: {
+    Claims: 700,
+    Claim Reserves: 150,
+    Underwriter Adjustment: 0.5
+  },
+  Options: {
+    W2: 'Not Included',
+    FICA Match: 'None'
+  }
+}
+
+PlanDefinitionTab_NYSTAT: {
+  Plan: 'NY Stat',
+  'Coverage Name': 'Stat NY',
+  'Census Type': 'None',
+  Total Number of Eligible Lives: 20,
+  Member Payment Mode: 12,
+  Contribution Type: 'Mandatory',
+  Rating: {
+    SIC Code: 3675,
+    Rate Basis: 'Per Employee Per Month',
+  },
+  Options: {
+    W2: 'Not Included',
+    FICA Match: 'None'
+  }
+}
+
+PlanDefinitionTab_NYPFL: {
+   Add Coverage: click,
+   Plan: 'NY Stat',
+   Census Type: 'None',
+   'Coverage Name': 'PFL NY',
+   Total Number of Eligible Lives: 17,
+   Member Payment Mode: 12,
+   Rating: {
+     SIC Code: 2429,
+     Rate Basis: 'Percent of Covered Payroll',
+   },
+   Benefit Schedule: {
+     Maximum Benefit period: '26',
+     Benefit Percentage: '60%',
+   }
+}
+
+ClassificationManagementTab_NY: {
+  CoverageKey: 'Stat NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+    'Classification Sub-Groups And Rating Info': [
+    {
+      Classification SubGroup Name: Male,
+      Number of Participants: 9,
+      Total Volume: 4,
+    },
+    {
+      Classification SubGroup Name: Female,
+      Number of Participants: 10,
+      Total Volume: 5
+    },
+    {
+      Classification SubGroup Name: Proprietor,
+      Number of Participants: 1,
+      Total Volume: 1
+    }
+  ]
+}
+
+ClassificationManagementTab_NJ: {
+  Plan: 'Stat NJ',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee,
+    Coverage Tier: 'Employee',
+    Number of Participants: 9,
+    Volume: 3,
+  },
+  {
+    Coverage Tier Key: Employer,
+    Coverage Tier: 'Employer',
+    Number of Participants: 10,
+    Volume: 3
+  }
+  ]
+}
+
+ClassificationManagementTab_NYSTAT: {
+  CoverageKey: 'Stat NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Classification Sub-Groups And Rating Info': [
+  {
+    Classification SubGroup Name: Male,
+    Coverage Tier: 'Employee',
+    Number of Participants: 9,
+    Total Volume: 4,
+  },
+  {
+    Classification SubGroup Name: Female,
+    Coverage Tier: 'Employer',
+    Number of Participants: 10,
+    Total Volume: 5
+  },
+  {
+    Classification SubGroup Name: Proprietor,
+    Coverage Tier: 'Employer',
+    Number of Participants: 5,
+    Total Volume: 2
+  }
+  ]
+}
+
+ClassificationManagementTab_NYPFL: {
+  CoverageKey: 'PFL NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Classification Sub-Groups And Rating Info': [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 9,
+    Total Volume: 4,
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 5,
+  },
+  {
+    Classification SubGroup Name: 'Other/Not Specified',
+    Number of Participants: 1,
+    Total Volume: 1,
+  }
+  ]
+}
+
+PremiumSummaryTab: {
+  Credibility Factor: 0.5,
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+PremiumSummaryTab_NYPFL: {
+  Credibility Factor: 0.9000000,
+}
+
+RequestNY: {
+  'policyID':'MP0000000031',
+  'quoteType':'New Business',
+  'state':'AK',
+  'zip':'99501',
+  'rateGuarantee':'48',
+  'isUnder50Lives':'false',
+  'commission.commissionPct':'0.05000000',
+  'plans[0].coverageType':'New York DBL',
+  'plans[0].ratingBasis':'Per $100 Monthly Covered Payroll',
+  'plans[0].censusType':'Enrolled',
+  'plans[0].censusDate':'2020-03-16',
+  'plans[0].sicCode':'3675',
+  'plans[0].benefitType':'Percent of Salary',
+  'plans[0].totalEligible':'20',
+  'plans[0].accidentEP':'7',
+  'plans[0].sicknessEP':'7',
+  'plans[0].benefitDuration':'26',
+  'plans[0].benefitPct':'0.5',
+  'plans[0].benefitMax':'170',
+  'plans[0].partialDisability':'None',
+  'plans[0].includeResidual':'false',
+  'plans[0].include1stDayHospital':'false',
+  'plans[0].coverageBasis':'Non Occupational Coverage',
+  'plans[0].w2Preparation':'false',
+  'plans[0].erFICAMatch':'Not Included',
+  'plans[0].eeContrPct':'1.00000000',
+  'plans[0].participationPct':'1.00000000',
+  'plans[0].classes[0]':'1',
+  'plans[0].inforceAnnualPremium':'10000.00',
+  'plans[0].numberEEMale':'5',
+  'plans[0].numberEEFemale':'4',
+  'plans[0].inforceRateMale':'1.50',
+  'plans[0].inforceRateFemale':'2.60',
+  'plans[0].historyPeriods[0].periodID':'1',
+  'plans[0].historyPeriods[0].periodBeginDate':'2020-08-26',
+  'plans[0].historyPeriods[0].periodEndDate':'2020-09-30',
+  'plans[0].historyPeriods[0].premiumAmt':'9000.00',
+  'plans[0].historyPeriods[0].experiencePeriodAdjustment':'0.80',
+  'plans[0].historyPeriods[0].historyMaleRates[0].numberOfMonths':'1',
+  'plans[0].historyPeriods[0].historyMaleRates[0].rate':'3.00',
+  'plans[0].historyPeriods[0].historyFemaleRates[0].numberOfMonths':'1',
+  'plans[0].historyPeriods[0].historyFemaleRates[0].rate':'1.00',
+  'plans[0].historyPeriods[0].claimsAmt':'700.00',
+  'plans[0].historyPeriods[0].claimReserves':'150.00',
+  'plans[0].historyPeriods[0].underwriterAdjustment':'0.50',
+  'plans[0].totalEnrolled':'9',
+  'credibilityOverride':'0.5000000',
+}
+
+RequestNJ: {
+  'policyID':'MP0000001050',
+  'quoteType':'New Business',
+  'state':'TX',
+  'zip':'76201',
+  'rateGuarantee':'36',
+  'isUnder50Lives':'false',
+  'commission.commissionPct':'0.05000000',
+  'plans[0].coverageType':'New Jersey TDB',
+  'plans[0].ratingBasis':'Percent of Taxable Wage',
+  'plans[0].censusType':'Enrolled',
+  'plans[0].censusDate':'2020-03-17',
+  'plans[0].sicCode':'2429',
+  'plans[0].benefitType':'Percent of Salary',
+  'plans[0].totalEligible':'17',
+  'plans[0].accidentEP':'7',
+  'plans[0].sicknessEP':'7',
+  'plans[0].benefitDuration':'26',
+  'plans[0].benefitPct':'0.85',
+  'plans[0].benefitMax':'881',
+  'plans[0].partialDisability':'Included',
+  'plans[0].includeResidual':'false',
+  'plans[0].include1stDayHospital':'false',
+  'plans[0].coverageBasis':'Non Occupational Coverage',
+  'plans[0].w2Preparation':'false',
+  'plans[0].erFICAMatch':'Not Included',
+  'plans[0].eeContrPct':'1.00000000',
+  'plans[0].participationPct':'1.00000000',
+  'plans[0].classes[0]':'1',
+  'plans[0].inforceAnnualPremium':'10000.00',
+  'plans[0].numberEEMale':'5',
+  'plans[0].numberEEFemale':'4',
+  'plans[0].inforceRateMale':'1.50',
+  'plans[0].inforceRateFemale':'2.60',
+  'plans[0].historyPeriods[0].periodID':'1',
+  'plans[0].historyPeriods[0].periodBeginDate':'2020-08-26',
+  'plans[0].historyPeriods[0].periodEndDate':'2020-09-30',
+  'plans[0].historyPeriods[0].premiumAmt':'9000.00',
+  'plans[0].historyPeriods[0].experiencePeriodAdjustment':'0.80',
+  'plans[0].historyPeriods[0].historyMaleRates[0].numberOfMonths':'1',
+  'plans[0].historyPeriods[0].historyMaleRates[0].rate':'3.00',
+  'plans[0].historyPeriods[0].historyFemaleRates[0].numberOfMonths':'1',
+  'plans[0].historyPeriods[0].historyFemaleRates[0].rate':'1.00',
+  'plans[0].historyPeriods[0].claimsAmt':'700.00',
+  'plans[0].historyPeriods[0].claimReserves':'150.00',
+  'plans[0].historyPeriods[0].underwriterAdjustment':'0.50',
+  'plans[0].maxSalaryPEPY':'134900.00',
+  'plans[0].totalEnrolled':'5',
+  'plans[0].erMaxAnnualTWPerPerson':'35300',
+  'credibilityOverride':'0.5000000',
+}
+
+RequestNYPFL: {
+  'policyID':'MP0000001090',
+  'quoteType':'New Business',
+  'state':'WA',
+  'zip':'98501',
+  'rateGuarantee':'36',
+  'isUnder50Lives':'true',
+  'commission.commissionPct':'0.05000000',
+  'plans[0].coverageType':'New York DBL',
+  'plans[0].ratingBasis':'Per Employee Per Month',
+  'plans[0].censusType':'None',
+  'plans[0].sicCode':'3675',
+  'plans[0].benefitType':'Percent of Salary',
+  'plans[0].totalEligible':'20',
+  'plans[0].accidentEP':'7',
+  'plans[0].sicknessEP':'7',
+  'plans[0].benefitDuration':'26',
+  'plans[0].benefitPct':'0.5',
+  'plans[0].benefitMax':'170',
+  'plans[0].partialDisability':'None',
+  'plans[0].includeResidual':'false',
+  'plans[0].include1stDayHospital':'false',
+  'plans[0].coverageBasis':'Non Occupational Coverage',
+  'plans[0].w2Preparation':'false',
+  'plans[0].erFICAMatch':'Not Included',
+  'plans[0].eeContrPct':'1.00000000',
+  'plans[0].participationPct':'1.00000000',
+  'plans[0].classes[0]':'1',
+  'plans[0].totalEnrolled':'24',
+  'plans[1].coverageType':'New York PFL',
+  'plans[1].ratingBasis':'Percent of Covered Payroll',
+  'plans[1].censusType':'None',
+  'plans[1].sicCode':'2429',
+  'plans[1].benefitType':'Percent of Salary',
+  'plans[1].totalEligible':'17',
+  'plans[1].accidentEP':'0',
+  'plans[1].sicknessEP':'0',
+  'plans[1].benefitDuration':'26',
+  'plans[1].benefitPct':'0.6',
+  'plans[1].benefitMax':'840',
+  'plans[1].includeResidual':'false',
+  'plans[1].include1stDayHospital':'false',
+  'plans[1].coverageBasis':'Non Occupational Coverage',
+  'plans[1].w2Preparation':'false',
+  'plans[1].eeContrPct':'1.00000000',
+  'plans[1].participationPct':'1.00000000',
+  'plans[1].classes[0]':'1',
+  'plans[1].maxSalaryPEPY':'72860.84',
+  'plans[1].totalEnrolled':'20',
+  'credibilityOverride':'0.9000000',
+}
+
+ResponseNY: {
+  'policyID':'MP0000000031',
+  'planCalcs[0].planID':'mbK6EwsnOBzbuzhsnzdLWw',
+  'planCalcs[0].coverageType':'New York DBL',
+  'planCalcs[0].manualRate':'0.052',
+  'planCalcs[0].experienceCalc.inforceRate':'1.9888888888888887',
+  'planCalcs[0].experienceCalc.ibnrReserves':'589.389788293898',
+  'planCalcs[0].experienceCalc.totalAdjustedConstantPremium':'6783.157894736842',
+  'planCalcs[0].experienceCalc.totalAdjustedIncurredClaims':'929.389788293898',
+  'planCalcs[0].experienceCalc.constantLossRatio':'0.137',
+  'planCalcs[0].experienceCalc.tolerableLossRatio':'0.8029999999999999',
+  'planCalcs[0].experienceCalc.experienceRate':'0.339',
+  'planCalcs[0].experienceCalc.credibility':'0.5',
+  'planCalcs[0].experienceCalc.formulaRate':'0.1956355764199742',
+  'planCalcs[0].experienceCalc.historyPeriods[0].periodID':'1',
+  'planCalcs[0].experienceCalc.historyPeriods[0].periodBeginDate':'2020-08-26T00:00:00.000',
+  'planCalcs[0].experienceCalc.historyPeriods[0].periodEndDate':'2020-09-30T00:00:00.000',
+  'planCalcs[0].experienceCalc.historyPeriods[0].averageLives':'9.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].lifeYearsOfExposure':'1',
+  'planCalcs[0].experienceCalc.historyPeriods[0].experiencePeriodAdjustment':'0.8',
+  'planCalcs[0].experienceCalc.historyPeriods[0].earnedPremium':'9000.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].rateHistory':'2.111111111111111',
+  'planCalcs[0].experienceCalc.historyPeriods[0].rateHistoryRounded':'2.111',
+  'planCalcs[0].experienceCalc.historyPeriods[0].constantPremium':'8478.947368421052',
+  'planCalcs[0].experienceCalc.historyPeriods[0].paidClaims':'700.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].claimReserves':'150.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].incurredClaims':'719.6948941469491',
+  'planCalcs[0].experienceCalc.historyPeriods[0].incurredLossRatio':'0.07996609934966101',
+  'planCalcs[0].experienceCalc.historyPeriods[0].constantLossRatio':'0.08488021718679102',
+  'planCalcs[0].experienceCalc.historyPeriods[0].premiumQuotedRate':'834.0253521062058',
+  'planCalcs[0].experienceCalc.historyPeriods[0].lossRatio':'0.8629172870218725',
+  'planCalcs[0].experienceCalc.historyTotal.periodID':'null',
+  'planCalcs[0].experienceCalc.historyTotal.periodBeginDate':'null',
+  'planCalcs[0].experienceCalc.historyTotal.periodEndDate':'null',
+  'planCalcs[0].experienceCalc.historyTotal.averageLives':'null',
+  'planCalcs[0].experienceCalc.historyTotal.lifeYearsOfExposure':'null',
+  'planCalcs[0].experienceCalc.historyTotal.experiencePeriodAdjustment':'null',
+  'planCalcs[0].experienceCalc.historyTotal.earnedPremium':'null',
+  'planCalcs[0].experienceCalc.historyTotal.rateHistory':'null',
+  'planCalcs[0].experienceCalc.historyTotal.rateHistoryRounded':'null',
+  'planCalcs[0].experienceCalc.historyTotal.constantPremium':'null',
+  'planCalcs[0].experienceCalc.historyTotal.paidClaims':'null',
+  'planCalcs[0].experienceCalc.historyTotal.claimReserves':'null',
+  'planCalcs[0].experienceCalc.historyTotal.incurredClaims':'719.6948941469491',
+  'planCalcs[0].experienceCalc.historyTotal.incurredLossRatio':'null',
+  'planCalcs[0].experienceCalc.historyTotal.constantLossRatio':'null',
+  'planCalcs[0].experienceCalc.historyTotal.premiumQuotedRate':'834.0253521062058',
+  'planCalcs[0].experienceCalc.historyTotal.lossRatio':'0.8629172870218725',
+  'planCalcs[0].stepRates[0].subGroupID':'Male',
+  'planCalcs[0].stepRates[0].rate':'0.204',
+  'planCalcs[0].stepRates[0].volume':'43634.666666666664',
+  'planCalcs[0].stepRates[1].subGroupID':'Female',
+  'planCalcs[0].stepRates[1].rate':'0.204',
+  'planCalcs[0].stepRates[1].volume':'34907.833333333336',
+  'planCalcs[0].stepRates[2].subGroupID':'Proprietor',
+  'planCalcs[0].stepRates[2].rate':'0.204',
+  'planCalcs[0].stepRates[2].volume':'0.0',
+  'planCalcs[0].premiumRate':'0.196',
+  'planCalcs[0].tierRates':'null',
+  'planCalcs[0].estimatedVolume':'78542.5',
+  'planCalcs[0].annualVolume':'942510.0',
+  'planCalcs[0].adjustmentFactor':'null',
+  'planCalcs[0].totalAnnualPremium':'null',
+  'nature':'CW-20200101-20200101',
+}
+
+ResponseNJ: {
+  'policyID':'MP0000001050',
+  'planCalcs[0].planID':'sjSQRoqGxBBXRMqudP1BQw',
+  'planCalcs[0].coverageType':'New Jersey TDB',
+  'planCalcs[0].manualRate':'0.00763',
+  'planCalcs[0].experienceCalc.inforceRate':'1.9888888888888887',
+  'planCalcs[0].experienceCalc.ibnrReserves':'591.6',
+  'planCalcs[0].experienceCalc.totalAdjustedConstantPremium':'6783.157894736842',
+  'planCalcs[0].experienceCalc.totalAdjustedIncurredClaims':'931.6',
+  'planCalcs[0].experienceCalc.constantLossRatio':'0.137',
+  'planCalcs[0].experienceCalc.tolerableLossRatio':'0.8',
+  'planCalcs[0].experienceCalc.experienceRate':'0.41296',
+  'planCalcs[0].experienceCalc.credibility':'0.5',
+  'planCalcs[0].experienceCalc.formulaRate':'0.2102985156277405',
+  'planCalcs[0].experienceCalc.historyPeriods[0].periodID':'1',
+  'planCalcs[0].experienceCalc.historyPeriods[0].periodBeginDate':'2020-08-26T00:00:00.000',
+  'planCalcs[0].experienceCalc.historyPeriods[0].periodEndDate':'2020-09-30T00:00:00.000',
+  'planCalcs[0].experienceCalc.historyPeriods[0].averageLives':'9.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].lifeYearsOfExposure':'1',
+  'planCalcs[0].experienceCalc.historyPeriods[0].experiencePeriodAdjustment':'0.8',
+  'planCalcs[0].experienceCalc.historyPeriods[0].earnedPremium':'9000.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].rateHistory':'2.111111111111111',
+  'planCalcs[0].experienceCalc.historyPeriods[0].rateHistoryRounded':'2.11111',
+  'planCalcs[0].experienceCalc.historyPeriods[0].constantPremium':'8478.947368421052',
+  'planCalcs[0].experienceCalc.historyPeriods[0].paidClaims':'700.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].claimReserves':'150.0',
+  'planCalcs[0].experienceCalc.historyPeriods[0].incurredClaims':'720.8',
+  'planCalcs[0].experienceCalc.historyPeriods[0].incurredLossRatio':'0.08008888888888889',
+  'planCalcs[0].experienceCalc.historyPeriods[0].constantLossRatio':'0.08501055245189323',
+  'planCalcs[0].experienceCalc.historyPeriods[0].premiumQuotedRate':'896.535777149841',
+  'planCalcs[0].experienceCalc.historyPeriods[0].lossRatio':'0.8039835312445431',
+  'planCalcs[0].experienceCalc.historyTotal.periodID':'null',
+  'planCalcs[0].experienceCalc.historyTotal.periodBeginDate':'null',
+  'planCalcs[0].experienceCalc.historyTotal.periodEndDate':'null',
+  'planCalcs[0].experienceCalc.historyTotal.averageLives':'null',
+  'planCalcs[0].experienceCalc.historyTotal.lifeYearsOfExposure':'null',
+  'planCalcs[0].experienceCalc.historyTotal.experiencePeriodAdjustment':'null',
+  'planCalcs[0].experienceCalc.historyTotal.earnedPremium':'null',
+  'planCalcs[0].experienceCalc.historyTotal.rateHistory':'null',
+  'planCalcs[0].experienceCalc.historyTotal.rateHistoryRounded':'null',
+  'planCalcs[0].experienceCalc.historyTotal.constantPremium':'null',
+  'planCalcs[0].experienceCalc.historyTotal.paidClaims':'null',
+  'planCalcs[0].experienceCalc.historyTotal.claimReserves':'null',
+  'planCalcs[0].experienceCalc.historyTotal.incurredClaims':'720.8',
+  'planCalcs[0].experienceCalc.historyTotal.incurredLossRatio':'null',
+  'planCalcs[0].experienceCalc.historyTotal.constantLossRatio':'null',
+  'planCalcs[0].experienceCalc.historyTotal.premiumQuotedRate':'896.535777149841',
+  'planCalcs[0].experienceCalc.historyTotal.lossRatio':'0.8039835312445431',
+  'planCalcs[0].stepRates':'null',
+  'planCalcs[0].premiumRate':'0.2103',
+  'planCalcs[0].tierRates[0].tier':'Employee',
+  'planCalcs[0].tierRates[0].rate':'0.0026',
+  'planCalcs[0].tierRates[0].estimatedVolume':'607501.0',
+  'planCalcs[0].tierRates[0].annualPremium':'1579.5026',
+  'planCalcs[0].tierRates[1].tier':'Employer',
+  'planCalcs[0].tierRates[1].rate':'0.2077',
+  'planCalcs[0].tierRates[1].estimatedVolume':'176500.0',
+  'planCalcs[0].tierRates[1].annualPremium':'36659.049999999996',
+  'planCalcs[0].estimatedVolume':'181828.59058487872',
+  'planCalcs[0].annualVolume':'181828.59058487872',
+  'planCalcs[0].adjustmentFactor':'null',
+  'planCalcs[0].totalAnnualPremium':'38238.552599999995',
+  'nature':'CW-20200101-20200101',
+}
+
+ResponseNYPFL: {
+  'policyID':'MP0000001090',
+  'planCalcs[0].planID':'mAg3aeVNoN3zP43LckpDUw',
+  'planCalcs[0].coverageType':'New York DBL',
+  'planCalcs[0].manualRate':'null',
+  'planCalcs[0].experienceCalc':'null',
+  'planCalcs[0].stepRates[0].subGroupID':'Male',
+  'planCalcs[0].stepRates[0].rate':'2.2',
+  'planCalcs[0].stepRates[1].subGroupID':'Female',
+  'planCalcs[0].stepRates[1].rate':'5.0',
+  'planCalcs[0].stepRates[2].subGroupID':'Proprietor',
+  'planCalcs[0].stepRates[2].rate':'6.2',
+  'planCalcs[0].premiumRate':'null',
+  'planCalcs[0].tierRates':'null',
+  'planCalcs[0].estimatedVolume':'null',
+  'planCalcs[0].annualVolume':'null',
+  'planCalcs[0].adjustmentFactor':'null',
+  'planCalcs[0].totalAnnualPremium':'null',
+  'planCalcs[1].planID':'qfoCb2_9CY5-EqejVtBJgg',
+  'planCalcs[1].coverageType':'New York PFL',
+  'planCalcs[1].manualRate':'null',
+  'planCalcs[1].experienceCalc':'null',
+  'planCalcs[1].stepRates[0].subGroupID':'Male',
+  'planCalcs[1].stepRates[0].rate':'2.2',
+  'planCalcs[1].stepRates[1].subGroupID':'Female',
+  'planCalcs[1].stepRates[1].rate':'5.0',
+  'planCalcs[1].stepRates[2].subGroupID':'Other/Not Specified',
+  'planCalcs[1].stepRates[2].rate':'6.2',
+  'planCalcs[1].premiumRate':'0.0027',
+  'planCalcs[1].tierRates':'null',
+  'planCalcs[1].estimatedVolume':'405000.0',
+  'planCalcs[1].annualVolume':'405000.0',
+  'planCalcs[1].adjustmentFactor':'0.75',
+  'planCalcs[1].totalAnnualPremium':'null',
+  'nature':'CW-20200101-20200101',
+}
+
+#Hardcoded premium values that were provided by OpenL Team for quote with automation test data
+ResponseCheckRatingPremium: {
+  'planCalcs[0].manualRate':'0.03',
+  'planCalcs[0].premiumRate':'0.204',
+  'planCalcs[0].estimatedVolume': '78542.5',
+  'planCalcs[0].annualVolume': '942510.0',
+  'planCalcs[0].experienceCalc.experienceRate':'0.378',
+  'planCalcs[0].experienceCalc.credibility':'0.5',
+  'planCalcs[0].experienceCalc.historyPeriods[0].rateHistoryRounded':'2.111',
+  'planCalcs[0].tierRates':'null',
+  'planCalcs[0].stepRates[0].subGroupID':'Male',
+  'planCalcs[0].stepRates[0].rate':'0.204',
+  'planCalcs[0].stepRates[0].volume':'43634.666666666664',
+  'planCalcs[0].stepRates[1].subGroupID':'Female',
+  'planCalcs[0].stepRates[1].rate':'0.204',
+  'planCalcs[0].stepRates[1].volume':'34907.833333333336',
+  'planCalcs[0].stepRates[2].subGroupID':'Proprietor',
+  'planCalcs[0].stepRates[2].rate':'0.204',
+  'planCalcs[0].stepRates[2].volume':'0.0',
+}

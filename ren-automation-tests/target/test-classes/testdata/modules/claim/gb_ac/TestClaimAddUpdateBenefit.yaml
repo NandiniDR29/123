@@ -1,0 +1,6 @@
+TestData: {
+   BenefitAccidentalDeathDecedentTab: {
+       First Name: '$<static:customerFirstName:[rx:John\d{8}]>',
+       Last Name:  '$<static:customerLastName:[rx:Smith\d{8}]>',
+   }
+}

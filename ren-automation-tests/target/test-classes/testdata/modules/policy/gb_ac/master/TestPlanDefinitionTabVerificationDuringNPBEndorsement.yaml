@@ -1,0 +1,42 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@DataGather@SelectAllPlans',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@DataGather@PlanDefinitionTab_BASEBU_Enhanced',
+                      '@DataGather@PlanDefinitionTab_VOL10',
+                      '@DataGather@PlanDefinitionTab_ENHANCED10']
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  Situs State: 'GA',
+  Group is Member Company: 'No',
+  Total Number of Eligible Lives: '2',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    'Waiting Period Waived For Current Employees?': 'No',
+    'Waiting Period': '30',
+    'Waiting Period Mode': 'Days'
+  }
+}

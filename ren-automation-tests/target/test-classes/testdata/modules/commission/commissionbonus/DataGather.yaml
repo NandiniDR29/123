@@ -1,0 +1,10 @@
+TestData: {
+  CommissionBonusTab: {
+    Commission Bonus Name: 'BonusName$<rx:\d{8}>',
+    Sales Channel: Agency,
+    Date From: $<today>,
+    Date To: $<today+12M>,
+    Transaction Dates: Effective,
+    Rounding: No Rounding
+  }
+}

@@ -1,0 +1,38 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab'],
+}
+
+SelectPlan: {
+  Plan: NC
+}
+
+PlanDefinitionTab: {
+  PlanKey: NC-NC,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Member Payment Mode: 12,
+    Contribution Type: Voluntary,
+    Taxability: 'Benefits Not Taxable'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Partial Disability Benefit: Proportionate Loss,
+    Benefit Percentage: 60%
+  },
+  Options:{
+    Family Care Benefit: Included,
+    Family Care Benefit Amount - Per Family Member: '$350',
+    Family Care Benefit Amount Duration: 12 Months,
+    Family Care Benefit Maximum - All Family Members: '$2,000',
+  }
+}

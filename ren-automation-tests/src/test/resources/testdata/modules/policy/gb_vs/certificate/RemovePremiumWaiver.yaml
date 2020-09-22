@@ -1,0 +1,77 @@
+TestData: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+5M>
+  }
+}
+
+TestData_Plus2Months: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+2M>
+  }
+}
+
+TestData_Plus4Months: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+4M>
+  }
+}
+
+TestData_Plus6Months: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+6M>
+  }
+}
+
+TestData_Plus8Months: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+8M>
+  }
+}
+
+TestData_Plus9Months: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+9M>
+  }
+}
+
+TestData_Today: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM>
+  }
+}
+
+TestData_Minus1d: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM-1d>
+  }
+}
+
+TestData_Minus1Month: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM-1M>
+  }
+}
+
+TestData_Minus2Month: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM-2M>
+  }
+}
+
+TestData_Plus1YearMinus1Month1Day: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+1y-1M-1d>
+  }
+}
+
+TestData_Plus2Years2Months: {
+  RemovePremiumWaiverActionTab: {
+    Premium Waiver End Date: $<BOM+2y+2M>
+  }
+}
+
+TestData_Plus1Year1Month: {
+  RemovePremiumWaiverActionTab: {
+   Premium Waiver End Date: $<BOM+1y+1M>
+  }
+}

@@ -1,0 +1,27 @@
+TestData: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM>,
+    Endorsement Reason: Divorce,
+  }
+}
+
+DataGather: {
+  CertificatePolicyTab:{},
+  InsuredTab: {},
+  CoveragesTab: {},
+  PremiumSummaryTab: {},
+}
+
+TestData_Plus3Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+3M>,
+    Endorsement Reason: Divorce,
+  }
+}
+
+TestData_Plus1Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+1M>,
+    Endorsement Reason: index=1
+  }
+}

@@ -1,0 +1,3 @@
+VerifyProductCodeNameValues: [GB - Group Benefits, PREC-IDI - Individual Disability Income]
+VerifyCommissionStrategyCreationTab: [Rounding, Effective Date, Expiration Date, Available for Override, Determine Commission Rate By]
+VerifyCommissionTypeValues: ['', Heap, Flat, Graded]

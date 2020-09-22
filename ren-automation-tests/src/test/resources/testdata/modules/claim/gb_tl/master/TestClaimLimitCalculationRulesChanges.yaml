@@ -1,0 +1,168 @@
+TestData_Policy: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionVoluntaryAccidentalDeath', '@PlanDefinitionVoluntaryLifeInsurance', '@PlanDefinitionDependentBasicLife_Remove', '@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove', '@PlanDefinitionChildVoluntaryLifeInsurance_Remove', '@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtVoluntaryAccidentalDeath', '@ClassificationMgmtVoluntaryLife']
+}
+
+SelectPlan: {
+  Plan: Basic Life + Voluntary
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Salary Multiple: '1x'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount',
+    Rounding Method: 'Round Benefit Off to Nearest $500',
+    Salary Multiple: '1x'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVoluntaryAccidentalDeath: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Multiple Values',
+    Rounding Method: 'Round Benefit Up to Next $1000',
+    Salary Multiples: '1x'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVoluntaryLifeInsurance: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Accelerated Benefit Maximum Percentage: 50%,
+  Accelerated Benefit Minimum Amount: 15000,
+  Accelerated Benefit Minimum Percentage: 20%,
+  Continuation: 'Total Disability',
+  Portability: 'Included',
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Rounding Method: 'Round Benefit Up to Next $500'
+  },
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife_Remove: {
+  CoverageKeyRemove: Dependent Basic Life Insurance (Spouse & Child)
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance_Remove: {
+  CoverageKeyRemove: Spouse Voluntary Life Insurance
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance_Remove: {
+  CoverageKeyRemove: Child Voluntary Life Insurance
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeath_Remove: {
+  CoverageKeyRemove: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No'
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No'
+}
+
+ClassificationMgmtVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No'
+}
+
+ClassificationMgmtVoluntaryLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+TestData_Claim: {
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab'
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  Annual Base Salary: '$50,499.99'
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Plan: 'Basic Life + Voluntary',
+  Coverage Name: 'Employee Basic Life Insurance - Basic Life + Voluntary'
+}

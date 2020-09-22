@@ -1,0 +1,16 @@
+TestData_Add2Products: {
+  GeneralTab: {
+    Add New Product Details: ['@TestData_AutoProduct','@TestData_BenefitsProduct']
+  },
+  RelationshipTab: {}
+}
+
+TestData_AutoProduct: {
+  Policy Type: Auto,
+  Carrier Name: AIGM
+}
+
+TestData_BenefitsProduct: {
+  Policy Type: Benefits,
+  Carrier Name: AMICA
+}

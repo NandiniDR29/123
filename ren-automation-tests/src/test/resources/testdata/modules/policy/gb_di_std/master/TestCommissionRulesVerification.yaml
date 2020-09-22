@@ -1,0 +1,21 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab'
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  Policy Effective Date: $<BOM>,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Assigned Agencies: ['@QA_Agency1']
+}
+
+QA_Agency1: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}

@@ -1,0 +1,97 @@
+TestData_BillingGroups: {
+  BillingGroupsActionTab: ['@BasicAccidentEnhancedCopyed', '@BasicAccidentBASEBURemove']
+}
+
+BasicAccidentEnhancedCopyed: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG002,
+  Billing Group Type: Employment,
+  Payor: Sponsor,
+  Payment Mode: 12,
+  Coverage: Dental - A La Carte
+}
+
+BasicAccidentBASEBURemove: {
+  Remove: CLICK
+}
+
+TestData_DependentMaximumAge: {
+  PlanDefinitionTab: {
+    Eligibility: {
+      Dependent Maximum Age: 26
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}
+
+TestData_IncludeDisabledDependents: {
+  PlanDefinitionTab: {
+    Eligibility: {
+      Include Disabled Dependents: 'Yes'
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}
+
+TestData_OverrideProcedureCode: {
+  PlanDefinitionIssueActionTab: {
+    'Override Procedure Code Co-Insurance?': 'Yes',
+    'Procedure Code Co-Insurance Override': {
+      Procedure Code: D8010,
+      'Co-Insurance - In Network': '20%',
+      'Co-Insurance - Out of Network': '20%',
+      'Co-Insurance - EPO': '10%'
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}
+
+TestData_ProcedureCode: {
+  PlanDefinitionIssueActionTab: {
+    'Procedure Code Co-Insurance Override': {
+      Procedure Code: D8020
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}
+
+TestData_OverrideOutOfNetwork: {
+  PlanDefinitionIssueActionTab: {
+    'Procedure Code Co-Insurance Override': {
+      Co-Insurance - Out of Network: '25%'
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}
+
+TestData_OverrideInNetwork: {
+  PlanDefinitionIssueActionTab: {
+    'Procedure Code Co-Insurance Override': {
+      Co-Insurance - In Network: '25%'
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}
+
+TestData_CoInsuranceEPO: {
+  PlanDefinitionIssueActionTab: {
+    'Procedure Code Co-Insurance Override': {
+      Co-Insurance - EPO: '15%'
+    }
+  },
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  }
+}

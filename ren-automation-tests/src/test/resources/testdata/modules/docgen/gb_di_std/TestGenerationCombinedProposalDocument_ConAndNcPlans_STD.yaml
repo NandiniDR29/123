@@ -1,0 +1,142 @@
+TestData_STD_CON: {
+  InitiniateDialog: '@<std_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_STD',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_TwoPlans_STD', '@PlanDefinitionTab_CON_STD', '@PlanDefinitionTab_NC_STD' ],
+  ClassificationManagementTab: ['@<std_master>@DataGather@ClassificationManagementTab', '@<std_master>@DataGather@ClassificationManagementTab'],
+  PremiumSummaryTab: '@<std_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+SelectPlan_TwoPlans_STD: {
+  Plan: [CON, NC]
+}
+
+PolicyInformationTab_STD: {
+  Situs State: NY,
+  Group is Member Company: 'No',
+  Rate Guarantee (Months): '24',
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab_CON_STD: {
+  Coverage Basis: 'Non Occupational Coverage',
+  Contribution Type: 'Non-contributory',
+  Social Security Integration Method: 'None',
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Weekly Salary - Single Value',
+    Partial Disability: 'Work Incentive Benefit',
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Treatment Free Period': '3 Months',
+    'Elimination Period - Injury (Calendar Days)': '7',
+    'Elimination Period - Sickness (Calendar Days)': '7',
+    'Maximum Payment Duration': '26',
+  },
+  Options: {
+    Residual: 'Included',
+    Premium Waiver: 'Not Included',
+    Premium Rehabilitation Incentive Benefit: '5%',
+    First Day Hospitalization: 'Not Included',
+  },
+  PlanKey: CON-CON,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  }
+}
+
+PlanDefinitionTab_NC_STD: {
+  Coverage Basis: '24-hour Coverage',
+  Contribution Type: 'Contributory',
+  Social Security Integration Method: 'Family',
+  Benefit Schedule: {
+    Benefit Type: 'Specified Weekly Benefit Amount - Single Value',
+    Partial Disability: 'None',
+    Pre-Existing Conditions: 'Not Included',
+  },
+  Options: {
+    Premium Waiver: 'Included',
+    Premium Rehabilitation Incentive Benefit: 'None',
+  },
+  Participant Contribution %: '50',
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Sponsor/Participant Funding Structure: {}
+}
+
+RelationshipWithNonIndividualType: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: Member Company,
+  }
+}
+
+TestData_OnePlan: {
+  InitiniateDialog: '@<std_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_IL',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab_OnePlan',
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@<std_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+PolicyInformationTab_IL: {
+  Situs State: IL,
+  Rate Guarantee (Months): '16',
+  Group is Member Company: Yes,
+  Member Company Name: 'index=1',
+  'Small Group?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab_OnePlan: {
+  Plan: CON,
+  Contribution Type: 'Voluntary',
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Benefit Schedule: {
+    Benefit Type: 'Specified Weekly Benefit Amount - Single Value',
+    Partial Disability: 'Work Incentive Benefit',
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Treatment Free Period': 'N/A',
+    'Pre-Existing Condition: Look Back Period': '3 Months',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months',
+    'Temporary Recovery Period (days)': 14,
+    'Premium Waiver': 'Included',
+  },
+  Options: {
+    Residual: 'Not Included',
+    Premium Waiver: 'Included',
+  },
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': No,
+}

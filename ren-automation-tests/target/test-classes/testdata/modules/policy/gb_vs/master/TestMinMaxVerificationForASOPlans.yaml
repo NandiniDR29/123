@@ -1,0 +1,7 @@
+TestDataForASOPlans: {
+  PlanDefinitionTab: '@SelectPlans'
+}
+
+SelectPlans: {
+  Plan: [ASO A La Carte, ASO Plan B]
+}

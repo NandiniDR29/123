@@ -1,0 +1,46 @@
+TestData_Case_Profile: {
+  ClassificationManagementTab: ['@ClassificationManagementTabEmployment'],
+  LocationManagementTab: ['@Billing_Location_LOC1', '@Billing_Location_LOC2'],
+}
+
+ClassificationManagementTabEmployment: {
+  Classification Group: {
+    Class Name: 1,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    Job Code: [ALL],
+    Employment Status: [ALL],
+    Employment Type: [ALL],
+    Pay Type: Hourly,
+    Union Member: 'Yes',
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'Yes'
+  }
+}
+
+Billing_Location_LOC1: {
+  Add Billing Location:{
+    Location Name: 'Billing Location 1',
+    Location Number: '1',
+    Tax Identification: '12-3456789'
+  }
+}
+
+Billing_Location_LOC2: {
+  Add Billing Location:{
+    Location Name: 'Billing Location 2',
+    Location Number: '2',
+    Tax Identification: '12-3456782'
+  }
+}
+
+TestDataWithExistingBA: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithExistingBA']
+}

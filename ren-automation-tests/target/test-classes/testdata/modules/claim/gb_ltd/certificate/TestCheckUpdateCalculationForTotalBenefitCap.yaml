@@ -1,0 +1,75 @@
+TestData_Claim: {
+  BenefitsLTDInjuryPartyInformationTab: '@BenefitsLTDInjuryPartyInformationTab',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  BenefitCoverageDeterminationTab: {
+    Approved Through Date: $<today+10y>
+  },
+}
+
+TestData_Claim2: {
+  BenefitsLTDInjuryPartyInformationTab: '@BenefitsLTDInjuryPartyInformationTab2',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  BenefitCoverageDeterminationTab: {
+    Approved Through Date: $<today+10y>
+  },
+}
+
+TestData_Claim3: {
+  BenefitsLTDInjuryPartyInformationTab: '@BenefitsLTDInjuryPartyInformationTab3',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  BenefitCoverageDeterminationTab: {
+    Approved Through Date: $<today+10y>
+  },
+}
+
+BenefitsLTDInjuryPartyInformationTab: {
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check,
+  Covered Earnings: 1250,
+  Participant Indexed Pre-Disability Earnings: [
+  {
+    'Year No.': 1,
+    Year Start Date (MM/DD/YYYY): $<today+6M>,
+    Year End Date (MM/DD/YYYY):  $<today+12M>,
+    Indexed Pre-Disability Earnings: 750
+  },
+  {
+    'Year No.': 2,
+    Year Start Date (MM/DD/YYYY): $<today+1y+1d>,
+    Year End Date (MM/DD/YYYY):  $<today+1y+6M+1d>,
+    Indexed Pre-Disability Earnings: 2500
+  }]
+}
+
+BenefitsLTDInjuryPartyInformationTab2: {
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check,
+  Covered Earnings: 1250,
+  Participant Indexed Pre-Disability Earnings: [
+  {
+    'Year No.': 1,
+    Year Start Date (MM/DD/YYYY): $<today+19M>,
+    Year End Date (MM/DD/YYYY):  $<today+25M>,
+    Indexed Pre-Disability Earnings: 1250
+  }]
+}
+
+BenefitsLTDInjuryPartyInformationTab3: {
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check,
+  Covered Earnings: 2500,
+  Participant Indexed Pre-Disability Earnings: [
+  {
+    'Year No.': 1,
+    Year Start Date (MM/DD/YYYY): $<today+6M>,
+    Year End Date (MM/DD/YYYY):  $<today+12M>,
+    Indexed Pre-Disability Earnings: 5000
+  }]
+}
+
+BenefitsLTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}

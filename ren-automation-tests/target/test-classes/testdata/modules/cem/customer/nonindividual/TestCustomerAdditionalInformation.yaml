@@ -1,0 +1,18 @@
+TestData: {
+  GeneralTab: '@GeneralTab',
+  RelationshipTab: {}
+}
+
+GeneralTab: {
+  Additional Information: {
+    Preferred Language (Spoken): Russian,
+    Preferred Language (Written): English,
+    Paperless: false,
+    Registered Online: true,
+    Segment(s): 'ALL'
+  }
+}
+
+ComboListItems: {
+   Segment(s): ['VIP', 'Employee','Sanctioned']
+}

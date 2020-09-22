@@ -1,0 +1,101 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_TL - Term Life Insurance',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+  Available for Override: true,
+  Commission Overrides: ['@Add_Commission_Flat_Override', '@Add_Commission_Cumulative_Tiered_Override', '@Add_Commission_Subscriber_Count_Flat_Override']
+}
+
+Add_Commission_Flat_Override: {
+  Commission Type: 'Flat',
+  Add Commission Override Options: {
+    Name: 'Name$<rx:\d{5}>',
+    Override Range Min Percent: 5,
+    Override Range Max Percent: 25
+  }
+}
+
+Add_Commission_Tiered_Override: {
+  Commission Type: 'Tiered',
+  Add Commission Override Options: {
+    Name: 'Name$<rx:\d{5}>',
+    Tier 1: [0, '', 30]
+  }
+}
+
+Add_Commission_Cumulative_Tiered_Override: {
+  Commission Type: 'Cumulative Tiered',
+  Add Commission Override Options: {
+    Name: 'Name$<rx:\d{5}>',
+    Tier 1: [0, '', 10]
+  }
+}
+Add_Commission_Subscriber_Count_Flat_Override: {
+  Commission Type: 'Subscriber Count - Flat',
+  Add Commission Override Options: {
+    Name: 'Name$<rx:\d{5}>',
+    Override Range Min: 0,
+    Override Range Max: 35
+  }
+}
+
+Flat_CommissionRule: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Commission Rate: 20
+  }
+}
+
+Tiered_CommissionRule: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '', 10]
+  }
+}
+
+CumulativeTiered_CommissionRule: {
+  Commission Type: 'Cumulative Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '', 25]
+  }
+}
+
+SubscriberCount_CommissionRule: {
+  Commission Type: Subscriber Count,
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Rate 1: [0, '', 25]
+  }
+}
+
+Add_Agency_To_Quote: {
+  Agency / Producer: '',
+  'Independent Commissionable Producer (ICP)?': Yes,
+}

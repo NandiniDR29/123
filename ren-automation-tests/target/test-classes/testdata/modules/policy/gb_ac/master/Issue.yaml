@@ -1,0 +1,191 @@
+TestData: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar']
+}
+
+TestDataWithCustomCalendar: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithCustomCalendar']
+}
+
+TestDataWithExistingBA: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithExistingBA']
+}
+
+TestData_ExistentBillingAccount: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {},
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab:{}
+}
+
+TestData_WithoutBillingAccount: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {},
+  IssueActionTab: '@IssueActionTab'
+}
+
+TestData_OnTime: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@InvoicingCalendarTabOnTimeOtherValues'],
+}
+
+TestDataWithExistingCalendar: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithExistingCalendar']
+}
+
+TestData_Issue_Quarterly: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithQuarterlyCalendar'],
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingGroupsActionTab: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+InvoicingCalendarTabAll: {
+  Manage Invoicing Calendars: click,
+  Add Invoicing Calendar Button: click,
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'Calendar$<rx:\d{8}>',
+  Self Administered: true,
+  List Bill: true,
+  Geography: {
+    Countries: United States,
+    States: [GA]
+  },
+  Products: Group Accident,
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 6,
+  Generation Date Rule: 1,
+  Calendar Save Button: click,
+  Calendar Back Button: click
+}
+
+
+BillingAccountTabWithCustomCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 6,
+      Generation Date Rule: 1,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+InvoicingCalendarTabOnTimeOtherValues: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: '$<static:newCalendar:[rx:NewCalendar\d{5}]>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 31,
+      Generation Date Rule: 30,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}
+
+BillingAccountTabWithExistingCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+BillingAccountTabWithExistingBA: {
+  Select Action: 'Bill Under Account',
+  Bill Under Account: index=1
+}
+
+IssueActionTabMail: {
+  IssueActionTab: {
+    Address Line 1: '$<rx:Address\d{5}>',
+    Zip / Postal Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA
+  }
+}
+
+BillingAccountTabWithQuarterlyCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'QuarterlyCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Quarterly,
+      Invoicing Rule: In Arrears,
+      Billing Period Offset: 3,
+      Invoice Due Day: 1,
+      Generation Date Rule: 16,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=QuarterlyCalendar'}
+}

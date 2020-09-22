@@ -1,0 +1,10 @@
+TestData: {
+  StartEndorsementNPBInfoActionTab: '@StartEndorsementNPBInfoActionTab',
+  PolicyInfoEndorseNPBInfoActionTab: {},
+  PlanDefinitionEndorseNPBInfoActionTab: {}
+}
+
+StartEndorsementNPBInfoActionTab: {
+  Endorsement Date: $<BOM>,
+  Endorsement Reason: 'Change County Code'
+}

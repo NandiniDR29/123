@@ -1,0 +1,13 @@
+TestData_UpdateRecovery: {
+  RecoveryRecoveryDetailsActionTab: '@RecoveryRecoveryDetails',
+  RecoveryRecoveryAllocationActionTab: '@RecoveryRecoveryAllocation',
+  RecoveryRecoveredFromActionTab: {}
+}
+
+RecoveryRecoveryDetails: {
+  Amount: 80,
+}
+
+RecoveryRecoveryAllocation: {
+  Allocation Amount: 80
+}

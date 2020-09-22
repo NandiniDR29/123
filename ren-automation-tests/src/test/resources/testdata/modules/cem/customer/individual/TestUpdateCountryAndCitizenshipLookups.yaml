@@ -1,0 +1,8 @@
+TestData: {
+  TestData_Contains: {
+    Value: ["Andorra", "Åland Islands", "Saint Barts", "Bonaire, Sint Eustatius and Saba", "The Democratic Republic of the Congo", "Curacao", "Czechia", "United Kingdom", "Guernsey", "Isle of Man", "Jersey", "Moldova", "Montenegro", "Saint Martin (French)", "Palestine", "Serbia", "Slovakia", "Saint Martin (Dutch)", "Eswatini", "Timor-Leste"]
+  },
+  TestData_Not_Contains: {
+    Value: ["Netherlands Antilles", "Former Czechoslovakia", "Czech Republic", "France (European Territory)", "Great Britain", "Yugoslavia", "Moldavia", "Slovak Republic", "Former USSR", "Swaziland", "East Timor", "Zaire"]
+  }
+}

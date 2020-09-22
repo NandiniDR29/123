@@ -1,0 +1,807 @@
+TestData: {
+  PSRCustomer1 : '@PSRCustomer1',
+  PSRCustomerRel1 : '@PSRCustomerRel1',
+  PSRCustomer2 : '@PSRCustomer2',
+  PSRCustomerRel2 : '@PSRCustomerRel2',
+  PSRCustomer3 : '@PSRCustomer3',
+  PSRCustomerRel3 : '@PSRCustomerRel3',
+  PSRCustomer4 : '@PSRCustomer4',
+  PSRCustomerRel4 : '@PSRCustomerRel4',
+  PSRCustomer5 : '@PSRCustomer5',
+  PSRCustomerRel5 : '@PSRCustomerRel5',
+  PSRCustomer6 : '@PSRCustomer6',
+  PSRCustomerRel6 : '@PSRCustomerRel6',
+  PSRCustomer7 : '@PSRCustomer7',
+  PSRCustomerRel7 : '@PSRCustomerRel7',
+  PSRCustomer8 : '@PSRCustomer8',
+  PSRCustomerRel8 : '@PSRCustomerRel8',
+  MainTestsSteps1_9: {
+    Requests: ['@MainTestsStep1Request','@MainTestsStep2Request','@MainTestsStep3Request','@MainTestsStep4Request','@MainTestsStep5Request','@MainTestsStep6Request','@MainTestsStep7Request','@MainTestsStep8Request','@MainTestsStep9Request'],
+    Responses: ['@MainTestsStep1Response','@MainTestsStep2Response','@MainTestsStep3Response','@MainTestsStep4Response','@MainTestsStep5Response','@MainTestsStep6Response','@MainTestsStep7Response','@MainTestsStep8Response','@MainTestsStep9Response']
+  },
+  MainTestsSteps10_17: {
+    Requests: ['@MainTestsStep10Request','@MainTestsStep11Request','@MainTestsStep12Request','@MainTestsStep13Request','@MainTestsStep14Request','@MainTestsStep15Request','@MainTestsStep16Request','@MainTestsStep17Request'],
+    Responses: ['@MainTestsStep10Response','@MainTestsStep11Response','@MainTestsStep12Response','@MainTestsStep13Response','@MainTestsStep14Response','@MainTestsStep15Response','@MainTestsStep16Response','@MainTestsStep17Response']
+  }
+}
+
+
+PSRCustomer1: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'PSRCustomer1_$<rx:\d{8}>',
+    Last Name: 'PSRCustomer1_$<rx:\d{8}>',
+    SSN/Tax Identification: '876543201',
+    Date of Birth: '04/14/1988',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'PSRCustomer1City',
+      State/Province: 'NV',
+      Address Line 1: 'PSRCustomer1'
+    },
+    Phone Details: {
+      Phone Type: 'Work',
+      Phone Number: '9876543201'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA1'
+      }
+    },
+    Additional Names: ['@AdditionalNameDetailsSection1']
+  },
+  RelationshipTab: ['@PSRIndividualRelationship'],
+}
+
+PSRCustomerRel1: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'PSRCustomer1Rel_$<rx:\d{8}>',
+    Last Name: 'PSRCustomer1Rel_$<rx:\d{8}>',
+    SSN/Tax Identification: '234567801',
+    Date of Birth: '10/10/1991',
+    Address Details:{
+      Country: 'United States',
+      Zip/Post Code: '48003',
+      City: 'PSRCustomer1RelCity',
+      State/Province: 'MI',
+      Address Line 1: 'PSRCustomer1Rel'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA1'
+      }
+    }
+  },
+  RelationshipTab: {}
+}
+
+PSRCustomer2: {
+  CustomerType: '@NonIndividual',
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: 'PSRCustomer2_$<rx:\d{8}>',
+    EIN: '87-6543202',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '12/12/1982',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '85001',
+      City: 'PSRCustomer2City',
+      State/Province: 'CO',
+      Address Line 1: 'PSRCustomer2'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA1'
+      },
+    },
+    Additional Names: ['@AdditionalNameDetailsSection2']
+  },
+  RelationshipTab: ['@PSRNonIndRelationship']
+}
+
+PSRCustomerRel2: {
+  CustomerType: '@NonIndividual',
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '23-4567802',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '10/10/1992',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '87001',
+      City: 'PSRCustomer2RelCity',
+      State/Province: 'NM',
+      Address Line 1: 'PSRCustomer2Rel'
+    },
+    Phone Details: {
+      Phone Type: 'Work',
+      Phone Number: '2345678902'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA1'
+      }
+    }
+  },
+  RelationshipTab: {}
+}
+
+PSRCustomer3: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '876543203',
+    Date of Birth: '12/12/1981',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'PSRCustomer3City',
+      State/Province: 'NV',
+      Address Line 1: 'PSRCustomer3'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA2'
+      }
+    },
+    Additional Names: ['@AdditionalNameDetailsSection3']
+  },
+  RelationshipTab: ['@PSRIndividualRelationship']
+}
+
+PSRCustomerRel3: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '234567803',
+    Date of Birth: '10/10/1991',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '48003',
+      City: 'PSRCustomer3RelCity',
+      State/Province: 'MI',
+      Address Line 1: 'PSRCustomer3Rel'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA2'
+      }
+    }
+  },
+  RelationshipTab: {}
+}
+
+PSRCustomer4: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '876543207',
+    Date of Birth: '12/12/1981',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'PSRCustomer4City',
+      State/Province: 'NV',
+      Address Line 1: 'PSRCustomer4'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }
+  },
+  RelationshipTab: ['@PSRIndividualRelationship']
+}
+
+PSRCustomerRel4: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '234567807',
+    Date of Birth: '10/10/1991',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '48008',
+      City: 'PSRCustomer4RelCity',
+      State/Province: 'MI',
+      Address Line 1: 'PSRCustomer4Rel'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }
+  },
+  RelationshipTab: {}
+}
+
+PSRCustomer5: {
+  CustomerType: '@NonIndividual',
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '87-6543208',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '12/12/1982',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '85001',
+      City: 'PSRCustomer5City',
+      State/Province: 'CO',
+      Address Line 1: 'PSRCustomer5'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }
+  },
+  RelationshipTab: ['@PSRNonIndRelationship']
+}
+
+PSRCustomerRel5: {
+  CustomerType: '@NonIndividual',
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '23-4567808',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '10/10/1992',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '87001',
+      City: 'PSRCustomer5RelCity',
+      State/Province: 'NM',
+      Address Line 1: 'PSRCustomer5Rel'
+    },
+    Agency Assignment: {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }
+  },
+  RelationshipTab: {}
+}
+
+#without agency
+PSRCustomer6: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '876543213',
+    Date of Birth: '12/12/1981',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'PSRCustomer6City',
+      State/Province: 'NV',
+      Address Line 1: 'PSRCustomer6'
+    },
+    Agency Assignment: {},
+  },
+  RelationshipTab: ['@PSRIndividualRelationship']
+}
+
+#without agency
+PSRCustomerRel6: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '234567813',
+    Date of Birth: '10/10/1991',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '48008',
+      City: 'PSRCustomer6RelCity',
+      State/Province: 'MI',
+      Address Line 1: 'PSRCustomer6Rel'
+    },
+    Agency Assignment: {}
+  },
+  RelationshipTab: {}
+}
+
+PSRCustomer7: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '876543215',
+    Date of Birth: '12/12/1981',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'PSRCustomer7City',
+      State/Province: 'NV',
+      Address Line 1: 'PSRCustomer7'
+    },
+    Phone Details: {
+      Phone Type: 'Work',
+      Phone Number: '9876543215'
+    },
+    Agency Assignment: [
+    {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    },
+    {
+      Agency/Producer: {
+        Agency Name: 'PSRA2'
+      }
+    }]
+  },
+  RelationshipTab: ['@PSRIndividualRelationship']
+}
+
+PSRCustomerRel7: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '234567815',
+    Date of Birth: '10/10/1991',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '48003',
+      City: 'PSRCustomer7RelCity',
+      State/Province: 'MI',
+      Address Line 1: 'PSRCustomer7Rel'
+    },
+    Phone Details: {
+      Phone Type: 'Work',
+      Phone Number: '2345678915'
+    },
+    Agency Assignment: [
+    {
+      Agency/Producer: {
+        Agency Name: 'PSRA2'
+      }
+    },
+    {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }]
+  },
+  RelationshipTab: {}
+}
+
+PSRCustomer8: {
+  CustomerType: '@NonIndividual',
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '87-6543216',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '12/12/1982',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '85001',
+      City: 'PSRCustomer8City',
+      State/Province: 'CO',
+      Address Line 1: 'PSRCustomer8'
+    },
+    Agency Assignment: [{
+      Agency/Producer: {
+        Agency Name: 'PSRA2'
+      }
+    },
+    {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }]
+  },
+  RelationshipTab: ['@PSRNonIndRelationship']
+}
+
+PSRCustomerRel8: {
+  CustomerType: '@NonIndividual',
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '23-4567816',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '10/10/1992',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '87016',
+      City: 'PSRCustomer8RelCity',
+      State/Province: 'NM',
+      Address Line 1: 'PSRCustomer8Rel'
+    },
+    Agency Assignment: [{
+      Agency/Producer: {
+        Agency Name: 'PSRA2'
+      }
+    },
+    {
+      Agency/Producer: {
+        Agency Name: 'PSRA3'
+      }
+    }]
+  },
+  RelationshipTab: {}
+}
+
+Individual: {
+  Customer Type: 'Individual'
+}
+
+NonIndividual: {
+  Customer Type: 'Non-Individual'
+}
+
+AdditionalNameDetailsSection1: {
+  First Name: 'PSRCustomer1Additional',
+  Last Name: 'PSRCustomer1Additional'
+}
+
+AdditionalNameDetailsSection2: {
+  Name-DBA: 'PSRCustomer2Additional'
+}
+
+AdditionalNameDetailsSection3: {
+  First Name: 'PSRCustomer3Additional',
+  Last Name: 'PSRCustomer3Additional'
+}
+
+PSRIndividualRelationship: {
+  Type: 'Individual',
+  First Name: 'stub',
+  Last Name: 'stub',
+  Search Party Relationship: 'stub',
+  Relationship to Customer: 'index=1'
+}
+
+PSRNonIndRelationship: {
+  Type: 'Non-Individual',
+  Name - Legal: 'stub',
+  Search Party Relationship: 'stub',
+  Relationship to Customer: 'index=1'
+}
+
+MainTestsStep1Request: {
+  query: {
+    partyType: 'PersonParty',
+    agency: 'PSRA1',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep1Response: {
+    responses : ['@FirstResponse1','@FirstResponse2'],
+    logMessage: 'MainTestsStep1Response'
+}
+
+FirstResponse1 : {
+  lastName: 'customer1LastName',
+  firstName: 'customer1FirstName',
+  customerNumber: 'customer1',
+}
+
+FirstResponse2 : {
+  lastName: 'relationship1LastName',
+  firstName: 'relationship1FirstName',
+  customerNumber: 'relationship1'
+}
+
+MainTestsStep2Request: {
+  query: {
+    partyType: 'NonPersonParty',
+    agency: 'PSRA2',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep2Response: {
+    responses : ['@SecondResponse1','@SecondResponse2'],
+    logMessage: 'MainTestsStep2Response'
+}
+
+SecondResponse1 : {
+  customerNumber: 'customer8',
+}
+
+SecondResponse2 : {
+  customerNumber: 'relationship8',
+}
+
+MainTestsStep3Request: {
+  query: {
+    city: 'PSRCustomer1City',
+    offset: '0',
+    limit: '10'
+  }
+}
+
+MainTestsStep3Response: {
+    responses : ['@ThirdResponse1'],
+    addressModel: 'stub',
+    logMessage: 'MainTestsStep3Response'
+}
+
+ThirdResponse1 : {
+    customerNumber: 'customer1'
+}
+
+MainTestsStep4Request: {
+  query: {
+    partyType: 'NonPersonParty',
+    state: 'CO',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep4Response: {
+    responses : ['@FourthResponse1','@FourthResponse2','@FourthResponse3'],
+    logMessage: 'MainTestsStep4Response'
+}
+
+FourthResponse1 : {
+  customerNumber: 'customer2'
+}
+
+FourthResponse2 : {
+  customerNumber: 'customer5'
+}
+
+FourthResponse3 : {
+  customerNumber: 'customer8'
+}
+
+MainTestsStep5Request: {
+  query: {
+    legalName: 'PSRCustomer8',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep5Response: {
+    responses : ['@FifthResponse1'],
+    logMessage: 'MainTestsStep5Response'
+}
+
+FifthResponse1 : {
+  customerNumber: 'customer8'
+}
+
+MainTestsStep6Request: {
+  query: {
+    birthDate: '1991-10-10',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep6Response: {
+    responses : ['@SixthResponse1','@SixthResponse2','@SixthResponse3','@SixthResponse4','@SixthResponse5'],
+    logMessage: 'MainTestsStep6Response'
+}
+
+SixthResponse1 : {
+  customerNumber: 'relationship1'
+}
+
+SixthResponse2 : {
+  customerNumber: 'relationship3'
+}
+
+SixthResponse3 : {
+  customerNumber: 'relationship4'
+}
+
+SixthResponse4 : {
+  customerNumber: 'relationship6'
+}
+
+SixthResponse5 : {
+  customerNumber: 'relationship7'
+}
+
+MainTestsStep7Request: {
+  query: {
+    phone: '9876543215',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep7Response: {
+    responses : ['@SeventhResponse1'],
+    logMessage: 'MainTestsStep7Response'
+}
+
+SeventhResponse1 : {
+  customerNumber: 'customer7'
+}
+
+MainTestsStep8Request: {
+  query: {
+    street1: 'PSRCustomer8Rel',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep8Response: {
+    responses : ['@EighthResponse1'],
+    logMessage: 'MainTestsStep8Response'
+}
+
+EighthResponse1 : {
+  customerNumber: 'relationship8'
+}
+
+MainTestsStep9Request: {
+  query: {
+    zip: '85001',
+    offset: '0',
+    limit: '100'
+  }
+}
+
+MainTestsStep9Response: {
+    responses : ['@NinthResponse1','@NinthResponse2','@NinthResponse3'],
+    logMessage: 'MainTestsStep9Response'
+}
+
+NinthResponse1 : {
+  customerNumber: 'customer2'
+}
+
+NinthResponse2 : {
+  customerNumber: 'customer5'
+}
+
+NinthResponse3 : {
+  customerNumber: 'customer8'
+}
+
+MainTestsStep10Request: {
+  legalName: 'PSRCustomer2Additional',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep10Response: {
+    responses : ['@TenthResponse1'],
+    logMessage: 'MainTestsStep10Response'
+}
+
+TenthResponse1 : {
+  customerNumber: 'customer2'
+}
+
+MainTestsStep11Request: {
+  nationalId: '876543201',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep11Response: {
+    responses : ['@EleventhResponse1'],
+    logMessage: 'MainTestsStep11Response'
+}
+
+EleventhResponse1 : {
+  customerNumber: 'customer1'
+}
+
+MainTestsStep12Request: {
+  legalId: '87-6543202',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep12Response: {
+    responses : ['@TwelfthResponse1'],
+    logMessage: 'MainTestsStep12Response'
+}
+
+TwelfthResponse1 : {
+  customerNumber: 'customer2'
+}
+
+
+MainTestsStep13Request: {
+  partyType: 'PersonParty',
+  firstName: 'PSRCustomer1Additional',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep13Response: {
+    responses : ['@ThirteenthResponse1'],
+    logMessage: 'MainTestsStep13Response'
+}
+
+ThirteenthResponse1 : {
+  customerNumber: 'customer1'
+}
+
+MainTestsStep14Request: {
+  partyType: 'PersonParty',
+  lastName: 'PSRCustomer1Additional',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep14Response: {
+    responses : ['@FourteenthResponse1'],
+    logMessage: 'MainTestsStep14Response'
+}
+
+FourteenthResponse1 : {
+  customerNumber: 'customer1'
+}
+
+MainTestsStep15Request: {
+  partyType: 'PersonParty',
+  firstName: 'PSRCustomer1Additional',
+  lastName: 'PSRCustomer1Additional',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep15Response: {
+    responses : ['@FifteenthResponse1'],
+    logMessage: 'MainTestsStep15Response'
+}
+
+FifteenthResponse1 : {
+  customerNumber: 'customer1'
+}
+
+MainTestsStep16Request: {
+  partyType: 'PersonParty',
+  firstName: 'PSRCustomer1Additional',
+  lastName: 'PSRCustomer3Additional',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep16Response: {
+    responses : [],
+    logMessage: 'MainTestsStep16Response'
+}
+
+MainTestsStep17Request: {
+  partyType: 'PersonParty',
+  firstName: 'PSRCustomer3Additional',
+  lastName: 'PSRCustomer1Additional',
+  offset: '0',
+  limit: '10'
+}
+
+MainTestsStep17Response: {
+    responses : [],
+    logMessage: 'MainTestsStep17Response'
+}

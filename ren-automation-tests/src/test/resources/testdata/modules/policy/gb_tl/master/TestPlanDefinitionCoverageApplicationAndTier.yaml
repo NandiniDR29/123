@@ -1,0 +1,126 @@
+PlanDefinition_REN_26677: {
+  PlanDefinitionTab: {
+    Coverage Application: 'Spouse and Child',
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%,
+    Member Payment Mode: 12
+  }
+}
+
+BTL: {
+  PlanDefinitionTab: {
+    Sponsor Payment Mode: 12,
+    Total Number of Eligible Lives: 1,
+    Required Participation %: 5%,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+
+VOL_BTL: {
+  PlanDefinitionTab: {
+    Total Number of Eligible Lives: 1,
+    Member Payment Mode: 12,
+    Required Participation %: 5%,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+
+VOL_ADD: {
+  PlanDefinitionTab: {
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+
+DEP_BTL: {
+  PlanDefinitionTab: {
+    Coverage Application: 'Spouse and Child',
+    Required Participation %: 5%,
+    Member Payment Mode: 12
+  }
+}
+
+DEP_VOL_ADD: {
+  PlanDefinitionTab: {
+    Coverage Application: 'Spouse and Child',
+    Member Payment Mode: 12,
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%
+  }
+}
+
+TestData_ClassificationManagementTab: {
+  ClassificationManagementTab: [
+    '@ClassificationMgmtBasicLifeInsraunce',
+    '@ClassificationMgmtDependentBasicLife',
+    '@ClassificationMgmtEmployeeVoluntaryLifeInsurance',
+    '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+    '@ClassificationMgmtDependentVoluntaryAccidentalDeath',
+    '@ClassificationMgmtSpouseVoluntaryLifeInsurance']
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Confirm using subgroups: CLICK,
+  'Class is Open?': Yes,
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  'Class is Open?': Yes,
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'Yes',
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  'Class is Open?': Yes,
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+  'Class is Open?': Yes,
+}

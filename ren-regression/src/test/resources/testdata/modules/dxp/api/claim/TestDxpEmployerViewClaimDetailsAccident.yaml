@@ -1,0 +1,37 @@
+Update_AccidentalDeath: {
+  BenefitAccidentalDeathDecedentTab: {},
+  BenefitAccidentalDeathIncidentTab: {
+    Date Last Worked: $<today+10d>
+  }
+}
+
+Update_PremiumWaiver: {
+  BenefitPremiumWaiverInjuryPartyInformationTab: {},
+  BenefitPremiumWaiverIncidentTab: {
+    Premium Waiver Incident: {
+      Date Last Worked: $<today+11d>,
+      RTW Date: $<today+11d>
+    }
+  }
+}
+
+Update_AccidentalDismemberment: {
+  BenefitAccidentalDismembermentInjuryPartyInformationTab: {},
+  BenefitAccidentalDismembermentIncidentTab: {
+    Date Last Worked: $<today+12d>
+  },
+}
+
+Update_CriticalIllness: {
+  BenefitCriticalIllnessInjuryPartyInformationTab: {},
+  BenefitCriticalIllnessIncidentTab: {
+    Date Last Worked: $<today+13d>
+  },
+}
+
+Update_DiagnosisAndTreatment: {
+  BenefitDiagnosisAndTreatmentInjuryPartyInformationTab: {},
+  BenefitDiagnosisAndTreatmentIncidentTab: {
+    Date Last Worked: $<today+14d>
+  },
+}

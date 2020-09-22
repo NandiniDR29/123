@@ -1,0 +1,85 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL', '@PlanDefinitionTab_SGR']
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 8,
+  STAT Offset Amount: 500,
+  Census Type: 'Enrolled',
+  Contribution Type: Non-contributory,
+  Rating: {
+    SIC Code: 5411,
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Weekly Salary - Single Value',
+    Benefit Percentage: '65%',
+    Maximum Payment Duration: '9',
+    Elimination Period - Injury (Calendar Days): '0',
+    Elimination Period - Sickness (Calendar Days): '3'
+  },
+  Options: {}
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 10,
+  Contribution Type: Contributory,
+  Census Type: 'Enrolled',
+  STAT Offset Amount: 500,
+  Rating: {
+    SIC Code: 5411,
+  },
+  Options: {},
+  Benefit Schedule: {
+    Benefit Type: 'Specified Weekly Benefit Amount - Single Value',
+    Weekly Benefit Amount: '500.0',
+    Maximum Payment Duration: '52',
+    Elimination Period - Injury (Calendar Days): '60',
+    Elimination Period - Sickness (Calendar Days): '60'
+  },
+  Sponsor/Participant Funding Structure: {}
+}
+
+PlanDefinitionTab_SGR: {
+  PlanKey: SGR-SGR,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 11,
+  Contribution Type: Voluntary,
+  STAT Offset Amount: 500,
+  Rating: {
+    SIC Code: 5411,
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Weekly Benefit Amount - Single Value',
+    Weekly Benefit Amount: '500.0',
+    Maximum Payment Duration: '5',
+    Elimination Period - Injury (Calendar Days): '30',
+    Elimination Period - Sickness (Calendar Days): '30'
+  }
+}
+
+PlanDefinitionTab_VOL: {
+  PlanKey: VOL-VOL,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 12,
+  Contribution Type: Voluntary,
+  STAT Offset Amount: 500,
+  Rating: {
+    SIC Code: 5411,
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Weekly Salary - Single Value',
+    Benefit Percentage: '55%',
+    Maximum Payment Duration: '25',
+    Elimination Period - Injury (Calendar Days): '3',
+    Elimination Period - Sickness (Calendar Days): '7'
+  }
+}

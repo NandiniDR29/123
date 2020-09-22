@@ -1,0 +1,22 @@
+TestData: {
+  SearchMergeCustomerActionTab: {
+    Search Customer: {
+      Customer Number: ''
+    }
+  },
+  MergeCustomerActionTab: {
+    Add:
+  }
+}
+
+TestData_Providers: {
+  SearchMergeCustomerActionTab: {
+    Search Customer: {
+      Customer Number: ''
+    }
+  },
+  MergeCustomerActionTab: {
+    Add: Provider,
+    Delete: John
+  }
+}

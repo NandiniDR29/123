@@ -1,0 +1,44 @@
+{
+	"restTargets": {
+		"CLAIMS.FNOL": {
+			"target": "claims/fnol",
+			"methods": {
+				"POST": {
+					"mediaType": "application/json"
+				}
+			}
+		},
+		"CLAIMS.PROCESS.EDI.CLAIM": {
+			"target": "claims/processEdiClaim",
+			"methods": {
+				"POST": {
+					"mediaType": "application/json"
+				}
+			}
+		},
+		"CLAIMS.INTEREST": {
+			"target": "claims/{claimNumber}/interest",
+			"methods": {
+				"GET": {
+					"mediaType": "application/json"
+				}
+			}
+		},
+		"CLAIMS.INFO": {
+			"target": "claims/{claimNumber}/claimInfo",
+			"methods": {
+				"GET": {
+					"mediaType": "application/json"
+				}
+			}
+		},
+        "CLAIMS.IMAGE": {
+            "target": "claims/{claimNumber}/image",
+            "methods": {
+                "GET": {
+                    "mediaType": "application/json"
+                }
+            }
+        }
+	}
+}

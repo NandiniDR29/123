@@ -1,0 +1,137 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: '@PolicyInformationPolicyTab',
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationDependentDependentInformationTab: '@PolicyInformationDependentDependentInformationTab',
+  PolicyInformationDependentDependentCoverageTab: '@PolicyInformationDependentDependentCoverageTab',
+  PolicyInformationSponsorTab: '@PolicyInformationSponsorTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabDeath'],
+  BenefitsDeathDecedentTab: '@BenefitsDeathDecedentTab',
+  BenefitsDeathIncidentTab: {},
+  BenefitsDeathDeathCertificateTab: '@BenefitsDeathDeathCertificateTab',
+  BenefitsDeathBeneficiaryTab: '@BenefitsDeathBeneficiaryTab',
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+LossContextTab: {
+  Policy LOB: Life Insurance,
+  Policy Product: Term Life Insurance,
+  Type of Claim: Term Life Claim,
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: index=1
+}
+
+PolicyInformationPolicyTab: {
+  Effective Date: $<today>,
+  Expiration Date: $<today+1y>,
+  Original Effective Date: $<today>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  State / Province: CA,
+  City: Walnut Creek
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Coverage Name: 'Employee Basic Life Insurance',
+  Limit Amount: 100
+}
+
+PolicyInformationDependentDependentInformationTab: {
+  Party Name: index=1,
+  Relationship To Participant: Spouse,
+  First Name: 'Martha$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1
+}
+
+PolicyInformationDependentDependentCoverageTab: {
+  Coverage Name: index=1,
+  Limit Amount: 100
+}
+
+PolicyInformationSponsorTab: {
+  Company Name: 'Company$<rx:\d{8}>',
+  Contact Preference: Email,
+  Email: email@email.com
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabDeath: {
+  Damage: Death
+}
+
+BenefitsDeathDecedentTab: {
+  Associated Policy Party: 'contains=Martha',
+  Date of Birth: $<today>
+}
+
+BenefitsDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+BenefitsDeathBeneficiaryTab: {
+  Coverage: index=1
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  Relationship To Decedent/Injury Party: index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>'
+}
+
+EAPServicesServiceRequestTab: {
+  Benefit: index=1,
+  Service Type: index=1,
+  #'Create New Vendor?': 'Yes',
+  #Company Name: '$<rx:CompanyName\d{5}>',
+  #Tax Identification Number: '$<rx:\d{10}>',
+  #Zip/Postal Code: 94596,
+  #Address Line 1: Address Line 1,
+  #Settlement Method: index=1
+  Add: 'click'
+}

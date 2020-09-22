@@ -1,0 +1,24 @@
+TestData: {
+  DocTemplate: {
+    Template ID(Name): '$<static:newName:[rx:Template\d{4}]>'
+  },
+  DocTemplateTab: {
+    Subsystem: Policy,
+    Product: Home (Preconfigured),
+    Entity: Quote,
+    Engine: LiveCycle,
+    Indexing Root: Policy,
+    Folder: Applications and Proposals/Renewal,
+    Document Type: Proposal Letter,
+    Paper Type: PlainA4,
+    Template Uri: eis/home/QUOTE_OFFER.xdp,
+    Description: Test Description,
+    Generated Document Name: 'Name$<rx:\d{8}>',
+    Is Active: true,
+    Can Generate On Demand: true,
+    EMail: true,
+    Fax: true,
+    Print to Batch: true,
+    SMS: true,
+  }
+}

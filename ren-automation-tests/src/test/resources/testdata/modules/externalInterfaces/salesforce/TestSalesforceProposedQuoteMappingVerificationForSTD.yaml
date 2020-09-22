@@ -1,0 +1,40 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan_TwoPlans', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL'],
+  ClassificationManagementTab: ['@<std_master>@DataGather@ClassificationManagementTab', '@<std_master>@DataGather@ClassificationManagementTab']
+}
+
+SelectPlan_TwoPlans: {
+  Plan: [CON, VOL]
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Participant Contribution %: 100,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Contribution Type: Contributory,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {},
+  Options: {}
+}
+
+PlanDefinitionTab_VOL: {
+  PlanKey: VOL-VOL,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Contribution Type: Voluntary,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+}

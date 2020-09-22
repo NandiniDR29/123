@@ -1,0 +1,15 @@
+TestData:
+  ClaimCopyActionTab:
+    Date of Loss: '$<today:MM/dd/yyyy h:mm a>'
+    Details: 'Details$<rx:\d{8}>'
+    'Policy #': {
+      'Policy #': 'true'
+    }
+    
+TestData_WithoutPolicy:
+  ClaimCopyActionTab:
+    Date of Loss: '$<today:MM/dd/yyyy h:mm a>'
+    Details: 'Details$<rx:\d{8}>'
+    No Policy: {
+      'No Policy': 'click'
+    }

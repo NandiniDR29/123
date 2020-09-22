@@ -1,0 +1,41 @@
+CreateTestData: {
+  CarrierInfoTab: {
+    Carrier Name: '$<static:newName:[rx:CarrierName\d{5}]>'
+  },
+  CompaniesTab: {
+    AddCompanyDialog: {
+    Company Code: '$<static:newCompanyCode:[rx:CompanyCode\d{5}]>',
+    Company Name: '$<static:newCompanyName:[rx:CompanyName\d{5}]>',
+    Underwriting Companies: All
+    },
+  },
+  BankingDetailsTab: {
+    AddBankingDetailDialog: {
+      Bank Account Number: '$<static:newBankAccountNumber:[rx:BankNumber\d{5}]>',
+      Account Type: index=1,
+      Bank Name: index=1,
+      Bank Branch Code: index=1
+    }
+  }
+}
+
+UpdateTestData: {
+  CarrierInfoTab: {
+    Carrier Name: '$<static:updateName:[rx:CarrierName\d{5}]>'
+  },
+  CompaniesTab: {
+    AddCompanyDialog: {
+      Company Code: '$<static:updateCompanyCode:[rx:CompanyCode\d{5}]>',
+      Company Name: '$<static:updateCompanyName:[rx:CompanyName\d{5}]>',
+      Underwriting Companies: All
+    },
+  },
+  BankingDetailsTab: {
+    AddBankingDetailDialog: {
+      Bank Account Number: '$<static:updateBankAccountNumber:[rx:BankNumber\d{5}]>',
+      Account Type: index=1,
+      Bank Name: index=1,
+      Bank Branch Code: index=1
+    }
+  }
+}

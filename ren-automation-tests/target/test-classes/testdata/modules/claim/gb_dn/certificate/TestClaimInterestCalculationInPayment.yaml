@@ -1,0 +1,251 @@
+IN_PAY_PAY_TRX_D: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_PAY_TRX_D,
+  transactionType: Indemnity payment,
+  ledgerAccountNo: 2027,
+  entryAmt: $80.00
+}
+
+IN_PAY_PAY_TRX_C: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_PAY_TRX_C,
+  transactionType: Indemnity payment,
+  ledgerAccountNo: 2003,
+  entryAmt: $80.00
+}
+
+IN_PAY_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $20.00
+}
+
+IN_PAY_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $20.00
+}
+
+IN_PAY_ADD_TRX_D_ClaimsPaymentCalculatorInterest: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_ADD_TRX_D_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment interest,
+  ledgerAccountNo: 2018,
+  entryAmt: $30.00
+}
+
+IN_PAY_ADD_TRX_C_ClaimsPaymentCalculatorInterest: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_ADD_TRX_C_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment interest,
+  ledgerAccountNo: 2003,
+  entryAmt: $30.00
+}
+
+IN_PAY_DECL_PAY_TRX_D: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_PAY_TRX_D,
+  transactionType: Indemnity payment declined,
+  ledgerAccountNo: 2003,
+  entryAmt: $80.00
+}
+
+IN_PAY_DECL_PAY_TRX_C: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_PAY_TRX_C,
+  transactionType: Indemnity payment declined,
+  ledgerAccountNo: 2027,
+  entryAmt: $80.00
+}
+
+IN_PAY_DECL_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment declined offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $20.00
+}
+
+IN_PAY_DECL_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment declined offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $20.00
+}
+
+IN_PAY_DECL_ADD_TRX_D_ClaimsPaymentCalculatorInterest: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_ADD_TRX_D_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment declined interest,
+  ledgerAccountNo: 2003,
+  entryAmt: $30.00
+}
+
+IN_PAY_DECL_ADD_TRX_C_ClaimsPaymentCalculatorInterest: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_ADD_TRX_C_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment declined interest,
+  ledgerAccountNo: 2018,
+  entryAmt: $30.00
+}
+
+IN_PAY_PAY_TRX_D_2: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_PAY_TRX_D,
+  transactionType: Indemnity payment,
+  ledgerAccountNo: 2027,
+  entryAmt: $100.00
+}
+
+IN_PAY_PAY_TRX_C_2: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_PAY_TRX_C,
+  transactionType: Indemnity payment,
+  ledgerAccountNo: 2003,
+  entryAmt: $100.00
+}
+
+IN_PAY_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction_2: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $100.00
+}
+
+IN_PAY_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction_2: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $100.00
+}
+
+IN_PAY_ADD_TRX_D_ClaimsPaymentCalculatorInterest_2: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_ADD_TRX_D_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment interest,
+  ledgerAccountNo: 2018,
+  entryAmt: $40.00
+}
+
+IN_PAY_ADD_TRX_C_ClaimsPaymentCalculatorInterest_2: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_ADD_TRX_C_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment interest,
+  ledgerAccountNo: 2003,
+  entryAmt: $40.00
+}
+
+IN_PAY_STOP_PAY_TRX_D: {
+  transactionGroupId: IN_PAY_STOP,
+  txType: indemnity payment stopped,
+  transactionTypeId: IN_PAY_STOP_PAY_TRX_D,
+  transactionType: Indemnity payment stopped,
+  ledgerAccountNo: 2003,
+  entryAmt: $100.00
+}
+
+IN_PAY_STOP_PAY_TRX_C: {
+  transactionGroupId: IN_PAY_STOP,
+  txType: indemnity payment stopped,
+  transactionTypeId: IN_PAY_STOP_PAY_TRX_C,
+  transactionType: Indemnity payment stopped,
+  ledgerAccountNo: 2027,
+  entryAmt: $100.00
+}
+
+IN_PAY_STOP_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction: {
+  transactionGroupId: IN_PAY_STOP,
+  txType: indemnity payment stopped,
+  transactionTypeId: IN_PAY_STOP_OFF_TRX_D_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment stopped offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $100.00
+}
+
+IN_PAY_STOP_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction: {
+  transactionGroupId: IN_PAY_STOP,
+  txType: indemnity payment stopped,
+  transactionTypeId: IN_PAY_STOP_OFF_TRX_C_ClaimsDentalPaymentCalculatorReduction,
+  transactionType: Indemnity payment stopped offset,
+  ledgerAccountNo: 2027,
+  entryAmt: $100.00
+}
+
+IN_PAY_STOP_ADD_TRX_D_ClaimsPaymentCalculatorInterest: {
+  transactionGroupId: IN_PAY_STOP,
+  txType: indemnity payment stopped,
+  transactionTypeId: IN_PAY_STOP_ADD_TRX_D_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment stopped interest,
+  ledgerAccountNo: 2003,
+  entryAmt: $40.00
+}
+
+IN_PAY_STOP_ADD_TRX_C_ClaimsPaymentCalculatorInterest: {
+  transactionGroupId: IN_PAY_STOP,
+  txType: indemnity payment stopped,
+  transactionTypeId: IN_PAY_STOP_ADD_TRX_C_ClaimsPaymentCalculatorInterest,
+  transactionType: Indemnity payment stopped interest,
+  ledgerAccountNo: 2018,
+  entryAmt: $40.00
+}
+
+IN_PAY_PAY_TRX_D_3: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_PAY_TRX_D,
+  transactionType: Indemnity payment,
+  ledgerAccountNo: 2027,
+  entryAmt: $214.47
+}
+
+IN_PAY_PAY_TRX_C_3: {
+  transactionGroupId: IN_PAY,
+  txType: indemnity payment,
+  transactionTypeId: IN_PAY_PAY_TRX_C,
+  transactionType: Indemnity payment,
+  ledgerAccountNo: 2003,
+  entryAmt: $214.47
+}
+
+IN_PAY_DECL_PAY_TRX_D_3: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_PAY_TRX_D,
+  transactionType: Indemnity payment declined,
+  ledgerAccountNo: 2003,
+  entryAmt: $214.47
+}
+
+IN_PAY_DECL_PAY_TRX_C_3: {
+  transactionGroupId: IN_PAY_DECL,
+  txType: indemnity payment declined,
+  transactionTypeId: IN_PAY_DECL_PAY_TRX_C,
+  transactionType: Indemnity payment declined,
+  ledgerAccountNo: 2027,
+  entryAmt: $214.47
+}

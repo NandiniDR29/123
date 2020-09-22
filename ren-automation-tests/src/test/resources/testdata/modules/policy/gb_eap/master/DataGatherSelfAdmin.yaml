@@ -1,0 +1,18 @@
+TestData: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTab'],
+  ClassificationManagementTab: '@DataGather@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+PlanDefinitionTab: {
+  Plan: EAP,
+  Sponsor/Participant Funding Structure: {
+    'Self-administered?': Yes,
+  },
+  Rating: {
+    Plan Type: Face to Face benefits
+  }
+}

@@ -1,0 +1,12 @@
+{
+"restTargets": {
+  "ENROLLMENT.POLICY_NUMBER.DEPLOY": {
+     "target": "/enrollment/{policynumber}/deploy",
+      "methods": {
+        "POST": {
+          "mediaType": "application/xml"
+         }
+        }
+      }
+   }
+}

@@ -1,0 +1,117 @@
+TestData_Post_Request: {
+  "id": customer_id,
+  "type": "ach",
+  "ach": {
+    "profileId": "string",
+    "payorDetails": {
+      "payorNameInfo": {
+        "nameTypeCd": "OTH",
+        "prefix": null,
+        "firstName": "payorDetails",
+        "middleName": "payorDetails",
+        "lastName": "payorDetails",
+        "otherName": "string"
+      },
+      "payorAddress": {
+        "countryCd": "US",
+        "stateProvCd": "AL",
+        "city": "payorAddress",
+        "postalCode": "19999",
+        "addressLine1": "payorAddress",
+        "addressLine2": "payorAddress",
+        "addressLine3": "payorAddress",
+        "county": "string"
+      }
+    },
+    "paymentMethodEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "paymentMethodExpirationDate": "$<today+1y:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "transitNumber": "122235821",
+    "bankName": "Ali",
+    "accountNumber": "1234567897",
+    "firstName": "string",
+    "lastName": "string",
+    "status": "inProgress",
+    "bankAccountHolderName": "string",
+    "bankAccountHolderNamePhonetic": "string",
+    "statusUpdatedBy": "string",
+    "bankCd": "string",
+    "bankBranchCd": "string",
+    "accountTypeCd": "string",
+    "achProtocolFormReceived": true,
+    "effectiveTerm": {
+      "effective": "2019-09-05T07:42:06.584Z",
+      "expiration": "2019-09-25T07:42:06.584Z"
+    },
+    "accountHolderInfo": {
+      "nameTypeCd": "OTH",
+      "prefix": null,
+      "firstName": "accountHolderInfo",
+      "middleName": "accountHolderInfo",
+      "lastName": "accountHolderInfo",
+      "otherName": "accountHolderInfo"
+    },
+    "internationalAchFormatting": true,
+    "bankAccountType": "string",
+    "countryCd": "US",
+    "payorDifferent": true
+  }
+}
+
+TestData_PUT_Request: {
+  "id": ach_payment_method_id,
+  "type": "ach",
+  "ach": {
+    "profileId": "string",
+    "payorDetails": {
+      "payorNameInfo": {
+        "nameTypeCd": "IND",
+        "prefix": null,
+        "firstName": "payorchanges",
+        "middleName": "payorchanges",
+        "lastName": "payorchanges",
+        "otherName": "string"
+      },
+      "payorAddress": {
+        "countryCd": "US",
+        "stateProvCd": "CA",
+        "city": "payorAddress",
+        "postalCode": "19111",
+        "addressLine1": "payorchanges",
+        "addressLine2": "payorchanges",
+        "addressLine3": "payorchanges",
+        "county": "string"
+      }
+    },
+    "paymentMethodEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "paymentMethodExpirationDate": "$<today+1y:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "transitNumber": "122235821",
+    "bankName": "Alichanges",
+    "accountNumber": "1234567897",
+    "firstName": "string",
+    "lastName": "string",
+    "status": "inProgress",
+    "bankAccountHolderName": "string",
+    "bankAccountHolderNamePhonetic": "string",
+    "statusUpdatedBy": "string",
+    "bankCd": "string",
+    "bankBranchCd": "string",
+    "accountTypeCd": "string",
+    "achProtocolFormReceived": true,
+    "effectiveTerm": {
+      "effective": "2019-09-05T07:42:06.584Z",
+      "expiration": "2019-09-30T07:42:06.584Z"
+    },
+    "accountHolderInfo": {
+      "nameTypeCd": "IND",
+      "prefix": null,
+      "firstName": "payorchanges",
+      "middleName": "payorchanges",
+      "lastName": "payorchanges",
+      "otherName": "payorchanges"
+    },
+    "internationalAchFormatting": true,
+    "bankAccountType": "string",
+    "countryCd": "US",
+    "payorDifferent": false
+  }
+}

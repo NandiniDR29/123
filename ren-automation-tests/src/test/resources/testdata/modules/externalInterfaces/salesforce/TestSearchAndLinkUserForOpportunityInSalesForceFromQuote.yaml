@@ -1,0 +1,47 @@
+TestData: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Number of Employees: '',
+    Date business started: $<today-10y>,
+    Mail Cards To: Group,
+    Mail W-2 To: Group,
+    Electronic SSA Filing: Yes,
+    Division: 'G - Retail Trade',
+    Industry: '54 - Food Stores',
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Phone Details: {
+      Phone Type: Mobile,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Group Sponsor: 'true',
+    Sales Rep Internal: {
+      First Name: 'Karen',
+      Category: '',
+      Channel: ''
+    }
+  }
+}
+
+TestDataKaren: {
+  GeneralProfileTab: {
+    E-Mail Address: 'kgorman@renaissancefamily.com.vpc'
+  },
+  AuthorityLevelsTab: {}
+}
+
+TestDataRoberta: {
+  GeneralProfileTab: {
+    E-Mail Address: 'rgray@renaissancefamily.com.vpc'
+  },
+  AuthorityLevelsTab: {}
+}

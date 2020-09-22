@@ -1,0 +1,62 @@
+TestDataIndQualXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:Ind_qual.xml>'
+  }
+}
+
+TestDataIndQualUncheckedXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:Ind_qual_unchecked.xml>'
+  }
+}
+
+TestDataNonIndQualXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:Non_ind_qual.xml>'
+  }
+}
+
+TestDataNonIndQualUncheckedXML: {
+    LeadImportFile: {
+      Import Name: 'Name$<rx:\d{5}>',
+      Choose file: '$<file:Non_ind_qual_unchecked.xml>'
+    }
+  }
+
+TestDataIndNoStatusWithAddressXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:Ind_no_status_with_address2.xml>'
+  }
+}
+
+TestDataNonIndNoStatusNoAllXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:non_ind_no_status_no_all.xml>'
+  }
+}
+
+TestDataIndAndNonIndNoDataNoSicXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:non_ind_in_qual_no_data_no_sic.xml>'
+  }
+}
+
+TestDataNonIndQualLegalAddressXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:non_ind_qual_legal_address.xml>'
+  }
+}
+
+TestDataIndAndNonIndNoSicXML: {
+  LeadImportFile: {
+    Import Name: 'Name$<rx:\d{5}>',
+    Choose file: '$<file:non_ind_qual_no_SIC_all.xml>'
+  }
+}

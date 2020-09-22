@@ -1,0 +1,312 @@
+TestData_BasicEPOS_MajorEPOS_FlexPlus: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_BasicEPOS_MajorEPOS_FlexPlus',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_BasicEPOS_MajorEPOS_FlexPlus', '@PlanDefinitionTab_BasicEPOS', '@PlanDefinitionTab_MajorEPOS', '@PlanDefinitionTab_FlexPlus'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_BasicEPOS', '@ClassificationManagementTab_MajorEPOS', '@ClassificationManagementTab_FlexPlus'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+TestData_Aso: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_Aso',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_Aso', '@PlanDefinitionTab_Aso', '@PlanDefinitionTab_AsoAlacarte'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_Aso', '@ClassificationManagementTab_AsoAlacarte'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_BasicEPOS_MajorEPOS_FlexPlus: {
+  'ASO Plan': No,
+  Policy Effective Date: $<today>,
+  Situs State: 'NY',
+  Zip Code: '10001',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '50',
+  'Group is an Association?': 'No',
+  'Primary Agency?': 'Yes',
+  'Commission Split?': 'No',
+}
+
+PolicyInformationTab_Aso: {
+  'ASO Plan': Yes,
+  Policy Effective Date: $<today>,
+  Situs State: 'NV',
+  Zip Code: '89146',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '30',
+  'Group is an Association?': 'No',
+  'Primary Agency?': 'Yes',
+  'Commission Split?': 'No',
+}
+
+SelectPlans_BasicEPOS_MajorEPOS_FlexPlus: {
+  Plan: [Basic EPOS, Major EPOS, Flex Plus]
+}
+
+SelectPlans_Aso: {
+  Plan: [ASO, ASO A La Carte]
+}
+
+PlanDefinitionTab_BasicEPOS: {
+  PlanKey: BASEPOS-Basic EPOS,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    Use Brochure Rates: 'No',
+    SIC Description: 'Convenience Stores'
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+    },
+  }
+}
+
+PlanDefinitionTab_MajorEPOS: {
+  PlanKey: MAJEPOS-Major EPOS,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    Use Brochure Rates: 'No',
+    SIC Description: 'Convenience Stores'
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+    },
+  }
+}
+
+PlanDefinitionTab_FlexPlus: {
+  PlanKey: FLEX-Flex Plus,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    Use Brochure Rates: 'No',
+    SIC Description: 'Convenience Stores'
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+    },
+  }
+}
+
+PlanDefinitionTab_Aso: {
+  PlanKey: ASO-ASO,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Member Payment Mode: '12',
+    'Assumed Participation %': 80,
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    Use Brochure Rates: 'No',
+    'SIC Code': 2771,
+    SIC Description: 'Commercial Screen Printing'
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+    },
+  }
+}
+
+PlanDefinitionTab_AsoAlacarte: {
+  PlanKey: 'ASOALC-ASO A La Carte',
+  'PPO/EPO Plan?': 'Yes',
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Sponsor/Participant Split',
+    Member Payment Mode: '12',
+    'Participant Contribution % Employee Coverage': 40,
+    'Participant Contribution % Dependent Coverage': 60,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    Use Brochure Rates: 'No',
+    'SIC Code': 2771,
+    SIC Description: 'Commercial Screen Printing'
+  },
+  Orthodontia:{
+    'Ortho Coverage': 'Yes',
+    'Yearly Maximum': 'Yes',
+    'Yearly Maximum - In Network': '$900',
+    'Yearly Maximum - Out of Network': '$1,050',
+    'Yearly Maximum - EPO': '$950',
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+    },
+  }
+}
+
+ClassificationManagementTab_BasicEPOS: {
+  Plan: 'BASEPOS-Basic EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Child(ren),
+      Number of Participants: 5
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 6
+    }
+    ]
+}
+
+ClassificationManagementTab_FlexPlus: {
+  Plan: 'FLEX-Flex Plus',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Child(ren),
+      Number of Participants: 7
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 6
+    }
+    ]
+}
+
+ClassificationManagementTab_MajorEPOS: {
+  Plan: 'MAJEPOS-Major EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Child(ren),
+      Number of Participants: 2
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 6
+    }
+    ]
+}
+
+ClassificationManagementTab_Aso: {
+  Plan: 'ASO-ASO',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Child(ren),
+      Number of Participants: 5
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 6
+    }
+  ]
+}
+
+ClassificationManagementTab_AsoAlacarte: {
+  Plan: 'ASOALC-ASO A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Child(ren),
+      Number of Participants: 5
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 6
+    }
+  ]
+}
+
+PremiumSummaryTab: {
+  Select Rating Census:  'index=1',
+  Apply: 'click',
+}

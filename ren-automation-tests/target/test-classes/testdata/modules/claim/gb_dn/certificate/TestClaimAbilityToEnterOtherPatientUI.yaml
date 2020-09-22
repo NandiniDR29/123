@@ -1,0 +1,89 @@
+TestData_Individual1: {
+  IntakeInformationTab: {
+    Patient: {
+      First Name: 'Pablo',
+      Last Name: 'Velaskes',
+      Relationship to Primary Insured: 'Child - Son',
+      Date of Birth: '10/10/1985'
+    },
+    Patient Address: {
+      Address Type: 'Street Address',
+      Country: 'United States',
+      Zip / Postal Code: '90215',
+      Address Line 1: 'Address Line Pablo 1',
+      Address Line 2: 'Address Line Pablo 2',
+      Address Line 3: 'Address Line Pablo 3',
+      City: 'Welocita',
+      State / Province: 'CA'
+    }
+  }
+}
+
+TestData_Individual2: {
+  IntakeInformationTab: {
+    Patient: {
+      First Name: 'Marco',
+      Last Name: 'Velaskes',
+      Relationship to Primary Insured: 'Child - Son',
+      Date of Birth: '10/10/1987'
+    },
+    Patient Address: {
+      Address Type: 'Street Address',
+      Country: 'United States',
+      Zip / Postal Code: '90225',
+      Address Line 1: 'Address Line Marco 1',
+      Address Line 2: 'Address Line Marco 2',
+      Address Line 3: 'Address Line Marco 3',
+      City: 'Sampton',
+      State / Province: 'NC'
+    },
+    Source: index=1,
+    Payee Type: index=1
+  }
+}
+
+TestData_Individual3: {
+  IntakeInformationTab: {
+    Patient: {
+      First Name: 'Sonny',
+      Last Name: 'Velaskes',
+      Relationship to Primary Insured: 'Child - Son',
+      Date of Birth: '10/10/1985'
+    },
+    Patient Address: {
+      Address Type: 'Street Address',
+      Country: 'United States',
+      Zip / Postal Code: '90229',
+      Address Line 1: 'Address Line Sonny 1',
+      Address Line 2: 'Address Line Sonny 2',
+      Address Line 3: 'Address Line Sonny 3',
+      City: 'Deitana',
+      State / Province: 'FL'
+    }
+  }
+}
+
+TestData_Claim: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '134006748',
+      'License #': '58405',
+      License NPI: '1032662407',
+      License State/Province: 'NY',
+      Specialty: Orthodontist,
+      Zip/Postal Code: '100073914',
+      Address Line 1: '225 Broadway Ste 101',
+      City: 'New York',
+      State/Province: 'NY',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Type of Transaction: 'Actual Services',
+    Submitted Services: {
+      DOS: '$<today>',
+      CDT Code: 'D2971',
+      Tooth: '3'
+    }
+  }
+}
+

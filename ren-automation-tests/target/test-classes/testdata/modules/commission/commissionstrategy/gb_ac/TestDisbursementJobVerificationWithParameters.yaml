@@ -1,0 +1,22 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_AC - Group Accident',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date'
+}
+
+Flat_CommissionRule: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Commission Rate: 10
+  }
+}

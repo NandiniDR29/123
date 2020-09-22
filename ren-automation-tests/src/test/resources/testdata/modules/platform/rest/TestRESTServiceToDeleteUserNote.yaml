@@ -1,0 +1,79 @@
+TestData_User: ['@PostNote1','@PostNote2','@PostNote3','@PostNote4']
+TestData_Task: ['@PostNote5','@PostNote6','@PostNote7','@PostNote8']
+
+
+PostNote1: {
+  "category":"GENERAL_INFO",
+  "confidential": false,
+  "title": "Note1",
+  "description": "Note1 description",
+  "entityType": "Customer",
+  "entityRefNo": "Enter_Customer_ID",
+  "userNoteName": "CUSTOMER_USER_NOTE",
+  "agencyCd": "QAG",
+  "brandCd": "001"
+}
+
+PostNote2: {
+"category":"GENERAL_INFO",
+  "confidential": true,
+  "title": "Note2",
+  "description": "Note2 description",
+  "entityType": "Customer",
+  "entityRefNo": "Enter_Customer_ID",
+  "userNoteName": "CUSTOMER_USER_NOTE",
+  "agencyCd": "QAG",
+  "brandCd": "001"
+}
+
+PostNote3: {
+"category":"GENERAL_INFO",
+  "confidential": false,
+  "title": "Note3",
+  "description": "Note3 description",
+  "entityType": "Customer",
+  "entityRefNo": "Enter_Customer_ID",
+  "userNoteName": "CUSTOMER_USER_NOTE",
+  "agencyCd": "QAG",
+  "brandCd": "001"
+}
+
+PostNote4: {
+"category":"GENERAL_INFO",
+  "confidential": true,
+  "title": "Note4",
+  "description": "Note4 description",
+  "entityType": "Customer",
+  "entityRefNo": "Enter_Customer_ID",
+  "userNoteName": "CUSTOMER_USER_NOTE",
+  "agencyCd": "QAG",
+  "brandCd": "001"
+}
+
+PostNote5: {
+  "category": "GENERAL_INFO",
+  "confidential": false,
+  "title": "Note5",
+  "description": "Description Note5"
+}
+
+PostNote6: {
+"category": "GENERAL_INFO",
+  "confidential": true,
+  "title": "Note6",
+  "description": "Description Note6"
+}
+
+PostNote7: {
+"category": "GENERAL_INFO",
+  "confidential": false,
+  "title": "Note7",
+  "description": "Description Note7"
+}
+
+PostNote8: {
+"category": "GENERAL_INFO",
+  "confidential": true,
+  "title": "Note8",
+  "description": "Description Note8"
+}

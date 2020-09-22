@@ -1,0 +1,28 @@
+TestData: {
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+GeneralTab: {
+ Additional Information:{
+  Preferred Language (Spoken): Russian,
+  Preferred Language (Written): English,
+  Citizenship: Albania,
+  Occupation: Student,
+  Paperless: true,
+  Registered Online: true,
+  Tobacco: 'Yes',
+  Segment(s): 'ALL',
+  Customer Interests: 'ALL',
+  Impairments/Disabilities: 'ALL'
+ }
+}
+
+ComboListItems: {
+   Segment(s): ['VIP','Employee','Sanctioned'],
+   Customer Interests: ['Sports such as football, baseball, golf, soccer, tennis etc.','Photography/Videography',
+   'Movies and Theater','Video games','Traveling and Exploring different places','Reading','Listening to music','Playing a musical instrument'],
+   Impairments/Disabilities: ['Cognitive','Hearing Loss and Deafness','Invisible Disability','Mobility Impairments',
+   'Psychological Disorders','Spinal Cord Injury','Vision Disability']
+}

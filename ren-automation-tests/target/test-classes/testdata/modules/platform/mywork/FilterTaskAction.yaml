@@ -1,0 +1,35 @@
+TestData: {
+  FilterTaskActionTab: {
+    'Reference ID:': ''
+  }
+}
+
+TestData_empty: {
+  FilterTaskActionTab: {
+  }
+}
+
+TestData_filterByStaticContent: {
+  FilterTaskActionTab: {
+    'Reference ID:': '$<static:customerNumber:[rx:customer\d{3}]>'
+  }
+}
+
+TestData_filterByTaskId: {
+  FilterTaskActionTab: {
+    'Task ID:':
+  }
+}
+
+TestData_filterBySuspended: {
+  FilterTaskActionTab: {
+    'Status:': Suspended
+  }
+}
+
+TestData_filterByTaskName: {
+  FilterTaskActionTab: {
+    'Task Name:': ''
+  }
+}
+

@@ -1,0 +1,12 @@
+TestData: {
+  DeclinePaymentActionTab: {
+    Decline Reason: Check Error
+  }
+}
+
+TestData_Other: {
+  DeclinePaymentActionTab: {
+    Decline Reason: Other,
+    Additional Information: test
+  }
+}

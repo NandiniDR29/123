@@ -1,0 +1,3 @@
+{
+  "rowThatTemplate": "/tbody[contains(@id,':tb')]/tr[%s]"
+}

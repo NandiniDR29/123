@@ -1,0 +1,61 @@
+TestData: {
+  GeneralProfileTab: '@GeneralProfileTab',
+  AuthorityLevelsTab: {}
+}
+
+TestData_WithAllRoles: {
+  GeneralProfileTab: '@GeneralProfileTab_WithAllRoles',
+  AuthorityLevelsTab: {}
+}
+
+GeneralProfileTab: {
+  EIS User: 'Yes',
+  First Name: 'FName_$<rx:\d{8}>',
+  Last Name: 'LName_$<rx:\d{8}>',
+  Effective Date: $<today-1d>,
+  Profile/Subproducer ID: 'Subproducer_$<rx:\d{8}>',
+  'User Name': 'qa_$<rx:\d{8}>',
+  'User Login': 'qa_$<rx:\d{8}>',
+  Password: qa,
+  Confirm Password: qa,
+  User Work Status: Available,
+  Agency/Locations: '@AddPopupSearch',
+  Default: 'true'
+}
+
+GeneralProfileTab_WithAllRoles: {
+  EIS User: 'Yes',
+  First Name: 'FName_$<rx:\d{8}>',
+  Last Name: 'LName_$<rx:\d{8}>',
+  Effective Date: $<today>,
+  Profile/Subproducer ID: 'Subproducer_$<rx:\d{8}>',
+  'User Name': 'qa_$<rx:\d{8}>',
+  'User Login': 'qa_$<rx:\d{8}>',
+  Password: qa,
+  Confirm Password: qa,
+  User Work Status: Available,
+  Agency/Locations: '@AddPopupSearch',
+  Default: 'true',
+  Roles: QA All
+}
+
+AddPopupSearch: {
+  Agency Name: ''
+}
+
+TestData_NotEisUser: {
+  GeneralProfileTab: '@GeneralProfileTabNotEisUser'
+}
+
+GeneralProfileTabNotEisUser: {
+  EIS User: 'No',
+  First Name: 'FName_$<rx:\d{8}>',
+  Last Name: 'LName_$<rx:\d{8}>',
+  Effective Date: $<today>,
+  Profile/Subproducer ID: 'Subproducer_$<rx:\d{8}>',
+  Agency: '@AddPopupSearchWithAgency',
+}
+
+AddPopupSearchWithAgency: {
+  Agency Name: 'Broker1Name'
+}

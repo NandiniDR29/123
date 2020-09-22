@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Case Profile Without TS" verbose="1" parallel="tests" thread-count="1024">
+    <listeners>
+        <listener class-name="com.exigen.ipb.eisa.utils.listener.ISBAListener"/>
+        <listener class-name="com.exigen.istf.exec.testng.TimeShiftTestNgListener"/>
+    </listeners>
+
+    <test name="Case Profile Without TS" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.caseprofile.*">
+            </package>
+        </packages>
+    </test>
+
+</suite>

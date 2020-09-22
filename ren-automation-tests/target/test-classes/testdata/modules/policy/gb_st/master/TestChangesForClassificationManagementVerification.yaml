@@ -1,0 +1,98 @@
+TestData: {
+  PlanDefinitionTab: ['@PlanDefinitionTab_StatNY', '@PlanDefinitionTab_Enhanced_NY', '@PlanDefinitionTab_PFLNY'],
+  ClassificationManagementTab: ['@ClassificationMgmt_StatNY', '@ClassificationMgmt_StatNY_Enhanced','@ClassificationMgmt_PFLNY']
+}
+
+PlanDefinitionTab_StatNY: {
+  Plan: NY Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Contribution Type: Mandatory,
+  Taxability: Benefits Taxable,
+  Premiums Paid-Post Tax: Yes
+}
+
+PlanDefinitionTab_Enhanced_NY: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: Enhanced NY,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionTab_PFLNY: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: PFL NY,
+  Contribution Type: Mandatory,
+  Taxability: Benefits Taxable,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12
+}
+
+ClassificationMgmt_StatNY: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Stat NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Proprietor,
+    Number of Participants: 10,
+    Total Volume: 250
+  }]
+}
+
+ClassificationMgmt_PFLNY: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: PFL NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 250
+  },
+  {
+    Classification SubGroup Name: Other/Not Specified,
+    Number of Participants: 0,
+    Total Volume: 0
+  }]
+}
+
+ClassificationMgmt_StatNY_Enhanced: {
+  CoverageKey: 'Enhanced NY',
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info:
+    [
+    {
+      Classification SubGroup Name: Male,
+      Number of Participants: 1,
+      Total Volume: 5
+    },
+    {
+      Classification SubGroup Name: Female,
+      Number of Participants: 1,
+      Total Volume: 5
+    },
+    {
+      Classification SubGroup Name: Proprietor,
+      Number of Participants: 1,
+      Total Volume: 5
+    }]
+}

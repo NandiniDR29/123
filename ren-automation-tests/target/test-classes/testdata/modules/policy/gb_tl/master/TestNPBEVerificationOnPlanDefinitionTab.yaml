@@ -1,0 +1,292 @@
+TestDataPolicy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsuranceVoluntary',
+    '@PlanDefinitionBasicAccidentalDeathVoluntary',
+    '@PlanDefinitionDependentBasicLifeSpouseChild',
+    '@PlanDefinitionEmployeeVoluntaryLifeInsurance',
+    '@PlanDefinitionEmployeeVoluntaryDeath',
+    '@PlanDefinitionSpouseVoluntary',
+    '@PlanDefinitionChildVoluntary',
+    '@PlanDefinitionDependentVoluntaryAccidentalSpouse'],
+  ClassificationManagementTab: [
+    '@ClassificationMgmtBasicLifeInsraunceVoluntary',
+    '@ClassificationMgmtBasicAccidentalDeathVoluntary',
+    '@ClassificationMgmtDependentBasicLifeVoluntary',
+    '@ClassificationMgmtEmployeeVoluntaryLife',
+    '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+    '@ClassificationMgmtSpouseVoluntaryLifeInsurance',
+    '@ClassificationMgmtChildVoluntaryLifeInsurance',
+    '@ClassificationMgmtDependentVoluntaryAccidentalSpouseBLV'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  County Code: '001 - Albany County',
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: Basic Life + Voluntary
+}
+
+PlanDefinitionBasicLifeInsuranceVoluntary: {
+  CoverageKey: Employee Basic Life Insurance,
+  PlanKey: BLV-Basic Life + Voluntary,
+  Required Participation %: 5%,
+  Enrollment Underwriting Offer: Other,
+  Enrollment Underwriting Offer -Other Description: 'Something',
+  Total Number of Eligible Lives: 1,
+  Sponsor Payment Mode: 12,
+  Minimum Number of Participants: 1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  }
+}
+
+PlanDefinitionBasicAccidentalDeathVoluntary: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  PlanKey: BLV-Basic Life + Voluntary,
+  Census Type: index=1,
+  Coverage Type: index=1,
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Enrollment Underwriting Offer: Other,
+  Enrollment Underwriting Offer -Other Description: 'Something',
+  Minimum Number of Participants: 1,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  },
+  Bereavement Benefit: {
+    'Apply Benefit?': true
+  },
+  Medical Premium Benefit: {
+    'Apply Benefit?': true
+  },
+  Hospital Inpatient Stay Benefit: {
+    'Apply Benefit?': true
+  }
+}
+
+PlanDefinitionDependentBasicLifeSpouseChild: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  PlanKey: BLV-Basic Life + Voluntary,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Enrollment Underwriting Offer: Other,
+  Enrollment Underwriting Offer -Other Description: 'Something',
+  Minimum Number of Participants: 1,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsurance: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  PlanKey: BLV-Basic Life + Voluntary,
+  Census Type: index=1,
+  Total Number of Eligible Lives: 1,
+  Enrollment Underwriting Offer: Other,
+  Enrollment Underwriting Offer -Other Description: 'Something',
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: 70,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryDeath: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  PlanKey: BLV-Basic Life + Voluntary,
+  Census Type: index=1,
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: 70,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  },
+  Bereavement Benefit: {
+    'Apply Benefit?': true
+  },
+  Medical Premium Benefit: {
+    'Apply Benefit?': true
+  },
+  Hospital Inpatient Stay Benefit: {
+    'Apply Benefit?': true
+  }
+}
+
+PlanDefinitionSpouseVoluntary: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  PlanKey: BLV-Basic Life + Voluntary,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  }
+}
+
+PlanDefinitionChildVoluntary: {
+  CoverageKey: Child Voluntary Life Insurance,
+  PlanKey: BLV-Basic Life + Voluntary,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionDependentVoluntaryAccidentalSpouse: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  PlanKey: BLV-Basic Life + Voluntary,
+  Census Type: index=1,
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  },
+  Bereavement Benefit: {
+    'Apply Benefit?': true
+  },
+  Medical Premium Benefit: {
+    'Apply Benefit?': true
+  },
+  Hospital Inpatient Stay Benefit: {
+    'Apply Benefit?': true
+  }
+}
+
+ClassificationMgmtBasicLifeInsraunceVoluntary: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicAccidentalDeathVoluntary: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLifeVoluntary: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalSpouseBLV: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Plan: BLV-Basic Life + Voluntary,
+  Classification Group Name: 1
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+

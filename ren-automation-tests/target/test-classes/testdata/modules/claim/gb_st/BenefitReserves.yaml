@@ -1,0 +1,8 @@
+TestData: {
+  BenefitReservesActionTab:
+  {
+    'Indemnity Reserve': '10',
+    'Expense Reserve': '20',
+    'Recovery Reserve': '30'
+  }
+}

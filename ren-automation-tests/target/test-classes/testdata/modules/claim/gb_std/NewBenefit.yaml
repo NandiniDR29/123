@@ -1,0 +1,45 @@
+TestData: {
+  BenefitSTDInjuryPartyInformationTab: '@BenefitSTDInjuryPartyInformationTab_Without_Benefit',
+  BenefitSTDIncidentTab: '@BenefitSTDIncidentTab_Without_Hospital',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+TestData_STD_OtherValues: {
+  BenefitSTDInjuryPartyInformationTab: '@BenefitSTDInjuryPartyInformationTab',
+  BenefitSTDIncidentTab: '@BenefitSTDIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+BenefitSTDInjuryPartyInformationTab: {
+  'Add Benefit: Short Term Disability': 'click',
+  Associate Policy Party: 'contains=John',
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+}
+BenefitSTDInjuryPartyInformationTab_Without_Benefit: {
+  Associate Policy Party: index=1,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+}
+
+
+BenefitSTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}
+
+BenefitSTDIncidentTab_Without_Hospital: {
+  'Accident?': 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}
+
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today>,
+  Liability Decision: index=1,
+  Approved Through Date: $<today>
+}

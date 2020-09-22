@@ -1,0 +1,159 @@
+TestData_Policy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans', '@PlanDefinitionTab_PlanB', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_PlanB', '@ClassificationManagementTab_ALACARTE'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  ASO Plan: No,
+  Prior Carrier Name: 'Ameritas',
+  Situs State: NY,
+  'Zip Code': '02918',
+  'County Code': '017 - Chenango County',
+  'Blend Demographics': 'Yes',
+  Group is Member Company: 'No',
+  'Rate Guarantee (Months)': 12,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '48',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectTwoPlans: {
+  Plan: ['A La Carte', '10/25 Plan B 130']
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Assumed Participation %: 25,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    'Use Brochure Rates?': 'No',
+    Rate Type: 'Family Tier',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '35',
+    Eligibility Waiting Period Definition: 'First of the month coincident with or next following (amount and mode)',
+    Waiting Period Mode: 'Days',
+    Waiting Period Amount: 10,
+    Dependent Maximum Age: 21,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last day of the month when employment is terminated'
+  },
+  Frequency: {
+    Frequency Definition: 'Service Year',
+    Exam/Lenses/Frame: Plan B (12/12/24)
+  },
+  Copay: {
+    'Exam/Materials': '$0 combined',
+    'Progressive Lenses in Full': 'No'
+  },
+  Plan Benefits: {
+    'Frames - Allowance up to': '$150'
+  },
+  Special Plan Features: {
+   'Photochromic Lenses Factor': '',
+   'Scratch Coating Factor': '',
+    'Safety Glasses Factor': ''
+  }
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Census Type': 'Enrolled',
+  VSP Division: '12',
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 25,
+    Member Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Area + Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 0,
+    Credibility Factor: 0
+  },
+  Frequency: {
+    Frequency Definition: Calendar Year,
+    Exam/Lenses/Frame: Plan B (12/12/24)
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Minimum Hourly Requirement (hours per week): '35',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period Mode: 'Weeks',
+    Waiting Period Amount: 10,
+    Dependent Maximum Age: 20,
+    Include Disabled Dependents: 'Yes',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Copay: {
+    'Exam/Materials': '$10/$25',
+    'Progressive Lenses in Full': 'No'
+  },
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: '1',
+}
+
+ClassificationManagementTab_PlanB: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: '1',
+}
+
+PremiumSummaryTab: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+TestDataIssue: {
+  CaseInstallationIssueActionTab: {
+    Definition of Legal Spouse: {
+      'Includes Domestic Partner': 'true'
+    }
+  },
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionIssueActionTabALACARTE', '@PlanDefinitionIssueActionTabBPlan'],
+}
+
+PlanDefinitionIssueActionTabALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  Include Retirees: 'No'
+}
+
+PlanDefinitionIssueActionTabBPlan: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  Include Retirees: 'No'
+}
+
+TestDataProposal: {
+  QuotesSelectionActionTab: {
+    Select Quote by row number: [1],
+    Proposal Name: 'ProposalName$<rx:\d{5}>'
+  },
+  ProposalActionTab: {
+    Override Rules: CLICK,
+    Override Rules List: ["Frame Frequency does not match Rate Guarantee. Please confirm Rate Guarantee ...", "Frame Frequency does not match Rate Guarantee. Please confirm Rate Guarantee ..."]
+  }
+}

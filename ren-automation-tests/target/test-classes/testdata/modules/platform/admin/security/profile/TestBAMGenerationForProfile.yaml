@@ -1,0 +1,87 @@
+CreateUserRest: {
+  userName: '$<static:restBamUserName:[rx:userBamName\d{8}]>',
+  userLogin: '$<static:restBamUserLogin:[rx:userBamName\d{8}]>',
+  domain: "corporate",
+  subProducer: '$<static:restBamSubProducer:[rx:subProducer\d{8}]>',
+  defaultAgencyCode: "QAG",
+  password: '$<static:password:[rx:password\d{8}]>',
+  firstName: '$<static:restBamFirstName:[rx:userBamFirstName\d{8}]>',
+  lastName: '$<static:restBamLastName:[rx:userBamLastName\d{8}]>',
+  middleName: '$<static:restBamMiddleName:[rx:userBammiddleName\d{8}]>',
+  userStatus: "Available",
+  effectiveDate: "2017-11-02",
+  expirationDate: "2018-11-02",
+  phoneNumber: "01234567890123456789",
+  phoneExtension: "1234",
+  faxNumber: "12345678901234567890",
+  email: "asd@sdf.lt",
+  jobTitle: '$<static:jobBamTitle:[rx:jobTitle\d{8}]>',
+  signatureURI: "test1",
+  sellsInsuranceProducts: true,
+  commissionable: true,
+  category: "Administration",
+  billingAuthorityLevel: "level1",
+  claimsAuthorityLevel: "CLAIMS_AUTHORITY_LVL0",
+  restrictAccess: true,
+  languageCd: "en",
+  countryCd: "US",
+  agencyCodes: ["QAG"],
+  roleNames": ["QA All"]
+}
+
+UpdateUserRest: {
+  defaultAgencyCode: "QAG",
+  firstName: '$<static:retsUpdatedBamFirstName:[rx:updatedFirstName\d{8}]>',
+  lastName: '$<static:restUpdatedBamLastName:[rx:updatedLastName\d{8}]>',
+  middleName: '$<static:restUpdatedBamMiddleName:[rx:updatedMiddleName\d{8}]>',
+  effectiveDate: "2018-01-02",
+  expirationDate: "2019-01-02",
+  jobTitle: '$<static:restUpdateBamJobTitle:[rx:updateJobTitle\d{8}]>',
+}
+
+CreateProfile: {
+  GeneralProfileTab: '@GeneralProfileTab',
+  AuthorityLevelsTab: '@AuthorityLevelsTab'
+}
+
+GeneralProfileTab: {
+  EIS User: 'Yes',
+  First Name: '$<static:UIBamFirstName:[rx:userBamFirstName\d{8}]>',
+  Middle Name: '$<static:UIBamMiddleName:[rx:userBamMiddleName\d{8}]>',
+  Last Name: '$<static:UIBamLastName:[rx:userBamLaseName\d{8}]>',
+  Effective Date: "02/11/2017",
+  Expiration Date: "02/11/2018",
+  Job Title: '$<static:UIBamJobTitle:[rx:UIJobTitle\d{8}]>',
+  Profile/Subproducer ID: 'UISubproducer$<rx:\d{8}>',
+  'User Name': '$<static:UIBamUserName:[rx:userBamName\d{8}]>',
+  'User Login': '$<static:UIBamUserLogin:[rx:userBamLogin\d{8}]>',
+  Password: qa,
+  Confirm Password: qa,
+  User Work Status: Available,
+  Agency/Locations: '@AddPopupSearch',
+  Default: 'true',
+  Roles: QA All
+}
+
+AddPopupSearch: {
+  Agency Name: ''
+}
+
+AuthorityLevelsTab: {
+  Type: Underwriting,
+  Product: 'For All',
+  Level: 'Level 1',
+  Save New Authority: 'true'
+}
+
+UpdateUser: {
+  GeneralProfileTab: {
+    First Name: '$<static:UIUpdateBamFirstName:[rx:userBamFirstName\d{8}]>',
+    Middle Name: '$<static:UIBamUpdateMiddleName:[rx:userBamMiddleName\d{8}]>',
+    Last Name: '$<static:UIUpdateBamLastName:[rx:userBamLaseName\d{8}]>',
+    Effective Date: "02/11/2018",
+    Expiration Date: "02/11/2019",
+    Job Title: '$<static:UIUpdateBamJobTitle:[rx:UIJobTitle\d{8}]>',
+  }
+}
+

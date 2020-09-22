@@ -1,0 +1,98 @@
+TestData: {
+  ManageInvoicingCalendarsActionTab: {}
+}
+
+TestDataSelfAdmin: {
+  ManageInvoicingCalendarsActionTab: ['@ManageInvoicingCalendarsActionTabSelfAdmin', '@ManageInvoicingCalendarsActionTab2SelfAdmin']
+}
+
+TestDataFullAdmin: {
+  ManageInvoicingCalendarsActionTab: ['@ManageInvoicingCalendarsActionTabFullAdmin', '@ManageInvoicingCalendarsActionTab2FullAdmin']
+}
+
+ManageInvoicingCalendarsActionTabSelfAdmin: {
+    Billing Calendar: Billing Calendar1,
+    Calendar Name: 'CalendarIC1',
+    Self Administered: true,
+    Geography: {
+        Countries: United States,
+        States: [GA,NY]
+    },
+    Effective Date: $<today-1y>,
+    Invoicing Frequency: Monthly,
+    Invoicing Rule: On Time,
+    Invoice Due Day: 6,
+    Generation Date Rule: 1
+}
+
+ManageInvoicingCalendarsActionTab2SelfAdmin: {
+    Billing Calendar: Billing Calendar1,
+    Calendar Name: 'CalendarIC2',
+    Self Administered: true,
+    Products: [Group Accident, Term Life Insurance],
+    Effective Date: $<today-1y>,
+    Invoicing Frequency: Monthly,
+    Invoicing Rule: On Time,
+    Invoice Due Day: 6,
+    Generation Date Rule: 1
+}
+
+ManageInvoicingCalendarsActionSelf: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'Calendar$<rx:\d{8}>',
+  Self Administered: true,
+  Geography: {
+    Countries: United States,
+    States: [AL]
+  },
+  Products: Statutory Disability Insurance,
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Quarterly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 6,
+  Generation Date Rule: 1
+}
+
+ManageInvoicingCalendarsActionFull: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'Calendar$<rx:\d{8}>',
+  List Bill: true,
+  Geography: {
+    Countries: United States,
+    States: [AL]
+  },
+  Products: Term Life Insurance,
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 6,
+  Generation Date Rule: 1
+}
+
+
+ManageInvoicingCalendarsActionTabFullAdmin: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'CalendarIC1',
+  List Bill: true,
+  Geography: {
+    Countries: United States,
+    States: [GA,VT]
+  },
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 6,
+  Generation Date Rule: 1
+}
+
+ManageInvoicingCalendarsActionTab2FullAdmin: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'CalendarIC2',
+  List Bill: true,
+  Products: [Group Accident, Group Vision],
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 6,
+  Generation Date Rule: 1
+}

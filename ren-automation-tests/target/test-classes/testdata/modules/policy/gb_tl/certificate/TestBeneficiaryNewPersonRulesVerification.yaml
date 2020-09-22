@@ -1,0 +1,127 @@
+TestDataCoverages: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanEmployeeBasicAccidentalDeath', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife']
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Total Number of Eligible Lives: 35,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanEmployeeBasicAccidentalDeath: {
+  CoverageKeyRemove: Employee Basic Accidental Death and Dismemberment Insurance
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+TestDataCertificatePolicy: {
+  CoveragesTab: ['@SelectPlanCertificatePolicy', '@CoveragesTabBasicLife', '@CoveragesTabDependentBasicLifeInsurance']
+}
+
+SelectPlanCertificatePolicy: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLife: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+  Beneficiaries:['@TestDataBeneficiaryCoverage1','@TestDataBeneficiaryCoverage2']
+}
+
+CoveragesTabDependentBasicLifeInsurance: {
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Enrollment Date: $<today>,
+  Coverage Selection: Spouse and Child,
+  Benefit Spouse:{
+    Elected Benefit Amount: 2000
+  },
+  Benefit Child:{
+    Elected Benefit Amount: 2000
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Tax Identification: '$<rx:\d{9}>',
+    Date of Birth: 12/05/1984,
+  },
+  Beneficiaries:['@TestDataBeneficiaryCoverage3','@TestDataBeneficiaryCoverage4']
+}
+
+TestDataBeneficiaryCoverage1: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Percent: '100',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Disabled Dependent',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+
+TestDataBeneficiaryCoverage2: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '100',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Disabled Dependent',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+
+TestDataBeneficiaryCoverage3: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'contains=Self,',
+  Role Percent: '100'
+}
+
+TestDataBeneficiaryCoverage4: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '100',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Disabled Dependent',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}

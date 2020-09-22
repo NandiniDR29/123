@@ -1,0 +1,919 @@
+TestData_Policy1_REN_33726: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionBasicAccidentalDeath_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33726',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove'
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtBasicAccidentalDeath',
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath'
+  ]
+}
+
+SelectPlan: {
+  Plan: Basic Life + Voluntary
+}
+
+PlanDefinitionBasicLifeInsurance_Policy1_REN_33726: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: '65%@65 50%@70',
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+PlanDefinitionBasicAccidentalDeath_Policy1_REN_33726: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  'Enhanced AD&D?': 'No',
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33726: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 1,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33726: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+TestData_Policy2_REN_33726: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance_Policy2_REN_33726',
+    '@PlanDefinitionBasicAccidentalDeath_Policy2_REN_33726',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy2_REN_33726',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy2_REN_33726',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove'
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtBasicAccidentalDeath',
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath'
+  ]
+}
+
+PlanDefinitionBasicLifeInsurance_Policy2_REN_33726: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: '65%@65 50%@70',
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+PlanDefinitionBasicAccidentalDeath_Policy2_REN_33726: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  'Enhanced AD&D?': 'No',
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryLifeInsurance_Policy2_REN_33726: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 1,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_Policy2_REN_33726: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+#  REN-33758
+
+TestData_Policy1_REN-33758: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33758',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33758',
+    '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+  ]
+}
+
+PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33758: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 1,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Multiple Values',
+    Salary Multiples: ['1x', '2x'],
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33758: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Multiple Values',
+    Salary Multiples: ['1x', '2x'],
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+TestData_Policy2_REN-33758: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy2_REN_33758',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy2_REN_33758',
+    '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+  ]
+}
+
+
+
+PlanDefinitionVoluntaryLifeInsurance_Policy2_REN_33758: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 1,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Multiple Values',
+    Salary Multiples: ['1x', '2x'],
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_Policy2_REN_33758: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Multiple Values',
+    Salary Multiples: ['1x', '2x'],
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+# REN-33768
+
+TestData_Policy1_REN_33768: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33726',
+    '@PlanDefinitionBasicLifeInsurance_Policy1_REN_33768',
+    '@PlanDefinitionBasicAccidentalDeath_Policy1_REN_33768',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtBasicAccidentalDeath'
+  ]
+}
+
+PlanDefinitionBasicLifeInsurance_Policy1_REN_33768: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: '65%@65 50%@70',
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+PlanDefinitionBasicAccidentalDeath_Policy1_REN_33768: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  'Enhanced AD&D?': 'No',
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+
+TestData_Policy2_REN_33768: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33726',
+    '@PlanDefinitionBasicLifeInsurance_Policy2_REN_33768',
+    '@PlanDefinitionBasicAccidentalDeath_Policy2_REN_33768',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtBasicAccidentalDeath'
+  ]
+}
+
+PlanDefinitionBasicLifeInsurance_Policy2_REN_33768: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: '65%@65 50%@70',
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+PlanDefinitionBasicAccidentalDeath_Policy2_REN_33768: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  'Enhanced AD&D?': 'No',
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount',
+    Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+# REN-33772
+
+TestData_Policy1_REN_33772: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33772',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33772',
+    '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+  ]
+}
+
+PlanDefinitionVoluntaryLifeInsurance_Policy1_REN_33772: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 1,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Maximum Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Increment: '10000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_Policy1_REN_33772: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: 75,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Maximum Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Increment: '10000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: ""
+  }
+  ]
+}
+
+TestData_Policy2_REN_33772: {
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance_Policy1_REN_33726',
+    '@PlanDefinitionVoluntaryLifeInsurance_Policy2_REN_33772',
+    '@PlanDefinitionVoluntaryAccidentalDeath_Policy2_REN_33772',
+    '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionSpouseVoluntaryLifeInsurance_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionChildVoluntary_Remove',
+    '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove',
+  ],
+  ClassificationManagementTab: [
+    '@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+    '@<tl_master>@DataGather@ClassificationMgmtVoluntaryLife',
+    '@<tl_master>@DataGather@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+  ]
+}
+
+PlanDefinitionVoluntaryLifeInsurance_Policy2_REN_33772: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Total Number of Eligible Lives: 1,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Maximum Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Increment: '10000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_Policy2_REN_33772: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Age Reduction Schedule: '65%@65 50%@70',
+  Plan Termination Attained Age: "",
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Maximum Salary Multiple: '2x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+    Increment: '10000',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '200000',
+  },
+  'Age Reduction Schedule Details': [
+  {
+    Age: 65,
+    Maximum: 100000
+  },
+  {
+    Age: 70,
+    Maximum: 100000
+  }
+  ]
+}
+
+
+TestData_Claim1: {
+  PolicyInformationParticipantParticipantInformationTab:{
+    Party Name: index=1,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Contact Preference: index=1,
+    Preferred Payment method: 'Check',
+    Zip / Postal Code: '94596',
+    Address Line 1: Address Line 1,
+    Date of Birth: $<today-64y>,
+    Annual Base Salary: 86954
+  }
+}
+
+TestData_Claim2: {
+  PolicyInformationParticipantParticipantInformationTab:{
+    Party Name: index=1,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Contact Preference: index=1,
+    Preferred Payment method: 'Check',
+    Zip / Postal Code: '94596',
+    Address Line 1: Address Line 1,
+    Date of Birth: $<today-74y>,
+    Annual Base Salary: 86954
+  }
+}

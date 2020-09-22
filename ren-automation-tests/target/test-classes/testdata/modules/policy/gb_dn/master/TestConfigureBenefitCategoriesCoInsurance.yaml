@@ -1,0 +1,700 @@
+PlanDefinitionIssueActionTab_TC1: {
+  'Include Retirees': 'No',
+  'Override Procedure Code Co-Insurance?': 'Yes',
+  'Procedure Code Co-Insurance Override': {
+    Procedure Code: D1110,
+    Co-Insurance - In Network: '20%',
+    Co-Insurance - Out of Network: '20%',
+    Co-Insurance - EPO: '20%'
+  },
+}
+
+PlanDefinitionIssueActionTab_TC5_LA: {
+  'Include Retirees': 'No',
+  'Override Procedure Code Co-Insurance?': 'Yes',
+  'Procedure Code Co-Insurance Override': {
+    Procedure Code: D1110,
+    Co-Insurance - In Network: '10%',
+    Co-Insurance - Out of Network: '5%',
+  },
+}
+
+PlanDefinitionIssueActionTab_TC5_MD: {
+  'Include Retirees': 'No',
+  'Override Procedure Code Co-Insurance?': 'Yes',
+  'Procedure Code Co-Insurance Override': {
+    Procedure Code: D1110,
+    Co-Insurance - In Network: '50%',
+    Co-Insurance - Out of Network: '25%',
+  },
+}
+
+PlanDefinitionIssueActionTab_TC5_KY: {
+  'Include Retirees': 'No',
+  'Override Procedure Code Co-Insurance?': 'Yes',
+  'Procedure Code Co-Insurance Override': {
+    Procedure Code: D1110,
+    Co-Insurance - In Network: '40%',
+    Co-Insurance - Out of Network: '70%',
+  },
+}
+
+TestData_TC2: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_TC2', '@PlanDefinitionTab_ALACARTE_TC2', '@PlanDefinitionTab_DHMO', '@PlanDefinitionTab_GRADUATED', ],
+  ClassificationManagementTab: ['@ClassificationManagementTabALACARTE', '@ClassificationManagementTabDHMO', '@ClassificationManagementTabGRADUATED'],
+  PremiumSummaryTab: {}
+}
+
+TestData_ALACARTE_TripleAdvantage: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_ALACARTE_TripleAdvantage', '@PlanDefinitionTab_ALACARTE','@PlanDefinitionTabTripleAdvantage'],
+  ClassificationManagementTab: ['@ClassificationManagementTabALACARTE', '@ClassificationManagementTabTripleAdvantage'],
+  PremiumSummaryTab: {}
+}
+
+TestData_AK: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_AK', '@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTabBasicEpos', '@PlanDefinitionTabFlexPlus', '@PlanDefinitionTabMajorEpos'],
+  ClassificationManagementTab: ['@ClassificationManagementTabALACARTE', '@ClassificationManagementTabBasicEpos', '@ClassificationManagementTabFlexPlus', '@ClassificationManagementTabMajorEpos'],
+  PremiumSummaryTab: {}
+}
+
+TestData_WA: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_WA', '@PlanDefinitionTabWA1', '@PlanDefinitionTabWA2', '@PlanDefinitionTabWA3', '@PlanDefinitionTabWA4',
+                      '@PlanDefinitionTabWA5', '@PlanDefinitionTabWA6', '@PlanDefinitionTabWA7', '@PlanDefinitionTabWA8', '@PlanDefinitionTabWA9'],
+  ClassificationManagementTab: ['@ClassificationManagementTabWA1', '@ClassificationManagementTabWA2', '@ClassificationManagementTabWA3', '@ClassificationManagementTabWA4',
+                                '@ClassificationManagementTabWA5', '@ClassificationManagementTabWA6', '@ClassificationManagementTabWA7', '@ClassificationManagementTabWA8', '@ClassificationManagementTabWA9'],
+  PremiumSummaryTab: {},
+  QuotesSelectionActionTab: '@QuotesSelectionActionTab',
+  ProposalActionTab: {}
+}
+
+TestData_ASO: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans_ASO', '@PlanDefinitionTab_ASO','@PlanDefinitionTab_ASO_ALACARTE'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ASO', '@ClassificationManagementTab_ASO_ALACARTE'],
+  PremiumSummaryTab: {},
+  QuotesSelectionActionTab: '@QuotesSelectionActionTab',
+  ProposalActionTab: '@ProposalActionTab_ASO'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Situs State: 'NV',
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '2',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlans_AK: {
+  Plan: [A La Carte, Basic EPOS, Flex Plus, Major EPOS]
+}
+
+SelectPlans_WA: {
+  Plan: [WA Plan 1, WA Plan 2, WA Plan 3, WA Plan 4, WA Plan 5, WA Plan 6, WA Plan 7, WA Plan 8, WA Plan 9 ]
+}
+
+SelectPlans_ASO: {
+  Plan: [ASO, ASO A La Carte]
+}
+
+SelectPlans_TC2: {
+  Plan: [A La Carte, Graduated, DHMO]
+}
+
+SelectPlans_ALACARTE_TripleAdvantage: {
+  Plan: [A La Carte, Triple Advantage]
+}
+
+SelectPlans_ALACARTE: {
+  Plan: [A La Carte]
+}
+
+PlanDefinitionTab_ASO: {
+  PlanKey: ASO-ASO,
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  }
+}
+
+PlanDefinitionTab_ASO_ALACARTE: {
+  PlanKey: ASOALC-ASO A La Carte,
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  }
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: ALACARTE-A La Carte,
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  }
+}
+
+PlanDefinitionTabTripleAdvantage: {
+  PlanKey: TRIPADV-Triple Advantage,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  }
+}
+
+PlanDefinitionTab_ALACARTE_TC2: {
+  PlanKey: ALACARTE-A La Carte,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Co-Insurance: {
+    'Is it graded Co-Insurance': No
+  }
+}
+
+PlanDefinitionTab_GRADUATED: {
+  PlanKey: 'GRAD-Graduated',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Sponsor/Participant Split',
+    'Participant Contribution % Employee Coverage': 100,
+    'Participant Contribution % Dependent Coverage': 45,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    SIC Description: 'index=1'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Co-Insurance: {
+    'Is it graded Co-Insurance': Yes
+  },
+  Orthodontia: {
+    Ortho Coverage: No
+  }
+}
+
+PlanDefinitionTab_DHMO: {
+  PlanKey: DHMO-DHMO,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+  }
+}
+
+PlanDefinitionTabBasicEpos: {
+  PlanKey: BASEPOS-Basic EPOS,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'Convenience Stores'
+  }
+}
+
+PlanDefinitionTabMajorEpos: {
+  PlanKey: MAJEPOS-Major EPOS,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'Convenience Stores'
+  }
+}
+
+PlanDefinitionTabFlexPlus: {
+  PlanKey: FLEX-Flex Plus,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'Convenience Stores'
+  }
+}
+
+PlanDefinitionTabWA1: {
+  PlanKey: 'WA1-WA Plan 1',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA2: {
+  PlanKey: 'WA2-WA Plan 2',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA3: {
+  PlanKey: 'WA3-WA Plan 3',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA4: {
+  PlanKey: 'WA4-WA Plan 4',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA5: {
+  PlanKey: 'WA5-WA Plan 5',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA6: {
+  PlanKey: 'WA6-WA Plan 6',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA7: {
+  PlanKey: 'WA7-WA Plan 7',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA8: {
+  PlanKey: 'WA8-WA Plan 8',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+PlanDefinitionTabWA9: {
+  PlanKey: 'WA9-WA Plan 9',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Rate Cap: 'None',
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments',
+    Rate Basis: 'Monthly Tiered Price Per Participant'
+  }
+}
+
+ClassificationManagementTabALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 32
+  }
+}
+
+ClassificationManagementTabTripleAdvantage: {
+  Plan: 'TRIPADV-Triple Advantage',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 32
+  }
+}
+
+ClassificationManagementTabDHMO: {
+  Plan: 'DHMO-DHMO',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 32
+  }
+}
+
+ClassificationManagementTabGRADUATED: {
+  Plan: 'GRAD-Graduated',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabBasicEpos: {
+  Plan: 'BASEPOS-Basic EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabFlexPlus: {
+  Plan: 'FLEX-Flex Plus',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabMajorEpos: {
+  Plan: 'MAJEPOS-Major EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA1: {
+  Plan: 'WA1-WA Plan 1',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA2: {
+  Plan: 'WA2-WA Plan 2',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA3: {
+  Plan: 'WA3-WA Plan 3',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA4: {
+  Plan: 'WA4-WA Plan 4',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA5: {
+  Plan: 'WA5-WA Plan 5',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA6: {
+  Plan: 'WA6-WA Plan 6',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA7: {
+  Plan: 'WA7-WA Plan 7',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA8: {
+  Plan: 'WA8-WA Plan 8',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTabWA9: {
+  Plan: 'WA9-WA Plan 9',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTab_ASO: {
+  Plan: 'ASO-ASO',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+ClassificationManagementTab_ASO_ALACARTE: {
+  Plan: 'ASOALC-ASO A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 4
+  }
+}
+
+UpdateProcedureCode: {
+  StartUpdateProcedureCodeTab: {
+    Effective Date: $<BOM>
+  },
+  UpdateProcedureCodePlanDefinitionTab: {
+    'Procedure Code Co-Insurance Override': {
+      Procedure Code: D1130,
+      Co-Insurance - In Network: '40%',
+      Co-Insurance - Out of Network: '30%',
+      Co-Insurance - EPO: '35%'
+    },
+  }
+}
+
+QuotesSelectionActionTab: {
+  Select Quote by row number: [1],
+  Proposal Name: 'ProposalName$<rx:\d{5}>'
+}
+
+ProposalActionTab_ASO: {
+  Proposed ASO Fee: 4,
+  Fee Update Reason: index=1,
+  Override Rules List: ["Proposal for ASO Plan will require Underwriter approval"]
+}

@@ -1,0 +1,125 @@
+TestData: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: '@PlanDefinitionTab_ALACARTE',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestDataWithCustomCalendar: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: '@PlanDefinitionTab_ALACARTE',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithCustomCalendar'],
+}
+
+TestDataWithExistingBA: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: '@PlanDefinitionTab_ALACARTE',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithExistingBA'],
+}
+
+TestData_WithTwoCoverages: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionTab_ALACARTE','@PlanDefinitionTab_PlanB'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestData_AllPlans: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_PlanB', '@PlanDefinitionTab_PlanC'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestData_ExistentBillingAccount: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {},
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: {}
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingGroupsActionTab: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: ALACARTE-A La Carte
+}
+
+PlanDefinitionTab_ExamP: {
+  PlanKey: Exam Plus-Exam Plus
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: PlanB-10/25 Plan B 130
+}
+
+PlanDefinitionTab_PlanC: {
+  PlanKey: PlanC-10/25 Plan C 150
+}
+
+BillingAccountTabWithCustomCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 6,
+      Generation Date Rule: 1,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}
+
+BillingAccountTabWithExistingBA: {
+  Select Action: 'Bill Under Account',
+  Bill Under Account: index=1
+}
+
+IssueActionTabMail: {
+  IssueActionTab: {
+    Address Line 1: '$<rx:Address\d{5}>',
+    Zip / Postal Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA
+  }
+}

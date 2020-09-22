@@ -1,0 +1,31 @@
+TestData: {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'key$<rx:\d{8}>',
+    Entity Type: Account,
+    Task Name: 'AT_NEW_TASK_$<rx:\d{8}>',
+    Effective Date: $<today>,
+    Priority: 1
+  }
+}
+
+TestDataSuspendTask: {
+  ManualTaskDefinitionTab: {
+     Definition Key: '$<static:defKey:[rx:key\d{3}]>',
+     Entity Type: Customer,
+     Task Name: '$<static:taskName:[rx:taskName\d{3}]>',
+     Effective Date: $<today>,
+     Priority: 1,
+     Preferred Queue: Cancel Audit,
+     Allow Task Process Suspense: 'Yes'
+  }
+}
+
+TestData_CreateTaskDefinition: {
+  ManualTaskDefinitionTab: {
+    Definition Key: '$<static:defKey:[rx:definition_test_tcv\d{3}]>',
+    Entity Type: 'Quote',
+    Task Name: '$<static:taskName:[rx:task_name_tcv\d{3}]>',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}

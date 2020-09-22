@@ -1,0 +1,5 @@
+TestData: {
+  CopyQuoteActionTab: {
+    Coverage Effective Date: $<BOM>
+  }
+}

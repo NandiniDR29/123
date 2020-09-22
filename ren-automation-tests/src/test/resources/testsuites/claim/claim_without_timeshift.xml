@@ -1,0 +1,105 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Claims Without TS" verbose="1" parallel="tests" thread-count="1024">
+    <listeners>
+
+        <listener class-name="com.exigen.ipb.eisa.utils.listener.ISBAListener"/>
+        <listener class-name="com.exigen.istf.exec.testng.TimeShiftTestNgListener"/>
+    </listeners>
+
+    <test name="Claims for GB_AC (CLAIM_ACC_HEALTH)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_ac.*">
+                <exclude name="com.exigen.ren.modules.claim.gb_ac.without_policy"/>
+            </package>
+        </packages>
+    </test>
+
+    <test name="Claims for GB_DN (CLAIM_DENTAL)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_dn.*">
+            </package>
+        </packages>
+    </test>
+
+    <test name="Claims for GB_DI_LTD (CLAIM_DISABILITY)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_ltd.*">
+                <exclude name="com.exigen.ren.modules.claim.gb_ltd.without_policy"/>
+            </package>
+        </packages>
+    </test>
+
+    <test name="Claims for GB_ST (CLAIM_DISABILITY)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_st.*">
+                <exclude name="com.exigen.ren.modules.claim.gb_st.without_policy"/>
+            </package>
+        </packages>
+    </test>
+
+    <test name="Claims for GB_DI_STD (CLAIM_DISABILITY)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_std.*">
+                <exclude name="com.exigen.ren.modules.claim.gb_std.without_policy"/>
+            </package>
+        </packages>
+    </test>
+
+    <test name="Claims for GB_TL (CLAIM_TERM_LIFE)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_tl.*">
+                <exclude name="com.exigen.ren.modules.claim.gb_tl.without_policy"/>
+            </package>
+        </packages>
+    </test>
+
+    <test name="Claims for GB_PFL (CLAIM_PAID_FAMILY_LEAVE)" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.claim.gb_pfl.*">
+                <exclude name="com.exigen.ren.modules.claim.gb_pfl.without_policy"/>
+            </package>
+        </packages>
+    </test>
+</suite>

@@ -1,0 +1,21 @@
+{
+  "defaultWaiter": "AJAX",
+  "applicationHasFinishedDataLoading": "try {
+                                            if (!(document.readyState === 'complete' && ((typeof jQuery == 'undefined') || (!($('#ajaxLoadingModalBox').is(':visible') || $('#ajaxLoadingModalBox').css('display')=='inline-block') && ($('#ajaxStatus').text() != 'on') && (jQuery.active == 0))) && ((typeof jsf == 'undefined') || !(window.wdap = window.wdap || (function() {
+                                                    var a;
+                                                    jsf.ajax.addOnEvent(function(e) {
+                                                        a = e.status !== 'success';
+                                                    });
+                                                    return {
+                                                        ajax: function() {
+                                                            return a;
+                                                        }
+                                                    };
+                                                })()).ajax()))) {
+                                                return false;
+                                            }
+                                            return true;
+                                        } catch (ex) {
+                                            return false;
+                                        }"
+}

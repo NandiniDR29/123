@@ -1,0 +1,287 @@
+TestData_Master: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL', '@PlanDefinitionTab_SGR'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Prior Carrier Name: InsuranceCompany,
+  Prior Carrier Policy Number: '$<rx:\d{6}>',
+  Minimum Participation Percentage: 1,
+  Minimum Number of Participants: 1,
+  Maximum Number of Participants: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+EnrollmentTab: {
+  Planned Enrollment Communication Channels: [Education Videos, Payroll Stuffers],
+  Enrollment Consultant/Manager: Greg,
+  Required Enrollment Response: Enroll,
+  Enrollment Response Required Date: $<today>,
+  Competing Influences: All
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  Partial Disability Benefit: Proportionate Loss,
+  Minimum Number of Participants: 1,
+  STAT Offset Amount: 500,
+  Social Security Integration Method: Family,
+  Individual Disability Plan: 'Included',
+  Sponsor/Participant Funding Structure: {
+    Gross Up: true
+  },
+  Schedule of Continuation Provision:{
+    Sabbatical: '3 Months'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Treatment Free Period': '3 Months'
+  },
+  Options: {
+    Prudent Person: Yes,
+    Retroactive Benefit: 'Included',
+    Premium Waiver: 'Included',
+    'FICA Match': 'Embedded',
+  }
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  Participant Contribution %: 100,
+  Minimum Number of Participants: 1,
+  STAT Offset Amount: 500,
+  Social Security Integration Method: Family,
+  Individual Disability Plan: 'Included',
+  Sponsor/Participant Funding Structure: {
+    Gross Up: true
+  },
+  Schedule of Continuation Provision:{
+    Sabbatical: '3 Months'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Treatment Free Period': '3 Months'
+  },
+  Options: {
+    Prudent Person: Yes,
+    Retroactive Benefit: 'Included',
+    Premium Waiver: 'Included',
+    'FICA Match': 'Embedded',
+    First Day Hospitalization: 'Included',
+    W2: 'Included'
+  },
+  Benefit Termination Option: {
+    Completion of LTD EP: 'Yes',
+    'Mandatory Rehabilitation': 'Yes'
+  }
+}
+
+PlanDefinitionTab_VOL: {
+  PlanKey: VOL-VOL,
+  Required Participation %: 100%,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: '1',
+  Minimum Number of Participants: 1,
+  STAT Offset Amount: 500,
+  Social Security Integration Method: Family,
+  Individual Disability Plan: 'Included',
+  Sponsor/Participant Funding Structure: {
+    Gross Up: true
+  },
+  Schedule of Continuation Provision:{
+    Sabbatical: '3 Months'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Treatment Free Period': '3 Months'
+  },
+  Options: {
+    Prudent Person: Yes,
+    Retroactive Benefit: 'Included',
+    Premium Waiver: 'Included',
+    'FICA Match': 'Embedded',
+    First Day Hospitalization: 'Included',
+    W2: 'Included'
+  },
+  Benefit Termination Option: {
+    Completion of LTD EP: 'Yes',
+    'Mandatory Rehabilitation': 'Yes'
+  }
+}
+
+
+PlanDefinitionTab_SGR: {
+  PlanKey: SGR-SGR,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  Minimum Number of Participants: 1,
+  STAT Offset Amount: 500,
+  Social Security Integration Method: Family,
+  Individual Disability Plan: 'Included',
+  Sponsor/Participant Funding Structure: {
+    Gross Up: true
+  },
+  Schedule of Continuation Provision:{
+    Sabbatical: '3 Months'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Treatment Free Period': '3 Months'
+  },
+  Options: {
+    Prudent Person: Yes,
+    Retroactive Benefit: 'Included',
+    Premium Waiver: 'Included',
+    'FICA Match': 'Embedded',
+    First Day Hospitalization: 'Included',
+    W2: 'Included'
+  },
+  Benefit Termination Option: {
+    Completion of LTD EP: 'Yes',
+    'Mandatory Rehabilitation': 'Yes'
+  }
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Uni-Tobacco: Yes,
+  Unisex: Yes
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+TestData_Certificate: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: '@CoveragesTab',
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Middle Name: 'Middle$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Tobacco: 'Yes',
+  Marital Status: 'Single',
+  Tax Identification: '$<rx:\d{9}>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  Address Line 2: 'Address2$<rx:\d{8}>',
+  Address Line 3: 'Address3$<rx:\d{8}>',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  Rehire Date: $<today>,
+  Employment Type: index=1,
+  General Information: {
+    Title: Mr,
+    Suffix: 'Sr.',
+    Date of Birth: $<today-25y>,
+    Gender: Male,
+    e-Mail: 'email$<rx:\d{8}>@test.com'
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Code: index=1,
+    Employment Status: Active,
+    Annual Earnings: 5000,
+    Job Title: 'Title$<rx:\d{8}>',
+    Payroll Frequency: Monthly,
+    Employee ID: '$<rx:\d{9}>',
+  }
+}
+
+CoveragesTab: {
+  Plan: index=1,
+  Enrollment Date: $<today>,
+  'EOI Required?': Yes,
+  Approval Date: $<today>,
+  'Prior Coverage %': 1,
+  EOI Status: Approved,
+  'Requested %': 1,
+  'Pending %': 1,
+  'Approved %': 1,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+TestData_Issue_Certificate: {
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  }
+}

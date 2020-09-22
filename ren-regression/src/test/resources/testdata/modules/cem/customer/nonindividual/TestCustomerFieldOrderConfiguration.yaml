@@ -1,0 +1,15 @@
+TestData: {
+  FieldsConfigurationTab: {
+    Address Line 3: true,
+    Address Line 2: CHECK,
+    Attention: -99
+    }
+}
+
+TearDown: {
+  FieldsConfigurationTab: {
+    Address Line 3: false,
+    Address Line 2: '',
+    Attention: ''
+    }
+}

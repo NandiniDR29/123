@@ -1,0 +1,31 @@
+TestDataRelationshipAddress: {
+  RelationshipTab: {
+    Address Details: {
+      Contact Details Type: Address,
+      Address Type: Mailing,
+      Country: United States,
+      Zip/Post Code: '12345',
+      City: As,
+      State/Province: CA,
+      Address Line 1: EISGROUP,
+      Address Line 2: ''
+    }
+  }
+}
+
+TestDataRelationshipEmail: {
+  RelationshipTab: [{},
+    {
+      Email Details: {
+        Email Type: Common,
+        Email Address: eis@eis.com,
+        Comment: ''
+      }
+    }]
+}
+
+CustomerRandomName: {
+  GeneralTab: {
+    Name - Legal: 'NameLegal$<rx:\d{5}>'
+  }
+}

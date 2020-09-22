@@ -1,0 +1,79 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON']
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Contribution Type: Contributory,
+  Participant Contribution %: 50,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Rating:{
+    Rate Basis: Per $10 Total Weekly Benefit
+  },
+  Benefit Schedule: {
+    Earning Definition: Salary,
+    Benefit Type: Percentage of Weekly Salary - Single Value
+  },
+  Options: {}
+}
+
+TestData_ParticipantContribution: {
+  PlanDefinitionTab: {
+    Participant Contribution %: 30
+  }
+}
+
+TestData_EarningDefinition: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Earning Definition: 'Salary & Bonus (12 mo)'
+    }
+  }
+}
+
+TestData_MinimumWeeklyBenefit: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Minimum Weekly Benefit Amount: '$50'
+    }
+  }
+}
+
+TestData_MaximumWeeklyBenefit: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Maximum Weekly Benefit Amount: '$1500'
+    }
+  }
+}
+
+TestData_BenefitPercentage: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Benefit Percentage: '66.67%'
+    }
+  }
+}
+
+TestData_WeeklyBenefitAmount: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Weekly Benefit Amount: '$750'
+    }
+  }
+}
+
+

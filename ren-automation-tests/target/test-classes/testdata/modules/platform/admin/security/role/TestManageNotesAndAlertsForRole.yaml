@@ -1,0 +1,46 @@
+RolesCorporateDG: {
+  GeneralRoleTab: {
+    Role Name: 'RoleName$<rx:\d{8}>',
+    Privileges: ['Policy Issue']
+  }
+}
+
+TestData_Note: {
+  NotesAndAlertsTab: '@NotesAndAlertsTabNote'
+}
+
+NotesAndAlertsTabNote: {
+  'Note/Alert': ' Note',
+  Title: Simple Title,
+  'Confid.': 'No',
+  Note: 'Test Note'
+}
+
+TestData_Alert: {
+  NotesAndAlertsTab: '@NotesAndAlertsTabAlert'
+}
+
+NotesAndAlertsTabAlert: {
+  'Note/Alert': ' Alert',
+  Alert: 'Test Alert'
+}
+
+NoteUpdate: {
+  NotesAndAlertsTab: {
+    Title: Simple Title Update,
+    Note: 'Update Note for Security Role'
+  }
+}
+
+AlertUpdate: {
+  NotesAndAlertsTab: {
+    Alert: 'Update Alert for Security Role'
+  }
+}
+
+RoleCorporateSearch: {
+  RoleSearch: {
+    Role Name: '',
+    Business Domain: 'Corporate'
+  }
+}

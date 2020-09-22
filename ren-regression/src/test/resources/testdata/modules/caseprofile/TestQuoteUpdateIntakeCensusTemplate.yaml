@@ -1,0 +1,13 @@
+TestData: {
+  FileIntakeManagementTab: {
+
+    Intake Profile Name: 'IntakeNameTest',
+    Effective Date: $<today-1y>,
+    File Type: 'Quote',
+    Record Type: 'Eligibility',
+    Upload File Dialog: {
+      File Name: 'UploadedFile$<rx:\d{8}>',
+      File Upload: '$<file:REN_Rating_Census_Sample_File_latest.xlsx>',
+    }
+  }
+}

@@ -1,0 +1,65 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan_Two', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_NC']
+}
+
+SelectPlan_Two: {
+  Plan: [CON, NC]
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  'Total Number of Eligible Lives': '10',
+  Required Participation %: 100%,
+  Census Type: 'Enrolled',
+  Contribution Type: Contributory,
+  Sponsor/Participant Funding Structure: {
+    Participant Contribution %: 50,
+    Sponsor Payment Mode: 12
+  },
+  Rating: {
+    SIC Code: 5411,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Monthly Salary - Single Value',
+    Minimum Monthly Benefit Amount: '$100',
+    Elimination Period (days): '180',
+    Number of Months: '12 months',
+    Benefit Percentage: '55%',
+    Test Definition: Loss of Duties and Earnings,
+    Partial Disability Benefit: Proportionate Loss
+  },
+  Options: {
+  },
+  Benefit Termination Option: {},
+  Employer Benefits: {}
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  'Total Number of Eligible Lives': '6',
+  Census Type: 'Enrolled',
+  Required Participation %: 100%,
+  Contribution Type: Non-contributory,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12
+  },
+  Rating: {
+    SIC Code: 5411,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Monthly Salary - Single Value',
+    Elimination Period (days): '180',
+    Number of Months: '24 months',
+    Benefit Percentage: '60%',
+    Test Definition: Loss of Duties and Earnings
+  },
+  Options: {
+  },
+  Employer Benefits: {}
+}

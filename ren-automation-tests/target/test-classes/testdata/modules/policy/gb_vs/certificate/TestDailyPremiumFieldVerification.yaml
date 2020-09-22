@@ -1,0 +1,30 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE']
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: '0',
+    Member Payment Mode: 12,
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}

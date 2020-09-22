@@ -1,0 +1,10 @@
+TestData: {
+  SearchMergeCustomerActionTab: {
+    Search Customer: {
+      Customer Number: ''
+    }
+  },
+  MergeCustomerActionTab: {
+    Add:
+  }
+}

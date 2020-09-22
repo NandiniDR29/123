@@ -1,0 +1,8 @@
+TestData: {
+  ClaimReopenActionTab: {
+    'Reopen to (Status):': Open,
+    Reason: index=1,
+    Details: 'Details$<rx:\d{8}>',
+    Date: $<BOM>
+  }
+}

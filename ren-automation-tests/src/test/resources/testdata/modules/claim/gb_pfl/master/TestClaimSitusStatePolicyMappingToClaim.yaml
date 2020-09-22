@@ -1,0 +1,37 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab_NJ',
+  PlanDefinitionTab: '@PlanDefinitionTab_FLB',
+  ClassificationManagementTab: '@ClassificationMgmt_FLB'
+}
+
+PolicyInformationTab_NJ: {
+  Private Plan Number: 'Test',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user',
+    Underwriter: 'QA QA user'
+  },
+  Situs State: NJ,
+  Underwriting Company: Renaissance Life & Health Insurance Company of America,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_FLB: {
+  Sponsor/Participant Funding Structure: {
+    Member Payment Mode: 12,
+    Contribution Type: Mandatory,
+    Taxability: Benefits Taxable,
+    Premiums Paid-Post Tax: Yes,
+    'Self-Administered?': Yes
+  }
+}
+
+ClassificationMgmt_FLB: {
+  Add Classification Group Relationship: CLICK,
+  Coverage Name: PFL,
+  Classification Group Name: Employment,
+  Number of Participants: 10,
+  Total Volume: 250
+}

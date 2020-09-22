@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<import xmlns="http://exigenservices.com/ipb/crm/integration">
+	<businessLead>
+		<legalName>Look</legalName>
+		<PhoneContact>
+			<phoneNumber>2234567855</phoneNumber>
+		</PhoneContact>
+	</businessLead>
+</import>

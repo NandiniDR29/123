@@ -1,0 +1,16 @@
+TestData: {
+  BusinessActivitiesTab: {
+    LOB: All,
+    Period From: $<today-1d>,
+    Period To: $<today>
+  }
+}
+
+TestData_Location: {
+  BusinessActivitiesTab: {
+    Report For: Location,
+    LOB: All,
+    Period From: $<today-1d>,
+    Period To: $<today>
+  }
+}

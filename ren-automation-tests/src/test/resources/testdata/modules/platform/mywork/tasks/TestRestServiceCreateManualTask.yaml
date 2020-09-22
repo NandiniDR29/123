@@ -1,0 +1,750 @@
+TestData: {
+Requests: ['@RequestStep1', '@RequestStep2', '@RequestStep3', '@RequestStep4', '@RequestStep5', '@RequestStep6', '@RequestStep7', '@RequestStep8', '@RequestStep9', '@RequestStep10', '@RequestStep11', '@RequestStep12', '@RequestStep13', '@RequestStep14', '@RequestStep15', '@RequestStep16', '@RequestStep17', '@RequestStep18', '@RequestStep19', '@RequestStep20', '@RequestStep21', '@RequestStep22', '@RequestStep23', '@RequestStep24', '@RequestStep25', '@RequestStep26', '@RequestStep27', '@RequestStep28', '@RequestStep29', '@RequestStep30', '@RequestStep31', '@RequestStep32', '@RequestStep33', '@RequestStep34', '@RequestStep35', '@RequestStep36', '@RequestStep37', '@RequestStep38', '@RequestStep39', '@RequestStep40', '@RequestStep41', '@RequestStep42', '@RequestStep43', '@RequestStep44', '@RequestStep45', '@RequestStep46', '@RequestStep47', '@RequestStep48', '@RequestStep49', '@RequestStep50', '@RequestStep51'],
+Responses: ['@ResponseStep1', '@ResponseStep2', '@ResponseStep3', '@ResponseStep4', '@ResponseStep5', '@ResponseStep6', '@ResponseStep7', '@ResponseStep8', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep11', '@ResponseStep12', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep15', '@ResponseStep16', '@ResponseStep17', '@ResponseStep18', '@ResponseStep19', '@ResponseStep20', '@ResponseStep21', '@ResponseStep22', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep25', '@ResponseStep26', '@ResponseStep27', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep30', '@ResponseStep31', '@ResponseStep32', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep35', '@ResponseSuccessfulyCreated', '@ResponseStep37', '@ResponseStep38', '@ResponseStep39', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep42', '@ResponseStep43', '@ResponseStep44', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated', '@ResponseStep47', '@ResponseStep48', '@ResponseStep49', '@ResponseSuccessfulyCreated', '@ResponseSuccessfulyCreated']
+}
+
+TestData_Task_RSUser: {
+Requests: ['@RequestStep52'],
+Responses: ['@ResponseStep52']
+}
+
+
+RequestStep1 : {
+    entityType : "abc",
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    priority: '1',
+    warningTypeDate: 'DATE',
+
+    userName: 'TRATUsr1'
+}
+
+ResponseStep1 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep1'
+}
+
+RequestStep2 : {
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    priority: '1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep2 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep2'
+}
+
+RequestStep3 : {
+    entityType : 'Customer',
+    processKey : 'NON_EXISTING',
+    referenceId: '',
+    priority: '1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep3 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep3'
+}
+
+RequestStep4 : {
+    entityType : 'Customer',
+    referenceId: '',
+    priority: '1',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep4 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep4'
+}
+
+RequestStep5 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: 'NON_EXISTING',
+    priority: '1',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep5 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep5'
+}
+
+RequestStep6 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: 'null',
+    priority: '1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep6 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep6'
+}
+
+RequestStep7 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    priority: '1A',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep7 : {
+    errorCode: '422',
+    message: 'The request was well-formed but was unable to be followed due to semantic errors (invalid field value, validation rules and etc)',
+    logMessage: 'ResponseStep7'
+}
+
+RequestStep8 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "DATE",
+    dueDateTime: '$<today:yyyy-MM-dd>',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep8 : '@ResponseSuccessfulyCreated'
+
+RequestStep9 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "DATE",
+    dueDateTime: '$<today+1d:yyyy-MM-dd>',
+    warningDateTime: "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    priority: '1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep9 : '@ResponseSuccessfulyCreated'
+
+RequestStep10 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "DATE",
+    dueDateTime: '$<today:yyyy-MM-dd>',
+    warningDays: '1',
+    priority: '1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep10 : '@ResponseSuccessfulyCreated'
+
+RequestStep11 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'DATE',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep11 : {
+    errorCode: '422',
+    message: 'The dueTypeDate is required; The warningDateTime is required',
+    logMessage: 'ResponseStep11',
+    errors: [
+    {
+      errorCode: '422',
+      message: 'The dueTypeDate is required',
+      field: 'ERROR'
+    },
+    {
+    errorCode: '422',
+    message: 'The warningDateTime is required',
+    field: 'ERROR'
+    }
+    ]
+}
+
+RequestStep12 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep12 : {
+    errorCode: '422',
+    message: 'The dueTypeDate is required; At least one argument from list: warningDays, warningHours, warningMinutes is required',
+    logMessage: 'ResponseStep12',
+    errors: [
+    {
+      errorCode: '422',
+      message: 'The dueTypeDate is required',
+      field: 'ERROR'
+    },
+    {
+      errorCode: '422',
+      message: 'The warningDateTime is required',
+      field: 'ERROR'
+    }
+    ]
+}
+
+RequestStep13 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "DATE",
+    dueDateTime: "$<today+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep13 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep14 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueDays: "1",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep14 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep15 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'DATE',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep15 : {
+    errorCode: '422',
+    message: 'The dueDateTime is required',
+    logMessage: 'ResponseStep15'
+}
+
+RequestStep16 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep16 : {
+    errorCode: '422',
+    message: 'At least one argument from list: dueDays, dueHours, dueMinutes is required',
+    logMessage: 'ResponseStep16'
+}
+
+RequestStep17 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningDateTime: "$<today+2d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDateTime: "$<today+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    userName: 'TRATUsr1',
+    taskDescription: 'RequestStep17 description'
+}
+
+ResponseStep17 : {
+    errorCode: '422',
+    message: 'Warning date/time cannot be equal or later than Due date/time',
+    logMessage: 'ResponseStep17'
+}
+
+RequestStep18 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningDateTime: 'a',
+    userName: 'TRATUsr1',
+    taskDescription: 'RequestStep18 description'
+}
+
+ResponseStep18 : {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep18'
+}
+
+RequestStep19 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueDateTime: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep19 : {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep19'
+}
+
+RequestStep20 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningDays: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep20 : {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep20'
+}
+
+RequestStep21 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningDays: '-1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep21 : {
+    errorCode: '422',
+    message: 'Warning date/time cannot be earlier than current date/time; Days can be from 0 to 365',
+    errors: ['@ResponseStep21Err1','@ResponseStep21Err2'],
+    logMessage: 'ResponseStep21'
+}
+
+ResponseStep21Err1: {
+   errorCode: '422',
+   message: 'Warning date/time cannot be earlier than current date/time',
+   field: 'ERROR'
+}
+
+ResponseStep21Err2: {
+   errorCode: '422',
+   message: 'Days can be from 0 to 365',
+   field: 'ERROR'
+}
+
+RequestStep22 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningDays: '366',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep22 : {
+    errorCode: '422',
+    message: 'Days can be from 0 to 365',
+    logMessage: 'ResponseStep22'
+}
+
+RequestStep23 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: "PERIOD",
+    warningDays: '0',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep23 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep24 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: "PERIOD",
+    warningDays: '365',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep24 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep25 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningHours: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep25: {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep25'
+}
+
+
+RequestStep26 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningHours: '-1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep26: {
+    errorCode: '422',
+    message: 'Warning date/time cannot be earlier than current date/time; Hours can be from 0 to 23 ',
+    logMessage: 'ResponseStep26'
+}
+
+RequestStep27 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningHours: '24',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep27: {
+    errorCode: '422',
+    message: 'Hours can be from 0 to 23 ',
+    logMessage: 'ResponseStep27'
+}
+
+RequestStep28 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: "PERIOD",
+    warningHours: '0',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep28 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep29 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: "PERIOD",
+    warningHours: '23',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep29 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep30 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningMinutes: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep30: {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep30'
+}
+
+RequestStep31 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningMinutes: '-1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep31: {
+    errorCode: '422',
+    message: 'Minutes can be from 0 to 59 ',
+    logMessage: 'ResponseStep31'
+}
+
+RequestStep32 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'PERIOD',
+    warningMinutes: '60',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep32: {
+    errorCode: '422',
+    message: 'Minutes can be from 0 to 59 ',
+    logMessage: 'ResponseStep32'
+}
+
+RequestStep33 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: "PERIOD",
+    warningMinutes: '0',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep33 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep34 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: "PERIOD",
+    warningMinutes: '59',
+    userName: 'TRATUsr1',
+}
+
+ResponseStep34 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep35 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    warningTypeDate: 'DATE',
+    warningDateTime: "$<today-1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    userName: 'TRATUsr1'
+}
+
+ResponseStep35: {
+    errorCode: '422',
+    message: 'Warning date/time cannot be earlier than current date/time',
+    logMessage: 'ResponseStep35'
+}
+
+RequestStep36 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "DATE",
+    dueDateTime: "$<today+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep36 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep37 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueDays: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep37: {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep37'
+}
+
+RequestStep38 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueDays: '-1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep38: {
+    errorCode: '422',
+    message: 'Days can be from 0 to 365',
+    logMessage: 'ResponseStep38'
+}
+
+RequestStep39 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueDays: '366',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep39: {
+    errorCode: '422',
+    message: 'Days can be from 0 to 365',
+    logMessage: 'ResponseStep39'
+}
+
+RequestStep40 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "PERIOD",
+    dueDays: "0",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep40 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep41 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "PERIOD",
+    dueDays: "365",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep41 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep42 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueHours: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep42: {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep42'
+}
+
+RequestStep43 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueHours: '-1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep43: {
+    errorCode: '422',
+    message: 'Hours can be from 0 to 23 ',
+    logMessage: 'ResponseStep43'
+}
+
+RequestStep44 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueHours: '24',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep44: {
+    errorCode: '422',
+    message: 'Hours can be from 0 to 23 ',
+    logMessage: 'ResponseStep44'
+}
+
+RequestStep45 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "PERIOD",
+    dueHours: "0",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep45 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep46 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "PERIOD",
+    dueHours: "23",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep46 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep47 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueMinutes: 'a',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep47: {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'ResponseStep47'
+}
+
+RequestStep48 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueMinutes: '-1',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep48: {
+    errorCode: '422',
+    message: 'Minutes can be from 0 to 59 ',
+    logMessage: 'ResponseStep48'
+}
+
+RequestStep49 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: 'PERIOD',
+    dueMinutes: '60',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep49: {
+    errorCode: '422',
+    message: 'Minutes can be from 0 to 59 ',
+    logMessage: 'ResponseStep49'
+}
+
+RequestStep50 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "PERIOD",
+    dueMinutes: "0",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep50 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep51 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    dueTypeDate: "PERIOD",
+    dueMinutes: "59",
+    userName: 'TRATUsr1',
+}
+
+ResponseStep51 : {'@ResponseSuccessfulyCreated'}
+
+RequestStep52 : {
+    entityType : 'Customer',
+    processKey : 'IPBQA22754_CUSTOMER_TASK',
+    referenceId: '',
+    userName: 'TRATUsr1'
+}
+
+ResponseStep52: {
+    errorCode: '403',
+    message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+    logMessage: 'ResponseStep52'
+}
+
+ResponseSuccessfulyCreated: {
+    name: "IPBQA22754_CUSTOMER_TASK_NAME"
+}

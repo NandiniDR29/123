@@ -1,0 +1,32 @@
+TestData: {
+  GeneralTab: {},
+  RelationshipTab: '@RelationshipTab'
+}
+
+RelationshipTab: {
+  Type: Individual,
+  Salutation: 'Doctor',
+  First Name: '$<static:customerFirstName:[rx:John\d{8}]>',
+  Last Name:  '$<static:customerLastName:[rx:Smith\d{8}]>',
+  Relationship to Customer: 'Service Roles',
+  Service Role: ["Administrative", "Billing", "Claims", "Portal Benefits Administrator"]
+}
+
+GeneralTab: {
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>'
+  },
+  Phone Details: {
+    Phone Type: Mobile,
+    Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  },
+  Sales Info Header: 'click',
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}

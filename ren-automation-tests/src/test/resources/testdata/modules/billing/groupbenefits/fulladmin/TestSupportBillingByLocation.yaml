@@ -1,0 +1,214 @@
+TestData_Case_Profile: {
+  CaseProfileDetailsTab: '@CaseProfileDetailsTab',
+  ProductAndPlanManagementTab: '@ProductAndPlanManagementTabGBGB',
+  ClassificationManagementTab: ['@ClassificationManagementTabEmployment'],
+  LocationManagementTab: ['@Billing_Location_LOC1', '@Billing_Location_LOC2', '@Billing_Location_LOC3', '@Billing_Location_LOC4'],
+  FileIntakeManagementTab: []
+}
+
+ProductAndPlanManagementTabGBGB: {
+  Product: Group Benefits
+}
+
+CaseProfileDetailsTab: {
+  Case Profile Name: __first_one,
+  Effective Date: $<today-1y>,
+  Group Domicile State: CA,
+  Agency / Producer: [QAG - QA Agency]
+}
+
+ClassificationManagementTabEmployment: {
+  Classification Group: {
+    Class Name: Employment,
+    Class Number: Employment,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'No'
+  },
+  Sub Groups: ['@Sub1']
+}
+
+Sub1: {
+  Classification Sub-Group: {
+    Sub-Group Name: '$<static:ClassificationSubGroup:[rx:SubGroup\d{8}]>',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Gender: Male,
+    Tobacco: 'Yes',
+    Min Age: '20',
+    Max Age: '50'
+  }
+}
+
+
+Billing_Location_LOC1: {
+  Add Billing Location:{
+    Location Name: 'LOC1',
+    Location Number: '1',
+    Tax Identification: '11-6543201'
+  }
+}
+
+Billing_Location_LOC2: {
+  Add Billing Location:{
+    Location Name: 'LOC2',
+    Location Number: '2',
+    Tax Identification: '22-6543201'
+  }
+}
+
+Billing_Location_LOC3: {
+  Add Billing Location:{
+    Location Name: 'LOC3',
+    Location Number: '3',
+    Tax Identification: '33-6543201'
+  }
+}
+
+Billing_Location_LOC4: {
+  Add Billing Location:{
+    Location Name: 'LOC4',
+    Location Number: '4',
+    Tax Identification: '44-6543201'
+  }
+}
+
+
+TestData_TwoCoverages: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_Enhanced10_Voluntary'],
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU','@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  Situs State: GA,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectTwoPlans: {
+  Plan: [Base Buy-Up,Enhanced 10 Units]
+}
+
+PlanDefinitionTab_Enhanced10_Voluntary: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type:  Voluntary,
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: Voluntary,
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+EnhancedBenefitsAtoCTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsAtoCTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+
+EnhancedBenefitsDtoFTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsDtoFTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+EnhancedBenefitsHtoLTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsHtoLTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+EnhancedBenefitsMtoTTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsMtoTTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+OptionalBenefitTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+OptionalBenefitTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+ClassificationManagementTab_BASEBU: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_ENHANCED10: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}

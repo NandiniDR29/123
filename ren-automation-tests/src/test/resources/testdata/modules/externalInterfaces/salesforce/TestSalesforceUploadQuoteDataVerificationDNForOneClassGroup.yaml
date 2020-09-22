@@ -1,0 +1,168 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan_All',
+                      '@PlanDefinitionTab_BASEPOS',
+                      '@PlanDefinitionTab_MAJEPOS',
+                      '@PlanDefinitionTab_ALACARTE',
+                      '@PlanDefinitionTab_FLEX'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_MAJEPOS', '@ClassificationManagementTab_FLEX', '@ClassificationManagementTab_BASEPOS'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: ALACARTE-A La Carte,
+  Coverage Tiers: ['Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 5,
+  },
+  Rating: {
+    SIC Description: 'index=1',
+  }
+}
+
+PlanDefinitionTab_BASEPOS: {
+  PlanKey: BASEPOS-Basic EPOS,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Rate Type: 'Area + Tier',
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{},
+  Dental Deductible: {},
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTab_FLEX: {
+  PlanKey: FLEX-Flex Plus,
+  Coverage Tiers: ['Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    'Assumed Participation %': 5
+  },
+  Rating: {
+    SIC Description: 'index=1',
+  }
+}
+
+PlanDefinitionTab_MAJEPOS: {
+  PlanKey: MAJEPOS-Major EPOS,
+  Coverage Tiers: ['Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Sponsor/Participant Split,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+    'Participant Contribution % Employee Coverage': 1
+  },
+  Rating: {
+    SIC Description: 'index=1',
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{},
+  Dental Deductible:{},
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'CLERICAL',
+  Plan Tier And Rating Info: {
+    Number of Participants: 1
+  }
+}
+
+ClassificationManagementTab_BASEPOS: {
+  Plan: 'BASEPOS-Basic EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'MANAGER',
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Spouse,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Child(ren),
+    Number of Participants: 1
+  }
+  ]
+}
+
+ClassificationManagementTab_FLEX: {
+  Plan: 'FLEX-Flex Plus',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'CLERICAL',
+  Plan Tier And Rating Info: {
+    Number of Participants: 1
+  }
+}
+
+ClassificationManagementTab_MAJEPOS: {
+  Plan: 'MAJEPOS-Major EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'CLERICAL',
+  Plan Tier And Rating Info: {
+    Number of Participants: 1
+  }
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+PreventativeAndDiagnosticTab: {
+  Fluoride Treatment: 'Not Covered'
+}
+
+BasicTab: {
+}
+
+MajorTab: {
+}

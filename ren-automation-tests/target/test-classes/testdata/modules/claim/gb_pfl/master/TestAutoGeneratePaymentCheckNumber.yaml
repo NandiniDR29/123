@@ -1,0 +1,9 @@
+TestData_EFTPaymentMethod: {
+  BenefitsPFLParticipantInformationTab: {
+    Preferred Payment method: 'EFT',
+    Bank Name: index=1,
+    Bank Account Number: '$<rx:\d{9}>',
+    'Bank Transit / Routing Number': '111111111',
+    Bank Account Type: index=1,
+  }
+}

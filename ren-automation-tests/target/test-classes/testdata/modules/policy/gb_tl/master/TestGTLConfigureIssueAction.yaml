@@ -1,0 +1,162 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: [
+    '@SelectPlan',
+    '@PlanDefinitionBasicLifeInsurance',
+    '@PlanDefinitionBasicAccidentalDeath',
+    '@PlanDefinitionVoluntaryLifeInsurance',
+    '@PlanDefinitionVoluntaryAccidentalDeath',
+    '@PlanDefinitionSpouseVoluntaryLifeInsurance',
+    '@PlanDefinitionDependentVoluntaryAccidentalDeath'],
+  ClassificationManagementTab: [
+    '@ClassificationMgmtBasicLifeInsraunce',
+    '@ClassificationMgmtBasicAccidentalDeath',
+    '@ClassificationMgmtVoluntaryLife',
+    '@ClassificationMgmtVoluntaryAccidentalDeath',
+    '@ClassificationMgmtDependentVoluntaryAccidentalDeath',
+    '@ClassificationMgmtSpouseVoluntaryLifeInsurance'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  County Code: '001 - Albany County',
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Assigned Agencies: ['@QA_Agency']
+}
+
+QA_Agency: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: Basic Life + Voluntary
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Sponsor Payment Mode: 12,
+  Required Participation %: 5%,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Sponsor Payment Mode: 12,
+  Required Participation %: 5%,
+  Age Reduction Schedule: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVoluntaryLifeInsurance: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Total Number of Eligible Lives: '1',
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVoluntaryAccidentalDeath: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeath: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  'Enhanced AD&D?': 'No',
+  Member Payment Mode: 12,
+  Required Participation %: 5%
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  'Required Participation %': '25%'
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtVoluntaryLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  Tier: Spouse and/or Child
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+  'Class is Open?': Yes,
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}

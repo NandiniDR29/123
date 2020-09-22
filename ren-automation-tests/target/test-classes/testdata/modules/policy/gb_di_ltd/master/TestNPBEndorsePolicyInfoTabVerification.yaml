@@ -1,0 +1,19 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab'
+}
+
+PolicyInformationTab: {
+  Group is Member Company: Yes,
+  Member Company Name: 'index=1',
+  Situs State: 'NY',
+  County Code: '001 - Albany County',
+  'Prior Claims Allowed?': 'true',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}

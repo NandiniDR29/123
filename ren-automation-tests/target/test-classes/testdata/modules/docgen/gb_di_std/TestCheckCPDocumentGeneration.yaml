@@ -1,0 +1,279 @@
+TestData_Customer: {
+  GeneralTab: '@GeneralTab_FiveAddress'
+}
+
+GeneralTab_FiveAddress: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Date business started: $<today-10y>,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Electronic SSA Filing: Yes,
+  Address Details: ['@Address1', '@Address2', '@Address3', '@Address4', '@Address5'],
+  Phone Details: ['@Phone1', '@Phone2'],
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}
+
+Address1: {
+  Address Type: Mailing,
+  Country: United States,
+  Zip/Post Code: '45587',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address Line1',
+  Address Line 2: 'Address Line2',
+  Address Line 3: 'Address Line3',
+}
+
+Address2: {
+  Address Type: Legal,
+  Country: United States,
+  Zip/Post Code: '43452',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address Line11',
+  Address Line 2: 'Address Line22',
+  Address Line 3: 'Address Line33',
+}
+
+Address3: {
+  Address Type: Contact,
+  Country: United States,
+  Zip/Post Code: '45587',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address Line111',
+  Address Line 2: 'Address Line222',
+  Address Line 3: 'Address Line333',
+}
+
+Address4: {
+  Address Type: Head Office,
+  Country: United States,
+  Zip/Post Code: '45587',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address Line1111',
+  Address Line 2: 'Address Line2222',
+  Address Line 3: 'Address Line3333',
+}
+
+Address5: {
+  Address Type: Main Office,
+  Country: United States,
+  Zip/Post Code: '45587',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: 'Address Line11111',
+  Address Line 2: 'Address Line22222',
+  Address Line 3: 'Address Line33333',
+}
+
+Phone1: {
+  Phone Type: Work,
+  Phone Number: '2222222222',
+  'Make Preferred?': 'No'
+}
+
+Phone2: {
+  Phone Type: Mobile,
+  Phone Number: '$<static:MobilePhoneNumber2:[rx:\d{10}]>',
+  'Make Preferred?': 'Yes'
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+TestData_WithTwoPlans_NoAndYesSubGroups: {
+  CaseProfileDetailsTab: '@CaseProfileDetailsTab_NY',
+  ProductAndPlanManagementTab: {
+    Product: Group Benefits
+  },
+  ClassificationManagementTab: ['@ClassificationManagementTabEmployment_AutoSubGroupClass1', '@ClassificationManagementTab_NoSubGroups_Class2'],
+  LocationManagementTab: ['@Billing_Location_LOC1'],
+  FileIntakeManagementTab: ['@FileIntakeManagementTab']
+}
+
+CaseProfileDetailsTab_NY: {
+  Case Profile Name: __first_one,
+  Effective Date: $<today-1y>,
+  Group Domicile State: NY,
+  Applicable Payment Modes: [1,12],
+  Agency / Producer: [QAG - QA Agency]
+}
+
+ClassificationManagementTabEmployment_AutoSubGroupClass1: {
+  Classification Group: {
+    Class Name: 1,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'Yes'
+  }
+}
+
+ClassificationManagementTab_NoSubGroups_Class2: {
+  Classification Group: {
+    Class Name: 2,
+    Class Number: 2,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    Job Code: [ALL],
+    Employment Status: [ALL],
+    Employment Type: [ALL],
+    Pay Type: Hourly,
+    Union Member: 'Yes',
+    'Create Sub-Groups?': 'No'
+  }
+}
+
+Billing_Location_LOC1: {
+  Add Billing Location:{
+    Location Name: 'Billing Location 1',
+    Location Number: '1',
+    Tax Identification: '12-3456789',
+    City: 'Indianapolis',
+    State/Province: 'IN'
+  }
+}
+
+FileIntakeManagementTab: {
+  Intake Profile Name: 'IntakeProfile$<rx:\d{8}>',
+  Effective Date: $<today-1y>,
+  Product: [ALL],
+  File Type: 'Quote',
+  Record Type: 'Eligibility',
+  Upload File Dialog: {
+    File Name: 'UploadedFile$<rx:\d{8}>',
+    File Upload: '$<file:REN_Rating_Census_Sample_File_latest.xlsx>',
+  }
+}
+
+TestData_Policy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_NC'],
+}
+
+TestData_Policy2: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_NC2'],
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  'Small Group?': 'Yes',
+  Intoxication: true,
+  Substance Abuse: true,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: NC
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  Annual Enrollment Underwriting Offer: 'Enrollment period No EOI/Changing with EOI Only',
+  STAT Offset Amount: 500,
+  Contribution Type: Voluntary,
+  'Social Security Integration Method': 'Family',
+  STAT Offset: 'Included',
+  'Individual Disability Plan': 'Included',
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '20',
+    Eligibility Waiting Period Definition: 'First of the month coincident with or next following date of hire',
+  },
+  Options: {
+    Prudent Person: 'Yes',
+    First Day Hospitalization: 'Included'
+  },
+  'Benefit Schedule': {
+    'Benefit Type': 'Percentage of Weekly Salary - Single Value',
+    'Maximum Weekly Benefit Amount': '1500',
+    'Minimum Weekly Benefit Amount': '$50',
+    'Elimination Period - Injury (Calendar Days)': '14',
+    'Elimination Period - Sickness (Calendar Days)': '14',
+    'Partial Disability': 'Work Incentive Benefit',
+    'End of Salary Continuation': 'Yes',
+    'End of Accumulated Sick Leave': 'Yes',
+    'Earning Definition': 'K-1 (24 mo)',
+    'Pre-Existing Conditions': 'Included',
+    'Maximum Payment Duration': '26',
+    'Definition of Disability': 'Own Job',
+  },
+  Sponsor/Participant Funding Structure: {
+    Gross Up: true
+  },
+  Benefit Termination Option: {
+    Mandatory Rehabilitation: 'Yes'
+  }
+}
+
+PlanDefinitionTab_NC2: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  Annual Enrollment Underwriting Offer: 'Enrollment period No EOI/Changing with EOI Only',
+  STAT Offset Amount: 500,
+  Contribution Type: Voluntary,
+  'Social Security Integration Method': 'Family',
+  STAT Offset: 'Included',
+  'Individual Disability Plan': 'Included',
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '20',
+    Eligibility Waiting Period Definition: 'First of the month coincident with or next following date of hire',
+  },
+  Options: {
+    Prudent Person: 'Yes',
+    First Day Hospitalization: 'Included'
+  },
+  'Benefit Schedule': {
+    'Benefit Type': 'Percentage of Weekly Salary - Single Value',
+    'Maximum Weekly Benefit Amount': '1500',
+    'Minimum Weekly Benefit Amount': '$50',
+    'Elimination Period - Injury (Calendar Days)': '14',
+    'Elimination Period - Sickness (Calendar Days)': '14',
+    'Partial Disability': 'Work Incentive Benefit',
+    'End of Salary Continuation': 'Yes',
+    'End of Accumulated Sick Leave': 'Yes',
+    'Earning Definition': 'K-1 (12 mo)',
+    'Pre-Existing Conditions': 'Included',
+    'Maximum Payment Duration': '26',
+    'Definition of Disability': 'Own Job',
+    'Pre-Existing Condition: Treatment Free Period': 'N/A',
+  },
+  Sponsor/Participant Funding Structure: {
+    Gross Up: true
+  },
+  Benefit Termination Option: {
+    Mandatory Rehabilitation: 'Yes'
+  }
+}

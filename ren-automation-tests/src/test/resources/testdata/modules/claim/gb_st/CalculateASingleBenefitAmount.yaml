@@ -1,0 +1,46 @@
+TestData: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  OtherIncomeBenefitActionTab: '@OtherIncomeBenefitActionTab'
+}
+
+TestData_ST: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: index=2
+}
+
+OtherIncomeBenefitActionTab: {
+  Type of Offset: '401K Benefit',
+  Payment Amount: 100,
+  Beginning Date: $<today-1y>,
+  Through Date: $<today+1y>
+}
+
+TestData_ReCalculate: {
+  CoveragesActionTab: {},
+  OtherIncomeBenefitActionTab: ['@OtherIncomeBenefitActionTab_1']
+}
+
+OtherIncomeBenefitActionTab_1: {
+  Beginning Date: '',
+  Through Date: ''
+}
+
+TestDataWithDeductions: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  OtherIncomeBenefitActionTab: '@OtherIncomeBenefitActionTab',
+  DeductionsActionTab: {
+    Type of Deduction: 'Employer Reimbursement',
+    Party: index=1,
+    Non Provider Payment Type: 'Claimant (Employee, Dependent)',
+    State Services Provided In: 'NY',
+    Beginning Date: $<today>,
+    Through Date: $<today+1y>,
+    Deduction Amount: '100',
+    Apply Pre-tax: 'No',
+    Memo: 'Memo for  Employer Reimbursement'
+  }
+}

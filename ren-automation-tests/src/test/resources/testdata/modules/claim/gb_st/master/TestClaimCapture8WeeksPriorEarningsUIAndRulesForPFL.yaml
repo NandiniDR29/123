@@ -1,0 +1,71 @@
+TestData_Earning_1: {
+  Participant Prior Earnings: {
+    'Week no.': 1,
+    Week ending date (MM/DD/YYYY): '12/13/2018',
+    Number of days worked: 5,
+    Gross amount paid: 1000
+  }
+}
+
+TestData_Earning_2: {
+  Participant Prior Earnings: {
+    'Week no.': 2,
+    Week ending date (MM/DD/YYYY): '12/20/2018',
+    Number of days worked: 6,
+    Gross amount paid: 1200
+  }
+}
+
+TestData_Earning_3: {
+  Participant Prior Earnings: {
+    'Week no.': 3,
+    Week ending date (MM/DD/YYYY): '12/27/2018',
+    Number of days worked: 5,
+    Gross amount paid: 1000
+  }
+}
+
+TestData_Earning_4: {
+  Participant Prior Earnings: {
+    'Week no.': 4,
+    Week ending date (MM/DD/YYYY): '01/03/2019',
+    Number of days worked: 6,
+    Gross amount paid: 1200
+  }
+}
+
+TestData_Earning_5: {
+  Participant Prior Earnings: {
+    'Week no.': 5,
+    Week ending date (MM/DD/YYYY): '01/10/2019',
+    Number of days worked: 5,
+    Gross amount paid: 1000
+  }
+}
+
+TestData_Earning_6: {
+  Participant Prior Earnings: {
+    'Week no.': 6,
+    Week ending date (MM/DD/YYYY): '01/17/2019',
+    Number of days worked: 6,
+    Gross amount paid: 1200
+  }
+}
+
+TestData_Earning_7: {
+  Participant Prior Earnings: {
+    'Week no.': 7,
+    Week ending date (MM/DD/YYYY): '01/24/2019',
+    Number of days worked: 5,
+    Gross amount paid: 1000
+  }
+}
+
+TestData_Earning_8: {
+  Participant Prior Earnings: {
+    'Week no.': 8,
+    Week ending date (MM/DD/YYYY): '01/31/2019',
+    Number of days worked: 6,
+    Gross amount paid: 1200
+  }
+}

@@ -1,0 +1,79 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+TestData_With_Two_Services: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab_With_Two_Services',
+}
+
+LossContextTab: {
+  No Policy: {
+      'No Policy': 'click'
+    },
+  Policy LOB: Dental,
+  Policy Product: Group Dental,
+  Type of Claim: Dental Claim,
+  Save Loss As: index=1
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Customer
+  },
+  Search Provider: {
+    TIN: '351517384',
+    'License #': '8724',
+    License NPI: '1063628917',
+    License State/Province: 'IN',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '46237',
+    Address Line 1: '4034 E Southport Rd',
+    City: 'Indianapolis',
+    State/Province: 'IN',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: ['@Service_1']
+}
+
+IntakeInformationTab_With_Two_Services: {
+  Patient: {
+    Name: contains=Customer
+  },
+  Search Provider: {
+    TIN: '351517384',
+    'License #': '8724',
+    License NPI: '1063628917',
+    License State/Province: 'IN',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '46237',
+    Address Line 1: '4034 E Southport Rd',
+    City: 'Indianapolis',
+    State/Province: 'IN',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Predetermination',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: ['@Service_2', '@Service_1'] #Update according REN-34216
+}
+
+Service_1: {
+  DOS: $<today>,
+  CDT Code: 'D0160',
+  Charge: 100
+}
+
+Service_2: {
+  DOS: '',
+  CDT Code: 'D0160',
+  Charge: 100
+}

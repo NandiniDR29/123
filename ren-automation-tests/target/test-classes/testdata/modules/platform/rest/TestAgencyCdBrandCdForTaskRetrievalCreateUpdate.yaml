@@ -1,0 +1,148 @@
+TestData: {
+  CreateTaskForRest1: '@CreateTaskForRest1',
+  CreateTaskForRest2: '@CreateTaskForRest2',
+  CreateTaskForRest3: '@CreateTaskForRest3',
+  CreateTaskForRest4: '@CreateTaskForRest4',
+  CreateTaskForRest5: '@CreateTaskForRest5',
+  UpdateTaskForRest6: '@UpdateTaskStep6',
+  UpdateTaskForRest7: '@UpdateTaskStep7',
+  UpdateTaskForRest8: '@UpdateTaskStep8',
+  UpdateTaskForRest9: '@UpdateTaskStep9',
+  UpdateTaskForRest10: '@UpdateTaskStep10',
+  UpdateTaskForRest13: '@UpdateTaskStep13'
+}
+
+CreateTaskForRest1: {
+  "entityType": "Customer",
+  "processKey": "BAMTASKRSS",
+  "dueTypeDate": "DATE",
+  "referenceId": '$<static:referenceId>',
+  "dueDateTime": "$<today+2M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "priority": "1",
+  "taskDescription": "test",
+  "assignmentType": "User",
+  "assignmentValue": "qa",
+  "userName": "qa"
+}
+
+CreateTaskForRest2: {
+  "entityType": "Customer",
+  "processKey": "BAMTASKRSS",
+  "dueTypeDate": "DATE",
+  "referenceId": '$<static:referenceId>',
+  "dueDateTime": "$<today+2M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "priority": "1",
+  "taskDescription": "test",
+  "assignmentType": "User",
+  "assignmentValue": "qa",
+  "userName": "qa",
+  "agencyCd": null,
+  "brandCd": null
+}
+
+CreateTaskForRest3: {
+  "entityType": "Customer",
+  "processKey": "BAMTASKRSS",
+  "referenceId": '$<static:referenceId>',
+  "dueTypeDate": "DATE",
+  "dueDateTime": "$<today+2M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "priority": "1",
+  "taskDescription": "test",
+  "assignmentType": "User",
+  "assignmentValue": "qa",
+  "userName": "qa",
+  "agencyCd": '$<static:taskCdFirst>',
+  "brandCd": '$<static:brandCd>'
+ }
+
+CreateTaskForRest4: {
+  "entityType": "Customer",
+  "processKey": "BAMTASKRSS",
+  "referenceId": '$<static:referenceId>',
+  "dueTypeDate": "DATE",
+  "dueDateTime": "$<today+2M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "priority": "1",
+  "taskDescription": "test",
+  "assignmentType": "User",
+  "assignmentValue": "qa",
+  "userName": "qa",
+  "agencyCd": "testTestTest",
+  "brandCd": '$<static:brandCd>'
+}
+
+CreateTaskForRest5: {
+  "entityType": "Customer",
+  "processKey": "BAMTASKRSS",
+  "referenceId": '$<static:referenceId>',
+  "dueTypeDate": "DATE",
+  "dueDateTime": "$<today+2M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "priority": "1",
+  "taskDescription": "test",
+  "assignmentType": "User",
+  "assignmentValue": "qa",
+  "userName": "qa",
+  "agencyCd": '$<static:taskCdFirst>',
+  "brandCd": "995959494343"
+}
+
+UpdateTaskStep6: {
+  "priority": "1",
+  "agencyCd": '$<static:taskCdFirst>',
+  "brandCd": '$<static:brandCd>'
+}
+
+UpdateTaskStep7: {
+  "priority": "1",
+  "agencyCd": null,
+  "brandCd": '$<static:brandCd>'
+}
+
+UpdateTaskStep8: {
+  "priority": "1",
+  "agencyCd": '$<static:taskCdFirst>',
+  "brandCd": null
+}
+
+UpdateTaskStep9: {
+  "priority": "1",
+  "agencyCd": '$<static:taskCdFirst>',
+  "brandCd": "testTestIncorrect"
+}
+
+UpdateTaskStep10: {
+  "priority": "1",
+  "agencyCd": "testTestIncorrect",
+  "brandCd": '$<static:brandCd>'
+}
+
+UpdateTaskStep13: {
+  "priority": "1",
+  "agencyCd": '$<static:taskCdSecond>',
+  "brandCd": '$<static:brandCd>'
+}
+
+Query: {
+  limit: '20',
+  entityRefNo: ''
+}
+
+TestData_CreateTask: {
+  CreateTaskActionTab: {
+    Type: Customer,
+    Task Name: "Opportunity's status was changed",
+    Reference ID: '$<static:referenceId>',
+    Priority: 2,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>'
+  }
+}
+
+DefinitionKey: {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'BAMTASKRSS',
+    Entity Type: 'Customer',
+    Task Name: 'BAMTASKRSSName',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}

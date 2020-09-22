@@ -1,0 +1,237 @@
+TestData_Quote: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  'Prior Life Coverage': 'No',
+  'Situs State': 'GA',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: Eligible,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+     Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: index=1
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}
+
+TestData_Claim: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: '@PolicyInformationPolicyTab',
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationDependentDependentInformationTab: {},
+  PolicyInformationDependentDependentCoverageTab: {},
+  PolicyInformationSponsorTab: {},
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: '@BenefitsBenefitSummaryTabAccidentalDeath',
+  BenefitsAccidentalDeathDecedentTab: '@BenefitsAccidentalDeathDecedentTab',
+  BenefitsAccidentalDeathIncidentTab: {},
+  BenefitsAccidentalDeathDeathCertificateTab: '@BenefitsAccidentalDeathDeathCertificateTab',
+  BenefitsAccidentalDeathBeneficiaryTab: '@BenefitsAccidentalDeathBeneficiaryTab',
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+CalculateSingleBenefitAmount: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  DeductionsActionTab: '@DeductionsActionTab'
+}
+
+TestData_Payment: {
+  PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabFinalPayment',
+  PaymentPaymentPaymentAllocationTab: ['@PaymentPaymentPaymentAllocationTabFinalPayment'],
+  PaymentPaymentAdditionalPayeeTab: {},
+  PaymentInvoiceInvoicedFromTab: {},
+  PaymentInvoiceInvoiceDetailsTab: {},
+  PaymentCalculatorTab: '@PaymentCalculatorTab'
+}
+
+PaymentPaymentPaymentDetailsTabFinalPayment: {
+  Gross Amount: 200,
+  Payment To: index=1,
+  Non Provider Payment Type: index=1,
+  Payment Method: 'Check',
+  Manual Check Payment: 'Yes',
+  'Check #': '0000001'
+}
+
+PaymentPaymentPaymentAllocationTabFinalPayment: {
+  Reserve Type: Indemnity,
+  Final Payment: 'No',
+  Allocation Amount: 200,
+  Coverage: 'Employee Basic Life Insurance - Basic Life',
+}
+
+PaymentCalculatorTab: {
+  Payment Tax: [{
+    Tax Type: 'State Withholding Tax for Legal Payee State',
+    Tax Amount: 105
+  }]
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: 'Employee Basic Life Insurance - Basic Life'
+}
+
+DeductionsActionTab: {
+  Type of Deduction: 'Garnishment A',
+  Party: index=1,
+  Beginning Date: $<today>,
+  Through Date: $<today+1m>,
+  Deduction Amount: '3000',
+  Apply Pre-tax: 'No',
+  Memo: 'Memo for Garnishment A'
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: index=1
+}
+
+PolicyInformationPolicyTab: {
+  Original Effective Date: $<BOM>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  Annual Base Salary: 50000
+}
+
+PolicyInformationDependentDependentInformationTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  First Name: 'Martha$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1
+}
+
+PolicyInformationDependentDependentCoverageTab: {
+  Coverage Name: index=1,
+  Coverage Type: 'Employee Only'
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabAccidentalDeath: {
+  Damage: 'Accidental Death'
+}
+
+BenefitsAccidentalDeathDecedentTab: {
+  Associate Policy Party: index=1,
+  Date of Birth: $<today-40y>,
+}
+
+BenefitsAccidentalDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+BenefitsAccidentalDeathBeneficiaryTab: {
+  Party Name: index=1,
+  Relationship To Decedent: index=1,
+  Associated Insurable Risk: 'starts=John',
+  Coverage: index=1,
+  Preferred Payment method: Check
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  Relationship To Decedent/Injury Party: index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>'
+}
+
+EAPServicesServiceRequestTab: {
+  Benefit: index=1,
+  Service Type: index=1,
+  Add: 'click'
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Plan: 'Basic Life',
+  Coverage Name: 'Employee Basic Life Insurance - Basic Life',
+}

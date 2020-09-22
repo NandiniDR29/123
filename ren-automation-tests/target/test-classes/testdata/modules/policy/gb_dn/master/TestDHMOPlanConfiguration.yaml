@@ -1,0 +1,68 @@
+TestDataDHMO: {
+  PlanDefinitionTab: {
+    Rating: {
+      '2nd Year Cap %': 15,
+      '3rd Year Cap %': 15,
+    },
+    Eligibility: {
+      Minimum Hourly Requirement (hours per week): 30,
+      Waiting Period Amount: 100,
+      Dependent Maximum Age: 20
+    }
+  }
+}
+
+TestDataProposal: {
+  QuotesSelectionActionTab: {
+    Select Quote by Quote number: [""],
+    Proposal Name: 'ProposalName$<rx:\d{5}>'
+  },
+  ProposalActionTab: {
+    Override Rules: CLICK,
+    Override Rules List: ["Proposal requires Underwriter approval because Master Quote contains Rate Cap..."]
+  }
+}
+
+TestDataAL: {
+  GeneralProfileTab: {},
+  AuthorityLevelsTab: {
+    Type: Underwriting,
+    Product: 'For All',
+    Level: 'Level 1',
+    Save New Authority: 'true'
+  }
+}
+
+TestDataFLEX: {
+  PlanDefinitionTab: {
+    PlanKey: FLEX-Flex Plus,
+    Coverage Tiers: Employee Only,
+    Coverage Tiers Change Confirmation: click,
+    'Sponsor/Participant Funding Structure': {
+      Contribution Type: Non-contributory,
+      Sponsor Payment Mode: '12',
+      'Required Participation %': 20,
+      'Assumed Participation %': 20,
+    },
+    Rating: {
+      Use Brochure Rates: 'No',
+      SIC Description: 'index=1',
+      Rate Cap: '2nd Year & 3rd Year',
+      '2nd Year Cap %': 15,
+      '3rd Year Cap %': 15,
+    },
+    Eligibility: {
+      Minimum Hourly Requirement (hours per week): 25.00,
+      'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+      Eligibility Waiting Period Definition: 'None',
+      Dependent Maximum Age: 25,
+      'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+      Benefits End On: 'Last date of employment'
+    },
+    Limitation/Frequency: {
+      Preventative and Diagnostic: {
+        Fluoride Treatment: 'Not Covered',
+      },
+    }
+  }
+}

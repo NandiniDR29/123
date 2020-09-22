@@ -1,0 +1,44 @@
+TestData_Policy_CON: {
+  PlanDefinitionTab: ['@<ltd_master>@DataGather@SelectPlan_CON', '@PlanDefinitionTab_CON']
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Participant Contribution %: 50,
+    Sponsor Payment Mode: 12,
+    Member Payment Mode: 12,
+  },
+  Eligibility:{
+    Minimum Hourly Requirement (hours per week): 15.00,
+    'Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Partial Disability Benefit: Proportionate Loss,
+    Survivor - Family Income Benefit Type: '3 Months Survivor Income Benefit',
+  },
+  Options: {
+    Terminal Illness Benefit: '3 Months',
+    Terminal Illness benefit waiting period: 180,
+    Presumptive Disability: 90 days,
+    401K Contribution During Disability: '14%',
+    401K Contribution Monthly Maximum Amount: 2500,
+    Recovery Income Benefit: '6 Months',
+    Child Education Benefit: Included,
+    Infectious Disease: '6 Months',
+    COBRA Premium Reimbursement Amount: 1200,
+    Student Loan Repayment Amount: '$2 000',
+
+  },
+  Employer Benefits: {
+    Workplace Modification Benefit: Included,
+    Workplace modification benefit %: 100,
+    Workplace modification benefit Maximum: $2000
+  }
+}

@@ -1,0 +1,93 @@
+TestData_Endorsement_Benefit_Increasing: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@OptionalBenefitTab_EnhancedAccident', '@OptionalBenefitTab_EnhancedAccident', '@OptionalBenefitTab_EnhancedAccident'],
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement_Benefit_Decreasing: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@OptionalBenefitTab_EnhancedAccident_Decreasing', '@OptionalBenefitTab_EnhancedAccident_Decreasing', '@OptionalBenefitTab_EnhancedAccident_Decreasing'],
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+OptionalBenefitTab_EnhancedAccident: {
+  'Include Optional Benefits?': 'Yes',
+  Number of Units: 10,
+  "Enhanced Physician's Office/Urgent Care Treatment Benefit": {
+    "Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit": true
+  },
+  Hospital ICU Confinement Benefit: {
+    'Apply Benefit Hospital ICU Confinement Benefit': true,
+  }
+}
+OptionalBenefitTab_EnhancedAccident_Decreasing: {
+  'Include Optional Benefits?': 'Yes',
+  Number of Units: 10,
+  "Enhanced Physician's Office/Urgent Care Treatment Benefit": {
+    "Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit": false
+  },
+  Hospital ICU Confinement Benefit: {
+    'Apply Benefit Hospital ICU Confinement Benefit': false,
+  }
+}
+
+
+BillingAccountTabWithCustomCalendarSelf: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Billing Period Offset: 0,
+      Invoice Due Day: 10,
+      Generation Date Rule: 31,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+BillingAccountTabWithCustomCalendarFull: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Billing Period Offset: 0,
+      Invoice Due Day: 10,
+      Generation Date Rule: 3,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}

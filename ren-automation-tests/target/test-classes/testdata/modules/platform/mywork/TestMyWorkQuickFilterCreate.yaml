@@ -1,0 +1,18 @@
+TestData: {
+ CreateQuickFilterMetaData: {
+   Filter Name: '$<static:name:[rx:Filter\d{4}]>',
+   Priority: 2
+ }
+}
+
+TestData_Update: {
+ UpdateQuickFilterMetaData: {
+   Priority: 3
+ }
+}
+
+TestData_Delete: {
+ UpdateQuickFilterMetaData: {
+   Delete: Yes
+ }
+}

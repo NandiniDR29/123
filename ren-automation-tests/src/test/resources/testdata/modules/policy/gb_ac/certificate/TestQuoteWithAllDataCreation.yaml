@@ -1,0 +1,412 @@
+TestData_Master: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: ['@SelectAllPlans',
+                      '@PlanDefinitionTab_BASEBU', '@PlanDefinitionTabBasicAccident',
+                      '@PlanDefinitionTab_VOL10',
+                      '@PlanDefinitionTab_ENHANCED10'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_VOL10', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU', '@EnhancedBenefitsDtoFTab_VOL10', '@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_VOL10', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_VOL10', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU', '@ClassificationManagementTab_BASEBUBasicAccident',
+                                 '@ClassificationManagementTab_VOL10',
+                                 '@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+BasicBenefitsTab_BasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+EnrollmentTab: {
+  Planned Enrollment Communication Channels: [Education Videos, Payroll Stuffers],
+  Enrollment Consultant/Manager: Greg,
+  Required Enrollment Response: Enroll,
+  Enrollment Response Required Date: $<today>,
+  Competing Influences: All
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  Situs State: GA,
+  Prior Carrier Name: InsuranceCompany,
+  Prior Carrier Policy Number: '$<rx:\d{6}>',
+  Minimum Number of Participants: '12',
+  Minimum Participation Percentage: '2',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectAllPlans: {
+  Plan: [Base Buy-Up,Enhanced 10 Units,Voluntary 10 Units]
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTabBasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  SIC Description: 'index=1',
+  Sponsor/Participant Funding Structure: {
+    'Self-administered?': 'No',
+    Minimum Number of Participants: 10
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period: '10',
+    Waiting Period Mode: 'Days',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  },
+}
+
+PlanDefinitionTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Sponsor/Participant Split',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period: '10',
+    Waiting Period Mode: 'Days',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  }
+}
+
+PlanDefinitionTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Voluntary',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '10',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+EnhancedBenefitsAtoCTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsAtoCTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsAtoCTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+
+EnhancedBenefitsDtoFTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsDtoFTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsDtoFTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+EnhancedBenefitsHtoLTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsHtoLTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsHtoLTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+EnhancedBenefitsMtoTTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsMtoTTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsMtoTTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+OptionalBenefitTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  'Include Optional Benefits?': 'Yes',
+  Accidental Death Benefit: {
+    Apply Benefit Accidental Death Benefit: true
+  },
+  Enhanced Emergency Room Treatment Benefit: {
+    Apply Benefit Enhanced Emergency Room Treatment Benefit: true
+  },
+  Enhanced Physician's Office/Urgent Care Treatment Benefit: {
+    Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit: true
+  },
+  Hospital Confinement Benefit: {
+    Apply Benefit Hospital Confinement Benefit: true
+  },
+  Hospital ICU Confinement Benefit: {
+    Apply Benefit Hospital ICU Confinement Benefit: true
+  },
+  Waiver Of Premium Benefit: {
+    Apply Benefit Waiver Of Premium Benefit: true
+  },
+  Health Screening Benefit: {
+    'Apply Benefit?': true
+  }
+}
+
+ClassificationManagementTab_TestBASEBU: {
+  Plan: TestBase Buy-Up,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_BASEBUBasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_VOL10: {
+  Plan: VOL10-Voluntary 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_ENHANCED10: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+TestData_Certificate: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: '@CoveragesTab',
+  PremiumSummaryTab: {}
+}
+
+TestData_Certificate_Two_Coverages: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: ['@CoveragesTabBaseBuy', '@CoveragesTabAddCoverage'],
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: GA
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Middle Name: 'Middle$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Tobacco: 'Yes',
+  Marital Status: 'Single',
+  Tax Identification: '$<rx:\d{9}>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  Address Line 2: 'Address2$<rx:\d{8}>',
+  Address Line 3: 'Address3$<rx:\d{8}>',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  Employee ID: '$<rx:\d{9}>',
+  Rehire Date: $<today>,
+  General Information: {
+    Title: Mr,
+    Suffix: 'Sr.',
+    Date of Birth: $<today-25y>,
+    Gender: Male,
+    e-Mail: 'email$<rx:\d{8}>@test.com'
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Employment Status: Active,
+    Job Code: index=1,
+    Job Title: 'Title$<rx:\d{8}>',
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Payroll Frequency: Monthly
+  }
+}
+
+CoveragesTab: {
+  Plan: index=1,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants:{
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  },
+  Beneficiaries:{
+    Add Beneficiary: CLICK,
+    Beneficiary Selection: index=0,
+    Role Name: index=1,
+    Role Percent: 100
+  }
+}
+
+CoveragesTabBaseBuy: {
+  Plan: Base Buy-Up,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: ['@TestData_Participant', '@TestData_Child_Participant','@TestData_Spouse_Participant'],
+  Beneficiaries:{
+    Add Beneficiary: CLICK,
+    Beneficiary Selection: index=0,
+    Role Name: index=1,
+    Role Percent: 100,
+    Beneficiary General Info: {
+      Tax Identification: 234-23-4234
+    }
+  }
+}
+
+CoveragesTabAddCoverage: {
+  Coverage Name: Enhanced Accident,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants: ['@TestData_Participant'],
+  Beneficiaries:{
+    Add Beneficiary: CLICK,
+    Beneficiary Selection: index=0,
+    Role Name: index=1,
+    Role Percent: 100,
+    Beneficiary General Info: {
+      Tax Identification: 234-23-4234
+    }
+  }
+}
+
+
+
+TestData_Issue_Certificate: {
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  }
+}
+
+TestData_Child_Participant: {
+  Participant Selection: New Person,
+  Role Name: Child Participant,
+  Participant General Info: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>,
+    Relationship to Insured: Spouse/Domestic Partner
+  },
+  Participant Address Info: {
+    "Use Primary Insured's Address": No,
+    Address Type: Mailing,
+    Zip / Post Code: '94500',
+    State / Province: CA,
+    Country: United States,
+    City: Walnuce,
+    Address Line 1: 'MAddr1_Init',
+    Address Line 2: 'MAddr2_Init',
+    Address Line 3: 'MAddr3_Init'
+  }
+}
+TestData_Spouse_Participant: {
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>,
+    Relationship to Insured: Spouse/Domestic Partner
+  },
+  Participant Address Info: {
+    "Use Primary Insured's Address": No,
+    Address Type: Mailing,
+    Zip / Post Code: '94500',
+    State / Province: CA,
+    Country: United States,
+    City: Walnuce,
+    Address Line 1: 'MAddr1_Init',
+    Address Line 2: 'MAddr2_Init',
+    Address Line 3: 'MAddr3_Init'
+  }
+}
+
+TestData_Participant: {
+  Participant Selection: index=0
+}

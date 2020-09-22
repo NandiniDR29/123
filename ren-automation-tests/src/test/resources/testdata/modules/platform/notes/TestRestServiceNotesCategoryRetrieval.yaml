@@ -1,0 +1,8 @@
+TestData: ['entityType', 'category', 'categoryCd', 'defaultTitle', 'defaultText']
+
+TestData_Note: {
+  GeneralRoleTab: {
+    Role Name: 'RoleName_Note$<rx:\d{8}>',
+    Privileges: [ALL, EXCLUDE Add Note, EXCLUDE Update Note, EXCLUDE Notes Inquiry]
+  }
+}

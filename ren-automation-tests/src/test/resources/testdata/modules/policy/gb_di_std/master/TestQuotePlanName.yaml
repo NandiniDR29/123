@@ -1,0 +1,30 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@DataGather@PlanDefinitionTab_NC', '@DataGather@PlanDefinitionTab_CON']
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Situs State:  NY,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: [CON, NC]
+}

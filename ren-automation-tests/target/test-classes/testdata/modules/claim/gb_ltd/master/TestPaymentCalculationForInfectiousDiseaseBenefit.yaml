@@ -1,0 +1,20 @@
+TestData_Claim: {
+  PolicyInformationParticipantParticipantInformationTab: {
+    Party Name: index=1,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-25y>,
+    Contact Preference: Mail,
+    Zip / Postal Code: '94596',
+    Address Line 1: Address Line 1,
+    Preferred Payment method: Check,
+    Covered Earnings: 3000,
+    Participant Indexed Pre-Disability Earnings: [
+    {
+      'Year No.': 1,
+      Year Start Date (MM/DD/YYYY): $<today>,
+      Year End Date (MM/DD/YYYY):  $<today+1y-1d>,
+      Indexed Pre-Disability Earnings: 5000
+    }]
+  }
+}

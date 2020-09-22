@@ -1,0 +1,94 @@
+SubscriberCountCommissionRuleTab: {
+  Commission Type: 'Subscriber Count',
+  AddCommissionRule: '@AddCommissionRule'
+}
+
+TieredCommissionRuleTab: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: '@AddCommissionRule'
+}
+
+AddCommissionRule: {
+  Sales Channel: 'Agency',
+  Geography Selection: 'Defined by Master Policy State',
+  SelectGeographyMetaData: {
+    Countries: United States,
+    States: AK
+  },
+  Coverages: All,
+}
+
+Upd_CommissionRule_GroupChannel: {
+  AddCommissionRule: {
+   Sales Channel: 'Commission Group Channel',
+   Select Sales Channel: {
+     Commission Channel Group Name: ''
+   },
+  }
+}
+
+Upd_CommissionRule_GroupIndividual: {
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Individual',
+    Select Sales Individual: {
+      Commission Individual Group Name: ''
+    },
+  }
+}
+
+Upd_CommissionRule_Direct: {
+  AddCommissionRule: {
+    Sales Channel: 'Direct',
+  }
+}
+
+TestDataRuleUpdate: {
+  GBCommissionRuleTab: ['@CommissionRuleUpdate']
+}
+
+CommissionRuleUpdate: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '100.00', 15]
+  }
+}
+
+TestDataRuleUpdateRate: {
+  GBCommissionRuleTab: ['@CommissionRuleUpdateRate']
+}
+
+CommissionRuleUpdateRate: {
+  Commission Type: 'Subscriber Count',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Rate 1: [0, '100.00', 15]
+  }
+}
+
+TestDataRuleUpdateFlat: {
+  GBCommissionRuleTab: ['@CommissionRuleUpdateFlat']
+}
+
+CommissionRuleUpdateFlat: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Commission Rate: '5'
+  }
+}

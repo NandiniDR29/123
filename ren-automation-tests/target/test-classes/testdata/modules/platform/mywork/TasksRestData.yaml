@@ -1,0 +1,3105 @@
+TestData : {
+AgencyProducer1 : '@AgencyProducer1',
+AgencyProducer2 : '@AgencyProducer2',
+AgencyProducer3 : '@AgencyProducer3',
+AgencyProducer4 : '@AgencyProducer4',
+CreateTaskForRest1 : '@CreateTaskForRest1',
+CreateTaskForRest2 : '@CreateTaskForRest2',
+CreateTaskForRest3: '@CreateTaskForRest3',
+CreateTaskForRest4: '@CreateTaskForRest4',
+CreateTaskForRest5: '@CreateTaskForRest5',
+CreateTaskForRest6 : '@CreateTaskForRest6',
+CreateTaskForRest7 : '@CreateTaskForRest7',
+CreateManualTask1 : '@CreateManualTask1',
+CreateManualTask2 : '@CreateManualTask2',
+CreateManualTask3 : '@CreateManualTask3',
+CreateManualTask4 : '@CreateManualTask4',
+CreateManualTask5 : '@CreateManualTask5',
+CreateManualTask6 : '@CreateManualTask6',
+CreateManualTask7 : '@CreateManualTask7',
+CreateManualTask8 : '@CreateManualTask8',
+AssignToTRATUsr2 : '@AssignToTRATUsr2',
+FirstNoteIPBQA22844: '@FirstNoteIPBQA22844',
+FirstNoteUpdateIPBQA22844: '@FirstNoteUpdateIPBQA22844',
+SecondNoteIPBQA22844: '@SecondNoteIPBQA22844',
+SecondNoteUpdateIPBQA22844: '@SecondNoteUpdateIPBQA22844',
+TasksRestTestData : {
+Requests : ['@GetRequest1','@GetRequest2','@GetRequest3','@GetRequest4','@GetRequest5','@GetRequest6','@GetRequest7','@GetRequest8','@GetRequest9','@GetRequest10','@GetRequest11','@GetRequest12','@GetRequest13','@GetRequest14','@GetRequest15','@GetRequest16'],
+Responses : ['@GetResponse1','@GetResponse2','@GetResponse3','@GetResponse4','@GetResponse5','@GetResponse6','@GetResponse7','@GetResponse8','@GetResponse9','@GetResponse10','@GetResponse11','@GetResponse12','@GetResponse13','@GetResponse14','@GetResponse15','@GetResponse16']
+},
+CreateTaskRestData: {
+Requests:['@PostRequest1'],
+Responses: ['@PostResponse1']
+},
+TaskAssignCreateTaskRestData:{
+Requests: ['@TaskAssigneeRequestStep1','@TaskAssigneeRequestStep2','@TaskAssigneeRequestStep3','@TaskAssigneeRequestStep4','@TaskAssigneeRequestStep5','@TaskAssigneeRequestStep6','@TaskAssigneeRequestStep7','@TaskAssigneeRequestStep8'],
+Responses: ['@TaskAssigneeResponseStep1','@TaskAssigneeResponseStep2','@TaskAssigneeResponseStep3','@TaskAssigneeResponseStep4','@TaskAssigneeResponseStep5','@TaskAssigneeResponseStep6','@TaskAssigneeResponseStep7','@TaskAssigneeResponseStep8']
+},
+TaskAssignCreateTaskErrorsRestData:{
+Requests: ['@TaskAssigneeRequestStep9','@TaskAssigneeRequestStep10','@TaskAssigneeRequestStep11','@TaskAssigneeRequestStep12','@TaskAssigneeRequestStep13'],
+Responses: ['@TaskAssigneeResponseStep9','@TaskAssigneeResponseStep10','@TaskAssigneeResponseStep11','@TaskAssigneeResponseStep12','@TaskAssigneeResponseStep13']
+},
+TaskAssignCreateTaskErrorsUsr4RestData:{
+Requests: ['@TaskAssigneeRequestStep14'],
+Responses: ['@TaskAssigneeResponseStep14']
+},
+TaskAssignCreateTaskErrorsUsr6RestData:{
+Requests: ['@TaskAssigneeRequestStep15','@TaskAssigneeRequestStep16'],
+Responses: ['@TaskAssigneeResponseStep15','@TaskAssigneeResponseStep16']
+},
+TaskAssignCreateTaskErrorsUsr7RestData:{
+Requests: ['@TaskAssigneeRequestStep17'],
+Responses: ['@TaskAssigneeResponseStep17']
+},
+TaskAssignPutTaskAssignmentUsr1RestData:{
+Requests: ['@TaskAssigneePutRequestStep1','@TaskAssigneePutRequestStep3','@TaskAssigneePutRequestStep4','@TaskAssigneePutRequestStep5','@TaskAssigneePutRequestStep6','@TaskAssigneePutRequestStep7','@TaskAssigneePutRequestStep12','@TaskAssigneePutRequestStep17','@TaskAssigneePutRequestStep18'],
+Responses: ['@TaskAssigneePutResponseStep1','@TaskAssigneePutResponseStep3','@TaskAssigneePutResponseStep4','@TaskAssigneePutResponseStep5','@TaskAssigneePutResponseStep6','@TaskAssigneePutResponseStep7','@TaskAssigneePutResponseStep12','@TaskAssigneePutResponseStep17','@TaskAssigneePutResponseStep18']
+},
+TaskAssignPutTaskAssignmentUsr8RestData:{
+Requests: ['@TaskAssigneePutRequestStep15'],
+Responses: ['@TaskAssigneePutResponseStep15']
+},
+TaskAssignPutTaskAssignmentErrorUsr1RestData:{
+Requests: ['@TaskAssigneePutRequestStep2','@TaskAssigneePutRequestStep16','@TaskAssigneePutRequestStep19','@TaskAssigneePutRequestStep20'],
+Responses: ['@TaskAssigneePutResponseStep2','@TaskAssigneePutResponseStep16','@TaskAssigneePutResponseStep19','@TaskAssigneePutResponseStep20']
+},
+TaskAssignPutTaskAssignmentErrorUsr4RestData:{
+Requests: ['@TaskAssigneePutRequestStep8'],
+Responses: ['@TaskAssigneePutResponseStep8']
+},
+TaskAssignPutTaskAssignmentErrorUsr5RestData:{
+Requests: ['@TaskAssigneePutRequestStep9'],
+Responses: ['@TaskAssigneePutResponseStep9']
+},
+TaskAssignPutTaskAssignmentErrorUsr7RestData:{
+Requests: ['@TaskAssigneePutRequestStep10'],
+Responses: ['@TaskAssigneePutResponseStep10']
+},
+TaskAssignPutTaskAssignmentErrorUsr8RestData:{
+Requests: ['@TaskAssigneePutRequestStep11','@TaskAssigneePutRequestStep14'],
+Responses: ['@TaskAssigneePutResponseStep11','@TaskAssigneePutResponseStep14']
+},
+TaskAssignPutTaskAssignmentErrorUsr6RestData:{
+Requests: ['@TaskAssigneePutRequestStep13'],
+Responses: ['@TaskAssigneePutResponseStep13']
+},
+TaskUpdatePutRequestUser3:{
+Requests: ['@UpdTaskPutRequestStep1', '@UpdTaskPutRequestStep4', '@UpdTaskPutRequestStep5', '@UpdTaskPutRequestStep6', '@UpdTaskPutRequestStep7', '@UpdTaskPutRequestStep8', '@UpdTaskPutRequestStep9', '@UpdTaskPutRequestStep10', '@UpdTaskPutRequestStep11', '@UpdTaskPutRequestStep12', '@UpdTaskPutRequestStep13', '@UpdTaskPutRequestStep14', '@UpdTaskPutRequestStep15', '@UpdTaskPutRequestStep16', '@UpdTaskPutRequestStep17', '@UpdTaskPutRequestStep18', '@UpdTaskPutRequestStep19', '@UpdTaskPutRequestStep37'],
+Responses: ['@UpdTaskPutResponseStep1', '@UpdTaskPutResponseStep4', '@UpdTaskPutResponseStep5', '@UpdTaskPutResponseStep6', '@UpdTaskPutResponseStep7', '@UpdTaskPutResponseStep8', '@UpdTaskPutResponseStep9', '@UpdTaskPutResponseStep10', '@UpdTaskPutResponseStep11', '@UpdTaskPutResponseStep12', '@UpdTaskPutResponseStep13', '@UpdTaskPutResponseStep14', '@UpdTaskPutResponseStep15', '@UpdTaskPutResponseStep16', '@UpdTaskPutResponseStep17', '@UpdTaskPutResponseStep18', '@UpdTaskPutResponseStep19', '@UpdTaskPutResponseStep37']
+},
+TaskUpdatePutRequestUser6:{
+Requests: ['@UpdTaskPutRequestStep20', '@UpdTaskPutRequestStep21', '@UpdTaskPutRequestStep22', '@UpdTaskPutRequestStep23', '@UpdTaskPutRequestStep24', '@UpdTaskPutRequestStep25'],
+Responses: ['@UpdTaskPutResponseStep20', '@UpdTaskPutResponseStep21', '@UpdTaskPutResponseStep22', '@UpdTaskPutResponseStep23', '@UpdTaskPutResponseStep24', '@UpdTaskPutResponseStep25']
+},
+TaskUpdatePutRequestUser2:{
+Requests: ['@UpdTaskPutRequestStep26'],
+Responses: ['@UpdTaskPutResponseStep26']
+},
+TaskUpdatePutRequestUser7:{
+Requests: ['@UpdTaskPutRequestStep27', '@UpdTaskPutRequestStep28', '@UpdTaskPutRequestStep29', '@UpdTaskPutRequestStep30', '@UpdTaskPutRequestStep31'],
+Responses: ['@UpdTaskPutResponseStep27', '@UpdTaskPutResponseStep28', '@UpdTaskPutResponseStep29', '@UpdTaskPutResponseStep30', '@UpdTaskPutResponseStep31']
+},
+TaskUpdatePutRequestUser8:{
+Requests: ['@UpdTaskPutRequestStep32'],
+Responses: ['@UpdTaskPutResponseStep32']
+},
+TaskUpdatePutRequestUser5:{
+Requests: ['@UpdTaskPutRequestStep33'],
+Responses: ['@UpdTaskPutResponseStep33']
+},
+TaskUpdatePutRequestUser1:{
+Requests: ['@UpdTaskPutRequestStep34'],
+Responses: ['@UpdTaskPutResponseStep34']
+},
+TaskUpdatePutRequestUser4:{
+Requests: ['@UpdTaskPutRequestStep35'],
+Responses: ['@UpdTaskPutResponseStep35']
+},
+IPBQA22844Step18: {
+Requests: ['@IPBQA22844Step18Request'],
+Responses: ['@IPBQA22844Step18Response']
+},
+IPBQA22844Step2: {
+Requests: ['@IPBQA22844Step2Request'],
+Responses: ['@IPBQA22844Step2Response']
+},
+IPBQA22844Step3457: {
+Requests: ['@IPBQA22844Step3457Request'],
+Responses: ['@IPBQA22844Step3457Response']
+},
+IPBQA22844Step9: {
+Requests: ['@IPBQA22844Step9Request'],
+Responses: ['@IPBQA22844Step9Response']
+},
+IPBQA22839Step1_2: {
+Requests: ['@IPBQA22839Step1Request','@IPBQA22839Step2Request'],
+Responses: ['@IPBQA22839Step1Response','@IPBQA22839Step2Response']
+},
+IPBQA22839Step4: {
+Requests: ['@IPBQA22839Step4Request'],
+Responses: ['@IPBQA22839Step4Response']
+},
+IPBQA22839Step5: {
+Requests: ['@IPBQA22839Step5Request'],
+Responses: ['@IPBQA22839Step5Response']
+},
+IPBQA22839Step6_7: {
+Requests: ['@IPBQA22839Step6Request','@IPBQA22839Step7Request'],
+Responses: ['@IPBQA22839Step6Response','@IPBQA22839Step7Response']
+},
+IPBQA22839Step8: {
+Requests: ['@IPBQA22839Step8Request'],
+Responses: ['@IPBQA22839Step8Response']
+},
+IPBQA22839Step9: {
+Requests: ['@IPBQA22839Step9Request'],
+Responses: ['@IPBQA22839Step9Response']
+},
+IPBQA22839Step10: {
+Requests: ['@IPBQA22839Step10Request'],
+Responses: ['@IPBQA22839Step10Response']
+},
+IPBQA22839Step11: {
+Requests: ['@IPBQA22839Step11Request'],
+Responses: ['@IPBQA22839Step11Response']
+}
+,
+IPBQA22839Step12_23: {
+Requests: ['@IPBQA22839Step12Request', '@IPBQA22839Step13Request', '@IPBQA22839Step14Request', '@IPBQA22839Step16Request', '@IPBQA22839Step17Request', '@IPBQA22839Step18Request', '@IPBQA22839Step19Request', '@IPBQA22839Step20Request', '@IPBQA22839Step21Request', '@IPBQA22839Step22Request', '@IPBQA22839Step23Request'],
+Responses: ['@IPBQA22839Step12Response', '@IPBQA22839Step13Response', '@IPBQA22839Step14Response', '@IPBQA22839Step16Response', '@IPBQA22839Step17Response', '@IPBQA22839Step18Response', '@IPBQA22839Step19Response', '@IPBQA22839Step20Response', '@IPBQA22839Step21Response', '@IPBQA22839Step22Response', '@IPBQA22839Step23Response']
+},
+IPBQA22828User1Note1Steps: {
+Requests: ['@IPBQA22828Step1Request', '@IPBQA22828Step2Request', '@IPBQA22828Step16Request', '@IPBQA22828Step17Request', '@IPBQA22828Step19Request', '@IPBQA22828Step20Request', '@IPBQA22828Step21Request', '@IPBQA22828Step22Request', '@IPBQA22828Step23Request', '@IPBQA22828Step24Request', '@IPBQA22828Step25Request', '@IPBQA22828Step26Request', '@IPBQA22828Step29Request'],
+Responses: ['@IPBQA22828Step1Response', '@IPBQA22828Step2Response', '@IPBQA22828Step16Response', '@IPBQA22828Step17Response', '@IPBQA22828Step19Response', '@IPBQA22828Step20Response', '@IPBQA22828Step21Response', '@IPBQA22828Step22Response', '@IPBQA22828Step23Response', '@IPBQA22828Step24Response', '@IPBQA22828Step25Response', '@IPBQA22828Step26Response', '@IPBQA22828Step29Response']
+},
+IPBQA22828User1NoteNoneExistingTaskIdSteps: {
+Requests: ['@IPBQA22828Step10Request'],
+Responses: ['@IPBQA22828Step10Response']
+},
+IPBQA22828User1NoteNoneExistingNoteIdSteps: {
+Requests: ['@IPBQA22828Step11Request'],
+Responses: ['@IPBQA22828Step11Response']
+},
+IPBQA22828User4Note1Steps: {
+Requests: ['@IPBQA22828Step6Request'],
+Responses: ['@IPBQA22828Step6Response']
+},
+IPBQA22828User5Note1Steps: {
+Requests: ['@IPBQA22828Step7Request'],
+Responses: ['@IPBQA22828Step7Response']
+},
+IPBQA22828User8Note1Steps: {
+Requests: ['@IPBQA22828Step8Request','@IPBQA22828Step27Request'],
+Responses: ['@IPBQA22828Step8Response','@IPBQA22828Step27Response']
+},
+IPBQA22828User8Note2Steps: {
+Requests: ['@IPBQA22828Step28Request'],
+Responses: ['@IPBQA22828Step28Response']
+},
+IPBQA22828User6Note1Steps: {
+Requests: ['@IPBQA22828Step9Request'],
+Responses: ['@IPBQA22828Step9Response']
+},
+IPBQA22828User7Note1Steps: {
+Requests: ['@IPBQA22828Step12Request'],
+Responses: ['@IPBQA22828Step12Response']
+},
+IPBQA22828User2Note1Steps: {
+Requests: ['@IPBQA22828Step13Request'],
+Responses: ['@IPBQA22828Step13Response']
+},
+IPBQA22828User3Note1Steps: {
+Requests: ['@IPBQA22828Step14Request'],
+Responses: ['@IPBQA22828Step14Response']
+},
+
+IPBQA23010Step1: {
+Requests: ['@IPBQA23010RequestStep1'],
+Responses: []
+},
+
+IPBQA23010Step2: {
+Requests: ['@IPBQA23010RequestStep2'],
+Responses: []
+}
+}
+#Preconditions part
+CreateTaskForRest1 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'TasksRest1',
+    Entity Type: 'Quote',
+    Task Name: 'TasksRest1Name',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}
+
+CreateTaskForRest2 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'TasksRest2',
+    Entity Type: 'Quote',
+    Task Name: 'TasksRest2Name',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}
+
+CreateTaskForRest3 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'TasksRest3',
+    Entity Type: 'Quote',
+    Task Name: 'TasksRest3Name',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}
+
+CreateTaskForRest4 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'BAMTASKRS1',
+    Entity Type: 'Customer',
+    Task Name: 'BAMTASKRS1Name',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}
+
+CreateTaskForRest5 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'TRATtask',
+    Entity Type: 'Quote',
+    Task Name: 'IPBQA22630_OTHER',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}
+
+CreateTaskForRest6 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'SUSPENDED_TASK_IPBQA22846',
+    Entity Type: 'Quote',
+    Task Name: 'SUSPENDED_TASK_IPBQA22846',
+    Effective Date: '$<today>',
+    Priority: '1',
+    Allow Task Process Suspense: 'Yes'
+  }
+}
+
+CreateTaskForRest7 : {
+  ManualTaskDefinitionTab: {
+    Definition Key: 'IPBQA22754_CUSTOMER_TASK',
+    Entity Type: 'Customer',
+    Task Name: 'IPBQA22754_CUSTOMER_TASK_NAME',
+    Effective Date: '$<today>',
+    Priority: '1'
+  }
+}
+
+AgencyProducer1 : {
+Channel : 'Agency',
+Agency Name : 'TaskRestAgency3'
+}
+
+AgencyProducer2 : {
+Channel : 'Agency',
+Agency Name : 'TaskRestAgency2'
+}
+
+AgencyProducer3 : {
+Channel : 'Agency',
+Agency Name : 'TRAT1name'
+}
+
+AgencyProducer4 : {
+Channel : 'Agency',
+Agency Name : 'TRAT2name'
+}
+
+CreateManualTask1 : {
+ CreateTaskActionTab: {
+    Type: 'Quote',
+    Task Name: 'TasksRest1Name',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>'
+  }
+}
+
+CreateManualTask2 : {
+ CreateTaskActionTab: {
+    Type: 'Quote',
+    Task Name: 'TasksRest2Name',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>'
+  }
+}
+
+CreateManualTask3 : {
+ CreateTaskActionTab: {
+    Type: 'Customer',
+    Task Name: 'BAMTASKRS1Name',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>'
+  }
+}
+
+CreateManualTask4 : {
+ CreateTaskActionTab: {
+    Type: 'Customer',
+    Task Name: 'Opportunity is in cold',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>'
+  }
+}
+
+CreateManualTask5 : {
+ CreateTaskActionTab: {
+    Type: 'Quote',
+    Task Name: 'Other',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>'
+  }
+}
+
+CreateManualTask6 : {
+ CreateTaskActionTab: {
+    Type: 'Quote',
+    Task Name: 'SUSPENDED_TASK_IPBQA22846',
+    Reference ID: '',
+    'Suspend?': 'Yes',
+    Task Suspense End Date: '$<today+1d:MM/dd/yyyy>',
+    Suspense Reason: 'Follow up needed',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>',
+    AssignTaskToActionTab: '@AssignTaskToActionTab'
+  }
+}
+
+CreateManualTask7 : {
+ CreateTaskActionTab: {
+    Type: 'Quote',
+    Task Name: 'Request Proposal',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>',
+    AssignTaskToActionTab: '@AssignTaskToActionTab'
+  }
+}
+
+CreateManualTask8 : {
+ CreateTaskActionTab: {
+    Type: 'Quote',
+    Task Name: 'Request Issue',
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy hh:mm a>',
+    AssignTaskToActionTab: '@AssignTaskToActionTab'
+  }
+}
+
+AssignTaskToActionTab: {
+    Queue: 'General'
+}
+
+AssignToTRATUsr2: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Last Name: 'TRATUsr2'
+  }
+}
+
+#rest part started
+GetRequest1 : {
+    agencyCd : "TaskRestAgency3",
+    completionDateAfter : '$<today-2d:yyyy-MM-dd>',
+    completionDateBefore : '$<today-1d:yyyy-MM-dd>',
+    name : "TasksRest2Name",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse1 : {
+    responses : ['@FirstResponseAgency1'],
+    logMessage: "GetResponse1"
+}
+
+FirstResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId : "task2"
+}
+
+GetRequest2 : {
+    agencyCd : "TaskRestAgency3NotExisting",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse2 : {
+    responses : [],
+    logMessage: "GetResponse2"
+}
+
+GetRequest3 : {
+    agencyCd : "TaskRestAgency3",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse3 : {
+    responses : ['@ThirdResponseAgency1','@ThirdResponseAgency2','@ThirdResponseAgency3'],
+    logMessage: "GetResponse3"
+}
+
+ThirdResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task1"
+}
+
+ThirdResponseAgency2 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId: "task2"
+}
+
+ThirdResponseAgency3 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task5"
+}
+
+GetRequest4 : {
+    agencyCd : "TaskRestAgency2",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse4 : {
+    responses : ['@FourthResponseAgency1','@FourthResponseAgency2'],
+    logMessage: "GetResponse4"
+}
+
+FourthResponseAgency1 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest1Name",
+    taskId: "task3"
+}
+
+FourthResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest2Name",
+    taskId: "task4"
+}
+
+GetRequest5 : {
+    agencyCd : "TaskRestAgency1",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse5 : {
+    responses : [],
+    logMessage: "GetResponse5"
+}
+
+GetRequest6 : {
+    name : "NonExistingName",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse6 : {
+    responses : [],
+    logMessage: "GetResponse6"
+}
+
+GetRequest7 : {
+    name : "TasksRest1Name",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse7 : {
+    responses : ['@SeventhResponseAgency1','@SeventhResponseAgency2','@SeventhResponseAgency3'],
+    logMessage: "GetResponse7"
+}
+
+SeventhResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task1"
+}
+
+SeventhResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest1Name",
+    taskId: "task3"
+}
+
+SeventhResponseAgency3 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task5"
+}
+
+GetRequest8 : {
+    name : "TasksRest2Name",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse8 : {
+    responses : ['@EighthResponseAgency1','@EighthResponseAgency2'],
+    logMessage: "GetResponse8"
+}
+
+EighthResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId: "task2"
+}
+
+EighthResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest2Name",
+    taskId: "task4"
+}
+
+GetRequest9 : {
+    completionDateAfter : '$<today-2d:yyyy-MM-dd>',
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse9 : {
+    responses : ['@NinthResponseAgency1','@NinthResponseAgency2','@NinthResponseAgency3','@NinthResponseAgency4'],
+    logMessage: "GetResponse9"
+}
+
+NinthResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId: "task2"
+}
+
+NinthResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest1Name",
+    taskId: "task3"
+}
+
+NinthResponseAgency3 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest2Name",
+    taskId: "task4"
+}
+
+NinthResponseAgency4 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task5"
+}
+
+GetRequest10 : {
+    completionDateAfter : '$<today-1d:yyyy-MM-dd>',
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse10 : {
+    responses : ['@TenthResponseAgency1','@TenthResponseAgency2'],
+    logMessage: "GetResponse10"
+}
+
+TenthResponseAgency1 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest1Name",
+    taskId: "task3"
+}
+
+TenthResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest2Name",
+    taskId: "task4"
+}
+
+GetRequest11 : {
+    completionDateAfter : "$<today:yyyy-MM-dd>",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse11 : {
+    responses : ['@EleventhResponseAgency1'],
+    logMessage: "GetResponse11"
+}
+
+EleventhResponseAgency1 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest2Name",
+    taskId: "task4"
+}
+
+GetRequest12 : {
+    completionDateAfter : '$<today+1d:yyyy-MM-dd>',
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse12 : {
+    responses : [],
+    logMessage: "GetResponse12"
+}
+
+GetRequest13 : {
+    completionDateBefore : '$<today-2d:yyyy-MM-dd>',
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse13 : {
+    responses : [],
+    logMessage: "GetResponse13"
+}
+
+GetRequest14 : {
+    completionDateBefore : '$<today-1d:yyyy-MM-dd>',
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse14 : {
+    responses : ['@FourteenthResponseAgency1','@FourteenthResponseAgency2'],
+    logMessage: "GetResponse14"
+}
+
+FourteenthResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId: "task2"
+}
+
+FourteenthResponseAgency2 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task5"
+}
+
+GetRequest15 : {
+    completionDateBefore : "$<today:yyyy-MM-dd>",
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse15 : {
+    responses : ['@FifteenthResponseAgency1','@FifteenthResponseAgency2','@FifteenthResponseAgency3'],
+    logMessage: "GetResponse15"
+}
+
+FifteenthResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId: "task2"
+}
+
+FifteenthResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest1Name",
+    taskId: "task3"
+}
+
+FifteenthResponseAgency3 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task5"
+}
+
+GetRequest16 : {
+    completionDateBefore : '$<today+1d:yyyy-MM-dd>',
+    assignee : 'TestUserForRestTasks'
+}
+
+GetResponse16 : {
+    responses : ['@SixteenthResponseAgency1','@SixteenthResponseAgency2','@SixteenthResponseAgency3','@SixteenthResponseAgency4'],
+    logMessage: "GetResponse16"
+}
+
+SixteenthResponseAgency1 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest2Name",
+    taskId: "task2"
+}
+
+SixteenthResponseAgency2 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest1Name",
+    taskId: "task3"
+}
+
+SixteenthResponseAgency3 : {
+    agencyCd : "TaskRestAgency2",
+    name : "TasksRest2Name",
+    taskId: "task4"
+}
+
+SixteenthResponseAgency4 : {
+    agencyCd : "TaskRestAgency3",
+    name : "TasksRest1Name",
+    taskId: "task5"
+}
+
+PostRequest1 : {
+    entityType : "Quote",
+    processKey : 'TasksRest3',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: "DATE",
+    dueDateTime: '$<today:yyyy-MM-dd>',
+    assignmentType: 'User',
+    assignmentValue: 'qa',
+    taskDescription: 'PostRequest1 description'
+}
+
+PostResponse1 : {
+    responses : ['@FirstPostResponse1'],
+    logMessage: 'PostResponse1'
+}
+
+FirstPostResponse1: {
+    entityType : "Quote",
+    processKey : 'TasksRest3',
+    referenceId: '',
+    priority: '1',
+    assignmentType: 'User',
+    assignmentValue: 'qa',
+    taskDescription: 'PostRequest1 description'
+}
+
+TaskAssigneeRequestStep1 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    queueCode: 'General',
+    userName: 'TRATUsr1',
+    taskDescription: 'TaskAssigneeRequestStep1 description'
+}
+
+TaskAssigneeResponseStep1 : {
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    displayValue: 'General',
+    queueCode: 'General',
+    queueDisplayValue: 'General',
+    userName : 'TRATUsr1',
+    userDisplayValue: 'TRATUsr1 TRATUsr1',
+    logMessage: 'TaskAssigneeResponseStep1'
+}
+
+TaskAssigneeRequestStep2 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep2 description'
+}
+
+TaskAssigneeResponseStep2 : {
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr1',
+    displayValue: 'TRATUsr1 TRATUsr1',
+    userName : 'TRATUsr1',
+    userDisplayValue: 'TRATUsr1 TRATUsr1',
+    logMessage: 'TaskAssigneeResponseStep2'
+}
+
+TaskAssigneeRequestStep3 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr3',
+    taskDescription: 'TaskAssigneeRequestStep3 description'
+}
+
+TaskAssigneeResponseStep3 : {
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr3',
+    displayValue: 'TRATUsr3 TRATUsr3',
+    userName : 'TRATUsr3',
+    userDisplayValue: 'TRATUsr3 TRATUsr3',
+    logMessage: 'TaskAssigneeResponseStep3'
+}
+
+TaskAssigneeRequestStep4 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    taskDescription: 'TaskAssigneeRequestStep4 description'
+}
+
+TaskAssigneeResponseStep4 : {
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    displayValue: 'General',
+    queueCode: 'General',
+    queueDisplayValue: 'General',
+    logMessage: 'TaskAssigneeResponseStep4'
+}
+
+TaskAssigneeRequestStep5 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    queueCode: 'General',
+    taskDescription: 'TaskAssigneeRequestStep5 description'
+}
+
+TaskAssigneeResponseStep5 : {
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    displayValue: 'General',
+    queueCode: 'General',
+    queueDisplayValue: 'General',
+    logMessage: 'TaskAssigneeResponseStep5'
+}
+
+TaskAssigneeRequestStep6 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    userName: 'TRATUsr1',
+    taskDescription: 'TaskAssigneeRequestStep6 description'
+}
+
+TaskAssigneeResponseStep6 : {
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr1',
+    displayValue: 'TRATUsr1 TRATUsr1',
+    userName : 'TRATUsr1',
+    userDisplayValue: 'TRATUsr1 TRATUsr1',
+    logMessage: 'TaskAssigneeResponseStep6'
+}
+
+TaskAssigneeRequestStep7 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep7 description',
+    userName: 'TRATUsr1',
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    queueCode: 'Nurse Review'
+}
+
+TaskAssigneeResponseStep7 : {
+    assignmentType: 'Queue',
+    assignmentValue: 'Nurse Review',
+    displayValue: 'Nurse Review',
+    queueCode: 'Nurse Review',
+    queueDisplayValue: 'Nurse Review',
+    userName : 'TRATUsr1',
+    userDisplayValue: 'TRATUsr1 TRATUsr1',
+    logMessage: 'TaskAssigneeResponseStep7'
+}
+
+TaskAssigneeRequestStep8 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep8 description',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr1',
+    queueCode: 'General',
+    userName: 'TRATUsr3'
+}
+
+TaskAssigneeResponseStep8 : {
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    displayValue: 'General',
+    queueCode: 'General',
+    queueDisplayValue: 'General',
+    userName : 'TRATUsr3',
+    userDisplayValue: 'TRATUsr3 TRATUsr3',
+    logMessage: 'TaskAssigneeResponseStep8'
+}
+
+TaskAssigneeRequestStep9 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep9 description',
+    userName: 'TRATUsr2',
+    assignmentType: null,
+    assignmentValue: null,
+    queueCode: null
+}
+
+TaskAssigneeResponseStep9 : {
+    errorCode: 'err_wrong_assignee_for_task_hdr',
+    message: 'Task can not be assigned to : TRATUsr2 TRATUsr2 due to Book Of Business rules.',
+    logMessage: 'TaskAssigneeResponseStep9'
+}
+
+TaskAssigneeRequestStep10 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep10 description',
+    userName: 'NON_EXISTING666',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr1',
+    queueCode: null
+}
+
+TaskAssigneeResponseStep10 : {
+    errorCode: 'UAEC001',
+    message: 'User is unavailable.',
+    logMessage: 'TaskAssigneeResponseStep10'
+}
+
+TaskAssigneeRequestStep11 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep11 description',
+    userName: null,
+    assignmentType: 'Queue',
+    assignmentValue: 'General',
+    queueCode: 'GeneralA'
+}
+
+TaskAssigneeResponseStep11 : {
+    errorCode: '422',
+    message: 'Assignment value is invalid',
+    logMessage: 'TaskAssigneeResponseStep11'
+}
+
+TaskAssigneeRequestStep12 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep12 description',
+    userName: null,
+    assignmentType: 'null',
+    assignmentValue: null,
+    queueCodeA: 'General'
+}
+
+TaskAssigneeResponseStep12 : {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'TaskAssigneeResponseStep12'
+}
+
+TaskAssigneeRequestStep13 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep13 description',
+    userNameA: 'TRATUsr1',
+    assignmentType: 'null',
+    assignmentValue: 'null',
+    queueCode: 'General'
+}
+
+TaskAssigneeResponseStep13 : {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.',
+    logMessage: 'TaskAssigneeResponseStep13'
+}
+
+TaskAssigneeRequestStep14 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep14 description',
+    userNameA: null,
+    assignmentType: null,
+    assignmentValue: null,
+    queueCode: 'General'
+}
+
+TaskAssigneeResponseStep14 : {
+    errorCode: '403',
+    message: 'Access denied while assigning IPBQA22630_OTHER task',
+    logMessage: 'TaskAssigneeResponseStep14'
+}
+
+TaskAssigneeRequestStep15 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep15 description',
+    userName: 'TRATUsr1',
+    assignmentType: null,
+    assignmentValue: null,
+    queueCode: null
+}
+
+TaskAssigneeResponseStep15 : {
+    errorCode: '403',
+    message: 'Access denied while assigning IPBQA22630_OTHER task',
+    logMessage: 'TaskAssigneeResponseStep15'
+}
+
+TaskAssigneeRequestStep16 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep16 description',
+    userName: 'TRATUsr6',
+    assignmentType: null,
+    assignmentValue: null,
+    queueCode: null
+}
+
+TaskAssigneeResponseStep16 : {
+    errorCode: '403',
+    message: 'Access denied while assigning IPBQA22630_OTHER task',
+    logMessage: 'TaskAssigneeResponseStep16'
+}
+
+TaskAssigneeRequestStep17 : {
+    entityType : "Quote",
+    processKey : 'TRATtask',
+    referenceId: '',
+    priority: '1',
+    dueTypeDate: 'PERIOD',
+    dueDays: '1',
+    taskDescription: 'TaskAssigneeRequestStep17 description',
+    userNameA: null,
+    assignmentType: null,
+    assignmentValue: null,
+    queueCode: 'General'
+}
+
+TaskAssigneeResponseStep17 : {
+    errorCode: '403',
+    message: 'Access denied while assigning IPBQA22630_OTHER task',
+    logMessage: 'TaskAssigneeResponseStep17'
+}
+
+TaskAssigneePutRequestStep1 : {
+    taskId: '2',
+    queueCode: 'General',
+    queueDisplayValue: 'General',
+    userName: 'TRATUsr3',
+    userDisplayValue: 'TRATUsr3 TRATUsr3'
+}
+
+TaskAssigneePutResponseStep1 : {
+   assignmentType: 'Queue',
+   assignmentValue: 'General',
+   displayValue: 'General',
+   queueCode: 'General',
+   queueDisplayValue: 'General',
+   userName: 'TRATUsr3',
+   userDisplayValue: 'TRATUsr3 TRATUsr3',
+   logMessage: 'TaskAssigneePutResponseStep1'
+}
+
+TaskAssigneePutRequestStep2 : {
+    taskId: '3',
+    queueDisplayValue: 'General',
+    userDisplayValue: 'TRATUsr1 TRATUsr1'
+}
+
+TaskAssigneePutResponseStep2 : {
+   errorCode: '422',
+   message: 'Assignment value is invalid',
+   logMessage: 'TaskAssigneePutResponseStep2'
+}
+
+TaskAssigneePutRequestStep3 : {
+    taskId: '6',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr3',
+}
+
+TaskAssigneePutResponseStep3 : {
+   assignmentType: 'User',
+   assignmentValue: 'TRATUsr3',
+   displayValue: 'TRATUsr3 TRATUsr3',
+   userName: 'TRATUsr3',
+   userDisplayValue: 'TRATUsr3 TRATUsr3',
+      logMessage: 'TaskAssigneePutResponseStep3'
+}
+
+TaskAssigneePutRequestStep4 : {
+    taskId: '4',
+    assignmentType: 'Queue',
+    assignmentValue: 'Nurse Review',
+}
+
+TaskAssigneePutResponseStep4 : {
+   assignmentType: 'Queue',
+   assignmentValue: 'Nurse Review',
+   displayValue: 'Nurse Review',
+   queueCode: 'Nurse Review',
+   queueDisplayValue: 'Nurse Review',
+   logMessage: 'TaskAssigneePutResponseStep4'
+}
+
+TaskAssigneePutRequestStep5 : {
+    taskId: '4',
+    queueCode: 'General',
+}
+
+TaskAssigneePutResponseStep5 : {
+   assignmentType: 'Queue',
+   assignmentValue: 'General',
+   displayValue: 'General',
+   queueCode: 'General',
+   queueDisplayValue: 'General',
+   logMessage: 'TaskAssigneePutResponseStep5'
+}
+
+TaskAssigneePutRequestStep6 : {
+    taskId: '3',
+    userName: 'TRATUsr4',
+}
+
+TaskAssigneePutResponseStep6 : {
+   assignmentType: 'User',
+   assignmentValue: 'TRATUsr4',
+   displayValue: 'TRATUsr4 TRATUsr4',
+   userName: 'TRATUsr4',
+   userDisplayValue: 'TRATUsr4 TRATUsr4',
+   logMessage: 'TaskAssigneePutResponseStep6'
+}
+
+TaskAssigneePutRequestStep7 : {
+    taskId: '1',
+    queueCode: 'Nurse Review',
+}
+
+TaskAssigneePutResponseStep7 : {
+   assignmentType: 'Queue',
+   assignmentValue: 'Nurse Review',
+   displayValue: 'Nurse Review',
+   queueCode: 'Nurse Review',
+   queueDisplayValue: 'Nurse Review',
+   logMessage: 'TaskAssigneePutResponseStep7'
+}
+
+TaskAssigneePutRequestStep8 : {
+    taskId: '1',
+    queueCode: 'General'
+}
+
+TaskAssigneePutResponseStep8 : {
+   errorCode: '422',
+   message: 'Current user does not have Queue General Access permissions to Task with id TASK_ID_PUT_HERE state.; Access denied.',
+   errors: ['@RestError3','@RestError4'],
+   logMessage: 'TaskAssigneePutResponseStep8'
+}
+
+RestError3: {
+   errorCode: 'NQAPEC001',
+   message: 'Current user does not have Queue General Access permissions to Task with id TASK_ID_PUT_HERE state.',
+   field: 'ERROR'
+}
+
+RestError4: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+TaskAssigneePutRequestStep9 : {
+    taskId: '4',
+    queueCode: 'General'
+}
+
+TaskAssigneePutResponseStep9 : {
+   errorCode: '422',
+   message: 'Current user does not have Queue General Control permissions to change the Task with id TASK_ID_PUT_HERE state.; Access denied.',
+   errors: ['@RestError5','@RestError6'],
+   logMessage: 'TaskAssigneePutResponseStep9'
+}
+
+RestError5: {
+   errorCode: 'NQCPEC001',
+   message: 'Current user does not have Queue General Control permissions to change the Task with id TASK_ID_PUT_HERE state.',
+   field: 'ERROR'
+}
+
+RestError6: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+TaskAssigneePutRequestStep10 : {
+    taskId: '3',
+    queueCode: 'General'
+}
+
+TaskAssigneePutResponseStep10 : {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   logMessage: 'TaskAssigneePutResponseStep10'
+}
+
+TaskAssigneePutRequestStep11 : {
+    taskId: '6',
+    queueCode: 'General'
+}
+
+TaskAssigneePutResponseStep11 : {
+   errorCode: '422',
+   message: 'Access denied.; Access denied.',
+   errors: ['@RestError7','@RestError8'],
+   logMessage: 'TaskAssigneePutResponseStep11'
+}
+
+RestError7: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+RestError8: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+TaskAssigneePutRequestStep12 : {
+    taskId: '1',
+    userName: 'TRATUsr3'
+}
+
+TaskAssigneePutResponseStep12 : {
+   assignmentType: 'User',
+   assignmentValue: 'TRATUsr3',
+   displayValue: 'TRATUsr3 TRATUsr3',
+   userName: 'TRATUsr3',
+   userDisplayValue: 'TRATUsr3 TRATUsr3',
+   logMessage: 'TaskAssigneePutResponseStep12'
+}
+
+TaskAssigneePutRequestStep13 : {
+    taskId: '1',
+    userName: 'TRATUsr1'
+}
+
+TaskAssigneePutResponseStep13 : {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   logMessage: 'TaskAssigneePutResponseStep13'
+}
+
+TaskAssigneePutRequestStep14 : {
+    taskId: '6',
+    userName: 'TRATUsr1'
+}
+
+TaskAssigneePutResponseStep14 : {
+   errorCode: '422',
+   message: 'Access denied.; Access denied.',
+   errors: ['@RestError7','@RestError8'],
+   logMessage: 'TaskAssigneePutResponseStep14'
+}
+
+RestError9: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+RestError10: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+TaskAssigneePutRequestStep15 : {
+    taskId: '2',
+    userName: 'TRATUsr1'
+}
+
+TaskAssigneePutResponseStep15 : {
+   assignmentType: 'User',
+   assignmentValue: 'TRATUsr1',
+   displayValue: 'TRATUsr1 TRATUsr1',
+   userName: 'TRATUsr1',
+   userDisplayValue: 'TRATUsr1 TRATUsr1',
+   logMessage: 'TaskAssigneePutResponseStep15'
+}
+
+TaskAssigneePutRequestStep16 : {
+    taskId: '3',
+    userName: 'TRATUsr2'
+}
+
+TaskAssigneePutResponseStep16 : {
+   errorCode: 'err_wrong_assignee_for_task_hdr',
+   message: 'Task can not be assigned to : TRATUsr2 TRATUsr2 due to Book Of Business rules.',
+   logMessage: 'TaskAssigneePutResponseStep16'
+}
+
+TaskAssigneePutRequestStep17 : {
+    taskId: '1',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr1',
+    queueCode: 'General',
+    userName: 'TRATUsr3'
+}
+
+TaskAssigneePutResponseStep17 : {
+   assignmentType: 'Queue',
+   assignmentValue: 'General',
+   displayValue: 'General',
+   queueCode: 'General',
+   queueDisplayValue: 'General',
+   userName: 'TRATUsr3',
+   userDisplayValue: 'TRATUsr3 TRATUsr3',
+   logMessage: 'TaskAssigneePutResponseStep17'
+}
+
+TaskAssigneePutRequestStep18 : {
+    taskId: '3',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr1',
+    queueCode: 'Nurse Review',
+    userName: 'TRATUsr3'
+}
+
+TaskAssigneePutResponseStep18 : {
+   assignmentType: 'Queue',
+   assignmentValue: 'Nurse Review',
+   displayValue: 'Nurse Review',
+   queueCode: 'Nurse Review',
+   queueDisplayValue: 'Nurse Review',
+   userName: 'TRATUsr3',
+   userDisplayValue: 'TRATUsr3 TRATUsr3',
+   logMessage: 'TaskAssigneePutResponseStep18'
+}
+
+TaskAssigneePutRequestStep19 : {
+    taskId: '1',
+    assignmentType: 'Queue',
+    assignmentValue: 'Nurse Review',
+    queueCode: 'Non_Existing_Queue'
+}
+
+TaskAssigneePutResponseStep19 : {
+   errorCode: '422',
+   message: 'Error, queue [Non_Existing_Queue] is not accessible. Please check if queue with this name was deployed properly.; Access denied.',
+   errors: ['@RestError1','@RestError2'],
+   logMessage: 'TaskAssigneePutResponseStep19'
+}
+
+RestError1: {
+   errorCode: 'queue not found',
+   message: 'Error, queue [Non_Existing_Queue] is not accessible. Please check if queue with this name was deployed properly.',
+   field: 'ERROR'
+}
+
+RestError2: {
+   errorCode: 'ADEC_001',
+   message: 'Access denied.',
+   field: 'ERROR'
+}
+
+TaskAssigneePutRequestStep20 : {
+    taskId: '1',
+    assignmentType: 'User',
+    assignmentValue: 'TRATUsr4',
+    userName: 'TRATUsr9'
+}
+
+TaskAssigneePutResponseStep20 : {
+   errorCode: 'UAEC001',
+   message: 'User is unavailable.',
+   logMessage: 'TaskAssigneePutResponseStep20'
+}
+#IPBQA-22587 started
+#step 1 start
+UpdTaskPutRequestStep1 : {
+    taskId: "task2",
+    priority : "4",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep1 updated description"
+}
+
+UpdTaskPutResponseStep1: {
+     responses: ["@UpdTaskPutResponseStep1_1"],
+     logMessage: "UpdTaskPutResponseStep1"
+}
+
+UpdTaskPutResponseStep1_1 : {
+    taskId: 'task2',
+    name: "Opportunity is in cold",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    warningDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    description: "UpdTaskPutRequestStep1 updated description",
+    priority: '@Priority1'
+}
+
+Priority1: {
+    key: "4",
+    displayValue: "4"
+}
+#steps 2-3 skipped
+#step 4 start
+UpdTaskPutRequestStep4 : {
+    taskId: "task2",
+    priority : "null",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep4 updated description"
+}
+
+UpdTaskPutResponseStep4: {
+     errorCode: 'WONPEC001',
+     message: "Priority is not set or is not valid for this task with name Opportunity is in cold and id TASK_ID_PUT_HERE.",
+     logMessage: "UpdTaskPutResponseStep4"
+}
+#step 5 start
+UpdTaskPutRequestStep5 : {
+    taskId: "task2",
+    priority : "a",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep5 updated description"
+}
+
+UpdTaskPutResponseStep5: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "UpdTaskPutResponseStep5"
+}
+#step 6 start
+UpdTaskPutRequestStep6 : {
+    taskId: "task2",
+    priority : "4",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep6 updated description"
+}
+
+UpdTaskPutResponseStep6: {
+     responses: ["@UpdTaskPutResponseStep6_1"],
+     logMessage: "UpdTaskPutResponseStep6"
+}
+
+UpdTaskPutResponseStep6_1 : {
+    taskId: 'task2',
+    name: "Opportunity is in cold",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    warningDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    description: "UpdTaskPutRequestStep6 updated description",
+    priority: '@Priority2'
+}
+
+Priority2: {
+    key: "4",
+    displayValue: "4"
+}
+#step 7 start
+UpdTaskPutRequestStep7 : {
+    taskId: "task2",
+    priority : "2",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep7 updated description"
+}
+
+UpdTaskPutResponseStep7: {
+     responses: ["@UpdTaskPutResponseStep7_1"],
+     logMessage: "UpdTaskPutResponseStep7"
+}
+
+UpdTaskPutResponseStep7_1 : {
+    taskId: 'task2',
+    name: "Opportunity is in cold",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    warningDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    description: "UpdTaskPutRequestStep7 updated description",
+    priority: '@Priority3'
+}
+
+Priority3: {
+    key: "2",
+    displayValue: "2"
+}
+#step 8 start
+UpdTaskPutRequestStep8 : {
+    taskId: "task2",
+    priority : "6",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep8 updated description"
+}
+
+UpdTaskPutResponseStep8: {
+     errorCode: 'WONPEC001',
+     message: "Priority is not set or is not valid for this task with name Opportunity is in cold and id TASK_ID_PUT_HERE.",
+     logMessage: "UpdTaskPutResponseStep8"
+}
+#step 9 start
+UpdTaskPutRequestStep9 : {
+    taskId: "task2",
+    priority : "2",
+    warningDate : "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep9 updated description"
+}
+
+UpdTaskPutResponseStep9: {
+     errorCode: 'Error: Invalid dates',
+     message: "Warning date/time cannot be equal or later than Due date/time",
+     logMessage: "UpdTaskPutResponseStep9"
+}
+
+#step 10 start
+UpdTaskPutRequestStep10 : {
+    taskId: "task2",
+    priority : "2",
+    warningDate : "a",
+    dueDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep10 updated description"
+}
+
+UpdTaskPutResponseStep10: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "UpdTaskPutResponseStep10"
+}
+
+#step 11 start
+UpdTaskPutRequestStep11 : {
+    taskId: "task2",
+    priority : "2",
+    warningDate : null,
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep11 updated description"
+}
+
+UpdTaskPutResponseStep11: {
+     responses: ["@UpdTaskPutResponseStep11_1"],
+     logMessage: "UpdTaskPutResponseStep11"
+}
+
+UpdTaskPutResponseStep11_1 : {
+    taskId: 'task2',
+    name: "Opportunity is in cold",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    description: "UpdTaskPutRequestStep11 updated description",
+    priority: '@Priority4'
+}
+
+Priority4: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 12 start
+UpdTaskPutRequestStep12 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep12 updated description"
+}
+
+UpdTaskPutResponseStep12: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep12"
+}
+
+#step 13 start
+UpdTaskPutRequestStep13 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: "$<today+1M+2d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep13 updated description"
+}
+
+UpdTaskPutResponseStep13: {
+     responses: ["@UpdTaskPutResponseStep13_1"],
+     logMessage: "UpdTaskPutResponseStep13"
+}
+
+UpdTaskPutResponseStep13_1 : {
+    taskId: 'task1',
+    agencyCd: 'TRAT2',
+    name: "Process Claim",
+    dueDate: "$<today+1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    description: "UpdTaskPutRequestStep13 updated description",
+    priority: '@Priority5'
+}
+
+Priority5: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 14 start
+UpdTaskPutRequestStep14 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: "a",
+    taskDescription: "UpdTaskPutRequestStep14 updated description"
+}
+
+UpdTaskPutResponseStep14: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "UpdTaskPutResponseStep14"
+}
+
+#step 15 start
+UpdTaskPutRequestStep15 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: "$<today-1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: "UpdTaskPutRequestStep15 updated description"
+}
+
+UpdTaskPutResponseStep15: {
+     responses: ["@UpdTaskPutResponseStep15_1"],
+     logMessage: "UpdTaskPutResponseStep15"
+}
+
+UpdTaskPutResponseStep15_1 : {
+    taskId: 'task1',
+    agencyCd: 'TRAT2',
+    name: "Process Claim",
+    dueDate: "$<today-1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    description: "UpdTaskPutRequestStep15 updated description",
+    priority: '@Priority6'
+}
+
+Priority6: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 16 start
+UpdTaskPutRequestStep16 : {
+    taskId: "task2",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: "UpdTaskPutRequestStep16 updated description"
+}
+
+UpdTaskPutResponseStep16: {
+     responses: ["@UpdTaskPutResponseStep16_1"],
+     logMessage: "UpdTaskPutResponseStep16"
+}
+
+UpdTaskPutResponseStep16_1 : {
+    taskId: 'task2',
+    name: "Opportunity is in cold",
+    description: "UpdTaskPutRequestStep16 updated description",
+    priority: '@Priority7'
+}
+
+Priority7: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 17 start
+UpdTaskPutRequestStep17 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: "$<rx:[1]{2001}>"
+}
+
+UpdTaskPutResponseStep17: {
+     errorCode: '422',
+     message: "Maximum allowed length is 2,000",
+     logMessage: "UpdTaskPutResponseStep17"
+}
+
+#step 18 start
+UpdTaskPutRequestStep18 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: "$<rx:[1]{2000}>"
+}
+
+UpdTaskPutResponseStep18: {
+     responses: ["@UpdTaskPutResponseStep18_1"],
+     logMessage: "UpdTaskPutResponseStep18"
+}
+
+UpdTaskPutResponseStep18_1 : {
+    taskId: 'task1',
+    agencyCd: 'TRAT2',
+    name: "Process Claim",
+    description: "$<rx:[1]{2000}>",
+    priority: '@Priority8'
+}
+
+Priority8: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 19 start
+UpdTaskPutRequestStep19 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep19: {
+     responses: ["@UpdTaskPutResponseStep19_1"],
+     logMessage: "UpdTaskPutResponseStep19"
+}
+
+UpdTaskPutResponseStep19_1 : {
+    taskId: 'task1',
+    agencyCd: 'TRAT2',
+    name: "Process Claim",
+    priority: '@Priority8'
+}
+
+#step 20 start
+UpdTaskPutRequestStep20 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep20: {
+     responses: ["@UpdTaskPutResponseStep20_1"],
+     logMessage: "UpdTaskPutResponseStep20"
+}
+
+UpdTaskPutResponseStep20_1 : {
+    taskId: 'task1',
+    agencyCd: 'TRAT2',
+    name: "Process Claim",
+    priority: '@Priority9'
+}
+
+Priority9: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 21 start
+UpdTaskPutRequestStep21 : {
+    taskId: "task1",
+    priority : "3",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep21: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep21"
+}
+
+#step 22 start
+UpdTaskPutRequestStep22 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep22: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep22"
+}
+
+#step 23 start
+UpdTaskPutRequestStep23 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep23: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep23"
+}
+
+#step 24 start
+UpdTaskPutRequestStep24 : {
+    taskId: "task1",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: "UpdTaskPutRequestStep24 updated description"
+}
+
+UpdTaskPutResponseStep24: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep24"
+}
+
+#step 25 start
+UpdTaskPutRequestStep25 : {
+    taskId: "task3",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep25: {
+     errorCode: '403',
+     message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+     logMessage: "UpdTaskPutResponseStep25"
+}
+
+#step 26 start
+UpdTaskPutRequestStep26 : {
+    taskId: "task3",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep26: {
+     responses: ["@UpdTaskPutResponseStep26_1"],
+     logMessage: "UpdTaskPutResponseStep26"
+}
+
+UpdTaskPutResponseStep26_1 : {
+    taskId: 'task3',
+    agencyCd: 'TRAT2',
+    name: "Other",
+    priority: '@Priority10'
+}
+
+Priority10: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 27 start
+UpdTaskPutRequestStep27 : {
+    taskId: "task3",
+    priority : "2",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep27: {
+     responses: ["@UpdTaskPutResponseStep27_1"],
+     logMessage: "UpdTaskPutResponseStep27"
+}
+
+UpdTaskPutResponseStep27_1 : {
+    taskId: 'task3',
+    agencyCd: 'TRAT2',
+    name: "Other",
+    priority: '@Priority11'
+}
+
+Priority11: {
+    key: "2",
+    displayValue: "2"
+}
+
+#step 28 start
+UpdTaskPutRequestStep28 : {
+    taskId: "task3",
+    priority : "3",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep28: {
+     responses: ["@UpdTaskPutResponseStep28_1"],
+     logMessage: "UpdTaskPutResponseStep28"
+}
+
+UpdTaskPutResponseStep28_1 : {
+    taskId: 'task3',
+    agencyCd: 'TRAT2',
+    name: "Other",
+    priority: '@Priority12'
+}
+
+Priority12: {
+    key: "3",
+    displayValue: "3"
+}
+
+#step 29 start
+UpdTaskPutRequestStep29 : {
+    taskId: "task3",
+    priority : "3",
+    warningDate : "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep29: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep29"
+}
+
+#step 30 start
+UpdTaskPutRequestStep30 : {
+    taskId: "task3",
+    priority : "3",
+    warningDate : null,
+    dueDate: "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep30: {
+     errorCode: 'ADEC_001',
+     message: "Access denied.",
+     logMessage: "UpdTaskPutResponseStep30"
+}
+
+#step 31 start
+UpdTaskPutRequestStep31 : {
+    taskId: "task3",
+    priority : "3",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: "UpdTaskPutRequestStep31 updated description"
+}
+
+UpdTaskPutResponseStep31: {
+     responses: ["@UpdTaskPutResponseStep31_1"],
+     logMessage: "UpdTaskPutResponseStep31"
+}
+
+UpdTaskPutResponseStep31_1 : {
+    taskId: 'task3',
+    agencyCd: 'TRAT2',
+    name: "Other",
+    description: 'UpdTaskPutRequestStep31 updated description',
+    priority: '@Priority13'
+}
+
+Priority13: {
+    key: "3",
+    displayValue: "3"
+}
+
+#step 32 start
+UpdTaskPutRequestStep32 : {
+    taskId: "task2",
+    priority : "3",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep32: {
+     errorCode: '403',
+     message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+     logMessage: "UpdTaskPutResponseStep32"
+}
+
+#step 33 start
+UpdTaskPutRequestStep33 : {
+    taskId: "task2",
+    priority : "3",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep33: {
+     errorCode: '403',
+     message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+     logMessage: "UpdTaskPutResponseStep33"
+}
+
+#step 34 start
+UpdTaskPutRequestStep34 : {
+    taskId: "task3",
+    priority : "5",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep34: {
+     errorCode: '422',
+     message: "Task does not exist.",
+     logMessage: "UpdTaskPutResponseStep34"
+}
+
+#step 35 start
+UpdTaskPutRequestStep35 : {
+    taskId: "task2",
+    priority : "5",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep35: {
+     errorCode: '403',
+     message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+     logMessage: "UpdTaskPutResponseStep35"
+}
+#step 36 skipped
+#step 37 start
+UpdTaskPutRequestStep37 : {
+    taskId: "6666667777",
+    priority : "5",
+    warningDate : null,
+    dueDate: null,
+    taskDescription: null
+}
+
+UpdTaskPutResponseStep37: {
+     errorCode: '422',
+     message: "Task does not exist.",
+     logMessage: "UpdTaskPutResponseStep37"
+}
+#IPBQA-22587 finished
+
+#IPBQA-22844 preconditions
+FirstNoteIPBQA22844: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'FirstNoteIPBQA22844',
+      description: 'FirstNoteIPBQA22844 desc'
+}
+
+SecondNoteIPBQA22844: {
+      category: 'UNDERWRITING',
+      confidential: 'true',
+      title: 'SecondNoteIPBQA22844',
+      description: 'SecondNoteIPBQA22844 desc'
+}
+
+FirstNoteUpdateIPBQA22844: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'FirstNoteIPBQA22844',
+      description: 'FirstNoteUpdateIPBQA22844 desc'
+}
+
+SecondNoteUpdateIPBQA22844: {
+      category: 'UNDERWRITING',
+      confidential: 'true',
+      title: 'SecondNoteIPBQA22844',
+      description: 'SecondNoteUpdateIPBQA22844 desc'
+}
+
+#IPBQA-22844 test steps
+
+IPBQA22844Step18Request: {
+  taskId: 'task1'
+}
+
+IPBQA22844Step18Response: {
+  responses: ['@IPBQA22844Step18Response1','@IPBQA22844Step18Response2'],
+  logMessage: 'IPBQA22844Step18Response'
+}
+
+IPBQA22844Step18Response1: {
+  category: 'UNDERWRITING',
+  confidential: 'true',
+  title: 'SecondNoteIPBQA22844',
+  description: 'SecondNoteUpdateIPBQA22844 desc',
+  performerId: 'TRATUsr3',
+  entityType: null,
+  userNoteName: null
+}
+
+IPBQA22844Step18Response2: {
+  category: 'OTHER',
+  confidential: 'false',
+  title: 'FirstNoteIPBQA22844',
+  description: 'FirstNoteUpdateIPBQA22844 desc',
+  performerId: 'TRATUsr2',
+  entityType: null,
+  userNoteName: null
+}
+
+IPBQA22844Step2Request: {
+  taskId: 'task1'
+}
+
+IPBQA22844Step2Response: {
+  errorCode: '422',
+  message: 'Task does not exist.',
+  logMessage: 'IPBQA22844Step2Response'
+}
+
+IPBQA22844Step3457Request: {
+  taskId: 'task1'
+}
+
+IPBQA22844Step3457Response: {
+  errorCode: '403',
+  message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+  logMessage: 'IPBQA22844Step3457Response'
+}
+
+IPBQA22844Step9Request: {
+  taskId: '69966996777666555'
+}
+
+IPBQA22844Step9Response: {
+  errorCode: '422',
+  message: 'Task does not exist.',
+  logMessage: 'IPBQA22844Step9Response'
+}
+
+#IPBQA-22844 test steps ends
+
+#IPBQA-22839 test steps starts
+IPBQA22839Step1Request: {
+      category: 'OTHER',
+      confidential: 'true',
+      title: 'IPBQA22839Step1Request',
+      description: 'IPBQA22839Step1Request desc'
+}
+
+IPBQA22839Step1Response: {
+      category: 'OTHER',
+      confidential: 'true',
+      title: 'IPBQA22839Step1Request',
+      description: 'IPBQA22839Step1Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step1Response'
+}
+
+IPBQA22839Step2Request: {
+      category: null,
+      confidential: null,
+      title: null,
+      description: null
+}
+
+IPBQA22839Step2Response: {
+      errorCode: 'bm0001',
+      message: 'Message text is required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step2Response'
+}
+
+IPBQA22839Step4Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step4Request',
+      description: 'IPBQA22839Step4Request desc'
+}
+
+IPBQA22839Step4Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step4Response'
+}
+
+IPBQA22839Step5Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step5Request',
+      description: 'IPBQA22839Step5Request desc'
+}
+
+IPBQA22839Step5Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step5Response'
+}
+
+IPBQA22839Step6Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step6Request',
+      description: 'IPBQA22839Step6Request desc'
+}
+
+IPBQA22839Step6Response: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step6Request',
+      description: 'IPBQA22839Step6Request desc',
+      entityType: null,
+      performerId: 'TestUserForRestNotes1',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step6Response'
+}
+
+IPBQA22839Step7Request: {
+      category: 'OTHER',
+      confidential: 'true',
+      title: 'IPBQA22839Step7Request',
+      description: 'IPBQA22839Step7Request desc'
+}
+
+IPBQA22839Step7Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step7Response'
+}
+
+IPBQA22839Step8Request: {
+      category: 'OTHER',
+      confidential: 'true',
+      title: 'IPBQA22839Step8Request',
+      description: 'IPBQA22839Step8Request desc'
+}
+
+IPBQA22839Step8Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step8Response'
+}
+
+IPBQA22839Step9Request: {
+      category: 'OTHER',
+      confidential: 'true',
+      title: 'IPBQA22839Step9Request',
+      description: 'IPBQA22839Step9Request desc'
+}
+
+IPBQA22839Step9Response: {
+      errorCode: '422',
+      message: 'Task does not exist.',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step9Response'
+}
+
+IPBQA22839Step10Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step10Request',
+      description: 'IPBQA22839Step10Request desc'
+}
+
+IPBQA22839Step10Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step10Response'
+}
+
+IPBQA22839Step11Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step11Request',
+      description: 'IPBQA22839Step11Request desc'
+}
+
+IPBQA22839Step11Response: {
+      errorCode: '422',
+      message: "Task does not exist.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step11Response'
+}
+
+IPBQA22839Step12Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step12Request',
+      description: 'IPBQA22839Step12Request desc'
+}
+
+IPBQA22839Step12Response: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22839Step12Request',
+      description: 'IPBQA22839Step12Request desc',
+      entityType: null,
+      performerId: 'TRATUsr3',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step12Response'
+}
+
+IPBQA22839Step13Request: {
+      category: null,
+      confidential: 'true',
+      title: null,
+      description: null
+}
+
+IPBQA22839Step13Response: {
+      errorCode: 'bm0001',
+      message: 'Message text is required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step13Response'
+}
+
+IPBQA22839Step14Request: {
+      category: null,
+      confidential: 'true',
+      title: 'IPBQA22839Step14Request',
+      description: 'IPBQA22839Step14Request desc'
+}
+
+IPBQA22839Step14Response: {
+      category: null,
+      confidential: 'true',
+      title: 'IPBQA22839Step14Request',
+      description: 'IPBQA22839Step14Request desc',
+      entityType: null,
+      performerId: 'TRATUsr3',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step14Response'
+}
+#Step 15 skipped
+IPBQA22839Step16Request: {
+      category: 'UNDERWRITING',
+      confidential: null,
+      title: 'IPBQA22839Step16Request',
+      description: 'IPBQA22839Step16Request desc'
+}
+
+IPBQA22839Step16Response: {
+      category: 'UNDERWRITING',
+      confidential: 'false',
+      title: 'IPBQA22839Step16Request',
+      description: 'IPBQA22839Step16Request desc',
+      entityType: null,
+      performerId: 'TRATUsr3',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step16Response'
+}
+
+IPBQA22839Step17Request: {
+      category: 'a',
+      confidential: null,
+      title: 'IPBQA22839Step17Request',
+      description: 'IPBQA22839Step17Request desc'
+}
+
+IPBQA22839Step17Response: {
+      errorCode: 'bm0007',
+      message: 'Category does not exist for target entity',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step17Response'
+}
+
+IPBQA22839Step18Request: {
+      category: null,
+      confidential: null,
+      title: '$<rx:[1]{255}>',
+      description: 'IPBQA22839Step18Request desc'
+}
+
+IPBQA22839Step18Response: {
+      errorCode: 'bm0005',
+      message: 'Title is to long (max 254 characters)',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step18Response'
+}
+
+IPBQA22839Step19Request: {
+      category: null,
+      confidential: null,
+      title: '$<rx:[1]{254}>',
+      description: 'IPBQA22839Step19Request desc'
+}
+
+IPBQA22839Step19Response: {
+      category: null,
+      confidential: 'false',
+      title: '$<rx:[1]{254}>',
+      description: 'IPBQA22839Step19Request desc',
+      entityType: null,
+      performerId: 'TRATUsr3',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step19Response'
+}
+
+IPBQA22839Step20Request: {
+      category: null,
+      confidential: null,
+      title: 'IPBQA22839Step20Request',
+      description: null
+}
+
+IPBQA22839Step20Response: {
+      errorCode: 'bm0001',
+      message: 'Message text is required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step20Response'
+}
+
+IPBQA22839Step21Request: {
+      category: null,
+      confidential: null,
+      title: 'IPBQA22839Step22Request',
+      description: '$<rx:[1]{2001}>$<rx:[1]{2000}>'
+}
+
+IPBQA22839Step21Response: {
+      errorCode: 'bm0004',
+      message: 'Maximum allowed length is 4000 characters, less with rich text formatting',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22839Step21Response'
+}
+
+IPBQA22839Step22Request: {
+      category: null,
+      confidential: null,
+      title: 'IPBQA22839Step22Request',
+      description: '$<rx:[1]{2000}>$<rx:[1]{2000}>'
+}
+
+IPBQA22839Step22Response: {
+      category: null,
+      confidential: 'false',
+      title: 'IPBQA22839Step22Request',
+      description: '$<rx:[1]{2000}>$<rx:[1]{2000}>',
+      entityType: null,
+      performerId: 'TRATUsr3',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step22Response'
+}
+
+IPBQA22839Step23Request: {
+      category: null,
+      confidential: null,
+      title: null,
+      description: 'IPBQA22839Step23Request desc'
+}
+
+IPBQA22839Step23Response: {
+      category: null,
+      confidential: 'false',
+      title: 'Task Note',
+      description: 'IPBQA22839Step23Request desc',
+      entityType: null,
+      performerId: 'TRATUsr3',
+      userNoteName: null,
+      logMessage: 'IPBQA22839Step23Response'
+}
+#IPBQA-22839 test steps ends
+
+#IPBQA-22828 test steps starts
+IPBQA22828Step1Request: {
+      category: 'UNDERWRITING',
+      confidential: 'true',
+      title: 'IPBQA22828Step1Request',
+      description: 'IPBQA22828Step1Request desc'
+}
+
+IPBQA22828Step1Response: {
+      category: 'UNDERWRITING',
+      confidential: 'true',
+      title: 'IPBQA22828Step1Request',
+      description: 'IPBQA22828Step1Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step1Response'
+}
+
+IPBQA22828Step2Request: {
+      category: null,
+      confidential: null,
+      title: null,
+      description: null
+}
+
+IPBQA22828Step2Response: {
+      errorCode: '422',
+      message: 'User Note - Title required; Message text is required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step2Response'
+}
+
+IPBQA22828Step6Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step6Request',
+      description: 'IPBQA22828Step6Request desc'
+}
+
+IPBQA22828Step6Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step6Response'
+}
+
+IPBQA22828Step7Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step7Request',
+      description: 'IPBQA22828Step7Request desc'
+}
+
+IPBQA22828Step7Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step7Response'
+}
+
+IPBQA22828Step8Request: {
+      category: 'OTHER',
+      confidential: 'true',
+      title: 'IPBQA22828Step8Request',
+      description: 'IPBQA22828Step8Request desc'
+}
+
+IPBQA22828Step8Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step8Response'
+}
+
+IPBQA22828Step9Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step9Request',
+      description: 'IPBQA22828Step9Request desc'
+}
+
+IPBQA22828Step9Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step9Response'
+}
+
+IPBQA22828Step10Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step10Request',
+      description: 'IPBQA22828Step10Request desc'
+}
+
+IPBQA22828Step10Response: {
+      errorCode: '422',
+      message: "Task does not exist.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step10Response'
+}
+
+IPBQA22828Step11Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step11Request',
+      description: 'IPBQA22828Step11Request desc'
+}
+
+IPBQA22828Step11Response: {
+      errorCode: 'bm0010',
+      message: "User Note does not exist",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step11Response'
+}
+
+IPBQA22828Step12Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step12Request',
+      description: 'IPBQA22828Step12Request desc'
+}
+
+IPBQA22828Step12Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step12Response'
+}
+
+IPBQA22828Step13Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step13Request',
+      description: 'IPBQA22828Step13Request desc'
+}
+
+IPBQA22828Step13Response: {
+      errorCode: '422',
+      message: "Task does not exist.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step13Response'
+}
+
+IPBQA22828Step14Request: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step14Request',
+      description: 'IPBQA22828Step14Request desc'
+}
+
+IPBQA22828Step14Response: {
+      category: 'OTHER',
+      confidential: 'false',
+      title: 'IPBQA22828Step14Request',
+      description: 'IPBQA22828Step14Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step14Response'
+}
+
+IPBQA22828Step16Request: {
+      category: null,
+      confidential: 'true',
+      title: null,
+      description: null
+}
+
+IPBQA22828Step16Response: {
+      errorCode: '422',
+      message: 'User Note - Title required; Message text is required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step16Response'
+}
+
+IPBQA22828Step17Request: {
+      category: null,
+      confidential: 'true',
+      title: 'IPBQA22828Step17Request',
+      description: 'IPBQA22828Step17Request desc'
+}
+
+IPBQA22828Step17Response: {
+      category: null,
+      confidential: 'true',
+      title: 'IPBQA22828Step17Request',
+      description: 'IPBQA22828Step17Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step17Response'
+}
+
+IPBQA22828Step19Request: {
+      category: 'UNDERWRITING',
+      confidential: null,
+      title: 'IPBQA22828Step19Request',
+      description: 'IPBQA22828Step19Request desc'
+}
+
+IPBQA22828Step19Response: {
+      category: 'UNDERWRITING',
+      confidential: 'false',
+      title: 'IPBQA22828Step19Request',
+      description: 'IPBQA22828Step19Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step19Response'
+}
+
+IPBQA22828Step20Request: {
+      category: 'UNDERWRITING',
+      confidential: null,
+      title: 'IPBQA22828Step20Request',
+      description: 'IPBQA22828Step20Request desc'
+}
+
+IPBQA22828Step20Response: {
+      category: 'UNDERWRITING',
+      confidential: 'false',
+      title: 'IPBQA22828Step20Request',
+      description: 'IPBQA22828Step20Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step20Response'
+}
+
+IPBQA22828Step21Request: {
+      category: null,
+      confidential: null,
+      title: '$<rx:[1]{255}>',
+      description: 'IPBQA22828Step21Request desc'
+}
+
+IPBQA22828Step21Response: {
+      errorCode: 'bm0005',
+      message: 'Title is to long (max 254 characters)',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step21Response'
+}
+
+IPBQA22828Step22Request: {
+      category: null,
+      confidential: null,
+      title: '$<rx:[1]{254}>',
+      description: 'IPBQA22828Step22Request desc'
+}
+
+IPBQA22828Step22Response: {
+      confidential: 'false',
+      title: '$<rx:[1]{254}>',
+      description: 'IPBQA22828Step22Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step22Response'
+}
+
+IPBQA22828Step23Request: {
+      category: null,
+      confidential: null,
+      title: 'IPBQA22828Step23Request',
+      description: null
+}
+
+IPBQA22828Step23Response: {
+      errorCode: 'bm0001',
+      message: 'Message text is required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step23Response'
+}
+
+IPBQA22828Step24Request: {
+      category: null,
+      confidential: null,
+      title: 'IPBQA22828Step24Request',
+      description: '$<rx:[1]{2001}>$<rx:[1]{2000}>'
+}
+
+IPBQA22828Step24Response: {
+      errorCode: 'bm0004',
+      message: 'Maximum allowed length is 4000 characters, less with rich text formatting',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step24Response'
+}
+
+IPBQA22828Step25Request: {
+      category: null,
+      confidential: null,
+      title: 'IPBQA22828Step25Request',
+      description: '$<rx:[1]{4000}>'
+}
+
+IPBQA22828Step25Response: {
+      category: null,
+      confidential: 'false',
+      title: 'IPBQA22828Step25Request',
+      description: '$<rx:[1]{2000}>$<rx:[1]{2000}>',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step25Response'
+}
+
+IPBQA22828Step26Request: {
+      category: null,
+      confidential: null,
+      title: null,
+      description: 'IPBQA22828Step26Request desc'
+}
+
+IPBQA22828Step26Response: {
+      errorCode: 'bm0003',
+      message: 'User Note - Title required',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step26Response'
+}
+
+IPBQA22828Step27Request: {
+      category: 'UNDERWRITING',
+      confidential: null,
+      title: 'IPBQA22828Step27Request',
+      description: 'IPBQA22828Step27Request desc'
+}
+
+IPBQA22828Step27Response: {
+      category: 'UNDERWRITING',
+      confidential: 'false',
+      title: 'IPBQA22828Step27Request',
+      description: 'IPBQA22828Step27Request desc',
+      entityType: null,
+      performerId: 'TRATUsr2',
+      userNoteName: null,
+      logMessage: 'IPBQA22828Step27Response'
+}
+
+IPBQA22828Step28Request: {
+      category: 'UNDERWRITING',
+      confidential: null,
+      title: 'IPBQA22828Step28Request',
+      description: 'IPBQA22828Step28Request desc'
+}
+
+IPBQA22828Step28Response: {
+      errorCode: '403',
+      message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step28Response'
+}
+
+IPBQA22828Step29Request: {
+      category: null,
+      confidential: true,
+      title: 'IPBQA22828Step29Request',
+      description: 'IPBQA22828Step29Request desc',
+      userNoteAdditionalInfo : ''
+}
+
+IPBQA22828Step29Response: {
+      errorCode: '400',
+      message: 'Malformed syntax or a bad query.',
+      category: '',
+      confidential: 'false',
+      title: '',
+      description: '',
+      entityType: '',
+      performerId: '',
+      userNoteName: '',
+      logMessage: 'IPBQA22828Step29Response'
+}
+#IPBQA-22828 test steps ends
+
+IPBQA23010RequestStep1: {
+  "entityType": "Customer",
+  "processKey": "BAMTASKRS1",
+  "referenceId": "",
+  dueTypeDate: "DATE",
+  dueDateTime: '$<today:yyyy-MM-dd>',
+  "taskDescription": "<script>alert('alert text')</script>",
+  "queueCode": "General"
+}
+
+IPBQA23010RequestStep2: {
+  taskId: "task",
+  priority: "1",
+  taskDescription: "<script>alert('alert text update')</script>"
+}

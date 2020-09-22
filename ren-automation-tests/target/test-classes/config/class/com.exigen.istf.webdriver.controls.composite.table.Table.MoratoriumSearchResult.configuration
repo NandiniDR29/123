@@ -1,0 +1,3 @@
+{
+  "rowThatTemplate": "//tbody[tr[td[contains(text(), 'atastrophe')]]]/tr[%s]"
+}

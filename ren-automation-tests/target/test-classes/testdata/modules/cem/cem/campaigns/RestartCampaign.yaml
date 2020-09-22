@@ -1,0 +1,5 @@
+TestData: {
+  RestartCampaignTab: {
+    Restart Date: $<today>
+  }
+}

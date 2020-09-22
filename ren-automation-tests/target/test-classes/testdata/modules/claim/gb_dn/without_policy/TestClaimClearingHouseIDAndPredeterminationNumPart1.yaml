@@ -1,0 +1,91 @@
+TestData: {
+  "claim" : {
+    "policyProductCd" : "GB_DN",
+    "productCd" : "CLAIM_DENTAL",
+    "customerNumber" : "100032",
+    "reportedDt" : "2020-03-11T00:00:00.000Z",
+    "lossDt" : "2020-03-11T00:00:00.000Z",
+    "extension" : {
+      "claimData":
+        { "payeeType": "SERVICEPROVIDER",
+          "digitalImageNumber": null,
+          "cleanClaimDate": null,
+          "receivedDate": "2020-03-11T00:00:00.000Z",
+          "source": "MANUAL",
+          "orthoMonths": null,
+          "clearingHouseId": "clearingHouseId1234",
+          "predeterminationNumber": "predeterminationNumber1234",
+          "transmissionId": "transmissionId1234",
+          "transactionType": "ACTUAL_SERVICES" }
+    },
+    "parties" : [
+    {
+      "oid" : "100032",
+      "componentName" : "ClaimsDentalPatient" }
+    ]
+  },
+  "damages" : [
+  {
+    "damageType" : "ClaimsProcedure",
+    "loss" : {
+      "associatedRiskItemOid" : "100032",
+      "extension" :
+        {
+          "procedureDate": "2020-03-10T00:00:00.000Z",
+          "quantity" : 1,
+          "toothLetter" : "3",
+          "reportedFee" : 3323,
+          "lossDescription" : "D2971",
+          "toothSurface" : null }
+    }
+  }
+  ],
+  "serviceRequests": [
+  {
+    "componentName": "ClaimsServiceRequest",
+    "vendors": [
+    {
+      "profile": {
+        "externalId": "383791806",
+        "extension": {
+          "licenseNpi": "1669994703",
+          "licenseNumber": "10781",
+          "licenseStateCode": "NC",
+          "licenseCountryCode": "US",
+          "addressLine1": "140 Mahaley Ave",
+          "city": "Salisbury",
+          "countryCode": "US",
+          "stateCode": "NC",
+          "zipCode": "281442449",
+          "specialtyCode": "050",
+          "tin": "383791806"
+        }
+      }
+    }
+    ]
+  }
+  ]
+}
+
+TestData_Claim: {
+  IntakeInformationTab: {
+    'Predetermination #': 'predeterminationNumber_UPDATED',
+    Search Provider: {
+      TIN: '351517384',
+      'License #': '8724',
+      License NPI: '1063628917',
+      License State/Province: 'IN',
+      Specialty: Orthodontist,
+      Zip/Postal Code: '46237',
+      Address Line 1: '4034 E Southport Rd',
+      City: 'Indianapolis',
+      State/Province: 'IN',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Submitted Services: {
+      CDT Code: 'D0160',
+      Tooth: ''
+    }
+  }
+}

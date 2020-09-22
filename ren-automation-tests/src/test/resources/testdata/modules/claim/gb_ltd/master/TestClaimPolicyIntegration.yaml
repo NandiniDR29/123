@@ -1,0 +1,98 @@
+TestDataPercentageOfMonthlySalarySingleValue_AdjustPlanDefinitionTab: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_PercentageOfMonthlySalarySingleValue']
+}
+
+TestDataPercentageAmount_AdjustPlanDefinitionTab: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_PercentageAmount']
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_PercentageOfMonthlySalarySingleValue: {
+  PlanKey: CON-CON,
+  Plan: 'CON',
+  Plan Name: 'TestUpdate',
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: 'Contributory',
+    'Participant Contribution %': 50,
+    Member Payment Mode: 12,
+    Sponsor Payment Mode: 12,
+  },
+  Eligibility: {
+    'Waiting Period Waived For Current Employees?': 'Yes',
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Guaranteed Issue: {
+    Guaranteed Issue Amount: 6000
+  },
+  Benefit Schedule: {
+    Partial Disability Benefit: Proportionate Loss,
+    Definition of Disability: 'X months Regular Occ',
+    Benefit Type: 'Percentage of Monthly Salary - Single Value',
+    Maximum Monthly Benefit Amount: 6000,
+    Minimum Monthly Benefit Percentage: '10%',
+    Minimum Monthly Benefit Amount: '$100',
+    Test Definition: 'Loss of Duties and Earnings',
+    Number of Months: '24 months',
+    Specialty Own Occupation: true,
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Look Back Period': '3 Months',
+    'Pre-Existing Condition: Treatment Free Period': '6 Months',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months',
+    Own Occupation Earnings Tes: '80%',
+    Any Occupation Earnings Test: '60%',
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  }
+}
+
+PlanDefinitionTab_PercentageAmount: {
+  PlanKey: CON-CON,
+  Plan: 'CON',
+  Plan Name: 'CON',
+  Total Number of Eligible Lives: 1,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: 'Contributory',
+    'Participant Contribution %': 50,
+    Sponsor Payment Mode: 12,
+    Member Payment Mode: 12,
+  },
+  Guaranteed Issue: {
+    Guaranteed Issue Amount: 6000
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Benefit Schedule: {
+    Benefit Percentage: '60%',
+    Partial Disability Benefit: Proportionate Loss,
+    Definition of Disability: 'X months Regular Occ',
+    Benefit Type: 'Percentage of Monthly Salary - Single Value',
+    Maximum Monthly Benefit Amount: 6000,
+    Minimum Monthly Benefit Percentage: '10%',
+    Minimum Monthly Benefit Amount: '$100',
+    Test Definition: 'Loss of Duties and Earnings',
+    Number of Months: '24 months',
+    Specialty Own Occupation: false,
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Look Back Period': '3 Months',
+    'Pre-Existing Condition: Treatment Free Period': '6 Months',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months',
+    Own Occupation Earnings Tes: '80%',
+    Any Occupation Earnings Test: '60%',
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  }
+}

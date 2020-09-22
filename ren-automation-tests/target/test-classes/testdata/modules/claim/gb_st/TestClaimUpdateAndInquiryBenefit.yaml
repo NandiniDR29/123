@@ -1,0 +1,10 @@
+TestData: {
+  BenefitSTDInjuryPartyInformationTab: {
+     Zip / Postal Code: '32110',
+     State / Province: NJ,
+     Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+  }
+}
+
+
+

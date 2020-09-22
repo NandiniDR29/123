@@ -1,0 +1,7 @@
+TestData: {
+  'Channel': 'CALL',
+  'Direction': 'INBOUND',
+  'Type': 'MANUAL',
+  'Entity Type': 'CUSTOMER',
+  'Performer': 'ISBA ISBA',
+}

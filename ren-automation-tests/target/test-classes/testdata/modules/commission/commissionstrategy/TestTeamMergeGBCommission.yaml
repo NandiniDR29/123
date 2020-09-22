@@ -1,0 +1,38 @@
+TestData: {
+  GBCommissionStrategyTab: '@AddGBCICommissionStrategy',
+  GBCommissionRuleTab: '@GBCommissionRuleTab'
+}
+
+AddGBCICommissionStrategy: {
+  Product Code-Name: GB - Group Benefits,
+  Rounding: Cent Rounding,
+  Effective Date: $<today>,
+  Expiration Date: $<today+1M>,
+  Determine Commission Rate By: 'Transaction Activity Date'
+}
+
+GBCommissionRuleTab: {
+  Commission Type: 'Heap',
+  AddCommissionRule: {
+      Sales Channel: 'Agency',
+      Geography Selection: 'Defined for All locations',
+      Use Template: 'No',
+      PolicyYear: {
+           End Year: 1,
+           'Commission %': 10
+      }
+  }
+}
+
+TestData_Search: {
+  CommissionSearchTab: {
+      Product Name: Group Benefits,
+      Commission Strategy Status: 'Active'
+  }
+}
+
+TestData_Update: {
+  GBCommissionStrategyTab: {
+    Expiration Date: $<today+1y>
+  }
+}

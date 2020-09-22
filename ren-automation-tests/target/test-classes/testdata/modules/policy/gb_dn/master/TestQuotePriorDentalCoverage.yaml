@@ -1,0 +1,26 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTabWithPriorDentalCoverage',
+  EnrollmentTab: {},
+  PlanDefinitionTab: [],
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+TestDataWithoutPriorDentalCoverage: {
+  PolicyInformationTab: '@PolicyInformationTabWithoutPriorDentalCoverage',
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: [],
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTabWithPriorDentalCoverage: {
+  Prior Dental Coverage: 'Yes',
+  Prior Carrier Name: 'index=1'
+}
+
+PolicyInformationTabWithoutPriorDentalCoverage: {
+  Prior Dental Coverage: 'No'
+}
+

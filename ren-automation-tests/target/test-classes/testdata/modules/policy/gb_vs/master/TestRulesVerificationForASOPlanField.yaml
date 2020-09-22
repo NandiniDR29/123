@@ -1,0 +1,84 @@
+TestDataForASOPlans: {
+  PlanDefinitionTab: ['@SelectPlans', '@PlanDefinitionTab_ASO_ALACARTE', '@PlanDefinitionTab_ASO_PlanB'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ASO_ALACARTE', '@ClassificationManagementTab_ASO_PlanB'],
+  PremiumSummaryTab: {}
+}
+
+SelectPlans: {
+  Plan: [ASO A La Carte, ASO Plan B]
+}
+
+PlanDefinitionTab_ASO_ALACARTE: {
+  PlanKey: ASO A La Carte-ASO A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Assumed Participation %: '10'
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+PlanDefinitionTab_ASO_PlanB: {
+  PlanKey: ASO Plan B-ASO Plan B,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Assumed Participation %: '10',
+    Member Payment Mode: '12',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last day of the month when employment is terminated
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+ClassificationManagementTab_ASO_ALACARTE: {
+  Plan: ASOALACARTE-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: '32',
+    Coverage Tier: Employee Only
+  }
+}
+
+ClassificationManagementTab_ASO_PlanB: {
+  Plan: ASOPlanB-ASO Plan B,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Plan Tier And Rating Info: {
+    Number of Participants: '18',
+    Coverage Tier: Employee Only
+  }
+}
+
+TestDataIssueASOPlans: {
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionTab_ASO_ALACARTE_Issue','@PlanDefinitionTab_ASO_PlanB_Issue']
+}
+
+PlanDefinitionTab_ASO_ALACARTE_Issue: {
+  PlanKey: ASO A La Carte-ASO A La Carte
+}
+
+PlanDefinitionTab_ASO_PlanB_Issue: {
+  PlanKey: ASO Plan B-ASO Plan B
+}

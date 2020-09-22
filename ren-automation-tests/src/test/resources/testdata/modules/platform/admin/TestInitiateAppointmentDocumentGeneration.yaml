@@ -1,0 +1,95 @@
+TestData: {
+  AgencyInfoTab: '@AgencyInfoTab',
+  ContactInfoTab: '@ContactInfoTab',
+  BankingDetailsTab: '@BankingDetailsTab',
+  SupportTeamTab: {
+    Added Support Team: {
+      First Name: ISBA,
+      Channel: Corporate
+    }
+  },
+  UsersTab:  {},
+  ChildrenTab: {},
+  CommissionsInfoTab:  {},
+  LicenseInfoTab: {
+    Add License:{
+      License Number: 12345,
+      Effective Date: $<today>,
+      Expiration Date:  $<today+1y>,
+      State/Province: IL,
+      Line Of Authority: Life
+    }
+  }
+}
+
+AgencyInfoTab: {
+  Channel: Agency,
+  Agency Type: index=1,
+  Agency Code: 'AgencyCode$<rx:\d{8}>',
+  Agency Name: 'AgencyName$<rx:\d{8}>',
+  'Agency Name - Alternate': AlternateName,
+  Country: United States,
+  Agency Effective Date: $<today-1d>,
+  Agency Expiration Date: $<today+5y>,
+  Tax ID: '$<rx:\d{5}>',
+  External Reference ID: '$<rx:\d{5}>',
+  Primary Agency: 'Yes',
+  Region: {
+    Name: Albany,
+  },
+  'Applicable for commissions Extract?': 'Yes',
+  Commission Payment Sent To: Agency (Office),
+  'Eligible for Agency Billing?': 'Yes',
+  Agency Bill Due Day: 5,
+  Retain Commission From Pay: 'Yes',
+  Exclude commissions from billing: 'No'
+}
+
+ContactInfoTab: {
+  Zip / Postal Code: 94596,
+  Address Line 1: Address Line 1,
+  City: Walnut Creek,
+  State / Province: CA,
+  'Is Mailing Address the same as Physical Address?': 'Yes',
+  'Copy insured correspondence required?': 'No',
+  'Phone #': '1234567890',
+  'Fax #': '1234567890',
+  'Extension #': '123',
+  Add Contact: {
+    First Name: 'FName_$<rx:\d{8}>',
+    Last Name: 'LName_$<rx:\d{8}>'
+  }
+}
+
+BankingDetailsTab: {
+  Settlement Method: Check
+}
+
+TestData_UpdateLicense: {
+  AgencyInfoTab: {},
+  ContactInfoTab: {},
+  BankingDetailsTab: {},
+  SupportTeamTab: {},
+  UsersTab:  {},
+  ChildrenTab: {},
+  CommissionsInfoTab:  {},
+  LicenseInfoTab: {
+    Add License:{
+      License Number: 12345,
+      Effective Date: $<today>,
+      Expiration Date:  $<today+1y>,
+      State/Province: IL,
+      Line Of Authority: Life
+    }
+  }
+}
+
+License: {
+  Add License:{
+    License Number: 'LicenceNumber$<rx:_\d{8}>',
+    Effective Date: $<today-1y>,
+    Expiration Date:  $<today+1y>,
+    State/Province: NY,
+    Line Of Authority: index=1
+  }
+}

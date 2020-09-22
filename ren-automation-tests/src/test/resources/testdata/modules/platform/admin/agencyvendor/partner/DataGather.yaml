@@ -1,0 +1,9 @@
+TestData: {
+  PartnerTab: {
+    Partner Code: 'PartnerCode$<rx:\d{8}>',
+    Name: 'Partner$<rx:\d{8}>',
+    Zip / Postal Code: '$<rx:\d{5}>',
+    Address Line 1: 'Partner address',
+    State / Province: index=1
+  }
+}

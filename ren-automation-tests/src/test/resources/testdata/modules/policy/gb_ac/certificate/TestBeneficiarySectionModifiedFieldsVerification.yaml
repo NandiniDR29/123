@@ -1,0 +1,86 @@
+TestDataCertificatePolicyWithBeneficiaries: {
+  CoveragesTab: ['@SelectPlanCertificatePolicy', '@CoveragesTabBaseBuyUp']
+}
+
+SelectPlanCertificatePolicy: {
+  Plan: 'Base Buy-Up'
+}
+
+CoveragesTabBaseBuyUp: {
+  Enrollment Date: $<today>,
+  Coverage Tier: Employee + Family,
+  Participants: ['@TestDataParticipantsSelf', '@TestDataParticipantsSpouse'],
+  Beneficiaries:['@TestDataBeneficiaryCoverage1','@TestDataBeneficiaryCoverage2', '@TestDataBeneficiaryCoverage3', '@TestDataBeneficiaryCoverage4']
+}
+
+TestDataParticipantsSelf: {
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+TestDataParticipantsSpouse: {
+  Add Participant: CLICK,
+  Participant Selection: 'New Person',
+  Role Name: Spouse Participant,
+  Participant General Info:{
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-20y>
+  }
+}
+
+TestDataBeneficiaryCoverage1: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Primary Beneficiary',
+  Role Percent: '60',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Dependent Child',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+TestDataBeneficiaryCoverage2: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Non-Person',
+  Role Name: 'Primary Beneficiary',
+  Role Percent: '40',
+  Beneficiary General Info Non-Person: {
+    Relationship to Insured: 'Trust/Charity/Other'
+  },
+  Beneficiary Address Info Non-Person:{
+    City: Walnut Creek,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    State / Province: CA,
+    Zip / Post Code: 94956
+  }
+}
+
+TestDataBeneficiaryCoverage3: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '65',
+  Beneficiary General Info: {
+    Relationship to Insured: 'Spouse/Domestic Partner',
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>'
+  }
+}
+
+TestDataBeneficiaryCoverage4: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Non-Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '35',
+  Beneficiary General Info Non-Person: {
+    Relationship to Insured: 'Trust/Charity/Other'
+  },
+  Beneficiary Address Info Non-Person:{
+    City: Walnut Creek,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    State / Province: CA,
+    Zip / Post Code: 94956
+  }
+}

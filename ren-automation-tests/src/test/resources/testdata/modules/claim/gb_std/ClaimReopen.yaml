@@ -1,0 +1,6 @@
+TestData:
+  ClaimReopenActionTab:
+    'Reopen to (Status):': Open
+    Reason: index=1
+    Details: 'Details$<rx:\d{8}>'
+    Date: "$<today:MM/dd/yyyy>"

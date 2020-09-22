@@ -1,0 +1,206 @@
+TestData_Customer1: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: 'G - Retail Trade',
+    Industry: '54 - Food Stores',
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11111',
+      City: '$<static:City_Cust:[rx:City_Cust_\d{6}]>',
+      State/Province: CA,
+      Address Line 1: '$<static:Address1_Cust:[rx:Address1_Cust_\d{6}]>',
+      Address Line 2: '$<static:Address2_Cust:[rx:Address2_Cust_\d{6}]>',
+      Address Line 3: '$<static:Address3_Cust:[rx:Address3_Cust_\d{6}]>',
+    },
+    Phone Details: {
+      Phone Type: Mobile,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Group Sponsor: 'true',
+    Agency Assignment:{
+      Agency/Producer: {
+        Agency Code: QAG
+      }
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+  RelationshipTab: {
+    Type: Individual,
+    First Name: '$<static:FirstName_Rel1:[rx:John\d{6}]>',
+    Last Name:  '$<static:LastName_Rel1:[rx:Smith\d{6}]>',
+    Relationship to Customer: 'Service Roles',
+    Service Role: ["Administrative", "Billing", "Claims"],
+    Primary Contact Preference: 'Email',
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Type: 'Work',
+      Email Address: 'test@test.com',
+      'Make Preferred?': Yes
+    },
+    Address Details: {
+      Address Type: 'Residence',
+      Country: Canada,
+      Zip/Post Code: 'M4B 1B3',
+      City: '$<static:City_Cust1_Rel1:[rx:City_Cust1_Rel1_\d{6}]>',
+      State/Province: ON,
+      Address Line 1: '$<static:Address1_Cust1_Rel1:[rx:Address1_Cust1_Rel1_\d{6}]>',
+      Address Line 2: '$<static:Address2_Cust1_Rel1:[rx:Address2_Cust1_Rel1_\d{6}]>',
+      Address Line 3: '$<static:Address3_Cust1_Rel1:[rx:Address3_Cust1_Rel1_\d{6}]>',
+      'Make Preferred?': 'Yes'
+    }
+  }
+}
+
+TestData_Customer2_Rel1: {
+  RelationshipTab: {
+    Type: Individual,
+    First Name: '$<static:FirstName_Rel2:[rx:John\d{6}]>',
+    Last Name:  '$<static:LastName_Rel2:[rx:Smith\d{6}]>',
+    Relationship to Customer: 'Service Roles',
+    Service Role: ["Administrative", "Billing", "Claims"],
+    Primary Contact Preference: 'Mail',
+    Address Details: {
+      Address Type: 'Mailing',
+      Country: Canada,
+      Zip/Post Code: 'M4B 1L4',
+      City: '$<static:City_Cust2_Rel1:[rx:City_Cust2_Rel1_\d{6}]>',
+      State/Province: AB,
+      Address Line 1: '$<static:Address1_Cust2_Rel1:[rx:Address1_Cust2_Rel1_\d{6}]>',
+      Address Line 2: '$<static:Address2_Cust2_Rel1:[rx:Address2_Cust2_Rel1_\d{6}]>',
+      Address Line 3: '$<static:Address3_Cust2_Rel1:[rx:Address3_Cust2_Rel1_\d{6}]>',
+      'Make Preferred?': 'Yes'
+    }
+  }
+}
+
+TestData_Customer2_Rel2: {
+  GeneralTab: {},
+  DivisionsTab: {},
+  RelationshipTab: [
+  {},
+  {
+    Type: Non-Individual,
+    Relationship to Customer: 'TPA',
+    Service Role: ["Administrative", "Billing", "Claims"],
+    Name - Legal: '$<static:Name Legal:[rx:NameLegal \d{6}]>',
+    Primary Contact Preference: 'Email',
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Address: 'test@test.com',
+      'Make Preferred?': No
+    },
+    Address Details: ['@Address1_Rel2', '@Address2_Rel2', '@Address3_Rel2']
+  },
+  ]
+}
+
+Address1_Rel2: {
+  Address Type: 'Legal',
+  Country: United States,
+  Zip/Post Code: '$<static:Zip_Cust2_Rel2_1:[rx:\d{5}]>',
+  City: '$<static:City_Cust2_Rel2_1:[rx:City_Cust2_Rel2_1_\d{6}]>',
+  State/Province: CA,
+  Address Line 1: '$<static:Address1_Cust2_Rel2_1:[rx:Address1_Cust2_Rel2_1_\d{6}]>',
+  Address Line 2: '$<static:Address2_Cust2_Rel2_1:[rx:Address2_Cust2_Rel2_1_\d{6}]>',
+  Address Line 3: '$<static:Address3_Cust2_Rel2_1:[rx:Address3_Cust2_Rel2_1_\d{6}]>',
+  'Make Preferred?': 'Yes'
+}
+
+Address2_Rel2: {
+  Address Type: 'Contact',
+  Country: Canada,
+  City: '$<static:City_Cust2_Rel2_2:[rx:City_Cust2_Rel2_2_\d{6}]>',
+  Address Line 1: '$<static:Address1_Cust2_Rel2_2:[rx:Address1_Cust2_Rel2_2_\d{6}]>',
+  'Make Preferred?': 'No'
+}
+
+Address3_Rel2: {
+  Address Type: 'Legal',
+  Country: Togo,
+  Zip/Post Code: '$<static:Zip_Cust2_Rel2_3:[rx:\d{5}]>',
+  City: '$<static:City_Cust2_Rel2_3:[rx:City_Cust2_Rel2_3_\d{6}]>',
+  Address Line 1: '$<static:Address1_Cust2_Rel2_3:[rx:Address1_Cust2_Rel2_3_\d{6}]>',
+  'Make Preferred?': 'No'
+}
+
+TestData_Customer2_Rel2_addr4: {
+  GeneralTab: {},
+  DivisionsTab: {},
+  RelationshipTab:  [
+  {},
+  {
+    Address Details: {
+      Address Type: 'Billing',
+      Country: United States,
+      Zip/Post Code: '$<static:Zip_Cust2_Rel2_4:[rx:\d{5}]>',
+      City: '$<static:City_Cust2_Rel2_4:[rx:City_Cust2_Rel2_4_\d{6}]>',
+      State/Province: DC,
+      Address Line 1: '$<static:Address1_Cust2_Rel2_4:[rx:Address1_Cust2_Rel2_4_\d{6}]>',
+      Address Line 2: '$<static:Address2_Cust2_Rel2_4:[rx:Address2_Cust2_Rel2_4_\d{6}]>',
+      Address Line 3: '$<static:Address3_Cust2_Rel2_4:[rx:Address3_Cust2_Rel2_4_\d{6}]>',
+      'Make Preferred?': 'No'
+    }
+  },
+  ]
+}
+
+TestData_Customer2_Rel3: {
+  GeneralTab: {},
+  DivisionsTab: {},
+  RelationshipTab: [
+  {},
+  {},
+  {
+    Type: Individual,
+    First Name: '$<static:FirstName_Rel3:[rx:John\d{6}]>',
+    Last Name:  '$<static:LastName_Rel3:[rx:Smith\d{6}]>',
+    Relationship to Customer: 'Other',
+    Relationship Description: '$<rx:Description\d{6}>',
+    'Assign Service Role?': Yes,
+    Primary Contact Preference: 'Email',
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Address: 'test@test.com',
+      'Make Preferred?': No
+    },
+    Address Details: ['@Address1_Rel3', '@Address2_Rel3', '@Address3_Rel3']
+  },
+  ]
+}
+
+Address1_Rel3: {
+  Address Type: 'Residence',
+  Country: United States,
+  Zip/Post Code: '$<static:Zip_Cust2_Rel3:[rx:\d{5}]>',
+  City: '$<static:City_Cust2_Rel3_1:[rx:City_Cust2_Rel3_1_\d{6}]>',
+  State/Province: CA,
+  Address Line 1: '$<static:Address1_Cust2_Rel3_1:[rx:Address1_Cust2_Rel3_1_\d{6}]>',
+  Address Line 2: '$<static:Address2_Cust2_Rel3_1:[rx:Address2_Cust2_Rel3_1_\d{6}]>',
+  Address Line 3: '$<static:Address3_Cust2_Rel3_1:[rx:Address3_Cust2_Rel3_1_\d{6}]>',
+  'Make Preferred?': 'No'
+}
+
+Address2_Rel3: {
+  Address Type: 'Previous',
+  Country: Canada,
+  City: '$<static:City_Cust2_Rel3_2:[rx:City_Cust2_Rel3_2_\d{6}]>',
+  Address Line 1: '$<static:Address1_Cust2_Rel3_2:[rx:Address1_Cust2_Rel3_2_\d{6}]>',
+  'Make Preferred?': 'Yes'
+}
+
+Address3_Rel3: {
+  Address Type: 'Residence',
+  Country: Togo,
+  Zip/Post Code: '$<static:Zip_Cust2_Rel3_2:[rx:\d{5}]>',
+  City: '$<static:City_Cust2_Rel3_2:[rx:City_Cust2_Rel3_2_\d{6}]>',
+  Address Line 1: '$<static:Address1_Cust2_Rel3_2:[rx:Address1_Cust2_Rel3_2_\d{6}]>',
+  'Make Preferred?': 'No'
+}

@@ -1,0 +1,12 @@
+TestData: {
+  ConsolidatedStatementDetailsActionTab: {
+    'Consolidated Statement enabled from:': '',
+    Add Billing Accounts: {
+      'Billing Account #': '',
+    },
+  }
+}
+
+BillingAccount: {
+  'Billing Account #': ''
+}

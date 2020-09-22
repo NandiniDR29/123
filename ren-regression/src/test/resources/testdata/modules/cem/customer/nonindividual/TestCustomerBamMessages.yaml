@@ -1,0 +1,17 @@
+TestData_AddNewRelationship: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: Agent,
+    Date business started: 10/10/1999
+  }
+}
+
+TestData_RelationshipUpdate: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: Division,
+    Date business started: 10/10/1999
+  }
+}

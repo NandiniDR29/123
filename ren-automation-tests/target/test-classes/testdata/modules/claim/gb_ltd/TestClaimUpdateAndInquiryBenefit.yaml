@@ -1,0 +1,24 @@
+TestData: {
+  BenefitSTDInjuryPartyInformationTab: {
+     Zip / Postal Code: '32110',
+     State / Province: NJ,
+     Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+  }
+}
+
+TestData_UpdateCoverageEvaluation: {
+  BenefitLTDInjuryPartyInformationTab: {},
+  BenefitLTDIncidentTab: {},
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'Yes',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today>,
+  Approved Through Date: $<today+5y>
+}
+
+
+

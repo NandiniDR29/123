@@ -1,0 +1,14 @@
+TestData: {
+  GeneralTab: {
+    Agency Assignment:[
+      {},
+      {
+        Agency/Producer: {
+          Agency Code: Broker1Code
+        }
+      }
+    ]
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}

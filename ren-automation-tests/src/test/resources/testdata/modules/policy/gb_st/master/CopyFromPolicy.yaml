@@ -1,0 +1,5 @@
+TestData: {
+  CopyPolicyActionTab: {
+    Policy Effective Date: $<BOM>
+  }
+}

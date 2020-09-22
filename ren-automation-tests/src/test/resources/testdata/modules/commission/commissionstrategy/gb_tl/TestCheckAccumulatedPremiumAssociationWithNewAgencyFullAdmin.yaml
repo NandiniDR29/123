@@ -1,0 +1,229 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@Tiered_CommissionRuleTab', '@Flat_CommissionRuleTab']
+}
+
+Tiered_CommissionRuleTab: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Individual',
+    Select Sales Individual: {
+      Commission Individual Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '100', 7]
+  }
+}
+
+Flat_CommissionRuleTab: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Individual',
+    Select Sales Individual: {
+      Commission Individual Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Commission Rate: 8
+  }
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_TL - Term Life Insurance',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+  Available for Override: true,
+  Commission Overrides: ['@Add_Commission_Tiered_Override']
+}
+
+Add_Commission_Tiered_Override: {
+  Commission Type: 'Tiered',
+  Add Commission Override Options: {
+    Name: '$<static:NameTier:[rx:NameTier\d{5}]>',
+    Tier 1: [0, '100', 10]
+  }
+}
+
+TestDataMaster: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    County Code: '001 - Albany County',
+    'Prior Life Coverage': 'No',
+    'Has Continuity of Coverage?': 'Yes',
+    'Small Group?': 'No',
+    'Allow Independent Commissionable Producers?': 'No',
+    'Separate Or Combined Experience Rating?': 'Combined',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Assigned Agencies:{
+      Agency / Producer: '',
+      Agent Sub Producer: 'index=1',
+      'Primary Agency?': 'Yes',
+      Split Percentage: '100'
+    }
+  },
+  PlanDefinitionTab: ['@SelectAllPlans',
+                      '@PlanDefinitionBasicLifeInsurance',
+                      '@PlanDefinitionEmployeeVoluntaryLifeInsuranceVL1',
+                      '@PlanDefinitionEmployeeVoluntaryDeathVL',
+                      '@PlanDefinitionBasicAccidentalDeath',
+                      '@PlanDefinitionDependentBasicLifeSpouseChild',
+                      '@PlanDefinitionSpouseVoluntaryLifeInsurance',
+                      '@PlanDefinitionChildVoluntaryLifeInsurance',
+                      '@PlanDefinitionDependentVoluntaryAccidentalDeathAndDismembermentInsurance'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL',
+                                '@ClassificationMgmtEmployeeVoluntaryDeathVL']
+}
+
+SelectAllPlans: {
+  Plan: [Basic Life, Voluntary Life]
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  'Self-administered?': 'No',
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsuranceVL1: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  'Self-administered?': 'No',
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryDeathVL: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Plan Termination Attained Age: 70,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  },
+  Bereavement Benefit: {
+    'Apply Benefit?': true
+  },
+  Medical Premium Benefit: {
+    'Apply Benefit?': true
+  },
+  Hospital Inpatient Stay Benefit: {
+    'Apply Benefit?': true
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKeyRemove: Employee Basic Accidental Death and Dismemberment Insurance
+}
+
+PlanDefinitionDependentBasicLifeSpouseChild: {
+  CoverageKeyRemove: Dependent Basic Life Insurance (Spouse & Child)
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance: {
+  CoverageKeyRemove: Spouse Voluntary Life Insurance
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance: {
+  CoverageKeyRemove: Child Voluntary Life Insurance
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeathAndDismembermentInsurance: {
+  CoverageKeyRemove: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Plan: BL-Basic Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryDeathVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+TestDataCertificatePolicy1: {
+  CoveragesTab: ['@SelectPlan', '@CoveragesTabBasicLifeInsurance'],
+}
+
+SelectPlan: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLifeInsurance: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}
+
+TestDataCertificatePolicy2: {
+  CoveragesTab: ['@SelectCertificatePlan', '@CoveragesTabVoluntaryLifeInsurance'],
+}
+
+SelectCertificatePlan: {
+  Plan Name: Voluntary Life
+}
+
+CoveragesTabVoluntaryLifeInsurance: {
+  Coverage Name: Employee Voluntary Life Insurance,
+  Enrollment Date: $<today>,
+  Current Effective Amount: index=1,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}

@@ -1,0 +1,46 @@
+TestData: {
+  PlanDefinitionTab: [
+    '@DataGather@SelectPlan',
+    '@PlanDefinitionEmployeeVoluntaryLifeInsurance',
+    '@PlanDefinitionSpouseVoluntaryLifeInsurancee',
+    '@PlanDefinitionChildVoluntaryLifeInsurance',
+    '@PlanDefinitionEmployeeVoluntaryAccidentalDeath',
+    '@PlanDefinitionDependentBasicAccidentalDeath',
+    '@PlanDefinitionDependentVoluntaryAccidentalDeath']
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsurance: {
+  Action: Add Coverage,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Employee Voluntary Life Insurance
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurancee: {
+  Action: Add Coverage,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Spouse Voluntary Life Insurance
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance: {
+  Action: Add Coverage,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Child Voluntary Life Insurance
+}
+
+PlanDefinitionEmployeeVoluntaryAccidentalDeath: {
+  Action: Add Coverage,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance
+}
+
+PlanDefinitionDependentBasicAccidentalDeath: {
+  Action: Add Coverage,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child)
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeath: {
+  Action: Add Coverage,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+}

@@ -1,0 +1,8 @@
+TestData: {
+  PARGeneralTab: {
+    Role Code: 'RoleCode$<rx:\d{8}>',
+    Role Name: 'RoleName$<rx:\d{8}>',
+    Products: 'Home (Preconfigured), PREC-HO, Homeowners',
+    Product Specific Privileges: Policy Split
+  }
+}

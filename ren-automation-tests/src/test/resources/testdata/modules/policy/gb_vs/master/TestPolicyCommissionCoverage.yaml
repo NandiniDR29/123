@@ -1,0 +1,19 @@
+TestData_CommissionStrategy: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: '@GBCommissionRuleTab'
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: GB_VS - Group Vision,
+  Expiration Date: '$<today+5d>'
+}
+
+GBCommissionRuleTab: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Agency',
+    Coverages: All,
+    Commission Rate: 15
+  }
+}
+

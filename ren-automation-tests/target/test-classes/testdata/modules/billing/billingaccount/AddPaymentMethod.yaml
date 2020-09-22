@@ -1,0 +1,52 @@
+TestData_RestAddPaymentMethod: {
+  "type": "creditCard",
+  "creditCard": {
+    "fullName": "Pavel P",
+    "fullNumber": "4222222222222",
+    "type": "VISA",
+    "expirationDate": "$<today+1y:yyyy-MM-dd>",
+    "billingAddress": {
+      "addressLine1": "some address 1",
+      "city": "CHICAGO",
+      "stateProvCd": "IL",
+      "countryCd": "US",
+      "postalCode": "60640"
+    }
+  }
+}
+
+TestData_RestUpdateAddPaymentMethod: {
+  "type": "creditCard",
+  "creditCard": {
+    "fullName": "Pavel Pavel",
+    "fullNumber": "4222222222222",
+    "type": "VISA",
+    "expirationDate": "$<today+1y:yyyy-MM-dd>",
+    "billingAddress": {
+      "addressLine1": "some address 2",
+      "city": "CHICAGO",
+      "stateProvCd": "IL",
+      "countryCd": "US",
+      "postalCode": "60645"
+    }
+  }
+}
+
+TestData_RestAddPaymentMethodAddress: {
+  "type": "creditCard",
+  "creditCard": {
+    "fullName": "Pavel Pavel",
+    "fullNumber": "4485943428975756",
+    "type": "VISA",
+    "expirationDate": "$<today+1y:yyyy-MM-dd>",
+    "billingAddress": {
+      "addressLine1": "some address 1",
+      "addressLine2": "some address 2",
+      "addressLine3": "some address 3",
+      "city": "CHICAGO",
+      "stateProvCd": "IL",
+      "countryCd": "US",
+      "postalCode": "60645"
+    }
+  }
+}

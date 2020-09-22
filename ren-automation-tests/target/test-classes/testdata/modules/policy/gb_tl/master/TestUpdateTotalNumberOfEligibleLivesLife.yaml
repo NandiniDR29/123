@@ -1,0 +1,169 @@
+TestData: {
+  ClassificationManagementTab: [
+    '@ClassificationMgmtBasicLifeInsraunce',
+    '@ClassificationMgmtDependentBasicLife',
+    '@ClassificationMgmtEmployeeVoluntaryLifeInsurance',
+    '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+    '@ClassificationMgmtDependentVoluntaryAccidentalDeath',
+    '@ClassificationMgmtSpouseVoluntaryLifeInsurance',
+    '@ClassificationMgmtBasicAccidentalDeathLifeInsurance',
+    '@ClassificationMgmtChildVoluntaryLifeInsurance',
+    '@ClassificationMgmtDependentBasicAccidentalDeath'],
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtBasicAccidentalDeathLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: index=1
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Classification Group Name: index=1
+}
+
+ClassificationMgmtDependentBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: index=1
+}
+
+BTL: {
+  PlanDefinitionTab: {
+    Census Type: Eligible,
+    Required Participation %: 5%,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+ADD: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+
+DEP_BTL: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    Coverage Application: 'Spouse and Child',
+    Required Participation %: 5%,
+    Member Payment Mode: 12
+  }
+}
+
+VOL_BTL: {
+  PlanDefinitionTab: {
+    Census Type: Eligible,
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}
+DEP_VOL_BTL: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+  }
+}
+SP_VOL_BTL: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+  }
+}
+DEP_VOL_ADD: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    Coverage Application: 'Spouse and Child',
+    Member Payment Mode: 12,
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%
+  }
+}
+
+DEP_ADD: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+  }
+}
+VOL_ADD: {
+  PlanDefinitionTab: {
+    Census Type: Enrolled,
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%,
+    Member Payment Mode: 12,
+    Eligibility: {
+      'Does Minimum Hourly Requirement Apply?': 'No',
+      Eligibility Waiting Period Definition: 'None',
+      'Waiting Period Waived For Current Employees?': 'No'
+    },
+    Schedule of Continuation Provision: {
+      'Sabbatical (months)': 50
+    }
+  }
+}

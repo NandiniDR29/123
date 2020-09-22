@@ -1,0 +1,140 @@
+TestData_Policy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  PlanDefinitionTab: ['@PlanDefinitionTab_StatNY', '@PlanDefinitionTab_PFLNY'],
+  ClassificationManagementTab: ['@ClassificationMgmt_StatNY', '@ClassificationMgmt_PFLNY']
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM-2M>,
+  Case Profile: index=1,
+  Product: Statutory Disability Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  Policy Effective Date: $<today-1M>,
+  County Code: '001 - Albany County',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NY,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_StatNY: {
+  Plan: NY Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+PlanDefinitionTab_PFLNY: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: PFL NY,
+  Contribution Type: Mandatory,
+  Taxability: Benefits Taxable,
+  Premiums Paid-Post Tax: Yes,
+  Benefit Schedule: {
+    Benefit Percentage: '55%',
+    Maximum Benefit period: 10,
+  },
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+}
+
+ClassificationMgmt_StatNY: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Stat NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+    {
+      Classification SubGroup Name: Male,
+      Number of Participants: 10,
+      Total Volume: 250
+    },
+    {
+      Classification SubGroup Name: Female,
+      Number of Participants: 10,
+      Total Volume: 250
+    },
+    {
+      Classification SubGroup Name: Proprietor,
+      Number of Participants: 10,
+      Total Volume: 250
+    }]
+}
+
+ClassificationMgmt_PFLNY: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: PFL NY,
+  Classification Group Name: 1,
+  Classification Sub-Groups And Rating Info: [
+    {
+      Classification SubGroup Name: Male,
+      Number of Participants: 10,
+      Total Volume: 250
+    },
+    {
+      Classification SubGroup Name: Female,
+      Number of Participants: 10,
+      Total Volume: 250
+    },
+    {
+      Classification SubGroup Name: Other/Not Specified,
+      Number of Participants: 0,
+      Total Volume: 0
+    }]
+}
+
+TestData_Benefit: {
+  BenefitsPFLParticipantInformationTab:{
+    Social Security Number (SSN): 111-11-1111,
+    Gender: Male,
+    State / Province: NY,
+    Participant Work Days: {
+      Average Hours Worked Per Week: 20
+    },
+    Preferred language: 'English',
+    Origin/ Ethnicity: 'Unknown',
+    Race: 'White'
+  }
+}

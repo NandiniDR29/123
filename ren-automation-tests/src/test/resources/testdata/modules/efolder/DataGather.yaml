@@ -1,0 +1,29 @@
+TestData_PDF: {
+  AddFileTab: {
+    File: '$<file:test1.pdf>',
+    Name: 'test1.pdf',
+  }
+}
+
+TestData_DOCX: {
+  AddFileTab: {
+    File: '$<file:test3.docx>',
+    Name: 'test3.docx',
+  }
+}
+
+TestData_TXT: {
+  AddFileTab: {
+    File: '$<file:File.txt>',
+    Name: 'File.txt',
+    Type: 'Miscellaneous Document'
+  }
+}
+
+TestData_EnrollmentFile: {
+  AddFileTab: {
+    File: '$<file:Initial_Enrollment.xlsx>',
+    Name: 'Initial_Enrollment.xlsx',
+    Type: 'Enrollment File'
+  }
+}

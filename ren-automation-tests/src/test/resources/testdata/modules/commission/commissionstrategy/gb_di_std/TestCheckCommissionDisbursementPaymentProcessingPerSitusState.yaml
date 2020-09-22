@@ -1,0 +1,64 @@
+TestData_With_Flat_CommissionRule: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@Flat_CommissionRuleTab']
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_DI_STD - Short Term Disability',
+  Rounding: 'Cent Rounding',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+  Available for Override: true
+}
+
+Flat_CommissionRuleTab: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Commission Rate: '10'
+  }
+}
+
+TestDataMasterNY: {
+  PolicyInformationTab: '@PolicyInformationTabNY'
+}
+
+TestDataMasterOH: {
+  PolicyInformationTab: '@PolicyInformationTabOH'
+}
+
+PolicyInformationTabNY: {
+  Situs State: NY,
+  Policy Effective Date: $<today>,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  County Code: '001 - Albany County',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Assigned Agencies: ['@QA_Agency1']
+}
+
+PolicyInformationTabOH: {
+  Situs State: OH,
+  Policy Effective Date: $<today>,
+  'Allow Independent Commissionable Producers?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Assigned Agencies: ['@QA_Agency1']
+}
+
+QA_Agency1: {
+  Agency / Producer: 'QA Agency',
+  Agent Sub Producer: 'index=1',
+  'Primary Agency?': 'Yes',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}

@@ -1,0 +1,78 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlanWA1', '@PlanDefinitionTabWA1'],
+  ClassificationManagementTab: '@ClassificationManagementTabWA1',
+}
+TestDataWA5: {
+  PlanDefinitionTab: ['@SelectPlanWA5', '@PlanDefinitionTabWA5'],
+  ClassificationManagementTab: '@ClassificationManagementTabWA5',
+}
+
+SelectPlanWA1: {
+  Plan: 'WA Plan 1'
+}
+
+SelectPlanWA5: {
+  Plan: 'WA Plan 5'
+}
+
+PlanDefinitionTabWA1: {
+  PlanKey: 'WA1-WA Plan 1',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments'
+  },
+  Limitation/Frequency: {
+    Major: {
+      Crowns: 'Once Every 5 Years',
+      Inlays: 'Once Every 5 Years',
+      Veneers: 'Not Covered',
+    }
+  },
+  Exclusions: {
+    Missing Tooth: true,
+  }
+}
+
+PlanDefinitionTabWA5: {
+  PlanKey: 'WA5-WA Plan 5',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  'Census Type': 'Enrolled',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': '100',
+  },
+  Rating: {
+    'SIC Code': '5411',
+    'SIC Description': 'Other Direct Selling Establishments'
+  },
+  Limitation/Frequency: {
+    Major: {
+      Crowns: 'Once Every 5 Years',
+      Inlays: 'Once Every 5 Years',
+      Veneers: 'Once Every 5 Years',
+    }
+  },
+  Exclusions: {
+    Missing Tooth: true,
+  }
+}
+
+ClassificationManagementTabWA1: {
+  Plan: 'WA1-WA Plan 1',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+}
+
+ClassificationManagementTabWA5: {
+  Plan: 'WA5-WA Plan 5',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+}

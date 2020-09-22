@@ -1,0 +1,104 @@
+TestData: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestDataWithCustomCalendar: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithCustomCalendar'],
+}
+
+TestDataWithExistingBA: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithExistingBA'],
+}
+
+TestData_ExistentBillingAccount: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {},
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: {}
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingGroupsSponsor: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+BillingAccountTabWithCustomCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 6,
+      Generation Date Rule: 1,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Default Invoicing Calendar'}
+}
+
+BillingAccountTabWithExistingBA: {
+  Select Action: 'Bill Under Account',
+  Bill Under Account: index=1
+}
+
+
+BillingAccountTabWithCustomCalendar2: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Products: ['Statutory Disability Insurance'],
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Annual,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 1,
+      Generation Date Rule: 16,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+IssueActionTabMail: {
+  IssueActionTab: {
+    Address Line 1: '$<rx:Address\d{5}>',
+    Zip / Postal Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA
+  }
+}

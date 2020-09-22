@@ -1,0 +1,151 @@
+TestData_Policy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@<tl_master>@DataGather@SelectPlan', '@PlanDefinitionTab',
+                      '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove',
+                      '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove'],
+  ClassificationManagementTab: ['@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce'],
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-2d>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  County Code: '001 - Albany County',
+  Policy Effective Date: $<today-2d>,
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Enrollment Underwriting Offer: Open Enrollment,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: "",
+    GI Amount: "$200000",
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Single Value',
+    'Flat Benefit Amount': '10000'
+  }
+}
+
+
+TestData_REST: {
+  "fileMetaData": '@FileMetaData',
+  "enrollmentCensusRecords": '@EnrollmentCensusRecords'
+}
+
+FileMetaData: {
+  "masterPolicyNumber": "ENTER YOUR MASTER POLICY NUMBER",
+  "participantCount": "1",
+  "timestamp": '$<today:yyyy-MM-dd>T00:00:00Z',
+  "fileIdentifier": 'F$<rx:\d{5}>',
+  "fileName": "File7",
+  "fileId": 'F$<rx:\d{5}>',
+  "enrollmentTerm": "INITIAL_ENROLLMENT",
+  "enrollmentFileType": "XML_ELIGIBILITY",
+  "enrollmentSource": "GROUP",
+  "enrollmentDataType": "FULL",
+  "fullyEnrolledInd": "1"
+}
+
+EnrollmentCensusRecords: {
+  "referenceID": 'R$<rx:\d{5}>',
+  "certificate": {
+    "effectiveDt": "2020-03-01T00:00:00Z",
+    "coverages": {
+      "participants": {
+        "personOID": "P10015",
+        "roleName": "PRIMARY_P",
+        "relationshipToInsured": "SELF",
+      },
+      "benefitAmount": "",
+      "coverageCd": "BTL",
+      "planCd": "BL",
+      "coverageTierCd": {
+        "tiersType": "EEO",
+        "amountEmployee": {
+          "approvedAmount": "10000.00",
+          "approvedAmountPct": "100",
+          "inforceAmount": "10000.00",
+          "inforceAmountPct": "100",
+          "eoiRequired": "false",
+        },
+      },
+      "enrollmentDt": '$<today:yyyy-MM-dd>T00:00:00Z',
+    },
+    "primaryParticipant": {
+      "personOID": "P10015",
+      "relationship": {
+        "employment": {
+          "departmentId": "Department ID",
+          "divisionId": "Division ID",
+          "employeeId": "EmployeeID",
+          "employmentStatus": "ACT",
+          "employmentType": "EXE",
+          "jobCode": "ANY",
+          "jobTitle": "Teacher",
+          "originalHireDt": "2020-02-11T00:00:00Z",
+          "payClass": "FULL_TIME",
+          "payType": "SALARY",
+          "payrollFreq": "MONTHLY",
+          "salaryAmt": "30000",
+        },
+        "classificationGroup": {
+          "code": "1"
+        }
+      }
+    },
+    "enrollmentType": "INITIAL"
+  },
+  "allParticipants": {
+    "oid": "P10015",
+    "title": "1",
+    "suffix": "2",
+    "firstName": 'FirstName$<rx:\d{4}>',
+    "lastName": 'LastName$<rx:\d{4}>',
+    "middleName": 'MiddleName$<rx:\d{4}>',
+    "maritalStatusCd": "M",
+    "gender": "male",
+    "dob": "1985-08-01T09:30:47Z",
+    "taxId": '$<rx:\d{9}>',
+    "tobaccoUsage": "false",
+    "email": "test1@mail.com",
+    "addresses": {
+      "addressType": "mailing",
+      "addressLine1": "AddressLine1",
+      "addressLine2": "AddressLine2",
+      "addressLine3": "AddressLine3",
+      "zipCode": "10001",
+      "city": "City",
+      "state": "CA",
+      "country": "US",
+    }
+  }
+}

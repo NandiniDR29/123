@@ -1,0 +1,87 @@
+TestData_SpouseHusband: {
+  PlansTab: {
+    Plan Name: index=1,
+    Coverage Tier: Employee + Spouse,
+    Enrollment Date: $<today>,
+    Participants: [{
+                     Participant Selection: index=0
+                   },
+                   {
+                     Participant Selection: New Person,
+                     #                     Role Name: Spouse Participant,
+                     General Information: {
+                       First Name: 'JohnHusband$<rx:\d{8}>',
+                       Last Name: 'SmithHusband$<rx:\d{8}>',
+                       Date of Birth: $<today-24y>,
+                       Gender: Male,
+                       Relationship to Insured: 'Spouse/Domestic Partner',
+                     }
+                   }]
+  }
+}
+
+TestData_Claim_WithThreeServices: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTabThreeServices',
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+IntakeInformationTabThreeServices: {
+  Patient: {
+    Name: contains=JohnHusband
+  },
+  Search Provider: {
+    TIN: 592367445,
+    'License #': 8115,
+    License NPI: 1740371822,
+    License State/Province: FL,
+    Specialty: General Practitioner,
+    Zip/Postal Code: 32720,
+    Address Line 1: 123 W Plymouth Ave,
+    City: Deland,
+    State/Province: FL,
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: Manual Entry,
+  Payee Type: Service Provider,
+  Ortho Months: 5,
+  Submitted Services: [{
+                         DOS: $<today>,
+                         CDT Code: D3351,
+                         Tooth: 3,
+                         Charge: 800
+                       },
+                       {
+                         DOS: $<today-1d>,
+                         CDT Code: D2010,
+                         Charge: 810
+                       },
+                       {
+                         DOS: $<today-2d>,
+                         CDT Code: D5731,
+                         Charge: 820
+                       }
+  ]
+}
+
+TestData_Provider2: {
+  Search Provider: {
+    TIN: 880451597,
+    'License #': 3355,
+    License NPI: 1487757894,
+    License State/Province: NV,
+    Specialty: General Practitioner,
+    Zip/Postal Code: 89117,
+    Address Line 1: 7219 W Sahara Ave Ste 130,
+    City: Las Vegas,
+    State/Province: NV,
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+}

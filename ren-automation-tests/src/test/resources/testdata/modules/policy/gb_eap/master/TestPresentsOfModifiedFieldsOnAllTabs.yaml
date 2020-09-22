@@ -1,0 +1,40 @@
+Adjustment_Relationship: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: 'Member Company',
+    Date business started: 10/10/1999
+  }
+}
+
+TestData_Policy: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+SelectPlan: {
+  Plan: EAP
+}
+
+PlanDefinitionTab: {
+  Coverage Included in Package: {
+    STD: false,
+  },
+  Eligibility: {
+    'Waiting Period Waived For Current Employees?': Yes,
+    Eligibility Waiting Period Definition: After 30 Days of Employment,
+    Waiting Period: 100,
+    Waiting Period Mode: Days,
+  },
+  Rating: {
+    Rate Basis: Per Employee Per Month,
+    Plan Type: Telephonic benefits,
+  },
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Number of Participants: 10,
+}

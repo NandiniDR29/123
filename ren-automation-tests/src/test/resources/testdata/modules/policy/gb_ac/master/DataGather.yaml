@@ -1,0 +1,553 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ENHANCED10'],
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: ['@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+TestDataWithBasicBenefitsTab: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanBASEBU', '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_BASEBU_Enhanced'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU'],
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU', '@OptionalBenefitTab_BASEBU_Enhanced'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_BASEBU', '@ClassificationManagementTab_BASEBU'],
+  PremiumSummaryTab: {}
+}
+
+TestData_AllPlans: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectAllPlans',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_BASEBU_Enhanced',
+                      '@PlanDefinitionTab_VOL10',
+                      '@PlanDefinitionTab_ENHANCED10'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_VOL10', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU', '@EnhancedBenefitsDtoFTab_VOL10', '@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_VOL10', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_VOL10', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU', '@OptionalBenefitTab_BASEBU_Enhanced', '@OptionalBenefitTab_VOL10', '@OptionalBenefitTab_ENHANCED10'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_BASEBU_Enhanced',
+                                 '@ClassificationManagementTab_VOL10',
+                                 '@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+TestData_OneCoverageNonContributory: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ENHANCED10'],
+  EnhancedBenefitsAtoCTab: '@EnhancedBenefitsAtoCTab_ENHANCED10',
+  EnhancedBenefitsDtoFTab: '@EnhancedBenefitsDtoFTab_ENHANCED10',
+  EnhancedBenefitsHtoLTab: '@EnhancedBenefitsHtoLTab_ENHANCED10',
+  EnhancedBenefitsMtoTTab: '@EnhancedBenefitsMtoTTab_ENHANCED10',
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {
+    Plan: Enhanced 10 Units,
+    Add Classification Group Relationship: CLICK,
+    Classification Group Name: Employment,
+    'Use Classification Sub-Groups?': 'No',
+    Coverage Tier: Employee Only
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_TwoCoveragesNonContributory: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans', '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_BASEBU_Enhanced', '@PlanDefinitionTab_ENHANCED10'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU', '@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@OptionalBenefitTab_BASEBU_Enhanced', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU', '@ClassificationManagementTab_BASEBU_Enhanced', '@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+TestData_ThreeCoveragesNonContributory: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans',
+                      '@PlanDefinitionTab_BASEBU_Enhanced',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_ENHANCED10',
+                      '@CopyPlanPopup_ENHANCED10'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU','@EnhancedBenefitsDtoFTab_ENHANCED10', '@EnhancedBenefitsDtoFTab_ENHANCED10_Copy'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@EnhancedBenefitsDtoFTab_BASEBU','@EnhancedBenefitsDtoFTab_ENHANCED10', '@OptionalBenefitTab_BASEBU_Enhanced', '@EnhancedBenefitsDtoFTab_ENHANCED10_Copy'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_ENHANCED10',
+                                 '@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_BASEBU_Enhanced',
+                                 '@ClassificationManagementTab_TestENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+TestData_TwoCoverages: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_Enhanced10_Voluntary', '@PlanDefinitionTab_BASEBU_Enhanced' ],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU','@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@OptionalBenefitTab_BASEBU', '@OptionalBenefitTab_BASEBU_Enhanced',  '@OptionalBenefitTab_ENHANCED10'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_BASEBU_Enhanced',
+                                 '@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+
+}
+
+TestData_ThreeCoverages: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@CopyPlanPopup_BASEBU',
+                      '@PlanDefinitionTab_Updated_CopiedFromBASEBU',
+                      '@PlanDefinitionTab_Enhanced10_Voluntary'],
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_BASEBU','@EnhancedBenefitsDtoFTab_ENHANCED10', '@EnhancedBenefitsDtoFTab_BASEBU_Copy'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_BASEBU', '@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_BASEBU', '@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: ['@EnhancedBenefitsAtoCTab_BASEBU', '@EnhancedBenefitsAtoCTab_ENHANCED10',  '@EnhancedBenefitsDtoFTab_BASEBU_Copy'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_ENHANCED10',
+                                 '@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_TestBASEBU'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  #Rate Basis: index=0,
+  #Rate Guarantee: index=0,
+  Situs State: GA,
+  #workaround for REN-21887
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: Enhanced 10 Units
+}
+
+SelectPlanBASEBU: {
+  Plan: Base Buy-Up
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'Convenience Stores',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_BASEBU_Enhanced: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Minimum Number of Participants: '11'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Age Termination:{
+  },
+}
+
+PlanDefinitionTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period: '10',
+    Waiting Period Mode: 'Days',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  }
+}
+
+PlanDefinitionTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '10',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_BASEBU_BasicBenefits: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  SIC Description: 'Convenience Stores',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    'Termination Age Applied?': 'true',
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  }
+}
+
+BasicBenefitsTab_BasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsAtoCTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsAtoCTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsAtoCTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+
+EnhancedBenefitsDtoFTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsDtoFTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsDtoFTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+EnhancedBenefitsHtoLTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsHtoLTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsHtoLTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+EnhancedBenefitsMtoTTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+EnhancedBenefitsMtoTTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+EnhancedBenefitsMtoTTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+OptionalBenefitTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident
+}
+
+OptionalBenefitTab_BASEBU_Enhanced: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident
+}
+
+OptionalBenefitTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units
+}
+
+OptionalBenefitTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+OptionalBenefitTab_BASEBU_EnhancedCopy: {
+  PlanKey: TestBase Buy-Up-TestBase Buy-Up	,
+  CoverageKey: Enhanced Accident
+}
+
+OptionalBenefitTab_BASEBU_BasicCopy: {
+  PlanKey: TestBase Buy-Up-TestBase Buy-Up	,
+  CoverageKey: Basic Accident
+}
+
+ClassificationManagementTab_TestBASEBU: {
+  Plan: TestBase Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_TestENHANCED10: {
+  Plan: TestEnhanced 10 Units-TestEnhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_BASEBU: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_BASEBU_Enhanced: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_VOL10: {
+  Plan: VOL10-Voluntary 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_ENHANCED10: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+Adjustment_BackDated: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-2M>,
+    Case Profile: index=1,
+    Product: Group Accident,
+    Delivery Model: Group
+  },
+  PolicyInformationTab: {
+    Policy Effective Date: $<BOM-2M>,
+    Situs State: GA,
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Total Number of Eligible Lives: 1
+  }
+}
+
+TestData_CopyFromPolicy: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {
+    Number of Participants: 30
+  },
+  PremiumSummaryTab: {}
+}
+
+ClassificationManagementTabEnhancedAccidentOtherRate: {
+  ClassificationManagementTab: {
+    Get Rates: Enter Manually,
+    Classification Group Name: Employment,
+    'Use Classification Sub-Groups?': 'No',
+    Coverage Tier: Employee Only
+  }
+}
+
+SelectTwoPlans: {
+  Plan: [Base Buy-Up,Enhanced 10 Units]
+}
+
+SelectAllPlans: {
+  Plan: [Base Buy-Up,Enhanced 10 Units,Voluntary 10 Units]
+}
+
+PlanDefinitionTab_Enhanced10_Voluntary: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type:  Voluntary,
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+
+}
+
+CopyPlanPopup_BASEBU: {
+  Copy Plan:{
+    Plan To Copy From: 'Base Buy-Up',
+    New Plan Code: TestBase Buy-Up,
+    New Plan Name: TestBase Buy-Up
+  }
+}
+
+CopyPlanPopup_ENHANCED10: {
+  Copy Plan: {
+    Plan To Copy From: 'Enhanced 10 Units',
+    New Plan Code: TestEnhanced 10 Units,
+    New Plan Name: TestEnhanced 10 Units
+  }
+}
+
+
+PlanDefinitionTab_Updated_CopiedFromBASEBU: {
+  PlanKey: TestBase Buy-Up-TestBase Buy-Up,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+EnhancedBenefitsDtoFTab_BASEBU_Copy: {
+  PlanKey: TestBase Buy-Up-TestBase Buy-Up
+}
+
+EnhancedBenefitsDtoFTab_ENHANCED10_Copy: {
+  PlanKey: TestEnhanced 10 Units-TestEnhanced 10 Units
+}
+
+TestDataUpdateSomething: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {
+    Number of Participants: 10
+  },
+  PremiumSummaryTab: {}
+}

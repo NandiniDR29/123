@@ -1,0 +1,48 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Smoke" verbose="1" parallel="tests" thread-count="1024">
+    <listeners>
+        <listener class-name="com.exigen.ipb.eisa.utils.listener.ISBAListener"/>
+    </listeners>
+    <parameter name="timeshift-scenario-mode" value="test"/>
+
+    <test name="TestLogin"><classes><class name="com.exigen.ren.modules.platform.TestLogin"/></classes></test>
+
+    <!-- CEM -->
+    <test name="CUSTOMER Non-Individual"><classes><class name="com.exigen.ren.modules.cem.customer.nonindividual.TestTeamMergeCEMNonIndividual"/></classes></test>
+    <test name="CUSTOMER Individual"><classes><class name="com.exigen.ren.modules.cem.customer.individual.TestTeamMergeCEMIndividual"/></classes></test>
+
+    <!-- POLICY -->
+    <test name="POLICY Group Accident"><classes><class name="com.exigen.ren.modules.policy.gb_ac.certificate.TestTeamMergeGroupAccidentPolicy"/></classes></test>
+    <test name="POLICY Long Term Disability"><classes><class name="com.exigen.ren.modules.policy.gb_di_ltd.certificate.TestTeamMergeLongTermDisabilityPolicy"/></classes></test>
+    <test name="POLICY Short Term Disability"><classes><class name="com.exigen.ren.modules.policy.gb_di_std.certificate.TestTeamMergeShortTermDisabilityPolicy"/></classes></test>
+    <test name="POLICY Group Dental"><classes><class name="com.exigen.ren.modules.policy.gb_dn.certificate.TestTeamMergeGroupDentalPolicy"/></classes></test>
+    <test name="POLICY Statutory Disability"><classes><class name="com.exigen.ren.modules.policy.gb_st.master.TestTeamMergeStatutoryDisabilityPolicy"/></classes></test>
+    <test name="POLICY Group Term Life"><classes><class name="com.exigen.ren.modules.policy.gb_tl.certificate.TestTeamMergeTermLifePolicy"/></classes></test>
+    <test name="POLICY Group Vision"><classes><class name="com.exigen.ren.modules.policy.gb_vs.certificate.TestTeamMergeGroupVisionPolicy"/></classes></test>
+    <test name="POLICY Paid Family Leave"><classes><class name="com.exigen.ren.modules.policy.gb_pfl.master.TestTeamMergePaidFamilyLeavePolicy"/></classes></test>
+    <test name="POLICY Employee Assistance Program"><classes><class name="com.exigen.ren.modules.policy.gb_eap.certificate.TestTeamMergeEmployeeAssistanceProgramPolicy"/></classes></test>
+    <test name="POLICY Initial Enrollment with XLS"><classes><class name="com.exigen.ren.modules.enrollment.TestTeamMergeInitialEnrollmentXLS"/></classes></test>
+    <test name="POLICY Initial Enrollment with EDI834"><classes><class name="com.exigen.ren.modules.enrollment.TestTeamMergeInitialEnrollmentEDI834"/></classes></test>
+
+    <!-- CLAIMS -->
+    <test name="CLAIM Group Accident Master"><classes><class name="com.exigen.ren.modules.claim.gb_ac.master.TestClaimCreation"/></classes></test>
+    <test name="CLAIM Group Accident Certificate"><classes><class name="com.exigen.ren.modules.claim.gb_ac.certificate.TestClaimCreationCertificate"/></classes></test>
+    <test name="CLAIM Group Term Life Master"><classes><class name="com.exigen.ren.modules.claim.gb_tl.master.TestClaimCreation"/></classes></test>
+    <test name="CLAIM Group Term Life Certificate"><classes><class name="com.exigen.ren.modules.claim.gb_tl.certificate.TestClaimCreationCertificate"/></classes></test>
+    <test name="CLAIM Long Term Disability Certificate"><classes><class name="com.exigen.ren.modules.claim.gb_ltd.certificate.TestClaimCreationCertificate"/></classes></test>
+    <test name="CLAIM Short Term Disability Certificate With Payment"><classes><class name="com.exigen.ren.modules.claim.gb_std.certificate.TestClaimIssueAndClearPaymentCertificate"/></classes></test>
+    <test name="CLAIM Statutory Disability Master"><classes><class name="com.exigen.ren.modules.claim.gb_st.master.TestClaimCreation"/></classes></test>
+    <test name="CLAIM Paid Family Leave Master With Payment"><classes><class name="com.exigen.ren.modules.claim.gb_pfl.master.TestClaimIssueAndClearPayment"/></classes></test>
+    <test name="CLAIM DENTAL Certificate"><classes><class name="com.exigen.ren.modules.claim.gb_dn.certificate.TestTeamMergeGroupDentalClaim"/></classes></test>
+    <test name="CLAIM DENTAL Without Policy"><classes><class name="com.exigen.ren.modules.claim.gb_dn.without_policy.TestTeamMergeGroupDentalClaim"/></classes></test>
+
+    <!-- BILLING
+    <test name="billing.groupbenefits.selfadmin.TestTeamMergeBillingGBSelfAdmin"><classes><class name="com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestTeamMergeBillingGBSelfAdmin"/></classes></test>
+    <test name="billing.groupbenefits.fulladmin.TestTeamMergeBillingGBFullAdmin"><classes><class name="com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestTeamMergeBillingGBFullAdmin"/></classes></test>
+     -->
+
+    <!-- DXP -->
+    <test name="DXP API Member"><classes><class name="com.exigen.ren.modules.dxp.api.TestSmokeDxpViewMemberProfileInformation"/></classes></test>
+    <test name="DXP API Employer"><classes><class name="com.exigen.ren.modules.dxp.api.TestSmokeDxpViewEmployerProfileInformation"/></classes></test>
+
+</suite>

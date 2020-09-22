@@ -1,0 +1,34 @@
+TestData: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM>,
+    Endorsement Reason: Divorce,
+  }
+}
+
+DataGather: {
+  CerfiticatePolicyTab:{},
+  InsuredTab: {},
+  CoveragesTab: {},
+  PremiumSummaryTab: {},
+}
+
+TestData_Plus1Month: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+1M>,
+    Endorsement Reason: Divorce,
+  }
+}
+
+TestData_Plus2Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+2M>,
+    Endorsement Reason: Divorce,
+  }
+}
+
+TestData_Plus3Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+3M>,
+    Endorsement Reason: Divorce,
+  }
+}

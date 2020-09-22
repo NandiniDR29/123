@@ -1,0 +1,10 @@
+TestData: {
+  TestData_Contains: {
+    Code: ["AD", "AX", "BL", "BQ", "CD", "CW", "CZ", "GB", "GG", "IM", "JE", "MD", "ME", "MF", "PS", "RS", "SK", "SX", "SZ", "TL"],
+    Value: ["Andorra", "Åland Islands", "Saint Barts", "Bonaire, Sint Eustatius and Saba", "The Democratic Republic of the Congo", "Curacao", "Czechia", "United Kingdom", "Guernsey", "Isle of Man", "Jersey", "Moldova", "Montenegro", "Saint Martin (French)", "Palestine", "Serbia", "Slovakia", "Saint Martin (Dutch)", "Eswatini", "Timor-Leste"]
+  },
+  TestData_Not_Contains: {
+    Code: ["Netherlands Antilles", "Former Czechoslovakia", "Czech Republic", "France (European Territory)", "Great Britain", "Yugoslavia", "Moldavia", "Slovak Republic", "Former USSR", "Swaziland", "East Timor", "United Kingdom", "Zaire"],
+    Value: ["AN", "CS", "CZ", "FX", "GB", "YU", "MD", "SK", "SU", "SZ", "TP", "UK", "ZR"]
+  }
+}

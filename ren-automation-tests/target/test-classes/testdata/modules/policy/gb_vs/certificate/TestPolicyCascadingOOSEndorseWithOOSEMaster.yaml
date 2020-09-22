@@ -1,0 +1,41 @@
+TestData_MPEndorse1: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: 'A La Carte-A La Carte',
+    Plan Tier And Rating Info: {
+      Rate: '500'
+    }
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_MPEndorse2: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Plan Tier And Rating Info: {
+      Rate: '600'
+    }
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_MPOOSEndorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Plan Tier And Rating Info: {
+      Rate: '650'
+    }
+  },
+  PremiumSummaryTab: {}
+}

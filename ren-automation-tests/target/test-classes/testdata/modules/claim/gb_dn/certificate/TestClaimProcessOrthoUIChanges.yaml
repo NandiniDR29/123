@@ -1,0 +1,53 @@
+TestData_TwoServices: {
+  IntakeInformationTab: {
+    Patient: {
+      Name: contains=Insured
+    },
+    Search Provider: {
+      TIN: '$<rx:\d{10}>',
+      'License #': '$<rx:\d{5}>',
+      License NPI: '1032662407',
+      License State/Province: 'NY',
+      Specialty: Orthodontist,
+      Zip/Postal Code: '10001',
+      Address Line 1: '$<rx:Address\d{8}>',
+      City: 'New York',
+      State/Province: 'NY',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Type of Transaction: 'Actual Services',
+    Source: index=1,
+    Payee Type: index=1,
+    Ortho Months: 6,
+    Submitted Services: [{
+                           DOS: $<today>,
+                           CDT Code: 'D8010',
+                           Charge: 1000
+                         },
+                         {
+                           DOS: $<today>,
+                           CDT Code: 'D2971',
+                           Tooth: '3',
+                           Charge: 600
+                         },
+    ]
+  }
+}
+
+TestData_AddTwoServices: {
+  IntakeInformationTab: {
+    Submitted Services: [{},
+                         {
+                           DOS: $<today>,
+                           CDT Code: 'D8010',
+                           Charge: 700
+                         },
+                         {
+                           DOS: $<today>,
+                           CDT Code: 'D0160',
+                           Charge: 100
+                         }
+    ]
+  }
+}

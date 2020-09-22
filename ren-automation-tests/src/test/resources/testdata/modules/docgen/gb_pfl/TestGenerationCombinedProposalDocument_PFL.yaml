@@ -1,0 +1,32 @@
+TestData: {
+  InitiniateDialog: '@<pfl_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NJ',
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTab',
+  ClassificationManagementTab: ['@ClassificationManagementTab'],
+  PremiumSummaryTab: {},
+}
+
+PolicyInformationTab_NJ: {
+  Situs State: NJ,
+  Rate Guarantee (Months): 24,
+  Internal Team: {
+    Sales Representative: index=1,
+    Underwriter: index=1
+  }
+}
+
+PlanDefinitionTab: {
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12'
+  }
+}
+
+ClassificationManagementTab: {
+  Plan: PFL NJ,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: 10,
+  Total Volume: 1000
+}

@@ -1,0 +1,15 @@
+Contact_Emails: {
+  Email Address: 'test@gmail.com',
+  Comment: comment,
+}
+
+TestData_Check: {
+    "contactMethod": "EMAIL",
+    "contactType": "PERS",
+    "preferredInd": null,
+    "doNotSolicitInd": false,
+    "comment": "comment",
+    "emailId": "test@gmail.com",
+    "consentStatus": "NOT_REQUESTED",
+    "consentDate": null
+}

@@ -1,0 +1,111 @@
+Provider_One: {
+  "taxId": "Individual1",
+  "taxIdType": "IdType",
+  "taxCorporationName": "CorporationName",
+  "irsIndicator": true,
+  "alias": "VendorAlias",
+  "billingType": "VendorBillingType",
+  "fraudInd": true,
+  "fraudType": "fullInfftype",
+  "fraudDetails": "fullIndfd",
+  "name": "IndividVendor1",
+  "countryCd": "US",
+  "zipCd": "94596",
+  "county": "VenCounty",
+  "addressLine1": "AddLine1",
+  "addressLine2": "AddLine2",
+  "addressLine3": "AddLine3",
+  "unitNumber": "14",
+  "city": "IndividualCity",
+  "state": "CA",
+  "phoneNo": "1112224443",
+  "serviceTypes": [
+    "ACCOUNTANT",
+    "AMBULANCE"
+  ],
+  "mailingAddressSame": true,
+  "licenceOptions": [
+    {
+    "effective": "2017-08-07",
+    "expiration": "2020-08-07",
+    "licensePermitNumber": "LisencePermit",
+    "licenceOptions": [
+    {
+    "stateProvCd": "CA"
+    }
+    ]
+    }
+  ],
+  "vendorProfileType": "individual",
+  "serviceProviderCreateDTO": {
+  "firstName": "Individual",
+  "lastName": "Vendor",
+  "middleName": "indMiddleName",
+  "suffix": "Suffix",
+  "salutation": "Mrs",
+  "gender": "Female",
+  "effective": "2017-08-23T12:28:22.303Z",
+  "expiration": "2020-08-24T12:28:22.304Z",
+  "dateOfBirth": "1998-08-23T12:28:22.304Z",
+  "code": 'ind$<rx:\d{8}>'
+  },
+  "externalSourceType":"ExtSourceType1",
+  "vendorTypeCd": "string",
+  "startDate":"$<today:yyyy-MM-dd>",
+  "finishDate":"$<today+1d:yyyy-MM-dd>"
+}
+
+Provider_Two: {
+  "taxId": "Individual1",
+  "taxIdType": "IdType",
+  "taxCorporationName": "CorporationName",
+  "irsIndicator": true,
+  "alias": "VendorAlias",
+  "billingType": "VendorBillingType",
+  "fraudInd": true,
+  "fraudType": "fullInfftype",
+  "fraudDetails": "fullIndfd",
+  "name": "IndividVendor1",
+  "countryCd": "US",
+  "zipCd": "94596",
+  "county": "VenCounty",
+  "addressLine1": "AddLine1",
+  "addressLine2": "AddLine2",
+  "addressLine3": "AddLine3",
+  "unitNumber": "14",
+  "city": "IndividualCity",
+  "state": "CA",
+  "phoneNo": "1112224443",
+  "serviceTypes": [
+  "ACCOUNTANT",
+  "AMBULANCE"
+  ],
+  "mailingAddressSame": true,
+  "licenceOptions": [
+  {
+  "effective": "2017-08-07",
+  "expiration": "2020-08-07",
+  "licensePermitNumber": "LisencePermit",
+  "licenceOptions": [
+  {
+  "stateProvCd": "CA"
+  }
+  ]
+  }
+  ],
+  "vendorProfileType": "individual",
+  "serviceProviderCreateDTO": {
+  "firstName": "Individual",
+  "lastName": "Vendor",
+  "middleName": "indMiddleName",
+  "suffix": "Suffix",
+  "salutation": "Mrs",
+  "gender": "Female",
+  "dateOfBirth": "1998-08-23T12:28:22.304Z",
+  "code": 'ind$<rx:\d{8}>'
+  },
+  "externalSourceType":"ExtSourceType66",
+  "vendorTypeCd": "string",
+#  "startDate":"2017-12-31",
+#  "finishDate":"2018-01-31"
+}

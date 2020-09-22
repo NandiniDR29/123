@@ -1,0 +1,11 @@
+TestData: {
+  SelectGroupRelationshipTypeActionTab: {
+    Relationship Type: Employment
+  },
+  AssociateExistingCustomerSearchActionTab: {
+    Customer Search: {
+      First Name: name
+    }
+  },
+  EmployeeInfoTab: {}
+}

@@ -1,0 +1,5 @@
+{
+    "listener": "com.exigen.ren.SoapJobListener",
+    "jobCreationWaitTime": 180000,
+    "waitForAsyncTasks": true
+}

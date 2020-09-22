@@ -1,0 +1,5 @@
+{
+  "cellHintLocator": {
+    "xpath":"//div[contains(@id,'scolumn') and contains(@class,'ui-tooltip') and contains(@style,'top:') and contains(@style,'left:')]"
+  }
+}

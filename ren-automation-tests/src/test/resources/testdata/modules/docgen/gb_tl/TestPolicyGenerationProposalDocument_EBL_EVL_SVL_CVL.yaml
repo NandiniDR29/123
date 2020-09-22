@@ -1,0 +1,172 @@
+TestData_CreateQuote: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance',
+                      '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife',
+                      '@PlanDefinitionEmployeeVoluntaryLifeInsurance', '@PlanDefinitionSpouseVoluntaryLifeInsurance',
+                      '@PlanDefinitionChildVoluntaryLifeInsurance'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath',
+                                '@ClassificationMgmtBasicLifeInsraunce',
+                                '@ClassificationMgmtDependentBasicLife',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsurance',
+                                '@ClassificationMgmtSpouseVoluntaryLifeInsurance',
+                                '@ClassificationMgmtChildVoluntaryLifeInsurance'],
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+PolicyInformationTab: {
+  Rate Guarantee (Months): 12,
+  Next Renewal Effective Date: $<today+1y>,
+  Next Renewal Quote Start Date: $<today+1y>,
+  Situs State: NY,
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Assigned Agencies: ['@QA_Agency']
+}
+
+QA_Agency: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: Included,
+  Termination age: Never,
+  Continuation: Total Disability,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsurance: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Total Number of Eligible Lives: 1,
+  Termination age: Never,
+  Continuation: Total Disability,
+  Waiver of Premium: Included,
+  Waiver disabled prior to age: 60,
+  Premium Waiver Elimination Period: 9 Months,
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values'
+  }
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Child Voluntary Life Insurance,
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Benefit Schedule - Child: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Increment: 2000,
+    Maximum Benefit Amount: 10000
+  }
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  Tier: Spouse and/or Child
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Classification Group Name: 1
+}

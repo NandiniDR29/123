@@ -1,0 +1,117 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Rating Without TS" verbose="1" parallel="tests" thread-count="1024">
+
+    <listeners>
+        <listener class-name="com.exigen.ipb.eisa.utils.listener.ISBAListener"/>
+        <listener class-name="com.exigen.istf.exec.testng.TimeShiftTestNgListener"/>
+    </listeners>
+
+    <test name="Rating GB_AC" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_ac.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_DI_LTD" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_di_ltd.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_DI_STD" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_di_std.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_DN" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_dn.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_PFL" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_pfl.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_ST" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_st.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_TL" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_tl.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_VS" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_vs.*"/>
+        </packages>
+    </test>
+
+    <test name="Rating GB_EAP" parallel="methods">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.rating.gb_eap.*"/>
+        </packages>
+    </test>
+
+</suite>

@@ -1,0 +1,324 @@
+TestData: {
+  InitiniateDialog: '@<ac_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanBASEBU', '@PlanDefinitionTab_BASEBU_EnhancedAccident', '@PlanDefinitionTab_BASEBU_BasicAccident'],
+  BasicBenefitsTab: '@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: '@EnhancedBenefitsAtoCTab',
+  EnhancedBenefitsDtoFTab: '@EnhancedBenefitsDtoFTab',
+  EnhancedBenefitsHtoLTab: '@EnhancedBenefitsHtoLTab',
+  EnhancedBenefitsMtoTTab: '@EnhancedBenefitsMtoTTab',
+  OptionalBenefitTab: ['@OptionalBenefitTab_EnhancedAccident'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_EnhancedAccident', '@ClassificationManagementTab_BasicAccident'],
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTab: {
+  Situs State: GA,
+  'Rate Guarantee (Months)': '24',
+  Total Number of Eligible Lives: 150,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlanBASEBU: {
+  Plan: Base Buy-Up
+}
+
+PlanDefinitionTab_BASEBU_EnhancedAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: 'Enhanced Accident',
+  Coverage Name: Enhanced Accident,
+  SIC Description: 'Convenience Stores',
+  Number of Units: 10,
+  'Sponsor/Participant Funding Structure': {
+    Minimum Number of Participants: '12'
+  },
+}
+
+PlanDefinitionTab_BASEBU_BasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: 'Basic Accident',
+  Coverage Name: Basic Accident,
+  SIC Description: 'Convenience Stores',
+  Number of Units: 4,
+  'Sponsor/Participant Funding Structure': {
+    Minimum Number of Participants: '12'
+  },
+}
+
+BasicBenefitsTab_BasicAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Air Ambulance Benefit: {
+    'Apply Benefit?': true,
+    Air Ambulance Benefit Amount: 2000
+  },
+  Ground Ambulance Benefit: {
+    'Apply Benefit?': true,
+    Ground Ambulance Benefit Amount: 400
+  },
+  Emergency Room Treatment Benefit: {
+    'Apply Benefit?': true,
+    Emergency Room Benefit Amount: 200,
+  },
+  Hospital Admission Benefit: {
+    'Apply Benefit?': true,
+    Hospital Admission Benefit Amount: 2000,
+  },
+  Major Diagnostic Benefit: {
+    'Apply Benefit?': true,
+    Major Diagnostic Benefit Amount: 400
+  },
+  Physical Therapy Service Benefit: {
+    'Apply Benefit?': true,
+    Physical Therapy Services Benefit Amount: 100
+  }
+}
+
+EnhancedBenefitsAtoCTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Abdominal or Thoracic Surgery Benefit: {
+    'Apply Benefit?': true,
+    'Abdominal or Thoracic Surgery Benefit Amount': 1000,
+  },
+  Accidental Death Benefit: {
+    'Apply Benefit?': true,
+        Accidental Death Benefit Amount for Covered Person: 50000,
+        Accidental Death Benefit Amount for Covered Spouse: 50000,
+        Accidental Death Benefit Amount for each Covered Dependent Child: 15000,
+  },
+  Accidental Death Benefit - Common Carrier: {
+    'Apply Benefit?': true,
+    Accidental Death Benefit - Common Carrier - Employee: 100000,
+    Accidental Death Benefit - Common Carrier - Spouse: 100000,
+    Accidental Death Benefit - Common Carrier - Child: 30000
+  },
+  Accident Follow-up Treatment Benefit: {
+    'Apply Benefit?': true,
+    Accident Follow-up Treatment Benefit Amount: 50
+  },
+  Air Ambulance Benefit: {
+    'Apply Benefit?': true,
+    Air Ambulance Benefit Amount: 1200
+  },
+  Appliance Benefit: {
+    'Apply Benefit?': true,
+    'Appliance Benefit Amount': 100,
+  },
+  Blood / Plasma / Platelets Benefit: {
+    'Apply Benefit?': true,
+    Blood / Plasma / Platelets Benefit Amount: 500,
+  },
+  Burn Benefit: {
+    'Apply Benefit?': true,
+    'Second-degree burns that cover at least 36% of body surface': 800,
+  },
+  Catastrophic Accident Benefit: {
+    'Apply Benefit?': true,
+    Catastrophic Benefit - Prior to Age 70  - Employee: 100000,
+    Catastrophic Benefit - Prior to Age 70  - Spouse: 100000,
+    Catastrophic Benefit - Prior to Age 70  - Child: 50000,
+  },
+  Coma Benefit: {
+    'Apply Benefit?': true,
+    Coma Benefit Amount: 12500,
+  },
+  Concussion Benefit: {
+    'Apply Benefit?': true,
+    Concussion Benefit Amount: 100
+  },
+  Skin Graft Burn Benefit: {
+    'Apply Benefit?': true,
+    Skin Graft Burn Benefit Amount: 25%,
+  },
+}
+
+EnhancedBenefitsDtoFTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Emergency Room Treatment Benefit: {
+    'Apply Benefit?': true,
+    Emergency Room Benefit Amount: 50
+  },
+  Eye Injury Benefit: {
+    'Apply Benefit?': true,
+    Eye Injury Benefit Amount: 200,
+  },
+  Dislocation Benefit: {
+    Lower Jaw Closed Reduction Amount: 600,
+    Lower Jaw Open Reduction Amount: 1200,
+    Collarbone (Sternoclavicular) Open Reduction Amount: 2000,
+    Collarbone (Sternoclavicular) Closed Reduction Amount: 1000,
+    Collarbone (Acromioclavicular and separation) Open Reduction Amount: 400,
+    Collarbone (Acromioclavicular and separation) Closed Reduction Amount: 200,
+    Shoulder Open Reduction Amount: 1200,
+    Shoulder Closed Reduction Amount: 600,
+    Elbow Open Reduction Amount: 1200,
+    Elbow Closed Reduction Amount: 600,
+    Wrist Open Reduction Amount: 1200,
+    Wrist Closed Reduction Amount: 600,
+    Bone / Bones of the Hand Open Reduction Amount: 1200,
+    Bone / Bones of the Hand Closed Reduction Amount: 600,
+    Hip Open Reduction Amount: 8000,
+    Hip Closed Reduction Amount: 4000,
+    Knee Open Reduction Amount: 4000,
+    Knee Closed Reduction Amount: 2000,
+    Ankle / Bone or Bones of the Foot Open Reduction Amount: 3200,
+    Ankle / Bone or Bones of the Foot Closed Reduction Amount: 1600,
+    One or more Fingers or Toes Open Reduction Amount: 400,
+    One or more Fingers or Toes Closed Reduction Amount: 200
+  },
+  Fracture Benefit: {
+    Face or Nose (except mandible or maxilla) Closed Reduction Amount: 700,
+    Face or Nose (except mandible or maxilla) Closedopen Reduction Amount: 1400,
+    Skull Fracture - Depressed (except bones of face and nose) Open Reduction Amount: 10000,
+    Skull Fracture - Depressed (except bones of face and nose) Closed Reduction Amount: 5000,
+    Lower Jaw / Mandible (except alveolar process) Closed Reduction Amount: 600,
+    Lower Jaw / Mandible (except alveolar process) Open Reduction Amount: 1200,
+    Upper Jaw / Maxilla (except alveolar process) Closed Reduction Amount: 700,
+    Upper Jaw / Maxilla (except alveolar process) Open Reduction Amount: 1400,
+    Upper Arm between Elbow and Shoulder (humerus) Closed Reduction amount: 700,
+    Upper Arm between Elbow and Shoulder (humerus) Open Reduction Amount: 1400,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum) Closed Reduction Amount': 600,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum) Open Reduction Amount': 1200,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers) Closed Reduction Amount': 600,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers) Open Reduction Amount': 1200,
+    Rib Closed Reduction Amount: 500,
+    Rib Open Reduction Amount: 1000,
+    Vertebrae / Body of (excluding vertebral processes) Closed Reduction Amount: 1600,
+    Vertebrae / Body of (excluding vertebral processes) Open Reduction Amount: 3200,
+    Vertebral Processes Closed Reduction Amount: 600,
+    Vertebral Processes Open Reduction Amount: 1200,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx) Closed Reduction Amount': 1600,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx) Open Reduction Amount': 3200,
+    Hip / Thigh (femur) Closed Reduction Amount: 3000,
+    Hip / Thigh (femur) Open Reduction Amount: 6000,
+    Leg (tibia and/or fibula) Closed Reduction Amount: 1600,
+    Leg (tibia and/or fibula) Open Reduction Amount: 3200,
+    Kneecap (patella) Closed Reduction Amount: 600,
+    Kneecap (patella) Open Reduction Amount: 1200,
+    Ankle Closed Reduction Amount: 600,
+    Ankle Open Reduction Amount: 1200,
+    Foot (except toes) Closed Reduction Amount: 600,
+    Foot (except toes) Open Reduction Amount: 1200
+  },
+}
+
+EnhancedBenefitsHtoLTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Hospital Admission Benefit: {
+    'Apply Benefit?': true,
+    Hospital Admission Benefit Amount: 2000,
+  },
+  Internal Organ Loss Benefit: {
+    'Apply Benefit?': true,
+    Internal Organ Loss Benefit Amount: 2500,
+  },
+  Lodging Benefit: {
+    'Apply Benefit?': true,
+    'Confinement Lodging Benefit Amount': 100,
+  },
+  'Loss of Finger, Toe, Hand, Foot or Sight of an Eye Benefit': {
+    Loss of one finger or one toe - Employee: 1500,
+    Loss of one finger or one toe - Spouse: 1500,
+    Loss of one finger or one toe - Child: 500,
+    Loss of one hand or one foot or sight of one eye - Employee: 15000,
+    Loss of one hand or one foot or sight of one eye - Spouse: 15000,
+    Loss of one hand or one foot or sight of one eye - Child: 5000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Employee: 3000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Spouse: 3000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Child: 1000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Employee: 30000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Spouse: 30000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Child: 10000
+  },
+  Laceration Benefit: {
+    Benefit Amount for Lacerations less than 7.5 cm long: 50,
+  },
+}
+
+EnhancedBenefitsMtoTTab: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Surgery Benefit: {
+    Herniated Disc Benefit Amount: 400,
+    'Torn, Ruptured or Severed Tendon or Ligament Surgery Benefit Amount to Torn, Ruptured or Severed Tendon or Ligament or Rotator Cuff Surgery Benefit Amount': 600,
+    'Torn, Ruptured or Severed of Two or More Tendons / Ligaments Surgery Benefit Amount to Torn, Ruptured or Severed of Two or More Tendons / Ligaments / Rotator Cuff Surgery Benefit Amount': 1000,
+    Torn Knee Cartilage Surgery Benefit Amount: 800,
+    Exploratory Surgery for Tendon/ Ligament/ Rotator Cuff/ Knee Cartilage Without Repair Benefit Amount: 200,
+  },
+  Major Diagnostic Benefit: {
+    'Apply Benefit?': true,
+    Major Diagnostic Benefit Amount: 600
+  },
+  Physical Therapy Service Benefit: {
+    'Apply Benefit?': true,
+    Physical Therapy Services Benefit Amount: 50
+  },
+  Prosthetic Device Benefit: {
+    'Apply Benefit?': true,
+    One Prosthetic Device or Artificial Limb Benefit Amount: 500,
+  },
+  Rehabilitation Unit Benefit: {
+    'Apply Benefit?': true,
+    Inpatient Rehabilitation Unit Benefit Amount per day: 200,
+  },
+  Sports Injury Benefit: {
+    'Apply Benefit?': true,
+    'Sports Injury Benefit - Lesser of 25% of All Benefits Paid or [benefit amount]': 1000
+  },
+  Transportation Benefit: {
+    'Apply Benefit?': true,
+    Transportation Benefit Amount: 300
+  }
+}
+
+OptionalBenefitTab_EnhancedAccident: {
+  'Include Optional Benefits?': 'Yes',
+  Accidental Death Benefit: {
+    Apply Benefit Accidental Death Benefit: true,
+    Accidental Death Benefit Amount - Employee: 5000,
+    Accidental Death Benefit Amount - Spouse: 5000,
+    Accidental Death Benefit Amount - Child: 1000,
+  },
+  Enhanced Emergency Room Treatment Benefit: {
+    Apply Benefit Enhanced Emergency Room Treatment Benefit: true,
+    Enhanced Emergency Room Treatment Benefit Amount: 100,
+  },
+  Enhanced Physician's Office/Urgent Care Treatment Benefit: {
+    Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit: true,
+    Enhanced Physician's Office/Urgent Care Treatment Benefit Amount: 25
+  },
+  Hospital Confinement Benefit: {
+    'Apply Benefit Hospital Confinement Benefit': true,
+    'Hospital Confinement Benefit Amount': 40,
+  },
+  Hospital ICU Confinement Benefit: {
+    'Apply Benefit Hospital ICU Confinement Benefit': true,
+    'Hospital Confinement Benefit Amount': 100,
+  },
+  Waiver Of Premium Benefit: {
+    'Apply Benefit Waiver Of Premium Benefit': true,
+  },
+  Health Screening Benefit: {
+    'Apply Benefit?': true,
+  },
+}
+
+ClassificationManagementTab_EnhancedAccident: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_BasicAccident: {
+  Coverage Name: Basic Accident,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}

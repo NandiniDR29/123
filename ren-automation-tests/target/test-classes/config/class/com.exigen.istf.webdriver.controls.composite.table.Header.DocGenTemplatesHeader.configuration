@@ -1,0 +1,3 @@
+{
+  "headers": ".//th/span[string-length(text()) > 0]"
+}

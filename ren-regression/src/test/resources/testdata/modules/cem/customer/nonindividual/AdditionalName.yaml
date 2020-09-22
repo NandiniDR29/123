@@ -1,0 +1,16 @@
+TestData: {
+  GeneralTab: {
+    Additional Names:{
+      Name-DBA: AdditionalNameDBA
+    }
+    },
+   RelationshipTab: {}
+ }
+
+REST_Add_AdditionalName: {
+    "nameDba": 'NameDBA$<rx:\d{8}>'
+ }
+
+REST_Update_AdditionalName: {
+    "nameDba": 'NameDBA$<rx:\d{8}>'
+ }

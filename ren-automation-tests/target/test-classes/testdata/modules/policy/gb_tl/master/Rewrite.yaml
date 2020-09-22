@@ -1,0 +1,40 @@
+TestData: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'Yes'
+  }
+}
+
+TestDataNewNumber: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'No'
+  }
+}
+
+DataGather: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife'],
+  PremiumSummaryTab: {}
+}
+
+TestData_AcceptContract: {
+  MasterPolicyBindActionTab: {
+    Amount Received with Application: 2000
+  }
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child)
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Coverage Name: Employee Basic Life Insurance
+}
+

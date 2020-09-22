@@ -1,0 +1,47 @@
+TestData_LTD: {
+  BenefitLTDInjuryPartyInformationTab: '@BenefitLTDInjuryPartyInformationTabWithClick',
+  BenefitLTDIncidentTab: '@BenefitLTDIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+TestData_LTD_OtherValues: {
+  BenefitLTDInjuryPartyInformationTab: '@BenefitLTDInjuryPartyInformationTab',
+  BenefitLTDIncidentTab: '@BenefitLTDIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+BenefitLTDInjuryPartyInformationTabWithClick: {
+  'Add Benefit: Long Term Disability': 'click',
+  Associate Policy Party: index=1,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>',
+  Preferred Payment method: Check
+}
+
+BenefitLTDInjuryPartyInformationTab: {
+  Associate Policy Party: index=1,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>',
+  Preferred Payment method: Check
+}
+
+BenefitSTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}
+
+BenefitLTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+  Insured Person Coverage Effective Date: $<today>,
+  Liability Decision: index=1,
+  Approved Through Date: $<today+2y>
+}

@@ -1,0 +1,49 @@
+TestData: {
+  AddPaymentBatchActionTab: {
+    Payment Designation: 'Benefits Accounts',
+    Total Amount: 25,
+    'Batch Reference #': 'BatchReference$<rx:\d{8}>',
+    Payment List: [{
+      Check Number: 123,
+     }]
+  }
+}
+
+TestData_PostDatedCheck: {
+  AddPaymentBatchActionTab: {
+    Payment Designation: 'Personal & Commercial Lines Accounts',
+    Payment type: 'Post-dated check',
+    Total Amount: 200,
+    'Batch Reference #': 'BatchReference$<rx:\d{8}>',
+    Payment List: [{
+      Amount: 200,
+      Check Number: 123,
+      Cashable Date: '$<today+1d:MM/dd/yyyy>',
+    }
+    ]
+  }
+}
+
+TestData_BenefitsAccounts: {
+  AddPaymentBatchActionTab: {
+    Payment Designation: 'Benefits Accounts',
+    Total Amount: 100,
+    'Batch Reference #': 'BatchReference$<rx:\d{8}>',
+    '# of Payments': 1,
+    Payment List: ['@List_1']
+  }
+}
+List_1: {
+  Amount: 100,
+  Check Number: 1,
+  Open Select Group Insurance Customer Dialog: click,
+  Select Group Insurance Customer Search: {
+    'Billing Account #': num
+  },
+  Open Allocate: click,
+  Allocation Search: {
+    Select Action: Allocate Payment,
+    'Billing Account #': num
+  }
+}
+

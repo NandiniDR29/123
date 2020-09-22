@@ -1,0 +1,35 @@
+TestData_MPEndorse1: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_MPEndorse2: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_MPOOSEndorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: 'ALACARTE-A La Carte'
+  },
+  PremiumSummaryTab: {}
+}

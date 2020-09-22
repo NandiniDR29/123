@@ -1,0 +1,6 @@
+TestData: {
+  RescindCancellationActionTab: {
+    Rescind Cancellation Reason: "Other",
+    Other Reason: "Other Reason"
+  }
+}

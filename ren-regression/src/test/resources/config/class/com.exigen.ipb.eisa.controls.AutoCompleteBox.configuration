@@ -1,0 +1,6 @@
+{
+  "autoCompleteFirstValueLocator": {
+    "xpath":"//div[not (contains(@style, 'display: none'))]//*[contains(@class, 'ui-autocomplete-item') and contains(@class, 'ui-state-highlight')]"
+  },
+  "timeout": "240000"
+}

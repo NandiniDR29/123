@@ -1,0 +1,138 @@
+TestData_MasterPolicy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE']
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: '$<today-3M>',
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  County Code: '001 - Albany County',
+  Policy Effective Date: '$<today-3M>',
+  Total Number of Eligible Lives: 40,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Situs State: NY,
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: ALACARTE-A La Carte,
+  Coverage Tiers: ['Employee Only', 'Employee + 1', 'Employee + Family'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Dental Maximum: {
+    Plan Maximum - In Network: 'Unlimited',
+    Plan Maximum - Out of Network: 'Unlimited'
+  },
+  Orthodontia:{
+    Ortho Coverage: 'Yes',
+    Yearly Maximum: 'Yes'
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + 1,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 20
+  }
+  ]
+}
+
+TestData_TwoServices: {
+  LossEventTab: {},
+  LossContextTab: {
+    Save Loss As: index=1
+  },
+  IntakeInformationTab: {
+    Patient: {
+      Name: contains=Insured
+    },
+    Search Provider: {
+      TIN: '351517384',
+      'License #': '8724',
+      License NPI: '1063628917',
+      License State/Province: 'IN',
+      Specialty: Orthodontist,
+      Zip/Postal Code: '46237',
+      Address Line 1: '4034 E Southport Rd',
+      City: 'Indianapolis',
+      State/Province: 'IN',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Type of Transaction: 'Actual Services',
+    Source: index=1,
+    Payee Type: index=1,
+    Ortho Months: 5,
+    Submitted Services: [{
+      DOS: $<today>,
+      CDT Code: 'D8010',
+      Charge: 1000
+    },
+    {
+      DOS: $<today>,
+      CDT Code: 'D2971',
+      Charge: 500
+    }]
+  }
+}
+
+TestData_LineOverride: {
+  LineOverrideTab: {
+    Override Line Values:  {
+      Covered CDT Code: D0145,
+      Covered: 2011,
+      Deductible: 10,
+      Coinsurance %: 100
+    },
+    Reason: "Any Reason"
+  }
+}

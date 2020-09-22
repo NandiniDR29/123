@@ -1,0 +1,54 @@
+TestData: {
+  GeneralTab: {
+    Add New Product Details: ['@TestData_AutoProduct','@TestData_BenefitsProduct','@TestData_CommercialProduct'],
+     Non-Individual Type: index=1,
+     Name - Legal: 'NameLegal$<rx:\d{8}>',
+     Associate Divisions: true,
+     EIN: '$<rx:\d{2}-\d{7}>',
+     Date business started: $<today-10y>,
+     Division: index=1,
+     Industry: index=1,
+     SIC Description: index=1,
+     Address Details: {
+        Country: United States,
+        Zip/Post Code: '90210',
+        City: Beverly Hills,
+        State/Province: CA,
+        Address Line 1: 'Address$<rx:\d{8}>'
+        },
+     Group Sponsor: 'true',
+     Sales Rep Work Queue: {
+       Search For: Work Queue,
+       Work Queue: General
+    }
+  }
+}
+
+TestData_AutoProduct: {
+  Policy Type: Auto,
+  Carrier Name: AIGM
+}
+
+TestData_BenefitsProduct: {
+  Policy Type: Benefits,
+  Carrier Name: AMICA
+}
+
+TestData_CommercialProduct: {
+  Policy Type: Commercial,
+  Carrier Name: ALL STATE INSURANCE
+}
+
+TestData_CondoProduct: {
+  Add New Product Details:{
+     Policy Type: Condo,
+     Carrier Name: ASSIGNED RISK
+  }
+}
+
+TestData_HomeownerProduct: {
+  Add New Product Details:{
+    Policy Type: Homeowner,
+    Carrier Name: ASSIGNED RISK
+  }
+}

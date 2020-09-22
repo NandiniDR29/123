@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report-metadata xmlns="http://www.exigen.com/reportMetadata"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="">
+	
+	<parent>billingParent.xml</parent>
+	<id>testReport.xml</id>
+	<name>${accountsOnHold}</name>
+	<category>${otherCategory}</category>
+	<description></description>
+	<template>testReport.xlsx</template>
+	<formats>Excel, XML, PDF, HTML, CSV</formats>
+
+	<parameter>
+	    <description>${translation.holdEffectiveDate}</description>
+		<name>start_date</name>
+		<category>Period</category>
+		<type>DATE</type>
+	</parameter>
+	<parameter>
+	    <description>${translation.holdExpirationDate}</description>
+		<name>end_date</name>
+		<category>Period</category>
+		<type>DATE</type>
+	</parameter>
+	<parameter>
+	    <description>${translation.holdCategory}</description>
+		<name>hold_category</name>
+		<category>General</category>
+		<type>LOOKUP</type>
+	</parameter>
+
+	<query>
+		<name>hold_category</name>
+		<sql>
+			SELECT
+			  CATEGORY,
+			  CATEGORY_NAME
+			FROM HOLD_CATEGORY
+  		</sql>
+	</query>
+
+	<query>
+		<name>accountsOnHoldData</name>
+		<sql>
+			SELECT 
+				POLICYNUMBER,
+				POLICY_EFFECTIVE_DATE,
+				POLICY_STATUS,
+				ACCOUNT_NUMBER,
+				ACCOUNTNUMBER,
+				ACCOUNT_ID,
+				FIRSTNAME,
+				MIDDLENAME,
+				LASTNAME,
+				PRODUCT,
+				BILLING_STATUS,
+				CATEGORY,
+				NAME,
+				DESCRIPTION,
+				REASON,
+				HOLDTYPE,
+				EFFECTIVEDATE,
+				EXPIRATIONDATE,
+				LOBCD,
+				PRODUCT_CODE,
+				LOCALECD,
+				LOCATION_TYPE_CD,
+				AGENCY_CODE,
+				RISKSTATE,
+				RISK_STATE_CODE,
+				BROADLOBCD,
+				UNDERWRITERCD
+			FROM ACCOUNTS_ON_HOLD
+			WHERE ${PARENT_FILTER} AND
+				(((CATEGORYCD=:hold_category and :hold_category is not null) OR
+				  (:hold_category is null and CATEGORYCD in (SELECT CATEGORY FROM HOLD_CATEGORY)
+				 )
+				)
+				AND (:start_date IS NULL OR EFFECTIVEDATE=:start_date) 
+				AND (:end_date IS NULL OR EXPIRATIONDATE=:end_date) 
+			       )	
+			ORDER BY ACCOUNTNUMBER,POLICYNUMBER,EFFECTIVEDATE DESC
+  		</sql>
+	</query>
+	
+	<attribute>
+		<name>build.number</name>
+		<value>8.9-20170628.0549</value>
+	</attribute>
+	
+</report-metadata>

@@ -1,0 +1,182 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeath', '@PlanDefinitionDependentBasicLife', '@PlanDefinitionVoluntaryLifeInsurance', '@PlanDefinitionVoluntaryAccidentalDeath', '@PlanDefinitionSpouseVoluntaryLifeInsurance', '@PlanDefinitionChildVoluntaryLifeInsurance', '@PlanDefinitionDependentVoluntaryAccidentalDeath'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath', '@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife', '@ClassificationMgmtVoluntaryLife', '@ClassificationMgmtVoluntaryAccidentalDeath', '@ClassificationMgmtSpouseVoluntaryLifeInsurance', '@ClassificationMgmtChildVoluntaryLifeInsurance', '@ClassificationMgmtDependentVoluntaryAccidentalDeath']
+}
+
+SelectPlan: {
+  Plan: Basic Life + Voluntary
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  'Self-administered?': 'Yes',
+  Sponsor Payment Mode: 12,
+  Line of Duty Benefit: 'Standard',
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionVoluntaryLifeInsurance: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Census Type: index=1,
+  'Self-administered?': 'Yes',
+  Age Reduction Schedule: index=1,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Accelerated Benefit Maximum Percentage: 50%,
+  Accelerated Benefit Minimum Amount: 15000,
+  Accelerated Benefit Minimum Percentage: 20%,
+  Continuation: 'Total Disability',
+  Portability: 'Included',
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File',
+    Benefit Maximum Amount: '$200,000.00',
+  },
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionVoluntaryAccidentalDeath: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  Member Payment Mode: 12,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Range Values'
+  }
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance: {
+  CoverageKey: Child Voluntary Life Insurance,
+  Member Payment Mode: 12,
+  'Self-administered?': 'Yes',
+  Required Participation %: 5%,
+  Benefit Schedule - Child: {
+    Benefit Type: 'Specified Amount - Range Values',
+    Increment: 2000,
+    Maximum Benefit Amount: 10000
+  }
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeath: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  'Self-administered?': 'Yes',
+  'Enhanced AD&D?': 'No',
+  Member Payment Mode: 12,
+  Required Participation %: 5%
+}
+
+
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}
+
+ClassificationMgmtVoluntaryLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}

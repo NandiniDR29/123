@@ -1,0 +1,51 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '134006748',
+    'License #': '58405',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '100073914',
+    Address Line 1: '225 Broadway Ste 101',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    DOS:  '$<today>',
+    CDT Code: 'D2510',
+    Tooth: 'S',
+    Surface: 'L',
+    Charge: '400.40'
+  }
+}
+
+TestData_LineOverride: {
+  LineOverrideTab: {
+    Override Line Values:  {
+      Covered CDT Code: D2120,
+    },
+    Information Requests: {
+      IR Codes: IR99999 - Free Form Text,
+      IR Description for IR99999: descriptionForIR99999,
+    },
+    Reason: "Any Reason"
+  }
+}

@@ -1,0 +1,32 @@
+TestData: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'Yes'
+  }
+}
+
+TestDataNewNumber: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'No'
+  }
+}
+
+DataGather: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Plan Tier And Rating Info: {
+      Number of Participants: '100'
+    }
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_AcceptContract: {
+  MasterPolicyBindActionTab: {
+    Amount Received with Application: 2000
+  }
+}

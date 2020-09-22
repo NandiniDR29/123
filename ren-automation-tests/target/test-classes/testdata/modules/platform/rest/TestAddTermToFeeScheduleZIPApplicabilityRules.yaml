@@ -1,0 +1,222 @@
+TestData_FSV1: {
+  "effectiveDate": "$<today:yyyy-MM-dd>",
+  "expirationDate": "$<today+5M-1d:yyyy-MM-dd>",
+  "serviceFeeScheduleDTO": {
+    "feeScheduleType": "FS1",
+    "feeScheduleCode": "FS1"
+  },
+  "serviceFeeRateDTOs": [
+    {
+      "feeCode": "Code1",
+      "feeAmount": "10.00"
+    }
+  ]
+}
+
+TestData_FSV2: {
+  "effectiveDate": "$<today:yyyy-MM-dd>",
+  "expirationDate": "$<today+5M-1d:yyyy-MM-dd>",
+  "serviceFeeScheduleDTO": {
+    "feeScheduleType": "FS2",
+    "feeScheduleCode": "FS2"
+  },
+  "serviceFeeRateDTOs": [
+    {
+      "feeCode": "Code2",
+      "feeAmount": "20.00"
+    }
+  ]
+}
+
+TestData_FSV3: {
+  "effectiveDate": "$<today:yyyy-MM-dd>",
+  "expirationDate": null,
+  "serviceFeeScheduleDTO": {
+    "feeScheduleType": "FS3",
+    "feeScheduleCode": "FS3"
+  },
+  "serviceFeeRateDTOs": [
+    {
+      "feeCode": "Code3",
+      "feeAmount": "30.00"
+    }
+  ]
+}
+
+TestData_FSV4: {
+  "effectiveDate": null,
+  "expirationDate": "$<today+6M:yyyy-MM-dd>",
+  "serviceFeeScheduleDTO": {
+    "feeScheduleType": "FS4",
+    "feeScheduleCode": "FS4"
+  },
+  "serviceFeeRateDTOs": [
+    {
+      "feeCode": "Code4",
+      "feeAmount": "40.00"
+    }
+  ]
+}
+
+TestData_FSV5: {
+  "effectiveDate": null,
+  "expirationDate": null,
+  "serviceFeeScheduleDTO": {
+    "feeScheduleType": "FS5",
+    "feeScheduleCode": "FS5"
+  },
+  "serviceFeeRateDTOs": [
+    {
+      "feeCode": "Code5",
+      "feeAmount": "50.00"
+    }
+  ]
+}
+
+TestData_NetWork: {
+  "networkCode": '$<static:netWorkCode:[rx:OON\d{4}]>',
+  "networkName": "Out Of Network",
+  "networkType": "Type"
+}
+
+FeeSchedule_Network_Binding1: {
+  "effectiveDate": "$<today:yyyy-MM-dd>",
+  "expirationDate": null,
+  "serviceFeeScheduleVersionId": '$<static:firstFSVId>',
+  "serviceNetworkId": '$<static:firstNetWorkID>'
+}
+
+FeeSchedule_Network_Binding2: {
+  "effectiveDate": "$<today:yyyy-MM-dd>",
+  "expirationDate": "$<today+6M-1d:yyyy-MM-dd>",
+  "serviceFeeScheduleVersionId": '$<static:secondFSVId>',
+  "serviceNetworkId": '$<static:secondNetWorkID>'
+}
+
+FeeSchedule_Network_Binding3: {
+  "effectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "expirationDate": "$<today-1d:yyyy-MM-dd>",
+  "serviceFeeScheduleVersionId": '$<static:thirdFSVId>',
+  "serviceNetworkId": '$<static:thirdNetWorkID>'
+}
+
+FeeSchedule_Network_Binding4: {
+  "effectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "expirationDate": "$<today+6M-1d:yyyy-MM-dd>",
+  "serviceFeeScheduleVersionId": '$<static:thirdFSVId>',
+  "serviceNetworkId": '$<static:fourthNetWorkID>'
+}
+
+FeeSchedule_Network_Binding5: {
+  "effectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "expirationDate": null,
+  "serviceFeeScheduleVersionId": '$<static:fourthFSVId>',
+  "serviceNetworkId": '$<static:fifthNetWorkID>'
+}
+
+FeeSchedule_Network_Binding6: {
+  "effectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "expirationDate": "$<today+1y:yyyy-MM-dd>",
+  "serviceFeeScheduleVersionId": '$<static:fifthFSVId>',
+  "serviceNetworkId": '$<static:sixthNetWorkID>',
+}
+
+ZIP_Applicability_Rule1: {
+  "feeScheduleId": '$<static:firstFeeScheduleId>',
+  "rules": [
+    {
+      "zipRange": {
+        "start": "10001",
+        "end": "10010"
+      },
+      "term": {
+        "effective": "$<today:yyyy-MM-dd>",
+        "expiration": "$<today+1M-1d:yyyy-MM-dd>"
+      }
+    },
+    {
+      "zipRange": {
+        "start": "10011",
+        "end": "10020"
+      },
+      "term": {
+        "effective": "$<today+14d:yyyy-MM-dd>",
+        "expiration": "$<today+2M-1d:yyyy-MM-dd>"
+      }
+    }
+  ]
+}
+
+ZIP_Applicability_Rule2: {
+  "feeScheduleId": '$<static:secondFeeScheduleId>',
+  "rules": [
+    {
+      "zipRange": {
+        "start": "10001",
+        "end": "10010"
+      },
+      "term": {
+        "effective": "$<today+1M+1d:yyyy-MM-dd>",
+        "expiration": "$<today+2M-1d:yyyy-MM-dd>"
+      }
+    },
+    {
+      "zipRange": {
+        "start": "10011",
+        "end": "10020"
+      },
+      "term": {
+        "effective": "$<today+1M+14d:yyyy-MM-dd>",
+        "expiration": "$<today+3M-1d:yyyy-MM-dd>"
+      }
+    }
+  ]
+}
+
+ZIP_Applicability_Rule3: {
+  "feeScheduleId": '$<static:thirdFeeScheduleId>',
+  "rules": [
+    {
+      "zipRange": {
+        "start": "10021",
+        "end": "10030"
+      },
+      "term": {
+        "effective": null,
+        "expiration": "$<today+5M-1d:yyyy-MM-dd>"
+      }
+    }
+  ]
+}
+
+ZIP_Applicability_Rule4: {
+  "feeScheduleId": '$<static:fourthFeeScheduleId>',
+  "rules": [
+    {
+      "zipRange": {
+        "start": "10021",
+        "end": "10030"
+      },
+      "term": {
+        "effective": "$<today+6M-1d:yyyy-MM-dd>",
+        "expiration": null
+      }
+    }
+  ]
+}
+
+ZIP_Applicability_Rule5: {
+  "feeScheduleId": '$<static:fifthFeeScheduleId>',
+  "rules": [
+    {
+      "zipRange": {
+        "start": "10031",
+        "end": "10040"
+      },
+      "term": {
+        "effective": null,
+        "expiration": null
+      }
+    }
+  ]
+}

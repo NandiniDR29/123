@@ -1,0 +1,24 @@
+TestData: {
+  GeneralTab: {
+    Additional Names: {
+      Salutation: Doctor,
+      First Name: AdditionalFirstName,
+      Middle Name: AdditionalMiddleName,
+      Last Name: AdditionalLastName,
+      Suffix: Jr.,
+      Designation: Other
+    },
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}

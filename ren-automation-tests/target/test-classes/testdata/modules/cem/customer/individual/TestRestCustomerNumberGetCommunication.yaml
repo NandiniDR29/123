@@ -1,0 +1,35 @@
+TestData_Communication: {
+  CommunicationActionTab: {
+    Communication Channel: Direct to Customer,
+    Entity Type: Lead/Customer,
+    Communication Direction: Outbound,
+    Subject: subject,
+    Communication Description: description,
+    Communication Outcome: Outcome,
+    Category: Forms & Materials,
+    Status: Read,
+    Sub-Category: Benefit Summaries,
+    Language: English,
+    Source: Dependent,
+    Internal Caller ID: 'Caller ID: 3'
+  }
+}
+
+TestData_Check: {
+  "categoryCd": "FORMS",
+  "subCategoryCd": "BENEFIT_SUMMARY",
+  "sourceCd": "DEPENDENT",
+  "languageCd": "ENG",
+  "internalCallerCd": "CALLER3",
+  "subject": "subject",
+  "statusCd": "READ",
+  "communicationId": "2",
+  "channelCd": "DIRECT_TO_CUSTOMER",
+  "directionCd": "OUTBOUND",
+  "entityTypeCd": "CUSTOMER",
+  "entityReferenceId": "510001",
+  "description": "description",
+  "referenceDescription": null,
+  "customerNumber": "510001",
+  "outcome": "Outcome",
+}

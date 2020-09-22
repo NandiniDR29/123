@@ -1,0 +1,99 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON']
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Contributory,
+    Participant Contribution %: 50,
+
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Monthly Salary - Single Value',
+    Earning Definition: Salary,
+    Benefit Percentage: 60%
+  },
+  Coverage Included in Package: {
+    Annual Enrollment Underwriting Offer: Enrollment period - No EOI required
+  },
+  Rating: {
+    Rate Basis: 'Per $100 Monthly Covered Payroll'
+  }
+}
+
+TestData_ParticipantContribution: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {
+    Sponsor/Participant Funding Structure: {
+      'Participant Contribution %': 30
+    }
+  },
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_EarningDefinition: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Earning Definition: 'Salary & Bonus (12 mo)'
+    }
+  }
+}
+
+TestData_MinimumMonthlyBenefit: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Minimum Monthly Benefit Amount: '$300'
+    }
+  }
+}
+
+TestData_MaximumMonthlyBenefit: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Maximum Monthly Benefit Amount: '$1500'
+    }
+  }
+}
+
+TestData_BenefitPercentage: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Benefit Percentage: '66.67%'
+    }
+  }
+}
+
+TestData_MinimumMonthlyBenefitPercentage: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Minimum Monthly Benefit Percentage: '25%'
+    }
+  }
+}
+
+TestData_MaximumBenefitPeriod: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Maximum Benefit Period: '5 yrs RBD'
+    }
+  }
+}

@@ -1,0 +1,84 @@
+TestData_TwoPlans: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_TwoPlans', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  }
+}
+
+SelectPlan_TwoPlans: {
+  Plan: [NC, CON]
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Contribution Type: Contributory,
+  Participant Contribution %: 80,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode : 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Rating:{
+    Rate Basis: Per Employee per Month
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Participant Contribution %: 80,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode : 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Rating:{
+    Rate Basis: Per $10 Total Weekly Benefit
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Uni-Tobacco: Yes,
+  Unisex: Yes
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}

@@ -1,0 +1,36 @@
+Adjust_GeneralProfileTab: {
+  GeneralProfileTab: {
+    EIS User: 'Yes',
+    First Name: '$<static:fNameEis[rx:FName_\d{8}]>',
+    Last Name: '$<static:lNameEis[rx:LName_\d{8}]>',
+    Effective Date: $<today-1d>,
+    Profile/Subproducer ID: 'Subproducer_$<rx:\d{8}>',
+    'User Name': '$<static:[rx:qa_\d{8}]>',
+    'User Login': '$<static:[rx:qa_\d{8}]>',
+    Password: qa,
+    Confirm Password: qa,
+    User Work Status: Available,
+    Agency/Locations: '@AddPopupSearch',
+    Default: 'true',
+    Roles: QA All,
+    Groups: [Policy Sales & Service - Basic (Sales Reps)],
+    'Phone #': '112334455',
+    E-Mail Address: test@test.com
+  }
+}
+
+AddPopupSearch: {
+  Agency Name: ''
+}
+
+TestData: {
+  C2: "DISABILITY QUOTE",
+  C3: "RESTNAMELEGAL23877696",
+  C4: '$<BOM:yyyy-MM-dd>T00:00:00Z',
+  C5: "FName_71853027 LName_30839122",
+  C6: "112334455",
+  C7: "test@test.com",
+  C10: "COMBINED_PROPOSAL-2019-RESTNAMELEGAL23877696-000206",
+  C17: "3.08",
+  C19: "NY"
+}

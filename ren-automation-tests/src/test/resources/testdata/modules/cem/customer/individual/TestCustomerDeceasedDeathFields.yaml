@@ -1,0 +1,44 @@
+TestData: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  RelationshipTab: {}
+}
+
+CustomerType: {
+  Customer Type: Individual
+}
+
+GeneralTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Designation: 'Other',
+  Description: 'Description$<rx:\d{8}>',
+  'Deceased?': true,
+  Death Notification Received: true,
+  Death Date: 12/12/1990,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '94596',
+    City: Walnut Creek,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Communication Preferences: ["Administrative", "Claims"]
+  }
+}
+
+TestData_Resurrection: {
+  GeneralTab: {
+    Designation: 'MBA',
+    Death Notification Received: false,
+    Death Date: ''
+  },
+  RelationshipTab: {}
+}
+
+TestData_Healing: {
+  GeneralTab: {
+    'Deceased?': false,
+    Designation: ''
+  },
+  RelationshipTab: {}
+}

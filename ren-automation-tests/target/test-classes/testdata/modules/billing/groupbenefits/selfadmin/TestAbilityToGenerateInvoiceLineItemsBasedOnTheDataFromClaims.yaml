@@ -1,0 +1,25 @@
+InvoicingCalendarsINC1: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'INC1',
+  Self Administered: false,
+  List Bill: false,
+  Non Premium: true,
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 31,
+  Generation Date Rule: 30
+}
+
+InvoicingCalendarsINC2: {
+  Billing Calendar: Billing Calendar1,
+  Calendar Name: 'INC2',
+  Self Administered: false,
+  List Bill: false,
+  Non Premium: true,
+  Effective Date: $<today-1y>,
+  Invoicing Frequency: Monthly,
+  Invoicing Rule: On Time,
+  Invoice Due Day: 23,
+  Generation Date Rule: 30
+}

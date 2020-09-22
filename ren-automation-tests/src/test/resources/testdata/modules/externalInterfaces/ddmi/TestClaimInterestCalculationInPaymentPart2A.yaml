@@ -1,0 +1,124 @@
+TestData_Claim_IntProvider: {
+  LossEventTab: {
+    Date of Loss: '$<today-1M-10d>',
+    Date Reported: '$<today>'
+  },
+  LossContextTab: {
+    Save Loss As: index=1
+  },
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  International Provider: {
+    International Provider: 'Yes',
+    First Name: 'FirstName',
+    Last Name: 'LastName',
+    Practice Name: 'PracticeName'
+  },
+  International Provider Address: {
+    'Country': 'United States',
+    'Zip / Postal Code': '22122',
+    'Address Line 1': 'Address Line 1',
+    'Address Line 2': 'Address Line 2',
+    'Address Line 3': 'Address Line 3',
+    City: 'Providence',
+    'State / Province': 'AK'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Submitted Services: [{
+    DOS: $<today>,
+    CDT Code: 'D2971',
+    Tooth: 3,
+    Charge: 100
+  },
+  {
+    DOS: $<today>,
+    CDT Code: 'D0150',
+    Charge: 100
+  }]
+}
+
+TestData_Claim_AddProvider: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '474703621',
+      'License #': 'S7103',
+      License NPI: '1770950909',
+      License State/Province: 'NV',
+      Specialty: Endodontist,
+      Zip/Postal Code: '89103',
+      Address Line 1: '6160 W Tropicana Ave Ste E1 Las Vegas, NV 89103',
+      City: 'Las Vegas',
+      State/Province: 'NV',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    }
+  }
+}
+
+TestData_Claim_Step6: {
+  IntakeInformationTab: {
+    Received Date: $<today-3d>,
+    Clean Claim Date: $<today-2d>,
+    Source: ECS - Tesia,
+    Payee Type: index=1,
+    Submitted Services: [{
+      DOS: $<today-4d>,
+      CDT Code: 'D2971',
+      Tooth: 3,
+      Charge: 100
+    },
+    {
+      DOS: $<today-4d>,
+      CDT Code: 'D0150',
+      Charge: 100
+    }]
+  }
+}
+
+TestData_Claim_Step7: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '821394606',
+      'License #': '4317',
+      License NPI: '1518160951',
+      License State/Province: 'NV',
+      Specialty: General Practitioner,
+      Zip/Postal Code: '89128',
+      Address Line 1: '7670 W Lake Mead Blvd Ste 130',
+      City: 'Las Vegas',
+      State/Province: 'NV',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Received Date: $<today-6d>,
+    Clean Claim Date: $<today>,
+    Source: OCR - Tesia,
+    Payee Type: index=1,
+    Submitted Services: [{
+      DOS: $<today-7d>,
+      CDT Code: 'D2971',
+      Tooth: 3,
+      Charge: 200
+    }]
+  }
+}
+
+TestData_Claim_Step8: {
+  IntakeInformationTab: {
+    Received Date: $<today-4d>,
+    Clean Claim Date: $<today>,
+    Source: ECS - CHC,
+    Payee Type: index=1,
+    Submitted Services: [{
+      DOS: $<today-8d>,
+      CDT Code: 'D0160',
+      Charge: 200
+    }]
+  }
+}

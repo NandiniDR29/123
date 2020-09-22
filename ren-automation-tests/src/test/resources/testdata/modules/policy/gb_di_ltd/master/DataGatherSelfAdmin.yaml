@@ -1,0 +1,90 @@
+TestData: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTab_NC'],
+  ClassificationManagementTab: '@DataGather@ClassificationManagementTab',
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_UseCensusFile: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTab_NC'],
+  ClassificationManagementTab: '@ClassificationManagementTab_AutoSubGroups',
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_TwoPlans: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan_Two', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_NC'],
+  ClassificationManagementTab:  ['@DataGather@ClassificationManagementTab', '@DataGather@ClassificationManagementTab'],
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Total Number of Eligible Lives: 1,
+  Sponsor/Participant Funding Structure: {
+    'Self-administered?': 'Yes',
+    Sponsor Payment Mode: 12
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Options: {
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings
+  }
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    'Self-administered?': 'Yes',
+    Sponsor Payment Mode: 12,
+    'Participant Contribution %': 50
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings
+  },
+  Options: {
+  },
+  Employer Benefits: {}
+}
+
+ClassificationManagementTab_1: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Classification Sub-Group Name: '$<static:ClassificationSubGroup:>'
+}
+
+ClassificationManagementTab_AutoSubGroups: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes',
+}

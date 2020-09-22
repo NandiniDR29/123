@@ -1,0 +1,36 @@
+CommissionRuleSubscriberCount: {
+  Commission Type: 'Subscriber Count',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: ['ASO Dental'],
+    Rate 1: [0, '', 0]
+  }
+}
+
+TestDataMasterPolicy: {
+  PolicyInformationTab: {
+    'Allow Independent Commissionable Producers?': No,
+    Policy Effective Date: $<today>,
+    ASO Plan: 'Yes',
+    Prior Dental Coverage: 'No',
+    Situs State: 'GA',
+    Total Number of Eligible Lives: 1,
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Assigned Agencies: ['@Agency1'],
+  }
+}
+
+Agency1: {
+  Agency / Producer: '',
+  'Primary Agency?': 'Yes'
+}

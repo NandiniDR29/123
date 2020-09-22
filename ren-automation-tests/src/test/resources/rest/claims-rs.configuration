@@ -1,0 +1,296 @@
+{
+  "restTargets": {
+    "VENDORS": {
+       "target": "/vendors",
+       "methods": {
+         "POST": {
+           "mediaType": "application/json"
+         },
+        "GET": {
+           "mediaType": "application/json"
+         }
+       }
+    },
+    "VENDORS.SERVICE.PROVIDERS.SEARCH": {
+       "target": "/dev/vendors/service-providers-search",
+       "methods": {
+         "GET": {
+           "mediaType": "application/json"
+         }
+       }
+    },
+    "VENDORS.FACILITIES": {
+       "target": "/dev/vendors/facilities",
+       "methods": {
+         "POST": {
+           "mediaType": "application/json"
+         }
+       }
+    },
+    "VENDORS.INDIVIDUAL.ASSIGNMENT": {
+       "target": "/dev/vendors/service-agent-assignments",
+       "methods": {
+         "POST": {
+         "mediaType": "application/json"
+         }
+       }
+    },
+    "VENDORS.NONINDIVIDUAL.ASSIGNMENT": {
+      "target": "/dev/vendors/service-provider-facilities",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "GET.FACILITIES": {
+      "target": "/dev/vendors/facilities",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "GET.SERVICE-PROVIDER-FACILITIES-INFO": {
+      "target": "/dev/vendors/service-provider-facilities-info",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "GET.SERVICE-AGENT-ASSIGNMENTS-INFO": {
+      "target": "/dev/vendors/service-agent-assignments-info",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "VENDORS.IDENTITY-UPDATE": {
+      "target": "/dev/vendors/identity-update/{vendorOID}",
+        "methods": {
+          "PUT": {
+            "mediaType": "application/json"
+           }
+          }
+      },
+  "AGENCY.PUT": {
+            "target": "/dev/agencies/{code}",
+            "methods": {
+               "PUT": {
+                  "mediaType": "application/json"
+                  }
+               }
+       },
+  "AGENCY.CREATE": {
+             "target": "/dev/agencies",
+             "methods": {
+                "POST": {
+                   "mediaType": "application/json"
+                 }
+              }
+         },
+  "VENDORS.FACILITIES.VERSION": {
+         "target": "/dev/vendors/facilities-version",
+         "methods": {
+           "POST": {
+             "mediaType": "application/json"
+             }
+           }
+      },
+  "VENDORS.FINANCIAL": {
+         "target": "/dev/vendors/financial-info",
+         "methods": {
+           "POST": {
+               "mediaType": "application/json"
+            }
+         }
+  },
+  "GET.VENDORS.FINANCIAL": {
+         "target": "/vendors/financial-info",
+         "methods": {
+           "GET": {
+               "mediaType": "application/json"
+            }
+         }
+      },
+  "VENDORS.FINANCIAL.VERSION": {
+           "target": "/dev/vendors/financial-info-version",
+           "methods": {
+             "POST": {
+                 "mediaType": "application/json"
+              }
+           }
+        },
+  "SERVICE.AGENT.ASSIGNMENT": {
+           "target": "/dev/vendors/service-agent-assignments",
+           "methods": {
+              "POST": {
+                 "mediaType": "application/json"
+              },
+              "GET": {
+                 "mediaType": "application/json"
+              }
+           }
+        },
+  "VENDORS.VERSION": {
+           "target": "/dev/vendors/create-new-version",
+           "methods": {
+              "POST": {
+                 "mediaType": "application/json"
+              }
+           }
+        },
+  "SERVICE.AGENT.ASSIGNMENT.INFO": {
+             "target": "/dev/vendors/service-agent-assignments-info",
+             "methods": {
+                "GET": {
+                   "mediaType": "application/json"
+                }
+             }
+          },
+  "FEE.SCHEDULE.VERSION": {
+           "target": "/dev/fee-management/service-fee-schedule-versions",
+           "methods": {
+              "POST": {
+                 "mediaType": "application/json"
+              }
+           }
+        },
+    "GET.FEE.SCHEDULE.VERSION.INFO": {
+      "target": "/dev/fee-management/service-fee-schedule-versions-info",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.SERVICE.NETWORK": {
+      "target": "/dev/fee-management/service-network",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.SERVICE.SCHEDULES": {
+      "target": "/dev/fee-management/service-fee-schedules",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.NETWORK.JOIN.AGREEMENT": {
+      "target": "/dev/fee-management/network-join-agreement",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.NETWORK.JOIN.AGREEMENTS": {
+      "target": "/dev/fee-management/network-join-agreements",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.SERVICE.AGREEMENT": {
+      "target": "/dev/fee-management/service-fee-agreement",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.SERVICE.AGREEMENTS": {
+      "target": "/dev/fee-management/service-fee-agreements",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FEE.SCHEDULE.NETWORK.BINDING": {
+      "target": "/dev/fee-management/fee-schedule-network-binding",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ZIP.APPLICABILITY.RULES": {
+      "target": "/dev/fee-management/zip-applicability-rules",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ZIP.APPLICABILITY.RULES.ID": {
+      "target": "/dev/fee-management/fee-schedule-zip-applicability-rules/{feeScheduleId}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "OUT.FEE.RATES.INFO": {
+      "target": "/dev/fee-management/out-of-network-fee-rates-info",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+   "FINANCIAL.REP.SUBLEDGER.CLAIM": {
+      "target": "/dev/financial-repository/subledger/claim/{claimNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CLAIMS.FNOL": {
+      "target": "/claims/fnol",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CLAIMS.IMAGE": {
+      "target": "/claims/{claimNumber}/full",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CLAIMS.FEATURES": {
+          "target": "/claims/{claimNumber}/features",
+          "methods": {
+            "GET": {
+              "mediaType": "application/json"
+            }
+          }
+        },
+    "CLAIMS.INTAKE.TASK": {
+      "target": "/dev/tasks/claimIntake",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    }
+  }
+}

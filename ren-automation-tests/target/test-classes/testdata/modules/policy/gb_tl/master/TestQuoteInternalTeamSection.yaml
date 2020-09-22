@@ -1,0 +1,37 @@
+TestData_User_With_Three_Groups: {
+  GeneralProfileTab: '@GeneralProfileTab',
+  AuthorityLevelsTab: '@AuthorityLevelsTab'
+}
+
+TestData_SalesRepresentatives: {
+  GeneralProfileTab: '@GeneralProfileTab_SalesRepresentatives',
+  AuthorityLevelsTab: {}
+}
+
+GeneralProfileTab: {
+  EIS User: 'Yes',
+  First Name: '$<static:fNameEis[rx:FName_\d{8}]>',
+  Last Name: '$<static:lNameEis[rx:LName_\d{8}]>',
+  Effective Date: $<today-1d>,
+  Profile/Subproducer ID: 'Subproducer_$<rx:\d{8}>',
+  'User Name': '$<static:[rx:qa_\d{8}]>',
+  'User Login': '$<static:[rx:qa_\d{8}]>',
+  Password: qa,
+  Confirm Password: qa,
+  User Work Status: Available,
+  Agency/Locations: '@AddPopupSearch',
+  Default: 'true',
+  Roles: QA All,
+  Groups: ["Policy Sales & Service -Advanced (Underwriting)", "Policy Sales & Service - Intermediate (Sales Support)", "Policy Sales & Service - Basic (Sales Reps)"]
+}
+
+AddPopupSearch: {
+  Agency Name: ''
+}
+
+AuthorityLevelsTab: {
+  Type: Underwriting,
+  Product: 'For All',
+  Level: 'Level 3',
+  Save New Authority: 'true'
+}

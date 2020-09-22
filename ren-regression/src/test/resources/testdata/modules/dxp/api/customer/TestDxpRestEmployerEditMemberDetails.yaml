@@ -1,0 +1,28 @@
+TestData: {
+  GeneralTab: {
+    Address Details: ['@AddressUpdate', '@Address2'],
+  },
+  EmloyeeInfoTab: {}
+}
+
+
+AddressUpdate: {
+  Actions: Change,
+  Address Line 1: '$<static:AddressLine1_REN-36387_TC1:[rx:Address\d{8}]>',
+  County: Colombia,
+  'Make Preferred?': 'Yes',
+  Communication Preferences: ["Administrative", "Claims"]
+}
+
+Address2: {
+  Address Type: Residence,
+  Country: United States,
+  Zip/Post Code: '90210-0806',
+  City: Beverly Hills,
+  State/Province: CA,
+  Address Line 1: '$<static:AddressLine1_REN-36387_TC2:[rx:Address\d{8}]>',
+  Address Line 2: '$<static:AddressLine2_REN-36387_TC2:[rx:Address\d{8}]>',
+  Address Line 3: '$<static:AddressLine3_REN-36387_TC2:[rx:Address\d{8}]>',
+  County: '$<static:County_REN-36387_TC2:[rx:County\d{8}]>',
+  'Make Preferred?': 'No'
+}

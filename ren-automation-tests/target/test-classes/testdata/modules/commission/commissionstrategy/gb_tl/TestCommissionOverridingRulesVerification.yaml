@@ -1,0 +1,116 @@
+TestDataCommission: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@CommissionRuleTiered', '@CommissionRuleCumulativeTiered', '@CommissionRuleSubscriberCount']
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_TL - Term Life Insurance',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+  Available for Override: true,
+  Commission Overrides: ['@Add_Commission_Tiered_Override', '@Add_Commission_Cumulative_Tiered_Override', '@Add_Commission_Subscr_Count_Flat_Override']
+}
+
+CommissionRuleTiered: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '', 10]
+  }
+}
+
+CommissionRuleCumulativeTiered: {
+  Commission Type: 'Cumulative Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '', 25]
+  }
+}
+
+CommissionRuleSubscriberCount: {
+  Commission Type: 'Subscriber Count',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Rate 1: [0, '', 25]
+  }
+}
+
+Add_Commission_Tiered_Override: {
+  Commission Type: 'Tiered',
+  Add Commission Override Options: {
+    Name: '$<static:NameTier:[rx:NameTier\d{5}]>',
+    Tier 1: [0, '', 30]
+  }
+}
+
+Add_Commission_Cumulative_Tiered_Override: {
+  Commission Type: 'Cumulative Tiered',
+  Add Commission Override Options: {
+    Name: '$<static:NameCumTier:[rx:NameCumTier\d{6}]>',
+    Tier 1: [0, '', 35]
+  }
+}
+
+Add_Commission_Subscr_Count_Flat_Override: {
+  Commission Type: 'Subscriber Count - Flat',
+  Add Commission Override Options: {
+    Name: '$<static:NameFlat:[rx:NameFlat\d{7}]>',
+    Override Range Min: 0,
+    Override Range Max: 99
+  }
+}
+
+TestDataMaster: {
+  PolicyInformationTab: {
+    County Code: '001 - Albany County',
+    'Prior Life Coverage': 'No',
+    'Has Continuity of Coverage?': 'Yes',
+    'Small Group?': 'No',
+    'Allow Independent Commissionable Producers?': 'Yes',
+    'Separate Or Combined Experience Rating?': 'Combined',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Assigned Agencies: ['@QA_Agency']
+  }
+}
+
+Agency1: {
+  Agency / Producer: '',
+  'Primary Agency?': 'Yes',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+Agency2: {
+  Agency / Producer: '',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+Agency3: {
+  Agency / Producer: '',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}
+
+Agency4: {
+  Agency / Producer: '',
+  'Primary Agency?': 'No',
+  'Independent Commissionable Producer (ICP)?': 'Yes'
+}

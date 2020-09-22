@@ -1,0 +1,148 @@
+TestData_REN_43861: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+
+TestData_REN_43927_1: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab_43927_1',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+TestData_REN_43927_2: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab_43927_2',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+CustomerType: {
+  Customer Type: Non-Individual
+}
+
+GeneralTab: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Number of Employees: '',
+  Date business started: $<today-10y>,
+  Mail Cards To: Group,
+  Mail W-2 To: Group,
+  Electronic SSA Filing: Yes,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Email Details:[{Email Address: email_1@email.com},{Email Address: email_2@email.com}],
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>'
+  },
+  Phone Details: {
+    Phone Type: Mobile,
+    Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  },
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}
+
+GeneralTab_43927_1: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Primary Contact Preference: 'Mail',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Number of Employees: '',
+  Date business started: $<today-10y>,
+  Mail Cards To: Group,
+  Mail W-2 To: Group,
+  Electronic SSA Filing: Yes,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Email Details:  {
+    Email Type: Common,
+    Email Address: email_1@email.com
+  },
+  Address Details: {
+    Address Type: Legal,
+    Country: United States,
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>'
+  },
+  Phone Details: [
+    {Phone Type: Mobile,
+     Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'},
+    {Phone Type: Fax,
+     Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    }
+  ],
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  },
+  Additional Information: {
+    Paperless: true
+  }
+}
+
+GeneralTab_43927_2: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Primary Contact Preference: 'Mail',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Number of Employees: '',
+  Date business started: $<today-10y>,
+  Mail Cards To: Group,
+  Mail W-2 To: Group,
+  Electronic SSA Filing: Yes,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Address Details: {
+    Address Type: Legal,
+    Country: United States,
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>'
+  },
+  Phone Details: [
+  {Phone Type: Mobile,
+   Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'},
+  {Phone Type: Fax,
+   Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  }
+  ],
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  },
+  Additional Information: {
+    Paperless: false
+  }
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}

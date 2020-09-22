@@ -1,0 +1,33 @@
+TestData: {
+  ReportingPartyAndClaimContactActionTab: {},
+  PolicyInformationPolicyActionTab: {},
+  PolicyInformationParticipantParticipantInformationActionTab: {},
+  PolicyInformationParticipantParticipantCoverageActionTab: {},
+  PolicyInformationSponsorActionTab: {},
+  EventInformationLossEventActionTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportActionTab: {},
+  AdditionalPartiesWitnessActionTab: {},
+  AdditionalPartiesAdditionalPartyActionTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceActionTab: {},
+  EAPServicesServiceRequestActionTab: {},
+  ClaimHandlingClaimFileOwnerActionTab: {},
+  ClaimHandlingSpecialHandlingActionTab: {}
+}
+
+EventInformationLossEventTab: {
+  Reported Underlying Conditions: Other,
+  Reported Cause of Loss: Fire,
+  Description of Loss: '$<static:customerDescriptionOfLossEvent:[rx:Description\d{8}]>'
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=2,
+  First Name: '$<static:customerFirstName:[rx:John\d{8}]>',
+  Last Name:  '$<static:customerLastName:[rx:Smith\d{8}]>',
+  Contact Preference: Mail,
+  Preferred Payment method: Check,
+  Zip / Postal Code: '32011',
+  Address Line 1: '$<static:customerAddressLine1:[rx:Address\d{8}]>',
+  City: '$<static:customerCity:[rx:City\d{8}]>',
+  State / Province: FL
+}

@@ -1,0 +1,6 @@
+TestData: {
+  SchemeInfoTab: {
+    Scheme Name: 'SchemeName$<rx:\d{8}>',
+  },
+  ProductsTab: {}
+}

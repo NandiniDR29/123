@@ -1,0 +1,96 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_CON'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  'Policy Effective Date':  $<today>,
+  'Situs State': 'PA',
+  'Zip Code': '18401',
+  'First Time Buyer?': 'No',
+  'Small Group?': 'Yes',
+  'Allow Independent Commissionable Producers?': 'Yes',
+  'Rate Guarantee (Months)': '18',
+  'Primary Agency?': 'Yes',
+  'Agent Sub Producer': index=1,
+  'Internal Team': {
+    'Sales Representative': index=1,
+    'Sales Support Associate': index=1
+  }
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Plan Name: CON,
+  Coverage Basis: 'Non Occupational Coverage',
+  Census Type: Eligible,
+  Total Number of Eligible Lives: 25,
+  'Assumed Participation %': '100%',
+  'Contribution Type': 'Contributory',
+  'Sponsor Payment Mode': 1,
+  'Member Payment Mode': 1,
+  'Participant Contribution %': '50',
+  'STAT Offset': 'Included',
+  'STAT Offset Amount': 150,
+  'Social Security Integration Method': 'None',
+  'Workers Compensation': 'Not Included',
+  'FICA Match': 'Embedded',
+  'Rating': {
+    'SIC Code': '2711'
+  },
+  'Benefit Schedule': {
+    'Benefit Type': 'Percentage of Weekly Salary - Single Value',
+    'Benefit Percentage': '60%',
+    'Maximum Weekly Benefit Amount': '1000',
+    'Elimination Period - Injury (Calendar Days)': '7',
+    'Elimination Period - Sickness (Calendar Days)': '14',
+    'Maximum Payment Duration': '15',
+    'Minimum Weekly Benefit Amount': '$75',
+    'Partial Disability': 'None',
+    'Pre-Existing Conditions': 'Included',
+    'Pre-Existing Condition: Treatment Free Period': '6 Months',
+    'Pre-Existing Condition: Look Back Period': '6 Months',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months'
+  },
+  'Options': {
+    'Residual': 'Included',
+    'Premium Waiver': 'Not Included',
+    'First Day Hospitalization': 'Not Included',
+    'W2': 'Included',
+  }
+}
+
+ClassificationManagementTab_SGR: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'Yes',
+  'Unisex': 'Yes',
+  'Uni-Tobacco': 'Yes'
+}
+
+ClassificationManagementTab_CON: {
+  Add Classification Group Coverage Relationship: CLICK,
+   Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No'
+}
+
+PremiumSummaryTab: {
+  Select Rating Census: 'index=1',
+  Apply: 'click',
+}

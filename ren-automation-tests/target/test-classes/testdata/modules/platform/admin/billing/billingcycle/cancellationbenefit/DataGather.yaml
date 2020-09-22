@@ -1,0 +1,29 @@
+TestData: {
+  CancellationsBenefitsTab: ['@CancellationsBenefitsTab', '@CancellationsBenefitsTab2']
+}
+
+CancellationsBenefitsTab: {
+  Products: 'Group Accident',
+  Geography: {
+    Countries: United States,
+    States: GA
+  },
+  Direct Bill: 'false',
+  Self Administered: 'true',
+  List Bill: 'true',
+  Grace period X days after invoice due date: 13,
+  'Cancel X days after grace period end date/invoice due date': 13,
+  Set cancellation reason: index=1,
+  Cancellation effective date: index=1
+}
+
+CancellationsBenefitsTab2: {
+  Products: 'Group Accident',
+  Direct Bill: 'false',
+  Self Administered: 'true',
+  List Bill: 'true',
+  Grace period X days after invoice due date: 10,
+  'Cancel X days after grace period end date/invoice due date': 13,
+  Set cancellation reason: index=1,
+  Cancellation effective date: index=1
+}

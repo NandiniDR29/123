@@ -1,0 +1,61 @@
+TestData: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@CoverageDefinitionTabChildTermLife'],
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: ['@ClassificationManagementTab'],
+  PremiumSummaryTab: {}
+}
+
+
+CoverageDefinitionTabChildTermLife: {
+  Add Coverage: 'click',
+  Plan ComboBox: 'Base Buy-Up',
+  Coverage Name: Basic Accident,
+  SIC Description: index=1,
+  Sponsor/Participant Funding Structure: {
+    'Self-administered?': 'Yes',
+    Minimum Number of Participants: 10
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period: '10',
+    Waiting Period Mode: 'Days',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  },
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Relationship: CLICK,
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only
+}
+
+
+Issue: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BasicAccidentBASEBU',
+  IssueActionTab: '@IssueActionTab'
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BasicAccidentBASEBU: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG003,
+  Billing Group Type: Employment,
+  Payor: Sponsor,
+  Payment Mode: 12,
+  Coverage: Basic Accident - Base Buy-Up
+}

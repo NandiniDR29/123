@@ -1,0 +1,99 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@<tl_master>@DataGather@SelectPlan', '@PlanDefinitionTab_EBL', '@PlanDefinitionTab_DBL',
+                      '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove'],
+  ClassificationManagementTab: ['@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+                                '@<tl_master>@DataGather@ClassificationMgmtDependentBasicLife'],
+}
+
+PlanDefinitionTab_EBL: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Total Number of Eligible Lives: 10,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Single Value'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionTab_DBL: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Coverage Application: 'Child Only',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+    'Benefit Schedule - Child': {
+      Benefit Type: 'Specified Amount - Single Value',
+      '6 months to max age': '2000'
+    }
+}
+
+TestData_CertificatePolicy: {
+  CoveragesTab: ['@SelectPlan', '@CoveragesTabBasicLifeInsurance', '@CoveragesTabDependentBasicLife']
+}
+
+SelectPlan: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLifeInsurance: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}
+
+CoveragesTabDependentBasicLife: {
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Enrollment Date: $<today>,
+  Benefit Child: {
+    Elected Benefit Amount: 1300
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Participant General Info: '@ParticipantGeneralInfo'
+}
+
+ParticipantGeneralInfo: {
+  First Name: 'Mary$<rx:\d{5}>',
+  Last Name: 'Smith$<rx:\d{5}>',
+  Date of Birth: $<today-5y>,
+  Relationship to Insured: Dependent Child
+}
+
+TestData_Endorsement1: {
+  PlanDefinitionTab: {
+    CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+    'Benefit Schedule - Child': {
+      '6 months to max age': '2500'
+    }
+  }
+}
+
+TestData_Endorsement2: {
+  PlanDefinitionTab: {
+    CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+    'Benefit Schedule - Child': {
+      'Live birth to 14 days': '$1,000.00'
+    }
+  }
+}
+
+TestData_Endorsement3: {
+  PlanDefinitionTab: {
+    CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+    'Benefit Schedule - Child': {
+      '15 days to 6 months': '$1,000.00'
+    }
+  }
+}

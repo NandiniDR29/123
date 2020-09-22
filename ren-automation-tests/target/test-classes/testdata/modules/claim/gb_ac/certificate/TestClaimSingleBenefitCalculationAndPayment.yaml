@@ -1,0 +1,108 @@
+TestData_Claim: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabDiagnosisAndTreatment'],
+  BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab: '@BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab',
+  BenefitsDiagnosisAndTreatmentIncidentTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: 'contains=Customer',
+  Relationship To Participant: index=1,
+  Contact Preference: index=1,
+  Email: test@test.com
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1,
+  Contact Preference: Mail
+}
+
+BenefitsBenefitSummaryTabDiagnosisAndTreatment: {
+  Damage: Diagnosis and Treatment
+}
+
+BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab: {
+  Associated Policy Party: index=1,
+  Date of Birth: $<today-40y>,
+  Preferred Payment method: Check,
+  'Itemized Injury/Illness': [
+  {
+    Associated Benefits: Lodging Benefit,
+    Associated Scheduled Item: index=0,
+    Estimated Cost/Value: 100,
+    'Number of Units (Days, Visits, Tests)': 1,
+    Date of Service: $<today>
+  },
+  {
+    Associated Benefits: Physical Therapy Service Benefit,
+    Associated Scheduled Item: index=0,
+    Estimated Cost/Value: 100,
+    'Number of Units (Days, Visits, Tests)': 2,
+    Date of Service: $<today>
+  },
+  {
+    Associated Benefits: Rehabilitation Unit Benefit,
+    Associated Scheduled Item: index=0,
+    Estimated Cost/Value: 400,
+    'Number of Units (Days, Visits, Tests)': 2,
+    Date of Service: $<today>
+  },
+  {
+    Associated Benefits: Hospital Confinement Benefit,
+    Associated Scheduled Item: index=0,
+    Estimated Cost/Value: 80,
+    'Number of Units (Days, Visits, Tests)': 2,
+    Date of Service: $<today>
+  },
+  {
+    Associated Benefits: Health Screening Benefit,
+    Associated Scheduled Item: index=0,
+    Estimated Cost/Value: 25,
+    'Number of Units (Days, Visits, Tests)': 1,
+    Date of Service: $<today>
+  },
+  ]
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>',
+}
+
+TestData_CalculateSingleBenefitAmount: {
+  CoveragesActionTab: {
+    Associated Insurable Risk: contains=Physical Therapy Services Benefit,
+    Coverage: Enhanced Physical Therapy Services Benefit - Base Buy-Up
+  }
+}
+
+TestData_Payment: {
+  PaymentPaymentPaymentAllocationTab: {
+    Benefit: index=0,
+    Coverage: Enhanced Physical Therapy Services Benefit - Base Buy-Up,
+    Reserve Type: Indemnity,
+    Final Payment: 'Yes',
+    'Pull Check?': 'Yes'
+  }
+}

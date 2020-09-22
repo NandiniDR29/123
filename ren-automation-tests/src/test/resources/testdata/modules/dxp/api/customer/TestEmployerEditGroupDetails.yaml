@@ -1,0 +1,22 @@
+TestData_Address: {
+  GeneralTab: {
+    Address Details: {
+      Contact Details Type: Address,
+      Address Type: Residence,
+      Country: United States,
+      Zip/Post Code: '12345',
+      City: As,
+      State/Province: CA,
+      Address Line 1: EISGROUP,
+      Address Line 2: ''
+    }
+  }
+}
+
+TestData_Address2: {
+  GeneralTab: {
+    Address Details: {
+      Communication Preferences: []
+    }
+  }
+}

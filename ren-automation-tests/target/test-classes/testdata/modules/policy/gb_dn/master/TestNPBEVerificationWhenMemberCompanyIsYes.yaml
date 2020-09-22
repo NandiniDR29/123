@@ -1,0 +1,24 @@
+TestData: {
+  PolicyInformationTab: '@PolicyInformationTab'
+}
+
+PolicyInformationTab: {
+  Group is Member Company: Yes,
+  Member Company Name: 'index=1',
+  Situs State: 'NY',
+  ASO Plan: No,
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'Yes',
+  Prior Carrier Name: 'index=1',
+  'Prior Claims Allowed?': 'true',
+  Total Number of Eligible Lives: '2',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}

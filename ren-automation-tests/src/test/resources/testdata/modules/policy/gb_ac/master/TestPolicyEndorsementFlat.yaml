@@ -1,0 +1,63 @@
+TestData: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_ThreeCoverages: {
+  InitiniateDialog: {},
+  MasterPolicyTab: {},
+  CoverageDefinitionTab: {},
+  ClassificationManagementTab: ['@ClassificationManagementTabSpouseTermLifeOtherValues','@ClassificationManagementTabBasicTermLifeOtherRate'],
+  PremiumSummaryTab: {}
+}
+
+TestData_AddCoverage: {
+  InitiniateDialog: {},
+  MasterPolicyTab: {},
+  CoverageDefinitionTab: '@CoverageDefinitionTabChildTermLife',
+  ClassificationManagementTab: ['@ClassificationManagementTabSpouseTermLifeOtherValues', '@ClassificationManagementTabBasicTermLifeOtherRate', '@ClassificationManagementTabChildTermLife'],
+  PremiumSummaryTab: {}
+}
+
+TestData_ExistentBillingAccount: {
+  MasterPolicyIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTabGroup1',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: {}
+}
+
+BillingGroupsActionTabGroup1: {
+  Coverage: [Basic Accident, Basic Term Life, Spouse Term Life],
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+ClassificationManagementTabSpouseTermLifeOtherValues: {
+  Rate: '300',
+}
+
+ClassificationManagementTabBasicTermLifeOtherRate: {
+  Rate: '200'
+}
+
+ClassificationManagementTabChildTermLife: {  
+  Get Rates: Enter Manually,
+  Classification Group Name: Employment,
+  'Use Classification Sub-Groups?': 'No',
+  Total Volume: '12',
+  Number of Participants: '10',
+  Rate: '100'
+}

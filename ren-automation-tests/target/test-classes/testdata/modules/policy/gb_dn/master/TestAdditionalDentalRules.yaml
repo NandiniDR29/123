@@ -1,0 +1,34 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE']
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Benefit Waiting Periods: {
+    Preventive Waiting Period: '6 months',
+    Basic Waiting Period: '6 months',
+    Major Waiting Period: '6 months'
+  },
+  Dental Maximum: {
+    Plan Maximum - In Network: '$3,000',
+    Plan Maximum - Out of Network: '$500'
+  },
+  Co-Insurance:{
+    U&C Percentile Level: REN 80th,
+    Preventive - In Network: 100%,
+    Preventive - Out of Network: 100%,
+    Basic - In Network: 80%,
+    Basic - Out of Network: 80%,
+    Major - In Network: 50%,
+    Major - Out of Network: 50%
+  },
+  Dental Deductible:{
+    Deductible - In Network: '$50',
+    Deductible - Out Of Network: '$100'
+  },
+}

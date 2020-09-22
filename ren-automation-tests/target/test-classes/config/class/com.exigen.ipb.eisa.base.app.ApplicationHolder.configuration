@@ -1,0 +1,6 @@
+{
+  "customApplications": [
+    "com.exigen.ipb.eisa.base.app.OperationalReportApplication",
+    "com.exigen.ipb.eisa.base.app.WebStudioApplication"
+  ]
+}

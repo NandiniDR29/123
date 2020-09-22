@@ -1,0 +1,28 @@
+TestData: {
+  TransferPaymentActionTab: {
+    Transfer Reason: index=1,
+    Allocation: {
+      Billing Account Name Type: Individual,
+      'Policy #': ''
+    }
+  }
+}
+
+TestData_CL: {
+  TransferPaymentActionTab: {
+    Transfer Reason: index=1,
+    Allocation: {
+      Billing Account Name Type: Individual,
+      'Policy #': ''
+    }
+  }
+}
+
+TestData_Benefits: {
+  TransferPaymentBenefitsActionTab: {
+    Transfer Amount: '',
+    Billing Account: {
+      'Policy #': ''
+    }
+  }
+}

@@ -1,0 +1,5 @@
+TestData: {
+  RefreshTemplateTab: {
+    Template Id: '$<static:newName:[rx:Template\d{4}]>'
+  }
+}

@@ -1,0 +1,87 @@
+TestDataCoverages: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanEmployeeBasicAccidentalDeath', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce'],
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Total Number of Eligible Lives: 35,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanEmployeeBasicAccidentalDeath: {
+  CoverageKeyRemove: Employee Basic Accidental Death and Dismemberment Insurance
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKeyRemove: Dependent Basic Life Insurance (Spouse & Child)
+}
+
+TestDataCertificatePolicy: {
+  CoveragesTab: ['@SelectPlanCertificatePolicy', '@CoveragesTabBasicLife'],
+
+}
+
+SelectPlanCertificatePolicy: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLife: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+    Beneficiaries:['@TestDataBeneficiaryCoverage1','@TestDataBeneficiaryCoverage2']
+}
+
+TestDataBeneficiaryCoverage1: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Non-Person',
+  Role Percent: '100',
+  Beneficiary General Info Non-Person: {
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Insured: 'Trust/Charity/Other'
+  },
+  Beneficiary Address Info Non-Person:{
+    City: Walnut Creek,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    State / Province: CA,
+    Zip / Post Code: 94956
+  }
+}
+
+TestDataBeneficiaryCoverage2: {
+  Add Beneficiary: 'click',
+  Beneficiary Selection: 'New Non-Person',
+  Role Name: 'Secondary Beneficiary',
+  Role Percent: '100',
+  Beneficiary General Info Non-Person: {
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Insured: 'Trust/Charity/Other'
+  },
+  Beneficiary Address Info Non-Person:{
+    City: Walnut Creek,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    State / Province: CA,
+    Zip / Post Code: 94956
+  }
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}

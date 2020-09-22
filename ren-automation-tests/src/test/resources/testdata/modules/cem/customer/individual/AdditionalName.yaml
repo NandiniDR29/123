@@ -1,0 +1,34 @@
+TestData: {
+  GeneralTab: {
+    Additional Names: {
+      Salutation: Doctor,
+      First Name: AdditionalFirstName,
+      Middle Name: AdditionalMiddleName,
+      Last Name: AdditionalLastName,
+      Suffix: Jr.,
+      Designation: Other
+    }
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+REST_Add_AdditionalName: {
+  "salutation": "8",
+  "firstName": 'John$<rx:\d{8}>',
+  "middleName": 'middleN$<rx:\d{8}>',
+  "lastName": 'Smith$<rx:\d{8}>',
+  "suffix": "1",
+  "designationCd": "OTHER",
+  "designationDescription": "descryption_one"
+}
+
+REST_Update_AdditionalName: {
+  "salutation": "2",
+  "firstName": 'John$<rx:\d{8}>',
+  "middleName": 'middleN$<rx:\d{8}>',
+  "lastName": 'Smith$<rx:\d{8}>',
+  "suffix": "3",
+  "designationCd": "OTHER",
+  "designationDescription": "descryption_one_two"
+}

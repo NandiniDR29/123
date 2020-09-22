@@ -1,0 +1,743 @@
+TestData: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+TestData_WithoutDivisionsTab: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@Adjustment_WithoutAssociateDivisions',
+  RelationshipTab: {}
+}
+
+TestData_WithRelationshipTypes: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  DivisionsTab: {},
+  RelationshipTab: ['@RelationshipWithIndividualTypeClaims','@RelationshipWithNonIndividualTypeDivision']
+}
+
+TestData_WithOneNonIndRelationshipType: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  DivisionsTab: {},
+  RelationshipTab: '@RelationshipWithNonIndividualTypeDivision'
+}
+
+CustomerType: {
+  Customer Type: Non-Individual
+}
+
+GeneralTab: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Number of Employees: '',
+  Date business started: $<today-10y>,
+  Mail Cards To: Group,
+  Mail W-2 To: Group,
+  Electronic SSA Filing: Yes,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>'
+  },
+  Phone Details: {
+    Phone Type: Mobile,
+    Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  },
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  #  Sales Rep Internal: {
+  #    First Name: ISBA,
+  #    Category: '',
+  #    Channel: Corporate
+  #  },
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}
+
+AnotherAddress: {
+  Country: United States,
+  Zip/Post Code: '70001',
+  City: Metairie,
+  State/Province: LA,
+  Address Line 1: 'Address$<rx:\d{8}>'
+}
+
+Adjustment_LA_TestData: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '70001',
+      City: Metairie,
+      State/Province: LA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+    },
+    Group Sponsor: 'true',
+    Agency Assignment:['@QAGAgency'],
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+Adjustment_Address_WithDNS: {
+  Country: United States,
+  Zip/Post Code: '70005',
+  City: Metairie,
+  State/Province: LA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  'Make Preferred?': 'No',
+  'Do not Solicit?': 'Yes'
+}
+
+Adjustment_Divisions: {
+  DivisionsTab: {
+    Division Name: EisGroup,
+    Billing Method: Monthly
+  }
+}
+
+Adjustment_DivisionsAddress: {
+  DivisionsTab: {
+    Division Name: EisGroupDivisionName,
+    Billing Method: Annual,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '70001',
+      City: Metairie,
+      State/Province: LA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+    }
+  }
+}
+
+
+Adjustment_DivisionsPhone: {
+  DivisionsTab: {
+    Division Name: EisGroupDivision,
+    Billing Method: Periodic,
+    Phone Details: {
+      Phone Type: Mobile,
+      Phone Number: '$<static:updatePhoneNumberNon:[rx:\d{10}]>'
+    }
+  }
+}
+
+Adjustment_WithAssociateAccount: {
+  GeneralTab: {
+    Associate Account: {
+      Account Type: 'New Account',
+      New Account: {
+        Account Designation Type: Major Account,
+      }
+    },
+    Agency Assignment:['@QAGAgency'],
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    },
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    #Lead Status: Qualified,
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    }
+  }
+}
+
+Adjustment_WithAssociateAccountOnUpdate: {
+  GeneralTab: {
+    Associate Account: {
+      Account Type: 'New Account',
+      New Account: {
+        Account Designation Type: Major Account,
+      }
+    }
+  }
+}
+
+RelationshipWithIndividualTypeClaims: {
+  Type: Individual,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Relationship to Customer: 'Other',
+  Relationship Description: '$<rx:Description\d{6}>'
+}
+
+RelationshipWithNonIndividualTypeDivision: {
+  Type: Non-Individual,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Relationship to Customer: Division,
+  Date business started: $<today-10y>
+}
+
+RelationshipWithIndividualTypeFull: {
+  Type: Individual,
+  Salutation: 'Doctor',
+  First Name: 'John$<rx:\d{8}>',
+  Last Name:  'Smith$<rx:\d{8}>',
+  Relationship to Customer: 'Service Roles',
+  Service Role: ["Administrative", "Billing", "Claims"],
+  Primary Contact Preference: 'Email',
+  Email Details: {
+    Contact Details Type: 'Email',
+    Email Type: 'Work',
+    Email Address: 'test@test.com',
+    'Make Preferred?': Yes
+  }
+}
+
+Adjustment_Relationship: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: Agent,
+    Date business started: 10/10/1999
+  }
+}
+
+Adjustment_RelationshipUpdate: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: Division,
+    Date business started: 10/10/1999
+  }
+}
+
+Adjustment_WithoutAssociateDivisions: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Group Sponsor: 'true'
+  }
+}
+
+Adjustment_Unqualified: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Lead Status: Unqualified,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Group Sponsor: 'true',
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+Adjustment_InQualification: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Lead Status: In Qualification,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Group Sponsor: 'true',
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+Adjustment_RealtyPackage: {
+  GeneralTab: {
+    Group Information: {
+      Group Search: {
+        Group ID: 1001
+      }
+    },
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Country: United States,
+    Division: 'H - Finance, Insurance & Real Estate',
+    Industry: '65 - Real Estate',
+    SIC Description: 'Apartment Building Operators',
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Group Sponsor: 'true'
+  }
+}
+
+Adjustment_GeneralInfo: {
+  GeneralTab: {
+    Non-Individual Type: Corporation,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Name - DBA: 'DBA$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Country: United States,
+    Zip/Post Code: '90210',
+    City: Beverly Hills,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Group Sponsor: 'true'
+  }
+}
+
+Adjustment_UniqueCustomer: {
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<static:rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '00000',
+      City: 'City$<static:rx:\d{8}>',
+      State/Province: DE,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Group Sponsor: 'true'
+  }
+}
+
+TestData_withPhoneEmail: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Phone Details: {
+      Phone Type: Fax,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Email Details: {
+      Email Type: Common,
+      Email Address: 'correct@test.com'
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+  RelationshipTab: {}
+}
+
+Adjustment_UpdatePhoneEmail: {
+  GeneralTab: {
+    Phone Details: {
+      Phone Type: Fax,
+      Phone Number: '$<static:updatePhoneNumberNon:[rx:\d{10}]>'
+    },
+    Email Details: {
+      Email Type: Common,
+      Email Address: 'updateNon@test.com'
+    }
+  },
+  RelationshipTab: {}
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+TestData_TeamMerge: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: '$<rx:Corp\d{5}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Agency Assignment:['@QAGAgency'],
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    },
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: '$<rx:Address\d{5}>',
+      Group Sponsor: 'true'
+    },
+    Phone Details: {
+      Contact Details Type: 'Phone',
+      Phone Type: 'Work',
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>',
+    },
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Type: 'Common',
+      Email Address: 'test@test.com',
+    }
+  },
+  DivisionsTab: {},
+  RelationshipTab: [
+  {
+    Type: 'Individual',
+    First Name: '$<rx:Mike\d{6}>',
+    Last Name: '$<rx:Smith\d{6}>',
+    Relationship to Customer: 'Other',
+    Relationship Description: '$<rx:Description\d{6}>'
+  }
+  ]
+}
+
+TestData_Update: {
+  GeneralTab: {
+    Name - Legal: EISGroup,
+  },
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+TestData_withChat: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: 1
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withSocialNet: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Social Net Details:{
+      Social Net Type: Facebook,
+      Social Net ID: 1
+    }
+  },
+  RelationshipTab: {}
+}
+
+Adjustment_SocialNet: {
+  Social Net Type: Twitter,
+  Social Net ID: '$<rx:\d{8}>'
+}
+
+TestData_withWebUrl: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Web URL Details: {
+      Web URL Type: Corporate,
+      Web URL: 1
+    }
+  },
+  RelationshipTab: {}
+}
+
+Adjustment_WebURL: {
+  Web URL Type: Corporate,
+  Web URL: '$<rx:\d{8}>',
+  Comment: '$<rx:\d{8}>'
+}
+
+TestData_withAdditionalName: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Additional Names: {
+      Type: Business,
+      Name-DBA: '$<static:AFOne:[rx:NameDBA\d{8}]>'
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withTaxIdAndAgency: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Agency Assignment:{
+      Agency/Producer: {
+        Agency Code: QAG
+      }
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    },
+    Associate Account: {
+      Account Type: 'Existing Account',
+      Existing Account: {
+        Account ID: '$<rx:\d{5}>'
+      }
+    },
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '$<rx:\d{5}>',
+      City: 'Walnut Creek$<rx:\d{5}>',
+      State/Province: AK,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withAllContacts: {
+  CustomerType: '@CustomerType',
+  GeneralTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Group Sponsor: 'true',
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    },
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Address Line 2: 'Addresss$<rx:\d{8}>'
+    },
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: 1
+    },
+    Email Details: {
+      Email Type: Common,
+      Email Address: 'qa@qa.com'
+    },
+    Phone Details: {
+      Phone Type: Work,
+      Phone Number: '0123456789'
+    },
+    Web URL Details: {
+      Web URL Type: Corporate,
+      Web URL: 'www.eis.com'
+    },
+    Social Net Details: {
+      Social Net Type: Facebook,
+      Social Net ID: '19201'
+    }
+  },
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+TestData_Issue_Enrollment: {
+  GeneralTab: {
+    Enrollment File: {
+      Enrollment File Type: Initial,
+      Retrieve: click,
+      Enrollment File: 'contains=Initial_Enrollment',
+    },
+    Yes Enrollment Confirmation Popup: click
+  }
+}
+
+
+
+TestData_WithRelationshipTypeEmails: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  DivisionsTab: {},
+  RelationshipTab: ['@RelationshipWithIndividualTypeRelativel']
+}
+
+RelationshipWithIndividualTypeRelativel: {
+  Type: Individual,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: '$<static:NonIndLastNameTrust:[rx:LNameEisGroup\d{4}]>',
+  Relationship to Customer: 'Service Roles',
+  'Assign Service Role?': Yes,
+  Service Role: ['Administrative', 'Billing', 'Claims'],
+  Email Details: ['@ContactDetails_Email', '@ContactDetails_Email2'],
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '94596',
+    City: Walnut Creek Update,
+    County: 'County_REN_33084',
+    State/Province: VT,
+    Address Type: 'Mailing',
+    Address Line 1: '$<static:Address_REN_33084:[rx:Address$\d{8}]>',
+    Address Line 2: 'Address Line 2',
+    Address Line 3: 'Address Line 3',
+    Communication Preferences: ["Administrative", "Claims"],
+    'Make Preferred?': 'Yes'
+  },
+}
+
+ContactDetails_Email: {
+  Email Type: index=1,
+  Email Address: eis1@eis.com,
+  Consent Status: Not Requested,
+  'Make Preferred?': 'Yes'
+}
+
+ContactDetails_Email2: {
+  Email Type: index=2,
+  Email Address: eis2@eis.com,
+  Consent Status: Not Requested
+}

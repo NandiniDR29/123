@@ -1,0 +1,27 @@
+TestData: {
+  ClassificationManagementTab: ['@ClassificationManagementTab_ENHANCED10']
+}
+
+ClassificationManagementTab_ENHANCED10: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Spouse,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Children,
+    Number of Participants: 1
+  }
+  ]
+}

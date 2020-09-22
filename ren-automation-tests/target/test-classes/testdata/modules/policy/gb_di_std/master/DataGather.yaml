@@ -1,0 +1,225 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_NC'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_CON: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_CON', '@PlanDefinitionTab_CON'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_SGR: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_SGR', '@PlanDefinitionTab_SGR'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_VOL: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_VOL', '@PlanDefinitionTab_VOL'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_TwoPlans: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_TwoPlans', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestData_AllPlans: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL', '@PlanDefinitionTab_SGR'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+TestDataEmpty: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestDataUpdateSomething: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTabUpdate',
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestDataPlanDefinitionTabWithThreePlans: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_ThreePlans', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+Adjustment_BackDated: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-2M>,
+    Case Profile: index=1,
+    Product: Short Term Disability,
+    Delivery Model: Group
+  }
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: NC
+}
+
+SelectPlan_CON: {
+  Plan: CON
+}
+
+SelectPlan_SGR: {
+  Plan: SGR
+}
+
+SelectPlan_VOL: {
+  Plan: VOL
+}
+
+SelectPlan_TwoPlans: {
+  Plan: [NC, CON]
+}
+
+SelectPlan_ThreePlans: {
+  Plan: [NC, CON, VOL]
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Options: {},
+  Sponsor/Participant Funding Structure: {}
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Participant Contribution %: 100,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {},
+  Options: {}
+}
+
+PlanDefinitionTab_VOL: {
+  PlanKey: VOL-VOL,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+}
+
+
+PlanDefinitionTab_SGR: {
+  PlanKey: SGR-SGR,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+}
+
+PlanDefinitionTabUpdate: {
+  Total Number of Eligible Lives: 2
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Uni-Tobacco: Yes,
+  Unisex: Yes
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}
+
+VersionDialog: {
+  Description: 'Desc$<rx:\d{8}>'
+}
+
+ClassificationManagementTab_Without_Change_Using_Sub-Groups: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1
+}

@@ -1,0 +1,9 @@
+TestData: {
+  DBLookupsImport: {
+     Upload: '@Upload'
+  }
+}
+
+Upload : {
+  Upload File: '$<file:lookups.xls>'
+}

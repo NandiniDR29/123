@@ -1,0 +1,15 @@
+TestData: {
+  AcctInfoTab: {
+    Confidential Account: 'Yes'
+  },
+  DesignatedContactsTab: {
+    Add Designated Contact: CLICK,
+    Select Contact: {
+      First Name: "FirstName",
+      Category: "",
+      Channel: "Corporate"
+    },
+    Contact Phone: 22334455
+  },
+  AffinityGroupsTab: {}
+}

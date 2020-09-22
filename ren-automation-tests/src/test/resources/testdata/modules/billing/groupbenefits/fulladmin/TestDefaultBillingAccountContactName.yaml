@@ -1,0 +1,36 @@
+TestData: {
+  RelationshipTab: {
+    Type: Individual,
+    Salutation: 'Doctor',
+    First Name: '$<static:customerFirstName:[rx:John\d{8}]>',
+    Last Name:  '$<static:customerLastName:[rx:Smith\d{8}]>',
+    Relationship to Customer: 'Service Roles',
+    Service Role: ["Administrative", "Billing", "Claims"],
+    Primary Contact Preference: 'Email',
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Type: 'Work',
+      Email Address: 'test@test.com',
+      'Make Preferred?': Yes
+    }
+  }
+}
+
+TestData_Update: {
+  GeneralTab: {},
+  DivisionsTab: {},
+  RelationshipTab: [
+  {},
+  {
+    Type: Non-Individual,
+    Relationship to Customer: 'TPA',
+    Service Role: ["Administrative", "Billing", "Claims"],
+    Name - Legal: '$<static:Name Legal:[rx:NameLegal \d{6}]>',
+    Primary Contact Preference: 'Email',
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Address: 'test@test.com',
+      'Make Preferred?': Yes
+    }
+  }]
+}

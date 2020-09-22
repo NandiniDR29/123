@@ -1,0 +1,79 @@
+NonIndividual: {
+  taxId: '$<rx:\d{4}>',
+  status: ACTIVE,
+  name: 'nonIndTest$<rx:\d{8}>',
+  countryCd: US,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  zipCd: 11111,
+  state: CA,
+  mailingAddressSame: true,
+  vendorTypeCd: 'G',
+  identities:{
+    NPI: '$<static:npi1:[rx:npi\d{8}]>',
+    EXTERNAL: '$<static:external1:[rx:external\d{8}]>'
+  }
+}
+
+Individual: {
+  taxId: '$<rx:\d{4}>',
+  name: 'IndTest$<rx:\d{8}>',
+  countryCd: US,
+  zipCd: 94303,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  state: AK,
+  mailingAddressSame: true,
+  vendorProfileType: individual,
+  serviceProviderCreateDTO: {
+    firstName: 'John$<rx:\d{8}>',
+    lastName: 'Smith$<rx:\d{8}>',
+    code: 'code$<rx:\d{4}>'
+  },
+  startDate: '$<today:yyyy-MM-dd>',
+  finishDate: '$<today+2y:yyyy-MM-dd>',
+  vendorRating: SILVER,
+  status: ACTIVE,
+  regionCd: AL,
+  insuredCorrespondenceRequired: true,
+  externalSourceType: type,
+  vendorTypeCd: 'S',
+  identities: {
+    NPI: '$<static:npi2:[rx:npi\d{8}]>',
+    EXTERNAL: '$<static:external2:[rx:external\d{8}]>'
+  }
+}
+
+TestData_Facility: {
+  facilityName: 'facilityName$<rx:\d{8}>',
+  addressDTO: {
+     addressLine1: 'AddressLine123F',
+     addressLine2: 'AddressLine234',
+     addressLine3: 'AddressLine456',
+     city: 'City1234',
+     county: 'County$<rx:\d{8}>',
+     postalCode: 1234568,
+     countryCd: CA,
+     stateProvCd: "TL"
+  },
+  externalId: 'Id$<rx:\d{8}>',
+  phoneNumber: 1314151617,
+  term:{
+    effective: '2018-03-01T00:00:00.000Z',
+    expiration: '2018-03-31T00:00:00.000Z'
+  }
+}
+
+TestData_ServiceAgentAssignment: {
+  assignmentType: "b",
+  externalId: "522",
+  effective: "2018-01-01T00:00:00.000Z",
+  expiration: "2018-02-28T00:00:00.000Z",
+  nonIndividualProviderIdentifiers: {
+    taxId: 'Tax$<rx:\d{8}>'
+  },
+  individualProviderIdentifiers: {
+    taxId: "IndividualTax1"
+  },
+  serviceFacilityOID: "string",
+}

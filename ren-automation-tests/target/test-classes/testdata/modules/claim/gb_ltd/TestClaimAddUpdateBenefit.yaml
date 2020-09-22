@@ -1,0 +1,27 @@
+TestData: {
+  BenefitSTDInjuryPartyInformationTab: {
+    Zip / Postal Code: '32110',
+    State / Province: NJ,
+    Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+  }
+}
+
+TestData_EFTPaymentMethod: {
+  BenefitLTDInjuryPartyInformationTab: {
+    Preferred Payment method: 'EFT',
+    Bank Name: index=1,
+    Bank Account Number: '$<rx:\d{9}>',
+    'Bank Transit / Routing Number': '111111111',
+    Bank Account Type: index=1
+  }
+}
+
+TestData_Update: {
+  BenefitLTDInjuryPartyInformationTab: {},
+  BenefitLTDIncidentTab: {},
+  BenefitCoverageEvaluationTab: {
+    Eligibility Verified: 'No',
+    Date of Verification: $<today>,
+    Supporting Documentation Received: $<today>,
+  }
+}

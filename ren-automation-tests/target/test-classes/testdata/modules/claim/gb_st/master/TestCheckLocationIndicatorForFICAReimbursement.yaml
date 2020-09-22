@@ -1,0 +1,33 @@
+TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: 'Add Billing Location'
+  },
+  BillingLocationsMappingTab: {
+    Classification Group: index=1,
+    Billing Location: 'Location Name 1'
+  },
+  BillingGroupsTab: ['@BasicAccidentBASEBU'],
+  BillingAccountSetupTab: {}
+}
+
+BasicAccidentBASEBU: {
+  Classification Group: '1'
+}
+
+UpdateCaseProfile: {
+  CaseProfileDetailsTab: {},
+  ProductAndPlanManagementTab: {},
+  ClassificationManagementTab: {},
+  LocationManagementTab: '@LocationManagementTab',
+  FileIntakeManagementTab: []
+}
+
+LocationManagementTab: {
+  Add Billing Location:
+    {
+      Location Name: 'Location Name 1',
+      Location Number: '1',
+      Tax Identification: '12-3456789'
+    }
+}

@@ -1,0 +1,3 @@
+{
+    logGrabbersList: ["com.exigen.ipb.eisa.utils.log.impl.JspLogGrabber"]
+}

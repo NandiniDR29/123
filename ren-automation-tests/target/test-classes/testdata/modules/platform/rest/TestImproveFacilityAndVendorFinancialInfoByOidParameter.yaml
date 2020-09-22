@@ -1,0 +1,151 @@
+TestData_FinancialInfo1: {
+  "preferredSettlementMethodCd": "CHECK",
+  "bankName": "Bank",
+  "branchCity": "City",
+  "bankNumber": "BNumber",
+  "accountNumber": "Account",
+  "accountStatus": "ACTIVE",
+  "accountName": "AccName",
+  "paymentAddress": {
+    "addressLine1": "addressLine1",
+    "addressLine2": "addressLine2",
+    "addressLine3": "addressLine3",
+    "city": "city",
+    "county": "county",
+    "postalCode": "10001",
+    "stateProvCd": "NY",
+    "countryCd": "US"
+  },
+  "holderName": "holderName",
+  "validityTerm": {
+    "effective": "$<today-3M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "expiration":"$<today-2M:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+  },
+  "bulkPaymentDay": 10,
+  "externalId": 'externalId$<rx:\d{8}>',
+  "bulkPaymentInd": true,
+  "bankAccountTypeCd": "bankAccountTypeCd",
+  "achFormattingInd": true
+}
+
+FinancialInfo1_Version2: {
+  "preferredSettlementMethodCd": "EFT",
+  "bankName": "Bank",
+  "branchCity": "City",
+  "bankNumber": "BNumber",
+  "accountNumber": "Account",
+  "accountStatus": "ACTIVE",
+  "accountName": "AccNameV2",
+  "paymentAddress": {
+    "addressLine1": "addressLine1V2",
+    "addressLine2": "addressLine2V2",
+    "addressLine3": "addressLine3V3",
+    "city": "cityV2",
+    "county": "county",
+    "postalCode": "10002",
+    "stateProvCd": "NJ",
+    "countryCd": "NZ"
+  },
+  "holderName": "holderNameV2",
+  "validityTerm": {
+    "effective": "$<today-2M+11d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "expiration":"$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+  },
+  "bulkPaymentDay": 10,
+  "externalId": 'externalId$<rx:\d{8}>',
+  "bulkPaymentInd": true,
+  "bankAccountTypeCd": "bankAccountTypeCdV2",
+  "achFormattingInd": true,
+  "oid": '$<static:oid_VFI_1>'
+}
+
+TestData_FinancialInfo2: {
+  "preferredSettlementMethodCd": "CHECK",
+  "bankName": "Bank",
+  "branchCity": "City",
+  "bankNumber": "BNumber",
+  "accountNumber": "Account",
+  "accountStatus": "ACTIVE",
+  "accountName": "AccName",
+  "paymentAddress": {
+    "addressLine1": "addressLine12",
+    "addressLine2": "addressLine2",
+    "addressLine3": "addressLine3",
+    "city": "city",
+    "county": "county",
+    "postalCode": "10001",
+    "stateProvCd": "NY",
+    "countryCd": "US"
+  },
+  "holderName": "holderName",
+  "validityTerm": {
+    "effective": "$<today-1M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "expiration": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+  },
+  "bulkPaymentDay": 10,
+  "externalId": 'externalId$<rx:\d{8}>',
+  "bulkPaymentInd": true,
+  "bankAccountTypeCd": "bankAccountTypeCd",
+  "achFormattingInd": true
+}
+
+TestData_ServiceFacility1: {
+  "facilityName": 'facilityName$<rx:\d{8}>',
+  "addressDTO": {
+    "addressLine1": "Hanson Lane 43",
+    "addressLine2": "Hanson",
+    "addressLine3": "Lane",
+    "city": "Hanson City",
+    "county": "CT",
+    "postalCode": "94596",
+    "stateProvCd": "CA",
+    "countryCd": "US"
+  },
+  "externalId": 'externalId$<rx:\d{8}>',
+  "phoneNumber": "1234567890",
+  "term": {
+    "effective": "$<today-3M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "expiration": "$<today-2M:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+  }
+}
+
+ServiceFacility1_Version2: {
+  "facilityName": 'facilityName$<rx:\d{8}>',
+  "addressDTO": {
+    "addressLine1": "Hanso43V2 Lane",
+    "addressLine2": "HansoV2 Lane",
+    "addressLine3": "HansV2",
+    "city": "CV2ity",
+    "county": "NJ",
+    "postalCode": "94522",
+    "stateProvCd": "AZ",
+    "countryCd": "NZ"
+  },
+  "externalId": 'externalId$<rx:\d{8}>',
+  "phoneNumber": "1234567222",
+  "term": {
+    "effective": "$<today-2M+11d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "expiration": "$<today-M:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+  },
+  "oid": '$<static:oid_SF1>'
+}
+
+TestData_ServiceFacility2: {
+  "facilityName": 'facilityName$<rx:\d{8}>',
+  "addressDTO": {
+    "addressLine1": "Hanson Lane 44",
+    "addressLine2": "Hanson",
+    "addressLine3": "Lane",
+    "city": "Hanson City",
+    "county": "CT",
+    "postalCode": "94596",
+    "stateProvCd": "IL",
+    "countryCd": "US"
+  },
+  "externalId": 'externalId$<rx:\d{8}>',
+  "phoneNumber": "1234567890",
+  "term": {
+    "effective": "$<today-2M+1d:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+    "expiration": "$<today-M:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+  }
+}

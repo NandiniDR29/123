@@ -1,0 +1,6 @@
+TestData: {
+  ClaimPendClaimActionTab: {
+    Reason: index=1,
+    Details: "Other"
+  }
+}

@@ -1,0 +1,73 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_NC'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Long Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: NJ,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: NC
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Partial Disability Benefit: Proportionate Loss
+  },
+  Options: {
+  },
+  Employer Benefits: {
+    None: false,
+    Owner: true
+  }
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Uni-Tobacco: Yes,
+  Unisex: Yes
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}

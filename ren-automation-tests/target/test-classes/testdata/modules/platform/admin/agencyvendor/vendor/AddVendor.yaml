@@ -1,0 +1,67 @@
+TestData: {
+  VendorInfoTab: '@VendorInfoTab',
+  ContactInfoTab: '@ContactInfoTab',
+}
+
+TestData_NewCountryTogo: {
+  VendorInfoTab: {
+  Country: Togo
+  },
+  ContactInfoTab: {},
+}
+
+TestData_NewCountryUnitedStates: {
+  VendorInfoTab: {
+  Country: United States
+  },
+  ContactInfoTab: {},
+}
+
+TestData_NewCountryCanada: {
+  VendorInfoTab: {
+  Country: Canada
+  },
+  ContactInfoTab: {},
+}
+
+VendorInfoTab: {
+    Name: 'Vendor$<rx:\d{8}>',
+    Tax ID: 'Tax$<rx:\d{8}>',
+    Country: United States
+}
+ 
+ContactInfoTab: {
+  Zip / Postal Code: 94596,
+  Address Line 1: Address Line 1,
+  City: Walnut Creek,
+  State / Province: CA,
+  'Is Mailing Address the same as Physical Address?': 'Yes',
+ } 
+
+
+REST_AddVendor: {
+"taxId": '$<rx:\d{4}>',
+"name": 'Vendor$<rx:\d{8}>',
+"countryCd": "US",
+"zipCd": "10001",
+"addressLine1": "AddrLine1",
+"city": "New York",
+"state": "NY",
+"phoneNo": "9998887776",
+"contactFirstName": "Katy",
+"contactLastName": "Turner",
+"settlementMethod": "CHECK",
+"mailingAddressSame": true,
+"vendorProfileType": "nonIndividual",
+"startDate":"2017-12-01",
+"finishDate":"2018-01-01",
+"vendorRating":"SILVER",
+"status":"ACTIVE",
+"regionCd":"NY",
+"insuredCorrespondenceRequired":true,
+"externalSourceType":"type1",
+"vendorTypeCd": "S",
+ "fraudInd": true,
+ "fraudType": "Type",
+ "fraudDetails": "Details"
+}

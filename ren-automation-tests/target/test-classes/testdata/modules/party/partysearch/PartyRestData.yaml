@@ -1,0 +1,370 @@
+TestData_Individual: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: '$<static:customerFName:[rx:John\d{8}]>',
+    Last Name: '$<static:customerLName:[rx:Smith\d{8}]>',
+    SSN/Tax Identification: '111222333',
+    Date of Birth: '09/09/1987',
+    Agency Assignment:['@QAGAgency'],
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: '$<static:addressLine1:[rx:Address\d{8}]>'
+    },
+    Phone Details: {
+      Contact Details Type: 'Phone',
+      Phone Type: Work,
+      Phone Number: '1112223330'
+    },
+    Lead Source: Other,
+    Rating: Hot,
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+
+  RelationshipTab: {}
+}
+
+TestData_NonIndividual: {
+  CustomerType: {
+    Customer Type: Non-Individual
+  },
+  GeneralTab: {
+    Non-Individual Type: 'index=1',
+    Name - Legal: '$<static:nameLegal:[rx:nameLegal\d{8}]>',
+    Name - DBA: '$<static:nameDBA:[rx:nameDBA\d{8}]>',
+    EIN: '87-6543202',
+    Division: 'index=1',
+    Industry: 'index=1',
+    SIC Description: 'index=1',
+    Date business started: '10/10/1992',
+    Agency Assignment:['@QAGAgency'],
+    Address Details: {
+      Zip/Post Code: '89001',
+      City: 'City1',
+      State/Province: 'IL',
+      Address Line 1: Alley Nope
+    },
+    Phone Details: {
+      Contact Details Type: 'Phone',
+      Phone Number: '7770000000'
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+  RelationshipTab:{}
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+IndividualRequest: {
+  query: {
+    birthDate: '1987-09-09',
+    street1: 'Alley Nope',
+    city: 'Walnut Creek',
+    state: 'CA',
+    zip: '94596',
+    phone: '1112223330',
+    agency: 'QAG'
+  }
+}
+
+NonIndividualRequest: {
+  query: {
+    legalId: '87-6543202',
+    street1: 'Alley Nope',
+    city: 'City1',
+    state: 'IL',
+    zip: '89001',
+    phone: '7770000000',
+    agency: 'QAG'
+  }
+}
+
+LocationsRequest: {
+  query: {
+    zip: '94596',
+    city: 'Walnut Creek',
+    state: 'CA'
+  }
+}
+
+VehicleRequest: {
+  query: {
+    offset: '0',
+    limit: '10'
+  }
+}
+
+REST_VehicleParty: {
+  "parentNavigationReference": {
+    "objectName": "genesis",
+    "objectId": "4b2b0d59-82f9-4062-847e-d87c21d219",
+    "objectNumber": "V000000111"
+  },
+  "parties": [
+  {
+    "partyType": "VehicleParty",
+    "attributes": {
+      "model": "Z3",
+      "make": "BMW",
+      "year": "2018",
+      "vin": '$<static:vin[rx:\d{15}]>',
+      "confidentialFlag": "false"
+    },
+    "references": {
+      "entityReference": {
+        "objectName": "com.genesis.AddressEntity",
+        "objectId": "4b2b0d59-82f9-4062-847e-d87c21d219",
+        "objectNumber": "V000000001"
+      },
+      "bobReference": {
+        "objectName": "com.genesis.CustomerAccount",
+        "objectNumber": "999b0d59-82f9-4062-847e-d87c21d2e991",
+        "producerCode": "QAG",
+        "subProducerCode": null
+      },
+      "navigationReference": {
+        "objectName": "genesis",
+        "objectId": "b0d59-82f9-4062-847e-d87c21d2e09",
+        "objectNumber": "LV1100001",
+        "role": "Vehicle",
+        "referenceIndex": "0"
+      }
+    }
+  }
+  ]
+}
+
+REST_LocationParty: {
+  "parentNavigationReference": {
+    "objectName": "genesis",
+    "objectId": "4b2b0d59-82f9-4062-847e-d87c21d131",
+    "objectNumber": "L100000101"
+  },
+  "parties": [
+  {
+    "partyType": "LocationParty",
+    "attributes": {
+      "street1": '$<static:street1:[rx:street\d{8}]>',
+      "city": "Dallas",
+      "state": "AR",
+      "zip": "91115",
+      "country": "US",
+      "addressTypeCd": "mailing",
+      "doNotSolicit": "false",
+      "confidentialFlag": "false",
+      "confidentialReference": "663874"
+    },
+    "references": {
+      "entityReference": {
+        "objectName": "com.genesis.AddressEntity",
+        "objectId": "888b0d59-82f9-4062-847e-d87c21d753",
+        "objectNumber": "L100000101"
+      },
+      "bobReference": {
+        "objectName": "com.genesis.CustomerAccount",
+        "objectNumber": "999b0d59-82f9-4062-847e-d87c21d2e753",
+        "producerCode": "QAG",
+        "subProducerCode": null
+      },
+      "navigationReference": {
+        "objectName": "genesis",
+        "objectId": "4b2b0d59-82f9-4062-847e-d87c21d131",
+        "objectNumber": "L100000101",
+        "role": "Mailing Address",
+        "referenceIndex": "0"
+      }
+    }
+  }
+  ]
+}
+
+REST_PersonPartyWithLocationRelationship: {
+  "parentNavigationReference": {
+    "objectName": "genesis",
+    "objectId": "4b2b0d59-4062-847e-1111",
+    "objectNumber": "C500001111"
+  },
+  "parties": [
+  {
+    "partyType": "PersonParty",
+    "attributes": {
+      "firstName": '$<static:restFName:[rx:John\d{8}]>',
+      "lastName": '$<static:restLName:[rx:Smith\d{8}]>',
+      "nationalId": "123456",
+      "deceased": "false",
+      "gender": "female",
+      "birthDate": "19840125",
+      "salutation": "40",
+      "maritalStatus": "S",
+      "suffix": "1",
+      "customerNumber": "567885",
+      "archived": "false",
+      "agency": "QAG",
+      "phone": "3457894512",
+      "email": "svetlana2@eis.com",
+      "confidentialFlag": "false",
+      "confidentialReference": "693874"
+    },
+    "references": {
+      "entityReference": {
+        "objectName": "com.genesis.IndividualLead",
+        "objectId": "4b2b0d59-4062-847e-1111",
+        "objectNumber": "C566001111"
+      },
+      "navigationReference": {
+        "objectName": "genesis",
+        "objectId": "4b2b0d59-4062-847e-1112",
+        "objectNumber": "C577101111",
+        "role": "Insured",
+        "referenceIndex": "0"
+      },
+      "bobReference": {
+        "objectName": "com.genesis.CustomerAccount",
+        "objectNumber": "Bob0000001",
+        "producerCode": "QAG",
+        "subProducerCode": null
+      }
+    },
+    "relationships": [
+    {
+      "relatedObjectId": "880b0d59-82f9-4062-847e-d87c21d2eba4",
+      "relationshipRole": "Mailing Address"
+    }
+    ]
+  },
+  {
+    "partyType": "LocationParty",
+    "attributes": {
+      "street1": '$<static:restStreet1:[rx:street\d{8}]>',
+      "city": "Minsk",
+      "state": "IL",
+      "zip": "12345",
+      "country": "US",
+      "addressTypeCd": "mailing",
+      "doNotSolicit": "false",
+      "confidentialFlag": "false",
+      "confidentialReference": "663874"
+    },
+    "references": {
+      "entityReference": {
+        "objectName": "com.genesis.AddressEntity",
+        "objectId": "880b0d59-82f9-4062-847e-d87c21d2eba4",
+        "objectNumber": null
+      },
+      "bobReference": {
+        "objectName": "com.genesis.CustomerAccount",
+        "objectNumber": "999b0d59-82f9-4062-847e-d87c21d2eba4",
+        "producerCode": "QAG",
+        "subProducerCode": null
+      },
+      "navigationReference": {
+        "objectName": "genesis",
+        "objectId": "4b2b0d59-4062-847e-1111",
+        "objectNumber": "C111000005",
+        "role": "Mailing Address",
+        "referenceIndex": "0"
+      }
+    }
+  }
+  ]
+}
+
+REST_NonPersonPartyWithLocationRelationship: {
+  "parentNavigationReference": {
+    "objectName": "genesis",
+    "objectId": "22pop-4062-847e-d87c21d2x35",
+    "objectNumber": "C000022"
+  },
+  "parties": [
+  {
+    "partyType": "NonPersonParty",
+    "attributes": {
+      "businessType": "CRPR",
+      "legalName": '$<static:restLegalName:[rx:LegalName\d{8}]>',
+      "legalId": "22-5413435",
+      "dateStarted": "20150601",
+      "sicCode": "29300",
+      "customerNumber": "600130",
+      "archived": "false",
+      "confidentialFlag": "false",
+      "confidentialReference": "600121",
+      "phone": "3751236535",
+      "email": "lol@mail.by"
+    },
+    "references": {
+      "entityReference": {
+        "objectName": "com.genesis.IndividualLead",
+        "objectId": "2b333d22-222e-d87c21d2e235",
+        "objectNumber": "C2000112"
+      },
+      "navigationReference": {
+        "objectName": "genesis",
+        "objectId": "22pop-4062-847e-d87c21d2x35",
+        "objectNumber": "C212121113",
+        "role": "Customer",
+        "referenceIndex": "0"
+      },
+      "bobReference": {
+        "objectName": "com.genesis.CustomerAccount",
+        "objectNumber": "Bob0000001",
+        "producerCode": "QAG",
+        "subProducerCode": null
+      }
+    },
+    "relationships": [
+    {
+      "relatedObjectId": "22pop35-4062-847e-d87c21d2x35",
+      "relationshipRole": "Legal Address"
+    }
+    ]
+  },
+  {
+    "partyType": "LocationParty",
+    "attributes": {
+      "street1": '$<static:restStreet1:[rx:street\d{8}]>',
+      "city": "Minsk",
+      "state": "IL",
+      "zip": "11441",
+      "country": "US",
+      "addressTypeCd": "mailing",
+      "doNotSolicit": "false",
+      "confidentialFlag": "false",
+      "confidentialReference": "663874"
+    },
+    "references": {
+      "entityReference": {
+        "objectName": "com.genesis.AddressEntity",
+        "objectId": "22pop35-4062-847e-d87c21d2x35",
+        "objectNumber": "B00044"
+      },
+      "bobReference": {
+        "objectName": "com.genesis.CustomerAccount",
+        "objectNumber": "921b0d59-82f9-40-d87c21d2eba4",
+        "producerCode": "QAG",
+        "subProducerCode": null
+      },
+      "navigationReference": {
+        "objectName": "genesis",
+        "objectId": "22pop-4062-847e-d87c21d2x35",
+        "objectNumber": "C111000044",
+        "role": "Mailing Address",
+        "referenceIndex": "0"
+      }
+    }
+  }
+  ]
+}

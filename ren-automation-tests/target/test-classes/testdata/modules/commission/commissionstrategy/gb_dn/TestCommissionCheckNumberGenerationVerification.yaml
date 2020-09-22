@@ -1,0 +1,61 @@
+TestDataDental: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTabDN',
+  GBCommissionRuleTab: ['@Flat_CommissionRule']
+}
+
+GBCommissionStrategyTabDN: {
+  Product Code-Name: 'GB_DN - Group Dental',
+  Rounding: Cent Rounding,
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+  Available for Override: true,
+  Commission Overrides: ['@Add_Commission_Flat_Override']
+}
+
+Flat_CommissionRule: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Commission Rate: '10'
+  }
+}
+
+
+Add_Commission_Flat_Override: {
+  Commission Type: 'Flat',
+  Add Commission Override Options: {
+    Name: 'Name$<rx:\d{5}>',
+    Override Range Min Percent: 1,
+    Override Range Max Percent: 100
+  }
+}
+
+TestDataMasterPolicy: {
+  PolicyInformationTab: {
+    'Allow Independent Commissionable Producers?': Yes,
+    Policy Effective Date: $<today>,
+    County Code: '001 - Albany County',
+    ASO Plan: 'Yes',
+    Prior Dental Coverage: 'No',
+    Situs State: 'NY',
+    Total Number of Eligible Lives: 1,
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Assigned Agencies: ['@Agency1'],
+  }
+}
+
+Agency1: {
+  Agency / Producer: '',
+  'Primary Agency?': 'Yes'
+}

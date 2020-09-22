@@ -1,0 +1,21 @@
+TestData_Recovery2: {
+  RecoveryDetailsActionTab: {
+    Recovery Amount: 0.33,
+    Recovery Method: 'EFT',
+    Recovered From: 'Primary Insured',
+    Bank Account Number: 111111111111111111111,
+    Recovery Memo: ''
+  }
+}
+
+TestData_Update1: {
+  RecoveryDetailsActionTab: {
+    Recovery Post Date: '$<today+1d:MM/dd/yyyy h:mm a>'
+  }
+}
+
+TestData_Update2: {
+  RecoveryDetailsActionTab: {
+    Recovery Post Date: '$<today+2d:MM/dd/yyyy h:mm a>'
+  }
+}

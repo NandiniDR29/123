@@ -1,0 +1,193 @@
+TestData: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus7Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+7M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus1Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+1M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus10Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+10M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Plus2Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+2M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+
+TestData_Plus5Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM+5M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Minus2Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM-2M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Minus1Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM-1M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Minus3Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM-3M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_Minus4Months: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM-4M>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData_WithOtherRate: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@ENHANCED10'],
+  EnhancedBenefitsAtoCTab: ['@ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@ENHANCED10'],
+  OptionalBenefitTab: ['@ENHANCED10'],
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_EMPTY: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_EMPTY_withBasicBenefitsTab: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+
+TestData_WithOtherRateWithTwoCoverage: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@BASEBU_ENHANCED', '@BASEBU'],
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: ['@BASEBU'],
+  EnhancedBenefitsDtoFTab: ['@BASEBU'],
+  EnhancedBenefitsHtoLTab: ['@BASEBU'],
+  EnhancedBenefitsMtoTTab: ['@BASEBU'],
+  OptionalBenefitTab: ['@BASEBU_ENHANCED', '@BASEBU'],
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+BASEBU_ENHANCED: {
+  CoverageKey: Enhanced Accident
+}
+
+ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units
+}
+
+BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up
+}
+
+TestData_Endorsement_Benefit_Increasing: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@OptionalBenefitTab_EnhancedAccident', '@OptionalBenefitTab_EnhancedAccident'],
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement_Benefit_Decreasing: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@OptionalBenefitTab_EnhancedAccident_Decreasing', '@OptionalBenefitTab_EnhancedAccident_Decreasing', '@OptionalBenefitTab_EnhancedAccident_Decreasing'],
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+OptionalBenefitTab_EnhancedAccident: {
+  'Include Optional Benefits?': 'Yes',
+  Number of Units: 10,
+  "Enhanced Physician's Office/Urgent Care Treatment Benefit": {
+    "Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit": true
+  },
+  Hospital ICU Confinement Benefit: {
+    'Apply Benefit Hospital ICU Confinement Benefit': true,
+  }
+}
+
+
+OptionalBenefitTab_EnhancedAccident_Decreasing: {
+  'Include Optional Benefits?': 'Yes',
+  Number of Units: 10,
+  "Enhanced Physician's Office/Urgent Care Treatment Benefit": {
+    "Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit": false
+  },
+  Hospital ICU Confinement Benefit: {
+    'Apply Benefit Hospital ICU Confinement Benefit': false,
+  }
+}

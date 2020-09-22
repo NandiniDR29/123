@@ -1,0 +1,33 @@
+TestData: {
+ LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: index=1
+  },
+  Source: index=1,
+  Payee Type: index=1,
+  CDT Code: 'D1110',
+  Tooth / Area: 'OO'
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+Adjustment_Vendor: {
+  IntakeInformationTab: {
+    Patient: {
+      Name: index=1
+    },
+    CDT Code: 'D1110',
+    Tooth / Area: 'OO',
+    Source: index=1,
+    Payee Type: index=1,
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  }
+}

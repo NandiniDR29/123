@@ -1,0 +1,74 @@
+TestDataASO_VS: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTabASO_VS',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanASO_VS', '@PlanDefinitionTab_AsoALACARTE_VS'],
+  ClassificationManagementTab: '@ClassificationManagementTab_AsoALACARTE',
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTabASO_VS: {
+  ASO Plan: Yes,
+  Situs State: NY,
+  Group is Member Company: 'No',
+  Rate Guarantee (Months): '24',
+  Prior Carrier Name: 'EyeMed',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectPlanASO_VS: {
+  Plan: [ASO A La Carte]
+}
+
+PlanDefinitionTab_AsoALACARTE_VS: {
+  PlanKey: ASO A La Carte-ASO A La Carte,
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Rating: {
+    Rate Type: 'Area + Tier',
+  },
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+  },
+  Copay: {
+    'Exam/Materials': '$10/$25',
+    'Lens Enhancements - Standard': '$55',
+    'Lens Enhancements - Premium': '$95 - $105',
+    'Lens Enhancements - Custom': '$150 - $175',
+    'Medically Necessary Contact Lenses': '$25',
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan B (12/12/24)',
+    Contacts: 12,
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: $130,
+  },
+}
+
+ClassificationManagementTab_AsoALACARTE: {
+  Plan: ASOALACARTE-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+}
+
+Propose: {
+  QuotesSelectionActionTab: '@QuotesSelectionActionTab',
+  ProposalActionTab: '@ProposalActionTab'
+}
+
+QuotesSelectionActionTab: {
+  Select Quote by row number: [1],
+  Proposal Name: 'ProposalName$<rx:\d{5}>'
+}
+
+ProposalActionTab: {
+  Override Rules List: ["Proposal for ASO Plan requires Underwriter approval"],
+    Proposed ASO Fee: 5,
+    Fee Update Reason: 'index=1'
+}

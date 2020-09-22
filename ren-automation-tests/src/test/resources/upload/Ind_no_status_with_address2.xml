@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<import xmlns="http://exigenservices.com/ipb/crm/integration">
+  <lead>
+    <firstName>Marek</firstName>
+    <lastName>Twaining</lastName>
+		<Address>
+      <type>mailing</type>
+	  <city>Mogilev</city>
+	  <country>US</country>
+	  <postalCode>12123</postalCode>
+	  <stateProvince>IL</stateProvince>
+	  <addressLine>address line 1131</addressLine>
+    </Address>
+    <EmailContact>
+      <email>ccddddc@ccc.ccc</email>
+    </EmailContact>
+  </lead>
+</import>

@@ -1,0 +1,103 @@
+Adjust_PolicyInformationTab: {
+  PolicyInformationTab: {
+    Rate Guarantee (Months): 12,
+    'Small Group?': 'Yes',
+    Situs State: NY,
+    County Code: '001 - Albany County',
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: 'QA QA user',
+      Sales Support Associate: 'QA QA user'
+    }
+  }
+}
+
+Adjust_PlanDefinitionTab_CON: {
+  PlanDefinitionTab: {
+    PlanKey: CON-CON,
+    Total Number of Eligible Lives: 1,
+    Required Participation %: 100%,
+    Sponsor/Participant Funding Structure: {
+      Contribution Type: Non-contributory,
+      Sponsor Payment Mode: 12,
+    },
+    Eligibility: {
+      Minimum Hourly Requirement (hours per week): 15.00,
+      Eligibility Waiting Period Definition: First of the month following (amount and mode),
+      Waiting Period: 30,
+      Waiting Period Mode: Days,
+    },
+    Offsets: {
+      Include PERS and STRS: Yes
+    },
+    Benefit Schedule: {
+      Test Definition: Loss of Duties and Earnings,
+      Residual: Not Included,
+      Pre-Existing Conditions: 'Not Included',
+      Survivor - Family Income Benefit Type: 'None',
+      Definition of Disability: 'X months Regular Occ',
+      WIB Duration: None,
+    },
+    Options: {
+      Prudent Person: 'Yes',
+      Rehabilitation Incentive Benefit: 'None',
+      Mental Illness Limitation: '12 Months',
+      Substance Abuse Limitation: '12 Months',
+      Family Care Benefit: 'Not Included',
+      COBRA Premium Reimbursement Amount: 0,
+      Terminal Illness Benefit: 'None',
+      401K Contribution During Disability: 'N/A',
+      Child Education Benefit: 'Not Included',
+      Cost of Living Adjustment Benefit: 'None',
+    }
+  }
+}
+
+TestData: {
+  LTD9_1: "1",
+  LTD9_2: "1",
+  LTD9_3: "Class 1: 1",
+  LTD10: "60% of Basic Monthly Earnings",
+  LTD11: "$6,000.00",
+  LTD12: "$6,000.00",
+  LTD13: "$100 or 10%",
+  LTD14: "180 days",
+  LTD15: "180 days",
+  LTD16: "SSNRA",
+  LTD17: "24 months",
+  LTD18: "Claimant is unable to perform the material and substantial duties of his/her regular occupation and has a 20% loss of indexed monthly earnings.",
+  LTD19: "60%/80%",
+  LTD20: "Not Included",
+  LTD21: "None",
+  LTD22: "Included",
+  LTD23: "Family",
+  LTD25: "0% (non-contributory)",
+  LTD26: "100% for groups of 2-5 and 75% for group of 6-9.",
+  LTD27: "12 Months (Lifetime)",
+  LTD28: "12 Months (Lifetime)",
+  LTD29: "Not Included",
+  LTD30: "Not Included",
+  LTD31: "Not Included",
+  LTD32: "Not Included",
+  LTD33: "Not Included",
+  LTD35: "24 Hour",
+  LTD36: "None",
+  LTD38: "Not Available",
+  LTD39: "Included",
+  LTD41: "Not Included",
+  LTD42: "N/A",
+  LTD43: "None",
+  LTD44: "Not Available",
+  LTD45: "Not Available",
+  LTD47: "12 Months",
+  LTD48: "Not Available",
+  LTD49: "Not Available",
+  LTD50: "Not Included",
+  LTD52: "Included",
+  LTD53: "Included",
+  LTD54: "Included",
+  LTD55: "Embedded"
+}

@@ -1,0 +1,14 @@
+TestData: {
+ PrintRequestTab: {
+   Entity Type: Customer,
+   Status: Pending,
+   Entity Number: '$<static:customerNumberForPrint:>',
+ }
+}
+
+TestData_Empty: {
+ PrintRequestTab: {
+    Request Id From: '',
+    Status: (All)
+ }
+}

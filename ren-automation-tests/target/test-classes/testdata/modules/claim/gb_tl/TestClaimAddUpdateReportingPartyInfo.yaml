@@ -1,0 +1,79 @@
+ReportingPartyAddressAdditional: {
+  ReportingPartyAndClaimContactTab: {
+    Zip / Postal Code: '94596',
+    Address Line 1: Address Line 1,
+    City: Walnut Creek,
+    State / Province: CA
+  }
+}
+
+Phone: {
+  ReportingPartyAndClaimContactTab: {
+    Phone Type: Mobile,
+    Phone: '$<rx:\d{13}>'
+  }
+}
+
+Phone2: {
+  ReportingPartyAndClaimContactTab: {
+    Phone Type2: Home,
+    Phone2: '$<rx:\d{13}>'
+  }
+}
+
+Phone3: {
+  ReportingPartyAndClaimContactTab: {
+    Phone Type3: Work,
+    Phone3: '$<rx:\d{13}>'
+  }
+}
+
+Phone4: {
+  ReportingPartyAndClaimContactTab: {
+    Phone Type4: Mobile,
+    Phone4: '$<rx:\d{13}>'
+  }
+}
+
+RelationshipToInsuredOther: {
+  ReportingPartyAndClaimContactTab: {
+    Relationship To Participant: Other
+  }
+}
+
+PartyNameCompany: {
+  ReportingPartyAndClaimContactTab: {
+    Party Name: contains=Company
+  }
+}
+
+PartyNameIndividual: {
+  ReportingPartyAndClaimContactTab: {
+    Party Name: contains=Individual
+  }
+}
+
+PartyNameInsured: {
+  ReportingPartyAndClaimContactTab: {
+    Party Name: contains=Legal
+  }
+}
+
+ReportingPartyMainClaimContactNo: {
+  ReportingPartyAndClaimContactTab: {
+    'Is the Reporting Party the Main Claim Contact?': 'No'
+  }
+}
+
+ReportingPartyMainClaimContactYes: {
+  ReportingPartyAndClaimContactTab: {
+    'Is the Reporting Party the Main Claim Contact?': 'Yes'
+  }
+}
+
+PartyNameEmpty: {
+  ReportingPartyAndClaimContactTab: {
+    Party Name: contains=EMPTY
+  }
+}
+

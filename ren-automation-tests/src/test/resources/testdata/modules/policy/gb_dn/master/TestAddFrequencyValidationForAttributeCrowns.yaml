@@ -1,0 +1,49 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_BASEPOS'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_BASEPOS'],
+}
+
+SelectPlan: {
+  Plan: Basic EPOS
+}
+
+PlanDefinitionTab_BASEPOS: {
+  PlanKey: BASEPOS-Basic EPOS,
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    'Assumed Participation %': 56,
+    'Sponsor Payment Mode': 12,
+  },
+  Rating: {
+    'SIC Code': '4011',
+    SIC Description: 'Line-Haul Railroads'
+  },
+  Limitation/Frequency: {
+    Major: {
+      Crowns: 'Once Every 3 Years',
+      Inlays: 'Once Every 7 Years',
+      Veneers: 'Once Every 5 Years'
+    }
+  }
+}
+
+ClassificationManagementTab_BASEPOS: {
+  Plan: 'BASEPOS-Basic EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+PreventativeAndDiagnosticTab: {
+  Fluoride Treatment: 'Not Covered'
+}
+
+BasicTab: {
+}
+
+MajorTab: {
+}
+

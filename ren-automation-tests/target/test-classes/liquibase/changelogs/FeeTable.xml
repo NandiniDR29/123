@@ -1,0 +1,306 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet failOnError="false" id="1" author="achykanakov" runOnChange="true">
+
+        <delete tableName="FEE_TABLE">
+            <where>
+                PROCEDURE_CODE IN ('D2971', 'D3351', 'D1310') AND
+                FEE_ID IN (2432384, 7723230, 8779923, 10734626, 12050012, 14604757, 18636978, 27617658,
+                10734645, 8779941, 18637001, 7723250, 12050031, 14604776, 2432403, 27617681,
+                27597622, 2432302, 12049925, 18636513, 14604669, 10734542, 8779840, 7723147)
+            </where>
+        </delete>
+
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="R&amp;C_FEE_LOAD 2012"/>
+            <column name="APPL" value="REGION-FEES 2012"/>
+            <column name="START_DATE" value="2012-03-26"/>
+            <column name="AMOUNT" value="187.58"/>
+            <column name="FEE_ID" value="8779923"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="IM-072557"/>
+            <column name="APPL" value="REGION-FEES 2015"/>
+            <column name="START_DATE" value="2015-05-26"/>
+            <column name="AMOUNT" value="201.70"/>
+            <column name="FEE_ID" value="14604757"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="LD-37555"/>
+            <column name="APPL" value="SQL Developer"/>
+            <column name="START_DATE" value="2018-03-19"/>
+            <column name="AMOUNT" value="228.37"/>
+            <column name="FEE_ID" value="27617658"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="IM-047115"/>
+            <column name="APPL" value="REGION-FEES 2014"/>
+            <column name="START_DATE" value="2014-04-01"/>
+            <column name="AMOUNT" value="202.34"/>
+            <column name="FEE_ID" value="12050012"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="Ticket 164600-CFR"/>
+            <column name="APPL" value="CLASSIC90_UPDATE"/>
+            <column name="START_DATE" value="2008-01-01"/>
+            <column name="AMOUNT" value="162.76"/>
+            <column name="FEE_ID" value="2432384"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="R&amp;C_FEE_LOAD"/>
+            <column name="APPL" value="REGION-FEES 2011"/>
+            <column name="START_DATE" value="2011-11-07"/>
+            <column name="AMOUNT" value="184.35"/>
+            <column name="FEE_ID" value="7723230"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="IM-021476"/>
+            <column name="APPL" value="REGION-FEES 2013"/>
+            <column name="START_DATE" value="2013-03-01"/>
+            <column name="AMOUNT" value="193.10"/>
+            <column name="FEE_ID" value="10734626"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D2971"/>
+            <column name="USER_NAME" value="IM-029924"/>
+            <column name="APPL" value="SQL Developer"/>
+            <column name="START_DATE" value="2016-04-01"/>
+            <column name="AMOUNT" value="214.44"/>
+            <column name="FEE_ID" value="18636978"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="IM-021476"/>
+            <column name="APPL" value="REGION-FEES 2013"/>
+            <column name="START_DATE" value="2013-03-01"/>
+            <column name="AMOUNT" value="501.65"/>
+            <column name="FEE_ID" value="10734645"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="R&amp;C_FEE_LOAD 2012"/>
+            <column name="APPL" value="REGION-FEES 2012"/>
+            <column name="START_DATE" value="2012-03-26"/>
+            <column name="AMOUNT" value="484.16"/>
+            <column name="FEE_ID" value="8779941"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="IM-029924"/>
+            <column name="APPL" value="SQL Developer"/>
+            <column name="START_DATE" value="2016-04-01"/>
+            <column name="AMOUNT" value="510.09"/>
+            <column name="FEE_ID" value="18637001"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="R&amp;C_FEE_LOAD"/>
+            <column name="APPL" value="REGION-FEES 2011"/>
+            <column name="START_DATE" value="2011-11-07"/>
+            <column name="AMOUNT" value="465.65"/>
+            <column name="FEE_ID" value="7723250"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="IM-047115"/>
+            <column name="APPL" value="REGION-FEES 2014"/>
+            <column name="START_DATE" value="2014-04-01"/>
+            <column name="AMOUNT" value="513.58"/>
+            <column name="FEE_ID" value="12050031"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="IM-072557"/>
+            <column name="APPL" value="REGION-FEES 2015"/>
+            <column name="START_DATE" value="2015-05-26"/>
+            <column name="AMOUNT" value="507.44"/>
+            <column name="FEE_ID" value="14604776"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="Ticket 164600-CFR"/>
+            <column name="APPL" value="CLASSIC90_UPDATE"/>
+            <column name="START_DATE" value="2008-01-01"/>
+            <column name="AMOUNT" value="439.01"/>
+            <column name="FEE_ID" value="2432403"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D3351"/>
+            <column name="USER_NAME" value="LD-37555"/>
+            <column name="APPL" value="SQL Developer"/>
+            <column name="START_DATE" value="2018-03-19"/>
+            <column name="AMOUNT" value="507.80"/>
+            <column name="FEE_ID" value="27617681"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="LD-37555"/>
+            <column name="APPL" value="SQL Developer"/>
+            <column name="START_DATE" value="2018-03-19"/>
+            <column name="AMOUNT" value="59.03"/>
+            <column name="FEE_ID" value="27597622"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="Ticket 164600-CFR"/>
+            <column name="APPL" value="CLASSIC90_UPDATE"/>
+            <column name="START_DATE" value="2008-01-01"/>
+            <column name="AMOUNT" value="47.25"/>
+            <column name="FEE_ID" value="2432302"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="IM-047115"/>
+            <column name="APPL" value="REGION-FEES 2014"/>
+            <column name="START_DATE" value="2014-04-01"/>
+            <column name="AMOUNT" value="51.69"/>
+            <column name="FEE_ID" value="12049925"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="IM-029924"/>
+            <column name="APPL" value="SQL Developer"/>
+            <column name="START_DATE" value="2016-04-01"/>
+            <column name="AMOUNT" value="54.29"/>
+            <column name="FEE_ID" value="18636513"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="IM-072557"/>
+            <column name="APPL" value="REGION-FEES 2015"/>
+            <column name="START_DATE" value="2015-05-26"/>
+            <column name="AMOUNT" value="53.05"/>
+            <column name="FEE_ID" value="14604669"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="IM-021476"/>
+            <column name="APPL" value="REGION-FEES 2013"/>
+            <column name="START_DATE" value="2013-03-01"/>
+            <column name="AMOUNT" value="50.49"/>
+            <column name="FEE_ID" value="10734542"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="R&amp;C_FEE_LOAD 2012"/>
+            <column name="APPL" value="REGION-FEES 2012"/>
+            <column name="START_DATE" value="2012-03-26"/>
+            <column name="AMOUNT" value="49.16"/>
+            <column name="FEE_ID" value="8779840"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+        <insert tableName="FEE_TABLE">
+            <column name="NAME" value="R&amp;C 90th - Region 199"/>
+            <column name="PENDING_IND" value="0"/>
+            <column name="NO_MAX_AMT_IND" value="0"/>
+            <column name="PROCEDURE_CODE" value="D1310"/>
+            <column name="USER_NAME" value="R&amp;C_FEE_LOAD"/>
+            <column name="APPL" value="REGION-FEES 2011"/>
+            <column name="START_DATE" value="2011-11-07"/>
+            <column name="AMOUNT" value="48.46"/>
+            <column name="FEE_ID" value="7723147"/>
+            <column name="FEE_TABLE_ID" value="102837"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>

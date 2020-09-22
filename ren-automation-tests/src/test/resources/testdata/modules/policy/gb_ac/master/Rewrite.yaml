@@ -1,0 +1,32 @@
+TestData: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'Yes'
+  }
+}
+
+TestDataNewNumber: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'No'
+  }
+}
+
+DataGather: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_AcceptContract: {
+  MasterPolicyBindActionTab: {
+    Amount Received with Application: 2000
+  }
+}

@@ -1,0 +1,125 @@
+TestData: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  PlansTab: '@PlansTab',
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+InsuredTab: {
+  General Information: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-25y>,
+    Gender: Male,
+    Tobacco: 'Yes',
+    Tax Identification: '$<rx:\d{9}>',
+  },
+  Address Information: {
+    #Address Type: index=1,
+    Country: United States,
+    Zip / Post Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>'
+  },
+  Relationship Information: {
+    Classification Group: index=1,
+    Original Hire Date: $<today-2y>
+  }
+}
+
+PlansTab: {
+  Plan Name: A La Carte,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants: {
+    Participant Selection: index=0
+  }
+}
+
+PlansTab_PlanB: {
+  PlansTab: {
+    Plan Name: '10/25 Plan B 130',
+    Coverage Tier: index=1,
+    Enrollment Date: $<today>,
+    Participants: {
+      Participant Selection: index=0
+    }
+  }
+
+}
+
+Adjustment_BackDated: {
+  CerfiticatePolicyTab: {
+    Effective Date: $<BOM-2M>,
+    Issue State: CA
+  }
+}
+
+
+TestData_Endorsement: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    Relationship Information: {
+      Salary Amount: 10000
+    }
+  },
+  PlansTab: {},
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTabOtherDatePlusMonth: {
+  CertificatePolicyTab: {
+    Effective Date: $<BOM+1M>,
+    Issue State: CA
+  }
+}
+
+CertificatePolicyTabMinus7Months: {
+  CertificatePolicyTab: {
+    Effective Date: $<BOM-7M>,
+    Issue State: CA
+  }
+}
+
+TestData_AddNewParticipant: {
+  PlansTab: {
+    Participants: {
+      Participant Selection: New Person,
+      Role Name: Spouse Participant,
+      Participant General Info: {
+        First Name: 'John$<rx:\d{8}>',
+        Last Name: 'Smith$<rx:\d{8}>',
+        Date of Birth: $<today-25y>
+      }
+    }
+  }
+}
+
+TestDataWithoutNewCustomer: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTabWithoutNewCustomer',
+  PlansTab: '@PlansTab',
+  PremiumSummaryTab: {}
+
+}
+
+InsuredTabWithoutNewCustomer: {
+  General Information: {
+    Gender: Male,
+    'Create New Customer?': 'No',
+    Search Customer: {
+      First Name: FirstName
+    },
+    Tax Identification: '$<rx:\d{9}>',
+  },
+  Relationship Information: {
+    Classification Group: index=1,
+    Original Hire Date: $<today-2y>
+  }
+}

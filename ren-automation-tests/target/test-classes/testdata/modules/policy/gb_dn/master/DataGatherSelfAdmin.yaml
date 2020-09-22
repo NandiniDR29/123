@@ -1,0 +1,110 @@
+TestData: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+PlanDefinitionTab_ALACARTE: {
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+  },
+  Assumed Participation %: '25',
+  'Self-administered?': 'Yes',
+  'PPO/EPO Plan?': 'Yes',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  EPCOS Waiting Period: 'None',
+  Co-Insurance:{
+    U&C Percentile Level: REN 50th,
+    Preventive - In Network: 5%,
+    Preventive In Network - EPO: 5%,
+    Preventive - Out of Network: 5%,
+    Prosthodontics - In Network: 50%,
+    Prosthodontics - EPO: 50%,
+    Prosthodontics - Out of Network: 50%,
+    Radiographs - In Network: 50%,
+    Radiographs - EPO: 50%,
+    Radiographs - Out of Network: 50%,
+    Basic In Network - EPO: index=1,
+    Major In Network - EPO: index=1
+  },
+  Dental Deductible:{
+    Lifetime Deductible: 'Yes',
+    Lifetime Deductible - In Network: '$25',
+    Lifetime Deductible - Out of Network: '$50',
+    Deductible - EPO: '$50',
+    Family Deductible - EPO: '2X',
+    Deductible Carryover: 'Yes'
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+    1A - Oral Exams: index=1,
+    1B - Emergency Palliative Treatment: index=1,
+    1C - Fluorides: index=1,
+    1D - Cleanings: index=1,
+    1E - Sealants: index=1,
+    2A - Bitewing Radiographs: index=1,
+    2B - Full Mouth Radiographs: index=1,
+    2C - All Other Radiographs: index=1,
+    2E - Other Restorative: index=1,
+    2H - Periodontics Prophy: index=1,
+    2G - Simple Periodontics: index=1,
+    2F - Major Periodontics: index=1,
+    2I - Root Canals (Endodontic): index=1,
+    2J - All Other Endodontic: index=1,
+    2K - Simple Extractions: index=1,
+    2L - Complex Extractions: index=1,
+    2M - All Other Oral Surgery: index=1,
+    2O - Other Adjunctive: index=1,
+    2D - Major Restorative: index=1,
+    2N - Denture Repair: index=1,
+    3A - Fixed Bridgework: index=1,
+    3B - Partial Dentures: index=1,
+    3C - Full Dentures: index=1,
+    3D - Other Dentures & Bridges: index=1
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@DataGather@PreventativeAndDiagnosticTab',
+    Basic: '@DataGather@BasicTab',
+    Major: '@DataGather@MajorTab'
+  },
+  Dental Maximum: {
+    Plan Maximum - In Network: index=1,
+    Plan Maximum - EPO: index=1,
+    Plan Maximum - Out of Network: index=1
+  },
+  Rating: {
+    Use Brochure Rates: 'Yes',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    'Does Min Hourly Requirement Apply?': 'No',
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Radiographs Waiting Period: 'None',
+    Prosthodontics Waiting Period: '18 months',
+    EPCOS Waiting Period: 'None',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 50,
+    Rate: 200
+  }
+}

@@ -1,0 +1,864 @@
+EISDEV-194420:
+  summary: "[CEM] Unable to update customer additional name"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.cem.customer.nonindividual.]
+      messages: ["Errors: Error 500. Internal server error occurred", "no such element: Unable to locate element:"]
+EISDEV-197123:
+  summary: "[CEM] AJAX error appears after expanding 'Activities & Notes' section after adding new web URL to customer contact details"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.cem.customer.]
+      messages: ["Expected condition failed: waiting for JS waiter {Ajax} (tried for 240 second(s) with 500 MILLISECONDS interval"]
+
+REN-12368:
+  summary: "Self-Bill Dental - with ability to add Certificate Policies"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_dn.master.TestPolicyRewrite*, com.exigen.ren.modules.policy.gb_dn.master.TestPolicyRescindCancellation.testPolicyRescindCancellation, com.exigen.ren.modules.policy.gb_dn.master.TestQuotePremiumOverride.testQuotePremiumOverride]
+      messages: "Cannot set value of  {PlanDefinitionTab: *Self-administered?=Yes"
+
+EISDEV-207153:
+  summary: "[CEM] Lead Import fails"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.cem.cem.leadimport.TestLeadImportForIndAndNonIndLeadLifecycleIsChecked.testLeadImport]
+      messages: ["Exception during retry performing"]
+
+REN-487:
+  summary: "PFL - Integration With Claims"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_pfl.*]
+      messages: ["Errors: 'Type of Claim' is required", "Cannot set value of AssetList {IntakeInformationTab"]
+
+REN-23771:
+  summary: "[Regression] Verify Waiver of Premium (zero rate)"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.*]
+      messages: ["{ClassificationManagementTab:"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.*]
+      messages: ["Checked cell value in the row/column Amount; expected: <$500.00>"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.*]
+      messages: ["Checked cell value in the row/column Amount; expected: <$560.00>"]
+
+REN-22990:
+  summary: "Need to Investigate and update tests with AC Premium Adjustments"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_ac.master.TestPolicyPremiumAdjustments.testPolicyPremiumAdjustments]
+      messages: ["Cannot set value of AssetList"]
+
+EISDEV-212907:
+  summary: "[Party] Customer is doubled on 'Relationship Party Search Result' screen"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.cem.party.TestPartyBoBFilteringCreateCustomerRelationshipTab.testPartyBoBFilteringCreateCustomerRelationshipTab]
+      messages: ["Checked the number of rows in table {<unnamed>: By.id: crmPartyForm:partyList}; expected 1, actual 2"]
+
+EISDEV-211745:
+  summary: "Wrong 'Pend Reason' is displayed by default in 'Notification' status"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.*]
+      messages: ["Checked value of StaticElement {<unnamed>: By.xpath: //label[text()='Claim Status:']/..//span[contains(@id, 'producContextInfoForm:headerCell')]}; expected: <Pended - Team Lead>, actual: <Pended - Intake>"]
+
+REN-23822:
+  summary: "[7.2.17] GAP Payments with Discard/Regenerate/Un-allocate actions."
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestPaymentsUnallocateActionFullAdmin.*]
+      messages: ["no such element: Unable to locate element: {\"method\":\"xpath\",\"selector\":\"//div[@id='billingDetailedForm:benefits_invoices_table']//table\"}"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestPaymentsUnallocateActionFullAdmin.*]
+      messages: ["Row with index 1 was not found"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestPaymentsWithDiscardAndRegenerateActionsFullAdmin.testPaymentsWithDiscardAndRegenerateActionsFullAdmin]
+      messages: ["Row with index 1 was not found"]
+
+EISDEV-211788:
+  summary: "[Dental Claim] Wrong format appears in validation pop-up if Payment Net Amount exceeds $2000"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.*]
+      messages: ["StaticElement {<unnamed>: By.xpath: //*[normalize-space(text())=\"Payment amount"]
+
+EISDEV-211103:
+  summary: "In Payment Details screen Payment Method is not presented"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.*]
+      messages: ["Checked value*Payment Method*expected: <*>, actual: <*>"]
+
+REN-28725:
+  summary: "Verify decline payment with suspense (multiple suspense allocation)"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestDeclinePaymentWithSuspenseFullAdmin.testDeclinePaymentWithSuspenseFullAdmin]
+      messages: ["no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"billingInfoForm:backOffice\"}"]
+
+REN-32934:
+  summary: "[Billing] Error occurred during 'Accept Payment' action"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestAutomaticPaymentAllocationFullAdmin.testAutomaticPaymentAllocationFullAdmin]
+      messages: ["Column Policy # was not found in the table"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestAutomaticPaymentAllocationSelfAdmin.testAutomaticPaymentAllocationSelfAdmin]
+      messages: ["Column Policy # was not found in the table"]
+
+REN-33037:
+  summary: "Clarify and/or update REN-28786"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestSAAggregationInByPeriodDrillDown.testSAAggregationInByPeriodDrillDown]
+      messages: ["Checked the number of rows in table {Premium by Coverage Segment Classifier"]
+
+EISDEV-217242:
+  summary: "Several fields are not updated for Saved ACH PM via REST"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.api.TestSavedPaymentMethodsREST.*]
+      messages: ["Expecting actual not to be null"]
+
+REN-44299:
+  summary: "[QA] REN-23506 clarification / need to update"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimProcessOrthoAbilitySuspendLifecycle.testClaimProcessOrthoAbilityToSuspendWithClaimSuspendPrivilege]
+      messages: ["Checked value of Cell *expected: <Pending>, actual: <Approved>*"]
+
+REN-38697:
+  summary: "Claim reason is incorrect and view corrupted if claim is created with warnings"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimIntegrationWithCustomer.testClaimIntegrationWithCustomer]
+      messages: ["Checked value of StaticElement*expected: <Logged - Intake>, actual: <Logged>"]
+
+
+EISDEV-228381:
+  summary: "[CEM] POST to services/customercore-rs/v1/customers/{customerNumber}/employments returned 404 error"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.cem.customer.individual.TestRestCustomerPostEmployment]
+      messages: ["Checked response status; expected: 200, actual: 404"]
+
+REN-40753:
+  summary: "[QA] REN-37564  clarification"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestAlignBillingOfSTToCalendarYear.*]
+      messages: ["*Use Policy Term?*"]
+
+REN-40792:
+  summary: "[Billing] \"Invoice document template\" has duplicate value"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestAbilityToSelectADocgenBill.testAbilityToSelectADocgenBill]
+      messages: ["*<[STATUTORY_INVOICE_TYPE_2, STATUTORY_INVOICE_TYPE_3]>. Available options: <[STATUTORY_INVOICE_TYPE_2, STATUTORY_INVOICE_TYPE_2, STATUTORY_INVOICE_TYPE_3]>"]
+
+REN-41035:
+  summary: "[Dental Claim] Wrong claim status after editing Claim with some of CDT Codes"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimModifyIntakeRulesAndLifecycle.testClaimModifyIntakeRulesAndLifecycleSteps1_12]
+      messages: ["*expected: <Adjudicated>, actual: <Adjudicated - Ortho>*"]
+
+REN-41043:
+  summary: "[Claim STAT] Error during STAT Claim open with 'Paid Family Leave' Benefit"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_st.master.TestClaimCurrentAgeForPFLBenefit.testClaimCurrentAgeForPFLBenefit]
+      messages: ["Errors: Expression execution exception", "*to 'Claim Change Date of Loss'*"]
+    - tests: [com.exigen.ren.modules.claim.gb_st.master.TestClaimCurrentAgeForPFLBenefit.testClaimCurrentAgeForPFLBenefit]
+      messages: ["Errors: Expression execution exception", "*Unable to locate element*"]
+
+REN-37762:
+  summary: "[REN-29210] - Selected Member Payment Modes is shown incorrectly in Select Member Payment Modes after change of Contribution Type"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_tl.master.TestPaymentModesVerification.testPaymentModesVerification_TL]
+      messages: ["*expected: <[12]>, actual: <[]>*"]
+
+REN-41314:
+  summary: "Incorrect \"Plan to Pay\" is set for non ortho code"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimProcessOrthoPlanToPay.testClaimProcessOrthoPlanToPay]
+      messages: ["Checked value of *Results of Adjudication*S3* expected: <*>, actual: <*>"]
+
+REN-40510:
+  summary: "Validation is shown when sort value is provided along with selected Group Type parameter "
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.api.TestBillingAccountTypeCd.testBillingAccountTypeCd]
+      messages: ["Checked response status; expected: 200, actual: 422"]
+
+REN-41744:
+  summary: "[QA] REN-32500 clarification or possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_pfl.master.TestCheckingCalculateBenefitPeriodForNYPFLAndNJFLB.testClaimAddBenefitReserves]
+      messages: ["Expecting:*<2020-*to be equal to:*<2020-*but was not."]
+
+REN-41901:
+  summary: "[QA] REN-30575 clarification"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimAbilityToEnterOtherPatientUI.testClaimAbilityToEnterOtherPatientLifecycle]
+      messages: ["Cannot get value of ComboBox {Name: {Patient:"]
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimAbilityToEnterOtherPatientUI.testClaimAbilityToEnterOtherPatientUI]
+      messages: ["expected: <Pended - Team Lead>, actual: <Adjudicated>"]
+
+REN-42058:
+  summary: "Copy Claim functionality fails during claim submission through REST"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimTypeOfTransaction.testClaimTypeOfTransaction]
+      messages: ["Errors: RenClaimsProcedure101", ""]
+
+REN-42198:
+  summary: "[Integration] 'IdCardGenerateJob' fails to execute"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.integration.TestIDCardPerformMappingExternalFileGB_VS.testIDCardPerformMappingExternalFileGB_VS]
+      messages: ["Expecting any element of:*to satisfy the given assertions requirements but none did"]
+
+REN-42283:
+  summary: "[QA] Clarify and/or update TCs from IPBQA-22483"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.TestWaiverOfPremiumWithZeroRateSeventhScenario.*]
+      messages: ["Checked cell value in the row/column Modal Premium Effective Date*"]
+
+REN-41895:
+  summary: "[Regression] For STAT,system dispaly 500 error,after Issued Payment"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestClaimPaymentCalcForTerminalIllnessBenefit.testClaimPaymentCalcForTerminalIllnessBenefit,
+              com.exigen.ren.modules.claim.gb_ltd.master.TestClaimPaymentCalculationForSurvivorFamilyIncomeBenefit.testClaimPaymentCalculationForSurvivorFamilyIncomeBenefit]
+      messages: ["Errors: Error(s) occurred. Status: 500", "no such element: Unable to locate element: *"]
+    - tests: [com.exigen.ren.modules.claim.gb_st.master.TestClaimReCalculationGrossBenefitAmount.testClaimReCalculationGrossBenefitAmountCompletedPayment]
+      messages: ["Errors: Error(s) occurred. Status: 500", "Column Transaction Status was not found in the table. Actual columns: []"]
+
+REN-42383:
+  summary: "[QA][Claim Non-Dental] Clarify and/or update REN-23479"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.TestWaiverOfPremiumWithZeroRateSeventhScenario.*]
+      messages: ["Exception during retry performing"]
+
+REN-42399:
+  summary: "[Claim Non-Dental] it is impossible to attach file because of error AJAX request"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimAdaptDentalClaimIntakeTask.testClaimAdaptDentalClaimIntakeTask]
+      messages: ["Cannot set value of AssetList {AddAttachmentForTaskActionTab: *"]
+
+REN-42660:
+  summary: "[QA][Claim Non-Dental] Clarify and/or update REN-38165"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckSpecificOptionalBenefitsWithoutAdditionPart.testCheckSpecificOptionalBenefitRevenueProtection,
+              com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckSpecificOptionalBenefitsWithoutAdditionPart.testCheckSpecificOptionalBenefits401KContribution]
+      messages: ["Cannot get value of StaticElement {<unnamed>: By.id: policyDataGatherForm:sedit_ClaimsPaymentCalculatorReduction_deductionAmount}"]
+
+REN-42778:
+  summary: "[QA] [Claims: Non-Dental] Clarify and/or update REN-29818"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestVerifyCOLARulesForCatastrophicRehabilitation.testVerifyCOLARulesForCatastrophicRehabilitation,
+              com.exigen.ren.modules.claim.gb_ltd.master.TestVerifyCOLARulesForCatastrophicRehabilitation.testVerifyCOLARulesForCatastrophicRehabilitation2]
+      messages: ["Expected value * of TextBox {Through Date: {Payment Addition:*"]
+
+REN-35836:
+  summary: "Incorrect Document Types in several folders from eFolder for Quote/Policy, Billing, Billing Back Office entities"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.platform.efolder.TestEfolderBillingDentalClaim.testEfolderBillingDentalClaim]
+      messages: ["to 'Miscellaneous Document'. Available values: [Agency, Agency]"]
+
+REN-41939:
+  summary: "[REN-29089] The error message for 'ASO Fee Override Reason' attribute doesn't include attibute specifics"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_dn.master.TestOverrideASOFeeFunctionalityVerification.testOverrideASOFeeFunctionalityVerification_DN]
+      messages: ["StaticElement {<unnamed>: By.xpath: //*[normalize-space(text())"]
+
+REN-43068:
+  summary: "[Admin] Claims tasks due date does not correspond to specified and configured"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.platform.admin.TestDefineFiveManualTasksClaims.testVerifyFiveManualTasksClaims]
+      messages: ["Expecting:*<202*to be equal to:*<202*but was not."]
+
+REN-43433:
+  summary: "[Billing] Error 500 during PUT /accounts/{accountNumber}/invoice-coverage-periods/{startDate}/{endDate}"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.api.TestBillingPUTInvoiceCoveragePeriodsWithDate.testBillingPUTInvoiceCoveragePeriodsWithDateTC2]
+      messages: ["Expecting:*<500>*to be equal to:*<204>*but was not."]
+    - tests: [com.exigen.ren.modules.dxp.api.billing.TestDxpEmployerAPISubmitSelfBill]
+      messages: ["Checked response status; expected: 204, actual: 500"]
+
+REN-42800:
+  summary: "[Integration] Tax_ID_Number__c did not update if 'EIN' for Non-Ind Customer was updated"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.externalInterfaces.salesforce.TestUploadNewNonIndCustomerWithOutRelationshipData.testUploadNewNonIndCustomerWithOutRelationshipData]
+      messages: ["Expecting:*<*to be equal to:*<*but was not."]
+
+REN-43531:
+  summary: "[Policy: Common] Limits on Proposed rates not applying for DN, VS with Situs State = WA and Total Number of Eligible Lives = [>51]"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_common.TestAbilityToApplyDiscountFromMultiQuoteProposal.testAbilityToApplyDiscountFromMultiQuoteProposal]
+      messages: ["StaticElement *error_message white_space_normal* is not absent as expected."]
+
+REN-46476:
+  summary: "Cencellation reason lookup is not hiding the values on UI"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.*]
+      messages: ["*Cancellation Reason:* Available options: *Term, Aging Processing, Attained Aging Processing, Cascaded from Master Policy*"]
+
+REN-43590:
+  summary: "[Claims: Non-Dental] Payment cannot be post"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.certificate.TestClaimPaymentCalcForPresumptiveDisabilityBenefit.testClaimPaymentCalcForPresumptiveDisabilityBenefitTC03]
+      messages: ["Checked the number of rows in table {Payments And Recoveries: By.xpath:*"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestClaimPaymentCalcForPresumptiveDisabilityBenefit.testClaimPaymentCalcForPresumptiveDisabilityBenefitTC03 ]
+      messages: ["Checked the number of rows in table {Payments And Recoveries: By.xpath:"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestCheckSpecificOptionalBenefitsWithAdditionPart.testCheckSpecificOptionalBenefitDOL2]
+      messages: ["no such element: Unable to locate element:*"]
+
+REN-43595:
+  summary: "[QA] Please clarify and/or update the TC REN-40121"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestPremiumEarnedButNotBilledSubledger.testPremiumEarnedButNotBilledSubledger]
+      messages: ["Expected size:<40> but was:<42>*"]
+
+REN-44669:
+  summary: "[REN-25652] GTL validation failed for initial enrollment"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.enrollment.TestInitialEnrollmentExcel.testInitialEnrollmentExcel_TL]
+      messages: ["'Enrollment Status': Expected: 'Completed', but Actual 'Failed'"]
+
+REN-43436:
+  summary: "[QA] REN-40993 clarification or possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckNotePaymentReissuedForPayment.testCheckPaymentReissuePaymentWithBalance]
+      messages: ["Errors: Billing account*does not have NonPremiumBillingAccountTemplate", "*Adjudication*"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckCountyCodePaymentCalculationForDifferentBenefits.testCheckCountyCodePaymentCalculationForTerminalIllnessBenefit]
+      messages: ["Errors: Billing account*does not have NonPremiumBillingAccountTemplate", "*Payments*"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckCountyCodePaymentCalculationForDifferentBenefits.testCheckCountyCodePaymentCalculationForFamilyIncomeBenefit]
+      messages: ["Errors: Billing account*does not have NonPremiumBillingAccountTemplate", "Column Payment Number was not found in the table"]
+
+REN-44038:
+  summary: "[REN-22542] - DEN - CP - Spouse Participants disappears from Participants table"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_dn.certificate.TestImprovingAgeCalculation.testCoverageTierAndDobRulesInCoverageTab_TC2]
+      messages: ["Errors: GB_VS191021-nNJ9ODN", "*"]
+
+REN-44053:
+  summary: "[QA] [REN-38164, REN-38165] clarification or possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestCheckSpecificOptionalBenefitsWithoutAdditionPart.*,
+              com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckSpecificOptionalBenefitsWithoutAdditionPart.*]
+      messages: ["no such element: Unable to locate element:*/tbody/tr[5]"]
+
+REN-44036:
+  summary: "Clarify REN-13877"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.dxp.api.TestDxpRestMemberProfileUpdateEmail.testDxpRestMemberProfileUpdateEmail]
+      messages: ["Expecting*<null>*to be equal to:*422*but was not."]
+    - tests: [com.exigen.ren.modules.dxp.api.customer.TestDxpRestEmployerViewAndUpdateCommunicationPreferences.testDxpRestEmployerViewAndUpdateCommunicationPreferences]
+      messages: ["Expecting actual not to be null"]
+
+REN-44042:
+  summary: "[QA] Clarification due OpenL integration [REN-21792,REN-35386, REN-25559, REN-13976, REN-13977, REN-23733]"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.*]
+      messages: ["Checked value of StaticElement *Claim Status* expected: *Pended - Team Lead"]
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.*]
+      messages: ["Expecting:*Adjudicated*to start with:*Pended*"]
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.*]
+      messages: ["no such element: Unable to locate element:*Line Override"]
+
+REN-43048:
+  summary: "[REN-38827] - Configure EAP: CP - 'Premium Summary' - 'Daily Premium' value is not rounded to 5 digits"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_eap.certificate.TestPresentsOfModifiedFieldsOnAllTabs.testPresentsOfModifiedFieldsOnAllTabs]
+      messages: ["*to match regex*"]
+
+REN-44291:
+  summary: "[Claims: Non-Dental] REN-18511 + REN-18514 refactoring"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestClaimSpanCOLAIncreaseInPayment.testClaimSpanCOLAIncreaseInPayment]
+      messages: ["Expecting:*to be equal to:*but was not."]
+
+REN-44264:
+  summary: "[QA] [DN] Default value for 'Fluoride Treatment' field need to be clarified"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_dn.master.TestConfigureLimitationORFrequency.testConfigureLimitationORFrequency]
+      messages: ["Checked value of ComboBox {Fluoride Treatment Age Limit: {Preventative and Diagnostic: {Limitation/Frequency: {PlanDefinitionTab* expected: <19>, actual: <>"]
+
+REN-44437:
+  summary: "[Customer] Can't complete steps flow where used 'Employee info' Tab"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.cem.customer.individual.TestEmployeeOptionalFieldsVerificationForIND.testEmployeeOptionalFieldsVerificationForIND,
+              com.exigen.ren.modules.cem.customer.nonindividual.TestCustomerParticipantEmploymentAddRemove.testCustomerParticipantEmploymentAddRemove,
+              com.exigen.ren.modules.cem.customer.nonindividual.TestCustomerParticipantEmploymentRemoveOnUpdate.testCustomerParticipantEmploymentRemoveOnUpdate,
+              com.exigen.ren.modules.cem.customer.nonindividual.TestCustomerParticipantEmploymentUpdate.testCustomerParticipantEmploymentUpdate,
+              com.exigen.ren.modules.cem.customer.nonindividual.TestCustomerAssociateExistingCustomer.testCustomerAssociateExistingCustomer,
+              com.exigen.ren.modules.cem.customer.nonindividual.TestCustomerParticipantEmploymentPendingUpdateHistory.testCustomerParticipantEmploymentPendingUpdateHistory]
+      messages: ["*<unnamed>: By.id: EMP_crmForm:censusDataTable*"]
+    - tests: [com.exigen.ren.modules.cem.customer.nonindividual.TestCustomerParticipantEmploymentRemoveKeepHistory.testCustomerParticipantEmploymentRemoveKeepHistory]
+      messages: ["Column Participant Id was not found in the table. Actual columns: []"]
+
+REN-44423:
+  summary: "[DXP] Evergreen upgrade to 11.6: POST/employer/v1/billing/accounts/{accountNumber}/statements/generate stays in IN Progress status"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.dxp.api.TestDxpRestCreateFinalBill.*,
+              com.exigen.ren.modules.dxp.api.TestDxpRestCreatePreBill.*]
+      messages: ["Status not SUCCESS"]
+
+REN-44842:
+  summary: "[Claims STD] 'End of Accumulated Sick Leave' is absent in the 'Type of Offset' during Calculate a Single Benefit Amount"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_std.master.TestClaimEliminationPeriodForSalaryContAndEndOfSickLeave.*]
+      messages: ["Checked value of ComboBox {Type of Offset*expected: <End of Accumulated Sick Leave>, actual: <>"]
+
+REN-44841:
+  summary: "[DocGen]  Section with values are absent in XML file"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.docgen.gb_st.TestInvoiceTypes.*]
+      messages: ["Node not found: //payload/period/start"]
+    - tests: [com.exigen.ren.modules.docgen.gb_st.TestInvoiceTypes.*]
+      messages: ["Node not found: //payload/period/end"]
+
+REN-44890:
+  summary: "[QA] Please update the TCs due to implementing of NF"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimInterestCalculationInPayment.*,
+              com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimPendWithHugePayment.testClaimPendWithHugePayment,
+              com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimSubledgerSplitAccountNumbersByBLOB.testClaimSubledgerSplitAccountNumbersByBLOB,
+              com.exigen.ren.modules.claim.gb_dn.certificate.TestProcessClaimForOtherPayee.testProcessClaimForOtherPayee2,
+              com.exigen.ren.modules.externalInterfaces.ddmi.TestIntegrationWithProvidersPart2.testIntegrationWithProvidersPart2]
+      messages: ["no such element: Unable to locate element: *policyDataGatherForm:paymentActionLink_update*"]
+
+REN-44909:
+  summary: "[DocGen] Invalid number of files and invalid file name. Overpayment letters (Dental)"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.docgen.claim.gb_dn.TestClaimDocumentsOverpaymentLetters.ClaimDocumentsOverpaymentLettersNy]
+      messages: ["*Postnotice-Overpayment-Associated Orthodontists*"]
+    - tests: [com.exigen.ren.modules.docgen.claim.gb_dn.TestClaimDocumentsOverpaymentLetters.ClaimDocumentsOverpaymentLettersNy]
+      messages: ["Exception during retry performing"]
+    - tests: [com.exigen.ren.modules.docgen.claim.gb_dn.TestClaimDocumentsOverpaymentLetters.ClaimDocumentsOverpaymentLettersNj]
+      messages: ["Node not found: //payee"]
+    - tests: [com.exigen.ren.modules.docgen.claim.gb_dn.TestClaimDocumentsOverpaymentLetters.ClaimDocumentsOverpaymentLettersNj]
+      messages: ["Document not found"]
+
+
+REN-45021:
+  summary: "[QA] REN-39284, REN-35684 clarification / possible bug with 'Recalculate Paid Payment'"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.*.TestCheckSpecificOptionalBenefitsWithAdditionPart.*]
+      messages: ["Checked cell value in the row/column Balance Amount; expected:"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.certificate.TestCheckRecalculationSensitiveFields.*]
+      messages: ["Checked value of TextBox {Amount: {BalanceActionTab:"]
+
+REN-45095:
+  summary: "[QA] [Claim Dental] REN-20811 clarification"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimPendWithTwoHugePayments.testClaimPendWithTwoHugePayments]
+      messages: ["*expected: <Pending>, actual: <Approved>"]
+
+REN-32839:
+  summary: "TCs updating due to changing claims statuses after 10.16 release"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimProcessOrthoAbilitySuspendLifecycle.testClaimProcessOrthoAbilityToSuspendLifecycle]
+      messages: ["Expecting:*Adjudicated*to start with:*Pended*"]
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimProcessOrthoAbilitySuspendLifecycle.testClaimProcessOrthoAbilityToSuspendLifecycle]
+      messages: ["*unexpectedly contains option <Suspend Claim>"]
+
+REN-45106:
+  summary: "[QA] [Claim Dental] REN-23536 clarification"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimProcessOrthoUIChanges.testClaimProcessOrthoUIChanges]
+      messages: ["Cannot set value of TextBox {Ortho Months:*"]
+
+REN-45147:
+  summary: "[Billing] Modal Premium table is not displayed"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.TestWaiverOfPremiumWithZeroRate.testWaiverOfPremiumWithZeroRate]
+      messages: ["Expected table to have row/column <Modal Premium Effective Date>"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.TestWaiverOfPremiumWithZeroRateFifthScenario.testWaiverOfPremiumWithZeroRateFifthScenario]
+      messages: ["Checked the number of rows in table {Modal Premium(s): By.xpath: //div[@id='modalPremiumForm:billing_modal_premium']//table};*"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.premiumwaiver.*]
+      messages: ["Column Modal Premium Effective Date was not found in the table. Actual columns: []"]
+
+REN-44558:
+  summary: "[QA] REN-22715 need to be updated"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimInterestCalculationInPayment.testClaimInterestCalculationInPaymentUI,
+              com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimInterestCalculationInPayment.testClaimInterestCalculationInPaymentREST]
+      messages: ["Checked value of Cell {<unnamed>: {<unnamed>: {Payments And Recoveries:*"]
+
+REN-45243:
+  summary: "[Dental] Differences between UI rate values and appropriate them 'proposedRate' and 'proposedCompositeRate' values ​​from rating response. Plan 'Alacarte', census applied, area tier"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.rating.gb_dn.TestRatingIntegrationDN.testRatingIntegrationPlanAlacarteCensusAppliedAreaTier]
+      messages: ["*By.xpath: ./td[8]}; expected: <*>, actual: <*>"]
+    - tests: [com.exigen.ren.modules.rating.gb_dn.TestRatingIntegrationDN.testRatingIntegrationPlanAlacarteCensusAppliedAreaTier]
+      messages: ["*Rate Details Table:*By.xpath: ./td[10]}; expected: <*>, actual: <*>"]
+
+REN-44620:
+  summary: "[Billing] Endorsement Issue causes error: Fields are required. But fields are filled."
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestBillByLocationDocGenUpdates.testBillByLocationDocGenUpdates]
+      messages: ["Errors: GB_AC_GBL001; GB_AC_GBL003; GB_AC_GBL002", "*Column Billing Group # was not found in the table. Actual columns: []*"]
+
+REN-43499:
+  summary: "[DocGen] Invalid file name generated"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.docgen.general.TestSynchronizeTemplateIDBetweenEISAndSmartComm.testSynchronizeTemplateIDBetweenEISAndSmartCommCommissionStatement]
+      messages: ["Exception during retry performing"]
+
+REN-45621:
+  summary: "[Customer] Issue Enrollment button isn't present in Update customer mode after create Active Policy"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.cem.customer.nonindividual.TestPolicyCommonEnrollmentProcessingIssueEnrollmentButton.testVerificationEnrollProcessingPrivAndIssueEnrollButton]
+      messages: ["Button {Issue Enrollment: {GeneralTab: By.xpath: //div[@id='contentWrapper']} -> By.id: crmForm:issueEnrollmentBtn} is not present as expected."]
+    - tests: [com.exigen.ren.modules.cem.customer.nonindividual.TestPolicyCommonEnrollmentProcessingIssueEnrollmentButton.testVerificationEnrollmentFilePopupAndRelatedFunctionality]
+      messages: ["no such element: Unable to locate element: {\"method\":\"id\",\"selector\":\"crmForm:issueEnrollmentBtn\"}"]
+
+REN-45629:
+  summary: "[QA] Need to update SQL script for REN-42277"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestBillByLocationDocGenUpdates.testBillByLocationDocGenUpdates]
+      messages: ["[Info from EPB_OP_DOCGEN_DATASOURCE is empty]*Expecting actual not to be empty"]
+
+REN-45645:
+  summary: "[QA] REN-23480 clarification / possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestCheckPaymentCalculationForCOBRAPremiumReimbursementBenefit.testCheckStudentLoanRepaymentBenefit]
+      messages: ["Cannot get value of Cell {<unnamed>: {<unnamed>: {Scheduled Payments of Series:*By.xpath: ./td[2]"]
+
+REN-45646:
+  summary: "[QA] REN-23479 clarification/ possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestCheckPaymentCalculationForCOBRAPremiumReimbursementBenefit.testCheckCOBRAPremiumReimbursementBenefit]
+      messages: ["Checked value of TextBox {Allocation Net Amount:"]
+
+REN-45720:
+  summary: "[QA] REN-28823 + REN-29817 possible bug / step need to be updated"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestExcludeAdditionalBenefitPaymentsFromCOLA.testExcludeAdditionalBenefitPaymentsFromCOLA,
+              com.exigen.ren.modules.claim.gb_ltd.master.TestVerifyCOLARulesForCatastrophicRehabilitation.testVerifyCOLARulesForCatastrophicRehabilitation]
+      messages: ["Cannot get value of ComboBox {Addition Type: {Payment Addition:"]
+
+REN-45715:
+  summary: "[Integration] api return 'noMaxAmount' field not true with db noMaxAmount = 1"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.externalInterfaces.fee.TestVerifyFeeSchedulerRequest*]
+      messages: ["Expecting:* <\"false\">*"]
+
+REN-45724:
+  summary: "[QA] REN-32327 possible bug / steps need to be updated"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestCheckCountyCodePaymentCalculationForBenefits.testCheckCountyCodePaymentCalculation5]
+      messages: ["Checked cell value in the row/column Amount;"]
+
+REN-45725:
+  summary: "[QA] REN-30558 + REN-30557 + REN-29818 clarification / possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestClaimCalculateCOLAPaymentSeries.testClaimCalculateColaSinglePayment,
+              com.exigen.ren.modules.claim.gb_ltd.master.TestClaimCalculateCOLASinglePayment.testClaimCalculateColaSinglePayment]
+      messages: ["Checked value of TextBox {Beginning Date: {Payment Addition:"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestClaimCalculateCOLASinglePayment.testClaimCalculateColaSinglePayment]
+      messages: ["Checked value of TextBox {COLA Amount: {PaymentCalculatorTab:"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestVerifyCOLARulesForCatastrophicRehabilitation.testVerifyCOLARulesForCatastrophicRehabilitation2]
+      messages: ["Expected value*of TextBox {Beginning Date: {Payment Addition:"]
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestVerifyCOLARulesForCatastrophicRehabilitation.testVerifyCOLARulesForCatastrophicRehabilitation2]
+      messages: ["Expected value*of TextBox {COLA Amount: {PaymentCalculatorTab:"]
+
+REN-45431:
+  summary: "Please update REN-16220 according to the implemented REN-10854"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_dn.master.TestZipEPOCSFieldsConfiguration.testZipEPOCSFieldsConfiguration]
+      messages: ["Errors: One Legal address is required. One Common email address is required if Paperless is checked", "Cannot get value of StaticElement {<unnamed>: By.xpath: //span[@id='custInfoForm:customerId' or @id='customerId']}"]
+
+REN-45726:
+  summary: "[QA] REN-42020 clarification"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.integration.TestCommissionDisbursementInterfaceXMLCheck.testCommissionDisbursementInterface]
+      messages: ["Node not found:*"]
+
+REN-45766:
+  summary: "[QA] REN-18515 clarification / test need to be updated"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestClaimCOLACalculationAGBAPaymentSeries.testClaimCOLACalculationAGBAPaymentSeries]
+      messages: ["Checked the number of rows in table {Scheduled Payments of Series:"]
+
+REN-45818:
+  summary: "[Policy: Common] Wrong Enrollment Status during Enrollment Processing"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_dn.master.TestVerifyRulesOfCalculatedEffectiveDateInitialLoad.testVerifyRulesOfCalculatedEffectiveDateInitialLoad]
+      messages: ["'Enrollment Status': Expected: 'Failed', but Actual 'Passed'"]
+
+REN-45950:
+    summary: "[Claims Non-Dental] some async tasks not processed"
+    reason: PROD
+    failures:
+      - tests: [com.exigen.ren.modules.claim.*.master.TestSynchronizeInClaimAddressFields.testSynchronizeInClaimAddressFields]
+        messages: ["Exception during retry performing"]
+
+REN-45951:
+  summary: "[QA] REN-38882 clarification"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.*.TestCheckSpecificOptionalBenefitsWithAdditionPart.*]
+      messages: ["Checked value of Cell {<unnamed>: {<unnamed>: {List of Payment Addition:"]
+
+REN-45947:
+  summary: "[QA] REN-40785 Clarification or possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.*]
+      messages: ["Files not found in folder*"]
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.*]
+      messages: ["File not found in folder*"]
+
+REN-45969:
+  summary: "[ST] \"Total Volume must be greater than 0 if Number of Participants > 0\" error on Quote Rate"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_st.*,
+              com.exigen.ren.modules.rating.gb_st.*]
+      messages: ["*Errors: VGB0106*", "*"]
+
+REN-46019:
+  summary: "[Policy STAT] Number of Participants textbox field isn't mandatory"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_st.master.TestClassificationManagementTabConfiguration.testClassificationManagementTabConfigurationForStatNYAndEnhancedNYCoverage]
+      messages: ["*Number of Participants* is not required as expected"]
+
+REN-45953:
+    summary: "[ST] 'Male', 'Female', 'Other/Not Specified' sub groups are absent for PFL NY on Classification Management tab"
+    reason: PROD
+    failures:
+      - tests: [com.exigen.ren.modules.rating.gb_st.TestRatingIntegrationST.testRatingIntegrationPlanNYStatWithCoveragePflNY]
+        messages: ["*Framework root cause: Cannot set value of TextBox {Number of Participants: {ClassificationManagementTab: By.xpath: //div[@id='contentWrapper']}*"]
+
+REN-46203:
+    summary: "[ST] Incorrect format for 'Rate' values in 'Classification Sub-Groups And Rating Info' table on 'Classification Management' tab for PFL NY"
+    reason: PROD
+    failures:
+      - tests: [com.exigen.ren.modules.rating.gb_st.TestRatingIntegrationST.testRatingIntegrationPlanNYStatWithCoveragePflNY]
+        messages: ["*Checked value of Cell {<unnamed>: {<unnamed>: {Classification Sub-Groups And Rating Info*By.xpath: ./td[7]}; expected: <*>, actual: <*>"]
+
+REN-46094:
+  summary: "[QA] Clatify REN-23853 (Rate isn't disabled) / possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_st.master.TestClassificationManagementTabConfiguration.testFieldRateForStatNYAndEnhancedNYCoverage]
+      messages: ["*Rate* is not disabled as expected."]
+
+REN-44901:
+  summary: "Transaction was deadlocked during parallel automated policy tests execution "
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.*]
+      messages: ["Errors: Data has been modified by another agent", "*"]
+
+REN-46172:
+  summary: "[Billing] invoiceItemsAllocationAmount value =0 after decline action"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.api.*.testEndpointToGetInformationOfAccountSuspenseAndAccountSuspenseAdjustmentsTC2]
+      messages: ["Expecting:*0.00*to be equal to:*7.82*but was not."]
+
+REN-38318:
+  summary: "User gets stuck because of validation and BLANK provider on claim"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimModifyIntakeRulesAndCancelClaim.testClaimModifyIntakeRulesAndCancelClaim]
+      messages: ["Errors: ClaimsVendorView014", "Cannot get value of StaticElement*Claim Status:"]
+
+REN-46236:
+  summary: "[QA] Clarify REN-34355: About error:  ''The Current Effective Amount - Spouse' cannot be greater than 'Coverage up to Max of Employee' percentage'"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_tl.certificate.TestImprovingAgeCalculation.testImprovingAgeCalculation]
+      messages: ["Errors: 'The Current Effective Amount - Spouse' cannot be greater than 'Coverage up to Max of Employee' percentage", "*"]
+
+REN-46354:
+  summary: "[Claim] LTD: 'Operation has failed due to illegal argument'. after issue payment"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestUIChangesForNonPremiumTypeBillingAccount.*]
+      messages: ["*Checked the number of rows in table*"]
+
+REN-46146:
+  summary: "[Claim]'All Single Benefit Calculations' section is not displayed on Adjudication tab"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.dxp.api.claim.*]
+      messages: ["Checked the number of rows in table*"]
+    - tests: [com.exigen.ren.modules.dxp.api.claim.*]
+      messages: ["Column Single Benefit Number was not found in the table. Actual columns:*"]
+
+REN-41980:
+  summary: "Non individual Customer: Relationship: created ind customer not found after Click Search Party Relationship "
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.dxp.api.*]
+      messages: ["Exception during retry performing"]
+
+REN-46398:
+  summary: "displayValue in response of GET /claims/recoveries disappears after update of recovery"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_dn.certificate.TestClaimRENSpecificFieldsAPI.testClaimRENSpecificFieldsAPI_TC01]
+      messages: ["Expecting value*in field*payee*but was"]
+
+REN-46403:
+  summary: "[Policy LTD] 'Rehabilitation Incentive Benefit Threshold' has wrong lookup order"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_di_ltd.master.TestPlanDefinitionAdditionalRequirements_5_9.testNewlyAddedFieldsAndHiddenRules]
+      messages: ["Expected ComboBox *Rehabilitation Incentive Benefit Threshold* to contain exactly these options: <[100% of Pre-Disability Earnings, 105% of Pre-Disability Earnings, 110% of Pre-Disability Earnings]>. Available options: <[110% of Pre-Disability Earnings, 105% of Pre-Disability Earnings, 100% of Pre-Disability Earnings]>"]
+
+REN-46410:
+  summary: "[Policy ST] 'Census Type' has wrong lookup order"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_st.master.TestCensusTypeFieldModificationVerification.testCensusTypeFieldModificationVerification]
+      messages: ["Expected ComboBox *Census Type* to contain exactly these options: <[Enrolled, Eligible, None]>. Available options: <[None, Eligible, Enrolled]>"]
+
+REN-46411:
+  summary: "[QA] Clarify about auto populate 'Number of Participants' from empty to '0'"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_st.master.TestClassificationManagementTabConfiguration.testClassificationManagementTabConfigurationForPFLAndNYCoverage]
+      messages: ["Errors: VGB0237; VGB0237", "Cell {<unnamed>: <Non-existent row (Can't find row by specified parameters: {Message='Total Volume' is required})> -> By.xpath: ./td[5]} is not present as expected."]
+
+REN-46421:
+  summary: "[QA] Need to update REN-42794 after NF REN-34393"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_st.master.TestStatutoryAndPflPolicyChangesAdditionalUpdates.testStatutoryAndPflPolicyChangesAdditionalUpdatesRules2]
+      messages: ["Checked value * expected: <[VGBC0026] If 'Coverage Name' = \"Stat NJ\" AND 'Tier' = \"Employer\", then Rate cannot be negative; else, Rate cannot be negative or equal to zero>, actual: <[VGBC0025] Rate cannot be negative or equal to zero>"]
+
+REN-45421:
+  summary: "[DXP] PUT causes error 422 for /employer/v1/groups/{groupNumber}/contact-relationships/{contactRelationshipId}"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.dxp.api.TestDxpEmployerEditGroupDetails.testDxpEmployerEditGroupDetails]
+      messages: ["Expecting:*422*to be equal to:*200*but was not."]
+
+REN-46358:
+  summary: "[Billing] Error 500 on finish action 'Setup Billing Group'"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestSupportGracePeriodAtMPLevelDayMinus1.testSupportGracePeriodOverrideDuringPolicyIssuance]
+      messages: ["Errors: Error(s) occurred. Status: 500", "*topQuickSearchForm:request*"]
+
+REN-46475:
+  summary: "[DXP] PUT /employer/v1/profile/acknowledgments: Missing or invalid request bod"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.dxp.api.customer.TestEmployerAcknowledgements]
+      messages: ["Checked response status; expected: 204, actual: 400"]
+
+REN-46514:
+  summary: "[QA] See error message during propose if wrong Exam/Lenses/Frames is setted"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.policy.gb_vs.master.TestConfigureBenefitSchedule.testConfigureBenefitScheduleWithUser1]
+      messages: ["Errors: Frame Frequency does not match Rate Guarantee. Please confirm Rate Guarantee and Exam/Lenses/Frames.","*"]
+
+REN-46584:
+  summary: "[QA] REN-19099 clarification / steps need to be updated"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.integration.invoiceGenerationJob.TestVerifyTheInvoiceGenerationBatch.testVerifyTheInvoiceGenerationBatch]
+      messages: ["The file*hasn't been found"]
+
+REN-46583:
+  summary: "[QA] REN-41149 clarification / possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.integration.TestArchiveExtractedVSPEligibilityFile.testArchiveExtractedVSPEligibilityFile,
+              com.exigen.ren.modules.integration.TestUploadingMappedVSPExtractToSFTP.testVerifyVspEligibilityJob]
+      messages: ["Expecting:*false*to be equal to:*true*but was not."]
+    - tests: [com.exigen.ren.modules.integration.TestMappingToVSPDataFormat.testMappingToVSPDataFormat]
+      messages: ["File*wasn't downloaded"]
+
+REN-44900:
+  summary: "BAM that Non-Premium BA was created is generated after every FICA Payment to Claim"
+  reason: PROD
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.selfadmin.TestUIChangesForNonPremiumTypeBillingAccount.testBillByLocationOneCovTwoLocationsSameBgSameBa]
+      messages: ["BAM message not found: Non-Premium Type Billing Account #*"]
+
+REN-46588:
+  summary: "[QA] REN-12930 + REN-12931 clarification / steps need to be updated"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.integration.ledgerTransferJob.*]
+      messages: ["The file*hasn't been found"]
+    - tests: [com.exigen.ren.modules.integration.TestCheckClaimFraudBatchJobProcessed.*]
+      messages: ["Expecting:*to be equal to:*but was not."]
+
+REN-46337:
+  summary: "[QA] REN-32192 + REN-32214 + REN-32195 + REN-32203 clarification / possible bug"
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.claim.gb_ltd.master.TestCheckCountyCodePaymentCalculationForBenefits.testCheckCountyCodePaymentCalculation3]
+      messages: ["Expected value <Indemnity Payment amount per occurrence (COLA is not applied)"]
+
+REN-46621:
+  summary: "[7.2.17] GAP Payments with Discard/Regenerate/Un-allocate actions."
+  reason: AUTO
+  failures:
+    - tests: [com.exigen.ren.modules.billing.groupbenefits.fulladmin.TestPaymentsWithDiscardAndRegenerateActionsFullAdmin.testPaymentsWithDiscardAndRegenerateActionsFullAdmin]
+      messages: ["Checked value in row 1: <not equal: value differences=*"]

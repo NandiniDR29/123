@@ -1,0 +1,11 @@
+TestData: {
+  GeneralTab: {
+    Group Information: {
+      Group Search: {
+        Group ID: ''
+      }
+    }
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}

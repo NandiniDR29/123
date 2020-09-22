@@ -1,0 +1,64 @@
+TestData_Profile: {
+  GeneralProfileTab: '@GeneralProfileTab',
+  AuthorityLevelsTab: '@AuthorityLevelsTab'
+}
+
+TestData_ChannelCorporateDynamic: {
+  AddCommissionGroup: {
+    Group Name: 'GroupName$<rx:\d{8}>',
+    Group Type: 'Channel',
+    Agencies: {
+      Channel: Corporate,
+      Agency Name: ''
+    },
+    Effective Date: $<today>
+  }
+}
+
+TestData_ChannelAgencyDynamic: {
+  AddCommissionGroup: {
+    Group Name: 'GroupName$<rx:\d{8}>',
+    Group Type: 'Channel',
+    Agencies: {
+      Channel: Agency,
+      Agency Name: ''
+    },
+    Effective Date: $<today>
+  }
+}
+
+TestData_IndividualDynamic: {
+  AddCommissionGroup: {
+    Group Name: 'GroupName$<rx:\d{8}>',
+    Group Type: 'Individual',
+    Effective Date: $<today>,
+    Direct: {
+      Last Name: ''
+    }
+  }
+}
+
+GeneralProfileTab: {
+  First Name: '$<static:userFName:[rx:FName_\d{6}]>',
+  Last Name: 'LName_$<rx:\d{8}>',
+  Effective Date: $<today>,
+  Commissionable: 'True',
+  Profile/Subproducer ID: 'Subproducer_$<rx:\d{8}>',
+  'User Name': 'qa_$<rx:\d{8}>',
+  'User Login': 'qa_$<rx:\d{8}>',
+  Password: qa,
+  Confirm Password: qa,
+  User Work Status: Available,
+  Agency/Locations: {
+    Agency Name: ''
+  },
+  Default: 'true',
+  Roles: QA All
+}
+
+AuthorityLevelsTab: {
+  Type: Underwriting,
+  Product: 'For All',
+  Level: 'Level 3',
+  Save New Authority: 'true'
+}

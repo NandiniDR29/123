@@ -1,0 +1,5 @@
+TestData: {
+  CopyQuoteActionTab: {
+    Policy Effective Date: $<BOM>
+  }
+}

@@ -1,0 +1,6 @@
+TestData: {
+  ChangeStatusActionTab: {
+    Action: Close,
+    Reason for Damage Closure: index=1
+  }
+}

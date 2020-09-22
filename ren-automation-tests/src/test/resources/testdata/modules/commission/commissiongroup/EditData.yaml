@@ -1,0 +1,8 @@
+TestData: {
+  CommissionGroupTab: {
+    Agencies: {
+      Channel: Agency,
+      Agency Name: ''
+    }
+  }
+}

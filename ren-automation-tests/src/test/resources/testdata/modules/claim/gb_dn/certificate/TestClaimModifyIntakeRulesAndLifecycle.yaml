@@ -1,0 +1,11 @@
+Adjust_UpdateIntakeInformationTab: {
+  IntakeInformationTab: {
+    Submitted Services: [{},
+                         {
+                           DOS: $<today>,
+                           CDT Code: 'D0145',
+                           Charge: 150
+                         }
+    ]
+  }
+}

@@ -1,0 +1,205 @@
+TestData: {
+  PlanDefinitionTab: [
+    '@SelectPlans',
+    '@PlanDefinitionBasicLifeInsurance',
+    '@PlanDefinitionBasicAccidentalDeath',
+    '@PlanDefinitionDependentBasicLife',
+    '@PlanDefinitionEmployeeVoluntaryLifeInsuranceVL',
+    '@PlanDefinitionSpouseVoluntaryVL',
+    '@PlanDefinitionChildVoluntaryVL',
+    '@PlanDefinitionDependentVoluntaryAccidentalSpouseVL',
+    '@PlanDefinitionEmployeeVoluntaryDeathVL'],
+  ClassificationManagementTab: [
+    '@ClassificationMgmtBasicAccidentalDeath',
+    '@ClassificationMgmtBasicLifeInsraunce',
+    '@ClassificationMgmtDependentBasicLife',
+    '@ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL',
+    '@ClassificationMgmtSpouseVoluntaryVL'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+
+SelectPlans: {
+  Plan: [Basic Life, Voluntary Life]
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  PlanKey: BL-Basic Life,
+  Census Type: index=1,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  Plan Termination Attained Age: 70,
+  SIC Code: 5411,
+  Contribution Type: Contributory,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  PlanKey: BL-Basic Life,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Required Participation %: 5%,
+  Enrollment Underwriting Offer: index=1,
+  Sponsor Payment Mode: 12,
+  Plan Termination Attained Age: 70,
+  Age Reduction Schedule: index=1,
+  Contribution Type: Contributory,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  },
+  Bereavement Benefit: {
+    'Apply Benefit?': true
+  },
+  Medical Premium Benefit: {
+    'Apply Benefit?': true
+  },
+  Hospital Inpatient Stay Benefit: {
+    'Apply Benefit?': true
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  PlanKey: BL-Basic Life,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Minimum Number of Participants: 1,
+  Contribution Type: Contributory,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsuranceVL: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Contribution Type: Voluntary,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'Amount and mode only',
+    Waiting Period Amount: 1,
+    Waiting Period Mode: Days,
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  }
+}
+
+PlanDefinitionSpouseVoluntaryVL: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  PlanKey: VL-Voluntary Life,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Contribution Type: Voluntary,
+  Age Reduction Schedule Details: {
+    Maximum: 1
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  }
+}
+
+PlanDefinitionChildVoluntaryVL: {
+  CoverageKeyRemove: Child Voluntary Life Insurance
+}
+
+PlanDefinitionDependentVoluntaryAccidentalSpouseVL: {
+  CoverageKeyRemove: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+}
+
+PlanDefinitionEmployeeVoluntaryDeathVL: {
+  CoverageKeyRemove: Employee Voluntary Accidental Death and Dismemberment Insurance
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Plan: BL-Basic Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Plan: BL-Basic Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Plan: BL-Basic Life,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsuranceVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtSpouseVoluntaryVL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Plan: VL-Voluntary Life,
+  Classification Group Name: 1
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}

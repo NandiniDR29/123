@@ -1,0 +1,5 @@
+{
+  "cellHintTriggerLocator": {
+    "xpath":".div/div/span"
+  }
+}

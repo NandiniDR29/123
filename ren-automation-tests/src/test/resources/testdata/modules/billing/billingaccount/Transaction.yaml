@@ -1,0 +1,16 @@
+TestData_Fee: {
+  "typeCd": "fee",
+  "subTypeCd": "ServiceFee",
+  "allocations": [
+    {
+      "policy": {
+        "policyNumber": "",
+        "effectiveDate": "$<today:yyyy-MM-dd>"
+      },
+      "amount": {
+        "value": 10,
+        "currency": "USD"
+      }
+    }
+  ]
+}

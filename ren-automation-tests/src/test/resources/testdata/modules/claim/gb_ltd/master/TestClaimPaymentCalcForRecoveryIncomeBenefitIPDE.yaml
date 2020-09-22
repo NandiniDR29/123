@@ -1,0 +1,54 @@
+TestData_Claim: {
+  LossEventTab: {
+    Date of Loss: '$<today-6M>'
+  },
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab'
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Date of Birth: $<today-25y>,
+  Contact Preference: Mail,
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  Preferred Payment method: Check,
+  Covered Earnings: 5000,
+  Participant Indexed Pre-Disability Earnings: [
+  {
+    'Year No.': 1,
+    Year Start Date (MM/DD/YYYY): $<BOY>,
+    Year End Date (MM/DD/YYYY):  $<BOY+1y-1d>,
+    Indexed Pre-Disability Earnings: 10000
+  },
+  {
+    'Year No.': 2,
+    Year Start Date (MM/DD/YYYY): $<BOY+1y>,
+    Year End Date (MM/DD/YYYY):  $<BOY+2y-1d>,
+    Indexed Pre-Disability Earnings: 20000
+  }]
+}
+
+BenefitsLTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-6M-5d:MM/dd/yyyy>
+}
+
+
+TestData_CalculateASingleBenefitAmount: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  OtherIncomeBenefitActionTab: '@OtherIncomeBenefitActionTab'
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: index=2
+}
+
+OtherIncomeBenefitActionTab: {
+  Type of Offset: index=1
+}

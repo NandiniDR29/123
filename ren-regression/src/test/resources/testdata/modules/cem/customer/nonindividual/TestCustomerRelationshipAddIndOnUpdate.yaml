@@ -1,0 +1,8 @@
+TestData_RelationshipIndividual: {
+  RelationshipTab: {
+    Type: Individual,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Relationship to Customer: Trust
+  }
+}

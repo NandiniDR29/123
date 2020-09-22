@@ -1,0 +1,170 @@
+TestData: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: ['@SelectPlan', '@CoveragesTabBasicAccidentalDeath', '@CoveragesTabBasicLifeInsurance'],
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Date of Birth: $<today-25y>,
+  Gender: Male,
+  Tobacco: 'Yes',
+  Tax Identification: '$<rx:\d{9}>',
+  Address Type: index=1,
+  Country: United States,
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  Original Hire Date: $<BOM>,
+  Employment Type: index=1,
+  Payroll Frequency: index=1,
+  Job Title: 'Banking',
+  Annual Earnings: 5000,
+  Classification Group: index=1
+}
+
+SelectPlan: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabOptionalLifeInsurance: {
+  Coverage Name: Employee Optional Life Insurance,
+  Enrollment Date: $<today>,
+  Current Effective Amount: index=2,
+  Approved Amount: '100',
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}
+
+CoveragesTabBasicLifeInsurance: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}
+
+CoveragesTabBasicAccidentalDeath: {
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}
+
+CoveragesTabDependentBasicLife: {
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Enrollment Date: $<today>,
+  Benefit Spouse: {
+    Elected Benefit Amount: 1300
+  },
+  Benefit Child: {
+    Elected Benefit Amount: 1300
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Role Name: Spouse Participanrt,
+  Participant General Info: '@ParticipantGeneralInfo',
+  Participant Address Info: '@ParticipantAddressInfo',
+}
+
+ParticipantGeneralInfo: {
+  First Name: 'Mary$<rx:\d{5}>',
+  Last Name: 'Smith$<rx:\d{5}>',
+  Tax Identification: '$<rx:\d{9}>',
+  Relationship to Insured: Spouse - Wife
+}
+
+ParticipantAddressInfo: {
+  Address Type: Mailing,
+  Country: United States,
+  City: Beverly Hills,
+  Address Line 1: 'Address$<rx:\d{8}>'
+}
+
+AddParticipant: {
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+Adjustment_BackDated: {
+  CerfiticatePolicyTab: {
+    Effective Date: $<BOM-2M>,
+    Situs State: CA
+  }
+}
+
+TestData_Endorsement: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+  },
+  CoveragesTab: {},
+  PremiumSummaryTab: {}
+}
+
+
+TestData_Endorsement_Annual: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    Annual Earnings: 30000
+  },
+  CoveragesTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement_Change_Coverage: {
+  CertificatePolicyTab: {},
+  InsuredTab: {},
+  CoveragesTab: ['@CoveragesTabAddCoverageRemove', '@CoveragesTabAddCoverageADD'],
+  PremiumSummaryTab: {}
+}
+
+CoveragesTabAddCoverageRemove: {
+  Action: Remove,
+  Coverage Name: Employee Basic Life Insurance
+}
+
+CoveragesTabAddCoverageADD: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+TestData_AddNewParticipant: {
+  CoveragesTab: {
+    Participant Selection: New Person,
+    Role Name: Spouse Participant,
+    Participant General Info: {
+       First Name: 'John$<rx:\d{8}>',
+       Last Name: 'Smith$<rx:\d{8}>',
+       Date of Birth: $<today-25y>
+     }
+  }
+}
+
+TestDataWithoutNewCustomer: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTabWithoutNewCustomer',
+  CoveragesTab: ['@SelectPlan', '@CoveragesTabBasicAccidentalDeath', '@CoveragesTabBasicLifeInsurance'],
+  PremiumSummaryTab: {}
+}
+
+InsuredTabWithoutNewCustomer: {
+  'Create New Customer?': 'No',
+  Search Customer: {
+    First Name: FirstName
+  },
+  Gender: Male,
+  Tax Identification: '$<rx:\d{9}>',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>
+}

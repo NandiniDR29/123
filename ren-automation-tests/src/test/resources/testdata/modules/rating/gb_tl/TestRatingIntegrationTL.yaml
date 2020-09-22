@@ -1,0 +1,843 @@
+CaseProfile: {
+  CaseProfileDetailsTab: {
+    Case Profile Name: __first_one,
+    Effective Date: $<today>,
+    Group Domicile State: NY,
+  },
+  ProductAndPlanManagementTab: {
+    Product: 'Term Life Insurance'
+  },
+  ClassificationManagementTab: {
+    Classification Group: {
+      Class Name: 1,
+      Class Number: 1,
+      Relationship Type: Employment
+    },
+    Group Details: {
+      'Create Sub-Groups?': 'Yes',
+      'Create Sub-Groups Automatically?': 'Yes',
+      'Job Code': 'Any Work',
+      'Employment Type': 'Directors',
+      'Employment Status': 'Active',
+      'Expatriate': 'No',
+      'Pay Type': 'Hourly',
+      'Pay Class': 'Full-Time',
+      'Union Membe': 'Yes',
+      'Class Description': 'Class 1'
+    }
+  },
+  LocationManagementTab: {},
+  FileIntakeManagementTab: {
+    Intake Profile Name: 'File1',
+    Effective Date: $<today>,
+    Product: [ALL],
+    File Type: 'Quote',
+    Record Type: 'Eligibility',
+    Upload File Dialog: {
+      File Name: 'File1',
+      File Upload: '$<file:REN_Rating_Census_File_All.xlsx>',
+    }
+  }
+}
+
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionDependentBasicAccidentalDeathAndDismembermentInsurance', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionBasicAccidentalDeathAndDismemberment', '@PlanDefinitionDependentBasicLife', '@PlanDefinitionEmployeeVoluntaryLife',
+  '@PlanDefinitionEmployeeVoluntaryAccidentalDeathAndDismemberment', '@PlanDefinitionSpouseVoluntaryLife', '@PlanDefinitionChildVoluntaryLife', '@PlanDefinitionDependentVoluntaryAccidentalDeathAndDismembermentInsurance',
+  '@PlanDefinitionBasicLifeInsurance'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtBasicAccidentalDeathAndDismemberment','@ClassificationMgmtDependentBasicLife', '@ClassificationMgmtEmployeeVoluntaryLifeInsurance', '@ClassificationMgmtEmployeeVoluntaryAccidentalDeathAndDismembermentInsurance',
+  '@ClassificationMgmtSpouseVoluntaryLifeInsurance', '@ClassificationMgmtChildVoluntaryLifeInsurance', '@ClassificationMgmtDependentVoluntaryAccidentalDeathAndDismembermentInsurance', '@ClassificationMgmtDependentBasicAccidentalDeathAndDismembermentInsurance'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  County Code: '001 - Albany County',
+  Situs State: 'NY',
+  'Zip Code': '90210',
+   'Rate Guarantee (Months)': 18,
+   'Prior Life Coverage': 'No',
+   'Has Continuity of Coverage?': 'Yes',
+   'Use Experience Rating ?': 'Yes',
+   'Small Group?': 'No',
+   'Separate Or Combined Experience Rating?': 'Combined',
+   Internal Team: {
+     Sales Representative: index=1,
+     Sales Support Associate: index=1
+   },
+   Assigned Agencies: {
+    'Primary Agency?': 'Yes',
+     #Agent Sub Producer: 'index=1'
+   }
+}
+
+SelectPlan: {
+  Plan: 'Basic Life + Voluntary'
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+     Eligibility waiting period definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeathAndDismemberment: {
+  CoverageKey: 'Employee Basic Accidental Death and Dismemberment Insurance',
+  Census Type: 'Enrolled',
+  Population Type: 'Retirees',
+  'Enhanced AD&D?': 'No',
+  Coverage Type: 'Non-Occupational',
+  'Assumed Participation %': '50%',
+  'Required Participation %': '5%',
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: 'ADEA2',
+  SIC Code: '3524',
+  Coverage Included in Package: {
+    LTD: true
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Salary Multiple: '1x',
+    Benefit Maximum Amount: '200000',
+    Earning Definition: 'Salary and Bonuses (12 mo)',
+    Benefit Minimum Amount: '11000',
+    Rounding Method: 'Round Benefit Off to Nearest $1000'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: 'Dependent Basic Life Insurance (Spouse & Child)',
+  Population Type: 'Disabled',
+  Coverage Application: 'Child Only',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  SIC Code: '5411',
+  Rating: {
+    Rate Basis: 'Per Unit'
+  },
+  'Benefit Schedule - Child': {
+    Benefit Type: 'Specified Amount - Single Value',
+    '6 months to max age': 2500
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLife: {
+  CoverageKey: 'Employee Voluntary Life Insurance',
+  'Census Type': 'Enrolled',
+  'Total Number of Eligible Lives': 4,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  'Portability': 'Included',
+  'Waiver of Premium': 'Included',
+  'Waiver disabled prior to age': 65,
+  'Termination age': 65,
+  'Premium Waiver Elimination Period': '9 Months',
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 6
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Single Value',
+    'Flat Benefit Amount': '100000'
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryAccidentalDeathAndDismemberment: {
+  CoverageKey: 'Employee Voluntary Accidental Death and Dismemberment Insurance',
+  'Population Type': 'Active',
+  'Census Type': 'Enrolled',
+  'Enhanced AD&D?': 'Yes',
+  'Required Participation %': '10%',
+  SIC Code: 2711,
+  'Contribution Type': 'Contributory',
+  'Participant Contribution %': 60,
+  'Sponsor Payment Mode': '12',
+  'Member Payment Mode': '12',
+  Coverage Included in Package: {
+    'DENTAL': true
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Multiple Values',
+    Salary Multiples: ['2x', '4x'],
+    Benefit Maximum Amount: '600000',
+    Benefit Minimum Amount: '10000',
+    Rounding Method: 'None',
+    'Earning Definition': 'W2'
+  },
+  Age Reduction Schedule Details: {
+      Maximum: 90
+  },
+  Schedule of Continuation Provision: {
+      'Sabbatical (months)': 3
+  }
+}
+
+PlanDefinitionSpouseVoluntaryLife: {
+  CoverageKey: 'Spouse Voluntary Life Insurance',
+  Population Type: 'Active',
+  Census Type: 'Eligible',
+  Contribution Type: 'Non-contributory',
+  'Required Participation %': '45%',
+  'Sponsor Payment Mode': '12',
+  SIC Code: 2711,
+  Coverage Included in Package: {
+    'LTD': true
+  },
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Specified Amount - Single Value',
+    Flat Benefit Amount: '7000',
+    'Coverage up to Max of Employee Coverage': '100%'
+  }
+}
+
+PlanDefinitionChildVoluntaryLife: {
+  CoverageKey: 'Child Voluntary Life Insurance',
+  'Population Type': 'Active',
+  'Census Type': 'Eligible',
+  Contribution Type: 'Voluntary',
+  'Required Participation %': '75%',
+  SIC Code: 2711,
+  'Member Payment Mode': '12',
+  Coverage Included in Package: {
+    'DENTAL': true
+  },
+  Rating: {
+    Rate Basis: 'Per $1,000'
+  },
+  'Benefit Schedule - Child': {
+    Benefit Type: 'Percentage of Employee Amount',
+    'Percentage of Employee Amount': '10%',
+    'Maximum Benefit Amount': '10000',
+    'Minimum Benefit Amount': '1000'
+  }
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeathAndDismembermentInsurance: {
+  CoverageKey: 'Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)',
+  Population Type: 'Active',
+  Census Type: 'Enrolled',
+  Coverage Type: '24 Hours',
+  'Enhanced AD&D?': 'Yes',
+  'Required Participation %': '40%',
+  'Member Payment Mode': '12',
+  'SIC Code': 2711,
+  'Benefit Schedule - Spouse': {
+    'Benefit Type': 'Specified Amount - Single Value',
+    'Flat Benefit Amount': '4000'
+  },
+  'Benefit Schedule - Child': {
+    'Benefit Type': 'Specified Amount - Range Values',
+    'Minimum Benefit Amount': '500',
+    'Maximum Benefit Amount': '10000',
+  }
+}
+
+PlanDefinitionDependentBasicAccidentalDeathAndDismembermentInsurance: {
+  Add Coverage: click,
+  Plan ComboBox: 'Basic Life + Voluntary',
+  Coverage Name: 'Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child)',
+  'SIC Code': '8069',
+  'Population Type': 'Active',
+  'Census Type': 'Enrolled',
+  'Enhanced AD&D?': 'Yes',
+  'Coverage Type': '24 Hours',
+  'Required Participation %': '30%',
+  'Member Payment Mode': '12',
+  Rating: {
+    Rate Basis: 'Per Unit'
+  },
+  'Coverage Included in Package': {
+    'STD': true
+  },
+  'Benefit Schedule - Child': {
+    Benefit Type: 'Specified Amount - Single Value',
+    '6 months to max age': '2000'
+  },
+  'Benefit Schedule - Spouse': {
+    Benefit Type: 'Specified Amount - Single Value',
+    Flat Benefit Amoun: 5000
+  },
+  Age Reduction Schedule Details: {
+    Maximum: 80
+  }
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtBasicAccidentalDeathAndDismemberment: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeathAndDismembermentInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeathAndDismembermentInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: 'Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)',
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtDependentBasicAccidentalDeathAndDismembermentInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: 'Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child)',
+  Classification Group Name: 1,
+}
+
+
+PremiumSummaryTab: {
+  Experience Rating: {
+    'Experience Claim Amount': '100',
+    'Credibility Factor': '1'
+  },
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}
+
+RequestData: {
+  'policyID':'not specified',
+  'effectiveDate':'not specified',
+  'requestDate':'not specified',
+  'quoteType':'New Business',
+  'state':'NY',
+  'zip':'90210',
+  'rateGuarantee':'18',
+  'priorLifeCoverage':'false',
+  'hasContinuityOfCoverage':'true',
+  'experienceRating':'true',
+  'combinedExperience':'true',
+  'experienceClaimAmount':'100.00',
+  'experienceCredibility':'1.0000000',
+  #Employee Basic Life Coverage
+  'coverages[0].coverageName':'BTL',
+  'coverages[0].planName':'BLV',
+  'coverages[0].sicCode':'5411',
+  'coverages[0].populationType':'ACTIVE',
+  'coverages[0].censusType':'Eligible',
+  'coverages[0].assumedParticipationPct':'1.00',
+  'coverages[0].separateRetireeRate':'true',
+  'coverages[0].benefitTypeEE':'FLAT_VALUE',
+  'coverages[0].benefitAmtEE':'10000.00',
+  'coverages[0].ageReductionSchedule[0].reductionAge':'65',
+  'coverages[0].ageReductionSchedule[0].reductionPct':'0.65000000',
+  'coverages[0].ageReductionSchedule[1].reductionAge':'70',
+  'coverages[0].ageReductionSchedule[1].reductionPct':'0.40000000',
+  'coverages[0].ageReductionSchedule[2].reductionAge':'75',
+  'coverages[0].ageReductionSchedule[2].reductionPct':'0.25000000',
+  'coverages[0].waiverOfPremium':'NotIncld',
+  'coverages[0].portability':'NotIncld',
+  'coverages[0].employeeContributionPct':'0E-8',
+  'coverages[0].experienceClaimAmount':'0.00',
+  'coverages[0].commission.commissionPct': '0.05000000',
+  #Employee Basic Accidental Death and Dismemberment Insurance
+  'coverages[1].coverageName':'ADD',
+  'coverages[1].planName':'BLV',
+  'coverages[1].sicCode':'3524',
+  'coverages[1].coveragesIncludedInPackage[0]':'LTD',
+  'coverages[1].populationType':'RETIREES',
+  'coverages[1].censusType':'Enrolled',
+  'coverages[1].assumedParticipationPct':'0.50',
+  'coverages[1].benefitTypeEE':'FIXED_SALARY_MULTIPLIER',
+  'coverages[1].salaryMultiplier':'1.0',
+  'coverages[1].benefitMaxEE':'200000.00',
+  'coverages[1].benefitMin':'11000.00',
+  'coverages[1].roundingMethod':'ROUND_BENEFIT_OFF_NEAREST1000',
+  'coverages[1].ageReductionSchedule[0].reductionAge':'70',
+  'coverages[1].ageReductionSchedule[0].reductionPct':'0.55000000',
+  'coverages[1].ageReductionSchedule[1].reductionAge':'75',
+  'coverages[1].ageReductionSchedule[1].reductionPct':'0.35000000',
+  'coverages[1].ageReductionSchedule[2].reductionAge':'80',
+  'coverages[1].ageReductionSchedule[2].reductionPct':'0.25000000',
+  'coverages[1].isEnhanced':'false',
+  'coverages[1].coverageType':'nonOccup',
+  'coverages[1].employeeContributionPct':'0E-8',
+  'coverages[1].experienceClaimAmount':'0.00',
+  'coverages[1].rateBasis':'P1000',
+  'coverages[1].commission.commissionPct': '0.05000000',
+  #Dependent Basic Life Insurance (Spouse & Child)
+  'coverages[2].coverageName':'DEP_BTL',
+  'coverages[2].planName':'BLV',
+  'coverages[2].sicCode':'5411',
+  'coverages[2].populationType':'DISABLED',
+  'coverages[2].censusType':'Enrolled',
+  'coverages[2].benefitTypeSP':'FLAT_VALUE',
+  'coverages[2].benefitTypeCH':'FLAT_VALUE',
+  'coverages[2].benefitAmtCH':'2500.00',
+  'coverages[2].employeeContributionPct':'1.00000000',
+  'coverages[2].experienceClaimAmount':'0.00',
+  'coverages[2].rateBasis':'PUnit',
+  'coverages[2].commission.commissionPct': '0.05000000',
+  #Employee Voluntary Life
+  'coverages[3].coverageName':'VOL_BTL',
+  'coverages[3].planName':'BLV',
+  'coverages[3].sicCode':'5411',
+  'coverages[3].populationType':'ACTIVE',
+  'coverages[3].censusType':'Enrolled',
+  'coverages[3].totalNumberOfEligibleLives':'4',
+  'coverages[3].assumedParticipationPct':'0.20',
+  'coverages[3].benefitTypeEE':'FLAT_VALUE',
+  'coverages[3].benefitAmtEE':'100000.00',
+  'coverages[3].ageReductionSchedule[0].reductionAge':'65',
+  'coverages[3].ageReductionSchedule[0].reductionPct':'0.65000000',
+  'coverages[3].ageReductionSchedule[1].reductionAge':'70',
+  'coverages[3].ageReductionSchedule[1].reductionPct':'0.50000000',
+  'coverages[3].waiverOfPremium':'Incld',
+  'coverages[3].waiverDisabledPriorToAge':'65',
+  'coverages[3].terminationAge':'65',
+  'coverages[3].waiverEliminationPeriod':'9Mo',
+  'coverages[3].portability':'Incld',
+  'coverages[3].employeeContributionPct':'1.00000000',
+  'coverages[3].experienceClaimAmount':'0.00',
+  'coverages[3].rateBasis':'P1000',
+  'coverages[3].commission.commissionPct': '0.05000000',
+  #Employee Voluntary Accidental Death and Dismemberment Insurance
+  'coverages[4].coverageName':'VOL_ADD',
+  'coverages[4].planName':'BLV',
+  'coverages[4].sicCode':'2711',
+  'coverages[4].coveragesIncludedInPackage[0]':'DENTAL',
+  'coverages[4].populationType':'ACTIVE',
+  'coverages[4].censusType':'Enrolled',
+  'coverages[4].assumedParticipationPct':'0.75',
+  'coverages[4].benefitTypeEE':'SALARY_MULTIPLIER_SET',
+  'coverages[4].benefitMaxEE':'600000.00',
+  'coverages[4].benefitMin':'10000.00',
+  'coverages[4].roundingMethod':'NONE',
+  'coverages[4].ageReductionSchedule[0].reductionAge':'65',
+  'coverages[4].ageReductionSchedule[0].reductionPct':'0.65000000',
+  'coverages[4].ageReductionSchedule[0].reductionMax':'90.00',
+  'coverages[4].ageReductionSchedule[1].reductionAge':'70',
+  'coverages[4].ageReductionSchedule[1].reductionPct':'0.50000000',
+  'coverages[4].isEnhanced':'true',
+  'coverages[4].coverageType':'24Hours',
+  'coverages[4].employeeContributionPct':'0.60000000',
+  'coverages[4].experienceClaimAmount':'0.00',
+  'coverages[4].rateBasis':'P1000',
+  'coverages[4].commission.commissionPct': '0.05000000',
+  #Spouse Voluntary Life Insurance
+  'coverages[5].coverageName':'SP_VOL_BTL',
+  'coverages[5].planName':'BLV',
+  'coverages[5].sicCode':'2711',
+  'coverages[5].coveragesIncludedInPackage[0]':'LTD',
+  'coverages[5].populationType':'ACTIVE',
+  'coverages[5].censusType':'Eligible',
+  'coverages[5].benefitTypeSP':'FLAT_VALUE',
+  'coverages[5].benefitAmtSP':'7000.00',
+  'coverages[5].ageReductionSchedule[0].reductionAge':'65',
+  'coverages[5].ageReductionSchedule[0].reductionPct':'0.65000000',
+  'coverages[5].ageReductionSchedule[1].reductionAge':'70',
+  'coverages[5].ageReductionSchedule[1].reductionPct':'0.50000000',
+  'coverages[5].employeeContributionPct':'0E-8',
+  'coverages[5].experienceClaimAmount':'0.00',
+  'coverages[5].rateBasis':'P1000',
+  'coverages[5].commission.commissionPct': '0.05000000',
+  #Child Voluntary Life Insurance
+  'coverages[6].coverageName':'DEP_VOL_BTL',
+  'coverages[6].planName':'BLV',
+  'coverages[6].sicCode':'2711',
+  'coverages[6].coveragesIncludedInPackage[0]':'DENTAL',
+  'coverages[6].populationType':'ACTIVE',
+  'coverages[6].censusType':'Eligible',
+  'coverages[6].benefitTypeCH':'PERCENT_EMPLOYEE_AMOUNT',
+  'coverages[6].benefitMaxCH':'10000.00',
+  'coverages[6].employeeContributionPct':'1.00000000',
+  'coverages[6].experienceClaimAmount':'0.00',
+  'coverages[6].rateBasis':'P1000',
+  'coverages[6].commission.commissionPct': '0.05000000',
+  #Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+  'coverages[7].coverageName':'DEP_VOL_ADD',
+  'coverages[7].planName':'BLV',
+  'coverages[7].sicCode':'2711',
+  'coverages[7].populationType':'ACTIVE',
+  'coverages[7].censusType':'Enrolled',
+  'coverages[7].benefitTypeSP':'FLAT_VALUE',
+  'coverages[7].benefitTypeCH':'INC_VALUE_RANGE',
+  'coverages[7].benefitAmtSP':'4000.00',
+  'coverages[7].benefitMaxCH':'10000.00',
+  'coverages[7].ageReductionSchedule[0].reductionAge':'65',
+  'coverages[7].ageReductionSchedule[0].reductionPct':'0.65000000',
+  'coverages[7].ageReductionSchedule[1].reductionAge':'70',
+  'coverages[7].ageReductionSchedule[1].reductionPct':'0.50000000',
+  'coverages[7].isEnhanced':'true',
+  'coverages[7].coverageType':'24Hours',
+  'coverages[7].employeeContributionPct':'1.00000000',
+  'coverages[7].experienceClaimAmount':'0.00',
+  'coverages[7].rateBasis':'P1000',
+  'coverages[7].commission.commissionPct': '0.05000000',
+  #Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child)
+  'coverages[8].coverageName':'DEP_ADD',
+  'coverages[8].planName':'BLV',
+  'coverages[8].sicCode':'8069',
+  'coverages[8].coveragesIncludedInPackage[0]':'STD',
+  'coverages[8].populationType':'ACTIVE',
+  'coverages[8].censusType':'Enrolled',
+  'coverages[8].benefitTypeSP':'FLAT_VALUE',
+  'coverages[8].benefitTypeCH':'FLAT_VALUE',
+  'coverages[8].benefitAmtSP':'10000.00',
+  'coverages[8].benefitAmtCH':'2000.00',
+  'coverages[8].ageReductionSchedule[0].reductionAge':'65',
+  'coverages[8].ageReductionSchedule[0].reductionPct':'0.65000000',
+  'coverages[8].ageReductionSchedule[0].reductionMax':'80.00',
+  'coverages[8].ageReductionSchedule[1].reductionAge':'70',
+  'coverages[8].ageReductionSchedule[1].reductionPct':'0.50000000',
+  'coverages[8].isEnhanced':'true',
+  'coverages[8].coverageType':'24Hours',
+  'coverages[8].employeeContributionPct':'1.00000000',
+  'coverages[8].experienceClaimAmount':'0.00',
+  'coverages[8].rateBasis':'PUnit',
+  'coverages[8].commission.commissionPct': '0.05000000',
+}
+
+ResponseData: {
+  'policyID':'MP0000000045',
+  #Employee Basic Life
+  'calculatedPlans[0].manualRate':'0.052',
+  'calculatedPlans[0].experienceRate':'null',
+  'calculatedPlans[0].finalRate':'0.052',
+  'calculatedPlans[0].expAdjFactor':'1.0',
+  'calculatedPlans[0].stepRates[0].stepRate':'0.043',
+  'calculatedPlans[0].stepRates[1].stepRate':'10.537',
+  'calculatedPlans[0].stepRates[2].stepRate':'0.043',
+  'calculatedPlans[0].stepRates[3].stepRate':'10.537',
+  'calculatedPlans[0].stepRates[4].stepRate':'0.043',
+  'calculatedPlans[0].stepRates[5].stepRate':'10.537',
+  'calculatedPlans[0].stepRates[6].stepRate':'0.043',
+  'calculatedPlans[0].stepRates[7].stepRate':'10.537',
+  'calculatedPlans[0].stepRates[8].stepRate':'10.537',
+  'calculatedPlans[0].stepRates[9].stepRate':'0.043',
+  'calculatedPlans[0].stepRates[10].stepRate':'10.537',
+  'calculatedPlans[0].stepRates[11].stepRate':'0.043',
+  'calculatedPlans[0].stepRates[12].stepRate':'10.537',
+  'calculatedPlans[0].calculatedGIAmount':'50000.0',
+  'calculatedPlans[0].rateBasis':'P1000',
+  #Employee Voluntary Life
+  'calculatedPlans[1].manualRate':'1.29',
+  'calculatedPlans[1].experienceRate':'null',
+  'calculatedPlans[1].finalRate':'1.29',
+  'calculatedPlans[1].expAdjFactor':'1.0',
+  'calculatedPlans[1].stepRates[0].stepRate':'0.043',
+  'calculatedPlans[1].stepRates[1].stepRate':'10.537',
+  'calculatedPlans[1].stepRates[2].stepRate':'0.043',
+  'calculatedPlans[1].stepRates[3].stepRate':'10.537',
+  'calculatedPlans[1].stepRates[4].stepRate':'0.043',
+  'calculatedPlans[1].stepRates[5].stepRate':'10.537',
+  'calculatedPlans[1].stepRates[6].stepRate':'0.043',
+  'calculatedPlans[1].stepRates[7].stepRate':'10.537',
+  'calculatedPlans[1].stepRates[8].stepRate':'10.537',
+  'calculatedPlans[1].stepRates[9].stepRate':'0.043',
+  'calculatedPlans[1].stepRates[10].stepRate':'10.537',
+  'calculatedPlans[1].stepRates[11].stepRate':'0.043',
+  'calculatedPlans[1].stepRates[12].stepRate':'10.537',
+  'calculatedPlans[1].calculatedGIAmount':'50000.0',
+  'calculatedPlans[1].rateBasis':'P1000'
+}
+
+#Hardcoded premium values that were provided by OpenL Team for quote with automation test data
+ResponseCheckRatingPremium: {
+  #Employee Basic Life
+  'calculatedPlans[0].coverage':'BTL',
+  'calculatedPlans[0].plan':'BLV',
+  'calculatedPlans[0].manualRate':'0.057',
+  'calculatedPlans[0].experienceRate':'null',
+  'calculatedPlans[0].finalRate':'7.071',
+  'calculatedPlans[0].calculatedGIAmount':'50000.0',
+  'calculatedPlans[0].rateBasis':'P1000',
+  'calculatedPlans[0].livesEE':'4.0',
+  'calculatedPlans[0].volumeEE':'4018.0',
+  'calculatedPlans[0].stepRates[0].ageBand':'<25',
+  'calculatedPlans[0].stepRates[0].lives':'2',
+  'calculatedPlans[0].stepRates[0].volume':'2010.0',
+  'calculatedPlans[0].stepRates[0].stepRate':'5.84',
+  'calculatedPlans[0].stepRates[1].ageBand':'25 - 29',
+  'calculatedPlans[0].stepRates[1].lives':'0',
+  'calculatedPlans[0].stepRates[1].volume':'null',
+  'calculatedPlans[0].stepRates[1].stepRate':'6.195',
+  'calculatedPlans[0].stepRates[2].ageBand':'30 - 34',
+  'calculatedPlans[0].stepRates[2].lives':'0',
+  'calculatedPlans[0].stepRates[2].volume':'null',
+  'calculatedPlans[0].stepRates[2].stepRate':'6.478',
+  'calculatedPlans[0].stepRates[3].ageBand':'35 - 39',
+  'calculatedPlans[0].stepRates[3].lives':'2',
+  'calculatedPlans[0].stepRates[3].volume':'2008.0',
+  'calculatedPlans[0].stepRates[3].stepRate':'8.304',
+  'calculatedPlans[0].stepRates[4].ageBand':'40 - 44',
+  'calculatedPlans[0].stepRates[4].lives':'0',
+  'calculatedPlans[0].stepRates[4].volume':'null',
+  'calculatedPlans[0].stepRates[4].stepRate':'12.175',
+  'calculatedPlans[0].stepRates[5].ageBand':'45 - 49',
+  'calculatedPlans[0].stepRates[5].lives':'0',
+  'calculatedPlans[0].stepRates[5].volume':'null',
+  'calculatedPlans[0].stepRates[5].stepRate':'18.64',
+  'calculatedPlans[0].stepRates[6].ageBand':'50 - 54',
+  'calculatedPlans[0].stepRates[6].lives':'0',
+  'calculatedPlans[0].stepRates[6].volume':'null',
+  'calculatedPlans[0].stepRates[6].stepRate':'29.848',
+  'calculatedPlans[0].stepRates[7].ageBand':'55 - 59',
+  'calculatedPlans[0].stepRates[7].lives':'0',
+  'calculatedPlans[0].stepRates[7].volume':'null',
+  'calculatedPlans[0].stepRates[7].stepRate':'49.096',
+  'calculatedPlans[0].stepRates[8].ageBand':'60 - 64',
+  'calculatedPlans[0].stepRates[8].lives':'0',
+  'calculatedPlans[0].stepRates[8].volume':'null',
+  'calculatedPlans[0].stepRates[8].stepRate':'81.434',
+  'calculatedPlans[0].stepRates[9].ageBand':'65 - 69',
+  'calculatedPlans[0].stepRates[9].lives':'0',
+  'calculatedPlans[0].stepRates[9].volume':'null',
+  'calculatedPlans[0].stepRates[9].stepRate':'143.344',
+  'calculatedPlans[0].stepRates[10].ageBand':'70 - 74',
+  'calculatedPlans[0].stepRates[10].lives':'0',
+  'calculatedPlans[0].stepRates[10].volume':'null',
+  'calculatedPlans[0].stepRates[10].stepRate':'260.906',
+  'calculatedPlans[0].stepRates[11].ageBand':'75 - 79',
+  'calculatedPlans[0].stepRates[11].lives':'0',
+  'calculatedPlans[0].stepRates[11].volume':'null',
+  'calculatedPlans[0].stepRates[11].stepRate':'453.098',
+  'calculatedPlans[0].stepRates[12].ageBand':'80+',
+  'calculatedPlans[0].stepRates[12].lives':'0',
+  'calculatedPlans[0].stepRates[12].volume':'null',
+  'calculatedPlans[0].stepRates[12].stepRate':'1422.518',
+  #Employee Basic Accidental Death and Dismemberment Insurance
+  'calculatedPlans[1].coverage':'VOL_BTL',
+  'calculatedPlans[1].plan':'BLV',
+  'calculatedPlans[1].manualRate':'1.392',
+  'calculatedPlans[1].experienceRate':'null',
+  'calculatedPlans[1].finalRate':'174.088',
+  'calculatedPlans[1].calculatedGIAmount':'25000.0',
+  'calculatedPlans[1].rateBasis':'P1000',
+  'calculatedPlans[1].livesEE':'23.0',
+  'calculatedPlans[1].volumeEE':'69175.0',
+  'calculatedPlans[1].stepRates[0].ageBand':'<25',
+  'calculatedPlans[1].stepRates[0].lives':'0',
+  'calculatedPlans[1].stepRates[0].volume':'null',
+  'calculatedPlans[1].stepRates[0].stepRate':'13.372',
+  'calculatedPlans[1].stepRates[1].ageBand':'25 - 29',
+  'calculatedPlans[1].stepRates[1].lives':'0',
+  'calculatedPlans[1].stepRates[1].volume':'null',
+  'calculatedPlans[1].stepRates[1].stepRate':'13.372',
+  'calculatedPlans[1].stepRates[2].ageBand':'30 - 34',
+  'calculatedPlans[1].stepRates[2].lives':'0',
+  'calculatedPlans[1].stepRates[2].volume':'null',
+  'calculatedPlans[1].stepRates[2].stepRate':'13.082',
+  'calculatedPlans[1].stepRates[3].ageBand':'35 - 39',
+  'calculatedPlans[1].stepRates[3].lives':'0',
+  'calculatedPlans[1].stepRates[3].volume':'null',
+  'calculatedPlans[1].stepRates[3].stepRate':'16.855',
+  'calculatedPlans[1].stepRates[4].ageBand':'40 - 44',
+  'calculatedPlans[1].stepRates[4].lives':'0',
+  'calculatedPlans[1].stepRates[4].volume':'null',
+  'calculatedPlans[1].stepRates[4].stepRate':'26.558',
+  'calculatedPlans[1].stepRates[5].ageBand':'45 - 49',
+  'calculatedPlans[1].stepRates[5].lives':'16',
+  'calculatedPlans[1].stepRates[5].volume':'48112.0',
+  'calculatedPlans[1].stepRates[5].stepRate':'41.009',
+  'calculatedPlans[1].stepRates[6].ageBand':'50 - 54',
+  'calculatedPlans[1].stepRates[6].lives':'0',
+  'calculatedPlans[1].stepRates[6].volume':'null',
+  'calculatedPlans[1].stepRates[6].stepRate':'62.923',
+  'calculatedPlans[1].stepRates[7].ageBand':'55 - 59',
+  'calculatedPlans[1].stepRates[7].lives':'0',
+  'calculatedPlans[1].stepRates[7].volume':'null',
+  'calculatedPlans[1].stepRates[7].stepRate':'101.858',
+  'calculatedPlans[1].stepRates[8].ageBand':'60 - 64',
+  'calculatedPlans[1].stepRates[8].lives':'0',
+  'calculatedPlans[1].stepRates[8].volume':'null',
+  'calculatedPlans[1].stepRates[8].stepRate':'159.369',
+  'calculatedPlans[1].stepRates[9].ageBand':'65 - 69',
+  'calculatedPlans[1].stepRates[9].lives':'0',
+  'calculatedPlans[1].stepRates[9].volume':'null',
+  'calculatedPlans[1].stepRates[9].stepRate':'253.266',
+  'calculatedPlans[1].stepRates[10].ageBand':'70 - 74',
+  'calculatedPlans[1].stepRates[10].lives':'7',
+  'calculatedPlans[1].stepRates[10].volume':'21063.0',
+  'calculatedPlans[1].stepRates[10].stepRate':'478.067',
+  'calculatedPlans[1].stepRates[11].ageBand':'75 - 79',
+  'calculatedPlans[1].stepRates[11].lives':'0',
+  'calculatedPlans[1].stepRates[11].volume':'null',
+  'calculatedPlans[1].stepRates[11].stepRate':'799.107',
+  'calculatedPlans[1].stepRates[12].ageBand':'80+',
+  'calculatedPlans[1].stepRates[12].lives':'0',
+  'calculatedPlans[1].stepRates[12].volume':'null',
+  'calculatedPlans[1].stepRates[12].stepRate':'2473.101',
+  #Dependent Basic Life Insurance (Spouse & Child)
+  'calculatedPlans[2].coverage':'DEP_BTL',
+  'calculatedPlans[2].plan':'BLV',
+  'calculatedPlans[2].manualRate':'5.69',
+  'calculatedPlans[2].experienceRate':'null',
+  'calculatedPlans[2].expAdjFactor':'null',
+  'calculatedPlans[2].finalRate':'5.69',
+  'calculatedPlans[2].calculatedGIAmount':'null',
+  'calculatedPlans[2].rateBasis':'PUnit',
+  'calculatedPlans[2].livesEE':'2.0',
+  'calculatedPlans[2].volumeEE':'null',
+  #Employee Voluntary Life
+  'calculatedPlans[3].coverage':'SP_VOL_BTL',
+  'calculatedPlans[3].plan':'BLV',
+  'calculatedPlans[3].manualRate':'1.392',
+  'calculatedPlans[3].experienceRate':'null',
+  'calculatedPlans[3].finalRate':'174.088',
+  'calculatedPlans[3].calculatedGIAmount':'12500.0',
+  'calculatedPlans[3].rateBasis':'P1000',
+  'calculatedPlans[3].livesEE':'null',
+  'calculatedPlans[3].volumeEE':'null',
+  'calculatedPlans[3].stepRates[0].ageBand':'<25',
+  'calculatedPlans[3].stepRates[0].lives':'null',
+  'calculatedPlans[3].stepRates[0].volume':'null',
+  'calculatedPlans[3].stepRates[0].stepRate':'13.372',
+  'calculatedPlans[3].stepRates[1].ageBand':'25 - 29',
+  'calculatedPlans[3].stepRates[1].lives':'null',
+  'calculatedPlans[3].stepRates[1].volume':'null',
+  'calculatedPlans[3].stepRates[1].stepRate':'13.372',
+  'calculatedPlans[3].stepRates[2].ageBand':'30 - 34',
+  'calculatedPlans[3].stepRates[2].lives':'null',
+  'calculatedPlans[3].stepRates[2].volume':'null',
+  'calculatedPlans[3].stepRates[2].stepRate':'13.082',
+  'calculatedPlans[3].stepRates[3].ageBand':'35 - 39',
+  'calculatedPlans[3].stepRates[3].lives':'null',
+  'calculatedPlans[3].stepRates[3].volume':'null',
+  'calculatedPlans[3].stepRates[3].stepRate':'16.855',
+  'calculatedPlans[3].stepRates[4].ageBand':'40 - 44',
+  'calculatedPlans[3].stepRates[4].lives':'null',
+  'calculatedPlans[3].stepRates[4].volume':'null',
+  'calculatedPlans[3].stepRates[4].stepRate':'26.558',
+  'calculatedPlans[3].stepRates[5].ageBand':'45 - 49',
+  'calculatedPlans[3].stepRates[5].lives':'null',
+  'calculatedPlans[3].stepRates[5].volume':'null',
+  'calculatedPlans[3].stepRates[5].stepRate':'41.009',
+  'calculatedPlans[3].stepRates[6].ageBand':'50 - 54',
+  'calculatedPlans[3].stepRates[6].lives':'null',
+  'calculatedPlans[3].stepRates[6].volume':'null',
+  'calculatedPlans[3].stepRates[6].stepRate':'62.923',
+  'calculatedPlans[3].stepRates[7].ageBand':'55 - 59',
+  'calculatedPlans[3].stepRates[7].lives':'null',
+  'calculatedPlans[3].stepRates[7].volume':'null',
+  'calculatedPlans[3].stepRates[7].stepRate':'101.858',
+  'calculatedPlans[3].stepRates[8].ageBand':'60 - 64',
+  'calculatedPlans[3].stepRates[8].lives':'null',
+  'calculatedPlans[3].stepRates[8].volume':'null',
+  'calculatedPlans[3].stepRates[8].stepRate':'159.369',
+  'calculatedPlans[3].stepRates[9].ageBand':'65 - 69',
+  'calculatedPlans[3].stepRates[9].lives':'null',
+  'calculatedPlans[3].stepRates[9].volume':'null',
+  'calculatedPlans[3].stepRates[9].stepRate':'253.266',
+  'calculatedPlans[3].stepRates[10].ageBand':'70 - 74',
+  'calculatedPlans[3].stepRates[10].lives':'null',
+  'calculatedPlans[3].stepRates[10].volume':'null',
+  'calculatedPlans[3].stepRates[10].stepRate':'478.067',
+  'calculatedPlans[3].stepRates[11].ageBand':'75 - 79',
+  'calculatedPlans[3].stepRates[11].lives':'null',
+  'calculatedPlans[3].stepRates[11].volume':'null',
+  'calculatedPlans[3].stepRates[11].stepRate':'799.107',
+  'calculatedPlans[3].stepRates[12].ageBand':'80+',
+  'calculatedPlans[3].stepRates[12].lives':'null',
+  'calculatedPlans[3].stepRates[12].volume':'null',
+  'calculatedPlans[3].stepRates[12].stepRate':'2473.101',
+  #Employee Voluntary Accidental Death and Dismemberment Insurance
+  'calculatedPlans[4].coverage':'DEP_VOL_BTL',
+  'calculatedPlans[4].plan':'BLV',
+  'calculatedPlans[4].manualRate':'0.23',
+  'calculatedPlans[4].experienceRate':'null',
+  'calculatedPlans[4].expAdjFactor':'null',
+  'calculatedPlans[4].finalRate':'0.23',
+  'calculatedPlans[4].calculatedGIAmount':'null',
+  'calculatedPlans[4].rateBasis':'P1000',
+  'calculatedPlans[4].livesEE':'null',
+  'calculatedPlans[4].volumeEE':'null',
+  #Spouse Voluntary Life Insurance
+  'calculatedPlans[5].coverage':'ADD',
+  'calculatedPlans[5].plan':'BLV',
+  'calculatedPlans[5].manualRate':'0.011',
+  'calculatedPlans[5].experienceRate':'null',
+  'calculatedPlans[5].expAdjFactor':'null',
+  'calculatedPlans[5].finalRate':'0.011',
+  'calculatedPlans[5].calculatedGIAmount':'null',
+  'calculatedPlans[5].rateBasis':'P1000',
+  'calculatedPlans[5].livesEE':'4.0',
+  'calculatedPlans[5].volumeEE':'4018.0',
+  #Child Voluntary Life Insurance
+  'calculatedPlans[6].coverage':'VOL_ADD',
+  'calculatedPlans[6].plan':'BLV',
+  'calculatedPlans[6].manualRate':'0.019',
+  'calculatedPlans[6].experienceRate':'null',
+  'calculatedPlans[6].expAdjFactor':'null',
+  'calculatedPlans[6].finalRate':'0.019',
+  'calculatedPlans[6].calculatedGIAmount':'null',
+  'calculatedPlans[6].rateBasis':'P1000',
+  'calculatedPlans[6].livesEE':'23.0',
+  'calculatedPlans[6].volumeEE':'69175.0',
+  #Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+  'calculatedPlans[7].coverage':'DEP_VOL_ADD',
+  'calculatedPlans[7].plan':'BLV',
+  'calculatedPlans[7].manualRate':'0.041',
+  'calculatedPlans[7].experienceRate':'null',
+  'calculatedPlans[7].expAdjFactor':'null',
+  'calculatedPlans[7].finalRate':'0.041',
+  'calculatedPlans[7].calculatedGIAmount':'null',
+  'calculatedPlans[7].rateBasis':'P1000',
+  'calculatedPlans[7].livesEE':'null',
+  'calculatedPlans[7].volumeEE':'null',
+  #Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child)
+  'calculatedPlans[8].coverage':'DEP_ADD',
+  'calculatedPlans[8].plan':'BLV',
+  'calculatedPlans[8].manualRate':'0.41',
+  'calculatedPlans[8].experienceRate':'null',
+  'calculatedPlans[8].expAdjFactor':'null',
+  'calculatedPlans[8].finalRate':'0.41',
+  'calculatedPlans[8].calculatedGIAmount':'null',
+  'calculatedPlans[8].rateBasis':'PUnit',
+  'calculatedPlans[8].livesEE':'null',
+  'calculatedPlans[8].volumeEE':'null',
+}

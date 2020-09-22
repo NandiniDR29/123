@@ -1,0 +1,512 @@
+CaseProfile: {
+  CaseProfileDetailsTab: {
+    Case Profile Name: __first_one,
+    Effective Date: $<today>,
+    Group Domicile State: NY,
+  },
+  ProductAndPlanManagementTab: {
+    Product: 'Group Vision'
+  },
+  ClassificationManagementTab: ['@ClassificationManagementTab_Case_FamilyTier'],
+  LocationManagementTab: {},
+  FileIntakeManagementTab: {
+    Intake Profile Name: 'File1',
+    Effective Date: $<today>,
+    Product: [ALL],
+    File Type: 'Quote',
+    Record Type: 'Eligibility',
+    Upload File Dialog: {
+      File Name: 'File1',
+      File Upload: '$<file:Census_File_AllPlans_VIS.xlsx>',
+    }
+  }
+}
+
+ClassificationManagementTab_Case_FamilyTier: {
+    Classification Group: {
+      Class Name: 1,
+      Class Number: 1,
+      Relationship Type: Employment
+    },
+    Group Details: {
+      'Create Sub-Groups?': 'No',
+      'Job Code': 'Any Work',
+      'Employment Type': 'Directors',
+      'Employment Status': 'Active',
+      'Expatriate': 'No',
+      'Pay Type': 'Hourly',
+      'Pay Class': 'Full-Time',
+      'Union Membe': 'Yes',
+      'Class Description': 'Class 1'
+    }
+  }
+
+TestData_PlanB: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_PlanB',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanB', '@PlanDefinitionTab_PlanB'],
+  ClassificationManagementTab: '@ClassificationManagementTabB',
+  PremiumSummaryTab: '@PremiumSummaryTabB'
+}
+
+TestData_PlanC: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_PlanC',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanC', '@PlanDefinitionTab_PlanC'],
+  ClassificationManagementTab: '@ClassificationManagementTabC',
+  PremiumSummaryTab: '@PremiumSummaryTabC'
+}
+
+TestData_PlanASO: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_PlanASO',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlanASO', '@PlanDefinitionTab_PlanASO'],
+  ClassificationManagementTab: '@ClassificationManagementTabASO',
+  PremiumSummaryTab: '@PremiumSummaryTabASO'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_PlanB: {
+  Policy Effective Date: $<today>,
+  Situs State: NY,
+  Total Number of Eligible Lives: 100,
+  Prior Carrier Name: 'None',
+  ASO Plan: No,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Group is an Association?': 'Yes',
+  'Primary Agency?': 'Yes',
+}
+
+PolicyInformationTab_PlanC: {
+  Policy Effective Date: $<today>,
+  Situs State: AZ,
+  Total Number of Eligible Lives: 150,
+  Prior Carrier Name: 'None',
+  ASO Plan: No,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Group is an Association?': 'Yes',
+  'Primary Agency?': 'Yes',
+}
+
+PolicyInformationTab_PlanASO: {
+  Policy Effective Date: $<today>,
+  Situs State: NY,
+  Total Number of Eligible Lives: 150,
+  Prior Carrier Name: 'None',
+  ASO Plan: 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Group is an Association?': 'Yes',
+  'Primary Agency?': 'Yes',
+}
+
+SelectPlanB: {
+  Plan: '10/25 Plan B 130'
+}
+
+SelectPlanC: {
+  Plan: '10/25 Plan C 150'
+}
+
+SelectPlanASO: {
+  Plan: 'ASO Plan B'
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: 'PlanB-10/25 Plan B 130',
+  Network: 'Choice',
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 90,
+    Member Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 100,
+    Credibility Factor: 0.9
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: '$150',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: 1,
+    Safety Glasses Factor: 1,
+    Photochromic Lenses Factor: 1
+  },
+  Copay: {
+    Progressive Lenses in Full: 'No',
+    'Exam/Materials': '$10/$25'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)'
+  }
+}
+
+PlanDefinitionTab_PlanC: {
+  PlanKey: 'PlanC-10/25 Plan C 150',
+  Network: 'Choice',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: 'Non-contributory',
+    Assumed Participation %: 85,
+    Sponsor Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 40,
+    Credibility Factor: 0.9
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: '$180',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: '0.9',
+    Safety Glasses Factor: '0.9',
+    Photochromic Lenses Factor: '0.9'
+  },
+  Copay: {
+    Progressive Lenses in Full: 'Yes',
+    'Exam/Materials': '$10/$15'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)'
+  }
+}
+
+PlanDefinitionTab_PlanASO: {
+  PlanKey: 'ASOPlanB-ASO Plan B',
+  Network: 'Choice',
+  Coverage Tiers: ['Composite tier'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: 'Sponsor/Participant Split',
+    'Participant Contribution % Employee Coverage': 100,
+    Assumed Participation %: 75,
+    Sponsor Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 60,
+    Credibility Factor: 0.8
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: '$120',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: '0.8',
+    Safety Glasses Factor: '0.8',
+    Photochromic Lenses Factor: '0.8'
+  },
+  Copay: {
+    Progressive Lenses in Full: 'Yes',
+    'Exam/Materials': '$10/$10'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)'
+  }
+}
+
+ClassificationManagementTabB_WithoutParticipants: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 0
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 0
+    },
+    {
+      Coverage Tier Key: Employee + Children,
+      Number of Participants: 0
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 0
+    },
+    ]
+}
+
+ClassificationManagementTabB: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Children,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 3
+    },
+    ]
+}
+
+ClassificationManagementTabC: {
+  Plan: PlanC-10/25 Plan C 150,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee + 1,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 3
+    },
+    ]
+}
+
+ClassificationManagementTabC_WithoutParticipants: {
+  Plan: PlanC-10/25 Plan C 150,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee + 1,
+      Number of Participants: 0
+    },
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 0
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 0
+    },
+    ]
+}
+
+ClassificationManagementTabASO: {
+  Plan: 'ASOPlanB-ASO Plan B',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Composite tier,
+      Number of Participants: 3
+    }
+    ]
+}
+
+ClassificationManagementTabASO_WithoutParticipants: {
+  Plan: 'ASOPlanB-ASO Plan B',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Composite tier,
+      Number of Participants: 0
+    }
+    ]
+}
+
+PremiumSummaryTabB: {
+  Select Rating Census: 'index=1',
+  Apply: 'click',
+  Experience Rating: {
+    Experience Claim Amount: '150.00',
+    Credibility Factor: '0.8000000'
+  }
+}
+
+PremiumSummaryTabC: {
+  Select Rating Census: 'index=1',
+  Apply: 'click',
+  Experience Rating: {
+    Experience Claim Amount: '50.00',
+    Credibility Factor: '0.8000000'
+  }
+}
+
+PremiumSummaryTabASO: {
+  Select Rating Census: 'index=1',
+  Apply: 'click',
+  Experience Rating: {
+    Experience Claim Amount: '90.00',
+    Credibility Factor: '0.7000000'
+  }
+}
+
+RequestDataB: {
+  'policyID':'MP0000000012',
+  'transactionType':'New Business',
+  'policyState':'NY',
+  'plans[0].planName':'PlanB',
+  'plans[0].classes[0].classId':'1',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[0].tier':'Employee only',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[1].tier':'Employee + Spouse',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[2].tier':'Employee + Child(ren)',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[3].tier':'Employee + Family',
+  'plans[0].classes[0].subGroups[0].subGroupName':'DEFAULT',
+  'plans[0].contribution':'VOLUNTARY',
+  'plans[0].allowance':'150',
+  'plans[0].product':'Full Feature',
+  'plans[0].network':'Choice',
+  'plans[0].frequency':'PLANC',
+  'plans[0].copay':'$10/$25',
+  'plans[0].assumedParticipationPct':'0.90000000',
+  'plans[0].claimsAmount':'100.00',
+  'plans[0].credibility':'0.9000000',
+  'plans[0].scratchCoatingFactor':'1.0000',
+  'plans[0].safetyGlassesFactor':'1.0000',
+  'plans[0].photochromicLensFactor':'1.0000',
+  'plans[0].progressiveLensesInFull':'false',
+  'plans[0].rateType':'FAMILY',
+  'totalEligible':'100',
+  'claimsAmount':'0.00',
+  'credibility':'0E-7',
+  'commission.commissionPct':'0.05000000',
+}
+
+RequestDataC: {
+  'policyID':'MP0000000012',
+  'transactionType':'New Business',
+  'policyState':'AZ',
+  'plans[0].planName':'PlanC',
+  'plans[0].classes[0].classId':'1',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[0].tier':'Employee + 1',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[1].tier':'Employee + Family',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[2].tier':'Employee only',
+  'plans[0].classes[0].subGroups[0].subGroupName':'DEFAULT',
+  'plans[0].contribution':'NON_CONTRIBUTORY',
+  'plans[0].allowance':'180',
+  'plans[0].product':'Full Feature',
+  'plans[0].network':'Choice',
+  'plans[0].frequency':'PLANC',
+  'plans[0].copay':'$10/$15',
+  'plans[0].assumedParticipationPct':'0.85000000',
+  'plans[0].claimsAmount':'40.00',
+  'plans[0].credibility':'0.9000000',
+  'plans[0].scratchCoatingFactor':'0.9000',
+  'plans[0].safetyGlassesFactor':'0.9000',
+  'plans[0].photochromicLensFactor':'0.9000',
+  'plans[0].progressiveLensesInFull':'true',
+  'plans[0].rateType':'FAMILY',
+  'totalEligible':'150',
+  'claimsAmount':'0.00',
+  'credibility':'0E-7',
+  'commission.commissionPct':'0.05000000',
+}
+
+RequestDataASO: {
+  'policyID':'MP0000000012',
+  'transactionType':'New Business',
+  'policyState':'NY',
+  'plans[0].planName':'ASOPlanB',
+  'plans[0].classes[0].classId':'1',
+  'plans[0].classes[0].subGroups[0].enrollmentBreakdown[0].tier':'Composite tier',
+  'plans[0].classes[0].subGroups[0].subGroupName':'DEFAULT',
+  'plans[0].contribution':'CONTRIBUTORY',
+  'plans[0].allowance':'120',
+  'plans[0].product':'Full Feature',
+  'plans[0].network':'Choice',
+  'plans[0].frequency':'PLANC',
+  'plans[0].copay':'$10/$10',
+  'plans[0].assumedParticipationPct':'0.75000000',
+  'plans[0].claimsAmount':'60.00',
+  'plans[0].credibility':'0.8000000',
+  'plans[0].scratchCoatingFactor':'0.8000',
+  'plans[0].safetyGlassesFactor':'0.8000',
+  'plans[0].photochromicLensFactor':'0.8000',
+  'plans[0].progressiveLensesInFull':'true',
+  'plans[0].rateType':'FAMILY',
+  'totalEligible':'150',
+  'claimsAmount':'0.00',
+  'credibility':'0E-7',
+}
+
+ResponseDataB: {
+  'planCalculation[0].manualCompositeRate':'16.0775',
+  'planCalculation[0].experienceRate':'153.85',
+  'planCalculation[0].experienceAdjustmentFactor':'8.71244019138756',
+  'planCalculation[0].proposedCompositeRate':'140.0675',
+  'planCalculation[0].tierRates[0].proposedRate':'65.41',
+  'planCalculation[0].tierRates[1].proposedRate':'65.41',
+  'planCalculation[0].tierRates[2].proposedRate':'65.41',
+  'planCalculation[0].tierRates[3].proposedRate':'65.41',
+  'adminCost.expensesNetCommission': '0.35000000000000003',
+  'adminCost.commission': '0.05',
+  'nature': 'CW-20190101-20190101'
+}
+
+ResponseDataC: {
+  'planCalculation[0].manualCompositeRate':'16.0775',
+  'planCalculation[0].experienceRate':'153.85',
+  'planCalculation[0].experienceAdjustmentFactor':'8.71244019138756',
+  'planCalculation[0].proposedCompositeRate':'140.0675',
+  'planCalculation[0].tierRates[0].proposedRate':'65.41',
+  'planCalculation[0].tierRates[1].proposedRate':'65.41',
+  'planCalculation[0].tierRates[2].proposedRate':'65.41',
+  'adminCost.expensesNetCommission': '0.35000000000000003',
+  'adminCost.commission': '0.05',
+  'nature': 'CW-20190101-20190101'
+}
+
+ResponseDataASO: {
+  'planCalculation[0].manualCompositeRate':'16.0775',
+  'planCalculation[0].experienceRate':'153.85',
+  'planCalculation[0].experienceAdjustmentFactor':'8.71244019138756',
+  'planCalculation[0].proposedCompositeRate':'140.0675',
+  'planCalculation[0].tierRates[0].proposedRate':'65.41',
+}
+
+#Hardcoded premium values that were provided by OpenL Team for quote with automation test data
+ResponseCheckRatingPremium: {
+  'planCalculation[0].manualCompositeRate':'17.5325',
+  'planCalculation[0].experienceRate':'250.0',
+  'planCalculation[0].experienceAdjustmentFactor': '11.606844106463878',
+  'planCalculation[0].proposedCompositeRate':'203.51',
+  'planCalculation[0].assumedParticipation':'0.08',
+  #'Employee only'
+  'planCalculation[0].tierRates[0].proposedRate':'95.18',
+  #'Employee + Spouse'
+  'planCalculation[0].tierRates[1].proposedRate':'190.16',
+  #'Employee + Child(ren)'
+  'planCalculation[0].tierRates[2].proposedRate':'203.51',
+  #'Employee + Family'
+  'planCalculation[0].tierRates[3].proposedRate':'325.19',
+  'adminCost.ASOFee':'null',
+  'adminCost.InitialASOFeePEPM': 'null'
+}
+

@@ -1,0 +1,75 @@
+Update_AccidentalDeath: {
+  BenefitAccidentalDeathDecedentTab: {},
+  BenefitAccidentalDeathIncidentTab: {
+    Date Last Worked: $<today>
+  },
+  BenefitAccidentalDeathDeathCertificateTab: {
+    Official Date of Death: $<today>
+  },
+  BenefitCoverageEvaluationTab: {
+    Coverage Evaluation: {
+      Eligibility Verified: 'No',
+      Date of Verification: $<today>,
+      Supporting Documentation Received: $<today>
+    }
+  },
+  BenefitAccidentalDeathBeneficiaryTab: {}
+}
+
+Update_PremiumWaiver: {
+  BenefitPremiumWaiverInjuryPartyInformationTab: {},
+  BenefitPremiumWaiverIncidentTab: {
+    Premium Waiver Incident: {
+      Date Last Worked: $<today+1d>
+    }
+  },
+  BenefitCoverageEvaluationTab: {
+    Coverage Evaluation: {
+      Eligibility Verified: 'No',
+      Date of Verification: $<today>,
+      Supporting Documentation Received: $<today>
+    }
+  }
+}
+
+Update_AccidentalDismemberment: {
+  BenefitAccidentalDismembermentInjuryPartyInformationTab: {},
+  BenefitAccidentalDismembermentIncidentTab: {
+    Date Last Worked: $<today+2d>
+  },
+  BenefitCoverageEvaluationTab: {
+    Coverage Evaluation: {
+      Eligibility Verified: 'No',
+      Date of Verification: $<today>,
+      Supporting Documentation Received: $<today>
+    }
+  }
+}
+
+Update_CriticalIllness: {
+  BenefitCriticalIllnessInjuryPartyInformationTab: {},
+  BenefitCriticalIllnessIncidentTab: {
+    Date Last Worked: $<today+3d>
+  },
+  BenefitCoverageEvaluationTab: {
+    Coverage Evaluation: {
+      Eligibility Verified: 'No',
+      Date of Verification: $<today>,
+      Supporting Documentation Received: $<today>
+    }
+  }
+}
+
+Update_DiagnosisAndTreatment: {
+  BenefitDiagnosisAndTreatmentInjuryPartyInformationTab: {},
+  BenefitDiagnosisAndTreatmentIncidentTab: {
+    Date Last Worked: $<today+4d>
+  },
+  BenefitCoverageEvaluationTab: {
+    Coverage Evaluation: {
+      Eligibility Verified: 'No',
+      Date of Verification: $<today>,
+      Supporting Documentation Received: $<today>
+    }
+  }
+}

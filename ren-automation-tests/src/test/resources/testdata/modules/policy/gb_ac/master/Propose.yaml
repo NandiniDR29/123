@@ -1,0 +1,9 @@
+TestData: {
+  QuotesSelectionActionTab: '@QuotesSelectionActionTab',
+  ProposalActionTab: {}
+}
+
+QuotesSelectionActionTab: {
+  Select Quote by row number: [1],
+  Proposal Name: 'ProposalName$<rx:\d{5}>'
+}

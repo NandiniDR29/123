@@ -1,0 +1,106 @@
+TestDataDataGather: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ASO_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  ASO Plan: 'Yes',
+  Prior Carrier Name: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '120',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectPlan: {
+  Plan: ASO A La Carte
+}
+
+PlanDefinitionTab_ASO_ALACARTE: {
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  VSP Division: 'vsp division',
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  },
+  Sponsor/Participant Funding Structure: {
+    Assumed Participation %: 50
+  }
+}
+
+ClassificationManagementTab: {
+  Plan: ASOALACARTE-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: '32',
+    Coverage Tier: Employee Only
+  }
+}
+
+TestDataPropose: {
+  QuotesSelectionActionTab: '@QuotesSelectionActionTab',
+  ProposalActionTab: '@ProposalActionTab'
+}
+
+QuotesSelectionActionTab: {
+  Select Quote by row number: [1],
+  Proposal Name: 'ProposalName$<rx:\d{5}>'
+}
+
+ProposalActionTab: {
+  Proposed ASO Fee: 4,
+  Fee Update Reason: index=1,
+  Override Rules List: ["Proposal for ASO Plan requires Underwriter approval"]
+}
+
+TestDataIssue: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+BillingGroupsActionTab: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}

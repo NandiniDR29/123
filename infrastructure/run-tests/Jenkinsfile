@@ -1,0 +1,249 @@
+import jenkins.model.Jenkins
+
+// Parameters for the build
+properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '20')), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false],
+  parameters([
+    choice(name: 'RepositoryId', choices: 'automation\ncentral\nbilling\nclaim\ncustomer\ndocgen\nintegration\npolicy\ncommission', description: ''),
+    string(name: 'App_server', defaultValue: 'aws0renapp12', description: '' ),
+    string(name: 'Branch', defaultValue: 'default', description: ''),
+    choice(name: 'Suite', choices: 'SMOKE\nCEM_WITHOUT_TIMESHIFT\nCEM\nCASE_PROFILE\nPOLICY_WITHOUT_TIMESHIFT\nPOLICY\nDOCGEN\nBILLING_WITHOUT_TIMESHIFT\nBILLING\nCLAIM_WITHOUT_TIMESHIFT\nCLAIM\nPLATFORM\nPLATFORM_WITHOUT_TIMESHIFT\nCOMMISSION\nCOMMISSION_WITHOUT_TIMESHIFT\nDXP\nRATING\nENROLLMENT\nTESTS_SPECIFIC', description: ''),
+    string(name: 'FLOWS', defaultValue: '16', description: 'Number of browser to be used by parralel tests.\nUse number that can be divided by 4, i.e. 12, 16 or 20'),
+    text(name: 'specific_tests', defaultValue: '', description: 'Leave empty to run selected Suite or insert whole test suite xml that should be run (suite TESTS_SPECIFIC should be selected)'),
+    booleanParam(name: 'use_local_time', defaultValue: '', description: 'Set to true if TimeSetter is not configured on server or you would like to ensure that no time-shift will be performed'),
+    choice(name: 'retry_count', choices: '0\n1\n2\n3', description: 'Try to rerun failed test for selected number of times'),
+    choice(name: 'test_log_level', choices: 'info\ndebug\ntrace', description: ''),
+    booleanParam(name: 'use_test_analytics_sandbox', defaultValue: '', description: ''),
+    string(name: 'test_analytics_project_name', defaultValue: 'REN project', description: ''),
+    string(name: 'test_analytics_tags', defaultValue: '', description: 'one or more strings (up to 20 characters) to be associated with test launch, delimited by commas. E.g. "nightly, smoke, billing"'),
+    string(name: 'test_analytics_group_id', defaultValue: '', description: 'Service parameter to unite test runs in group in TA, use only for regression tests rerun'),
+    booleanParam(name: 'fail_build_on_test_failure', defaultValue: '', description: 'Mark build as failed if at least 1 test failed'),
+    string(name: 'mail_to', defaultValue: '', description: 'Mail address(es) who will receive test report. E.g.: "ren-eis-qaa@eisgroup.com"'),
+    ])
+  ])
+
+def waiting_loop(){
+    sh label: '', script: '''#!/bin/bash
+Suite=${Suite,,} && Suite=${Suite//_/-}
+NAME=selenoid-${BUILD_NUMBER}-${Suite}
+
+while true; do
+    if [[ $(kubectl get pods --field-selector=status.phase==Running -n qa-environment| grep $NAME | wc -l) -gt 1 ]];
+        then
+            break
+        else
+            ((c++)) && ((c==120)) && c=0 && echo "Cluster limit exceeded. Just wait a bit and try again" && exit 1
+            sleep 5
+    fi
+done
+selenoid_node=
+n=0
+while [ "$n" -lt 30 ] && [ -z "$selenoid_node" ]; do
+  kubectl get po -l run_suite=${BUILD_NUMBER}${Suite} -n qa-environment
+  selenoid_node=$(kubectl get po -l run_suite=${BUILD_NUMBER}${Suite} --field-selector=status.phase==Running -o jsonpath={.items[0].spec.nodeName} -n qa-environment)
+  echo $selenoid_node
+  sleep 1
+  n=$(( n + 1 ))
+done
+if [ -z "$selenoid_node" ]; then
+   kubectl get po -n qa-environment
+   echo "GGR URL cannot be generated, probably the cluster is not responding"
+   exit 1
+fi
+ggr_endpoint=$(kubectl get no $selenoid_node -o json | jq -r \'.status.addresses[] | select(.type=="InternalIP") | .address\'):$(kubectl get svc --namespace qa-environment selenoid-${BUILD_NUMBER}-${Suite}-cv-ggr-selenoid -o custom-columns=NODEPORT:.spec.ports[0].nodePort | tail -1)''
+n=0
+while [ "$n" -lt 30 ]; do
+    until $(curl --output /dev/null --silent --head --fail http://${ggr_endpoint}/ping); do
+        printf \\\'.\\\'
+        sleep 5
+        n=$(( n + 1 ))
+    done
+    break
+done
+
+echo "http://test:test@${ggr_endpoint}/wd/hub" > url.txt
+'''
+    }
+
+def ggr_endpoint
+try {
+timeout(time: 12, unit: 'HOURS'){
+  timestamps{
+node('master') {
+    currentBuild.displayName = """${BUILD_NUMBER} ${Suite} (${Branch}@${RepositoryId}) on ${App_server}""";
+   stage('Allocate ggr and selenoids') {
+    sh label: '', script: '''#!/bin/bash
+Suite=${Suite,,} && Suite=${Suite//_/-}
+BROWSERS_COUNT=4
+SELENOIDS_COUNT=$((${FLOWS} / ${BROWSERS_COUNT}))
+NAME=selenoid-${BUILD_NUMBER}-${Suite}
+helm install --set nodeSelector.label="smoke" \
+             --set environment.GGR_TIMEOUT="5m0s" \
+             --set nodeSelector.enabled="false" \
+             --set affinity.enabled="true" \
+             --set selenoid.count=${BROWSERS_COUNT} \
+             --set selenoid.amount=${SELENOIDS_COUNT} \
+             --set requests.cpu=1152m \
+             --set environment.limit=${BROWSERS_COUNT} \
+             --set environment.timeout=15m0s \
+             --set run_suite=${BUILD_NUMBER}${Suite} \
+             --set image.browser.type=chrome \
+             --set session_logs.enabled=false \
+             --set image.browser.tag=72.0 \
+             --namespace qa-environment \
+             --name selenoid-${BUILD_NUMBER}-${Suite} /var/lib/jenkins/cv-ggr-selenoid'''
+   }
+}
+
+podTemplate(yaml: """apiVersion: "v1"
+kind: "Pod"
+metadata:
+  labels:
+    label: "label"
+    jenkins: "slave"
+spec:
+  nodeSelector:
+    kubebuild: true
+  serviceAccountName: jenkins
+  containers:
+  - name: jnlp
+    env:
+    - name: BUILD_NUMBER
+      value: "$BUILD_NUMBER"
+    - name: Suite
+      value: "$Suite"
+    image: "aws0rennexus01.aws0.rnf.cloud:5000/public/build-srv/jnlp:latest"
+    volumeMounts:
+    - mountPath: "/home/jenkins/agent"
+      name: "workspace-volume"
+      readOnly: false
+    - name: "kubeconfig"
+      mountPath: "/root/.kube"
+    - name: "build-config"
+      mountPath: /opt/apache-maven-3.3.9/conf/settings.xml
+      subPath: settings.xml
+    - name: sbt-config
+      mountPath: /root/.ivy2/.credentials.ren
+      subPath: .credentials.ren
+    - name: ivy2cache
+      mountPath: /root/.ivy2
+    - name: m2cache
+      mountPath: /root/.m2
+    resources:
+      requests:
+        cpu: "0.9"
+        memory: "4Gi"
+    nodeSelector:
+      beta.kubernetes.io/os: "linux"
+    restartPolicy: "Never"
+    securityContext: {}
+  initContainers:
+  - name: m2cache
+    image:  aws0rennexus01.aws0.rnf.cloud:5000/public/build-srv/build-srv-k8s
+    imagePullPolicy: Always
+    volumeMounts:
+    - name: m2cache
+      mountPath: /mm
+    - name: ivy2cache
+      mountPath: /cfdsc
+    - name: sbt-config
+      mountPath: /root/.ivy2/.credentials.ren
+      subPath: .credentials.ren
+    command:
+    - /bin/sh
+    - -c
+    - mv /m2/repository /mm/repository
+  - name: "kubectlconfig"
+    image: "aws0rennexus01.aws0.rnf.cloud:5000/public/build-srv/jnlp:latest"
+    imagePullPolicy: "Always"
+    volumeMounts:
+    - name: sbt-config
+      mountPath: /root/.ivy2/.credentials.ren
+      subPath: .credentials.ren
+    - name: "kubeconfig"
+      mountPath: "/root/.kube"
+    command:
+    - /bin/sh
+    - -c
+    - kubectl config set-cluster local --server=https://kubernetes.default --certificate-authority=/run/secrets/kubernetes.io/serviceaccount/ca.crt && kubectl config set-context local --cluster=local && kubectl config set-credentials user --token=\$(cat /run/secrets/kubernetes.io/serviceaccount/token) && kubectl config set-context local --user=user && kubectl config use-context local
+  volumes:
+  - name: "workspace-volume"
+    emptyDir:
+      medium: ""
+  - name: kubeconfig
+    emptyDir: {}
+  - name: build-config
+    secret:
+      secretName: build-config
+  - name: sbt-config
+    secret:
+      secretName: build-config
+  - name: m2cache
+    emptyDir: {}
+  - name: ivy2cache
+    emptyDir: {}
+  imagePullSecrets:
+  - name: aws0rennexus01
+"""
+) {
+  node(POD_LABEL) {
+    stage('Build') {
+      container(name: 'jnlp') {
+          stage('Waiting for the ready pod') {
+            waiting_loop()
+            webdriver_hub_url=readFile('url.txt').trim()
+          }
+          stage ('Pull repository') {
+            checkout([$class: 'MercurialSCM', credentialsId: '25a4b16d-2d95-4490-b685-c385a024c15c', revision: """$Branch""", source: """http://aws0renhg01.aws0.rnf.cloud/hg/ren-${RepositoryId}/""", clean: true])
+            }
+          stage ('TESTS_SPECIFIC') {
+              if (params.Suite == 'TESTS_SPECIFIC') {
+            sh label: '', script: """ cat > ${WORKSPACE}/automation/ren-automation-tests/src/test/resources/testsuites/tests_specific.xml << EOF
+${specific_tests}
+EOF"""
+            sh label: '', script: """cat ${WORKSPACE}/automation/ren-automation-tests/src/test/resources/testsuites/tests_specific.xml"""
+            }
+          }
+          stage('Tests run') {
+            echo "webdriver_hub_url:${webdriver_hub_url}"
+            sh "pwd"
+            sh label: '', script: """mvn -f automation/pom.xml \
+                                     -Dproject.name="${test_analytics_project_name}" \
+                                     -Dlistener.onfinish.throw.exception=${fail_build_on_test_failure} \
+                                     -Dstorage.runProperties.testBranch=${Branch} \
+                                     -Dtest.teammerge.fbb_pass=true \
+                                     -Dtime.uselocal=${use_local_time} \
+                                     -Dtest.customprops=app/${App_server}.properties \
+                                     -Dtest.repeat.maxtries=${retry_count} \
+                                     -Dstorage.runProperties.isSandbox=${use_test_analytics_sandbox} \
+                                     -Dtest.loglevel=${test_log_level} \
+                                     -Dstorage.runProperties.groupId=${test_analytics_group_id} \
+                                     -Dstorage.runProperties.runTags=${test_analytics_tags} \
+                                     -Dmaven.test.failure.ignore=true \
+                                     -Dbrowser.selenium.outer.webdriver=true \
+                                     -Dwebdriver.hub.url=${webdriver_hub_url} \
+                                     clean install -P${Suite}"""
+        }
+       stage("Archive Artifacts") {
+           archiveArtifacts allowEmptyArchive: true, artifacts: "automation/ren-automation-tests/src/test/resources/testsuites/retry.xml"
+        }
+       stage("Set Description") {
+            String runId = readFile "${workspace}/automation/ren-automation-tests/external_run_id.txt"
+            currentBuild.description = "<a href=\"http://aws0renanalytic01.aws0.rnf.cloud:9000/runs/$runId\" target=\"_blank\">Test Analytics</a>"
+       }
+       stage("Send Email") {
+            emailext body: """\${FILE,path="${workspace}/automation/ren-automation-tests/test_results_single_email.html"}""", subject: "$Suite Build #${BUILD_NUMBER}", to: "$mail_to", mimeType: "text/html"
+       }
+      }
+    }
+  }
+}
+}
+}
+} finally {
+    node('master') {
+     sh label: '', script: '''#!/bin/bash
+                            Suite=${Suite,,} && Suite=${Suite//_/-}
+                            helm delete selenoid-${BUILD_NUMBER}-${Suite}'''
+
+    }
+}

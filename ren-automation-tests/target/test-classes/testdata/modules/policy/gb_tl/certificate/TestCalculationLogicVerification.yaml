@@ -1,0 +1,88 @@
+TestDataCoverages: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanEmployeeBasicAccidentalDeath', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionDependentBasicLife'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce', '@ClassificationMgmtDependentBasicLife'],
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanEmployeeBasicAccidentalDeath: {
+  CoverageKeyRemove: Employee Basic Accidental Death and Dismemberment Insurance
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Contribution Type: Non-contributory,
+  Total Number of Eligible Lives: 35,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Rating: {
+    Rate Basis: "Per $1,000",
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Contribution Type: Voluntary,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Rating: {
+    Rate Basis: 'Per Unit'
+  }
+}
+
+TestDataCertificatePolicy: {
+  CoveragesTab: ['@SelectPlanCertificatePolicy', '@CoveragesTabBasicLife', '@CoveragesTabDependentBasicLifeInsurance']
+}
+
+SelectPlanCertificatePolicy: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLife: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+CoveragesTabDependentBasicLifeInsurance: {
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Enrollment Date: $<today>,
+  Coverage Selection: Spouse and Child,
+  Benefit Spouse:{
+    Elected Benefit Amount: 100000
+  },
+  Benefit Child:{
+    Elected Benefit Amount: 2000
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 12/05/1984,
+  },
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}

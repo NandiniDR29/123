@@ -1,0 +1,55 @@
+TestData: {
+  GeneralTab: {
+    Additional Names: {
+      Name-DBA: AdditionalNameFirst
+    },
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Associate Divisions: true,
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: $<today-10y>,
+    Division: index=1,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '90210',
+      City: Beverly Hills,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    },
+    Group Sponsor: 'true'
+  }
+}
+
+TestData_ChangeAdditionalName: {
+  GeneralTab: {
+    Additional Names: {
+      Name-DBA: AdditionalNameSecond
+    }
+  },
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+TestData_SecondChangeAdditionalName: {
+  GeneralTab: {
+    Additional Names: {
+      Name-DBA: AdditionalNameThird
+    }
+  },
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+TestData_ViewHistory: {
+  ViewHistoryActionTab: {
+    Version Date: $<today-4d>
+    }
+}
+
+TestData_ViewHistoryUpdateDate: {
+  ViewHistoryActionTab: {
+    Version Date: $<today-3d>
+    }
+}

@@ -1,0 +1,317 @@
+TestData : {
+AgencyTransferTestStep1: {
+Requests:['@AgencyTransferPostRequest1'],
+Responses: ['@AgencyTransferPostResponse1']
+},
+AgencyTransferTestStep2: {
+Requests:['@AgencyTransferPostRequest2'],
+Responses: ['@AgencyTransferPostResponse2']
+},
+AgencyTransferTestStep3: {
+Requests:['@AgencyTransferPostRequest3'],
+Responses: ['@AgencyTransferPostResponse3']
+},
+AgencyTransferTestStep5: {
+Requests:['@AgencyTransferPostRequest5'],
+Responses: ['@AgencyTransferPostResponse5']
+},
+AgencyTransferTestStep7_12: {
+Requests:['@AgencyTransferPostRequest7', '@AgencyTransferPostRequest8', '@AgencyTransferPostRequest9', '@AgencyTransferPostRequest10', '@AgencyTransferPostRequest11', '@AgencyTransferPostRequest12'],
+Responses: ['@AgencyTransferPostResponse7', '@AgencyTransferPostResponse8', '@AgencyTransferPostResponse9', '@AgencyTransferPostResponse10', '@AgencyTransferPostResponse11', '@AgencyTransferPostResponse12']
+},
+AgencyTransferTestStep14_15: {
+Requests:['@AgencyTransferPostRequest14', '@AgencyTransferPostRequest15'],
+Responses: ['@AgencyTransferPostResponse14', '@AgencyTransferPostResponse15']
+},
+AgencyTransferTestStep16_18: {
+Requests:['@AgencyTransferPostRequest16', '@AgencyTransferPostRequest17', '@AgencyTransferPostRequest18'],
+Responses: ['@AgencyTransferPostResponse16', '@AgencyTransferPostResponse17', '@AgencyTransferPostResponse18']
+},
+AgencyTransferTestStep20: {
+Requests:['@AgencyTransferPostRequest20'],
+Responses: ['@AgencyTransferPostResponse20']
+}
+}
+
+#IPBQA-22846 step 1
+AgencyTransferPostRequest1: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse1: {
+     errorCode: '403',
+     message: "Authentication succeeded but authenticated user doesn't have access to the resource.",
+     logMessage: "AgencyTransferPostResponse1"
+}
+
+#IPBQA-22846 step 2
+AgencyTransferPostRequest2: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse2: {
+     errorCode: '422',
+     message: "The request was well-formed but failed due validation rules",
+     field: 'ERROR',
+     errors: ['@RestError1','@RestError2'],
+     logMessage: "AgencyTransferPostResponse2"
+}
+
+RestError1: {
+   errorCode: '422',
+   message: 'Agency with code TRAT2 does not exist or is not active',
+   field: 'ERROR'
+}
+
+RestError2: {
+   errorCode: '422',
+   message: 'A reference is not valid for an entity type Quote',
+   field: 'ERROR'
+}
+
+#IPBQA-22846 step 3
+AgencyTransferPostRequest3: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse3: {
+    status: 'Success',
+    successful: 'true',
+    messagesAsString: 'Triggering agency code transfer was successful. Transferred 0 task(s).',
+    logMessage: 'AgencyTransferPostResponse3'
+}
+
+#IPBQA-22846 step 5
+AgencyTransferPostRequest5: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2",
+    includeCompleted: "true"
+}
+
+AgencyTransferPostResponse5: {
+    status: 'Success',
+    successful: 'true',
+    messagesAsString: 'Triggering agency code transfer was successful. Transferred 1 task(s).',
+    logMessage: 'AgencyTransferPostResponse5'
+}
+
+#IPBQA-22846 step 7
+AgencyTransferPostRequest7: {
+    entityType: null,
+    agencyFrom : null,
+    agencyTo: null,
+    includeCompleted: null
+}
+
+AgencyTransferPostResponse7: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "AgencyTransferPostResponse7"
+}
+
+#IPBQA-22846 step 8
+AgencyTransferPostRequest8: {
+    entityType: null,
+    entityRefNo : "",
+    agencyFrom : "TRAT2",
+    agencyTo: "TRAT1",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse8: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "AgencyTransferPostResponse8"
+}
+
+#IPBQA-22846 step 9
+AgencyTransferPostRequest9: {
+    entityType: "Quote",
+    agencyFrom : "TRAT2",
+    agencyTo: "TRAT1",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse9: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "AgencyTransferPostResponse9"
+}
+
+#IPBQA-22846 step 10
+AgencyTransferPostRequest10: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : null,
+    agencyTo: "TRAT1",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse10: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "AgencyTransferPostResponse10"
+}
+
+#IPBQA-22846 step 11
+AgencyTransferPostRequest11: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT2",
+    includeCompleted: "false"
+}
+
+AgencyTransferPostResponse11: {
+     errorCode: '400',
+     message: "Malformed syntax or a bad query.",
+     logMessage: "AgencyTransferPostResponse11"
+}
+
+#IPBQA-22846 step 12
+AgencyTransferPostRequest12: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT2",
+    agencyTo: "TRAT1"
+}
+
+AgencyTransferPostResponse12: {
+    status: 'Success',
+    successful: 'true',
+    messagesAsString: 'Triggering agency code transfer was successful. Transferred 0 task(s).',
+    logMessage: 'AgencyTransferPostResponse12'
+}
+
+#IPBQA-22846 step 14
+AgencyTransferPostRequest14: {
+    entityType: "Quote3",
+    entityRefNo : "",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2"
+}
+
+AgencyTransferPostResponse14: {
+     errorCode: '422',
+     message: "The request was well-formed but failed due validation rules",
+     field: 'ERROR',
+     errors: ['@RestError3','@RestError4'],
+     logMessage: "AgencyTransferPostResponse14"
+}
+
+RestError3: {
+   errorCode: '422',
+   message: 'An entity type does not exist',
+   field: 'ERROR'
+}
+
+RestError4: {
+   errorCode: '422',
+   message: 'A reference is not valid for an entity type Quote3',
+   field: 'ERROR'
+}
+
+#IPBQA-22846 step 15
+AgencyTransferPostRequest15: {
+    entityType: "Quote",
+    entityRefNo : "NON_EXISTING",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2"
+}
+
+AgencyTransferPostResponse15: {
+     errorCode: '422',
+     message: "The request was well-formed but failed due validation rules",
+     field: 'ERROR',
+     errors: ['@RestError5'],
+     logMessage: "AgencyTransferPostResponse15"
+}
+
+RestError5: {
+   errorCode: '422',
+   message: 'A reference is not valid for an entity type Quote',
+   field: 'ERROR'
+}
+
+#IPBQA-22846 step 16
+AgencyTransferPostRequest16: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT2_NON_EXISTING",
+    agencyTo: "TRAT2"
+}
+
+AgencyTransferPostResponse16: {
+    status: 'Success',
+    successful: 'true',
+    messagesAsString: 'Triggering agency code transfer was successful. Transferred 0 task(s).',
+    logMessage: 'AgencyTransferPostResponse16'
+}
+
+#IPBQA-22846 step 17
+AgencyTransferPostRequest17: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT2_NON_EXISTING",
+    agencyTo: "TRAT2_NON_EXISTING"
+}
+
+AgencyTransferPostResponse17: {
+     errorCode: '422',
+     message: "The request was well-formed but failed due validation rules",
+     field: 'ERROR',
+     errors: ['@RestError6'],
+     logMessage: "AgencyTransferPostResponse17"
+}
+
+RestError6: {
+   errorCode: '422',
+   message: 'Agency with code TRAT2_NON_EXISTING does not exist or is not active',
+   field: 'ERROR'
+}
+
+#IPBQA-22846 step 18
+AgencyTransferPostRequest18: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT2",
+    agencyTo: "TRAT1",
+    includeCompleted: "true"
+}
+
+AgencyTransferPostResponse18: {
+    status: 'Success',
+    successful: 'true',
+    messagesAsString: 'Triggering agency code transfer was successful. Transferred 1 task(s).',
+    logMessage: 'AgencyTransferPostResponse18'
+}
+
+#IPBQA-22846 step 20
+AgencyTransferPostRequest20: {
+    entityType: "Quote",
+    entityRefNo : "",
+    agencyFrom : "TRAT1",
+    agencyTo: "TRAT2",
+    includeCompleted: "true"
+}
+
+AgencyTransferPostResponse20: {
+    status: 'Success',
+    successful: 'true',
+    messagesAsString: 'Triggering agency code transfer was successful. Transferred 3 task(s).',
+    logMessage: 'AgencyTransferPostResponse20'
+}
+

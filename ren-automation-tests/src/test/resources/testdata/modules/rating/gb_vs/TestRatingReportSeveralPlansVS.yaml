@@ -1,0 +1,167 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALaCarte','@PlanDefinitionTab_PlanB', '@PlanDefinitionTab_PlanC'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALaCarte', '@ClassificationManagementTab_PlanB', '@ClassificationManagementTab_PlanC'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  Situs State: NY,
+  Total Number of Eligible Lives: 150,
+  Prior Carrier Name: 'None',
+  ASO Plan: No,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Group is an Association?': 'Yes',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: ['10/25 Plan B 130', '10/25 Plan C 150', 'A La Carte']
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: 'PlanB-10/25 Plan B 130',
+  Network: 'Choice',
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 90,
+    Member Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 70,
+    Credibility Factor: 0.9
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: '$150',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: 1,
+    Safety Glasses Factor: 1,
+    Photochromic Lenses Factor: 1
+  },
+  Copay: {
+    Progressive Lenses in Full: 'No',
+    'Exam/Materials': '$10/$25'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)'
+  }
+}
+
+PlanDefinitionTab_PlanC: {
+  PlanKey: 'PlanC-10/25 Plan C 150',
+  Network: 'Choice',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: 'Non-contributory',
+    Assumed Participation %: 85,
+    Sponsor Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 40,
+    Credibility Factor: 0.9
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: '$180',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: '0.9',
+    Safety Glasses Factor: '0.9',
+    Photochromic Lenses Factor: '0.9'
+  },
+  Copay: {
+    Progressive Lenses in Full: 'Yes',
+    'Exam/Materials': '$10/$15'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)'
+  }
+}
+
+PlanDefinitionTab_ALaCarte: {
+  PlanKey: 'ALACARTE-A La Carte',
+  Network: 'Choice',
+  VSP Division: '10',
+  Coverage Tiers: [Employee Only, Employee + Family],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: 'Sponsor/Participant Split',
+    Sponsor Payment Mode: 12,
+    'Assumed Participation %': 75,
+    'Participant Contribution % Employee Coverage': 75,
+    'Participant Contribution % Dependent Coverage': 25
+  },
+  Rating: {
+    'Rate Type': 'Family Tier',
+    'Rate Basis': 'Monthly Tiered Price Per Participant',
+    'Use Brochure Rates?': 'No',
+    'Plan Type': 'Full Feature',
+    'Experience Claim Amount': 60,
+    Credibility Factor: '0.8'
+  },
+  Copay: {
+    Progressive Lenses in Full: 'Yes',
+    'Exam/Materials': '$10/$10'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)',
+  },
+  Plan Benefits: {
+    'Frames - Allowance up to': '$120',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: '0.8',
+    Safety Glasses Factor: '0.8',
+    Photochromic Lenses Factor: '0.8',
+  }
+}
+
+ClassificationManagementTab_PlanB: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '28',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_PlanC: {
+  Plan: PlanC-10/25 Plan C 150,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '32',
+  Coverage Tier: 'index=1'
+}
+
+ClassificationManagementTab_ALaCarte: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '24',
+  Coverage Tier: Employee Only
+}
+
+PremiumSummaryTab: {
+  Select Rating Census: 'index=1',
+  Apply: 'click',
+}

@@ -1,0 +1,41 @@
+TestData: {
+  ScheduledUpdateActionTab: {
+    Update Effective Date: $<today+1M>
+  },
+  GeneralTab: {
+    First Name: FirstName,
+    Last Name: LastName
+  }
+}
+
+TestData_Employee: {
+  ScheduledUpdateActionTab: {
+    Update Effective Date: $<today+1M>
+  },
+  GeneralTab: {},
+  EmployeeInfoTab: {
+    Department ID: 'TEST DEPARTMENT',
+    Division ID: 'TEST DIVISION',
+    Location ID: 'TEST LOCATION'
+  }
+}
+
+TestData_Student: {
+  ScheduledUpdateActionTab: {
+    Update Effective Date: $<today+1M>
+  },
+  GeneralTab: {
+    Student Status: Terminated,
+    Field of Study: 'TEST FIELD'
+  }
+}
+
+TestData_Membership: {
+  ScheduledUpdateActionTab: {
+    Update Effective Date: $<today+1M>
+  },
+  GeneralTab: {
+    Membership Status: Terminated,
+    Membership ID: 'TEST FIELD'
+  }
+}

@@ -1,0 +1,8 @@
+TestData: {
+  ClassificationManagementTab: '@ClassificationManagementTab'
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: Class1
+}

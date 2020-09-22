@@ -1,0 +1,424 @@
+TestData_Master: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_BASEPOS', '@PlanDefinitionTab_FLEX', '@PlanDefinitionTab_GRAD', '@PlanDefinitionTab_MAJEPOS'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_MAJEPOS', '@ClassificationManagementTab_FLEX',  '@ClassificationManagementTab_GRAD', '@ClassificationManagementTab_BASEPOS'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: VA,
+  ASO Plan: No,
+  Policy Effective Date: $<BOM>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '100',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+EnrollmentTab: {
+  Planned Enrollment Communication Channels: [Education Videos, Payroll Stuffers],
+  Enrollment Consultant/Manager: Greg,
+  Required Enrollment Response: Enroll,
+  Enrollment Response Required Date: $<today>,
+  Competing Influences: All
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: ALACARTE-A La Carte,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Preventive Waiting Period: '6 months',
+    Basic Waiting Period: '6 months',
+    Major Waiting Period: '6 months',
+    Radiographs Waiting Period: '6 months',
+    EPCOS Waiting Period: '18 months',
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+#  Dental Maximum: {
+#    Is it graded Maximum: 'Yes',
+#    Number of Graded Years: '4',
+#  },
+  Co-Insurance: {
+    U&C Percentile Level: REN 50th,
+#    Is it graded Co-Insurance: 'Yes',
+#    Number of Graded Years: 4
+  },
+  Dental Deductible:{
+    Deductible Expense Period:  'Calendar Year',
+#    Is it graded Dental Deductible: 'Yes',
+#    Number of Graded Years: '4',
+    Lifetime Deductible: 'No',
+    Deductible Carryover: 'No'
+  },
+  Orthodontia:{
+    Ortho Coverage: 'Yes',
+    Yearly Maximum: 'Yes',
+    Lifetime Deductible: 'Yes'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTab_BASEPOS: {
+  PlanKey: BASEPOS-Basic EPOS,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{},
+  Dental Deductible: {},
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTab_FLEX: {
+  PlanKey: FLEX-Flex Plus,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{},
+  Dental Deductible:{},
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTab_GRAD: {
+  PlanKey: GRAD-Graduated,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{},
+  Dental Deductible:{},
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+PlanDefinitionTab_MAJEPOS: {
+  PlanKey: MAJEPOS-Major EPOS,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Sponsor/Participant Split,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 100,
+    'Assumed Participation %': 25,
+    'Participant Contribution % Employee Coverage': 1,
+    'Participant Contribution % Dependent Coverage': 2,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{},
+  Dental Deductible:{},
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {},
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@PreventativeAndDiagnosticTab',
+    Basic: '@BasicTab',
+    Major: '@MajorTab'
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+ClassificationManagementTab_BASEPOS: {
+  Plan: 'BASEPOS-Basic EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+ClassificationManagementTab_FLEX: {
+  Plan: 'FLEX-Flex Plus',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+ClassificationManagementTab_GRAD: {
+  Plan: 'GRAD-Graduated',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+ClassificationManagementTab_MAJEPOS: {
+  Plan: 'MAJEPOS-Major EPOS',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: 6
+  }
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+TestDataProposal: {
+  QuotesSelectionActionTab: {
+    Select Quote by row number: [1],
+    Proposal Name: 'ProposalName$<rx:\d{5}>'
+  },
+  ProposalActionTab: {
+    Override Rules: CLICK,
+    Override Rules List: ["Proposal requires Underwriter approval because Master Quote contains Ortho Co...",
+                          "Proposal requires Underwriter approval because Assumed Participation is less ...",
+                          "Proposal requires Underwriter approval because Assumed Participation is less ...",
+                          "Proposal requires Underwriter approval because Assumed Participation is less ...",
+                          "Proposal with an A La Carte Plan requires Underwriter approval"]
+  }
+}
+
+TestData_Certificate: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  PlansTab: '@PlansTab',
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Middle Name: 'Middle$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Tobacco: 'Yes',
+  Marital Status: 'Single',
+  Tax Identification: '$<rx:\d{9}>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  Address Line 2: 'Address2$<rx:\d{8}>',
+  Address Line 3: 'Address3$<rx:\d{8}>',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  Employee ID: '$<rx:\d{9}>',
+  Rehire Date: $<today>,
+  General Information: {
+    Title: Mr,
+    Suffix: 'Sr.',
+    Date of Birth: $<today-25y>,
+    Gender: Male,
+    e-Mail: 'email$<rx:\d{8}>@test.com'
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Code: index=1,
+    Job Title: 'Title$<rx:\d{8}>',
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Payroll Frequency: Monthly
+  }
+}
+
+PlansTab: {
+  Plan Name: index=1,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: ['@TestData_Participant', '@TestData_Child_Participant','@TestData_Spouse_Participant'],
+}
+
+TestData_Issue_Certificate: {
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  }
+}
+
+TestData_Child_Participant: {
+  Participant Selection: New Person,
+  Role Information: {
+    Role Name: Child Participant
+  },
+  General Information: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>,
+  }
+}
+TestData_Spouse_Participant: {
+  Participant Selection: New Person,
+  Role Information:{
+    Role Name: Spouse Participant
+  },
+  General Information: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>,
+  }
+}
+
+TestData_Participant: {
+  Participant Selection: index=0
+}
+
+PreventativeAndDiagnosticTab: {
+  Fluoride Treatment: 'Not Covered'
+}
+
+BasicTab: {
+}
+
+MajorTab: {
+}

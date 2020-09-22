@@ -1,0 +1,445 @@
+TestData_TL: {
+  InitiniateDialog: '@<tl_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_TL',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_TL', '@PlanDefinitionBasicLifeInsurance_TL', '@PlanDefinitionBasicAccidentalDeath_TL', '@PlanDefinitionDependentBasicLife_TL',
+                      '@PlanDefinitionEmployeeVoluntaryLifeInsurance_TL', '@PlanDefinitionEmployeeVoluntaryDeath_TL', '@PlanDefinitionSpouseVoluntary_TL',
+                      '@PlanDefinitionChildVoluntary_TL', '@PlanDefinitionDependentVoluntaryAccidentalSpouse_TL'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicLifeInsraunce_TL', '@ClassificationMgmtBasicAccidentalDeath_TL', '@ClassificationMgmtDependentBasicLife_TL',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsurance_TL', '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath_TL', '@ClassificationMgmtSpouseVoluntaryLifeInsurance_TL',
+                                '@ClassificationMgmtChildVoluntaryLifeInsurance_TL', '@ClassificationMgmtDependentVoluntaryAccidentalDeath_TL'],
+  PremiumSummaryTab: '@<tl_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+PolicyInformationTab_TL: {
+  Situs State: NY,
+  Group is Member Company: 'No',
+  Rate Guarantee (Months): '24',
+  County Code: '001 - Albany County',
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  QA_Agency: {
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Agent Sub Producer: 'index=1'
+  },
+}
+
+SelectPlan_TL: {
+  Plan: [Basic Life, Voluntary Life]
+}
+
+PlanDefinitionBasicLifeInsurance_TL: {
+  CoverageKey: Employee Basic Life Insurance,
+  Total Number of Eligible Lives: 50,
+  Contribution Type: 'Non-contributory',
+  Required Participation %: 5%,
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Single Value',
+    'Flat Benefit Amount': '10000',
+  },
+  'Age Reduction?': 'true',
+  Termination age: 'SSNRA',
+  Waiver of Premium: 'Included',
+  Accelerated Benefit: 'Not Included',
+  Continuation: 'Total Disability',
+  Sponsor/Participant Funding Structure: {
+  },
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Guaranteed Issue: {
+    GI Amount: "$200000",
+  },
+  Conversion: 'Included',
+  Portability: 'Not Included',
+}
+
+PlanDefinitionBasicAccidentalDeath_TL: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'Yes',
+  Seat Belt Benefit: {
+    'Apply Benefit?': 'true',
+  },
+  Coma Benefit: {
+    'Apply Benefit?': 'true',
+    'Maximum Amount': '5000',
+    'Percentage': '3%',
+  },
+  Common Carrier Benefit: {
+    'Apply Benefit?': 'true',
+    'Percentage': '10%',
+  },
+  Repatriation Benefit: {
+    'Apply Benefit?': 'true',
+    'Maximum Amount': '5000',
+    'Percentage': '10%',
+  },
+  Spouse Training Benefit: {
+    'Apply Benefit?': 'true',
+    'Maximum Amount': '5000',
+    'Percentage': '5%',
+  },
+  Child Education Benefit: {
+    'Apply Benefit?': 'true',
+    'Maximum Amount': '2500',
+    'Percentage': '3%',
+  },
+  Child Care Benefit: {
+    'Apply Benefit?': 'true',
+    'Percentage': '3%',
+  },
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Accidental Death and Dismemberment Insurance - Loss Schedule: {
+    'Loss of Life Benefit %': 100%,
+    Loss of Both Hands or Both Feet Benefit %: '100%',
+    Loss of Sight in Both Eyes Benefit %: '100%',
+    Loss of One Hand & Sight of One Eye Benefit %: '100%',
+    Loss of One Foot & Sight of One Eye Benefit %: '100%',
+    Loss of One Hand Benefit %: '50%',
+    Loss of One Foot Benefit %: '50%',
+    Loss of One Arm Benefit %: '50%',
+    Loss of One Leg benefit %: '50%',
+    Quadriplegia Benefit %: '100%',
+    Paraplegia Benefit %: '50%',
+    Hemiplegia Benefit %: '50%',
+    Triplegia Benefit %: '50%',
+    Uniplegia Benefit %: '25%',
+    Loss of Speech Benefit %: '50%',
+    Loss of Hearing Benefit %: '50%',
+    Loss of Thumb & Index Finger of Same Hand Benefit %: '25%',
+  },
+}
+
+PlanDefinitionDependentBasicLife_TL: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Benefit Schedule - Child: {
+    'Live birth to 14 days': 500,
+    '15 days to 6 months': 500,
+    '6 months to max age': 2000,
+  }
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsurance_TL: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Total Number of Eligible Lives: 5,
+  Contribution Type: 'Contributory',
+  Participant Contribution %: 10,
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Benefit Minimum Amount: '10000',
+    Benefit Maximum Amount: '500000',
+    Salary Multiple: '5x',
+  },
+  Termination age: 'Never',
+  Continuation: 'Not Included',
+  'Age Reduction?': false,
+  Required Participation %: 5%,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Conversion: 'Included',
+  Portability: 'Not Included',
+  Waiver disabled prior to age: 60,
+  'Premium Waiver Elimination Period': '6 Months',
+}
+
+PlanDefinitionEmployeeVoluntaryDeath_TL: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': Yes,
+  Seat Belt Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Coma Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Common Carrier Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Repatriation Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Spouse Training Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Child Education Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Child Care Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  'Age Reduction?': true,
+  Plan Termination Attained Age: 80,
+  Required Participation %: 5%,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  'Loss of Life Benefit %': 100%,
+}
+
+PlanDefinitionSpouseVoluntary_TL: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  Benefit Type: 'Specified Amount - Range Values',
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000,
+  },
+  'Age Reduction?': false,
+  Eligibility: {
+    'Include domestic partner?': 'Yes',
+  },
+  Required Participation %: 5%,
+}
+
+PlanDefinitionChildVoluntary_TL: {
+  CoverageKey: Child Voluntary Life Insurance,
+  Required Participation %: 5%,
+  Benefit Schedule - Child: {
+    'Live birth to 14 days': 500,
+    '15 days to 6 months': 500,
+  }
+}
+
+PlanDefinitionDependentVoluntaryAccidentalSpouse_TL: {
+  CoverageKey: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  'Enhanced AD&D?': No,
+  Required Participation %: 5%,
+}
+
+ClassificationMgmtBasicLifeInsraunce_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: index=1,
+}
+
+ClassificationMgmtBasicAccidentalDeath_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: index=1,
+}
+
+ClassificationMgmtDependentBasicLife_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: index=1,
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: index=1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes'
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: index=1,
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: index=1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes'
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Classification Group Name: index=1,
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath_TL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: index=1,
+}
+
+RelationshipWithNonIndividualType: {
+  RelationshipTab: {
+    Type: Non-Individual,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    Relationship to Customer: Member Company,
+  }
+}
+
+TestData_BLV: {
+  InitiniateDialog: '@<tl_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_BLV',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_BLV', '@PlanDefinitionBasicLifeInsurance_BLV', '@PlanDefinitionBasicAccidentalDeath_BTL', '@PlanDefinitionDependentBasicLife_BTL', '@PlanDefinitionVoluntaryLifeInsurance_BTL',
+                      '@PlanDefinitionSpouseVoluntaryLifeInsurance_TBL', '@PlanDefinitionChildVoluntaryLifeInsurance_BTL', '@PlanDefinitionDependentVoluntaryAccidentalDeath_BTL', '@PlanDefinitionVoluntaryAccidentalDeath_BTL'],
+  ClassificationManagementTab: ['@ClassificationMgmtSpouseVoluntaryLifeInsurance_BTL', '@ClassificationMgmtBasicLifeInsraunce_BTL', '@ClassificationMgmtBasicAccidentalDeath_BTL', '@ClassificationMgmtDependentBasicLife_BTL', '@ClassificationMgmtVoluntaryLife_BTL'],
+  PremiumSummaryTab: '@<tl_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+PolicyInformationTab_BLV: {
+  Situs State: NY,
+  Group is Member Company: 'Yes',
+  Rate Guarantee (Months): '16',
+  Member Company Name: 'index=1',
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+}
+
+SelectPlan_BLV: {
+  Plan: Basic Life + Voluntary
+}
+
+PlanDefinitionBasicLifeInsurance_BLV: {
+  CoverageKey: Employee Basic Life Insurance,
+  Contribution Type: 'Voluntary',
+  Termination age: '65',
+  Accelerated Benefit: 'Included',
+  Continuation: 'Total Disability or Termination',
+  Required Participation %: 5%,
+  Total Number of Eligible Lives: 1,
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Rating: {
+    Rate Basis: 'Per $1,000'
+  },
+}
+
+PlanDefinitionBasicAccidentalDeath_BTL: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  Required Participation %: 5%,
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value',
+    Benefit Minimum Amount: '$10,000.00',
+    Benefit Maximum Amount: '$200,000.00',
+    Salary Multiple: '1x',
+    Rounding Method: 'Round Benefit Off to Nearest $1000',
+  },
+  Seat Belt Benefit: {
+    'Apply Benefit?': 'false',
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+}
+
+PlanDefinitionDependentBasicLife_BTL: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Eligibility: {
+    'Include domestic partner?': 'Yes',
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Amount - Multiple Values',
+  },
+  Benefit Schedule - Child: {
+    'Live birth to 14 days': '$500.00',
+    '15 days to 6 months': '$500.00',
+  }
+}
+
+PlanDefinitionVoluntaryLifeInsurance_BTL: {
+  CoverageKey: Employee Voluntary Life Insurance,
+  Required Participation %: 5%,
+  Total Number of Eligible Lives: 1,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  },
+  Benefit Schedule: {
+    Benefit Minimum Amount: '$10,000.00',
+    Benefit Maximum Amount: '$500,000.00',
+    Increment: '$10,000.00',
+    Maximum Salary Multiple: '5x',
+  },
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance_TBL: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  'Self-administered?': 'No',
+  Required Participation %: 5%,
+  Plan Termination Attained Age: "",
+  Benefit Schedule - Spouse: {
+    Benefit Type: 'Percentage of Employee Amount',
+    Minimum Benefit Amount: '$5,000.00',
+    Maximum Benefit Amount: '$100,000.00',
+    'Percentage of Employee Amount': '50%',
+  },
+  Guaranteed Issue: {
+    GI Amount At Age: '',
+  },
+  Rating: {
+    Rate Basis: 'Per $1,000'
+  },
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance_BTL: {
+  CoverageKeyRemove: Child Voluntary Life Insurance
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeath_BTL: {
+  CoverageKeyRemove: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child)
+}
+
+PlanDefinitionVoluntaryAccidentalDeath_BTL: {
+  CoverageKeyRemove: Employee Voluntary Accidental Death and Dismemberment Insurance
+}
+
+ClassificationMgmtBasicLifeInsraunce_BTL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+}
+
+ClassificationMgmtBasicAccidentalDeath_BTL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtDependentBasicLife_BTL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtVoluntaryLife_BTL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance_BTL: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'No',
+  Confirm using subgroups: CLICK,
+}

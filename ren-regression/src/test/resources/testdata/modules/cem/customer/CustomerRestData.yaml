@@ -1,0 +1,76 @@
+TestData: {
+  GeneralTab: '@GeneralTab',
+  CRCustomer1: '@CRCustomer1',
+  CRCustomer2: '@CRCustomer2',
+  ExpectedError: '@ExpectedError'
+}
+
+GeneralTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Associate Business Entities: false,
+  Date of Birth: '10/10/1985',
+  Address Details: {
+    Country: 'United States',
+    Zip/Post Code: '94596',
+    City: 'Walnut Creek',
+    State/Province: 'CA',
+    Address Line 1: 'Address$<rx:\d{8}>'
+  }
+}
+
+CRCustomer1: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '876543201',
+    Date of Birth: '04/14/1988',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'CRSCity',
+      State/Province: 'NV',
+      Address Line 1: 'CustomerRest address 1',
+    },
+    Phone Details: {
+      Phone Type: 'Home',
+      Phone Number: '2345678901'
+    }
+  },
+  RelationshipTab: {}
+}
+
+CRCustomer2: {
+  CustomerType: '@Individual',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '876543201',
+    Date of Birth: '04/14/1988',
+    Address Details: {
+      Country: 'United States',
+      Zip/Post Code: '89001',
+      City: 'CRSCity',
+      State/Province: 'NV',
+      Address Line 1: 'CustomerRest address 1',
+    },
+    Phone Details: {
+      Phone Type: 'Home',
+      Phone Number: '2345678901'
+    },
+    Email Details: {
+      Email Address: 'customer@rest.test'
+    }
+  },
+  RelationshipTab: {}
+}
+
+Individual: {
+  Customer Type: 'Individual'
+}
+
+ExpectedError: {
+    errorCode: '400',
+    message: 'Malformed syntax or a bad query.'
+}

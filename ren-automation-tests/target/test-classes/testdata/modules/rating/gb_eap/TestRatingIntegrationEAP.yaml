@@ -1,0 +1,66 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Employee Assistance Program,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Rate Guarantee (Months): 12,
+  Situs State: NY,
+  'Zip Code': '90201',
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: EAP #expected response value: plans[].planName=EAP
+}
+
+PlanDefinitionTab: {
+  Eligibility: {
+    Eligibility Waiting Period Definition: After 30 Days of Employment,
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Rating: {
+    Plan Type: Face to Face benefits, #expected response value: plans[].planType=FACETOFACE
+    Rate Basis: Per Employee Per Month #expected response value: plans[].ratingBasis=PMNTH
+  },
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: Employment,
+  Number of Participants: 5
+}
+
+ResponseData: {
+  'policyID': MP0000001,
+  'planDetails[0].planName': 'EAP',
+  'planDetails[0].planRate': '1.25',
+  'nature': 'CW-20190101-20190101'
+}
+
+#Hardcoded premium values that were provided by OpenL Team for quote with automation test data
+ResponseCheckRatingPremium: {
+  'planDetails[0].planName': 'EAP',
+  'planDetails[0].planRate': '1.25'
+}

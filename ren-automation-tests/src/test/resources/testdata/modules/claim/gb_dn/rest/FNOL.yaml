@@ -1,0 +1,72 @@
+TestData: {
+  "claim": {
+    "productCd": "CLAIM_DENTAL",
+    "policyNumber": "CP0000000223",
+    "reportedDt": "2020-03-11T00:00:00.000Z",
+    "lossDt": "2020-03-11T00:00:00.000Z",
+    "extension": {
+      "digitalImage": [
+        "image1",
+        "image2",
+        "image3"],
+      "claimData": {
+        "payeeType": "SERVICEPROVIDER",
+        "cleanClaimDate": null,
+        "receivedDate": "2020-03-11T00:00:00.000Z",
+        "source": "ECSCHC",
+        "orthoMonths": null,
+        "clearingHouseId": null,
+        "predeterminationNumber": null,
+        "transmissionId": null,
+        "transactionType": "ACTUAL_SERVICES"
+      }
+    },
+    "parties": [
+    {
+      "oid": "100149",
+      "componentName": "ClaimsDentalPatient"
+    }
+    ]
+  },
+  "damages": [
+  {
+    "damageType": "ClaimsProcedure",
+    "loss": {
+      "associatedRiskItemOid": "100149",
+      "extension": {
+        "procedureDate": "2020-03-11T00:00:00.000Z",
+        "quantity": 1,
+        "toothLetter": null,
+        "reportedFee": 100,
+        "lossDescription": "D0160",
+        "toothSurface": null
+      }
+    }
+  }
+  ],
+  "serviceRequests": [
+  {
+    "componentName": "ClaimsServiceRequest",
+    "vendors": [
+    {
+      "profile": {
+        "externalId": "351517384",
+        "extension": {
+          "licenseNpi": "1063628917",
+          "licenseNumber": "8724",
+          "licenseStateCode": "IN",
+          "licenseCountryCode": "US",
+          "addressLine1": "4034 E Southport Rd",
+          "city": "Indianapolis",
+          "countryCode": "US",
+          "stateCode": "IN",
+          "zipCode": "46237",
+          "specialtyCode": "050",
+          "tin": "351517384"
+        }
+      }
+    }
+    ]
+  }
+  ]
+}

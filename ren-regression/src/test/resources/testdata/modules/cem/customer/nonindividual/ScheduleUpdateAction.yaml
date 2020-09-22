@@ -1,0 +1,26 @@
+TestData: {
+  ScheduledUpdateActionTab: {
+    Update Effective Date: $<today+1M>
+  },
+  GeneralTab: {
+    Name - Legal: 'newCorpName$<static:nameLegal:[rx:\d{5}]>'
+  }
+}
+
+TestData_Division: {
+  ScheduledUpdateActionTab: {
+    Update Effective Date: $<today+1M>
+  },
+  GeneralTab: {
+    Name - Legal: 'NewLegalName',
+    Name - DBA: 'NewDBA'
+  },
+  DivisionsTab: [
+  {
+    Division Name: UpdateDivision
+  },
+  {
+    Division Name: NewDivision,
+    Billing Method: Monthly
+  }]
+}

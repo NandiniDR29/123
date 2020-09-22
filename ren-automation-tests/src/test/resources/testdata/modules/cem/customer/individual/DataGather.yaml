@@ -1,0 +1,772 @@
+TestData: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+TestData_CustomAgency: {
+  CustomerType: '@CustomerType',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: '$<static:customerLastName:[rx:Customer\d{3}]>',
+    Date of Birth: 10/10/1985,
+    Lead Status: Qualified,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Associate Employments: 'true',
+    Agency Assignment:{
+      Agency/Producer: {
+        Agency Code: ''
+      }
+    },
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+
+TestData_WithoutBusinessEntityTab: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@Adjustment_WithoutAssociateBusinessEntities',
+  RelationshipTab: {}
+}
+
+TestData_WithRelationshipTypes: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: ['@RelationshipWithIndividualTypeRelative','@RelationshipWithNonIndividualTypeEmployer']
+}
+
+CustomerType: {
+  Customer Type: Individual
+}
+
+GeneralTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Middle Name: 'Middle$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Associate Business Entities: true,
+  Date of Birth: 10/10/1985,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '94596',
+    City: Walnut Creek,
+    State/Province: CA,
+    Address Line 1: '$<static:Address:[rx:Address\d{8}]>',
+    Communication Preferences: ["Administrative", "Claims"]
+  },
+  Agency Assignment:['@QAGAgency'],
+  Phone Details: {
+    Phone Type: Home,
+    Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  }
+}
+
+CustomerGeneralTabAgency: {
+
+}
+
+AnotherAddress: {
+  Country: United States,
+  Zip/Post Code: '70001',
+  City: Metairie,
+  State/Province: LA,
+  Address Line 1: 'Address$<rx:\d{8}>'
+}
+
+Adjustment_LA_TestData: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '70001',
+      City: Metairie,
+      State/Province: LA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}
+
+Adjustment_OK_TestData: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '73001',
+      City: Albert,
+      State/Province: OK,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}
+
+Adjustment_Address_WithDNS: {
+  Country: United States,
+  Zip/Post Code: '70002',
+  City: Metairie,
+  State/Province: LA,
+  Address Line 1: 'Address$<rx:\d{8}>',
+  'Make Preferred?': 'No',
+  'Do not Solicit?': 'Yes'
+}
+
+Adjustment_WithAssociateAccount: {
+  GeneralTab: {
+    Associate Account: {
+      Account Type: 'New Account',
+      New Account:{
+        Account Designation Type: Major Account
+      }
+    },
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    }
+  }
+}
+
+Adjustment_WithAssociateAccountOnUpdate: {
+  CustomerType: '@CustomerType',
+  GeneralTab: {
+    Associate Account: {
+      Account Type: 'New Account',
+      New Account: {
+        Account Designation Type: Major Account,
+      }
+    }
+  }
+}
+
+Adjustment_BusinessEntity: {
+  BusinessEntityTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: 10/10/1999,
+    Division: index=2,
+    Industry: index=1,
+    SIC Description: index=1
+  }
+}
+
+Adjustment_BusinessEntityAddress: {
+  BusinessEntityTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: 10/10/1999,
+    Division: index=2,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    }
+  }
+}
+
+Adjustment_BusinessEntityPhone: {
+  BusinessEntityTab: {
+    Non-Individual Type: index=1,
+    Name - Legal: 'NameLegal$<rx:\d{8}>',
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: 10/10/1999,
+    Division: index=2,
+    Industry: index=1,
+    SIC Description: index=1,
+    Phone Details: {
+      Phone Type: Work,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    }
+  }
+}
+
+RelationshipWithIndividualTypeRelative: {
+  Type: Individual,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Relationship to Customer: Relative
+}
+
+RelationshipWithNonIndividualTypeEmployer: {
+  Type: Non-Individual,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Relationship to Customer: Employer,
+  Date business started: $<today-10y>
+}
+
+Adjustment_Relationship: {
+  RelationshipTab: {
+    Type: Individual,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Relationship to Customer: Trust
+  }
+}
+
+Adjustment_RelationshipUpdate: {
+  RelationshipTab: {
+    Type: Individual,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Relationship to Customer: Colleague
+  }
+}
+
+Adjustment_WithoutAssociateBusinessEntities: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Lead Status: Qualified,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}
+
+Adjustment_Unqualified: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Lead Status: Unqualified,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+Adjustment_InQualification: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Lead Status: In Qualification,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  }
+}
+
+Adjustment_UniqueCustomer: {
+  GeneralTab: {
+    First Name: 'John$<static:rx:\d{8}>',
+    Last Name: 'Smith$<static:rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '00000',
+      City: 'City$<static:rx:\d{8}>',
+      State/Province: DE,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}
+
+Adjustment_WithoutAgency: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Agency Assignment: null
+  }
+}
+
+Adjustment_GroupAdd: {
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Group Information: {
+      Group Search: {
+        Group ID: ''
+      }
+    },
+    Membership Level: Basic,
+    Membership Status: Active,
+    'Membership #': 'MN$<rx:\d{8}>',
+    Membership Date: $<today>,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '00000',
+      City: 'City$<rx:\d{8}>',
+      State/Province: DE,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}
+
+TestData_WithEmployment: {
+  CustomerType: '@CustomerType',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: '$<static:customerLastName:[rx:Customer\d{3}]>',
+    Date of Birth: 10/10/1985,
+    Lead Status: Qualified,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Associate Employments: 'true',
+    Agency/Producer: {
+      Agency Code: QAG
+    }
+  },
+  EmploymentTab: {
+    Employer Name: 'John Smith',
+    Occupation: 'Dentist',
+    Occupation Status: 'Other',
+    Job Title: 'Analyst',
+    As of Date: '$<today>'
+  },
+  RelationshipTab: {}
+}
+
+TestData_withoutPhone: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withPhoneEmail: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Middle Name: 'Middle$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Email Details: {
+      Email Type: 'Personal',
+      Email Address: 'correct@test.com'
+    }
+  },
+  RelationshipTab: {}
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}
+
+TestData_TeamMerge: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: '$<rx:John\d{6}>',
+    Last Name: '$<rx:Smith\d{6}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Agency Assignment:['@QAGAgency'],
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: '$<rx:Address\d{5}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Phone Details: {
+      Contact Details Type: 'Phone',
+      Phone Type: 'Home',
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>',
+    },
+    Email Details: {
+      Contact Details Type: 'Email',
+      Email Type: 'Personal',
+      Email Address: 'test@test.com',
+    }
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: [
+  {
+    Type: 'Individual',
+    First Name: '$<rx:Mike\d{6}>',
+    Last Name: '$<rx:Smith\d{6}>',
+    Relationship to Customer: 'Child - Son'
+  }
+  ]
+}
+
+TestData_Update: {
+  GeneralTab: {
+    First Name: Will,
+    Last Name: Smith
+  },
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+TestData_Update_Without_BusinessEntity: {
+  GeneralTab: {
+    First Name: Will,
+    Last Name: Smith
+  },
+  RelationshipTab: {}
+}
+
+TestData_Customer: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  BusinessEntityTab: {},
+  RelationshipTab: {}
+}
+
+TestDataWithProviders: {
+  CustomerType: {Customer Type: Individual},
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Providers: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  },
+  ProviderTab: ['@ProviderIndividual','@ProviderNonIndividual']
+}
+
+ProviderNonIndividual: {
+  Search Provider: {
+    Last Name: ''
+  },
+  Effective Date: '$<today+1d>',
+  Expiration Date: '$<today+1y>',
+  Comment: CommentText
+}
+
+ProviderIndividual: {
+  Search Provider: {
+    First Name: '$<static:firstName>'
+  },
+  Effective Date: '$<today>',
+  Expiration Date: '$<today+2y>',
+  Comment: Comment
+}
+
+TestData_withWebUrl: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Web URL Details: {
+      Web URL Type: Personal,
+      Web URL: 1
+    }
+  },
+  RelationshipTab: {}
+}
+
+Adjustment_WebURL: {
+  Web URL Type: Personal,
+  Web URL: '$<rx:\d{8}>',
+  Comment: '$<rx:\d{8}>'
+}
+
+Adjustment_SocialNet: {
+  Social Net Type: Twitter,
+  Social Net ID: '$<rx:\d{8}>'
+}
+
+TestData_withSocialNet: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    },
+    Social Net Details:{
+      Social Net Type: Facebook,
+      Social Net ID: 1
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withChat: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: 1
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withAdditionalName: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '11596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Additional Names: {
+      Type: Individual,
+      Salutation: Doctor,
+      First Name: '$<static:AFOne:[rx:AddFirstName\d{8}]>',
+      Middle Name: '$<static:AMOne:[rx:AddMiddleName\d{8}]>',
+      Last Name: '$<static:ALOne:[rx:Add LastName\d{8}]>',
+      Suffix: Jr.,
+      Designation: Other
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withTaxIdAndAgency: {
+  CustomerType: {
+    Customer Type: Individual
+  },
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: '$<rx:\d{8}>',
+    Date of Birth: 10/10/1985,
+    Agency Assignment:{
+      Agency/Producer: {
+        Agency Code: QAG
+      }
+    },
+    Associate Account: {
+      Account Type: 'Existing Account',
+      Existing Account: {
+        Account ID: '$<rx:\d{5}>'
+      }
+    },
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '$<rx:\d{5}>',
+      City: 'Walnut Creek$<rx:\d{5}>',
+      State/Province: AK,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  },
+  RelationshipTab: {}
+}
+
+TestData_withAllContacts: {
+  CustomerType: '@CustomerType',
+  GeneralTab: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    },
+    Chat Details: {
+      Chat Type: Skype,
+      Chat ID: 1
+    },
+    Email Details: {
+      Email Type: Work,
+      Email Address: 'qa@qa.com'
+    },
+    Phone Details: {
+      Phone Type: Home,
+      Phone Number: '0123456789'
+    },
+    Web URL Details: {
+      Web URL Type: Personal,
+      Web URL: 'www.eis.com'
+    },
+    Social Net Details: {
+      Social Net Type: Facebook,
+      Social Net ID: '19201'
+    },
+    Sales Rep Work Queue: {
+      Search For: Work Queue,
+      Work Queue: General
+    }
+  },
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+RelationshipTabWithNonIndividualTypeEmployer: {
+  Type: Non-Individual,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Relationship to Customer: Employer,
+  Date business started: $<today-10y>,
+  Group Sponsor: 'true'
+}
+
+
+TestDataSmoke: {
+  CustomerType: '@CustomerType',
+  GeneralTab: '@GeneralTab',
+  DivisionsTab: {},
+  RelationshipTab: {
+      Type: Non-Individual,
+      Name - Legal: 'NameLegal$<rx:\d{8}>',
+      Relationship to Customer: Employer,
+      Date business started: $<today-10y>,
+      Group Sponsor: true
+  }
+}

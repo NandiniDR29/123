@@ -1,0 +1,186 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: '@PolicyInformationPolicyTab',
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationDependentDependentInformationTab: '@PolicyInformationDependentDependentInformationTab',
+  PolicyInformationDependentDependentCoverageTab: '@PolicyInformationDependentDependentCoverageTab',
+  PolicyInformationScheduledItemTab: '@PolicyInformationScheduledItemTab',
+  PolicyInformationSponsorTab: '@PolicyInformationSponsorTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabAccidentalDeath'],
+  BenefitsAccidentalDeathDecedentTab: '@BenefitsAccidentalDeathDecedentTab',
+  BenefitsAccidentalDeathIncidentTab: {},
+  BenefitsAccidentalDeathDeathCertificateTab: '@BenefitsAccidentalDeathDeathCertificateTab',
+  BenefitsAccidentalDeathBeneficiaryTab: '@BenefitsAccidentalDeathBeneficiaryTab',
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+LossContextTab: {
+  Policy LOB: 'Accident & Health',
+  Policy Product: 'Group Accident',
+  Type of Claim: 'Accident & Health Claim',
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: index=1
+}
+
+PolicyInformationPolicyTab: {
+  Effective Date: $<today>,
+  Expiration Date: $<today+1y>,
+  Original Effective Date: $<today>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  State / Province: CA,
+  City: Walnut Creek
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Coverage Name: index=1,
+  Coverage Type: 'Employee Only',
+  Limit Level: 'Per Occurrence',
+  Limit Amount: 100
+}
+
+PolicyInformationDependentDependentInformationTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  First Name: 'Martha$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1
+}
+
+PolicyInformationDependentDependentCoverageTab: {
+  Coverage Name: index=1,
+  Coverage Type: 'Employee Only',
+  Limit Level: 'Per Occurrence',
+  Limit Amount: 100
+}
+
+PolicyInformationScheduledItemTab: {
+  Associated Policy Party: index=1,
+  Scheduled Item: 'ScheduledItem$<rx:\d{8}>'
+}
+
+PolicyInformationSponsorTab: {
+  Company Name: 'Company$<rx:\d{8}>',
+  Contact Preference: Email,
+  Email: email@email.com
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  ICD Code: 'A02.8',
+  'Is it Primary ICD Code?': 'Yes'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabAccidentalDeath: {
+  Damage: Accidental Death
+}
+
+BenefitsAccidentalDeathDecedentTab: {
+  Associate Policy Party: 'contains=Martha'
+}
+
+BenefitsAccidentalDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+BenefitsAccidentalDeathBeneficiaryTab: {
+  Party Name: index=1,
+  Relationship To Decedent: index=1,
+  Associated Insurable Risk: 'starts=Martha',
+  Coverage: index=1,
+  Preferred Payment method: Check
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  Relationship To Decedent/Injury Party	: index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>'
+}
+
+EAPServicesServiceRequestTab: {
+  Benefit: index=1,
+  Service Type: index=1,
+  Add: 'click',
+  #'Create New Vendor?': 'Yes',
+  #Company Name: '$<rx:CompanyName\d{5}>',
+  #Tax Identification Number: '$<rx:\d{10}>',
+  #Zip/Postal Code: 94596,
+  #Address Line 1: Address Line 1,
+  #Settlement Method: index=1
+}
+
+TestData_With_PremiumWaiverBenefit: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: '@PolicyInformationPolicyTab',
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationDependentDependentInformationTab: '@PolicyInformationDependentDependentInformationTab',
+  PolicyInformationDependentDependentCoverageTab: '@PolicyInformationDependentDependentCoverageTab',
+  PolicyInformationScheduledItemTab: '@PolicyInformationScheduledItemTab',
+  PolicyInformationSponsorTab: '@PolicyInformationSponsorTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabPremiumWaiver'],
+  BenefitPremiumWaiverInjuryPartyInformationTab: '@BenefitPremiumWaiverInjuryPartyInformationTab',
+  BenefitPremiumWaiverIncidentTab: {},
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+BenefitsBenefitSummaryTabPremiumWaiver: {
+  Damage: Premium Waiver
+}
+
+BenefitPremiumWaiverInjuryPartyInformationTab: {
+  Premium Waiver Party: {
+    Associate Policy Party: 'contains=John',
+    Date of Birth: $<today>,
+  }
+}

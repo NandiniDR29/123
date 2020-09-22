@@ -1,0 +1,6 @@
+TestData: {
+  PartnerTab: {
+    Partner Code: 'PartnerCode$<rx:\d{8}>',
+    Name: 'Partner$<rx:\d{8}>',
+  }
+}

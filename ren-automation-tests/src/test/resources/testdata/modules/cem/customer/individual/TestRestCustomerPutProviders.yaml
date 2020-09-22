@@ -1,0 +1,19 @@
+REST_UpdateIndProvider:  {
+    "providerId": "",
+    "practiceId": "",
+    "facilityId": "",
+    "effectiveDate": "$<today+2d:yyyy-MM-dd>",
+    "expirationDate": "$<today+2y:yyyy-MM-dd>",
+    "comment": "comment1_put",
+    "extensionFields": {}
+  }
+
+REST_UpdateNonIndProvider:  {
+    "providerId": null,
+    "practiceId": "",
+    "facilityId": "",
+    "effectiveDate": "$<today-2d:yyyy-MM-dd>",
+    "expirationDate": "$<today+1d:yyyy-MM-dd>",
+    "comment": "comment2_put",
+    "extensionFields": {}
+  }

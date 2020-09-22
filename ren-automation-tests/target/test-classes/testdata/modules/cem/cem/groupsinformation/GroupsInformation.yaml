@@ -1,0 +1,7 @@
+TestData: {
+  GroupsInformationTab: {
+    Group Type: EIS,
+    Group ID: '$<rx:\d{8}>',
+    Group Name: EISGROUP
+  }
+}

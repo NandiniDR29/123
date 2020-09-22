@@ -1,0 +1,34 @@
+TestData: {
+  OtherIncomeBenefitActionTab: ['@OtherIncomeBenefitActionTab_1',
+                                '@OtherIncomeBenefitActionTab_2',
+                                '@OtherIncomeBenefitActionTab_3',
+                                '@OtherIncomeBenefitActionTab_4']
+}
+
+OtherIncomeBenefitActionTab_1: {
+  Type of Offset: index=1,
+  Payment Amount: 100,
+  Beginning Date: $<today+180d+1y>,
+  Through Date: $<today+180d+1y+1M-1d>
+}
+
+OtherIncomeBenefitActionTab_2: {
+  Type of Offset: index=2,
+  Payment Amount: 550,
+  Beginning Date: $<today+180d+1y+1M>,
+  Through Date: $<today+180d+1y+2M-1d>
+}
+
+OtherIncomeBenefitActionTab_3: {
+  Type of Offset: index=3,
+  Payment Amount: 10,
+  Beginning Date: $<today+180d+1y+2M>,
+  Through Date: $<today+180d+1y+3M-1d>
+}
+
+OtherIncomeBenefitActionTab_4: {
+  Type of Offset: index=4,
+  Payment Amount: 60,
+  Beginning Date: $<today+180d+1y+2M>,
+  Through Date: $<today+180d+1y+3M-1d>
+}

@@ -1,0 +1,26 @@
+TestData: {
+  GeneralProfileTab: '@GeneralProfileTab',
+  AuthorityLevelsTab: {}
+}
+
+GeneralProfileTab: {
+  EIS User: 'Yes',
+  First Name: 'FName_$<rx:\d{8}>',
+  Last Name: 'LName_$<rx:\d{8}>',
+  Effective Date: $<today>,
+  'User Name': 'qa_$<rx:\d{8}>',
+  'User Login': 'qa_$<rx:\d{8}>',
+  Password: qa,
+  Confirm Password: qa,
+  User Work Status: Available,
+}
+
+TestData_Non_EIS: {
+  GeneralProfileTab: '@GeneralProfileTab_Non_EIS'
+}
+
+GeneralProfileTab_Non_EIS: {
+  EIS User: 'No',
+  First Name: '$<static:fNameNonEis[rx:FName_Non_EIS_\d{8}]>',
+  Last Name: '$<static:lNameNonEis[rx:LName_Non_EIS_\d{8}]>',
+}

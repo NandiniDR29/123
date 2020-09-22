@@ -1,0 +1,100 @@
+Adjust_PolicyInformationTab: {
+  PolicyInformationTab: {
+    Rate Guarantee (Months): 15,
+    Next Renewal Effective Date: $<today+2y>,
+    Next Renewal Quote Start Date: $<today+2y>,
+    'Small Group?': 'No',
+    Situs State: FL,
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: 'QA QA user',
+      Sales Support Associate: 'QA QA user'
+    }
+  }
+}
+
+Adjust_PlanDefinitionTab_SGR: {
+  PlanDefinitionTab: {
+    PlanKey: SGR-SGR,
+    Total Number of Eligible Lives: 1,
+    Required Participation %: 100%,
+    Eligibility: {
+      Minimum Hourly Requirement (hours per week): 15.00,
+      Eligibility Waiting Period Definition: First of the month following (amount and mode),
+      Waiting Period: 30,
+      Waiting Period Mode: Days,
+    },
+    Sponsor/Participant Funding Structure: {
+      Contribution Type: Voluntary,
+      Member Payment Mode: '12',
+    },
+    Offsets: {
+      Include PERS and STRS: Yes
+    },
+    Benefit Schedule: {
+      Test Definition: Loss of Duties and Earnings,
+      Residual: Included,
+      Pre-Existing Conditions: 'Included',
+      'Pre-Existing Condition: Treatment Free Period': 'N/A',
+      Survivor - Family Income Benefit Type: '3 Months Survivor Income Benefit',
+      Pay Survivor Benefit Gross: false,
+      Definition of Disability: 'Extended Regular Occ',
+    },
+    Options: {
+      Substance Abuse Limitation: '24 Months',
+      Recovery Income Benefit: '3 Months'
+    },
+    Employer Benefits: {
+      None: false,
+    }
+  }
+}
+
+TestData: {
+  LTD9_1: "1",
+  LTD9_2: "Class1",
+  LTD9_3: "Class 1: Class1",
+  LTD10: "60% of Basic Monthly Earnings",
+  LTD11: "$6,000.00",
+  LTD12: "$6,000.00",
+  LTD13: "$100 or 10%",
+  LTD14: "180 days",
+  LTD15: "180 days",
+  LTD16: "SSNRA",
+  LTD17: "Unlimited",
+  LTD18: "Claimant is unable to perform the material and substantial duties of his/her regular occupation and has a 20% loss of indexed monthly earnings.",
+  LTD19: "80%/80%",
+  LTD20: "During the first 12 Months of disability gross weekly benefit plus work earnings may not exceed 100% of pre-disability earnings",
+  LTD21: "12 Months/24 Months",
+  LTD22: "Not Included",
+  LTD23: "Family",
+  LTD25: "100%",
+  LTD26: "Ten (10) Employees or 25%, whichever is greater.",
+  LTD27: "24 Months (Lifetime)",
+  LTD28: "24 Months (Lifetime)",
+  LTD29: "3 Times Net Monthly Benefit",
+  LTD30: "Not Included",
+  LTD31: "Not Included",
+  LTD32: "Not Included",
+  LTD33: "Not Available",
+  LTD35: "24 Hour",
+  LTD36: "An additional benefit of 5% of the gross weekly benefit to a maximum of $500 is payable if the claimant participates in an approved rehabilitation program.",
+  LTD38: "Not Included",
+  LTD39: "Included",
+  LTD41: "Not Included",
+  LTD42: "N/A",
+  LTD43: "24 Months",
+  LTD44: "None",
+  LTD45: "None",
+  LTD47: "3 Months",
+  LTD48: "Not Available",
+  LTD49: "5%/3 Months",
+  LTD50: "Not Included",
+  LTD52: "Included",
+  LTD53: "Included",
+  LTD54: "Included",
+  LTD55: "Embedded"
+}

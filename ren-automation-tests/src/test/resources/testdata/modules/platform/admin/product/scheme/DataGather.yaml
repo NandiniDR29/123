@@ -1,0 +1,26 @@
+TestData: {
+  SchemeInfoTab: '@SchemeInfoTab',
+  ProductsTab: '@ProductsTab'
+}
+
+SchemeInfoTab: {
+  Scheme Name: 'SchemeName$<rx:\d{8}>',
+  Accounting Scheme Code: 'SchemeCode$<rx:\d{8}>',
+  Scheme Marketing Name: 'MarketingName$<rx:\d{8}>',
+  Company Name: index=2,
+  Profit Share: ' No',
+  Scheme Template Complete: ' No'
+}
+
+ProductsTab: {
+  Product Association Effective Date: $<today>,
+  Add: add
+}
+
+TestData_CloseProductsTab: {
+  ProductsTab: {
+    Product: 'contains=testID',
+    Product Association Effective Date: $<today>,
+    Add: add
+  }
+}

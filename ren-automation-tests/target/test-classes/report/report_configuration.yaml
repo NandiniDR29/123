@@ -1,0 +1,22 @@
+Report: [
+{
+  Type: TestAnalytics,
+  Title: Regression,
+  Template: "jenkins_etest_nologs.ftlh",
+  JenkinsJob: "regression_runner",
+  Suites: {
+    CEM: { LogFile: com_exigen_ren_modules_cem },
+    Case Profile: { LogFile: com_exigen_ren_modules_caseprofile },
+    Policy: { LogFile: com_exigen_ren_modules_policy },
+    Rating: { LogFile: com_exigen_ren_modules_rating },
+    DocGen: { LogFile: com_exigen_ren_modules_docgen },
+    Billing: { LogFile: com_exigen_ren_modules_billing },
+    Commission: { LogFile: com_exigen_ren_modules_commission },
+    Claims: { LogFile: com_exigen_ren_modules_claim },
+    Platform: { LogFile: com_exigen_ren_modules_platform },
+    DXP: { LogFile: com_exigen_ren_modules_dxp },
+    Enrollment: { LogFile: com_exigen_ren_modules_enrollment },
+    External Interfaces: { LogFile: com_exigen_ren_modules_externalInterfaces }
+  }
+}
+]

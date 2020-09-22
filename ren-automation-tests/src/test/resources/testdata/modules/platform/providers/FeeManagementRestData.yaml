@@ -1,0 +1,225 @@
+TestData_ServiceFeeSchedule: {
+  "feeScheduleType": "N",
+  "feeScheduleCode": "QA Network"
+}
+
+TestData_ServiceNetWork: {
+  "networkCode": "CX01",
+  "networkName": "networkName",
+  "networkType": "networkType"
+}
+
+TestData_NetworkJoinAgreement: {
+  "termEffectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "termExpirationDate": "$<today+2y:yyyy-MM-dd>",
+  "serviceNetworkID": '$<static:networkID>',
+  "serviceFeeScheduleID": '$<static:feeScheduleID>',
+  "serviceAgentAssignmentID": '$<static:agentAssignmentID>',
+}
+
+TestData_NetworkJoinAgreements: {
+  "serviceAgentAssignmentID": '$<static:agentAssignmentID>',
+  "networkJoinAgreementBaseCreateDTOs": [
+  {
+    "termEffectiveDate": "$<today-1y:yyyy-MM-dd>",
+    "termExpirationDate": "$<today+2y:yyyy-MM-dd>",
+    "serviceNetworkID": '$<static:networkID>',
+    "serviceFeeScheduleID": '$<static:feeScheduleID>'
+  }
+  ]
+}
+
+Network_WithFeeRatesEffectiveDate: {
+  "serviceAgentAssignmentID": '$<static:agentAssignmentID>',
+  "networkJoinAgreementBaseCreateDTOs": [
+  {
+    "termEffectiveDate": "$<today-1y:yyyy-MM-dd>",
+    "termExpirationDate": "$<today+2y:yyyy-MM-dd>",
+    "feeRatesEffectiveDate": "$<today-1y:yyyy-MM-dd>",
+    "serviceNetworkID": '$<static:networkID>',
+    "serviceFeeScheduleID": '$<static:feeScheduleID>'
+  }
+  ]
+}
+
+TestData_ServiceFeeAgreement: {
+  "termEffectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "termExpirationDate": "$<today+2yM:yyyy-MM-dd>",
+  "serviceNetworkID": '$<static:networkID>',
+  "serviceFeeScheduleID": '$<static:feeScheduleID>',
+  "serviceProviderFacilityId": '$<static:providerFacilityId>'
+}
+
+TestData_ServiceFeeAgreements: {
+  "serviceProviderFacilityID": '$<static:providerFacilityId>',
+  "serviceFeeAgreementBaseCreateDTOs": [
+  {
+    "termEffectiveDate": "$<today-1y:yyyy-MM-dd>",
+    "termExpirationDate": "$<today+2y:yyyy-MM-dd>",
+    "serviceNetworkID": '$<static:networkID>',
+    "serviceFeeScheduleID": '$<static:feeScheduleID>'
+  }
+  ]
+}
+
+TestData_ServiceFeeScheduleVersion: {
+  "effectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "expirationDate": "$<today+5y:yyyy-MM-dd>",
+  "serviceFeeScheduleDTO": {
+    "id": '$<static:feeScheduleID>',
+    "feeScheduleType": "N",
+    "feeScheduleCode": "QA Network"
+  },
+  "serviceFeeRateDTOs": [
+    {
+      "feeCode": "D0160",
+      "feeAmount": 160
+    },
+    {
+      "feeCode": "D0471",
+      "feeAmount": 160
+    },
+    {
+      "feeCode": "D8010",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8020",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8030",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8040",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8050",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8060",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8070",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8080",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8090",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8120",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8210",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8220",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8360",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8370",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8460",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8470",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8480",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8560",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8570",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8580",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8650",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8660",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8670",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8680",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8681",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8690",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8691",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8692",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8693",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8694",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8695",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8750",
+      "feeAmount": 1110
+    },
+    {
+      "feeCode": "D8999",
+      "feeAmount": 1110
+    }
+  ]
+}
+
+FeeSchedule_Network_Binding: {
+  "effectiveDate": "$<today-1y:yyyy-MM-dd>",
+  "expirationDate": "$<today+5y:yyyy-MM-dd>",
+  "serviceFeeScheduleVersionId": '$<static:serviceFeeScheduleVersionId>',
+  "serviceNetworkId": '$<static:networkID>'
+}
+
+
+

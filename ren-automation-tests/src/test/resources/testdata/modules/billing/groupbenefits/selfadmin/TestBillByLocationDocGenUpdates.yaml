@@ -1,0 +1,280 @@
+CaseProfile_TestData: {
+  CaseProfileDetailsTab: '@CaseProfileDetailsTab',
+  ProductAndPlanManagementTab: '@ProductAndPlanManagementTabGBGB',
+  ClassificationManagementTab: ['@ClassificationManagementTabEmployment'],
+  LocationManagementTab: ['@Billing_Location_LOC1', '@Billing_Location_LOC2', '@Billing_Location_LOC3'],
+  FileIntakeManagementTab: []
+}
+
+SetupBillingGroups_ForTwoLocs_TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<today+1M>,
+    Reason: index=1
+  },
+  BillingLocationsMappingTab: '@BillingLocationsMappingTab',
+  BillingGroupsTab: ['@BillingGroups001', '@BillingGroups002'],
+  BillingAccountSetupTab: ['@BillingSetupBG002']
+}
+
+SetupBillingGroups_WithThirdLoc_TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<today+2M>,
+    Reason: index=1
+  },
+  BillingLocationsMappingTab: '@BillingLocationsMappingTabWithThirdLoc',
+  BillingGroupsTab: [
+  {
+    Group: BG001,
+    Billing Location: [LOC1]
+  },
+  {
+    Group: BG002,
+    Billing Location: [LOC2]
+  },
+  {
+    Add Billing Group: CLICK,
+    Billing Group Name: BG003,
+    Billing Group Type: Employment,
+    Payor: Sponsor,
+    Payment Mode: 12,
+    Coverage: 'Enhanced Accident - Enhanced 10 Units',
+    Classification Group: 'Employment',
+    Billing Location: [LOC3]
+  }
+  ],
+  BillingAccountSetupTab: ['@BillingSetupBG003']
+}
+
+SetupBillingGroups_RemoveBG002-003_TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<today+3M>,
+    Reason: index=1
+  },
+  BillingLocationsMappingTab: {},
+  BillingGroupsTab: [
+  {
+    Group: BG001,
+    Billing Location: [LOC1, LOC2, LOC3]
+  },
+  {
+    Remove: CLICK,
+    Group: BG002,
+  },
+  {
+    Remove: CLICK,
+    Group: BG003,
+  }
+  ],
+  BillingAccountSetupTab: {}
+}
+
+SetupBillingGroups_BG001-002_TestData: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<today+4M>,
+    Reason: index=1
+  },
+  BillingLocationsMappingTab: {},
+  BillingGroupsTab: [
+  {
+    Group: BG001,
+    Billing Location: [LOC1, LOC2]
+  },
+  {
+    Add Billing Group: CLICK,
+    Billing Group Name: BG002,
+    Billing Group Type: Employment,
+    Payor: Sponsor,
+    Payment Mode: 12,
+    Coverage: 'Enhanced Accident - Enhanced 10 Units',
+    Classification Group: 'Employment',
+    Billing Location: [LOC3]
+  }
+  ],
+  BillingAccountSetupTab: {
+    Billing Group Name: BG002,
+    Select Action: 'Create New Account'
+  }
+}
+
+BillingLocationsMappingTab: {
+  Classification Group: 'Employment',
+  Billing Location: [LOC1, LOC2]
+}
+
+BillingLocationsMappingTabWithThirdLoc: {
+  Classification Group: 'Employment',
+  Billing Location: [LOC1, LOC2, LOC3]
+}
+
+BillingGroups001: {
+  Group: BG001,
+  Classification Group: 'Employment',
+  Billing Location: [LOC1]
+}
+
+BillingSetupBG002: {
+  Billing Group Name: BG002,
+  Select Action: 'Bill Under Account',
+  Bill Under Account: index=1
+}
+
+BillingSetupBG003: {
+  Billing Group Name: BG003,
+  Select Action: 'Bill Under Account',
+  Bill Under Account: index=1
+}
+
+BillingGroups002: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG002,
+  Billing Group Type: Employment,
+  Payor: Sponsor,
+  Payment Mode: 12,
+  Coverage: 'Enhanced Accident - Enhanced 10 Units',
+  Classification Group: 'Employment',
+  Billing Location: [LOC2]
+}
+
+BillingGroups003: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG003,
+  Billing Group Type: Employment,
+  Payor: Sponsor,
+  Payment Mode: 12,
+  Coverage: 'Enhanced Accident - Enhanced 10 Units',
+  Classification Group: 'Employment',
+  Billing Location: [LOC3]
+}
+
+
+ProductAndPlanManagementTabGBGB: {
+  Product: Group Benefits
+}
+
+CaseProfileDetailsTab: {
+  Case Profile Name: __first_one,
+  Effective Date: $<today-1y>,
+  Group Domicile State: CA,
+  Agency / Producer: [QAG - QA Agency]
+}
+
+ClassificationManagementTabEmployment: {
+  Classification Group: {
+    Class Name: Employment,
+    Class Number: Employment,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'No'
+  },
+  Sub Groups: ['@Sub1']
+}
+
+Sub1: {
+  Classification Sub-Group: {
+    Sub-Group Name: '$<static:ClassificationSubGroup:[rx:SubGroup\d{8}]>',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Gender: Male,
+    Tobacco: 'Yes',
+    Min Age: '20',
+    Max Age: '50'
+  }
+}
+
+Billing_Location_LOC1: {
+  Add Billing Location: {
+    Location Name: 'LOC1',
+    Location Number: '1',
+    Tax Identification: '11-6543201'
+  }
+}
+
+Billing_Location_LOC2: {
+  Add Billing Location: {
+    Location Name: 'LOC2',
+    Location Number: '2',
+    Tax Identification: '22-6543201'
+  }
+}
+
+Billing_Location_LOC3: {
+  Add Billing Location: {
+    Location Name: 'LOC3',
+    Location Number: '3',
+    Tax Identification: '33-6543201'
+  }
+}
+
+Endorsement_DataGather_TestData: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlans', '@PlanDefinitionTab_BASEBU'],
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: ['@ClassificationManagementTab_BASEBU'],
+  PremiumSummaryTab: {}
+}
+
+Endorsement_Issue_TestData: {
+  PolicyInformationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: [{
+                             Group: BG001,
+                             Classification Group: 'Employment',
+                             Coverage: 'Enhanced Accident - Enhanced 10 Units',
+                             Billing Location: [LOC1, LOC2]
+
+                           },
+                           {
+                             Group: BG002,
+                             Classification Group: 'Employment',
+                             Coverage: 'Enhanced Accident - Base Buy-Up',
+                             Billing Location: [LOC3]
+                           }],
+  IssueActionTab: {},
+  BillingAccountTab: {}
+}
+
+
+SelectPlans: {
+  Plan: [Base Buy-Up, Enhanced 10 Units]
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    'Self-administered?': Yes,
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Age Termination:{
+    Termination Age: 75
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+ClassificationManagementTab_BASEBU: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 1
+}
+

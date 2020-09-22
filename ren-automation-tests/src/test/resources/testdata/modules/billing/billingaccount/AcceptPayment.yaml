@@ -1,0 +1,200 @@
+TestData_Cash: {
+  AcceptPaymentActionTab: {
+    Payment Method: 'Cash',
+#    'Reference #': 'Reference$<rx:\d{8}>',
+    Amount: 100,
+  }
+}
+
+TestData_Cash_TeamMerge: {
+  AcceptPaymentActionTab: {
+    Payment Method: 'Cash',
+  }
+}
+
+TestData_Cash_Invoice: {
+  AcceptPaymentActionTab: {
+    Payment Method: 'Cash',
+    Amount: 100,
+  }
+}
+
+TestData_EFT_Invoice: {
+  AcceptPaymentActionTab: {
+    Payment Method: 'EFT',
+    'Routing#/Transit #': 121122676,
+    'Account #': '54321',
+    Bank Name: 'BankName_12345',
+    Bank Account Type: index=1,
+    Name: '$<rx:RestNameLegal\d{5}>',
+    Amount: 100
+  }
+}
+
+TestData_Cash_Allocate_Existing_Suspense: {
+  AcceptPaymentActionTab: {
+    'Allocate existing Suspense': true
+  }
+}
+
+TestData_Payment_Over_Amount: {
+  AcceptPaymentActionTab: {
+    Payment Method: 'Cash',
+    Amount: 100,
+    'Suspend Remaining?': 'Yes',
+  }
+}
+
+TestData_RestSavedPayment: {
+  amount: {
+    value: 5050,
+    currency: "USD"
+  },
+  paymentDetails: {
+    type: "savedPaymentMethod",
+    savedPaymentMethod: {
+      id: "id"
+    }
+  }
+}
+
+TestData_Cash_Suspend_Remaining: {
+  AcceptPaymentActionTab: {
+    Payment Method: 'Cash',
+    'Suspend Remaining?': 'Yes'
+  }
+}
+
+TestData_Ach_Rest: {
+  query: {
+    referenceNumber: '$<rx:\d{3}>',
+    accountNumber: ''
+  },
+  #request body
+  amount: {
+    value: 10,
+    currency: "USD"
+  },
+  paymentDetails: {
+   type: "ach",
+   ach: {
+     transitNumber: "1",
+     bankName: "1",
+     accountNumber: "1",
+     nameTypeCd: "IND",
+     firstName: "First Name",
+     lastName: "Last Name",
+     otherName: "Other Name"
+   }
+  }
+}
+
+
+Manage_Payment_Methods: {
+ AcceptPaymentActionTab:{
+   Manage Payment Methods:{
+     Payment Method: ACH,
+     'Routing#/Transit #': 121122676,
+     'Account #': '$<rx:\d{5}>',
+     Bank Name: '$<rx:BankName\d{5}>',
+     Bank Account Type: index=1,
+     Name Type: Non-Individual,
+     Name: '$<rx:RestNameLegal\d{5}>',
+     'Does the Bank Account belong to the Insured?': No,
+     Payor's Name Type: Non-Individual,
+     Payor's Name: '$<rx:PayorRestNameLegal\d{5}>',
+     Billing Mailing Address: {
+       Country: United States,
+       'Zip / Postal Code': 12345,
+       'Address Line 1': 345345345,
+       City: '$<rx:\d{5}>',
+       'State / Province ComboBox': CA
+     },
+     Add/Update: 'click'
+   }
+ }
+}
+
+Manage_Payment_Methods_EFT: {
+  AcceptPaymentActionTab:{
+    Manage Payment Methods:{
+      Payment Method: EFT,
+      'Routing#/Transit #': 121122676,
+      'Account #': '$<rx:\d{5}>',
+      Bank Name: '$<rx:BankName\d{5}>',
+      Bank Account Type: index=1,
+      Name Type: Non-Individual,
+      Name: '$<rx:RestNameLegal\d{5}>',
+      'Does the Bank Account belong to the Insured?': No,
+      Payor's Name Type: Non-Individual,
+      Payor's Name: '$<rx:PayorRestNameLegal\d{5}>',
+      Billing Mailing Address: {
+        Country: United States,
+        'Zip / Postal Code': 12345,
+        'Address Line 1': 345345345,
+        City: '$<rx:\d{5}>',
+        'State / Province ComboBox': CA
+      },
+      Add/Update: 'click'
+    }
+  }
+}
+
+Manage_Payment_Methods_Credit_Card: {
+  AcceptPaymentActionTab:{
+    Manage Payment Methods:{
+      Payment Method: Credit Card,
+      Card Billing Address: {
+        State / Province: CA
+      },
+      General: {
+        Type: Visa,
+        Number: 4916985100150223,
+        Card Holder Name: 'HolderName$<rx:\d{8}>',
+        Card Expiration Month: 8,
+        Card Expiration Year: 2025
+      },
+      'Does the Credit Card belong to the Insured?': No,
+      Payor's Name Type: Non-Individual,
+      Payor's Name: '$<rx:PayorRestNameLegal\d{5}>',
+      Billing Mailing Address: {
+        Country: United States,
+        'Zip / Postal Code': 12345,
+        'Address Line 1': 345345345,
+        City: '$<rx:\d{5}>',
+        'State / Province ComboBox': CA
+      },
+      Add/Update: 'click'
+    }
+  }
+}
+
+Payment_Methods_Credit_Card: {
+  AcceptPaymentActionTab:{
+    Payment Method: Credit Card,
+    'Suspend Remaining?': Yes,
+    Country: United States,
+    'Zip / Postal Code': 12345,
+    'Address Line 1': 345345345,
+    City: '$<rx:\d{5}>',
+    'State / Province': CA,
+    Type: Visa,
+    Number: 4916985100150223,
+    Card Holder Name: 'HolderName$<rx:\d{8}>',
+    Card Expiration Month: 8,
+    Card Expiration Year: 2025
+  }
+}
+
+Payment_Methods_Credit_EFT: {
+  AcceptPaymentActionTab:{
+    Payment Method: EFT,
+    'Suspend Remaining?': Yes,
+    'Routing#/Transit #': 121122676,
+    'Account #': '$<rx:\d{5}>',
+    Bank Name: '$<rx:BankName\d{5}>',
+    Bank Account Type: index=1,
+    Name Type: Non-Individual,
+    Name: '$<rx:RestNameLegal\d{5}>'
+  }
+}

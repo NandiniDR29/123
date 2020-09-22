@@ -1,0 +1,126 @@
+TestDataIncludeActive: {
+  AgencyTransferTab: {
+    Add Transfer: 'click',
+    Transfer Type: 'Inter-agency',
+    Reason: index=1,
+    Transfer Effective Upon: 'Other',
+    Transfer Effective Date: $<today>,
+    Commission Impact: 'No',
+    AddTransferSourse : {
+      Agency Code: QAG,
+    },
+    Insurance Agent: 'ISBA ISBA',
+    Products: 'Auto (Preconfigured)',
+    Active: 'Include',
+    Policy Pending: 'Exclude',
+    Pending Completion: 'Exclude',
+    Cancellation Pending: 'Exclude',
+    Cancellation Notice: 'Exclude',
+    Cancelled: 'Exclude',
+    Expired: 'Exclude',
+    AddTransferTarger: {
+      Agency Code: Broker1Code,
+    }
+  }
+}
+
+TestDataIncludeActiveCL: {
+  AgencyTransferTab: {
+    Add Transfer: 'click',
+    Transfer Type: 'Inter-agency',
+    Reason: index=1,
+    Transfer Effective Upon: 'Other',
+    Transfer Effective Date: $<today>,
+    Commission Impact: 'No',
+    AddTransferSourse : {
+      Agency Code: BOR Transfer Sourse,
+    },
+#    Insurance Agent: 'ISBA ISBA',
+    Products: 'Auto (Preconfigured)',
+    Active: 'Include',
+    Policy Pending: 'Exclude',
+    Pending Completion: 'Exclude',
+    Cancellation Pending: 'Exclude',
+    Cancellation Notice: 'Exclude',
+    Cancelled: 'Exclude',
+    Expired: 'Exclude',
+    AddTransferTarger: {
+      Agency Code: BOR Transfer Target,
+    }
+  }
+}
+
+TestDataIncludeCancel: {
+  AgencyTransferTab: {
+      Add Transfer: 'click',
+      Transfer Type: 'Inter-agency',
+      Reason: index=1,
+      Transfer Effective Upon: 'Other',
+      Transfer Effective Date: '$<today-14d>',
+      Commission Impact: 'No',
+      AddTransferSourse : {
+        Agency Code: QAG,
+      },
+      Insurance Agent: 'ISBA ISBA',
+      Products: 'Auto (Preconfigured)',
+      Active: 'Exclude',
+      Policy Pending: 'Exclude',
+      Pending Completion: 'Exclude',
+      Cancellation Pending: 'Exclude',
+      Cancellation Notice: 'Exclude',
+      Cancelled: 'Include',
+      Expired: 'Exclude',
+      AddTransferTarger: {
+        Agency Code: Broker1Code,
+      }
+    }
+}
+
+TestDataIncludeCancelCL: {
+  AgencyTransferTab: {
+    Add Transfer: 'click',
+    Transfer Type: 'Inter-agency',
+    Reason: index=1,
+    Transfer Effective Upon: 'Other',
+    Transfer Effective Date: '$<today-14d>',
+    Commission Impact: 'No',
+    AddTransferSourse : {
+      Agency Code: BOR Transfer Sourse,
+    },
+#    Insurance Agent: 'ISBA ISBA',
+    Products: 'Auto (Preconfigured)',
+    Active: 'Exclude',
+    Policy Pending: 'Exclude',
+    Pending Completion: 'Exclude',
+    Cancellation Pending: 'Exclude',
+    Cancellation Notice: 'Exclude',
+    Cancelled: 'Include',
+    Expired: 'Exclude',
+    AddTransferTarger: {
+      Agency Code: BOR Transfer Target,
+    }
+  }
+}
+
+Adjustment_PREC_HO: {
+    Products: 'Home (Preconfigured)',
+}
+
+Adjustment_CL: {
+  Products: 'Commercial (Preconfigured)'
+}
+
+Search: {
+  AgencyTransferTab: {
+    Status: 'Preparing For Submit',
+    Transfer Id: ''
+    }
+}
+
+Adjustment_CYBER: {
+  Products: 'Cyber (Preconfigured)'
+}
+
+Adjustment_EO: {
+  Products: 'Errors & Omissions'
+}

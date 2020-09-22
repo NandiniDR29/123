@@ -1,0 +1,160 @@
+TestData: {
+  InitiniateDialog: '@<ac_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<ac_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<ac_master>@DataGather@SelectPlan', '@<ac_master>@DataGather@PlanDefinitionTab_ENHANCED10'],
+  EnhancedBenefitsAtoCTab: ['@<ac_master>@DataGather@EnhancedBenefitsAtoCTab_ENHANCED10'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_ENHANCED10'],
+  EnhancedBenefitsHtoLTab: ['@<ac_master>@DataGather@EnhancedBenefitsHtoLTab_ENHANCED10'],
+  EnhancedBenefitsMtoTTab: ['@<ac_master>@DataGather@EnhancedBenefitsMtoTTab_ENHANCED10'],
+  OptionalBenefitTab: {},
+  ClassificationManagementTab: [ '@<ac_master>@DataGather@ClassificationManagementTab_ENHANCED10'],
+  PremiumSummaryTab: {}
+}
+
+EnhancedBenefitsDtoFTab_ENHANCED10: {
+  PlanKey:  ENHANCED10-Enhanced 10 Units,
+  Dislocation Benefit: {
+    Ankle / Bone or Bones of the Foot Open Reduction Amount: 3200,
+    Ankle / Bone or Bones of the Foot Closed Reduction Amount: 1600,
+    Bone / Bones of the Hand Open Reduction Amount: 1200,
+    Bone / Bones of the Hand Closed Reduction Amount: 600,
+    Collarbone (Sternoclavicular) Open Reduction Amount: 2000,
+    Collarbone (Sternoclavicular) Closed Reduction Amount: 1000,
+    Collarbone (Acromioclavicular and separation) Open Reduction Amount: 400,
+    Collarbone (Acromioclavicular and separation) Closed Reduction Amount: 200,
+    Elbow Open Reduction Amount: 1200,
+    Elbow Closed Reduction Amount: 600,
+    Hip Open Reduction Amount: 8000,
+    Hip Closed Reduction Amount: 4000,
+    Knee Open Reduction Amount: 4000,
+    Knee Closed Reduction Amount: 2000,
+    Lower Jaw Closed Reduction Amount: 600,
+    Lower Jaw Open Reduction Amount: 1200,
+    One or more Fingers or Toes Open Reduction Amount: 400,
+    One or more Fingers or Toes Closed Reduction Amount: 200,
+    Shoulder Open Reduction Amount: 1200,
+    Shoulder Closed Reduction Amount: 600,
+    Wrist Open Reduction Amount: 1200,
+    Wrist Closed Reduction Amount: 600,
+    Incomplete Dislocation or Without Anesthesia: 25%
+  },
+  Fracture Benefit: {
+    Face or Nose (except mandible or maxilla) Closed Reduction Amount: 700,
+    Face or Nose (except mandible or maxilla) Open Reduction Amount: 1400,
+    Skull Fracture - Depressed (except bones of face and nose) Open Reduction Amount: 10000,
+    Skull Fracture - Depressed (except bones of face and nose) Closed Reduction Amount: 5000,
+    Skull Fracture - Non-Depressed (except bones of face and nose) Amount Open Reduction Amount: 4000,
+    Skull Fracture - Non-Depressed (except bones of face and nose) Amount Closed Reduction Amount: 2000,
+    Lower Jaw / Mandible (except alveolar process) Closed Reduction Amount: 600,
+    Lower Jaw / Mandible (except alveolar process) Open Reduction Amount: 1200,
+    Upper Jaw / Maxilla (except alveolar process) Closed Reduction Amount: 700,
+    Upper Jaw / Maxilla (except alveolar process) Open Reduction Amount: 1400,
+    Upper Arm between Elbow and Shoulder (humerus) Closed Reduction amount: 700,
+    Upper Arm between Elbow and Shoulder (humerus) Open Reduction Amount: 1400,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum) Closed Reduction Amount': 600,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum) Open Reduction Amount': 1200,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers) Closed Reduction Amount': 600,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers) Open Reduction Amount': 1200,
+    Rib Closed Reduction Amount: 500,
+    Rib Open Reduction Amount: 1000,
+    'Finger, Toe Closed Reduction Amount': 100,
+    'Finger, Toe Open Reduction Amount': 200,
+    Vertebrae / Body of (excluding vertebral processes) Closed Reduction Amount: 1600,
+    Vertebrae / Body of (excluding vertebral processes) Open Reduction Amount: 3200,
+    Vertebral Processes Closed Reduction Amount: 600,
+    Vertebral Processes Open Reduction Amount: 1200,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx) Closed Reduction Amount': 1600,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx) Open Reduction Amount': 3200,
+    Hip / Thigh (femur) Closed Reduction Amount: 3000,
+    Hip / Thigh (femur) Open Reduction Amount: 6000,
+    Coccyx Closed Reduction Amount: 400,
+    Coccyx Open Reduction Amount: 800,
+    Leg (tibia and/or fibula) Closed Reduction Amount: 1600,
+    Leg (tibia and/or fibula) Open Reduction Amount: 3200,
+    Kneecap (patella) Closed Reduction Amount: 600,
+    Kneecap (patella) Open Reduction Amount: 1200,
+    Ankle Closed Reduction Amount: 600,
+    Ankle Open Reduction Amount: 1200,
+    Foot (except toes) Closed Reduction Amount: 600,
+    Foot (except toes) Open Reduction Amount: 1200,
+    Chip Fracture Benefit Amount: 25%
+  }
+}
+
+TestData_Claim: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabDiagnosisAndTreatment'],
+  BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab: '@BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab',
+  BenefitsDiagnosisAndTreatmentIncidentTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: {},
+  EAPServicesServiceRequestTab: {},
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {}
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: index=1
+}
+
+PolicyInformationPolicyTab: {
+  Original Effective Date: $<BOM>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Preferred Payment method: 'Check',
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Plan: index=1,
+  Coverage Name: index=1,
+  Limit Level: Per Occurrence,
+  Limit Amount: 100
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabDiagnosisAndTreatment: {
+  Damage: Diagnosis and Treatment
+}
+
+BenefitsDiagnosisAndTreatmentInjuryPartyInformationTab: {
+  Associated Policy Party: index=1,
+  Date of Birth: $<today-40y>,
+  'Itemized Injury/Illness': [
+  {
+    Associated Benefits: Fracture Benefit,
+    Associated Scheduled Item: contains=Ankle-Closed Reduction,
+    Date of Service: $<today>
+  }]
+}
+
+
+

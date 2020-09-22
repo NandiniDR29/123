@@ -1,0 +1,287 @@
+TestData_Master: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_PlanB', '@PlanDefinitionTab_PlanC'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_PlanB', '@ClassificationManagementTab_PlanC'],
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  County Code: '001 - Albany County',
+  Prior Carrier Name: 'index=1',
+  Total Number of Eligible Lives: '100',
+  'Prior Claims Allowed?': true,
+  'Group is an Association?': 'Yes',
+  Blend Demographics: No,
+  Prior Claims Retroactive Effective Date: $<today-6M>,
+  Deduction by Pay Period: Semi-Monthly,
+  Agency / Producer: 'QA Agency',
+  Agent Sub Producer: 'QA QA user',
+  'Commission Split?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+}
+
+EnrollmentTab: {
+  Planned Enrollment Communication Channels: [Education Videos, Payroll Stuffers],
+  Enrollment Consultant/Manager: Greg,
+  Required Enrollment Response: Enroll,
+  Enrollment Response Required Date: $<today>,
+  Competing Influences: All
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 50,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    Rate Type: Area + Tier,
+    Experience Claim Amount: 200,
+    Credibility Factor: 0.5,
+    Rate Cap: '2nd Year & 3rd Year',
+    2nd Year Cap %: 1,
+    3rd Year Cap %: 19
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: Amount and Mode Only,
+    Waiting Period Amount: 12,
+    Waiting Period Mode: Days,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Copay: {
+    Exam/Materials: $25 combined,
+    Progressive Lenses in Full: No
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: $200,
+    Contact Lenses - Allowance up to: Same as Frames
+  },
+  Frequency: {
+    Frequency Definition: Service Year,
+    Exam/Lenses/Frame: Plan C (12/12/12),
+    Contacts: 12
+  },
+  Special Plan Features: {
+    Photochromic Lenses Factor: 2,
+    Scratch Coating Factor: 3,
+    Safety Glasses Factor: 4
+  }
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  VSP Division: '10',
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 0,
+    Member Payment Mode: '12',
+  },
+  Frequency: {
+    Frequency Definition: Service Year,
+    Exam/Lenses/Frame: Plan C (12/12/12),
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: Amount and Mode Only,
+    Waiting Period Amount: 12,
+    Waiting Period Mode: Days,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Special Plan Features: {
+    Photochromic Lenses Factor: 2,
+    Scratch Coating Factor: 3,
+    Safety Glasses Factor: 4
+  }
+}
+
+PlanDefinitionTab_PlanC: {
+  PlanKey: '10/25 Plan C 150-10/25 Plan C 150',
+  VSP Division: '10',
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 0,
+    Member Payment Mode: '12',
+  },
+  Frequency: {
+    Frequency Definition: Service Year,
+    Exam/Lenses/Frame: Plan C (12/12/12),
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: Amount and Mode Only,
+    Waiting Period Amount: 12,
+    Waiting Period Mode: Days,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Special Plan Features: {
+    Photochromic Lenses Factor: 2,
+    Scratch Coating Factor: 3,
+    Safety Glasses Factor: 4
+  }
+}
+
+ClassificationManagementTab: {
+  Classification Group Combobox: All,
+  Plan Group Combobox: All,
+  Add Classification Group to the Plan: click
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: '32'
+  }
+}
+
+ClassificationManagementTab_PlanB: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: '12'
+  }
+}
+
+ClassificationManagementTab_PlanC: {
+  Plan: PlanC-10/25 Plan C 150,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: '12'
+  }
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+TestDataProposal: {
+  QuotesSelectionActionTab: {
+    Select Quote by row number: [1],
+    Proposal Name: 'ProposalName$<rx:\d{5}>'
+  },
+  ProposalActionTab: {
+    Override Rules: CLICK,
+    Override Rules List: ["Proposal requires Underwriter approval because Master Quote contains Rate Cap..."]
+  }
+}
+
+TestData_Certificate: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  PlansTab: '@PlansTab',
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+
+InsuredTab: {
+  General Information: {
+    Title: Mr,
+    First Name: 'John$<rx:\d{8}>',
+    Middle Name: 'Middle$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Suffix: 'Sr.',
+    Date of Birth: $<today-25y>,
+    Gender: Male,
+    Marital Status: 'Single',
+    Tax Identification: '$<rx:\d{9}>',
+    Tobacco: 'Yes',
+    e-Mail: 'email$<rx:\d{8}>@test.com'
+  },
+  Address Information: {
+    Zip / Post Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Address Line 2: 'Address2$<rx:\d{8}>',
+    Address Line 3: 'Address3$<rx:\d{8}>'
+  },
+  Relationship Information: {
+    Classification Group: index=1,
+    Original Hire Date: $<today-2y>,
+    Employee ID: '$<rx:\d{9}>',
+    Rehire Date: $<today>,
+    Country: United States,
+    Job Code: index=1,
+    Job Title: 'Title$<rx:\d{8}>',
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Payroll Frequency: Monthly
+  }
+}
+
+PlansTab: {
+  Plan Name: index=1,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: ['@TestData_Participant', '@TestData_Child_Participant','@TestData_Spouse_Participant'],
+}
+
+TestData_Issue_Certificate: {
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  }
+}
+
+
+TestData_Child_Participant: {
+  Participant Selection: New Person,
+  Role Name: Child Participant,
+  Participant General Info: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>,
+    Relationship to Insured: Spouse/Domestic Partner
+  }
+}
+TestData_Spouse_Participant: {
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>,
+  }
+}
+
+TestData_Participant: {
+  Participant Selection: index=0
+}

@@ -1,0 +1,5 @@
+TestData: {
+  SecureClaimActionTab: {    
+    Details: 'Details$<rx:\d{8}>'
+  }
+}

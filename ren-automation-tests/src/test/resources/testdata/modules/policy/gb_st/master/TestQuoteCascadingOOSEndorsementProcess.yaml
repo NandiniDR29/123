@@ -1,0 +1,24 @@
+TestData_Endorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Coverage Name: Employee Basic Life Insurance,
+    Rate: '500'
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_OOSEndorse: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Coverage Name: Employee Basic Life Insurance,
+    Rate: '600'
+  },
+  PremiumSummaryTab: {}
+}
+

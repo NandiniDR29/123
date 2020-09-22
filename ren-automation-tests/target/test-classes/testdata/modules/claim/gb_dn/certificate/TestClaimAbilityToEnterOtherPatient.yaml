@@ -1,0 +1,43 @@
+TestData_Individual1: {
+  IntakeInformationTab: {
+    Patient: {
+      Name: 'Other Individual',
+      First Name: 'Pablo',
+      Last Name: 'Velaskes',
+      Relationship to Primary Insured: 'Child - Son',
+      Date of Birth: '10/10/1985'
+    },
+    Patient Address: {
+      Address Type: 'Street Address',
+      Country: 'United States',
+      Zip / Postal Code: '90215',
+      Address Line 1: 'Address Line Pablo 1',
+      Address Line 2: 'Address Line Pablo 2',
+      Address Line 3: 'Address Line Pablo 3',
+      City: 'Welocita',
+      State / Province: 'CA'
+    }
+  }
+}
+
+TestData_Individual2: {
+  IntakeInformationTab: {
+    Patient: {
+      Name: 'Other Individual',
+      First Name: 'Marco',
+      Last Name: 'Velaskes',
+      Relationship to Primary Insured: 'Child - Son',
+      Date of Birth: '10/10/1987'
+    },
+    Patient Address: {
+      Address Type: 'Street Address',
+      Country: 'United States',
+      Zip / Postal Code: '90225',
+      Address Line 1: 'Address Line Marco 1',
+      Address Line 2: 'Address Line Marco 2',
+      Address Line 3: 'Address Line Marco 3',
+      City: 'Sampton',
+      State / Province: 'NC'
+    }
+  }
+}

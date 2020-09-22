@@ -1,0 +1,139 @@
+TestData_CreateQuote: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_PlanB', '@PlanDefinitionTab_PlanC'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_PlanB', '@ClassificationManagementTab_PlanC'],
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  ASO Plan: No,
+  Prior Carrier Name: 'EyeMed',
+  'Rate Guarantee (Months)': 24,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: index=1,
+  },
+  Copay: {
+    Exam/Materials: $0 combined
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan A (12/24/24)
+  }
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 0,
+    Member Payment Mode: '12',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last day of the month when employment is terminated
+  },
+  Copay: {
+    Exam/Materials: $5 combined
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: $120,
+    Contact Lenses - Allowance up to: Same as Frames
+  },
+  Frequency: {
+    Exam/Lenses/Frame: 'Plan D (24/24/24)',
+  }
+}
+
+PlanDefinitionTab_PlanC: {
+  PlanKey: '10/25 Plan C 150-10/25 Plan C 150',
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 0,
+    Member Payment Mode: '12',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last day of the month when employment is terminated
+  },
+  Copay: {
+    Exam/Materials: $15/$25
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: $120,
+    Contact Lenses - Allowance up to: Same as Frames
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan D (24/24/24)
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '32',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_PlanB: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '12',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_PlanC: {
+  Plan: PlanC-10/25 Plan C 150,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '12',
+  Coverage Tier: Employee Only
+}

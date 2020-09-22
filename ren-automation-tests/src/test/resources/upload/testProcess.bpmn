@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:activiti="http://activiti.org/bpmn" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:omgdc="http://www.omg.org/spec/DD/20100524/DC" xmlns:omgdi="http://www.omg.org/spec/DD/20100524/DI" typeLanguage="http://www.w3.org/2001/XMLSchema" expressionLanguage="http://www.w3.org/1999/XPath" targetNamespace="http://www.activiti.org/test">
+  <process id="com.exigen.eis.bpm.definitions.TestProcess.bpmn" name="TestProcess" isExecutable="true">
+    <startEvent id="startNode" name="startNode"></startEvent>
+    <userTask id="reviewTask" name="Target Review Task" activiti:assignee="isba" activiti:dueDate="PT1H" activiti:priority="1">
+	 <extensionElements>
+    <eis:suspendEnabled xmlns:eis="http://www.exigeninsurance.com/bpmn" value="true"></eis:suspendEnabled>
+    </extensionElements>
+    </userTask>
+    <userTask id="approveTask" name="approveTask" activiti:candidateGroups="General" activiti:priority="1"></userTask>
+    <endEvent id="endNode" name="endNode"></endEvent>
+    <sequenceFlow id="flow1" name="to User Task" sourceRef="startNode" targetRef="reviewTask"></sequenceFlow>
+    <sequenceFlow id="flow2" name="to User Task" sourceRef="reviewTask" targetRef="approveTask"></sequenceFlow>
+    <sequenceFlow id="flow3" name="to End" sourceRef="approveTask" targetRef="endNode"></sequenceFlow>
+    <textAnnotation id="textannotation1">
+      <text>Assignee: isba
+Candidate group: defaultGroup</text>
+    </textAnnotation>
+    <association id="association1" sourceRef="textannotation1" targetRef="reviewTask"></association>
+    <association id="association2" sourceRef="textannotation1" targetRef="approveTask"></association>
+  </process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_com.exigen.eis.bpm.definitions.TestProcess.bpmn">
+    <bpmndi:BPMNPlane bpmnElement="com.exigen.eis.bpm.definitions.TestProcess.bpmn" id="BPMNPlane_com.exigen.eis.bpm.definitions.TestProcess.bpmn">
+      <bpmndi:BPMNShape bpmnElement="startNode" id="BPMNShape_startNode">
+        <omgdc:Bounds height="35.0" width="35.0" x="240.0" y="320.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="reviewTask" id="BPMNShape_reviewTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="390.0" y="310.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="approveTask" id="BPMNShape_approveTask">
+        <omgdc:Bounds height="55.0" width="105.0" x="640.0" y="310.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="endNode" id="BPMNShape_endNode">
+        <omgdc:Bounds height="35.0" width="35.0" x="820.0" y="320.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape bpmnElement="textannotation1" id="BPMNShape_textannotation1">
+        <omgdc:Bounds height="50.0" width="250.0" x="480.0" y="190.0"></omgdc:Bounds>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge bpmnElement="flow1" id="BPMNEdge_flow1">
+        <omgdi:waypoint x="275.0" y="337.0"></omgdi:waypoint>
+        <omgdi:waypoint x="390.0" y="337.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="61.0" x="243.0" y="337.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow2" id="BPMNEdge_flow2">
+        <omgdi:waypoint x="495.0" y="337.0"></omgdi:waypoint>
+        <omgdi:waypoint x="640.0" y="337.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="61.0" x="478.0" y="337.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="flow3" id="BPMNEdge_flow3">
+        <omgdi:waypoint x="745.0" y="337.0"></omgdi:waypoint>
+        <omgdi:waypoint x="820.0" y="337.0"></omgdi:waypoint>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="14.0" width="30.0" x="718.0" y="337.0"></omgdc:Bounds>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="association1" id="BPMNEdge_association1">
+        <omgdi:waypoint x="605.0" y="240.0"></omgdi:waypoint>
+        <omgdi:waypoint x="442.0" y="310.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="association2" id="BPMNEdge_association2">
+        <omgdi:waypoint x="605.0" y="240.0"></omgdi:waypoint>
+        <omgdi:waypoint x="692.0" y="310.0"></omgdi:waypoint>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

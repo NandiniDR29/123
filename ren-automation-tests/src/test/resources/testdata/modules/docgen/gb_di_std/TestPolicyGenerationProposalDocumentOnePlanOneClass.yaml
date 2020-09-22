@@ -1,0 +1,66 @@
+Adjust_PolicyInformationTab: {
+  PolicyInformationTab: {
+    Rate Guarantee (Months): 12,
+    Next Renewal Effective Date: $<today+1y>,
+    Next Renewal Quote Start Date: $<today+1y>,
+    Situs State: NY,
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: 'QA QA user',
+      Sales Support Associate: 'QA QA user'
+    }
+  }
+}
+
+Adjust_PlanDefinitionTab_NC: {
+  PlanDefinitionTab: {
+    PlanKey: NC-NC,
+    Required Participation %: 100%,
+    Sponsor Payment Mode: 12,
+    Total Number of Eligible Lives: 1,
+    STAT Offset Amount: 500,
+    Eligibility: {
+      Minimum Hourly Requirement (hours per week): 15.00,
+      Eligibility Waiting Period Definition: First of the month following (amount and mode),
+      Waiting Period: 30,
+      Waiting Period Mode: Days
+    },
+    Options: {
+       Rehabilitation Incentive Benefit: None
+    },
+    Benefit Schedule: {
+       Partial Disability: None
+    }
+  }
+}
+
+TestData: {
+  STD7_2_RATE_BASIC_OF_CLASS: "STD RATE Per $10 Total Weekly Benefit",
+  STD7_3_USE_CLASS_SUB_GROUP: "false",
+  STD10_1_CLASSSEQ_NUM: "1",
+  STD10_2: "1",
+  STD10_3_CLASS_DISPLAY_IN_PDF: "Class 1: 1",
+  STD11_1_BENEFIT_ROW_NAME: "Benefit Percentage",
+  STD11_2_BENEFIT_ROW_DESC: "60% of Basic Weekly Earnings rounded to the next higher $1",
+  STD12: "1000.00",
+  STD13: "$25",
+  STD14: "7 days",
+  STD15: "7 days",
+  STD16: "Not Included",
+  STD17: "26 weeks",
+  STD18: "Total: Claimant is unable to perform the material and substantial duties of his/her own job and is not working in any occupation.",
+  STD19: "Not Included",
+  STD20: "None",
+  STD21: "Compulsory Disability Benefits, Sick leave, Salary Continuation, Work Earnings, Unemployment Compensation, and other benefits unless otherwise stated.",
+  STD22: "0% (non-contributory)",
+  STD23: "100%",
+  STD24: "Non-Occupational",
+  STD25: "Included for replacement plans.",
+  STD26: "Not Included",
+  STD27: "30 days",
+  STD28: "Not Included",
+  STD29: "Primary & Family"
+}

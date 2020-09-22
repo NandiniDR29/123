@@ -1,0 +1,180 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@<dn_master>@DataGather@SelectPlan', '@PlanDefinitionTab'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+}
+
+PlanDefinitionTab: {
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{
+  },
+  Dental Deductible:{
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Fluoride Treatment: 'Not Covered'
+    }
+  }
+}
+
+ClassificationManagementTab: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 6
+  }
+  ]
+}
+
+TestData_Certificate1: {
+  CertificatePolicyTab: '@<dn_certificate>@DataGather@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab_Cert1',
+  PlansTab: '@PlansTab_Cert1',
+  PremiumSummaryTab: {}
+}
+
+InsuredTab_Cert1: {
+  First Name: '$<static:FN_REN-36538_Cert1:[rx:John\d{8}]>',
+  Last Name: '$<static:LN_REN-36538_Cert1:[rx:Smith\d{8}]>',
+  Marital Status: 'Single',
+  Tobacco: 'Yes',
+  Tax Identification: '$<static:SSN_REN-36538_Cert1:[rx:\d{9}]>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: '$<static:Address_REN-36538_Cert1:[rx:Address\d{8}]>',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  General Information: {
+    Date of Birth: 06/09/1999,
+    Gender: Female,
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Title: just a job,
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Employment Status: Terminated,
+    Payroll Frequency: Monthly
+  }
+}
+
+PlansTab_Cert1: {
+  Plan Name: index=1,
+  Coverage Tier: Employee Only,
+  Enrollment Date: $<today>,
+  Participants: [
+  {
+    Participant Selection: index=0
+  }],
+}
+
+
+TestData_Certificate2: {
+  CertificatePolicyTab: '@<dn_certificate>@DataGather@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab_Cert2',
+  PlansTab: '@PlansTab_Cert2',
+  PremiumSummaryTab: {}
+}
+
+InsuredTab_Cert2: {
+  First Name: '$<static:FN_REN-36538_Cert2:[rx:John\d{8}]>',
+  Last Name: '$<static:LN_REN-36538_Cert2:[rx:Smith\d{8}]>',
+  Marital Status: 'Domestic Partner',
+  Tobacco: 'Yes',
+  Tax Identification: '$<static:SSN_REN-36538_Cert2:[rx:\d{9}]>',
+  Zip / Post Code: '94596',
+  City: Walnut Creek,
+  State / Province: CA,
+  Address Line 1: '$<static:Address_REN-36538_Cert2:[rx:Address\d{8}]>',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  General Information: {
+    Date of Birth: 08/09/1999,
+    Gender: Male,
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Title: just a job,
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Employment Status: Inactive,
+    Payroll Frequency: Monthly
+  }
+}
+
+PlansTab_Cert2: {
+  Plan Name: index=1,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: ['@TestData_Participant', '@TestData_Child_Participant','@TestData_Spouse_Participant'],
+}
+
+TestData_Participant: {
+  Participant Selection: index=0
+}
+
+TestData_Child_Participant: {
+  Participant Selection: New Person,
+  Role Information: {
+    Role Name: Child Participant
+  },
+  General Information: {
+    First Name: '$<static:FN_Child_REN-36538_Cert2:[rx:Martha\d{8}]>',
+    Last Name: '$<static:LN_Child_REN-36538_Cert2:[rx:Stewart\d{8}]>',
+    Relationship to Insured: 'Disabled Dependent',
+    Date of Birth: 05/05/1999,
+  }
+}
+
+TestData_Spouse_Participant: {
+  Participant Selection: New Person,
+  Role Information:{
+    Role Name: Spouse Participant
+  },
+  General Information: {
+    First Name: '$<static:FN_Spouse_REN-36538_Cert2:[rx:Martha\d{8}]>',
+    Last Name: '$<static:LN_Spouse_REN-36538_Cert2:[rx:Stewart\d{8}]>',
+    Relationship to Insured: 'Disabled Dependent',
+    Date of Birth: 05/05/1998,
+  }
+}

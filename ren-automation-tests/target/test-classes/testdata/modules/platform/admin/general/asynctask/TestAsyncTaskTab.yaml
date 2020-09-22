@@ -1,0 +1,9 @@
+TestData: {
+  CreateJobTab: {
+    Name: 'AsyncTaskGeneratorJobWithFailedTask',
+    AdditionalJobs: {
+      '1.': 'sampleAsyncTaskGeneratorJob',
+      Job Parameters: 'failing 4'
+    }
+  }
+}

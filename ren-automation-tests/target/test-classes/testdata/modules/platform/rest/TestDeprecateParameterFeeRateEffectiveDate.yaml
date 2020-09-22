@@ -1,0 +1,61 @@
+TestData_ServiceNetWork: {
+  "networkCode": '$<static:networkCode:[rx:\d{4}]>',
+  "networkName": "networkName",
+  "networkType": "networkType"
+}
+
+TestData_ServiceFeeSchedule: {
+  "feeScheduleType": "Type",
+  "feeScheduleCode": "Code"
+}
+
+TestData_NetworkJoinAgreements: {
+  "serviceAgentAssignmentID": '$<static:agentAssignmentID>',
+  "networkJoinAgreementBaseCreateDTOs": [
+    {
+      "termEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "termExpirationDate": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "serviceNetworkID": '$<static:networkID>',
+      "serviceFeeScheduleID": '$<static:feeScheduleID>'
+    }
+  ]
+}
+
+Network_WithFeeRatesEffectiveDate: {
+  "serviceAgentAssignmentID": '$<static:agentAssignmentID>',
+  "networkJoinAgreementBaseCreateDTOs": [
+    {
+      "termEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "termExpirationDate": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "feeRatesEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "serviceNetworkID": '$<static:networkID>',
+      "serviceFeeScheduleID": '$<static:feeScheduleID>'
+    }
+  ]
+}
+
+TestData_ServiceFeeAgreement: {
+  "serviceProviderFacilityID": '$<static:providerFacilityId>',
+  "serviceFeeAgreementBaseCreateDTOs": [
+    {
+      "termEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "termExpirationDate": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "serviceNetworkID": '$<static:networkID>',
+      "serviceFeeScheduleID": '$<static:feeScheduleID>'
+    }
+  ]
+}
+
+Fee_WithFeeRatesEffectiveDate: {
+  "serviceProviderFacilityID": '$<static:providerFacilityId>',
+  "serviceFeeAgreementBaseCreateDTOs": [
+    {
+      "termEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "termExpirationDate": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "feeRatesEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+      "serviceNetworkID": '$<static:networkID>',
+      "serviceFeeScheduleID": '$<static:feeScheduleID>'
+    }
+  ]
+}
+

@@ -1,0 +1,242 @@
+TestData_MasterPolicy: {
+  ClassificationManagementTab: ['@ClassificationManagementTab_Graduated'],
+}
+
+ClassificationManagementTab_Graduated: {
+  Plan: 'GRAD-Graduated',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 10
+  },
+  {
+    Coverage Tier Key: Employee + Spouse,
+    Number of Participants: 10
+  },
+  {
+    Coverage Tier Key: Employee + Child(ren),
+    Number of Participants: 10
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 10
+  }
+  ]
+}
+
+TestData_CertificatePolicy_TwoInsured: {
+  CertificatePolicyTab: {
+    Effective Date: $<today-1M>,
+  },
+  InsuredTab: '@InsuredTab',
+  PlansTab: '@PlansTab'
+}
+
+InsuredTab: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Tobacco: 'Yes',
+  Tax Identification: '$<rx:\d{9}>',
+  Address Type: Mailing,
+  Zip / Post Code: '94500',
+  State / Province: CA,
+  Country: United States,
+  City: Walnuce,
+  Address Line 1: 'JAddr1_Init',
+  Address Line 2: 'JAddr2_Init',
+  Address Line 3: 'JAddr3_Init',
+  Classification Group: index=1,
+  Original Hire Date: $<today-2y>,
+  General Information: {
+    Date of Birth: $<today-25y>,
+    Gender: Male
+  },
+  Address Information: {
+    Country: United States
+  },
+  Relationship Information: {
+    Job Title: just a job,
+    Employment Type: index=1,
+    Salary Amount: 3000,
+    Payroll Frequency: Monthly
+  }
+}
+
+PlansTab: {
+  Plan Name: index=1,
+  Coverage Tier: Employee + Spouse,
+  Enrollment Date: $<today>,
+  Participants: [
+  {
+    Participant Selection: index=0
+  },
+  {
+    Participant Selection: New Person,
+    General Information: {
+      First Name: 'Martha$<rx:\d{8}>',
+      Last Name: 'Stewart$<rx:\d{8}>',
+      Date of Birth: $<today-24y>,
+      Relationship to Insured: Spouse/Domestic Partner
+    },
+    Address Information: {
+      "Use Primary Insured's Address": No,
+      Address Type: Mailing,
+      Zip / Post Code: '94500',
+      State / Province: CA,
+      Country: United States,
+      City: Walnuce,
+      Address Line 1: 'MAddr1_Init',
+      Address Line 2: 'MAddr2_Init',
+      Address Line 3: 'MAddr3_Init'
+    }
+  }
+  ]
+}
+
+TestData_Claim: {
+  LossEventTab: {
+    Date of Loss: $<today-10d>,
+    Date Reported: $<today-10d>
+  },
+  LossContextTab: {
+    Save Loss As: index=1
+  }
+}
+
+TestData_Address3: {
+  InsuredTab: {
+    Address Line 1: 'JAddr1_UPD',
+    Address Line 2: 'JAddr2_UPD',
+    Address Line 3: 'JAddr3_UPD',
+    Zip / Post Code: '94501',
+    State / Province: WA,
+    City: Walnuce1
+  }
+}
+
+TestData_Address4: {
+  Address Information: {
+    Address Line 1: 'MAddr1_UPD',
+    Address Line 2: 'MAddr2_UPD',
+    Address Line 3: 'MAddr3_UPD',
+    Zip / Post Code: '94502',
+    State / Province: NC,
+    City: Walnuce2
+  }
+}
+
+TestData_AddTwoServices: {
+  IntakeInformationTab: {
+    Payee Type: Primary Insured,
+    Submitted Services: [
+    {
+      CDT Code: 'D0120'
+    },
+    {
+      DOS: $<today-11d>,
+      CDT Code: 'D0130'
+    }
+    ]
+  }
+}
+
+TestData_Address5: {
+  GeneralTab: {
+    Address Details: {
+      Zip/Post Code: '94503',
+      City: Walnuce3,
+      State/Province: TX,
+      Address Line 1: 'JAddr1_UPD1'
+    }
+  }
+}
+
+TestData_Address6: {
+  InsuredTab: {
+    Address Line 1: 'JAddr1_UPD2',
+    Address Line 2: 'JAddr2_UPD2',
+    Address Line 3: 'JAddr3_UPD2',
+    Zip / Post Code: '94504',
+    State / Province: AL,
+    City: Walnuce3
+  }
+}
+
+TestData_Address8: {
+  Address Information: {
+    Address Line 1: 'MAddr1_UPD2',
+    Address Line 2: 'MAddr2_UPD2',
+    Address Line 3: 'MAddr3_UPD2',
+    Zip / Post Code: '94505',
+    State / Province: AZ,
+    City: Walnuce4
+  }
+}
+
+TestData_Address9: {
+  GeneralTab: {
+    Address Details: {
+      Zip/Post Code: '92506',
+      City: Walnuce5,
+      State/Province: IL,
+      Address Line 1: 'JAddr1_UPD3',
+      Address Line 2: 'JAddr2_UPD3',
+      Address Line 3: 'JAddr3_UPD3'
+    }
+  }
+}
+
+TestData_Address10: {
+  InsuredTab: {
+    Address Line 1: 'JAddr1_UPD4',
+    Zip / Post Code: '94524',
+    State / Province: DE,
+    City: Walnuce13
+  }
+}
+
+TestData_Address11: {
+  Address Information: {
+    Address Line 1: 'MAddr1_UPD4',
+    Zip / Post Code: '94525',
+    State / Province: KS,
+    City: Walnuce14
+  }
+}
+
+TestData_Address12: {
+  GeneralTab: {
+    Address Details: {
+      Zip/Post Code: '94523',
+      City: Walnuce31,
+      State/Province: MA,
+      Address Line 1: 'JAddr1_UPD5'
+    }
+  }
+}
+
+TestData_ClaimSubmit: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '$<rx:\d{10}>',
+      'License #': '$<rx:\d{5}>',
+      License NPI: '1032662407',
+      License State/Province: 'NY',
+      Specialty: Orthodontist,
+      Zip/Postal Code: '10001',
+      Address Line 1: '$<rx:Address\d{8}>',
+      City: 'New York',
+      State/Province: 'NY',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    },
+    Type of Transaction: 'Actual Services',
+    Received Date: $<today>,
+    Submitted Services: [{
+      DOS: $<today>
+    }],
+    Source: index=1
+  }
+}

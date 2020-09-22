@@ -1,0 +1,62 @@
+TestData: {
+  GeneralTab: '@GeneralTab',
+}
+
+CustomerType: {
+  Customer Type: Non-Individual,
+
+}
+
+GeneralTab: {
+  First Name: '$<static:FirstName_REN_33084:[rx:John\d{8}]>',
+  Middle Name: '$<static:MiddleName_REN_33084:[rx:Middle\d{8}]>',
+  Last Name: '$<static:LastName_REN_33084:[rx:Smith\d{8}]>',
+  SSN/Tax Identification: '$<static:SSN_REN_33084:[rx:\d{9}]>',
+  Date of Birth: '04/14/1978',
+  Gender: Male,
+  Marital Status: Other,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '94596',
+    City: Walnut Creek Update,
+    County: 'County_REN_33084',
+    State/Province: VT,
+    Address Type: 'Mailing',
+    Address Line 1: '$<static:Address_REN_33084:[rx:Address$\d{8}]>',
+    Address Line 2: 'Address Line 2',
+    Address Line 3: 'Address Line 3',
+    Communication Preferences: ["Administrative", "Claims"],
+    'Make Preferred?': 'Yes'
+  },
+  Phone Details: ['@Phone1', '@Phone2'],
+  Email Details: {
+    Email Type: Personal,
+    Email Address: 'asdf06@gmail.com',
+    'Make Preferred?': 'No'
+  }
+}
+
+Phone2: {
+  Phone Type: Home,
+  Phone Number: '2222222222',
+  'Make Preferred?': 'No'
+}
+
+Phone1: {
+  Phone Type: Work,
+  Phone Number: '1111111111',
+  'Make Preferred?': 'Yes'
+}
+
+Endorsement_TestData: {
+  CertificatePolicyTab: {},
+  InsuredTab: {
+    Relationship Information: {
+      Original Hire Date: 05/01/2019,
+      Payroll Frequency: Weekly,
+      Salary Amount: 5000,
+    }
+  },
+  PlansTab: {},
+  PremiumSummaryTab: {}
+}

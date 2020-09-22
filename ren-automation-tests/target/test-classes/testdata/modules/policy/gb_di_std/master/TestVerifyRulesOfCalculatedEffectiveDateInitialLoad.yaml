@@ -1,0 +1,133 @@
+TestData_Policy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@<std_master>@DataGather@SelectPlan_CON', '@PlanDefinitionTab'],
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-2d>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  Policy Effective Date: $<today-2d>,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab: {
+  PlanKey: CON-CON,
+  Participant Contribution %: 100,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    'Waiting Period Waived For Current Employees?': 'Yes',
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {},
+  Options: {}
+}
+
+TestData_REST: {
+  "fileMetaData": '@FileMetaData',
+  "enrollmentCensusRecords": '@EnrollmentCensusRecords'
+}
+
+FileMetaData: {
+  "masterPolicyNumber": "ENTER YOUR MASTER POLICY NUMBER",
+  "participantCount": "1",
+  "timestamp": '$<today:yyyy-MM-dd>T00:00:00Z',
+  "fileIdentifier": 'F$<rx:\d{5}>',
+  "fileName": "File7",
+  "fileId": 'F$<rx:\d{5}>',
+  "enrollmentTerm": "INITIAL_ENROLLMENT",
+  "enrollmentFileType": "XML_ELIGIBILITY",
+  "enrollmentSource": "GROUP",
+  "enrollmentDataType": "FULL",
+  "fullyEnrolledInd": "1"
+}
+
+EnrollmentCensusRecords: {
+  "referenceID": 'R$<rx:\d{5}>',
+  "certificate": {
+    "effectiveDt": "2020-03-01T00:00:00Z",
+    "coverages": {
+      "participants": {
+        "personOID": "P10015",
+        "roleName": "PRIMARY_P",
+        "relationshipToInsured": "SELF",
+      },
+      "benefitAmount": "",
+      "coverageCd": "STD",
+      "planCd": "CON",
+      "enrollmentDt": '$<today:yyyy-MM-dd>T00:00:00Z',
+    },
+    "primaryParticipant": {
+      "personOID": "P10015",
+      "relationship": {
+        "employment": {
+          "departmentId": "Department ID",
+          "divisionId": "Division ID",
+          "employeeId": "EmployeeID",
+          "employmentStatus": "RET",
+          "employmentType": "CLE",
+          "expatriate": "1",
+          "hourlyWage": "15",
+          "jobCode": "LI",
+          "jobTitle": "Manager",
+          "originalHireDt": "2020-02-11T00:00:00Z",
+          "payClass": "PART_TIME",
+          "payType": "HOURLY",
+          "payrollFreq": "HOURLY",
+          "salaryAmt": "15",
+          "unionMember": "1",
+          "locationId": "AD",
+        },
+        "classificationGroup": {
+          "code": "1"
+        }
+      }
+    },
+    "enrollmentType": "INITIAL"
+  },
+  "allParticipants": {
+    "oid": "P10015",
+    "title": "1",
+    "suffix": "2",
+    "firstName": 'FirstName$<rx:\d{4}>',
+    "lastName": 'LastName$<rx:\d{4}>',
+    "middleName": 'MiddleName$<rx:\d{4}>',
+    "maritalStatusCd": "DP",
+    "gender": "female",
+    "dob": "1987-06-21T09:30:47Z",
+    "taxId": '$<rx:\d{9}>',
+    "tobaccoUsage": "false",
+    "email": "test1@mail.com",
+    "addresses": {
+      "addressType": "residence",
+      "addressLine1": "AddressLine1",
+      "addressLine2": "AddressLine2",
+      "addressLine3": "AddressLine3",
+      "zipCode": "10002",
+      "city": "City",
+      "state": "FL",
+      "country": "US",
+    }
+  }
+}

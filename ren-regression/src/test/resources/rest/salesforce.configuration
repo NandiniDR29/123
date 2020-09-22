@@ -1,0 +1,87 @@
+{
+  "restTargets": {
+    "LOGIN": {
+      "target": "services/oauth2/token",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNT": {
+      "target": "/services/data/v45.0/sobjects/Account/{accountNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CONTACT_BY_CUSTOMER": {
+      "target": "/services/data/v45.0/sobjects/CONTACT/EIS_Contact_ID__c/{customerNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CONTACTS": {
+      "target": "/services/data/v45.0/sobjects/CONTACT/",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CONTACT": {
+      "target": "/services/data/v45.0/sobjects/CONTACT/{relationshipId}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "OPPORTUNITY_BY_EIS_ID": {
+      "target": "/services/data/v45.0/sobjects/OPPORTUNITY/EIS_Case_ID__c/{caseProfileId}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "OPPORTUNITY_BY_SF_ID": {
+      "target": "/services/data/v45.0/sobjects/OPPORTUNITY/{opportunityId}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "DELETE": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "OPPORTUNITY_DELETE": {
+      "target": "/services/data/v45.0/sobjects/OPPORTUNITY/{opportunityId}",
+        "methods": {
+          "GET": {
+            "mediaType": "application/json"
+           }
+       }
+    },
+    "USER": {
+     "target": "/services/data/v45.0/sobjects/USER/{ownerId}",
+     "methods": {
+       "GET": {
+         "mediaType": "application/json"
+       }
+     }
+   },
+   "QUOTE": {
+     "target": "/services/data/v45.0/sobjects/Quotes_RFR__c/EIS_QUOTE_ID__c/{quoteId}",
+      "methods": {
+        "GET": {
+         "mediaType": "application/json"
+       }
+     }
+   }
+  }
+}

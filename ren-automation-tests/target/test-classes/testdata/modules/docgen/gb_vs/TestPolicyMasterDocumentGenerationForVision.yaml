@@ -1,0 +1,120 @@
+TestData_Plan_Alacarte: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  'Situs State': 'TX',
+  ASO Plan: No,
+  Total Number of Eligible Lives: '48',
+  'Rate Guarantee (Months)': 24,
+  'Group is Member Company': 'No',
+  'Prior Carrier Name': 'AIG',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    'Rate Type': 'Area + Tier',
+    'Use Brochure Rates?': 'No'
+  },
+  Copay: {
+    'Exam/Materials': '$5 combined',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Minimum Hourly Requirement (hours per week): '30',
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan A (12/24/24)
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: '1',
+  Plan Tier And Rating Info: {
+    Number of Participants: '32',
+    Coverage Tier: 'Employee + 1'
+  }
+}
+
+ClassificationManagementTab_ALACARTE_CO: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'Employment',
+  Plan Tier And Rating Info: {
+    Number of Participants: '32',
+    Coverage Tier: 'Employee + 1'
+  }
+}
+
+TestData_Issue: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {
+    Definition of Legal Spouse: {
+      'Includes Domestic Partner': 'true'
+    }
+  },
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionIssueActionTabALACARTE'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {
+    Allow Manual Setup of Billing Accounts: 'Yes'
+  },
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  },
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}
+
+PlanDefinitionIssueActionTabALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  Include Retirees: 'No',
+  'Minimum Hourly Requirement (hours per week)': '30'
+}

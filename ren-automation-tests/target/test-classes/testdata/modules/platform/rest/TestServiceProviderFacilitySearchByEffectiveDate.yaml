@@ -1,0 +1,98 @@
+TestData_Facility1: {
+  facilityName: 'facilityName$<rx:\d{8}>',
+  addressDTO: {
+     addressLine1: 'Address$<rx:\d{8}>',
+     addressLine2: 'Address$<rx:\d{8}>',
+     addressLine3: 'Address$<rx:\d{8}>',
+     city: 'City$<rx:\d{8}>',
+     county: 'County$<rx:\d{8}>',
+     postalCode: 12121,
+     countryCd: US
+  },
+  externalId: 'Id$<rx:\d{8}>',
+  phoneNumber: 1111111111,
+  term:{
+    effective: "2018-01-01",
+    expiration: "2018-01-31"
+  }
+}
+TestData_Facility2: {
+  facilityName: "Facility1V2",
+  addressDTO: {
+    addressLine1: 'Address$<rx:\d{8}>',
+    addressLine2: 'Address$<rx:\d{8}>',
+    addressLine3: 'Address$<rx:\d{8}>',
+    city: 'City$<rx:\d{8}>',
+    county: 'County$<rx:\d{8}>',
+    postalCode: 12121,
+    stateProvCd: "AZ",
+    countryCd: "NZ"
+    },
+  externalId: 'Id$<rx:\d{8}>',
+  phoneNumber: 1111111111,
+  term: {
+     effective: "2018-04-10",
+     expiration: "2018-05-31"
+    }
+}
+
+TestData_Facility3: {
+  facilityName: 'facilityName$<rx:\d{8}>',
+  addressDTO: {
+     addressLine1: 'Address$<rx:\d{8}>',
+     addressLine2: 'Address$<rx:\d{8}>',
+     addressLine3: 'Address$<rx:\d{8}>',
+     city: 'City$<rx:\d{8}>',
+     county: 'County$<rx:\d{8}>',
+     postalCode: 12121,
+     countryCd: US
+  },
+  externalId: 'Id$<rx:\d{8}>',
+  phoneNumber: 1111111111,
+  term:{
+   effective: "2010-01-01",
+   expiration: null
+  }
+}
+TestData_SPF1: {
+ serviceFacilityOID: "string",
+ providerIdentifiers: {
+  taxId: null,
+  identities: {
+    OID: null
+    }
+  },
+ externalId: 'SPF1$<rx:\d{4}>',
+ term: {
+   effective: "2018-01-10",
+   expiration: "2018-01-31"
+  }
+}
+TestData_SPF2: {
+ serviceFacilityOID: "string",
+ providerIdentifiers: {
+  taxId: null,
+  identities: {
+    OID: null
+    }
+  },
+ externalId: 'SPF2$<rx:\d{4}>',
+ term: {
+   effective: "2018-04-01",
+   expiration: "2018-04-30"
+  }
+}
+TestData_SPF3: {
+ serviceFacilityOID: "string",
+ providerIdentifiers: {
+  taxId: null,
+  identities: {
+    OID: null
+    }
+  },
+ externalId: 'SPF3$<rx:\d{4}>',
+ term: {
+   effective: null,
+   expiration: null
+  }
+}

@@ -1,0 +1,8 @@
+TestData: {
+  SearchProfileTab: {
+    Channel: 'Vendor',
+    User Login: '',
+    First Name: '',
+    Last Name: ''
+  }
+}

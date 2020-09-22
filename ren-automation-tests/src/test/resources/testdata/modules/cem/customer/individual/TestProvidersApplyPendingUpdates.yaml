@@ -1,0 +1,45 @@
+TestData: {
+  CustomerType: {Customer Type: Individual},
+  GeneralTab: '@GeneralTab_Providers',
+  ProviderTab: ['@ProviderIndividual','@ProviderNonIndividual']
+}
+
+GeneralTab_Providers: {
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Associate Providers: true,
+  Date of Birth: 10/10/1985,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '94596',
+    City: Walnut Creek,
+    State/Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Communication Preferences: ["Administrative", "Claims"]
+  }
+}
+
+ProviderNonIndividual: {
+  Search Provider: {
+    Last Name: ''
+  },
+  Comment: comment2555
+}
+
+ProviderIndividual: {
+  Search Provider: {
+     First Name: '$<static:firstName>'
+     },
+     Comment: comment2222
+}
+
+
+TestData_Update: {
+  ProviderTab: [
+    {
+      Effective Date: '$<today:MM/dd/yyyy>',
+      Expiration Date: '$<today+2y:MM/dd/yyyy>',
+      Comment: ''
+    }
+  ]
+}

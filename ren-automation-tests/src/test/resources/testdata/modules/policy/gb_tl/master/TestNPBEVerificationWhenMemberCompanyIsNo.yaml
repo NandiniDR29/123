@@ -1,0 +1,30 @@
+TestDataPolicy: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    Situs State: 'NY',
+    Group is Member Company: 'No',
+    'Prior Claims Allowed?': 'true',
+    'Prior Life Coverage': 'Yes',
+    'Use Experience Rating ?': 'Yes',
+    Prior Carrier Name: 'None',
+    County Code: '001 - Albany County',
+    'Has Continuity of Coverage?': 'Yes',
+    'Small Group?': 'No',
+    'Separate Or Combined Experience Rating?': 'Combined',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    }
+  }
+}
+
+TestDataEndorse: {
+  PolicyInformationTab: {
+    'Use Experience Rating ?': 'No',
+    'Prior Life Coverage': 'No'
+  },
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}

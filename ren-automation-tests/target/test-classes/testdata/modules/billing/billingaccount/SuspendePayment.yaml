@@ -1,0 +1,28 @@
+TestData_Cash_Suspense:  {
+   AcceptPaymentActionTab: {
+     Payment Method: 'Cash',
+     Amount: 100,
+     Allocations: 0,
+     'Suspend Remaining?': 'Yes',
+   }
+}
+
+TestData_Check_Suspense:  {
+   AcceptPaymentActionTab: {
+     Payment Method: 'Check',
+     Check Number: 'Check$<rx:\d{8}>',
+     Check Date: $<today>,
+     Amount: 5,
+     Allocations: 0,
+     'Suspend Remaining?': 'Yes',
+   }
+}
+
+TestData_Cash_Suspense_For_Three_Invoices:  {
+   AcceptPaymentActionTab: {
+     Payment Method: 'Cash',
+     Amount: 100,
+     Allocations: [0, 0, 0, 0],
+     'Suspend Remaining?': 'Yes',
+   }
+}

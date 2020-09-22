@@ -1,0 +1,301 @@
+TestData_CreateQuote: {
+  InitiniateDialog: '@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan',
+                      '@PlanDefinitionBasicLifeInsurance',
+                      '@PlanDefinitionBasicAccidentalDeath',
+                      '@PlanDefinitionDependentBasicLife',
+                      '@PlanDefinitionEmployeeVoluntaryLifeInsurance',
+                      '@PlanDefinitionSpouseVoluntaryLifeInsurance',
+                      '@PlanDefinitionEmployeeVoluntaryAccidentalDeath',
+                      '@PlanDefinitionDependentVoluntaryAccidentalDeath'],
+  ClassificationManagementTab: ['@ClassificationMgmtBasicAccidentalDeath',
+                                '@ClassificationMgmtBasicLifeInsraunce',
+                                '@ClassificationMgmtDependentBasicLife',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsurance',
+                                '@ClassificationMgmtSpouseVoluntaryLifeInsurance',
+                                '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath_1',
+                                '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath_2',
+                                '@ClassificationMgmtDependentVoluntaryAccidentalDeath_1',
+                                '@ClassificationMgmtDependentVoluntaryAccidentalDeath_2'],
+  PremiumSummaryTab: '@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+PolicyInformationTab: {
+  County Code: '001 - Albany County',
+  'Prior Life Coverage': 'No',
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: 'QA QA user',
+    Sales Support Associate: 'QA QA user'
+  },
+  Assigned Agencies: ['@QA_Agency']
+}
+
+QA_Agency: {
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Waiver of Premium: index=1,
+  Contribution Type: 'Contributory',
+  'Participant Contribution %': 10,
+  Sponsor Payment Mode: 12,
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  Census Type: index=1,
+  'Enhanced AD&D?': 'No',
+  Coverage Type: index=1,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionEmployeeVoluntaryLifeInsurance: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Total Number of Eligible Lives: 1,
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  Benefit Schedule: {
+    Benefit Type: 'Grandfathered Amount on File'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionSpouseVoluntaryLifeInsurance: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Member Payment Mode: 12,
+  Required Participation %: 5%
+}
+
+PlanDefinitionEmployeeVoluntaryAccidentalDeath: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Member Payment Mode: 12,
+  Required Participation %: 5%,
+  'Age Reduction?': false,
+  'Enhanced AD&D?': 'No',
+  Seat Belt Benefit: {
+    'Apply Benefit?': false
+  },
+  Air Bag Benefit: {
+    'Apply Benefit?': false
+  },
+  Rehabilitation Benefit Amount: {
+    'Apply Benefit?': false
+  },
+  Adaptive Home / Vehicle Benefit: {
+    'Apply Benefit?': false
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentVoluntaryAccidentalDeath: {
+  Add Coverage: click,
+  Plan ComboBox: Basic Life,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Member Payment Mode: 12,
+  'Enhanced AD&D?': 'No',
+  Required Participation %: 5%
+}
+
+ClassificationMgmtBasicAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentBasicLife: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Classification Group Name: 1,
+  Tier: Spouse and/or Child
+}
+
+ClassificationMgmtBasicLifeInsraunce: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Basic Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Confirm using subgroups: CLICK,
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes'
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 2,
+  'Use Classification Sub-Groups?': 'Yes',
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes'
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': 'Yes',
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes'
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath_1: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath_2: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 2
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath_1: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: 1
+}
+
+ClassificationMgmtDependentVoluntaryAccidentalDeath_2: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Dependent Voluntary Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Classification Group Name: 2
+}
+
+TestData: {
+  LIFE50_1: "Class 1: 1",
+  LIFE51: "BASIC LIFE",
+  LIFE52_1: "$10,000",
+  LIFE55: "$200,000",
+  LIFE58: "Maximum benefit 75%; included for life insurance amounts of at least $10,000",
+  LIFE60: "Included",
+  LIFE61: "Not Included",
+  LIFE62: "10%",
+  LIFE63: "100% for groups of 2-5 and 75% for groups of 6-9.",
+  LIFE64: "2 years",
+  LIFE65: "$10,000",
+  LIFE66: "Included",
+  LIFE67_1: "true",
+  LIFE67_2: "$500",
+  LIFE67_3: "$500",
+  LIFE67_4: "$2,000",
+  LIFE68_1: "true",
+  LIFE68_2: "ACCIDENTAL DEATH & DISMEMBERMENT*",
+  LIFE69_1: "$10,000",
+  LIFE74: "24 Hour",
+  LIFE75: "100%",
+  LIFE76: "10% / $10,000",
+  LIFE78: "Not Included",
+  LIFE79: "Not Included",
+  LIFE80: "Not Included",
+  LIFE81: "Not Included",
+  LIFE82: "Not Included",
+  LIFE83: "Not Included",
+  LIFE84: "Not Included",
+  LIFE85_1: "Not Included",
+  LIFE85_2: "false",
+  LIFE87_1: "Not Included",
+  LIFE87_2: "false",
+  LIFE88_1: "Not Included",
+  LIFE88_2: "false",
+  LIFE89_1: "Not Included",
+  LIFE89_2: "false",
+  LIFE90_1: "Not Included",
+  LIFE90_2: "false"
+}
+
+TestData_VL: {
+  LIFE98_1: "VOLUNTARY EMPLOYEE LIFE",
+  LIFE99: "Grandfathered amount on file",
+  LIFE106: "Maximum benefit 75%; included for life insurance amounts of at least $10,000",
+  LIFE108: "Included",
+  LIFE109: "Not Included",
+  LIFE110: "Included",
+  LIFE111: "100% for groups of 2-5 and 75% for groups of 6-9.",
+  LIFE112: "2 years"
+}
+
+TestData_DVL: {
+  LIFE113_1: "VOLUNTARY DEPENDENT LIFE",
+  LIFE118: "As of the termination date of the employee or age 70",
+  LIFE120: "Included",
+  LIFE121: "N/A",
+  LIFE122: "N/A",
+  LIFE126: "N/A",
+  LIFE127: "N/A"
+}
+
+TestData_VADD: {
+  LIFE128_1: "VOLUNTARY EMPLOYEE & DEPENDENT AD&D",
+  LIFE129: "An amount equal to Life",
+  LIFE130: "An amount equal to the Life Guaranteed Issue Amount",
+  LIFE133: "24 Hour",
+  LIFE134: "100%",
+  LIFE135: "Not Included",
+  LIFE137: "Not Included",
+  LIFE138: "Not Included",
+  LIFE139: "Not Included",
+  LIFE140: "Not Included",
+  LIFE141: "Not Included",
+  LIFE142: "Not Included",
+  LIFE143: "Not Included",
+  LIFE144_1: "Not Included",
+  LIFE144_2: "false",
+  LIFE145: "Not Included",
+  LIFE146_1: "Not Included",
+  LIFE146_2: "false",
+  LIFE147_1: "Not Included",
+  LIFE147_2: "false",
+  LIFE148_1: "Not Included",
+  LIFE148_2: "false",
+  LIFE149_1: "Not Included",
+  LIFE149_2: "false"
+}

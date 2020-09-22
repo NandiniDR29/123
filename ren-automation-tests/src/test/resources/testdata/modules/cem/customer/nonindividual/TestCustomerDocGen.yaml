@@ -1,0 +1,19 @@
+TestData: {
+  GenerateOnDemandDocumentTab: {
+    Tipo de Apólice: TestText,
+    Adjuster Telephone: '$<rx:\d{2}-\d{6}>',
+    Another Mandatory Field: TestField
+  }
+}
+
+RenameData: {
+  RenameFileTab: {
+    Name: NewTestName,
+  }
+}
+
+ReindexData: {
+  ReidexFileTab: {
+    Folder: Campaign,
+  }
+}

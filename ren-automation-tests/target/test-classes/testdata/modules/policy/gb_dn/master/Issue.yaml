@@ -1,0 +1,149 @@
+TestData: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: '@PlanDefinitionIssueActionTab',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestData_ExistentBillingAccount: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {},
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: {}
+}
+
+TestDataWithExistingBA: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: '@PlanDefinitionIssueActionTab',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithExistingBA']
+}
+
+TestData_AllPlans: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_BASEPOS', '@PlanDefinitionTab_FLEX', '@PlanDefinitionTab_GRAD', '@PlanDefinitionTab_MAJEPOS'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestData_TwoPlans: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionTab_ALACARTE',  '@PlanDefinitionTab_MAJEPOS'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingGroupsActionTab: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: 'ALACARTE-A La Carte',
+  Include Retirees: 'No'
+}
+
+PlanDefinitionTab_BASEPOS: {
+  PlanKey: 'BASEPOS-Basic EPOS',
+  Include Retirees: 'No'
+}
+
+PlanDefinitionTab_FLEX: {
+  PlanKey: 'FLEX-Flex Plus',
+  Include Retirees: 'No'
+}
+
+PlanDefinitionTab_GRAD: {
+  PlanKey: 'GRAD-Graduated',
+  Include Retirees: 'No'
+}
+
+PlanDefinitionTab_MAJEPOS: {
+  PlanKey: 'MAJEPOS-Major EPOS',
+  Include Retirees: 'No'
+}
+
+
+InvoicingCalendarTab: {
+  Add Invoicing Calendar: {
+    Billing Calendar: Billing Calendar1,
+    Calendar Name: 'Calendar$<rx:\d{8}>',
+    Self Administered: true,
+    List Bill: true,
+    Effective Date: $<today-1y>,
+    Invoicing Frequency: Monthly,
+    Invoicing Rule: On Time,
+    Invoice Due Day: 6,
+    Generation Date Rule: 1
+  }
+}
+
+InvoicingCalendarComboBox: {
+  Select Invoicing Calendar: {
+    Invoicing Calendar: 'contains=Calendar'
+  }
+}
+
+PlanDefinitionIssueActionTab: {
+  Include Retirees: 'No'
+}
+
+BillingAccountTabWithCustomCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'NewCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Monthly,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 6,
+      Generation Date Rule: 1,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=NewCalendar'}
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}
+
+BillingAccountTabWithExistingBA: {
+  Select Action: 'Bill Under Account',
+  Bill Under Account: index=1
+}
+
+IssueActionTabMail: {
+  IssueActionTab: {
+    Address Line 1: '$<rx:Address\d{5}>',
+    Zip / Postal Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA
+  }
+}

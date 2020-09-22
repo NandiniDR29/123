@@ -1,0 +1,20 @@
+{
+  "restTargets": {
+    "GBVISION.REPORT": {
+      "target": "gb-vs/report/{policyId}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "GBDENTAL.REPORT": {
+      "target": "gb-dn/report/{policyId}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    }
+  }
+}

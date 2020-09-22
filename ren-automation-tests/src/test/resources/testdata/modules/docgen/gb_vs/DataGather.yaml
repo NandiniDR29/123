@@ -1,0 +1,304 @@
+TestData: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<vs_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+TestData_WithTwoCoverages: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<vs_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans', '@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_ExamP'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_ExamP'],
+  PremiumSummaryTab: {}
+}
+
+TestData_AllPlans: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@<vs_master>@DataGather@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_ALACARTE', '@PlanDefinitionTab_ExamP', '@PlanDefinitionTab_PlanB', '@PlanDefinitionTab_PlanC'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE', '@ClassificationManagementTab_ExamP', '@ClassificationManagementTab_PlanB', '@ClassificationManagementTab_PlanC'],
+  PremiumSummaryTab: {}
+}
+
+TestData_UseCensusFile: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE_1',
+  PremiumSummaryTab: '@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialogToday: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<today>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  }
+}
+
+PolicyInformationTabToday: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    Total Number of Eligible Lives: '1',
+    'Group is an Association?': 'Yes',
+    Prior Carrier Name: 'EyeMed',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Agent Sub Producer: 'QA QA user'
+  }
+}
+
+PolicyInformationTab_NY: {
+  County Code: '001 - Albany County',
+  Policy Effective Date: $<BOM>,
+  ASO Plan: No,
+  Prior Carrier Name: 'EyeMed',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+SelectTwoPlans: {
+  Plan: [A La Carte, Exam Plus]
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  }
+}
+
+PlanDefinitionTab_ExamP: {
+  PlanKey: Exam Plus-Exam Plus,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Copay: {
+    Exam/Materials: $10/$25
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: $120,
+    Contact Lenses - Allowance up to: Same as Frames
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan D (24/24/24)
+  }
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 0,
+    Member Payment Mode: '12',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last day of the month when employment is terminated
+  }
+}
+
+PlanDefinitionTab_PlanC: {
+  PlanKey: '10/25 Plan C 150-10/25 Plan C 150',
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 0,
+    Member Payment Mode: '12',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last day of the month when employment is terminated
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '32',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_ExamP: {
+  Plan: Exam Plus,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Number of Participants: '18',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_PlanB: {
+  Plan: 10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Number of Participants: '12',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_PlanC: {
+  Plan: 10/25 Plan C 150,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Number of Participants: '12',
+  Coverage Tier: Employee Only
+}
+
+ClassificationManagementTab_ALACARTE_1: {
+  Plan: A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 1,
+  Number of Participants: '32',
+  Coverage Tier: Employee Only
+}
+
+PremiumSummaryTab_ApplyCensus: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+Adjustment_BackDated: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-2M>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  },
+  PolicyInformationTab: {
+    Policy Effective Date: $<BOM-2M>,
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Total Number of Eligible Lives: '1',
+    'Group is an Association?': 'Yes',
+    Agency / Producer: 'QA Agency',
+    'Primary Agency?': 'Yes',
+    Agent Sub Producer: 'QA QA user'
+  }
+}
+
+TestData_CopyFromPolicy: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement: {
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Number of Participants: '100'
+  },
+  PremiumSummaryTab: {}
+}
+
+VersionDialog: {
+  Description: 'Desc$<rx:\d{8}>'
+}
+
+InitiateDialogDatePlusMonth: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM+1M>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  }
+}
+
+InitiateDialogMinus7Months: {
+  InitiniateDialog: {
+    Broad Line of Business: Group Insurance,
+    Coverage Effective Date: $<BOM-7M>,
+    Case Profile: index=1,
+    Product: Group Vision,
+    Delivery Model: Group
+  }
+}
+
+TestDataUpdateSomething: {
+  InitiniateDialog: {},
+  PolicyInformationTab: '@PolicyInformationTabUpdate',
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Number of Participants: '100'
+  },
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTabUpdate: {
+  Total Number of Eligible Lives: '3',
+}

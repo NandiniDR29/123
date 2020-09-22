@@ -1,0 +1,117 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Commission Without TS" verbose="1" parallel="tests" thread-count="1024">
+    <listeners>
+        <listener class-name="com.exigen.ipb.eisa.utils.listener.ISBAListener"/>
+        <listener class-name="com.exigen.istf.exec.testng.TimeShiftTestNgListener"/>
+    </listeners>
+
+    <!--<test name="Commission Strategies With GB_DI_LTD Product">-->
+    <!--<classes>-->
+    <!--<class name="com.exigen.ren.modules.commission.commissionstrategy.gb_di_ltd.TestValidationSubscriberCountBasedCommission"/>-->
+    <!--<class name="com.exigen.ren.modules.commission.commissionstrategy.gb_di_ltd.TestValidationTierCommission"/>-->
+    <!--<class name="com.exigen.ren.modules.commission.commissionstrategy.gb_di_ltd.TestValidateCommissionStrategyProductsAndRules"/>-->
+    <!--</classes>-->
+    <!--</test>-->
+
+    <test name="Commission Strategies With GB_DN Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_dn.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_DI_LTD Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_di_ltd.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_TL Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_tl.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_VS Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_vs.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_AC Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_ac.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_DI_STD Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_di_std.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_PFL Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_pfl.*"/>
+        </packages>
+    </test>
+    <test name="Commission Strategies With GB_ST Product">
+        <groups>
+            <run>
+                <exclude name="WITH TS"/>
+                <exclude name="TEAM MERGE"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.exigen.ren.modules.commission.commissionstrategy.gb_st.*"/>
+        </packages>
+    </test>
+
+    <!--<test name="Commission Strategy Tests" parallel="methods">-->
+    <!--<groups>-->
+    <!--<run>-->
+    <!--<exclude name="WITH TS"/>-->
+    <!--<exclude name="TEAM MERGE"/>-->
+    <!--</run>-->
+    <!--</groups>-->
+    <!--<packages>-->
+    <!--<package name="com.exigen.ren.modules.commission.commissionstrategy.*"/>-->
+    <!--</packages>-->
+    <!--</test>-->
+
+</suite>

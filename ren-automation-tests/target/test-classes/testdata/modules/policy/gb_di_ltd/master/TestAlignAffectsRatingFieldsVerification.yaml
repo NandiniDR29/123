@@ -1,0 +1,133 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_CON'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Long Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: NJ,
+  Zip Code: 89074,
+  'Rate Guarantee (Months)': '18',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  'PlanKey': CON-CON,
+  'Census Type': 'Eligible',
+  'Assumed Participation %': '75%',
+  'Required Participation %': '100%',
+  'Number of Months': '24 months',
+  'Total Number of Eligible Lives': '1',
+  'Sponsor/Participant Funding Structure': {
+    'Contribution Type': 'Contributory',
+    'Sponsor Payment Mode': '12',
+    'Member Payment Mode': '1',
+    'Participant Contribution %': '20'
+  },
+  Rating: {
+    'SIC Code': '8052'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    'Social Security Integration Method': 'Family',
+    Include PERS and STRS: No
+  },
+  Benefit Schedule: {
+    'Elimination Period (days)': '60',
+    'Maximum Benefit Period': '65/5/70',
+    'Maximum Monthly Benefit Amount': '6000',
+    'Benefit Percentage': '60%',
+    'Definition of Disability': 'X months Regular Occ',
+    'Specialty Own Occupation': true,
+    'Residual': 'Included',
+    'Test Definition': 'Loss of Duties and Earnings',
+    'Minimum Monthly Benefit Percentage': '10%',
+    'Minimum Monthly Benefit Amount': '$100',
+    'Pre-Existing Conditions': 'Included',
+    'Pre-Existing Condition: Look Back Period': '3 Months',
+    'Pre-Existing Condition: Treatment Free Period': 'N/A',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months',
+    'Survivor - Family Income Benefit Type': '3 Months Survivor Income Benefit',
+    'Pay Survivor Benefit Gross': true,
+    'Temporary Recovery Period During EP (days)': '60',
+    'WIB Duration': '24 Months',
+    'Own Occupation Earnings Test': '80%',
+    'Any Occupation Earnings Test': '60%',
+    'Partial Disability Benefit': 'Direct',
+  },
+  Options: {
+    'Rehabilitation Incentive Benefit': '5%',
+    'Rehabilitation Incentive Benefit Duration': '12 Months',
+    'Prudent Person': No,
+    'Mental Illness Limitation': '12 Months',
+    'Mental Illness Event': 'Lifetime',
+    'Substance Abuse Limitation': '12 Months',
+    'Substance Abuse Event': 'Lifetime',
+    'Self Reported Conditions Limitation': '12 Months',
+    'Non-Verifiable Symptoms Event': 'Lifetime',
+    'Special Conditions Limitation': '24 Months',
+    'Special Conditions Event': 'Disability',
+    'Terminal Illness Benefit': 'None',
+    'Catastrophic Disability Benefit': 'None',
+    'Family Care Benefit': 'Included',
+    'Family Care Benefit Amount': '$250',
+    'Family Care Benefit Amount Duration': '12 Months',
+    'Recovery Income Benefit': '3 Months',
+    'Recovery Income Protection Max': 'Less than 60%',
+    'Student Loan Repayment Amount': '$2 000',
+    'Student Loan Repayment Duration': '12 Months',
+    'COBRA Premium Reimbursement Amount': '500',
+    'COBRA Premium Reimbursement Duration': '18 Months',
+    'Number of Adjustments': '5 Years',
+    'Presumptive Disability': 'Not Included',
+    'Infectious Disease': 'None',
+    'Participant Contribution %': '20',
+    'Child Education Benefit': 'Included',
+    'Benefit Amount per Child': '$100',
+    'Maximum Monthly Payments': '36',
+    '401K Contribution During Disability': '10%',
+    '401K Contribution Monthly Maximum Amount': '1000',
+    'FICA Match': 'Reimbursement',
+    'Cost of Living Adjustment Benefit': '2%'
+  },
+  Benefit Termination Option: {
+    'Mandatory Rehabilitation': 'Not Included'
+  }
+}
+
+ClassificationManagementTab_CON: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+}
+
+PremiumSummaryTab: {
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}

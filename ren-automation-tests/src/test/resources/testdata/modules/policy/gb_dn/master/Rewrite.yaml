@@ -1,0 +1,31 @@
+TestData: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'Yes'
+  }
+}
+
+TestDataNewNumber: {
+  RewriteActionTab: {
+    Effective Date: $<today>,
+    'Use Original Policy Number?': 'No'
+  }
+}
+
+DataGather: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  MandatoryBenefitTab: {},
+  OptionalBenefitTab: {},
+  AccidentalInjuryMedicalTreatmentandServicesTab: {},
+  AccidentalDeathDismembermentBenefitsTab: {},
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_AcceptContract: {
+  MasterPolicyBindActionTab: {
+    Amount Received with Application: 2000
+  }
+}

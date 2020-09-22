@@ -1,0 +1,7 @@
+TestData: {
+  NumberRangeTab: {
+    Range Type: Policy Summary,
+    'Start #': '$<rx:1\d{3}>',
+    'End #': '$<rx:9\d{3}>'
+  }
+}

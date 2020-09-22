@@ -1,0 +1,109 @@
+TestData_Death_OtherValues: {
+  BenefitDeathDecedentTab: '@BenefitDeathDecedentTab'
+}
+
+TestData_Death: {
+  BenefitDeathDecedentTab: '@BenefitDeathDecedentTab',
+  BenefitDeathIncidentTab: '@BenefitDeathIncidentTab',
+  BenefitDeathDeathCertificateTab: '@BenefitDeathDeathCertificateTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab',
+}
+
+TestData_AcceleratedDeath: {
+  BenefitAcceleratedDeathInjuryPartyInformationTab: '@BenefitAcceleratedDeathInjuryPartyInformationTab',
+  BenefitAcceleratedDeathIncidentTab: '@BenefitAcceleratedDeathIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+TestData_PremiumWaiver: {
+  BenefitPremiumWaiverInjuryPartyInformationTab: {
+    'Add Benefit: Premium Waiver': 'click',
+    Associate Policy Party: index=1,
+    Date of Birth: $<today>,
+    Preferred Payment method: Check
+  }
+}
+
+TestData_PremiumWaiver_Other: {
+  BenefitPremiumWaiverInjuryPartyInformationTab: '@BenefitPremiumWaiverInjuryPartyInformationTab',
+  BenefitPremiumWaiverIncidentTab: '@BenefitPremiumWaiverIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+TestData_AccidentalDismemberment: {
+  BenefitAccidentalDismembermentInjuryPartyInformationTab: '@BenefitAccidentalDismembermentInjuryPartyInformationTab',
+  BenefitAccidentalDismembermentIncidentTab: '@BenefitAccidentalDismembermentIncidentTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+TestData_AccidentalDeath: {
+  BenefitAccidentalDeathDecedentTab: '@BenefitAccidentalDeathDecedentTab',
+  BenefitAccidentalDeathIncidentTab: '@BenefitAccidentalDeathIncidentTab',
+  BenefitAccidentalDeathDeathCertificateTab: '@BenefitAccidentalDeathDeathCertificateTab',
+  BenefitCoverageEvaluationTab: '@BenefitCoverageEvaluationTab'
+}
+
+BenefitAccidentalDeathDecedentTab: {
+  'Add Benefit: Accidental Death': 'click',
+  Associated Policy Party: 'contains=John'
+}
+
+BenefitAccidentalDeathIncidentTab: {
+  Date Last Worked: $<today-4d>
+}
+
+BenefitAccidentalDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+
+BenefitAccidentalDismembermentInjuryPartyInformationTab: {
+  'Add Benefit: Accidental Dismemberment': 'click',
+  Associated Policy Party: index=1,
+  Preferred Payment method: Check,
+}
+
+BenefitAccidentalDismembermentIncidentTab: {
+  Date Last Worked: $<today-3d>
+}
+
+BenefitPremiumWaiverInjuryPartyInformationTab: {
+  'Add Benefit: Premium Waiver': 'click',
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check,
+}
+
+BenefitAcceleratedDeathInjuryPartyInformationTab: {
+  'Add Benefit: Accelerated Death': 'click',
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check
+}
+
+BenefitPremiumWaiverIncidentTab: {
+  Date Last Worked: $<today-2d>
+}
+
+BenefitAcceleratedDeathIncidentTab: {
+  Date Last Worked: $<today-1d>
+}
+
+BenefitDeathDecedentTab: {
+  'Add Benefit: Death': 'click',
+  Associated Policy Party: index=1,
+  Date of Birth: $<today>,
+  Address Line 1: '$<static:AddressLine1:[rx:Address\d{8}]>'
+}
+
+BenefitDeathIncidentTab: {
+  Date Last Worked: $<today>
+}
+
+BenefitDeathDeathCertificateTab: {
+  Official Date of Death: $<today>
+}
+
+BenefitCoverageEvaluationTab: {
+  Eligibility Verified: 'No',
+  Date of Verification: $<today>,
+  Supporting Documentation Received: $<today>,
+}

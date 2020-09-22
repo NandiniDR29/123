@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ren-automation.iml" filepath="$PROJECT_DIR$/ren-automation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ren-automation-ui/ren-automation-ui.iml" filepath="$PROJECT_DIR$/ren-automation-ui/ren-automation-ui.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ren-regression/ren-regression.iml" filepath="$PROJECT_DIR$/ren-regression/ren-regression.iml" />
+    </modules>
+  </component>
+</project>

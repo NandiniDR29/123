@@ -1,0 +1,25 @@
+TestData: {
+  "categoryCd": "CLAIMS",
+  "subCategoryCd": "CLAIM_PAYMNET_EXPL",
+  "sourceCd": "PARTNER" ,
+  "languageCd": "ENG",
+  "internalCallerCd": "CALLER3",
+  "subject": "Enter any value",
+  "statusCd": "READ",
+  "entityTypeCd": "CUSTOMER",
+  "entityReferenceId": "510048",
+  "description": "Enter any value",
+  "outcome": "Enter any value"
+}
+
+TestData_Check: {
+  'threadId': 1,
+  'categoryCd': 'CLAIMS',
+  'subCategoryCd': 'CLAIM_PAYMNET_EXPL',
+  'sourceCd': 'PARTNER',
+  'statusCd': 'READ',
+  'directionCd': 'INBOUND',
+  'entityTypeCd': 'CUSTOMER',
+  'performerDescription': 'ISBA ISBA',
+  'communicationTypeCd': 'MANUAL',
+}

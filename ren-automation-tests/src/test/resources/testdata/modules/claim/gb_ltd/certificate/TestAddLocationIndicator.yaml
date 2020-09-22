@@ -1,0 +1,17 @@
+UpdateCaseProfile: {
+  CaseProfileDetailsTab: {},
+  ProductAndPlanManagementTab: {},
+  ClassificationManagementTab: {},
+  LocationManagementTab: '@LocationManagementTab',
+  FileIntakeManagementTab: []
+}
+
+LocationManagementTab: {
+  Add Billing Location:
+    {
+      Location Name: 'Location Name 1',
+      Location Number: '1',
+      Tax Identification: '12-3456789'
+    }
+}
+

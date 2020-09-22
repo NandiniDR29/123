@@ -1,0 +1,37 @@
+TestData_IndemnityPaymentWithAdditionParty: {
+  PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabIndemnityPayment',
+  PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabIndemnityPayment',
+  PaymentPaymentAdditionalPayeeTab: {},
+  PaymentInvoiceInvoicedFromTab: {},
+  PaymentInvoiceInvoiceDetailsTab: {},
+  PaymentCalculatorTab: '@PaymentCalculatorTab'
+}
+
+PaymentPaymentPaymentDetailsTabIndemnityPayment: {
+  Payment To: index=1,
+  Non Provider Payment Type: index=1
+}
+
+PaymentPaymentPaymentAllocationTabIndemnityPayment: {
+  Reserve Type: Indemnity,
+  Final Payment: 'No',
+  Payment From Date: $<today+180d>,
+  Payment Through Date: $<today+1y+180d>,
+  Adjust reserve: 'Yes'
+}
+
+PaymentCalculatorTab: {
+  Payment Addition: [
+  {
+    Addition Type: '401K Contribution During Disability Benefit',
+    Required Monthly 401K Contribution Amount: 100,
+    Beginning Date: $<today>,
+    Through Date: $<today>,
+  },
+  {
+    Addition Type: 'Rehabilitation Benefit',
+    Beginning Date: $<today>,
+    Through Date: $<today>,
+  },
+  ]
+}

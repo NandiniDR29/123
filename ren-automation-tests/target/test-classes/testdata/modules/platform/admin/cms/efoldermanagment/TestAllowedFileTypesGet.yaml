@@ -1,0 +1,148 @@
+TestData: {
+    fileTypes: ['@wma', '@avi', '@msg', '@tiff', '@bmp', '@xdp', '@gif', '@csv', '@caf', '@mov', '@xml', '@html', '@3gp', '@zip',
+                '@jpg', '@xlsx', '@png', '@wav', '@url', '@docx', '@mp4', '@txt', '@mp3', '@pdf', '@ppt', '@doc', '@xls']
+}
+
+wma: {
+  fileType: 'wma',
+  mimeTypes: ['audio/x-ms-wma']
+}
+
+avi: {
+  fileType: 'avi',
+  mimeTypes: ['video/avi', 'video/msvideo', 'video/mpeg', 'video/x-msvideo', 'image/avi', 'video/xmpg2', 'application/x-troff-msvideo', 'audio/aiff', 'audio/avi']
+}
+
+msg: {
+  fileType: 'msg',
+  mimeTypes: ['application/outlook', 'application/vnd.ms-outlook']
+}
+
+tiff: {
+  fileType: 'tiff',
+  mimeTypes: ['image/tiff']
+}
+
+bmp: {
+  fileType: 'bmp',
+  mimeTypes: ['image/bmp']
+}
+
+xdp: {
+  fileType: 'xdp',
+  mimeTypes: ['application/vnd.adobe.xdp+xml']
+}
+
+gif: {
+  fileType: 'gif',
+  mimeTypes: ['image/gif']
+}
+
+csv: {
+  fileType: 'csv',
+  mimeTypes: ['text/comma-separated-values']
+}
+
+caf: {
+  fileType: 'caf',
+  mimeTypes: ['audio/caf', 'audio/x-caf']
+}
+
+mov: {
+  fileType: 'mov',
+  mimeTypes: ['video/quicktime']
+}
+
+xml: {
+  fileType: 'xml',
+  mimeTypes: ['application/xml', 'text/xml']
+}
+
+html: {
+  fileType: 'html',
+  mimeTypes: ['text/html']
+}
+
+3gp: {
+  fileType: '3gp',
+  mimeTypes: ['video/3gpp', 'audio/3gpp']
+}
+
+zip: {
+  fileType: 'zip',
+  mimeTypes: ['multipart/x-zip', 'application/x-zip-compressed', 'application/x-compress', 'application/x-compressed',
+              'application/zip', 'application/x-zip']
+}
+
+jpg: {
+  fileType: 'jpg',
+  mimeTypes: ['image/vnd.swiftview-jpeg', 'image/jp_', 'image/jpeg', 'application/jpg', 'image/jpg', 'image/pjpeg',
+              'image/pipeg', 'application/x-jpg', 'image/x-xbitmap']
+}
+
+xlsx: {
+  fileType: 'xlsx',
+  mimeTypes: ['application/vnd.openxmlformats-officedocument.spreadsheetml.sheet']
+}
+
+png: {
+  fileType: 'png',
+  mimeTypes: [ 'image/png', 'image/x-png' ]
+}
+
+wav: {
+  fileType: 'wav',
+  mimeTypes: [ 'audio/wave', 'audio/wav', 'audio/x-pn-wav', 'audio/x-wav' ]
+}
+
+url: {
+  fileType: 'url',
+  mimeTypes: [ 'application/internet-shortcut' ]
+}
+
+docx: {
+  fileType: 'docx',
+  mimeTypes: [ 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' ]
+}
+
+mp4: {
+  fileType: 'mp4',
+  mimeTypes: [ 'video/mp4' ]
+}
+
+txt: {
+  fileType: 'txt',
+  mimeTypes: [ 'widetext/paragraph', 'application/txt', 'widetext/plain', 'text/anytext', 'text/plain', 'browser/internal' ]
+}
+
+mp3: {
+  fileType: 'mp3',
+  mimeTypes: [ 'audio/mp3', 'video/x-mpeg', 'audio/x-mpeg-3', 'audio/mpeg3', 'audio/mpeg' ]
+}
+
+pdf: {
+  fileType: 'pdf',
+  mimeTypes: [ 'text/x-pdf', 'applications/vnd.pdf', 'application/pdf', 'application/acrobat', 'text/pdf', 'application/x-pdf' ]
+}
+
+ppt: {
+  fileType: 'ppt',
+  mimeTypes: [ 'application/vnd-mspowerpoint', 'application/mspowerpnt', 'application/x-m', 'application/ms-powerpoint',
+               'application/powerpoint', 'application/x-powerpoint','application/vnd.ms-powerpoint', 'application/mspowerpoint' ]
+}
+
+doc: {
+  fileType: 'doc',
+  mimeTypes: [ 'application/word', 'appl/text', 'application/x-msword', 'application/msword', 'application/vnd.ms-word',
+               'zz-application/zz-winassoc-doc', 'application/winword', 'application/vnd.msword', 'application/x-msw6', 'application/doc' ]
+}
+
+xls: {
+  fileType: 'xls',
+  mimeTypes: [ 'application/x-excel', 'application/msexcel', 'application/x-dos_ms_excel', 'application/x-msexcel', 'application/xls',
+               'application/x-xls', 'application/vnd.ms-excel', 'zz-application/zz-winassoc-xls', 'application/x-ms-excel' ]
+}
+
+
+
+

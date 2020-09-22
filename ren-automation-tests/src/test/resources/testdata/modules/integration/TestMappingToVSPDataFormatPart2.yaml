@@ -1,0 +1,76 @@
+TestData_SpouseHusband: {
+  PlansTab: {
+    Plan Name: A La Carte,
+    Coverage Tier: Employee + Spouse,
+    Enrollment Date: $<today>,
+    Participants: [{
+                     Participant Selection: index=0
+                   },
+                   {
+                     Participant Selection: New Person,
+                     Role Name: Spouse Participant,
+                     Participant General Info: {
+                       First Name: 'JohnHusband$<rx:\d{8}>',
+                       Last Name: 'SmithHusband$<rx:\d{8}>',
+                       Date of Birth: $<today-24y>,
+                       Gender: Male,
+                       Relationship to Insured: 'Spouse/Domestic Partner',
+                     }
+                   }]
+  }
+}
+
+TestData_SpouseWife: {
+  PlansTab: {
+    Plan Name: A La Carte,
+    Coverage Tier: Employee + Spouse,
+    Enrollment Date: $<today>,
+    Participants: [{
+                     Participant Selection: index=0
+                   },
+                   {
+                     Participant Selection: New Person,
+                     Role Name: Spouse Participant,
+                     Participant General Info: {
+                       First Name: 'MartaWife$<rx:\d{8}>',
+                       Last Name: 'SmithWife$<rx:\d{8}>',
+                       Date of Birth: $<today-24y>,
+                       Gender: Female,
+                       Relationship to Insured: 'Spouse/Domestic Partner',
+                     }
+                   }]
+  }
+}
+
+TestData_SpouseWifePlusSon: {
+  PlansTab: {
+    Plan Name: A La Carte,
+    Coverage Tier: Employee + Family,
+    Enrollment Date: $<today>,
+    Participants: [{
+                     Participant Selection: index=0
+                   },
+                   {
+                     Participant Selection: New Person,
+                     Role Name: Spouse Participant,
+                     Participant General Info: {
+                       First Name: 'MartaWife$<rx:\d{8}>',
+                       Last Name: 'SmithWife$<rx:\d{8}>',
+                       Date of Birth: $<today-24y>,
+                       Gender: Female,
+                       Relationship to Insured: 'Spouse/Domestic Partner',
+                     }
+                   },
+                   {
+                     Participant Selection: New Person,
+                     Role Name: Child Participant,
+                     Participant General Info: {
+                       First Name: 'JohnSon$<rx:\d{8}>',
+                       Last Name: 'SmithSon$<rx:\d{8}>',
+                       Date of Birth: $<today-10y>,
+                       Gender: Male,
+                       Relationship to Insured: 'Dependent Child',
+                     }
+                   }]
+  }
+}

@@ -1,0 +1,40 @@
+TestData_UpdateBenefitPeriod_TC01: {
+  BenefitPeriodActionTab: {
+    Benefit Period End Date:  $<today+9M-1d>,
+    Override Reason: 'Reason$<rx:\d{8}>'
+  }
+}
+
+TestData_Approval_Periods_Claim1_TC01: {
+  ApprovalPeriodsActionTab: {
+    Approval Frequency: Manually Specify,
+    Approval Status: To Be Determined,
+    Approval Period Start Date:  $<today+6M>,
+    Approval Period End Date: $<today+6M+8d>
+  }
+}
+
+TestData_Approval_Periods_Claim2_TC01: {
+  ApprovalPeriodsActionTab: {
+    Approval Frequency: Manually Specify,
+    Approval Status: Approved,
+    Approval Period Start Date:  $<today+6M>,
+    Approval Period End Date: $<today+6M+8d>
+  }
+}
+
+TestData_UpdateBenefitPeriod_TC02: {
+  BenefitPeriodActionTab: {
+    Benefit Period End Date:  $<today+6M+1y-1d>,
+    Override Reason: 'Reason$<rx:\d{8}>'
+  }
+}
+
+TestData_Approval_Periods_Claim1_TC02: {
+  ApprovalPeriodsActionTab: {
+    Approval Frequency: Manually Specify,
+    Approval Status: Approved,
+    Approval Period Start Date:  $<today+6M>,
+    Approval Period End Date: $<today+14M+12d>
+  }
+}

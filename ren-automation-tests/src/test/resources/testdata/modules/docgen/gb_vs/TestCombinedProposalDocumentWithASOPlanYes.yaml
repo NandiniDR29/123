@@ -1,0 +1,94 @@
+TestData_WithTwoCoverages: {
+  InitiniateDialog: '@<vs_master>@DataGather@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectTwoPlans', '@PlanDefinitionTab_AsoALACARTE', '@PlanDefinitionTab_AsoPlanB'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_AsoALACARTE', '@ClassificationManagementTab_AsoPlanB'],
+  PremiumSummaryTab: {}
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  Rate Guarantee (Months): 12,
+  ASO Plan: Yes,
+  Prior Carrier Name: 'EyeMed',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+SelectTwoPlans: {
+  Plan: [ASO A La Carte, ASO Plan B]
+}
+
+PlanDefinitionTab_AsoALACARTE: {
+  PlanKey: ASO A La Carte-ASO A La Carte,
+  Coverage Tiers: Composite tier,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+PlanDefinitionTab_AsoPlanB: {
+  PlanKey: ASO Plan B-ASO Plan B,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+ClassificationManagementTab_AsoALACARTE: {
+  Plan: ASOALACARTE-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Number of Participants: '32',
+  Coverage Tier: Composite tier
+}
+
+ClassificationManagementTab_AsoPlanB: {
+  Plan: ASOPlanB-ASO Plan B,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Number of Participants: '18',
+  Coverage Tier: Employee Only
+}
+
+Propose: {
+  QuotesSelectionActionTab: '@QuotesSelectionActionTab',
+  ProposalActionTab: '@ProposalActionTab'
+}
+
+QuotesSelectionActionTab: {
+  Select Quote by row number: [1],
+  Proposal Name: 'ProposalName$<rx:\d{5}>'
+}
+
+ProposalActionTab: {
+  Override Rules List: ["Proposal for ASO Plan requires Underwriter approval"],
+  Proposed ASO Fee: 1,
+  Fee Update Reason: 'index=1'
+}
+
+
+
+
+
+
+
+

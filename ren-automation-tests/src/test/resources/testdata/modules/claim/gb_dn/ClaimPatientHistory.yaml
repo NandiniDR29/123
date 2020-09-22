@@ -1,0 +1,6 @@
+TestData: {
+  PatientHistoryRecordActionTab: {
+    DOS: '$<today>',
+    Submitted CDT Code: 'D0110'
+  }
+}

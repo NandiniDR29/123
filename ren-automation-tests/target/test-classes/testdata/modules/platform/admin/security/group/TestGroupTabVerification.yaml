@@ -1,0 +1,15 @@
+CreateTestData: {
+  GroupTab: {
+    Business Domain: 'Corporate',
+    Add Group: 'click',
+    Group Name: 'GroupName$<rx:\d{8}>',
+    Group Roles: ['Actuarial'],
+    Group Users: ['QA user, QA']
+  }
+}
+
+UpdateTestData: {
+  GroupTab: {
+   Group Name: 'updateGroupName$<rx:\d{8}>'
+ }
+}

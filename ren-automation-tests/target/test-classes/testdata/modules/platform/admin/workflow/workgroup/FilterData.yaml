@@ -1,0 +1,9 @@
+TestData: {
+  WorkGroupTab: {
+     Code: '$<static:WorkGroupCode:[rx:Code\d{5}]>',
+     Name: '$<static:WorkGroupName:[rx:Name\d{5}]>',
+     Users: '$<property:currentUserName>',
+     Filters: 'Type COMPLETED (ipbsys)',
+     Save: 'click'
+   }
+}

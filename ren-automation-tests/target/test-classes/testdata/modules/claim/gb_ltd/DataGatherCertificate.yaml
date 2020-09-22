@@ -1,0 +1,131 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabLTD'],
+  BenefitsLTDInjuryPartyInformationTab: '@BenefitsLTDInjuryPartyInformationTab',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  BenefitCoverageDeterminationTab: {},
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_Without_Benefits: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: [],
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: {},
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_Without_Benefits_Without_AdditionalParties: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: [],
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: {},
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_WithOneBenefit: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabLTD'],
+  BenefitsLTDInjuryPartyInformationTab: '@BenefitsLTDInjuryPartyInformationTab',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  BenefitCoverageDeterminationTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: {},
+  EAPServicesServiceRequestTab: {},
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: 'contains=Participant',
+  Contact Preference: Mail
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  Disability Reason: index=1,
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+BenefitsBenefitSummaryTabLTD: {
+  Damage: Long Term Disability
+}
+
+EventInformationAuthorityReportTab: {
+  #Type of Authority: index=1,
+  Party Name: 'contains=Participant'
+}
+
+BenefitsLTDInjuryPartyInformationTab: {
+  Associate Policy Party: index=1,
+  Preferred Payment method: Check
+}
+
+BenefitsLTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-1d>
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  'Relationship To Decedent/Injury Party': index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Participant'
+}
+
+EAPServicesServiceRequestTab: {
+  Benefit: index=1,
+  Service Type: index=1,
+  #'Create New Vendor?': 'Yes',
+  #Company Name: '$<rx:CompanyName\d{5}>',
+  #Tax Identification Number: '$<rx:\d{10}>',
+  #Zip/Postal Code: 94596,
+  #Address Line 1: Address Line 1,
+  #Settlement Method: index=1
+  Add: 'click'
+}

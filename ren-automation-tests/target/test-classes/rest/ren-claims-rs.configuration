@@ -1,0 +1,21 @@
+{
+  "endpoint": "services/ren-claims-rs/v1/claims",
+  "restTargets": {
+    "REN.CLAIMS.RECOVERIES": {
+      "target": "/claims/recoveries",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "REN.CLAIMS.PAYMENTS": {
+      "target": "/claims/payments",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    }
+  }
+}

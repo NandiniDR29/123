@@ -1,0 +1,222 @@
+TestData_WithTwoPlans_NoAndYesSubGroups: {
+  CaseProfileDetailsTab: '@CaseProfileDetailsTab_NY',
+  ProductAndPlanManagementTab: {
+    Product: Group Benefits
+  },
+  ClassificationManagementTab: ['@ClassificationManagementTabEmployment_AutoSubGroupClass1', '@ClassificationManagementTab_NoSubGroups_Class2'],
+  LocationManagementTab: {},
+  FileIntakeManagementTab: ['@FileIntakeManagementTab']
+}
+
+CaseProfileDetailsTab_NY: {
+  Case Profile Name: __first_one,
+  Effective Date: $<today-1y>,
+  Group Domicile State: NY,
+  Applicable Payment Modes: [1,12],
+  Agency / Producer: [QAG - QA Agency]
+}
+
+ClassificationManagementTabEmployment_AutoSubGroupClass1: {
+  Classification Group: {
+    Class Name: 1,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'Yes'
+  }
+}
+
+ClassificationManagementTab_NoSubGroups_Class2: {
+  Classification Group: {
+    Class Name: 2,
+    Class Number: 2,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    Job Code: [ALL],
+    Employment Status: [ALL],
+    Employment Type: [ALL],
+    Pay Type: Hourly,
+    Union Member: 'Yes',
+    'Create Sub-Groups?': 'No'
+  }
+}
+
+FileIntakeManagementTab: {
+  Intake Profile Name: 'IntakeProfile$<rx:\d{8}>',
+  Effective Date: $<today-1y>,
+  Product: [ALL],
+  File Type: 'Quote',
+  Record Type: 'Eligibility',
+  Upload File Dialog: {
+    File Name: 'UploadedFile$<rx:\d{8}>',
+    File Upload: '$<file:REN_Rating_Census_Sample_File_latest.xlsx>',
+  }
+}
+
+TestData_Policy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Policy Effective Date: $<BOM>,
+  Situs State: GA,
+  Group is Member Company: 'No',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '48',
+  'Allow Independent Commissionable Producers?': No,
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Voluntary,
+    Member Payment Mode: '12',
+    'Required Participation %': 35,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Rate Type: 'Area + Tier',
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'First of the month coincident with or next following (amount and mode)',
+    Waiting Period Amount: 12,
+    'Waiting Period Mode': 'Days',
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'Yes',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Preventive Waiting Period: '6 months',
+    Basic Waiting Period: '6 months',
+    Major Waiting Period: '6 months',
+    Radiographs Waiting Period: '6 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes',
+    Prosthodontics Waiting Period: '18 months',
+  },
+  Dental Maximum: {
+    'Maximum Expense Period': 'Calendar Year',
+    'Is it graded Maximum': 'No',
+    'Plan Maximum - In Network': '$1,400',
+    'Plan Maximum - Out of Network': '$1,400',
+    'Maximum Roll Over': 'No',
+    'Maximum Extender': false
+  },
+  Co-Insurance:{
+    U&C Percentile Level: 'PPO Schedule',
+    Preventive - In Network: '90%',
+    Preventive - Out of Network: '90%',
+    Basic - In Network: '80%',
+    Basic - Out of Network: '80%',
+    Major - In Network: '60%',
+    Major - Out of Network: '60%'
+  },
+  Dental Deductible:{
+    Deductible Expense Period: 'Calendar Year',
+    Is it graded Dental Deductible: 'No',
+    Lifetime Deductible: 'No',
+    Deductible - In Network: '$50',
+    Deductible - Out Of Network: '$50',
+    Family Deductible - In Network: '3X',
+    Family Deductible - Out Of Network: '3X',
+  },
+  Orthodontia:{
+    Ortho Coverage: 'Yes',
+    Ortho Waiting Period: '6 months',
+    'Co-Insurance - In Network': '60%',
+    'Co-Insurance - Out of Network': '60%',
+    Ortho Availability: 'Adult and Child',
+    'Lifetime Maximum': 'No',
+    Yearly Maximum: 'Yes',
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      'Oral Examination': '2 Per Year',
+      'Fluoride Treatment': '2 Per Year',
+      'Fluoride Treatment Age Limit': '19',
+      'Space Maintainers': '1 Per Year',
+      'Space Maintainers Age Limit': '14',
+      'Brush Biopsy': 'Covered',
+      'Sealants': '1 Per Year',
+      'Sealants Age Limit': '16',
+    },
+    Radiographs: {
+      'Full Mouth Radiographs': '1 Per Year',
+      'Bitewings': '1 Per Year',
+    },
+    Basic: {
+      Amalgam and Composite Resin Fillings: '1 Per Year',
+    },
+    Major: {
+      Crowns: '1 Per Year',
+      Inlays: '1 Per Year',
+      Veneers: '1 Per Year',
+      Periodontal Surgery: '1 Per Year',
+      Limited Occlusal Adjustments: '1 Per Year',
+    },
+    Prosthodontics: {
+      Bridgework: '1 Per Year',
+      Dentures: '1 Per Year',
+      Relines: '1 Per Year',
+      Implants: '2 Per Year',
+    }
+  },
+  Service Categories: {
+    1A - Oral Exams: 'Major',
+    1B - Emergency Palliative Treatment: 'Basic'
+  }
+}
+
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: '1',
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + 1,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 20
+  }
+  ]
+}
+
+TestData_Proposal: {
+  ProposalActionTab: {
+    Override Rules List: ["Proposal with an A La Carte Plan requires Underwriter approval",
+                          "Proposal requires Underwriter approval because Minimum Hourly Requirement (ho..."]
+  }
+}

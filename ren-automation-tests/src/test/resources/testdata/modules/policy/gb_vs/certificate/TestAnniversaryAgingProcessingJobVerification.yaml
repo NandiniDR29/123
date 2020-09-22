@@ -1,0 +1,34 @@
+TestData: {
+  PlansTab: '@PlansTab',
+}
+
+PlansTab: {
+  Plan Name: index=1,
+  Coverage Tier: Employee + Family,
+  Enrollment Date: $<today>,
+  Participants: ['@TestData_Participant', '@TestData_Child_Participant', '@TestData_Spouse_Participant']
+}
+
+TestData_Participant: {
+  Participant Selection: index=0
+}
+
+TestData_Child_Participant: {
+  Participant Selection: New Person,
+  Role Name: Child Participant,
+  Participant General Info: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-24y>
+  }
+}
+
+TestData_Spouse_Participant: {
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'Martha$<rx:\d{8}>',
+    Last Name: 'Stewart$<rx:\d{8}>',
+    Date of Birth: $<today-32y>,
+  }
+}

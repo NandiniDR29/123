@@ -1,0 +1,70 @@
+CampaignsQueryRequest: {
+  query: {
+    offset: '0',
+    limit: '10'
+  }
+}
+
+TestData_RestAddCampaign: {
+  "campaignID": null,
+  "name": 'RESTCampaign$<rx:\d{8}>',
+  "description": 'desc$<rx:\d{8}>',
+  "promotionCd": 'Promo$<rx:\d{8}>',
+  "categoryCd": "SalCamp",
+  "startDate": "$<today:yyyy-MM-dd>",
+  "endDate": "$<today+1y:yyyy-MM-dd>",
+  "suspendFrom": null,
+  "suspendTo": null,
+  "status": "DRAFT",
+  "terminationReason": null,
+  "budgetCost": 100000,
+  "actualCost": 50000,
+  "expectedRevenue": 5000000,
+  "channels": [
+    {
+      "campaignChannelCd": "DIRECT_MAIL",
+      "campaignSubChannelCd": "EMAIL",
+      "campaignMaterialCd": "PO"
+    }
+  ],
+  "products": [
+    {
+      "productCd": "string",
+      "lobCd": "string",
+      "riskCd": "string"
+    }
+  ],
+  "autoStart": true
+}
+
+TestData_RestUpdateCampaign: {
+  "campaignID": null,
+  "name": 'REST Update Campaign$<rx:\d{8}>',
+  "description": 'desc$<rx:\d{8}>',
+  "promotionCd": 'Promo$<rx:\d{8}>',
+  "categoryCd": "SalCamp",
+  "startDate": "$<today+2d:yyyy-MM-dd>",
+  "endDate": "$<today+2y:yyyy-MM-dd>",
+  "suspendFrom": null,
+  "suspendTo": null,
+  "status": "DRAFT",
+  "terminationReason": null,
+  "budgetCost": 100000,
+  "actualCost": 50000,
+  "expectedRevenue": 5000000,
+  "channels": [
+    {
+      "campaignChannelCd": "EMAIL",
+      "campaignSubChannelCd": "EMAIL",
+      "campaignMaterialCd": "PO"
+    }
+  ],
+  "products": [
+    {
+      "productCd": "string",
+      "lobCd": "string",
+      "riskCd": "string"
+    }
+  ],
+  "autoStart": true
+}

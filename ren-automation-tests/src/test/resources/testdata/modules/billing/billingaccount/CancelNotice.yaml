@@ -1,0 +1,6 @@
+TestData: {
+  effectiveDate: "$<today:yyyy-MM-dd>",
+  fullTermEffectiveDate: "$<today:yyyy-MM-dd>",
+  daysOfNotice: 2,
+  cancelNoticeReasonCd: "noPaymentOfPremium"
+}

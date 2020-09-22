@@ -1,0 +1,127 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  PolicyInformationPolicyTab: '@PolicyInformationPolicyTab',
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  PolicyInformationParticipantParticipantCoverageTab: '@PolicyInformationParticipantParticipantCoverageTab',
+  PolicyInformationSponsorTab: '@PolicyInformationSponsorTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabStatutorySTD'],
+  BenefitsStatutorySTDInjuryPartyInformationTab: '@BenefitsStatutorySTDInjuryPartyInformationTab',
+  BenefitsStatutorySTDIncidentTab: '@BenefitsStatutorySTDIncidentTab',
+  BenefitCoverageDeterminationTab: {},
+  AdditionalPartiesWitnessTab: '@AdditionalPartiesWitnessTab',
+  AdditionalPartiesAdditionalPartyTab: '@AdditionalPartiesAdditionalPartyTab',
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  EAPServicesServiceRequestTab: '@EAPServicesServiceRequestTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+LossContextTab: {
+  Policy LOB: 'Disability Insurance',
+  Policy Product: 'Statutory Disability Insurance',
+  Type of Claim: 'Disability Claim',
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: index=1,
+  Relationship To Participant: index=1,
+  Contact Preference: Mail
+}
+
+PolicyInformationPolicyTab: {
+  Effective Date: $<today>,
+  Expiration Date: $<today+1y>,
+  Original Effective Date: $<today>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: Mail,
+  Zip / Postal Code: '11232',
+  Address Line 1: Address Line 1,
+  City: Brooklyn,
+  'State / Province': NY,
+  Preferred Payment method: Check,
+  Work State: NY,
+  Participant Prior Earnings: {
+    'Week no.': 1,
+    Gross amount paid: 1
+  }
+}
+
+PolicyInformationParticipantParticipantCoverageTab: {
+  Coverage Name: Stat NY,
+  Benefit Amount Level: index=1,
+  Percentage of Taxable: 100,
+  Benefit Amount: 10000,
+  FICA Match: Reimbursement
+}
+
+PolicyInformationSponsorTab: {
+  Company Name: 'Company$<rx:\d{8}>',
+  Contact Preference: Email,
+  Email: email@email.com
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  Disability Reason: index=1,
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  #Type of Authority: index=1,
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabStatutorySTD: {
+  Damage: Statutory Short Term Disability
+}
+
+BenefitsStatutorySTDInjuryPartyInformationTab: {
+  Associate Policy Party: index=1
+}
+
+BenefitsStatutorySTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today>
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  'Relationship To Decedent/Injury Party': index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1,
+  Social Security Number (SSN): 111-11-1111
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer',
+  Adjuster with Adverse Carrier-First Name: 'AdjFName$<rx:\d{8}>',
+  Adjuster with Adverse Carrier-Last Name: 'AdjLName$<rx:\d{8}>'
+}
+
+EAPServicesServiceRequestTab: {
+  Benefit: index=1,
+  Service Type: index=1,
+  #'Create New Vendor?': 'Yes',
+  #Company Name: '$<rx:CompanyName\d{5}>',
+  #Tax Identification Number: '$<rx:\d{10}>',
+  #Zip/Postal Code: 94596,
+  #Address Line 1: Address Line 1,
+  #Settlement Method: index=1
+  Add: 'click'
+}

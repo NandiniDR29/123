@@ -1,0 +1,8 @@
+TestData: {
+  ClaimChangeDateOfLossActionTab: '@ClaimChangeDateOfLossActionTab'
+}
+
+ClaimChangeDateOfLossActionTab: {
+  Date of Loss: '$<today:MM/dd/yyyy>',
+  Reason: index=1
+}

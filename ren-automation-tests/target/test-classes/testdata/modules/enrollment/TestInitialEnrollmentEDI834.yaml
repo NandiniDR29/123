@@ -1,0 +1,428 @@
+TestData_Case_Profile: {
+  CaseProfileDetailsTab: '@<caseprofile>@CaseProfile@CaseProfileDetailsTab',
+  ProductAndPlanManagementTab: '@<caseprofile>@CaseProfile@ProductAndPlanManagementTabGBGB',
+  ClassificationManagementTab: {
+    Classification Group: {
+      Class Name: 1,
+      Class Number: 1,
+      Relationship Type: Employment
+    },
+    Group Details: {
+      'Create Sub-Groups?': 'Yes',
+      'Create Sub-Groups Automatically?': 'Yes'
+    }
+  },
+  LocationManagementTab: {
+    Add Billing Location:{
+      Location Name: '1',
+      Location Number: '1',
+      Tax Identification: '11-6543201'
+    }
+  },
+  FileIntakeManagementTab: []
+}
+
+TestData_Case_Profile_DI: {
+  CaseProfileDetailsTab: '@<caseprofile>@CaseProfile@CaseProfileDetailsTab_NY',
+  ProductAndPlanManagementTab: '@<caseprofile>@CaseProfile@ProductAndPlanManagementTabGBGB',
+  ClassificationManagementTab: {
+    Classification Group: {
+      Class Name: 1,
+      Class Number: 1,
+      Relationship Type: Employment
+    },
+    Group Details: {
+      Job Code: [ALL],
+      Employment Status: [ALL],
+      Employment Type: [ALL],
+      Pay Type: Hourly,
+      Union Member: 'Yes',
+      'Create Sub-Groups?': 'Yes',
+      'Create Sub-Groups Automatically?': 'Yes'
+    }
+  },
+  LocationManagementTab: {
+    Add Billing Location:{
+      Location Name: '1',
+      Location Number: '1',
+      Tax Identification: '11-6543201'
+    }
+  },
+  FileIntakeManagementTab: ['@<caseprofile>@CaseProfile@FileIntakeManagementTab']
+}
+
+
+TestData_Policy_VS: {
+  InitiniateDialog: '@InitiniateDialog_VS',
+  PolicyInformationTab: '@PolicyInformationTab_VS',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<vs_master>@DataGather@SelectPlan', '@PlanDefinitionTab_VS'],
+  ClassificationManagementTab: '@ClassificationManagementTab_VS',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog_VS: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-5d>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+
+PolicyInformationTab_VS: {
+  Policy Effective Date: $<today-5d>,
+  ASO Plan: No,
+  Prior Carrier Name: 'EyeMed',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+PlanDefinitionTab_VS: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    'Use Brochure Rates?': 'No'
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+ClassificationManagementTab_VS: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 6
+  }
+  ]
+}
+
+TestData_Policy_AC: {
+  InitiniateDialog: '@InitiniateDialog_AC',
+  PolicyInformationTab: '@PolicyInformationTab_AC',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<ac_master>@DataGather@SelectPlanBASEBU', '@PlanDefinitionTab_AC', '@PlanDefinitionTab_AC_BasicBenefit'],
+  BasicBenefitsTab: '@<ac_master>@DataGather@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: ['@<ac_master>@DataGather@OptionalBenefitTab_BASEBU', '@<ac_master>@DataGather@OptionalBenefitTab_BASEBU_Enhanced'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_AC', '@ClassificationManagementTab_AC'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog_AC: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-5d>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_AC: {
+  Policy Effective Date: $<today-5d>,
+  Situs State: GA,
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+PlanDefinitionTab_AC: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  Coverage Tiers: Employee + Family,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_AC_BasicBenefit: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  Coverage Tiers: Employee + Family,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+ClassificationManagementTab_AC: {
+  Plan: Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  }
+}
+
+
+TestData_Policy_DN: {
+  InitiniateDialog: '@InitiniateDialog_DN',
+  PolicyInformationTab: '@PolicyInformationTab_DN',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<dn_master>@DataGather@SelectPlan', '@PlanDefinitionTab_DN'],
+  ClassificationManagementTab: '@ClassificationManagementTab_DN',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog_DN: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-5d>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_DN: {
+  ASO Plan: No,
+  Policy Effective Date: $<today-5d>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '2',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_DN: {
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Co-Insurance:{
+    #    Network Arrangement: index=1
+  },
+  Dental Deductible:{
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Fluoride Treatment: 'Not Covered'
+    }
+  }
+}
+
+ClassificationManagementTab_DN: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 6
+  }
+  ]
+}
+
+TestData_Policy_TL: {
+  InitiniateDialog: '@InitiniateDialog_TL',
+  PolicyInformationTab: '@PolicyInformationTab_TL',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_TL',
+                      '@<tl_master>@DataGather@PlanDefinitionBasicLifeInsurance',
+                      '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath',
+                      '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife',
+                      '@PlanDefinitionEmployeeVoluntaryLife',
+                      '@PlanDefinitionVoluntaryAccidentalDeath',
+                      '@PlanDefinitionSpouseVoluntaryVL',
+                      '@PlanDefinitionChildVoluntaryLifeInsurance',
+                      '@<tl_master>@DataGather@PlanDefinitionDependentVoluntaryAccidentalDeath_Remove'],
+  ClassificationManagementTab: ['@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce',
+                                '@<tl_master>@DataGather@ClassificationMgmtBasicAccidentalDeath',
+                                '@<tl_master>@DataGather@ClassificationMgmtDependentBasicLife',
+                                '@ClassificationMgmtEmployeeVoluntaryLifeInsurance',
+                                '@ClassificationMgmtEmployeeVoluntaryAccidentalDeath',
+                                '@ClassificationMgmtSpouseVoluntaryLifeInsurance',
+                                '@ClassificationMgmtChildVoluntaryLifeInsurance'],
+  PremiumSummaryTab: '@<tl_master>@DataGather@PremiumSummaryTab_ApplyCensus'
+}
+
+InitiniateDialog_TL: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-5d>,
+  Case Profile: index=1,
+  Product: Term Life Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_TL: {
+  County Code: '001 - Albany County',
+  'Prior Life Coverage': 'No',
+  Policy Effective Date: $<today-5d>,
+  'Has Continuity of Coverage?': 'Yes',
+  'Small Group?': 'No',
+  'Separate Or Combined Experience Rating?': 'Combined',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectPlan_TL: {
+  Plan: Basic Life + Voluntary
+}
+
+
+PlanDefinitionEmployeeVoluntaryLife: {
+  CoverageKey: 'Employee Voluntary Life Insurance',
+  Census Type: index=1,
+  'Total Number of Eligible Lives': 4,
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 6
+  },
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+}
+
+PlanDefinitionVoluntaryAccidentalDeath: {
+  CoverageKey: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  Required Participation %: 5%,
+  Member Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionSpouseVoluntaryVL: {
+  CoverageKey: Spouse Voluntary Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: 12,
+  Guaranteed Issue: {
+    GI Amount At Age: 65,
+    Age Limited GI Amount: 1000
+  }
+}
+
+PlanDefinitionChildVoluntaryLifeInsurance: {
+  CoverageKey: Child Voluntary Life Insurance,
+  Member Payment Mode: 12,
+  Required Participation %: 5%
+}
+
+ClassificationMgmtEmployeeVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Life Insurance,
+  Classification Group Name: 1
+}
+
+ClassificationMgmtEmployeeVoluntaryAccidentalDeath: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Employee Voluntary Accidental Death and Dismemberment Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtSpouseVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Spouse Voluntary Life Insurance,
+  Classification Group Name: 1,
+}
+
+ClassificationMgmtChildVoluntaryLifeInsurance: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: Child Voluntary Life Insurance,
+  Classification Group Name: 1
+}

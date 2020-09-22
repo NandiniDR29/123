@@ -1,0 +1,26 @@
+Add_Note_PortalNoteTo_EE: {
+  NotesAndAlertsTab: {
+    'Note/Alert': 'Note',
+    Category: 'Portal Note to EE',
+    Title: 'Portal Note to EE',
+    Note: 'Portal Note to EE Note'
+  }
+}
+
+Add_Note_PortalNoteTo_ER: {
+  NotesAndAlertsTab: {
+    'Note/Alert': 'Note',
+    Category: 'Portal Note to ER',
+    Title: 'Portal Note to ER',
+    Note: 'Portal Note to ER Note'
+  }
+}
+
+Add_Note_PortalNoteTo_ER-EE: {
+  NotesAndAlertsTab: {
+    'Note/Alert': 'Note',
+    Category: 'Portal Note to ER and EE',
+    Title: 'Portal Note to ER and EE',
+    Note: 'Portal Note to ER and EE Note'
+  }
+}

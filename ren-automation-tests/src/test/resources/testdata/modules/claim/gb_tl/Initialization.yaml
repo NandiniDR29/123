@@ -1,0 +1,78 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab'
+}
+
+TestDataWithoutPolicy: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTabWithoutPolicy'
+}
+
+TestData_TwoLossContexts: {
+  LossEventTab: {},
+  LossContextTab: ['@LossContextTabAccidentalDeath','@LossContextTabAccidentalDismemberment']
+}
+
+TestData_TwoLossContextsWithoutPolicy: {
+  LossEventTab: {},
+  LossContextTab: ['@LossContextTabAccidentalDeathWithoutPolicy','@LossContextTabAccidentalDismembermentWithoutPolicy']
+}
+
+TestData_LossContextTab: {
+  LossContextTab: '@LossContextTab'
+}
+
+TestData_LossEventTab_IncorrectDateOfLoss: {
+  LossEventTab: {
+    Date of Loss: '$<today+4d:MM/dd/yyyy h:mm a>'
+  }
+}
+
+LossContextTabAccidentalDeath: {
+  Type of Claim: Term Life Claim,
+  Type of Loss: Accidental Death,
+  Save Loss As: index=1
+}
+
+LossContextTabAccidentalDismemberment: {
+  Type of Claim: Term Life Claim,
+  Type of Loss: Accidental Dismemberment,
+  Save Loss As: index=1
+}
+
+LossContextTab: {
+  Type of Claim: Term Life Claim,
+  Save Loss As: index=1
+}
+
+LossEventTabLossEventSection: {
+  LossEventTab: {
+    Date of Loss: '$<today:MM/dd/yyyy h:mm a>',
+    Reporting Method: Phone,
+    Previously Reported: 'Yes',
+    Description of Loss Event: Description of Loss Event
+  }
+}
+
+LossContextTabWithoutPolicy: {
+  Policy LOB: 'Life Insurance',
+  Policy Product: 'Term Life Insurance',
+  Type of Claim: 'Term Life Claim',
+  Save Loss As: index=1
+}
+
+LossContextTabAccidentalDeathWithoutPolicy: {
+  Policy LOB: 'Life Insurance',
+  Policy Product: 'Term Life Insurance',
+  Type of Claim: Term Life Claim,
+  Type of Loss: Accidental Death,
+  Save Loss As: index=1
+}
+
+LossContextTabAccidentalDismembermentWithoutPolicy: {
+  Policy LOB: 'Life Insurance',
+  Policy Product: 'Term Life Insurance',
+  Type of Claim: Term Life Claim,
+  Type of Loss: Accidental Dismemberment,
+  Save Loss As: index=1
+}

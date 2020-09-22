@@ -1,0 +1,47 @@
+TestData: {
+  RewriteActionTab: {
+    Effective Date: $<BOM>,
+    'Use Original Policy Number?': 'Yes'
+  }
+}
+
+TestDataNewNumber: {
+  RewriteActionTab: {
+    Effective Date: $<BOM>,
+    'Use Original Policy Number?': 'No'
+  }
+}
+
+DataGather: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  MandatoryBenefitTab: {},
+  OptionalBenefitTab: {},
+  AccidentalInjuryMedicalTreatmentandServicesTab: {},
+  AccidentalDeathDismembermentBenefitsTab: {},
+  ClassificationManagementTab: {
+    Classification Sub-Groups And Rating Info: [
+    {
+      Classification SubGroup Name: Male,
+      Number of Participants: 10,
+      Total Volume: 250
+    }, {
+      Classification SubGroup Name: Female,
+      Number of Participants: 11,
+      Total Volume: 300
+    }, {
+      Classification SubGroup Name: Proprietor,
+      Number of Participants: 12,
+      Total Volume: 350
+    }]
+
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_AcceptContract: {
+  MasterPolicyBindActionTab: {
+    Amount Received with Application: 2000
+  }
+}

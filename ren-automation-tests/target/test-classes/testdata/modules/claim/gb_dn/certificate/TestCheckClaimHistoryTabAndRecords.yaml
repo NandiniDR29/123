@@ -1,0 +1,73 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: {
+    Save Loss As: index=1
+  },
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '134006748',
+    'License #': '58405',
+    License NPI: '1032662407',
+    License State/Province: 'NY',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '100073914',
+    Address Line 1: '225 Broadway Ste 101',
+    City: 'New York',
+    State/Province: 'NY',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Predetermination',
+  Source: 'Manual Entry',
+  Payee Type: 'Service Provider',
+  Ortho Months: '3',
+  'Other Coverage?': 'Yes',
+  Submitted Services: {
+    CDT Code: 'D2971',
+    Tooth: '3',
+    Charge: '400.40'
+  }
+}
+
+IntakeInformationTab1: {
+  IntakeInformationTab: {
+    Type of Transaction: 'Predetermination',
+    Source: 'Manual Entry',
+    Payee Type: 'Service Provider',
+    Ortho Months: '3',
+    'Other Coverage?': 'Yes',
+    Submitted Services: {
+      DOS: ''
+    }
+  }
+}
+
+IntakeInformationTab2: {
+  IntakeInformationTab: {
+    Source: 'ECS - Tesia',
+    Payee Type: 'Primary Insured',
+    Ortho Months: '5',
+    'Other Coverage?': 'No',
+    Type of Transaction: 'Actual Services',
+    Submitted Services: {
+      DOS: $<today>
+    }
+  }
+}
+
+IntakeInformationTab3: {
+  IntakeInformationTab: {
+    Source: 'ECS - CHC',
+    Ortho Months: '6',
+    Clean Claim Date: $<today>,
+    Submitted Services: {
+      CDT Code: 'D3351',
+    }
+  }
+}

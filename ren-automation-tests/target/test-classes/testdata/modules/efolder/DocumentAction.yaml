@@ -1,0 +1,11 @@
+RenameData: {
+  RenameFileTab: {
+    Name: NewTestName,
+  }
+}
+
+ReindexData: {
+  ReidexFileTab: {
+    Folder: Miscellaneous,
+  }
+}

@@ -1,0 +1,11 @@
+TestData_XML: {
+  TemplateImportFile: {
+    Select file: '$<file:testReport.xml>'
+  }
+}
+
+TestData_XLSX: {
+  TemplateImportFile: {
+    Select file: '$<file:testReport.xlsx>'
+  }
+}

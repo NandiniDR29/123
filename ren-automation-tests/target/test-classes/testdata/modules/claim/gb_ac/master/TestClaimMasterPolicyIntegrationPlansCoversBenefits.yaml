@@ -1,0 +1,479 @@
+TestData_AllPlans_EmployeeFamily: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectAllPlans',
+                      '@PlanDefinitionTab_BASEBU_EmployeeFamily',
+                      '@PlanDefinitionTab_VOL10_EmployeeFamily',
+                      '@PlanDefinitionTab_ENHANCED10_EmployeeFamily'],
+  BasicBenefitsTab: {},
+  EnhancedBenefitsAtoCTab: ['@EnhancedBenefitsAtoCTab_Common', '@EnhancedBenefitsAtoCTab_Common', '@EnhancedBenefitsAtoCTab_Common'],
+  EnhancedBenefitsDtoFTab: ['@EnhancedBenefitsDtoFTab_Common', '@EnhancedBenefitsDtoFTab_Common', '@EnhancedBenefitsDtoFTab_Common'],
+  EnhancedBenefitsHtoLTab: ['@EnhancedBenefitsHtoLTab_Common', '@EnhancedBenefitsHtoLTab_Common', '@EnhancedBenefitsHtoLTab_Common'],
+  EnhancedBenefitsMtoTTab: ['@EnhancedBenefitsMtoTTab_Common', '@EnhancedBenefitsMtoTTab_Common', '@EnhancedBenefitsMtoTTab_Common'],
+  OptionalBenefitTab: ['@OptionalBenefitTab_EnhancedAccident', '@OptionalBenefitTab_Common', '@OptionalBenefitTab_Common'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU_EmployeeFamily',
+                                 '@ClassificationManagementTab_VOL10_EmployeeFamily',
+                                 '@ClassificationManagementTab_ENHANCED10_EmployeeFamily'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Accident,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<BOM>,
+  Situs State: GA,
+  #workaround for REN-21887
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Total Number of Eligible Lives: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+SelectAllPlans: {
+  Plan: [Base Buy-Up,Enhanced 10 Units,Voluntary 10 Units]
+}
+
+PlanDefinitionTab_BASEBU_EmployeeFamily: {
+  PlanKey: BASEBU-Base Buy-Up,
+  Coverage Tiers: Employee + Family,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+PlanDefinitionTab_VOL10_EmployeeFamily: {
+  PlanKey: VOL10-Voluntary 10 Units,
+  Coverage Tiers: Employee + Family,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '30',
+    Eligibility Waiting Period Definition: 'Amount and Mode Only',
+    Waiting Period: '10',
+    Waiting Period Mode: 'Days',
+    'Waiting Period Waived For Current Employees?': 'Yes'
+  }
+}
+
+PlanDefinitionTab_ENHANCED10_EmployeeFamily: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  Coverage Tiers: Employee + Family,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'index=1',
+  'Sponsor/Participant Funding Structure': {
+    Taxability: 'index=1',
+    Premium Paid-Post Tax: 'Yes',
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): '10',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  }
+}
+
+EnhancedBenefitsAtoCTab_Common: {
+  PlanKey: SET_FROM_CODE,
+  Air Ambulance Benefit: {
+    Air Ambulance Benefit Amount: 1200
+  },
+  Ground Ambulance Benefit: {
+    Ground Ambulance Benefit Amount: 400
+  },
+  Appliance Benefit: {
+    Appliance Benefit Amount: 100
+  },
+  Abdominal or Thoracic Surgery Benefit: {
+    Abdominal or Thoracic Surgery Benefit Amount: 1000
+  },
+  Accident Follow-up Treatment Benefit: {
+    Accident Follow-up Treatment Benefit Amount: 50
+  },
+  Accidental Death Benefit - Common Carrier: {
+    Accidental Death Benefit Amount - Common Carrier for Covered Person: 100000,
+    Accidental Death Benefit Amount - Common Carrier for Covered Spouse: 100000,
+    Accidental Death Benefit Amount - Common Carrier for each Covered Dependent Child: 30000
+  },
+  Blood / Plasma / Platelets Benefit: {
+    Blood / Plasma / Platelets Benefit Amount: 500
+  },
+  Catastrophic Accident Benefit: {
+    Catastrophic Benefit Amount - Prior to Age 70 - Employee: 100000,
+    Catastrophic Benefit Amount - Prior to Age 70 - Spouse: 100000,
+    Catastrophic Benefit Amount - Prior to Age 70 - Child: 50000,
+    Catastrophic Benefit Amount - On or After Age 70 - Employee: 50000,
+    Catastrophic Benefit Amount - On or After Age 70 - Spouse: 50000
+  },
+  Coma Benefit: {
+    Coma Benefit Amount: 12500
+  },
+  Concussion Benefit: {
+    Concussion Benefit Amount: 100
+  },
+  Burn Benefit: {
+    Second-degree burns that cover at least 36% of body surface: 800,
+    Third-degree burns that covers at least 9 square inches of body surface but less than 35 square inches of body surface: 1500,
+    Third-degree burns that cover 35 or more square inches of body surface: 10000
+  }
+}
+
+EnhancedBenefitsDtoFTab_Common: {
+  PlanKey: SET_FROM_CODE,
+  Dislocation Benefit: {
+    Lower Jaw Closed Reduction Amount: 600,
+    Lower Jaw Open Reduction Amount: 1200,
+    Collarbone (Sternoclavicular) Open Reduction Amount: 2000,
+    Collarbone (Sternoclavicular) Closed Reduction Amount: 1000,
+    Collarbone (Acromioclavicular and separation) Open Reduction Amount: 400,
+    Collarbone (Acromioclavicular and separation) Closed Reduction Amount: 200,
+    Shoulder Open Reduction Amount: 1200,
+    Shoulder Closed Reduction Amount: 600,
+    Elbow Open Reduction Amount: 1200,
+    Elbow Closed Reduction Amount: 600,
+    Wrist Open Reduction Amount: 1200,
+    Wrist Closed Reduction Amount: 600,
+    Bone / Bones of the Hand Open Reduction Amount: 1200,
+    Bone / Bones of the Hand Closed Reduction Amount: 600,
+    Hip Open Reduction Amount: 8000,
+    Hip Closed Reduction Amount: 4000,
+    Knee Open Reduction Amount: 4000,
+    Knee Closed Reduction Amount: 2000,
+    Ankle / Bone or Bones of the Foot Open Reduction Amount: 3200,
+    Ankle / Bone or Bones of the Foot Closed Reduction Amount: 1600,
+    One or more Fingers or Toes Open Reduction Amount: 400,
+    One or more Fingers or Toes Closed Reduction Amount: 200
+  },
+  Eye Injury Benefit: {
+    Eye Injury Benefit Amount: 200
+  },
+  Fracture Benefit: {
+    Face or Nose (except mandible or maxilla) Closed Reduction Amount: 700,
+    Face or Nose (except mandible or maxilla) Closedopen Reduction Amount: 1400,
+    Skull Fracture - Depressed (except bones of face and nose) Open Reduction Amount: 10000,
+    Skull Fracture - Depressed (except bones of face and nose) Closed Reduction Amount: 5000,
+    Skull Fracture - Non-Depressed (except bones of face and nose) Amount Open Reduction Amount: 4000,
+    Skull Fracture - Non-Depressed (except bones of face and nose) Amount Closed Reduction Amount: 2000,
+    Lower Jaw / Mandible (except alveolar process) Closed Reduction Amount: 600,
+    Lower Jaw / Mandible (except alveolar process) Open Reduction Amount: 1200,
+    Upper Jaw / Maxilla (except alveolar process) Closed Reduction Amount: 700,
+    Upper Jaw / Maxilla (except alveolar process) Open Reduction Amount: 1400,
+    Upper Arm between Elbow and Shoulder (humerus) Closed Reduction amount: 700,
+    Upper Arm between Elbow and Shoulder (humerus) Open Reduction Amount: 1400,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum) Closed Reduction Amount': 600,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum) Open Reduction Amount': 1200,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers) Closed Reduction Amount': 600,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers) Open Reduction Amount': 1200,
+    Rib Closed Reduction Amount: 500,
+    Rib Open Reduction Amount: 1000,
+    'Finger, Toe Closed Reduction Amount': 100,
+    'Finger, Toe Open Reduction Amount': 200,
+    Vertebrae / Body of (excluding vertebral processes) Closed Reduction Amount: 1600,
+    Vertebrae / Body of (excluding vertebral processes) Open Reduction Amount: 3200,
+    Vertebral Processes Closed Reduction Amount: 600,
+    Vertebral Processes Open Reduction Amount: 1200,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx) Closed Reduction Amount': 1600,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx) Open Reduction Amount': 3200,
+    Hip / Thigh (femur) Closed Reduction Amount: 3000,
+    Hip / Thigh (femur) Open Reduction Amount: 6000,
+    Coccyx Closed Reduction Amount: 400,
+    Coccyx Open Reduction Amount: 800,
+    Leg (tibia and/or fibula) Closed Reduction Amount: 1600,
+    Leg (tibia and/or fibula) Open Reduction Amount: 3200,
+    Kneecap (patella) Closed Reduction Amount: 600,
+    Kneecap (patella) Open Reduction Amount: 1200,
+    Ankle Closed Reduction Amount: 600,
+    Ankle Open Reduction Amount: 1200,
+    Foot (except toes) Closed Reduction Amount: 600,
+    Foot (except toes) Open Reduction Amount: 1200
+  },
+  Emergency Dental Benefit: {
+    Crown Benefit Amount: 250,
+    Extraction Benefit Amount: 50
+  }
+}
+
+EnhancedBenefitsHtoLTab_Common: {
+  PlanKey: SET_FROM_CODE,
+  Hospital Admission Benefit: {
+    Hospital Admission Benefit Amount: 2000,
+    Intensive Care Unit Admission Benefit Amount: 4000
+  },
+  'Loss of Finger, Toe, Hand, Foot or Sight of an Eye Benefit': {
+    Loss of one finger or one toe - Employee: 1500,
+    Loss of one finger or one toe - Spouse: 1500,
+    Loss of one finger or one toe - Child: 500,
+    Loss of one hand or one foot or sight of one eye - Employee: 15000,
+    Loss of one hand or one foot or sight of one eye - Spouse: 15000,
+    Loss of one hand or one foot or sight of one eye - Child: 5000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Employee: 3000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Spouse: 3000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Child: 1000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Employee: 30000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Spouse: 30000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Child: 10000
+  },
+  Laceration Benefit: {
+    'Repaired Without Stitches, Sutures or Staples Benefit Amount': 25,
+    Benefit Amount for Lacerations less than 7.5 cm long: 50,
+    Benefit Amount for Lacerations 7.5 cm to 12.5 cm long: 200,
+    Benefit Amount for Lacerations over 12.5 cm long: 400
+  },
+  Internal Organ Loss Benefit: {
+    Internal Organ Loss Benefit Amount: 2500,
+  }
+}
+
+EnhancedBenefitsMtoTTab_Common: {
+  PlanKey: SET_FROM_CODE,
+  Major Diagnostic Benefit: {
+    Major Diagnostic Benefit Amount: 600
+  },
+  Prosthetic Device Benefit: {
+    One Prosthetic Device or Artificial Limb Benefit Amount: 500,
+    More than one Prosthetic Device or Artificial Limb Benefit Amount: 1000
+  },
+  Surgery Benefit: {
+    Herniated Disc Benefit Amount: 400,
+    'Torn, Ruptured or Severed Tendon or Ligament Surgery Benefit Amount to Torn, Ruptured or Severed Tendon or Ligament or Rotator Cuff Surgery Benefit Amount': 600,
+    'Torn, Ruptured or Severed of Two or More Tendons / Ligaments Surgery Benefit Amount to Torn, Ruptured or Severed of Two or More Tendons / Ligaments / Rotator Cuff Surgery Benefit Amount': 1000,
+    Torn Knee Cartilage Surgery Benefit Amount: 800,
+    Exploratory Surgery for Tendon/ Ligament/ Rotator Cuff/ Knee Cartilage Without Repair Benefit Amount: 200
+  },
+  Sports Injury Benefit: {
+    'Sports Injury Benefit - Lesser of 25% of All Benefits Paid or [benefit amount]': 1000
+  },
+  Transportation Benefit: {
+    Transportation Benefit Amount: 300
+  }
+}
+
+OptionalBenefitTab_Common: {
+  PlanKey: SET_FROM_CODE,
+  Hospital Confinement Benefit: {
+    Apply Benefit Hospital Confinement Benefit: true,
+    Hospital Confinement Benefit Amount: 40
+  }
+}
+
+OptionalBenefitTab_EnhancedAccident: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident
+}
+
+ClassificationManagementTab_BASEBU_EmployeeFamily: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee + Family,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_VOL10_EmployeeFamily: {
+  Plan: VOL10-Voluntary 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee + Family,
+  Number of Participants: 1
+}
+
+ClassificationManagementTab_ENHANCED10_EmployeeFamily: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'index=1',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee + Family,
+  Number of Participants: 1
+}
+
+TestData_Check: {
+  Air Ambulance Benefit: {
+    Air Ambulance Benefit: 3600
+  },
+  Appliance Benefit: {
+    Appliance Benefit: 300
+  },
+  Abdominal or Thoracic Surgery Benefit: {
+    Abdominal or Thoracic Surgery Benefit: 3000
+  },
+  Accident Follow-up Treatment Benefit: {
+    Accident Follow-up Treatment Benefit: 150
+  },
+  Accidental Death Benefit - Common Carrier: {
+    Accidental Death Benefit - Common Carrier - Employee: 300000,
+    Accidental Death Benefit - Common Carrier - Spouse: 300000,
+    Accidental Death Benefit - Common Carrier - Child: 90000
+  },
+  Blood / Plasma / Platelets Benefit: {
+    Blood / Plasma / Platelets Benefit: 1500
+  },
+  Catastrophic Accident Benefit: {
+    Catastrophic Benefit - Prior to Age 70  - Employee: 300000,
+    Catastrophic Benefit - Prior to Age 70  - Spouse: 300000,
+    Catastrophic Benefit - Prior to Age 70  - Child: 150000,
+    Catastrophic Benefit - On or After Age 70  - Employee: 150000,
+    Catastrophic Benefit - On or After Age 70  - Spouse: 150000
+  },
+  Coma Benefit: {
+    Coma Benefit: 37500
+  },
+  Concussion Benefit: {
+    Concussion Benefit: 300
+  },
+  Burn Benefit: {
+    Second-degree burns that cover at least 36% of body surface: 2400,
+    Third-degree burns that covers at least 9 square inches of body surface but less than 35 square inches of body surface: 4500,
+    Third-degree burns that cover 35 or more square inches of body surface: 30000
+  },
+  Dislocation Benefit: {
+    Lower Jaw-Closed Reduction: 1800,
+    Lower Jaw-Open Reduction: 3600,
+    Collarbone (Sternoclavicular)-Open Reduction: 6000,
+    Collarbone (Sternoclavicular)-Closed Reduction: 3000,
+    Collarbone (Acromioclavicular and separation)-Open Reduction: 1200,
+    Collarbone (Acromioclavicular and separation)-Closed Reduction: 600,
+    Shoulder-Open Reduction: 3600,
+    Shoulder-Closed Reduction: 1800,
+    Elbow-Open Reduction: 3600,
+    Elbow-Closed Reduction: 1800,
+    Wrist-Open Reduction: 3600,
+    Wrist-Closed Reduction: 1800,
+    Bone / Bones of the Hand-Open Reduction: 3600,
+    Bone / Bones of the Hand-Closed Reduction: 1800,
+    Hip-Open Reduction: 24000,
+    Hip-Closed Reduction: 12000,
+    Knee-Open Reduction: 12000,
+    Knee-Closed Reduction: 6000,
+    Ankle / Bone or Bones of the Foot-Open Reduction: 9600,
+    Ankle / Bone or Bones of the Foot-Closed Reduction: 4800,
+    One or more Fingers or Toes-Open Reduction: 1200,
+    One or more Fingers or Toes-Closed Reduction: 600
+  },
+  Eye Injury Benefit: {
+    Eye Injury Benefit: 600
+  },
+  Fracture Benefit: {
+    Face or Nose (except mandible or maxilla)-Closed Reduction: 2100,
+    Face or Nose (except mandible or maxilla)-Open Reduction: 4200,
+    Skull Fracture - Depressed (except bones of face and nose)-Open Reduction: 30000,
+    Skull Fracture - Depressed (except bones of face and nose)-Closed Reduction: 15000,
+    Skull Fracture - Non-Depressed (except bones of face and nose)-Open Reduction: 12000,
+    Skull Fracture - Non-Depressed (except bones of face and nose)-Closed Reduction: 6000,
+    Lower Jaw / Mandible (except alveolar process)-Closed Reduction: 1800,
+    Lower Jaw / Mandible (except alveolar process)-Open Reduction: 3600,
+    Upper Jaw / Maxilla (except alveolar process)-Closed Reduction: 2100,
+    Upper Jaw / Maxilla (except alveolar process)-Open Reduction: 4200,
+    Upper Arm between Elbow and Shoulder (humerus)-Closed Reduction: 2100,
+    Upper Arm between Elbow and Shoulder (humerus)-Open Reduction: 4200,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum)-Closed Reduction': 1800,
+    'Shoulder Blade (scapula), Collarbone (clavicle, sternum)-Open Reduction': 3600,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers)-Closed Reduction': 1800,
+    'Forearm (radius and/or ulna), Hand, Wrist (except fingers)-Open Reduction': 3600,
+    Rib-Closed Reduction: 1500,
+    Rib-Open Reduction: 3000,
+    'Finger, Toe-Closed Reduction': 300,
+    'Finger, Toe-Open Reduction': 600,
+    Vertebrae / Body of (excluding vertebral processes)-Closed Reduction: 4800,
+    Vertebrae / Body of (excluding vertebral processes)-Open Reduction: 9600,
+    Vertebral Processes-Closed Reduction: 1800,
+    Vertebral Processes-Open Reduction: 3600,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx)-Closed Reduction': 4800,
+    'Pelvis (includes ilium, ischium, pubis, acetabulum except coccyx)-Open Reduction': 9600,
+    Hip / Thigh (femur)-Closed Reduction: 9000,
+    Hip / Thigh (femur)-Open Reduction: 18000,
+    Coccyx-Closed Reduction: 1200,
+    Coccyx-Open Reduction: 2400,
+    Leg (tibia and/or fibula)-Closed Reduction: 4800,
+    Leg (tibia and/or fibula)-Open Reduction: 9600,
+    Kneecap (patella)-Closed Reduction: 1800,
+    Kneecap (patella)-Open Reduction: 3600,
+    Ankle-Closed Reduction: 1800,
+    Ankle-Open Reduction: 3600,
+    Foot (except toes)-Closed Reduction: 1800,
+    Foot (except toes)-Open Reduction: 3600
+  },
+  Emergency Dental Benefit: {
+    Crown Benefit: 750,
+    Extraction Benefit: 150
+  },
+  Hospital ICU Confinement Benefit: {
+    Hospital ICU Confinement Benefit: 1500
+  },
+  Hospital Admission Benefit: {
+    Hospital Admission Benefit: 6000
+  },
+  'Loss of Finger, Toe, Hand, Foot or Sight of an Eye Benefit': {
+    Loss of one finger or one toe - Employee: 4500,
+    Loss of one finger or one toe - Spouse: 1500,
+    Loss of one finger or one toe - Child: 500,
+    Loss of one hand or one foot or sight of one eye - Employee: 45000,
+    Loss of one hand or one foot or sight of one eye - Spouse: 15000,
+    Loss of one hand or one foot or sight of one eye - Child: 5000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Employee: 9000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Spouse: 3000,
+    Loss of two or more fingers/two or more toes or any combination of two or more fingers to toes - Child: 1000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Employee: 90000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Spouse: 90000,
+    Loss of both hands or both feet or sight in both eyes or any combination of two - Child: 30000
+  },
+  Laceration Benefit: {
+    'Repaired Without Stitches, Sutures or Staples Benefit': 75,
+    Lacerations less than 7.5 cm long: 150,
+    Lacerations 7.5 cm to 12.5 cm long: 600,
+    Lacerations over 12.5 cm long: 1200
+  },
+  Internal Organ Loss Benefit: {
+    Internal Organ Loss Benefit: 7500
+  },
+  Major Diagnostic Benefit: {
+    Major Diagnostic Benefit: 1800
+  },
+  Prosthetic Device Benefit: {
+    One Prosthetic Device or Artificial Limb Benefit: 1500,
+    More than one Prosthetic Device or Artificial Limb Benefit: 3000
+  },
+  Surgery Benefit: {
+    Herniated Disc Benefit: 1200,
+    'Torn, Ruptured or Severed Tendon or Ligament Surgery Benefit': 1800,
+    'Torn, Ruptured or Severed of Two or More Tendons / Ligaments Surgery Benefit': 3000,
+    Torn Knee Cartilage Surgery Benefit: 2400,
+    Exploratory Surgery for Tendon/ Ligament/ Rotator Cuff/ Knee Cartilage Without Repair Benefit: 600
+  },
+  Sports Injury Benefit: {
+    'Sports Injury Benefit - Lesser of 25% of All Benefits Paid or [benefit': 3000
+  },
+  Transportation Benefit: {
+    Transportation Benefit: 900
+  }
+}

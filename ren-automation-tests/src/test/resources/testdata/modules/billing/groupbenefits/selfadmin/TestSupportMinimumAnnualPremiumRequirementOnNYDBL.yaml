@@ -1,0 +1,40 @@
+TestDataWithCustomCalendar: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithCustomCalendar'],
+}
+
+BillingGroupsSponsor: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingAccountTabWithCustomCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: IC Annual,
+      Self Administered: true,
+      List Bill: true,
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Annual,
+      Invoicing Rule: On Time,
+      Invoice Due Day: 30,
+      Generation Date Rule: 30,
+      Calendar Save Button: click,
+      Calendar Back Button: click,
+      Products: [Group Accident, Statutory Disability Insurance]
+    },
+    Invoicing Calendar: 'IC Annual',
+    Billing Account Name: BA1
+  }
+}

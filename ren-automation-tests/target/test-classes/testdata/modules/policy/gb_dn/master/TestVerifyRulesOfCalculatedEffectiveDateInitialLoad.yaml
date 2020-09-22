@@ -1,0 +1,91 @@
+TestData_REST: {
+  "fileMetaData": '@FileMetaData',
+  "enrollmentCensusRecords": '@EnrollmentCensusRecords'
+}
+
+FileMetaData: {
+  "masterPolicyNumber": "ENTER YOUR MASTER POLICY NUMBER",
+  "participantCount": "1",
+  "timestamp": '$<today:yyyy-MM-dd>T00:00:00Z',
+  "fileIdentifier": 'F$<rx:\d{5}>',
+  "fileName": "File6",
+  "fileId": "345435",
+  "enrollmentTerm": "INITIAL_ENROLLMENT",
+  "enrollmentFileType": "XML_ELIGIBILITY",
+  "enrollmentSource": "GROUP",
+  "enrollmentDataType": "FULL",
+  "fullyEnrolledInd": "1"
+}
+
+EnrollmentCensusRecords: {
+  "referenceID": 'R$<rx:\d{5}>',
+  "certificate": {
+    "effectiveDt": "2020-03-01T00:00:00Z",
+    "coverages": {
+      "participants": {
+        "personOID": "P10015",
+        "roleName": "PRIMARY_P",
+        "relationshipToInsured": "SELF",
+      },
+      "benefitAmount": "",
+      "coverageCd": "DENTAL",
+      "planCd": "ALACARTE",
+      "coverageTierCd": {
+        "tiersType": "EEO",
+        "amountEmployee": "",
+      },
+      "enrollmentDt": '$<today:yyyy-MM-dd>T00:00:00Z',
+    },
+    "primaryParticipant": {
+      "personOID": "P10015",
+      "relationship": {
+        "employment": {
+          "departmentId": "Department ID",
+          "divisionId": "Division ID",
+          "employeeId": "EmployeeID",
+          "employmentStatus": "RET",
+          "employmentType": "CLE",
+          "expatriate": "1",
+          "hourlyWage": "15",
+          "jobCode": "LI",
+          "jobTitle": "Manager",
+          "originalHireDt": "2020-02-11T00:00:00Z",
+          "payClass": "PART_TIME",
+          "payType": "HOURLY",
+          "payrollFreq": "HOURLY",
+          "salaryAmt": "15",
+          "unionMember": "1",
+          "locationId": "AD",
+        },
+        "classificationGroup": {
+          "code": "Employment"
+        }
+      }
+    },
+    "enrollmentType": "INITIAL"
+  },
+  "allParticipants": {
+    "oid": "P10015",
+    "title": "1",
+    "suffix": "2",
+    "firstName": 'FirstName$<rx:\d{4}>',
+    "lastName": 'LastName$<rx:\d{4}>',
+    "middleName": 'MiddleName$<rx:\d{4}>',
+    "maritalStatusCd": "DP",
+    "gender": "female",
+    "dob": "1987-06-21T09:30:47Z",
+    "taxId": '$<rx:\d{9}>',
+    "tobaccoUsage": "false",
+    "email": "test1@mail.com",
+    "addresses": {
+      "addressType": "residence",
+      "addressLine1": "AddressLine1",
+      "addressLine2": "AddressLine2",
+      "addressLine3": "AddressLine3",
+      "zipCode": "10002",
+      "city": "City",
+      "state": "FL",
+      "country": "US",
+    }
+  }
+}

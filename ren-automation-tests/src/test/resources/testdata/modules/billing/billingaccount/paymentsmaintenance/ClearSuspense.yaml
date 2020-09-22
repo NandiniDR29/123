@@ -1,0 +1,48 @@
+TestData: {
+  SearchSuspenseActionTab: {
+    'Suspense Reference #': Reference
+  },
+
+  ClearSuspenseActionTab: {
+    Allocation: {
+      Billing Account Name Type: Individual,
+      'Policy #': ''
+    }
+  }
+}
+
+TestData_Benefits: {
+  SearchSuspenseActionTab: {
+    'Suspense Reference #': '',
+    'Billing Account': Number,
+    'Payment Designation': Benefits Accounts
+  }
+}
+
+TestData_PL_CL: {
+  SearchSuspenseActionTab: {
+    'Suspense Reference #': Reference,
+    Payment Designation: 'Personal & Commercial Lines Accounts'
+  },
+
+  ClearSuspenseActionTab: {
+    Allocation: {
+      Billing Account Name Type: Individual,
+      'Policy #': ''
+    }
+  }
+}
+
+TestData_CL: {
+  SearchSuspenseActionTab: {
+    'Suspense Reference #': Reference,
+    Payment Designation: 'Personal & Commercial Lines Accounts'
+  },
+
+  ClearSuspenseActionTab: {
+    Allocation: {
+      Billing Account Name Type: Other,
+      'Policy #': ''
+    }
+  }
+}

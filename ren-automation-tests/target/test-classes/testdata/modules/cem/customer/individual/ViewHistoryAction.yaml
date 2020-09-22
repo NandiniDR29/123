@@ -1,0 +1,17 @@
+TestData: {
+  ViewHistoryActionTab: {
+    Version Date: $<today>
+    }
+}
+
+TestData_Past: {
+  ViewHistoryActionTab: {
+    Version Date: $<today-1M>
+  }
+}
+
+TestData_Minus4Days: {
+  ViewHistoryActionTab: {
+    Version Date: $<today-4d>
+    }
+}

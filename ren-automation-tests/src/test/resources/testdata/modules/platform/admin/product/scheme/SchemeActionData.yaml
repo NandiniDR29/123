@@ -1,0 +1,18 @@
+TestData_Disapprove: {
+  DisapproveSchemeTab: {
+    Disapproval Reason: index=1,
+  }
+}
+
+TestData_Close: {
+  CloseSchemeTab: {
+    Close Effective date: $<today+1y>,
+    Scheme Close Reason: index=1
+  }
+}
+
+TestData_RunOff: {
+  SetRunOffTab: {
+    Run-Off Effective date: $<today+1d>
+  }
+}

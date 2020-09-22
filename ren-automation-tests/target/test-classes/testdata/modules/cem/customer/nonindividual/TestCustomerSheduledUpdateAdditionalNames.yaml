@@ -1,0 +1,49 @@
+TestData: {
+  GeneralTab: {
+     Additional Names: ['@Additional_NamesOne','@Additional_NamesTwo','@Additional_NamesThree'],
+     Non-Individual Type: index=1,
+     Name - Legal: 'NameLegal$<rx:\d{8}>',
+     Associate Divisions: true,
+     EIN: '$<rx:\d{2}-\d{7}>',
+     Date business started: $<today-10y>,
+     Division: index=1,
+     Industry: index=1,
+     SIC Description: index=1,
+     Address Details: {
+        Country: United States,
+        Zip/Post Code: '90210',
+        City: Beverly Hills,
+        State/Province: CA,
+        Address Line 1: 'Address$<rx:\d{8}>'
+        },
+     Group Sponsor: 'true',
+     Sales Rep Work Queue: {
+       Search For: Work Queue,
+       Work Queue: General
+     }
+  }
+}
+
+Additional_NamesOne: {
+ Name-DBA: '$<static:AFOne:[rx:NameDBA\d{8}]>'
+}
+
+Additional_NamesTwo: {
+ Name-DBA: '$<static:AFTwo:[rx:NameDBA\d{8}]>'
+}
+
+Additional_NamesThree: {
+Name-DBA: '$<static:AFThree:[rx:NameDBA\d{8}]>'
+}
+
+Additional_NamesFour: {
+    Additional Names:{
+      Name-DBA: '$<static:AFFour:[rx:NameDBA\d{8}]>'
+    }
+}
+
+Additional_Names_Edit: {
+    Additional Names:{
+      Name-DBA: AdditionalNameEdit
+    }
+}

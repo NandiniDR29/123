@@ -1,0 +1,14 @@
+EmployeeInfo: {
+  EmployeeInfoTab: {
+    'Department ID': '001',
+    'Division ID': '002',
+    'Location ID': '003'
+  }
+}
+
+EmployeeInfoResponse: {
+  "type": "EMP",
+  "DepartmentID": "001",
+  "DivisionID": "002",
+  "LocationID": "003",
+}

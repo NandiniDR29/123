@@ -1,0 +1,7 @@
+TestData: {
+  ClaimResolutionActionTab: {
+    Type of Resolution: index=1,
+    Description of Resolution: 'Description$<rx:\d{8}>',
+    Automatically Close Open Items: 'Yes'
+  }
+}

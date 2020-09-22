@@ -1,0 +1,19 @@
+AddressDetailsTestData: {
+  GeneralTab: {
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>'
+    }
+  }
+}
+
+EmailDetailsTestData: {
+  GeneralTab: {
+    Email Details: {
+      Email Address: "test@test.com"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<import xmlns="http://exigenservices.com/ipb/crm/integration">
+  <lead>
+    <firstName>QUALIFIED</firstName>
+    <lastName>Sienna</lastName>
+    <lineStatus>Parson</lineStatus>
+	<Address>
+      <type>mailing</type>
+	  <city>Minsk</city>
+	  <country>US</country>
+	  <postalCode>12345</postalCode>
+	  <stateProvince>IL</stateProvince>
+	  <addressLine>address line 1</addressLine>
+    </Address>
+	<PhoneContact>
+      <phoneNumber>3758946215</phoneNumber>
+    </PhoneContact>
+    <EmailContact>
+      <email>dsfa@mgfk.ru</email>
+    </EmailContact>
+  </lead>
+</import>

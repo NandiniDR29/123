@@ -1,0 +1,8 @@
+TestData: {
+  SubfolderTab: {
+    Name: 'Subfolder$<rx:\d{8}>',
+    Allowed Document Types: All,
+    Edit Privilege: 'Agency:Invoices and Bills:Edit',
+    View Privilege: 'Agency:Invoices and Bills:View'
+  }
+}

@@ -1,0 +1,73 @@
+TestData: {
+  OpportunityActionTab: {
+    Channel: Broker,
+    Likelihood: High
+  }
+}
+
+Adjustment_Likehool: {
+  OpportunityActionTab: {
+    Channel: Broker,
+    Likelihood: Low
+  }
+}
+
+
+Opportunity_Rest: {
+  OpportunityActionTab: {
+    Description: desc,
+    Channel: Broker,
+    Likelihood: Low,
+    Potential: 100,
+    Effective Date: $<today+1d>,
+    Assign Referral: true,
+    Referred by:{
+      First Name: ISBA,
+      Category: '',
+      Channel: Corporate
+    },
+    Assign Owner: true,
+    Opportunity Owner:{
+         Search For: Work Queue,
+         Work Queue: Cancel Audit,
+         OK: true
+    }
+  }
+}
+
+Update_Opportunity_REST: {
+  "opportunityId": 0,
+  "description": "aaaaaa",
+  "opportunityChannelCd": "IA",
+  "opportunityLikelihoodCd": "HIGH",
+  "status": "DRAFT",
+  "dateCreated": "2018-07-12",
+  "dateModified": "2018-07-12",
+  "customerNumber": "",
+  "campaignId": null,
+  "potential": {
+    "amount": 2598,
+    "currencyCd": "USD"
+  },
+  "closeReason": null,
+  "closeReasonDescription": null,
+  "productsInfo": [
+    {
+      "productCd": "all",
+      "productName": null,
+      "lobCd": "HOME",
+      "riskItemCd": null
+    }
+  ],
+  "opportunityAssociations": [],
+  "owner": {
+    "displayValue": "ISBA ISBA",
+    "loginName": "isba",
+    "queueName": null,
+    "type": "INTERNAL"
+  },
+  "referral": {
+    "displayValue": "ISBA ISBA",
+    "loginName": "isba"
+  }
+}

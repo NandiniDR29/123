@@ -1,0 +1,8 @@
+TestData: {
+  FilterDocumentTab: {
+    Subsystem: 'Policy Product',
+    Product: 'Auto (Preconfigured)',
+    Document Type: 'Product Brochure',
+    Refresh: click
+  }
+}

@@ -1,0 +1,23 @@
+CreateTestData: {
+  PARGeneralTab:{
+    Add Product Access Role: CLICK,
+    Effective: $<today>,
+    Role Code: 'RoleCode$<rx:\d{8}>',
+    Role Name: 'RoleName$<rx:\d{8}>',
+    Products: ['All'],
+    Product Specific Privileges: ['ALL']
+  }
+}
+
+SearchTestData: {
+  PARSearchTab: {
+    Product Access Role Name: 'roleName',
+    Product Access Role Code: 'roleCode'
+  }
+}
+
+UpdateTestData: {
+  PARGeneralTab: {
+    Role Code: 'roleCode'
+  }
+}

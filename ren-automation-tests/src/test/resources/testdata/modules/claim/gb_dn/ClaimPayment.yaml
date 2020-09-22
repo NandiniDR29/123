@@ -1,0 +1,77 @@
+TestData_IssuePayment: {
+  IssuePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_ClearPayment: {
+  ClearPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_UpdatePayment: {
+  FinancialPaymentPaymentDetailsActionTab: {
+    Reduction Amount: 30,
+    Payment Interest: {
+      Interest Amount: 35
+    }
+  }
+}
+
+TestData_StopPayment: {
+  RequestStopPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_ConfirmStopPayment: {
+  ConfirmStopPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_DeclinePayment: {
+  DeclinePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_DisapprovePayment: {
+  DisapprovePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_ApprovePayment: {
+  ApprovePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_PostRecovery: {
+  RecoveryDetailsActionTab: '@RecoveryDetails',
+}
+
+TestData_VoidRecovery: {
+  RecoveryDetailsActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+RecoveryDetails: {
+  Recovery Amount: 0.01,
+  Recovery Method: Check,
+  Recovered From: Service Provider,
+  'Check #': 12345,
+  Recovery Memo: 'Simple test memo'
+}
+
+TestData_RecoveryPayment: {
+  RecoveryDetailsActionTab: {
+    Recovery Amount: '100',
+    Recovered From: 'Other',
+    Recovery Method: 'Check',
+    'Check #': 'check'
+  }
+}

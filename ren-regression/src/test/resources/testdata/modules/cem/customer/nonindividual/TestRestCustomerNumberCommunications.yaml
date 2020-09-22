@@ -1,0 +1,41 @@
+TestData: {
+  CommunicationActionTab: {
+      Communication Channel: 'Appointment',
+      Entity Type: 'Other',
+      Communication Direction: 'Outbound',
+
+  }
+}
+
+Rest_Data: {
+   'categoryCd': 'FORMS',
+   'subCategoryCd': 'BENEFIT_SUMMARY',
+   'sourceCd': 'GROUP',
+   'languageCd': 'ENG',
+   'internalCallerCd': 'CALLER2',
+   'subject': 'Enter any value',
+   'statusCd': 'READ',
+   'channelCd': 'DIRECT_TO_CUSTOMER',
+   'directionCd': 'INBOUND',
+   'entityTypeCd': 'CUSTOMER',
+   'entityReferenceId': ''
+}
+
+
+TestData_New: {
+  'Channel': 'Direct to Customer',
+  'Direction': 'Inbound',
+  'Type': 'Manual',
+  'Entity Type': 'Lead/Customer',
+  'Entity Reference ID': '',
+  'Performer': 'ISBA ISBA',
+}
+
+TestData_Update: {
+  'Channel': 'Appointment',
+  'Direction': 'Outbound',
+  'Type': 'Manual',
+  'Entity Type': 'Other',
+  'Entity Reference ID': '',
+  'Performer': 'ISBA ISBA',
+}

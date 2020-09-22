@@ -1,0 +1,33 @@
+TestDataAdmin: {
+  GBCommissionRuleTab: ['@Tiered_CommissionRule']
+}
+
+Tiered_CommissionRule: {
+  Commission Type: 'Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Channel',
+    Select Sales Channel: {
+      Commission Channel Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: [ALL],
+    Tier 1: [0, '100.00', 15]
+  }
+}
+
+TestDataMasterPolicy: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    Situs State: GA,
+    'Allow Independent Commissionable Producers?': No,
+    'Primary Agency?': 'Yes',
+    Split Percentage: '100',
+    Agent Sub Producer: 'index=1',
+    Total Number of Eligible Lives: 1,
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Agency / Producer:  'index=1',
+  }
+}

@@ -1,0 +1,132 @@
+TestData: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabDismemberment'],
+  BenefitsAccidentalDismembermentInjuryPartyInformationTab: '@BenefitsAccidentalDismembermentInjuryPartyInformationTab',
+  BenefitsAccidentalDismembermentIncidentTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_Without_Benefits: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: [],
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+TestData_With_PremiumWaiverBenefit: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  ReportingPartyAndClaimContactTab: '@ReportingPartyAndClaimContactTab',
+  EventInformationLossEventTab: '@EventInformationLossEventTab',
+  EventInformationAuthorityReportTab: '@EventInformationAuthorityReportTab',
+  BenefitsBenefitSummaryTab: ['@BenefitsBenefitSummaryTabPremiumWaiver'],
+  BenefitPremiumWaiverInjuryPartyInformationTab: '@BenefitPremiumWaiverInjuryPartyInformationTab',
+  BenefitPremiumWaiverIncidentTab: {},
+  AdditionalPartiesWitnessTab: {},
+  AdditionalPartiesAdditionalPartyTab: {},
+  ClaimCoordinationAdditionalInsuranceTab: '@ClaimCoordinationAdditionalInsuranceTab',
+  ClaimHandlingClaimFileOwnerTab: {},
+  ClaimHandlingSpecialHandlingTab: {},
+  CompleteNotificationTab: {},
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+ReportingPartyAndClaimContactTab: {
+  Party Name: 'contains=Participant',
+  Relationship To Participant: index=1,
+  Contact Preference: index=1,
+  Email: test@test.com
+}
+
+PolicyInformationPolicyTab: {
+  Original Effective Date: $<BOM>
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Contact Preference: index=1,
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+}
+
+EventInformationLossEventTab: {
+  Description of Loss: 'Description$<rx:\d{8}>',
+  'Is it Primary ICD Code?': 'Yes',
+  ICD Code: 'A02.8'
+}
+
+EventInformationAuthorityReportTab: {
+  Party Name: index=1
+}
+
+BenefitsBenefitSummaryTabDismemberment: {
+  Damage: Accidental Dismemberment
+}
+
+BenefitsAccidentalDismembermentInjuryPartyInformationTab: {
+  Associated Policy Party: index=1,
+  Relationship To Participant: Self,
+  Contact Preference: 'Mail',
+  Preferred Payment method: Check,
+  'Itemized Injury/Illness': {
+    Date of Service: $<today>
+  }
+}
+
+AdditionalPartiesWitnessTab: {
+  Party Name: index=1,
+  Relationship To Decedent/Injury Party	: index=1
+}
+
+AdditionalPartiesAdditionalPartyTab: {
+  Party Name: index=1
+}
+
+ClaimCoordinationAdditionalInsuranceTab: {
+  Party Name: 'contains=Customer'
+}
+
+EAPServicesServiceRequestTab: {
+  Damage: index=1,
+  Service Type: index=1,
+  'Create New Vendor?': 'Yes',
+  Company Name: 'Company$<rx:\d{8}>',
+  Tax Identification Number: '$<rx:\d{10}>',
+  Zip/Postal Code: 94596,
+  Address Line 1: Address Line 1,
+  Settlement Method: index=1
+}
+
+BenefitsBenefitSummaryTabPremiumWaiver: {
+  Damage: Premium Waiver
+}
+
+BenefitPremiumWaiverInjuryPartyInformationTab: {
+  Premium Waiver Party: {
+    Associate Policy Party: 'contains=John',
+    Date of Birth: $<today>,
+    Preferred Payment method: Check
+  }
+}

@@ -1,0 +1,126 @@
+TestDataEndorsement: {
+  StartEndorsementActionTab: {
+    Endorsement Date: $<BOM>,
+    Endorsement Reason: Acquisition or Merger,
+  }
+}
+
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  MasterPolicyTab: '@MasterPolicyTab',
+  CoverageDefinitionTab: ['@CoverageDefinitionTabBasicAccident','@CoverageDefinitionTabBasicTermLife'],
+  ClassificationManagementTab: ['@ClassificationManagementTabBasicAccident','@ClassificationManagementTabBasicTermLife'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Group Benefits,
+  Delivery Model: Group
+}
+
+MasterPolicyTab: {
+  Renewal Frequency: 1 Year,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: '$<property:currentUser>'
+}
+
+CoverageDefinitionTabBasicAccident: {
+  Coverage Name: Basic Accident,
+  Coverage Tiers: 'Employee Only',
+  'Self-Administered?': 'Yes',
+  Participant Contribution %: 100,
+  Member Payment Mode: '12'
+}
+
+CoverageDefinitionTabBasicTermLife: {
+  Coverage Name: Basic Term Life,
+  'Self-Administered?': 'Yes',
+  Contribution Type: Contributory,
+  Participant Contribution %: 100,
+  Minimum Number of Participants: 1,
+  Member Payment Mode: '12',
+  Flat Benefit Amount: 1000
+}
+
+ClassificationManagementTabBasicAccident: {
+  Get Rates: Enter Manually,
+  Classification Group Name: Employment,
+  'Use Classification Sub-Groups?': 'No',
+  Tier: index=1,
+  Number of Participants: '50',
+  Rate: '2'
+}
+
+ClassificationManagementTabBasicTermLife: {
+  Get Rates: Enter Manually,
+  Classification Group Name: Employment,
+  'Use Classification Sub-Groups?': 'No',
+  Total Volume: 1,
+  Number of Participants: '50',
+  Rate: '1'
+}
+
+TestData_ChangeCoverage: {
+  InitiniateDialog: {},
+  MasterPolicyTab: {},
+  CoverageDefinitionTab: ['@CoverageDefinitionTabChildTermLife'],
+  ClassificationManagementTab: ['@ClassificationManagementTabSpouseTermLifeOtherValues', '@ClassificationManagementTabBasicTermLifeOtherRate', '@ClassificationManagementTabChildTermLife'],
+  PremiumSummaryTab: {}
+}
+
+TestData_ExistentBillingAccount: {
+  MasterPolicyIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTabGroup1',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: {}
+}
+
+BillingGroupsActionTabGroup1: {
+  Coverage: [Basic Accident, Basic Term Life, Spouse Term Life],
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+CoverageDefinitionTabChildTermLife: {
+ Add Coverage: 'click',
+ Coverage Name: Spouse Term Life,
+ 'Self-Administered?': 'Yes',
+ Contribution Type: Contributory,
+ 'Required Participation %': '0%',
+ 'Participant Contribution %': '100',
+ Minimum Number of Participants: 1,
+ Member Payment Mode: '12',
+ Flat Benefit Amount: '50'
+}
+
+CoverageDefinitionTabEmpty: {
+}
+
+ClassificationManagementTabSpouseTermLifeOtherValues: {
+  Number of Participants: '0',
+  Rate: '1',
+}
+
+ClassificationManagementTabBasicTermLifeOtherRate: {
+  Number of Participants: '5',
+  Total Volume: '100',
+  Rate: '1000'
+}
+
+ClassificationManagementTabChildTermLife: {
+  Get Rates: Enter Manually,
+  Classification Group Name: Employment,
+  'Use Classification Sub-Groups?': 'No',
+  Total Volume: '2',
+  Number of Participants: '2',
+  Rate: '1'
+}

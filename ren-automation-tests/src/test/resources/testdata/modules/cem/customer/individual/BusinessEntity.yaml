@@ -1,0 +1,67 @@
+TestData: {
+  BusinessEntityTab: '@BusinessEntityTab'
+}
+
+BusinessEntityTab: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Date business started: 10/10/1999,
+  Division: index=2,
+  Industry: index=1,
+  SIC Description: index=1,
+}
+
+TestData_BusinessEntityWithContacts: {
+  BusinessEntityTab: {
+    Non-Individual Type: Partnership,
+    Name - Legal: '$<static:NameBusinessEntity1:[rx:Corp1_\d{9}]>',
+    EIN: '$<rx:\d{2}-\d{7}>',
+    Date business started: 10/10/1999,
+    Division: index=2,
+    Industry: index=1,
+    SIC Description: index=1,
+    Address Details: '@ContactDetails_Address',
+    Phone Details: '@ContactDetails_Phone',
+    Email Details: '@ContactDetails_Email',
+    Chat Details: '@ContactDetails_Chat',
+    Web URL Details: '@ContactDetails_WebUrl',
+    Social Net Details: '@ContactDetails_SocialNet'
+  }
+}
+
+ContactDetails_Phone: {
+    Phone Type: Work,
+    Phone Number: '0123456789',
+    Consent Status: Not Requested
+}
+
+ContactDetails_Address: {
+    Address Type: Mailing,
+    Country: United States,
+    Zip/Post Code: '12345',
+    City: As,
+    State/Province: CA,
+    Address Line 1: EISGROUP
+}
+
+ContactDetails_Chat: {
+    Chat Type: Skype,
+    Chat ID: 1
+}
+
+ContactDetails_Email: {
+    Email Type: index=1,
+    Email Address: eis@eis.com,
+    Consent Status: Not Requested
+}
+
+ContactDetails_SocialNet: {
+    Social Net Type: Facebook,       
+    Social Net ID: 1
+}
+
+ContactDetails_WebUrl: {
+    Web URL Type: Corporate,
+    Web URL: 1
+}

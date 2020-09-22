@@ -1,0 +1,50 @@
+TestData: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Queue: 'General'
+  }
+}
+
+TestData_PhoneAudit: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Queue: 'Phone Audit'
+  }
+}
+
+TestData_MainAudit: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Queue: 'Main Audit'
+  }
+}
+
+TestData_PremiumAuditManagement: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Queue: 'Premium Audit Management'
+  }
+}
+
+TestData_LastNameISBA: {
+  AssignTaskToActionTab: {
+    Last Name: '$<property:currentUserLastName>'
+  }
+}
+
+TestData_ISBA: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Queue: '',
+    Last Name: '$<property:currentUserLastName>',
+    Task Note: 'Assigned to ISBA'
+  }
+}
+
+TestData_General: {
+  AssignTaskToActionTab: {
+    Stay in Original Queue: 'False',
+    Queue: 'General',
+    Task Note: 'Assigned to General'
+  }
+}

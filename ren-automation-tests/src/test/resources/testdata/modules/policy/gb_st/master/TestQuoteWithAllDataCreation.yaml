@@ -1,0 +1,253 @@
+TestData_Master_NY: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: ['@PlanDefinitionTab_NY', '@PlanDefinitionTab_CoverageEnhancedNY', '@PlanDefinitionTab_CoveragePFLNY'],
+  ClassificationManagementTab: [
+  {
+    CoverageKey: 'Stat NY',
+    Add Classification Group Coverage Relationship: CLICK,
+    Classification Group Name: 1,
+    Classification Sub-Groups And Rating Info: [                                                      {
+                                                                                                        Classification SubGroup Name: Male,
+                                                                                                        Number of Participants: 10,
+                                                                                                        Total Volume: 250
+                                                                                                      }, {
+                                                                                                        Classification SubGroup Name: Female,
+                                                                                                        Number of Participants: 11,
+                                                                                                        Total Volume: 300
+                                                                                                      }, {
+                                                                                                        Classification SubGroup Name: Proprietor,
+                                                                                                        Number of Participants: 12,
+                                                                                                        Total Volume: 350
+                                                                                                      }]
+  },
+  {
+    CoverageKey: 'Enhanced NY',
+    Add Classification Group Coverage Relationship: CLICK,
+    Classification Group Name: 1,
+    Classification Sub-Groups And Rating Info: [                                                         {
+                                                                                                           Classification SubGroup Name: Male,
+                                                                                                           Number of Participants: 10,
+                                                                                                           Total Volume: 250
+                                                                                                         }, {
+                                                                                                           Classification SubGroup Name: Female,
+                                                                                                           Number of Participants: 11,
+                                                                                                           Total Volume: 300
+                                                                                                         }, {
+                                                                                                           Classification SubGroup Name: Proprietor,
+                                                                                                           Number of Participants: 12,
+                                                                                                           Total Volume: 350
+                                                                                                         }]
+  },
+  {
+    CoverageKey: 'PFL NY',
+    Add Classification Group Coverage Relationship: CLICK,
+    Classification Group Name: 1,
+    Classification Sub-Groups And Rating Info: [                                                            {
+                                                                                                              Classification SubGroup Name: Male,
+                                                                                                              Number of Participants: 10,
+                                                                                                              Total Volume: 250
+                                                                                                            }, {
+                                                                                                              Classification SubGroup Name: Female,
+                                                                                                              Number of Participants: 11,
+                                                                                                              Total Volume: 300
+                                                                                                            }, {
+                                                                                                              Classification SubGroup Name: 'Other/Not Specified',
+                                                                                                              Number of Participants: 12,
+                                                                                                              Total Volume: 350
+                                                                                                            }]
+  }],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+TestData_Master_NJ: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NJ',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: '@PlanDefinitionTab_NJ',
+  ClassificationManagementTab: '@ClassificationManagementTab_NJ',
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Statutory Disability Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  County Code: '001 - Albany County',
+  Prior Carrier Name: InsuranceCompany,
+  Prior Carrier Policy Number: '$<rx:\d{6}>',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NY,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PolicyInformationTab_NJ: {
+  Prior Carrier Name: InsuranceCompany,
+  Prior Carrier Policy Number: '$<rx:\d{6}>',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NJ,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+EnrollmentTab: {
+  Planned Enrollment Communication Channels: [Education Videos, Payroll Stuffers],
+  Enrollment Consultant/Manager: Greg,
+  Required Enrollment Response: Enroll,
+  Enrollment Response Required Date: $<today>,
+  Competing Influences: All
+}
+
+PlanDefinitionTab_NY: {
+  Plan: NY Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+PlanDefinitionTab_NJ: {
+  Plan: NJ Stat,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    Rate Basis: Per Employee Per Month,
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+PlanDefinitionTab_CoverageEnhancedNY: {
+  Add Coverage: click,
+  Coverage Name: Enhanced NY,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+  Rating: {
+    'Number of Lives - Male': 1,
+    'Number of Lives - Female': 1,
+    'Inforce Rate - Male': 10,
+    'Inforce Rate - Female': 10,
+    Annual Premium: 10,
+  },
+  Premium and Rate History: {
+    Period: 1,
+    Period Begin Date: '01/01/2019',
+    Period End Date: '06/01/2019',
+    Premium: 10,
+    Experience Period Adjustment: 10,
+  },
+
+  Rate History - Male: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Rate History - Female: {
+    Rate 1: 1,
+    Number of Months Rate 1: 1,
+    Rate 2: 1,
+    Number of Months Rate 2: 1
+  },
+  Historical Claim: {
+    Claims: 10,
+    Claim Reserves: 10,
+    Underwriter Adjustment: 10
+  }
+}
+
+PlanDefinitionTab_CoveragePFLNY: {
+  Add Coverage: click,
+  Coverage Name: PFL NY,
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12
+}
+
+ClassificationManagementTab_NJ: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Number of Participants: 10,
+  Total Volume: 250
+}
+
+PremiumSummaryTab: {
+  Credibility Factor: 0.5,
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}

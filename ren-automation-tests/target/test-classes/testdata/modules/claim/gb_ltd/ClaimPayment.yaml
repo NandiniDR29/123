@@ -1,0 +1,225 @@
+TestData_FinalPayment: {
+   PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabFinalPayment',
+   PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabFinalPayment',
+   PaymentPaymentAdditionalPayeeTab: {},
+   PaymentInvoiceInvoicedFromTab: {},
+   PaymentInvoiceInvoiceDetailsTab: {},
+   PaymentCalculatorTab: {}
+}
+
+PaymentPaymentPaymentDetailsTabFinalPayment: {
+  'Payment To': index=1,
+  'Non Provider Payment Type': index=1
+}
+
+PaymentPaymentPaymentAllocationTabFinalPayment: {
+  Reserve Type: Expense,
+  Final Payment: 'Yes',
+  Allocation Amount: 100
+}
+
+TestData_PartialPayment: {
+   PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabPartialPayment',
+   PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabPartialPayment',
+   PaymentPaymentAdditionalPayeeTab: {},
+   PaymentInvoiceInvoicedFromTab: {},
+   PaymentInvoiceInvoiceDetailsTab: {},
+   PaymentCalculatorTab: {}
+}
+
+PaymentPaymentPaymentDetailsTabPartialPayment: {
+      Payment To: index=1,
+      Non Provider Payment Type: index=1
+}
+
+PaymentPaymentPaymentAllocationTabPartialPayment: {
+  Reserve Type: Expense,
+  Final Payment: 'No',
+  Allocation Amount: 100
+}
+
+TestData_IndemnityPayment: {
+  PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabIndemnityPayment',
+  PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabIndemnityPayment',
+  PaymentPaymentAdditionalPayeeTab: {},
+  PaymentInvoiceInvoicedFromTab: {},
+  PaymentInvoiceInvoiceDetailsTab: {},
+  PaymentCalculatorTab: {}
+}
+
+TestData_IndemnityPaymentWithAdditionParty: {
+  PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabIndemnityPayment',
+  PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabIndemnityPayment',
+  PaymentPaymentAdditionalPayeeTab: {},
+  PaymentInvoiceInvoicedFromTab: {},
+  PaymentInvoiceInvoiceDetailsTab: {},
+  PaymentCalculatorTab: '@PaymentCalculatorTab'
+}
+
+PaymentPaymentPaymentDetailsTabIndemnityPayment: {
+  Payment To: index=1,
+  Non Provider Payment Type: index=1
+}
+
+PaymentPaymentPaymentAllocationTabIndemnityPayment: {
+  Reserve Type: Indemnity,
+  Final Payment: 'No',
+  Payment From Date: $<today+180d>,
+  Payment Through Date: $<today+1y+180d>,
+  Adjust reserve: 'Yes'
+}
+
+PaymentCalculatorTab: {
+  Payment Addition: [
+  {
+    Addition Type: 'Rehabilitation Benefit',
+    Beginning Date: $<today>,
+    Through Date: $<today>,
+  }
+  ]
+}
+
+TestData_SupplementalPayment: {
+   PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabSupplementalPayment',
+   PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabSupplementalPayment',
+   PaymentPaymentAdditionalPayeeTab: {},
+   PaymentInvoiceInvoicedFromTab: {},
+   PaymentInvoiceInvoiceDetailsTab: {},
+   PaymentCalculatorTab: {}
+}
+
+PaymentPaymentPaymentDetailsTabSupplementalPayment: {
+      Payment To: index=1,
+      Non Provider Payment Type: index=1
+}
+
+PaymentPaymentPaymentAllocationTabSupplementalPayment: {
+  Reserve Type: Expense,
+  Allocation Amount: 100
+}
+
+
+TestData_ApprovePayment: {
+  ApprovePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_VoidPayment: {
+  VoidPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_IssuePayment: {
+  IssuePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_ReissuePayment: {
+  ReissuePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_RecalculatePaidPayment: {
+  RecalculatePaidPaymentActionTab: {
+    Payment Through Date: $<today+180d>
+  }
+}
+
+TestData_DeclinePayment: {
+  DeclinePaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_ClearPayment: {
+  ClearPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_PostRecovery: {
+  RecoveryRecoveryDetailsActionTab: '@RecoveryRecoveryDetails',
+  RecoveryRecoveryAllocationActionTab: '@RecoveryRecoveryAllocation',
+  RecoveryRecoveredFromActionTab: '@RecoveryRecoveredFrom'
+}
+
+RecoveryRecoveryDetails: {
+  Type of Recovery: Subrogation,
+  Amount: 50,
+  Recovery Method: Check,
+  'Check #': 12345,
+  Recovery Memo: 'Simple test memo'
+}
+
+RecoveryRecoveryAllocation: {
+  Allocation Amount: 50
+}
+
+RecoveryRecoveredFrom: {
+  Party Name: index=1,
+  Zip / Postal Code: '94596',
+  Address Line 1: 'Address$<rx:\d{8}>',
+  City: Walnut Creek,
+  State / Province: CA
+}
+
+TestData_VoidRecovery: {
+  VoidRecoveryActionTab: {
+    Details: 'Simple recovery details'
+  }
+}
+
+TestData_UpdatePayment: {
+   PaymentPaymentPaymentDetailsTab: {},
+   PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabUpdatePayment',
+   PaymentPaymentAdditionalPayeeTab: {},
+   PaymentInvoiceInvoicedFromTab: {},
+   PaymentInvoiceInvoiceDetailsTab: {},
+   PaymentCalculatorTab: {}
+}
+
+PaymentPaymentPaymentAllocationTabUpdatePayment: {
+  Allocation Amount: 100
+}
+
+TestData_CreatePaymentSeries: {
+  PaymentSeriesPaymentDetailsActionTab: '@PaymentSeriesPaymentDetailsActionTab',
+  PaymentSeriesPaymentAllocationActionTab: {},
+  PaymentSeriesAdditionalPayeeTab: {},
+  PaymentSeriesPaymentSeriesProfileActionTab: '@PaymentSeriesPaymentSeriesProfileActionTab',
+  PaymentSeriesCalculatorActionTab: {}
+}
+
+PaymentSeriesPaymentDetailsActionTab: {
+  Payee: index=1,
+  Non Provider Payment Type: index=1
+}
+
+PaymentSeriesPaymentSeriesProfileActionTab: {
+  Effective Date: $<today>,
+  Expiration Date: $<today+1M>
+}
+
+TestData_DenyPayment: {
+  DenyPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}
+
+TestData_ContinuePaymentSeries: {
+  PaymentContinuePaymentSeriesActionTab: '@PaymentContinuePaymentSeriesActionTab'
+}
+
+PaymentContinuePaymentSeriesActionTab: {
+  Details: details
+}
+
+TestData_StopPayment: {
+  RequestStopPaymentActionTab: {
+    Details: 'Simple payment details'
+  }
+}

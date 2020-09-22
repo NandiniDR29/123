@@ -1,0 +1,188 @@
+TestData_Case_Profile: {
+  CaseProfileDetailsTab: '@<caseprofile>@CaseProfile@CaseProfileDetailsTab',
+  ProductAndPlanManagementTab: [
+  {
+    Product: Group Dental
+  },{
+    Product: Group Vision
+  }],
+  ClassificationManagementTab: {
+    Classification Group: {
+      Class Name: 1,
+      Class Number: 1,
+      Relationship Type: Employment
+    },
+    Group Details: {
+      'Create Sub-Groups?': 'Yes',
+      'Create Sub-Groups Automatically?': 'Yes'
+    }
+  },
+  LocationManagementTab: {
+    Add Billing Location:{
+      Location Name: '1',
+      Location Number: '1',
+      Tax Identification: '11-6543201'
+    }
+  },
+  FileIntakeManagementTab: []
+}
+
+TestData_Policy_DN: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<dn_master>@DataGather@SelectPlan', '@PlanDefinitionTab'],
+  ClassificationManagementTab: '@ClassificationManagementTab',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-5d>,
+  Case Profile: index=1,
+  Product: Group Dental,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Policy Effective Date: $<today-5d>,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '2',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab: {
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Required Participation %': 25,
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Prosthodontics Waiting Period: '18 months',
+    'Benefits Waiting Period is waived for current enrollees?': 'Yes',
+    'Documentation of Waiting Period received?': 'Yes'
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Fluoride Treatment: 'Not Covered'
+    },
+  }
+}
+
+ClassificationManagementTab: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 6
+  }
+  ]
+}
+
+
+TestData_Policy_VS: {
+  InitiniateDialog: '@InitiniateDialog_VS',
+  PolicyInformationTab: '@PolicyInformationTab_VS',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@<vs_master>@DataGather@SelectPlan', '@PlanDefinitionTab_VS'],
+  ClassificationManagementTab: '@ClassificationManagementTab_VS',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog_VS: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-5d>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+
+PolicyInformationTab_VS: {
+  Policy Effective Date: $<today-5d>,
+  ASO Plan: No,
+  Prior Carrier Name: 'EyeMed',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  Total Number of Eligible Lives: '1',
+  'Group is an Association?': 'Yes',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+PlanDefinitionTab_VS: {
+  PlanKey: ALACARTE-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Family', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    'Use Brochure Rates?': 'No'
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+ClassificationManagementTab_VS: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 3
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 6
+  }
+  ]
+}

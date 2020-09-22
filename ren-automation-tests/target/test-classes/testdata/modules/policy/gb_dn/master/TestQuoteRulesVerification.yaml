@@ -1,0 +1,133 @@
+TestData_SitusStateTX: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTabTX_ALACARTE'],
+}
+
+TestData_SitusStateME: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTabME_ALACARTE'],
+}
+
+TestData_SitusStateKY: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTabKY_NV_CT_ALACARTE'],
+}
+
+TestData_SitusStateNV: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTabKY_NV_CT_ALACARTE'],
+}
+
+TestData_SitusStateCT: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTabKY_CT_ALACARTE'],
+}
+
+PlanDefinitionTabTX_ALACARTE: {
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 25,
+    'Required Participation %': 25,
+  },
+  EPCOS Waiting Period: 'None',
+  Co-Insurance: {
+    Is it graded Co-Insurance: 'Yes',
+    Number of Graded Years: 4,
+    Prosthodontics First Year - In Network: 5%,
+    Prosthodontics First Year - Out of Network: 5%,
+    Prosthodontics Second Year - In Network: 5%,
+    Prosthodontics Second Year - Out of Network: 5%,
+    Prosthodontics Third Year - In Network: 5%,
+    Prosthodontics Third Year - Out of Network: 5%,
+    Prosthodontics Fourth Year - In Network: 5%,
+    Prosthodontics Fourth Year - Out of Network: 5%,
+    Radiographs First Year - In Network: 5%,
+    Radiographs First Year - Out of Network: 5%,
+    Radiographs Second Year - In Network: 5%,
+    Radiographs Second Year - Out of Network: 5%,
+    Radiographs Third Year - In Network: 5%,
+    Radiographs Third Year - Out of Network: 5%,
+    Radiographs Fourth Year - In Network: 5%,
+    Radiographs Fourth Year - Out of Network: 5%
+  }
+}
+
+PlanDefinitionTabME_ALACARTE: {
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 25,
+    'Required Participation %': 25,
+  },
+  EPCOS Waiting Period: 'None',
+  Co-Insurance: {
+    Is it graded Co-Insurance: 'Yes',
+    Number of Graded Years: 4,
+    Prosthodontics First Year - In Network: 30%,
+    Prosthodontics First Year - Out of Network: 15%,
+    Prosthodontics Second Year - In Network: 30%,
+    Prosthodontics Second Year - Out of Network: 15%,
+    Prosthodontics Third Year - In Network: 30%,
+    Prosthodontics Third Year - Out of Network: 15%,
+    Prosthodontics Fourth Year - In Network: 30%,
+    Prosthodontics Fourth Year - Out of Network: 15%,
+    Radiographs First Year - In Network: 30%,
+    Radiographs First Year - Out of Network: 15%,
+    Radiographs Second Year - In Network: 30%,
+    Radiographs Second Year - Out of Network: 15%,
+    Radiographs Third Year - In Network: 30%,
+    Radiographs Third Year - Out of Network: 15%,
+    Radiographs Fourth Year - In Network: 30%,
+    Radiographs Fourth Year - Out of Network: 15%
+  }
+}
+
+PlanDefinitionTabKY_NV_CT_ALACARTE: {
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 25,
+    'Required Participation %': 25,
+  },
+  EPCOS Waiting Period: 'None',
+  Co-Insurance: {
+    Is it graded Co-Insurance: 'Yes',
+    Number of Graded Years: 4,
+    Prosthodontics First Year - In Network: 50%,
+    Prosthodontics First Year - Out of Network: 25%,
+    Prosthodontics Second Year - In Network: 50%,
+    Prosthodontics Second Year - Out of Network: 25%,
+    Prosthodontics Third Year - In Network: 50%,
+    Prosthodontics Third Year - Out of Network: 25%,
+    Prosthodontics Fourth Year - In Network: 50%,
+    Prosthodontics Fourth Year - Out of Network: 25%,
+    Radiographs First Year - In Network: 50%,
+    Radiographs First Year - Out of Network: 25%,
+    Radiographs Second Year - In Network: 50%,
+    Radiographs Second Year - Out of Network: 25%,
+    Radiographs Third Year - In Network: 50%,
+    Radiographs Third Year - Out of Network: 25%,
+    Radiographs Fourth Year - In Network: 50%,
+    Radiographs Fourth Year - Out of Network: 25%
+  }
+}
+
+PlanDefinitionTabKY_CT_ALACARTE: {
+  'PPO/EPO Plan?': 'No',
+  Co-Insurance:{
+    Is it graded Co-Insurance: 'Yes',
+    Number of Graded Years: '4',
+    Prosthodontics First Year - In Network: 50%,
+    Prosthodontics First Year - Out of Network: 50%,
+    Prosthodontics Second Year - In Network: 50%,
+    Prosthodontics Second Year - Out of Network: 50%,
+    Prosthodontics Third Year - In Network: 50%,
+    Prosthodontics Third Year - Out of Network: 50%,
+    Prosthodontics Fourth Year - In Network: 50%,
+    Prosthodontics Fourth Year - Out of Network: 50%,
+    Radiographs First Year - In Network: 50%,
+    Radiographs First Year - Out of Network: 50%,
+    Radiographs Second Year - In Network: 50%,
+    Radiographs Second Year - Out of Network: 50%,
+    Radiographs Third Year - In Network: 50%,
+    Radiographs Third Year - Out of Network: 50%,
+    Radiographs Fourth Year - In Network: 50%,
+    Radiographs Fourth Year - Out of Network: 50%
+  },
+}

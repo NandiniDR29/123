@@ -1,0 +1,40 @@
+TestData_Communication: {
+  CommunicationActionTab: {
+    Communication Channel: Call,
+    Entity Type: Lead/Customer,
+    Communication Direction: Outbound,
+    Subject: subject,
+    Communication Description: description,
+    Communication Outcome: Outcome,
+    Category: Billing/Premiums,
+    Status: Unread
+  }
+}
+
+REST_UpdateCommunication: {
+  "categoryCd": "FORMS",
+  "subCategoryCd": null,
+  "sourceCd": null,
+  "languageCd": "ENG",
+  "internalCallerCd": "CALLER3",
+  "subject": "Enter some value",
+  "statusCd": "READ",
+  "channelCd": "DIRECT_TO_CUSTOMER",
+  "directionCd": "INBOUND",
+  "entityTypeCd": "CUSTOMER",
+  "entityReferenceId": "565469",
+  "description": "Enter any value",
+  "referenceDescription": "enter value",
+  "outcome": "enter value"
+}
+
+TestData_Check: {
+    Communication Channel: Direct to Customer,
+    Entity Type: Lead/Customer,
+    Communication Direction: Inbound,
+    Category: Forms & Materials,
+    Status: Read,
+    Subject: 'Enter some value',
+    Communication Description: 'Enter any value',
+    Communication Outcome: 'enter value'
+}

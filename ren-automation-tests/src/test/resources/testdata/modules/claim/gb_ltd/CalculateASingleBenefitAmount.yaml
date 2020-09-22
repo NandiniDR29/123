@@ -1,0 +1,49 @@
+TestData: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  OtherIncomeBenefitActionTab: '@OtherIncomeBenefitActionTab'
+}
+
+TestData_LTD: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+TestData_ReCalculate: {
+  CoveragesActionTab: {},
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: index=2
+}
+
+OtherIncomeBenefitActionTab: {
+  Type of Offset: index=1,
+  Payment Amount: 100,
+  Beginning Date: $<today>,
+  Through Date: $<today+1y>
+}
+
+TestData_UpdateMaximumBenefitPeriod: {
+  UpdateMaximumBenefitPeriodActionTab: '@UpdateMaximumBenefitPeriodActionTab'
+}
+
+UpdateMaximumBenefitPeriodActionTab: {
+  Maximum Benefit Period Through Date: $<today+4y>,
+  Override Reason: "Other"
+}
+
+TestDataWithDeductions: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  OtherIncomeBenefitActionTab: '@OtherIncomeBenefitActionTab',
+  DeductionsActionTab: {
+    Type of Deduction: 'Employer Reimbursement',
+    Party: index=1,
+    Non Provider Payment Type: 'Claimant (Employee, Dependent)',
+    State Services Provided In: 'NY',
+    Beginning Date: $<today>,
+    Through Date: $<today+1y>,
+    Deduction Amount: '100',
+    Apply Pre-tax: 'No',
+    Memo: 'Memo for  Employer Reimbursement'
+  }
+}

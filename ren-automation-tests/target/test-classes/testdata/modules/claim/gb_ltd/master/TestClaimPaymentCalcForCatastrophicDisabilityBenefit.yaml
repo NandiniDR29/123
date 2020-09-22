@@ -1,0 +1,33 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON'],
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Member Payment Mode: 12,
+    Contribution Type: Voluntary,
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Maximum Monthly Benefit Amount: 6000,
+  },
+  Options: {
+    Catastrophic Disability Benefit: '10%',
+    Maximum Dollar Amount: $2 000,
+  }
+}

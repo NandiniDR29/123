@@ -1,0 +1,122 @@
+TestDataCoverages: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionBasicLifeInsurance', '@PlanDefinitionEmployeeBasicAccidentalDeath',
+                      '@PlanDefinitionDependentBasicLife']
+}
+
+SelectPlan: {
+  Plan: Basic Life
+}
+
+PlanDefinitionBasicLifeInsurance: {
+  CoverageKey: Employee Basic Life Insurance,
+  Total Number of Eligible Lives: 35,
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionEmployeeBasicAccidentalDeath: {
+  CoverageKey: Employee Basic Accidental Death and Dismemberment Insurance,
+  'Enhanced AD&D?': 'No',
+  Required Participation %: 5%,
+  Sponsor Payment Mode: 12,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+PlanDefinitionDependentBasicLife: {
+  CoverageKey: Dependent Basic Life Insurance (Spouse & Child),
+  Required Participation %: 5%,
+  Member Payment Mode: 12
+}
+
+PlanDefinitionDependentBasicAccidentalDeath: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {
+    Add Coverage: click,
+    Plan ComboBox: Basic Life,
+    Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child),
+    'Enhanced AD&D?': 'No',
+    Required Participation %: 5%,
+    Member Payment Mode: 12
+  },
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+TestDataCertificatePolicy: {
+  CoveragesTab: ['@SelectPlanCertificatePolicy', '@CoveragesTabBasicLife', '@CoveragesTabDependentBasicLifeInsurance',
+                 '@CoveragesTabEmployeeBasicAccidentalDeath', '@CoveragesTabDependentBasicAccidentalDeath']
+}
+
+SelectPlanCertificatePolicy: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLife: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+CoveragesTabDependentBasicLifeInsurance: {
+  Coverage Name: Dependent Basic Life Insurance (Spouse & Child),
+  Enrollment Date: $<today>,
+  Coverage Selection: Spouse and Child,
+  Benefit Spouse:{
+    Elected Benefit Amount: 2000
+  },
+  Benefit Child:{
+    Elected Benefit Amount: 2000
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 12/05/1984,
+  },
+}
+
+CoveragesTabEmployeeBasicAccidentalDeath: {
+  Coverage Name: Employee Basic Accidental Death and Dismemberment Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+CoveragesTabDependentBasicAccidentalDeath: {
+  Coverage Name: Dependent Basic Accidental Death and Dismemberment Insurance (Spouse & Child),
+  Enrollment Date: $<today>,
+  Coverage Selection: Spouse and Child,
+  Benefit Spouse:{
+    Elected Benefit Amount: 2000
+  },
+  Benefit Child:{
+    Elected Benefit Amount: 2000
+  },
+  Add Participant: CLICK,
+  Participant Selection: New Person,
+  Role Name: Spouse Participant,
+  Participant General Info: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: 12/05/1984,
+  },
+}

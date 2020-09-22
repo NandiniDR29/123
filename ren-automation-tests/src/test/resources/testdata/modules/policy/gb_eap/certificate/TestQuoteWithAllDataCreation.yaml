@@ -1,0 +1,261 @@
+TestData_Master: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: '@EnrollmentTab',
+  PlanDefinitionTab: ['@SelectPlan_All', '@PlanDefinitionTab_NC', '@PlanDefinitionTab_CON', '@PlanDefinitionTab_VOL', '@PlanDefinitionTab_SGR'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab'],
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<BOM>,
+  Case Profile: index=1,
+  Product: Short Term Disability,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1',
+  Prior Carrier Name: InsuranceCompany,
+  Prior Carrier Policy Number: '$<rx:\d{6}>',
+  Minimum Participation Percentage: 1,
+  Minimum Number of Participants: 1,
+  Maximum Number of Participants: 1,
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  }
+}
+
+EnrollmentTab: {
+  Planned Enrollment Communication Channels: [Education Videos, Payroll Stuffers],
+  Enrollment Consultant/Manager: Greg,
+  Required Enrollment Response: Enroll,
+  Enrollment Response Required Date: $<today>,
+  Competing Influences: All
+}
+
+SelectPlan_All: {
+  Plan: [ALL]
+}
+
+PlanDefinitionTab_NC: {
+  PlanKey: NC-NC,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12,
+  },
+  Total Number of Eligible Lives: 1,
+  Partial Disability Benefit: Proportionate Loss,
+  Minimum Number of Participants: 1,
+  Cost of Living Adjustment Benefit: '3%',
+  Infectious Disease: '6 Months',
+  Child Education Benefit: 'Included',
+  401K Contribution During Disability: '1%',
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included'
+  },
+  Options: {
+    Family Care Benefit: 'Included',
+    Terminal Illness Benefit: '6 Months',
+    Catastrophic Disability Benefit: '10%',
+    Student Loan Repayment Amount: '$1 500'
+  }
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12,
+    Participant Contribution %: 50,
+  },
+  Total Number of Eligible Lives: '1',
+  Member Payment Mode: 12,
+  Minimum Number of Participants: 1,
+  Cost of Living Adjustment Benefit: '3%',
+  Infectious Disease: '6 Months',
+  Child Education Benefit: 'Included',
+  401K Contribution During Disability: '1%',
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included'
+  },
+  Options: {
+    Family Care Benefit: 'Included',
+    Terminal Illness Benefit: '6 Months',
+    Catastrophic Disability Benefit: '10%',
+    Student Loan Repayment Amount: '$1 500'
+  }
+}
+
+PlanDefinitionTab_VOL: {
+  PlanKey: VOL-VOL,
+  Required Participation %: 100%,
+  Member Payment Mode: 12,
+  Total Number of Eligible Lives: '1',
+  Minimum Number of Participants: 1,
+  Cost of Living Adjustment Benefit: '3%',
+  Infectious Disease: '6 Months',
+  Child Education Benefit: 'Included',
+  401K Contribution During Disability: '1%',
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included'
+  },
+  Options: {
+    Family Care Benefit: 'Included',
+    Terminal Illness Benefit: '6 Months',
+    Catastrophic Disability Benefit: '10%',
+    Student Loan Repayment Amount: '$1 500'
+  }
+}
+
+PlanDefinitionTab_SGR: {
+  PlanKey: SGR-SGR,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Sponsor Payment Mode: 12,
+  },
+  Total Number of Eligible Lives: '1',
+  Minimum Number of Participants: 1,
+  Cost of Living Adjustment Benefit: '3%',
+  Infectious Disease: '6 Months',
+  Child Education Benefit: 'Included',
+  401K Contribution During Disability: '1%',
+  STAT Offset Amount: 500,
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Test Definition: Loss of Duties and Earnings,
+    Pre-Existing Conditions: 'Included'
+  },
+  Options: {
+    Family Care Benefit: 'Included',
+    Terminal Illness Benefit: '6 Months',
+    Catastrophic Disability Benefit: '10%',
+    Student Loan Repayment Amount: '$1 500'
+  }
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  'Use Classification Sub-Groups?': Yes,
+  Uni-Tobacco: Yes,
+  Unisex: Yes
+}
+
+#PremiumSummaryTab_ApplyCensus: {
+#  Select Rating Census: 'index=1',
+#  Apply: 'click'
+#}
+
+TestData_Certificate: {
+  CertificatePolicyTab: '@CertificatePolicyTab',
+  InsuredTab: '@InsuredTab',
+  CoveragesTab: '@CoveragesTab',
+  PremiumSummaryTab: {}
+}
+
+CertificatePolicyTab: {
+  Effective Date: $<BOM>,
+  Situs State: CA
+}
+
+
+InsuredTab: {
+  General Information: {
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Date of Birth: $<today-25y>,
+    Tax Identification: '$<rx:\d{9}>',
+  },
+  Address Information: {
+    Country: United States,
+    Zip / Post Code: '94596',
+    City: Walnut Creek,
+    State / Province: CA,
+    Address Line 1: 'Address$<rx:\d{8}>',
+    Address Line 2: 'Address2$<rx:\d{8}>',
+    Address Line 3: 'Address3$<rx:\d{8}>',
+  },
+  Relationship Information: {
+    Job Code: index=1,
+    Employment Status: Active,
+    Annual Earnings: 5000,
+    Original Hire Date: $<today-2y>,
+    Rehire Date: $<today>,
+    Employment Type: index=1,
+    Job Title: 'Title$<rx:\d{8}>',
+    Payroll Frequency: Monthly,
+    Employee ID: '$<rx:\d{9}>',
+    Classification Group: index=1,
+
+  }
+}
+
+CoveragesTab: {
+  Plan: index=1,
+  Enrollment Date: $<today>,
+  'EOI Required?': Yes,
+  Approval Date: $<today>,
+  'Prior Coverage %': 1,
+  EOI Status: Approved,
+  'Requested %': 1,
+  'Pending %': 1,
+  'Approved %': 1,
+  Add Participant: CLICK,
+  Participant Selection: index=0
+}
+
+TestData_Issue_Certificate: {
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  }
+}

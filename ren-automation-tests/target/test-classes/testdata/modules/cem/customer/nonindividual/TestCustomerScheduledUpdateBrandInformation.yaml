@@ -1,0 +1,35 @@
+TestData_BrandInfo: {
+ GeneralTab: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Date business started: $<today-10y>,
+  Division: index=1,
+  Industry: index=1,
+  SIC Description: index=1,
+  Address Details: {
+        Country: United States,
+        Zip/Post Code: '90210',
+        City: Beverly Hills,
+        State/Province: CA,
+        Address Line 1: 'Address$<rx:\d{8}>'
+        },
+   Group Sponsor: 'true',
+   Brand Name: Premiere
+  }
+}
+
+Brand_Name: {
+ GeneralTab: {
+  Brand Name: Choice
+ },
+  DivisionsTab:{}
+}
+
+ScheduledUpdate: {
+  ScheduledUpdateActionTab: {
+    Reschedule Update Effective Date: $<today+2M>
+  }
+}
+

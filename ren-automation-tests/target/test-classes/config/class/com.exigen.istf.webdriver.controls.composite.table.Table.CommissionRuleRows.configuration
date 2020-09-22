@@ -1,0 +1,3 @@
+{
+  "rowThatTemplate": "/tbody[%s]/tr"
+}

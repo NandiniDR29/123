@@ -1,0 +1,40 @@
+TestData: {
+  CancellationActionTab: {
+    Cancel Date: $<BOM>,
+    Cancellation Reason: index=1
+  }
+}
+
+TestData_Plus1Year: {
+  CancellationActionTab: {
+    Cancel Date: $<BOM+1y>,
+    Cancellation Reason: index=1
+  }
+}
+
+TestData_Plus2Months: {
+  CancellationActionTab: {
+    Cancel Date: $<BOM+2M>,
+    Cancellation Reason: index=1
+  }
+}
+TestData_Minus1Months: {
+  CancellationActionTab: {
+    Cancel Date: $<BOM-1M>,
+    Cancellation Reason: index=1
+  }
+}
+
+TestData_Minus2Months: {
+  CancellationActionTab: {
+    Cancel Date: $<BOM-2M>,
+    Cancellation Reason: index=1
+  }
+}
+
+TestData_Plus3Months: {
+  CancellationActionTab: {
+    Cancel Date: $<BOM+3M>,
+    Cancellation Reason: index=1
+  }
+}

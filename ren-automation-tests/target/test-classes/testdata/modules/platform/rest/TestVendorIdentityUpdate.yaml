@@ -1,0 +1,74 @@
+NonIndividual: {
+  taxId: '$<rx:\d{4}>',
+  status: ACTIVE,
+  name: 'nonIndTest$<rx:\d{8}>',
+  countryCd: US,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  zipCd: 11111,
+  state: CA,
+  mailingAddressSame: true,
+  identities:{
+    NPI: '$<static:npi1:[rx:npi\d{8}]>',
+    EXTERNAL: '$<static:external1:[rx:external\d{8}]>'
+  }
+}
+
+NonIndividualWithoutIdentities: {
+  taxId: '$<rx:\d{4}>',
+  status: ACTIVE,
+  name: 'nonIndTest$<rx:\d{8}>',
+  countryCd: US,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  zipCd: 11111,
+  state: CA,
+  mailingAddressSame: true,
+  identities:{}
+}
+
+Individual: {
+  taxId: '$<rx:\d{4}>',
+  name: 'IndTest$<rx:\d{8}>',
+  countryCd: US,
+  zipCd: 94303,
+  addressLine1: 'Address$<rx:\d{8}>',
+  city: city 1,
+  state: AK,
+  mailingAddressSame: true,
+  vendorProfileType: individual,
+  serviceProviderCreateDTO: {
+    firstName: 'John$<rx:\d{8}>',
+    lastName: 'Smith$<rx:\d{8}>',
+    code: 'code$<rx:\d{4}>'
+  },
+  startDate: '$<today:yyyy-MM-dd>',
+  finishDate: '$<today+2y:yyyy-MM-dd>',
+  vendorRating: SILVER,
+  status: ACTIVE,
+  regionCd: AL,
+  insuredCorrespondenceRequired: true,
+  externalSourceType: type,
+  identities: {
+    NPI: '$<static:npi2:[rx:npi\d{8}]>',
+    EXTERNAL: '$<static:external2:[rx:external\d{8}]>'
+  }
+}
+
+UpdateIdentity: {
+  npi: 'npi$<rx:\d{8}>',
+  external: 'external$<rx:\d{8}>'
+}
+
+UpdateNpi: {
+  npi: 'npi$<rx:\d{8}>'
+}
+
+UpdateExternal: {
+  external: 'external$<rx:\d{8}>'
+}
+
+UpdateNull: {
+  npi: null,
+  external: null
+}

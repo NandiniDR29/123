@@ -1,0 +1,56 @@
+TestData_Tiered: {
+  GBCommissionStrategyTab: {
+    Product Code-Name: 'GB_DI_STD - Short Term Disability',
+    Effective Date: $<today>,
+    Determine Commission Rate By: 'Policy Effective Date',
+    Available for Override: true,
+    Commission Overrides: ['@Add_Commission_Tiered_Override']
+  },
+  GBCommissionRuleTab: ['@<CommissionStrategy>@DataGather@Tiered_CommissionRuleTab']
+}
+
+TestData_Cumulative_Tiered: {
+  GBCommissionStrategyTab: {
+    Product Code-Name: 'GB_DI_STD - Short Term Disability',
+    Effective Date: $<today>,
+    Determine Commission Rate By: 'Policy Effective Date',
+    Available for Override: true,
+    Commission Overrides: ['@Add_Commission_Cumulative_Tiered_Override']
+  },
+  GBCommissionRuleTab: ['@<CommissionStrategy>@DataGather@Cumulative_Tiered_CommissionRuleTab']
+}
+
+TestData_Subscriber_Count: {
+  GBCommissionStrategyTab: {
+    Product Code-Name: 'GB_DI_STD - Short Term Disability',
+    Effective Date: $<today>,
+    Determine Commission Rate By: 'Policy Effective Date',
+    Available for Override: true,
+    Commission Overrides: ['@Add_Commission_Subscr_Count_Flat_Override']
+  },
+  GBCommissionRuleTab: ['@<CommissionStrategy>@DataGather@Subscriber_Count_CommissionRuleTab']
+}
+
+Add_Commission_Tiered_Override: {
+  Commission Type: 'Tiered',
+  Add Commission Override Options: {
+    Name: 'Name$<rx:\d{5}>',
+    Tier 1: [0, '', 30]
+  }
+}
+Add_Commission_Cumulative_Tiered_Override: {
+  Commission Type: 'Cumulative Tiered',
+  Add Commission Override Options: {
+    Name: '$<static:NameCumTier:[rx:NameCumTier\d{6}]>',
+    Tier 1: [0, '', 35]
+  }
+}
+
+Add_Commission_Subscr_Count_Flat_Override: {
+  Commission Type: 'Subscriber Count - Flat',
+  Add Commission Override Options: {
+    Name: '$<static:NameFlat:[rx:NameFlat\d{7}]>',
+    Override Range Min: 0,
+    Override Range Max: 99
+  }
+}

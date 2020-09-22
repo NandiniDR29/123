@@ -1,0 +1,7 @@
+TestData: {
+  AddAttachmentForTaskActionTab: {
+    File: '$<file:test1.pdf>',
+    Name: 'File1.pdf',
+    Folder: index=0
+  }
+}

@@ -1,0 +1,57 @@
+TestData: {
+  DivisionsTab: '@DivisionsTab'
+}
+
+DivisionsTab: {
+  Division Name: EisGroup,
+  Billing Method: Monthly
+}
+
+TestData_DivisionWithContacts: {
+  DivisionsTab: {
+    Division Name: EisGroup1,
+    Billing Method: Monthly,
+    Address Details: '@ContactDetails_Address',
+    Phone Details: '@ContactDetails_Phone',
+    Email Details: '@ContactDetails_Email',
+    Chat Details: '@ContactDetails_Chat',
+    Web URL Details: '@ContactDetails_WebUrl',
+    Social Net Details: '@ContactDetails_SocialNet'
+  }
+}
+
+ContactDetails_Phone: {
+    Phone Type: Work,
+    Phone Number: '0123456789',
+    Consent Status: Not Requested
+}
+
+ContactDetails_Address: {
+    Address Type: Legal,
+    Country: United States,
+    Zip/Post Code: '12345',
+    City: As,
+    State/Province: CA,
+    Address Line 1: EISGROUP
+  }
+
+ContactDetails_Chat: {
+    Chat Type: Skype,
+    Chat ID: 1
+}
+
+ContactDetails_Email: {
+    Email Type: index=1,
+    Email Address: eis@eis.com,
+    Consent Status: Not Requested
+}
+
+ContactDetails_SocialNet: {
+    Social Net Type: Facebook,
+    Social Net ID: 1
+}
+
+ContactDetails_WebUrl: {
+    Web URL Type: Corporate,
+    Web URL: 1
+}

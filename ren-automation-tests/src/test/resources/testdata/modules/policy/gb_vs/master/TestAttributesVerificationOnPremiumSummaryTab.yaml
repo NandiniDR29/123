@@ -1,0 +1,50 @@
+TestDataForASOPlan: {
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ASO_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ASO_ALACARTE'
+}
+
+SelectPlan: {
+  Plan: ASO A La Carte
+}
+
+PlanDefinitionTab_ASO_ALACARTE: {
+  PlanKey: ASO A La Carte-ASO A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Self Administered: true,
+    Assumed Participation %: '10'
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan C (12/12/12)
+  }
+}
+
+ClassificationManagementTab_ASO_ALACARTE: {
+  Plan: ASOALACARTE-ASO A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: {
+    Number of Participants: '10',
+    Coverage Tier: Employee Only
+  }
+}
+
+TestDataPropose: {
+  ProposalActionTab: '@ProposalActionTab'
+}
+
+ProposalActionTab: {
+  Proposed ASO Fee: 4,
+  Fee Update Reason: index=1,
+  Override Rules List: ["Proposal for ASO Plan requires Underwriter approval"]
+}

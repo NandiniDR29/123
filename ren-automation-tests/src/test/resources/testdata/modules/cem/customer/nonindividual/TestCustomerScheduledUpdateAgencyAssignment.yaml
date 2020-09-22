@@ -1,0 +1,61 @@
+TestData: {
+  GeneralTab: {
+    Agency Assignment:['@QAGAgency','@Broker1Agency','@Broker2Agency'],
+     Non-Individual Type: index=1,
+     Name - Legal: 'NameLegal$<rx:\d{8}>',
+     Associate Divisions: true,
+     EIN: '$<rx:\d{2}-\d{7}>',
+     Date business started: $<today-10y>,
+     Division: index=1,
+     Industry: index=1,
+     SIC Description: index=1,
+     Address Details: {
+        Country: United States,
+        Zip/Post Code: '90210',
+        City: Beverly Hills,
+        State/Province: CA,
+        Address Line 1: 'Address$<rx:\d{8}>'
+        },
+     Group Sponsor: 'true',
+     Sales Rep Work Queue: {
+       Search For: Work Queue,
+       Work Queue: General
+    }
+  }
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Name: QA Agency
+  }
+}
+
+Broker1Agency: {
+  Agency/Producer: {
+  Agency Name: Broker1Name
+  }
+}
+
+Broker2Agency: {
+  Agency/Producer: {
+  Agency Name: Broker2Name
+  }
+}
+
+TestData_TestAgency: {
+     Agency/Producer: {
+     Agency Name: Test Agency Inter
+  }
+}
+
+TestData_TaskRestAgency: {
+  Agency Assignment:[
+   {
+     Agency/Producer: {
+     Agency Name: TaskRestAgency1
+     }
+    }
+  ]
+}
+
+

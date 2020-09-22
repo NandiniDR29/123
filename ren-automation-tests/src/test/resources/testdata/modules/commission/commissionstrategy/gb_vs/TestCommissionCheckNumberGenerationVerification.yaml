@@ -1,0 +1,84 @@
+TestDataVision: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTabVS',
+  GBCommissionRuleTab: ['@CommissionRuleSubscriberCount']
+}
+
+GBCommissionStrategyTabVS: {
+  Product Code-Name: 'GB_VS - Group Vision',
+  Rounding: Cent Rounding,
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+  Available for Override: true,
+  Commission Overrides: ['@Add_Commission_Subscr_Count_Flat_Override']
+}
+
+CommissionRuleSubscriberCount: {
+  Commission Type: 'Subscriber Count',
+  AddCommissionRule: {
+    Sales Channel: 'Commission Group Individual',
+    Select Sales Individual: {
+      Commission Individual Group Name: ''
+    },
+    Geography Selection: 'Defined for All locations',
+    Coverages: ['ASO Vision'],
+    Rate 1: [0, '', 5]
+  }
+}
+
+Add_Commission_Subscr_Count_Flat_Override: {
+  Commission Type: 'Subscriber Count - Flat',
+  Add Commission Override Options: {
+    Name: '$<static:NameSubsCount:[rx:NameSubsCount\d{7}]>',
+    Override Range Min: 0,
+    Override Range Max: 10
+  }
+}
+
+TestDataMasterPolicy: {
+  PolicyInformationTab: {
+    Policy Effective Date: $<today>,
+    'Allow Independent Commissionable Producers?': Yes,
+    ASO Plan: 'Yes',
+    Prior Dental Coverage: 'No',
+    Prior Carrier Name: 'EyeMed',
+    Situs State: 'IL',
+    Total Number of Eligible Lives: 1,
+    'Primary Agency?': 'Yes',
+    Agent Sub Producer: 'index=1',
+    Internal Team: {
+      Sales Representative: index=1,
+      Sales Support Associate: index=1
+    },
+    Assigned Agencies: ['@Agency1'],
+  }
+}
+
+Agency1: {
+  Agency / Producer: '',
+  'Primary Agency?': 'Yes'
+}
+
+TestDataIssue: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: {},
+  PlanDefinitionIssueActionTab: '@PlanDefinitionTab',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: {
+    Allow Manual Setup of Billing Accounts: 'Yes'
+  },
+  IssueActionTab: {
+    Send To: Corporate Sponsor,
+    Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+  },
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+PlanDefinitionTab: {
+  Include Retirees: No
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}

@@ -1,0 +1,21 @@
+{
+    "parser": "com.exigen.ipb.eisa.utils.MarkupParserController",
+    "testDataAliases": {
+        "ac_master": "modules/policy/gb_ac/master",
+        "ac_certificate": "modules/policy/gb_ac/certificate",
+        "ltd_master": "modules/policy/gb_di_ltd/master",
+        "ltd_certificate": "modules/policy/gb_di_ltd/certificate",
+        "std_master": "modules/policy/gb_di_std/master",
+        "std_certificate": "modules/policy/gb_di_std/certificate",
+        "dn_master": "modules/policy/gb_dn/master",
+        "dn_certificate": "modules/policy/gb_dn/certificate",
+        "pfl_master": "modules/policy/gb_pfl/master",
+        "st_master": "modules/policy/gb_st/master",
+        "tl_master": "modules/policy/gb_tl/master",
+        "tl_certificate": "modules/policy/gb_tl/certificate",
+        "vs_master": "modules/policy/gb_vs/master",
+        "vs_certificate": "modules/policy/gb_vs/certificate",
+        "CommissionStrategy": "modules/commission/commissionstrategy",
+        "caseprofile": "modules/caseprofile"
+    }
+}

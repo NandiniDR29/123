@@ -1,0 +1,18 @@
+TestData: {
+  BillingHoldAndMoratoriumReasonsTab: {
+    Billing Hold Reason Code: Moratorium,
+    Billing Hold Reason Description: 'en_US=Moratorium Reason',
+    Reason Category: Moratorium
+  }
+}
+
+TestData_MoratoriumRule: {
+  AddMoratorium: {
+    NAME: 'Name$<rx:\d{8}>',
+    DESCRIPTION: 'Desc$<rx:\d{8}>',
+    REASON: 'Moratorium Reason',
+    TYPE: 'Invoice',
+    EFFECTIVE ON: '$<today+1d:yyyy-MM-dd>',
+    ADD: click
+  }
+}

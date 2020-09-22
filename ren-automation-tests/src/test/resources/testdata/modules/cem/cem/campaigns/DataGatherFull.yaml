@@ -1,0 +1,45 @@
+TestData_Individuals: {
+  CampaignTab: {
+    Campaign Name: 'Campaign$<rx:\d{8}>',
+    Promotion Code: 'Promo$<rx:\d{8}>',
+    Budget Cost: 150,
+    Actual Cost: 120,
+    Expected Revenue: 10,
+    Description: Description,
+    Campaign Products: {
+        Line of Business: All,
+        Product Name: All,
+      },
+    Customer Type: Individuals,
+    Marketing Channels: {
+        Campaign Channel: All,
+        Sub Channel: All,
+      },
+    Start date: $<today>,
+    End date: $<today+300d>,
+    Duration (days): 300
+  }
+}
+
+TestData_NonIndividuals: {
+  CampaignTab: {
+    Campaign Name: 'Campaign$<rx:\d{8}>',
+    Promotion Code: 'Promo$<rx:\d{8}>',
+    Budget Cost: 150,
+    Actual Cost: 120,
+    Expected Revenue: 10,
+    Description: Description,
+    Customer Type: Non-Individuals,
+    Campaign Products: {
+        Line of Business: All,
+        Product Name: All,
+      },
+    Marketing Channels: {
+        Campaign Channel: All,
+        Sub Channel: All,
+      },
+    Start date: $<today>,
+    End date: $<today+300d>,
+    Duration (days): 300
+  }
+}

@@ -1,0 +1,60 @@
+TestData_MasterPolicy: {
+  PlanDefinitionTab: ['@<tl_master>@DataGather@SelectPlan', '@PlanDefinitionTab',
+                      '@<tl_master>@DataGather@PlanDefinitionBasicAccidentalDeath_Remove',
+                      '@<tl_master>@DataGather@PlanDefinitionDependentBasicLife_Remove'],
+  ClassificationManagementTab: ['@<tl_master>@DataGather@ClassificationMgmtBasicLifeInsraunce'],
+}
+
+PlanDefinitionTab: {
+  CoverageKey: Employee Basic Life Insurance,
+  Census Type: index=1,
+  Required Participation %: 5%,
+  Total Number of Eligible Lives: 10,
+  Sponsor Payment Mode: 12,
+  Age Reduction Schedule: index=1,
+  Waiver of Premium: index=1,
+  SIC Code: 5411,
+  Eligibility: {
+    'Does Minimum Hourly Requirement Apply?': 'No',
+    Eligibility Waiting Period Definition: 'None',
+    'Waiting Period Waived For Current Employees?': 'No'
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Salary Multiplier - Single Value w Additional Amount',
+    Salary Multiple: '1x'
+  },
+  Schedule of Continuation Provision: {
+    'Sabbatical (months)': 50
+  }
+}
+
+TestData_CertificatePolicy: {
+  CoveragesTab: ['@SelectPlan', '@CoveragesTabBasicLifeInsurance']
+}
+
+SelectPlan: {
+  Plan Name: Basic Life
+}
+
+CoveragesTabBasicLifeInsurance: {
+  Coverage Name: Employee Basic Life Insurance,
+  Enrollment Date: $<today>,
+  Add Participant: CLICK,
+  Participant Selection: index=0,
+}
+
+TestData_SalaryMultiple: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Salary Multiple: '2x'
+    }
+  }
+}
+
+TestData_AdditionalAmount: {
+  PlanDefinitionTab: {
+    Benefit Schedule: {
+      Additional Amount: '$35,000.00'
+    }
+  }
+}

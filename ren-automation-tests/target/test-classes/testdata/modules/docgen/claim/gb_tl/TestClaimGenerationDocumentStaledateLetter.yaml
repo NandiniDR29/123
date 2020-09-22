@@ -1,0 +1,42 @@
+TestData_Customer1: {
+  GeneralTab: '@GeneralTab',
+}
+
+GeneralTab: {
+  Non-Individual Type: index=1,
+  Name - Legal: 'NameLegal$<rx:\d{8}>',
+  Associate Divisions: true,
+  EIN: '$<rx:\d{2}-\d{7}>',
+  Date business started: $<today-10y>,
+  Mail Cards To: Group,
+  Mail W-2 To: Group,
+  Electronic SSA Filing: Yes,
+  Division: 'G - Retail Trade',
+  Industry: '54 - Food Stores',
+  SIC Description: index=1,
+  Address Details: {
+    Country: United States,
+    Zip/Post Code: '29693',
+    City: 'City1 29693',
+    State/Province: NY,
+    Address Line 1: 'Address11 29693',
+    Address Line 2: 'Address12 29693',
+    Address Line 3: 'Address13 29693'
+  },
+  Phone Details: {
+    Phone Type: Mobile,
+    Phone Number: '$<static:correctPhoneNumber:[rx:\d{10}]>'
+  },
+  Group Sponsor: 'true',
+  Agency Assignment:['@QAGAgency'],
+  Sales Rep Work Queue: {
+    Search For: Work Queue,
+    Work Queue: General
+  }
+}
+
+QAGAgency: {
+  Agency/Producer: {
+    Agency Code: QAG
+  }
+}

@@ -1,0 +1,59 @@
+Test_DataFinancialInfo1: {
+    "preferredSettlementMethodCd": "CHECK",
+    "bankName": "Bank",
+    "branchCity": "City",
+    "bankNumber": "BNumber",
+    "accountNumber": "Account",
+    "accountStatus": "ACTIVE",
+    "accountName": "AccName",
+    "paymentAddress": {
+      "addressLine1": "addressLine1",
+      "addressLine2": "addressLine2",
+      "addressLine3": "addressLine3",
+      "city": "city",
+      "county": "county",
+      "postalCode": "10001",
+      "stateProvCd": "NY",
+      "countryCd": "US"
+    },
+    "holderName": "holderName",
+    "validityTerm": {
+     "effective": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+     "expiration": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>"
+    },
+    "bulkPaymentDay": 10,
+    "externalId": 'externalId$<rx:\d{8}>',
+    "bulkPaymentInd": true,
+    "bankAccountTypeCd": "bankAccountTypeCd",
+    "achFormattingInd": true
+}
+
+Test_DataFinancialInfo2: {
+    "preferredSettlementMethodCd": "EFT",
+    "bankName": 'Bank$<rx:\d{8}>',
+    "branchCity": 'City$<rx:\d{5}>',
+    "bankNumber": 'bankNumber',
+    "accountNumber": 'AccountAccount',
+    "accountStatus": "INACTIVE",
+    "accountName": "accountName",
+    "paymentAddress": {
+      "addressLine1": 'addressLine1$<rx:\d{8}>',
+      "addressLine2": 'addressLine2$<rx:\d{8}>',
+      "addressLine3": 'addressLine3$<rx:\d{8}>',
+      "city": "city",
+      "county": "county",
+      "postalCode": "postalCode",
+      "stateProvCd": "stateProvCd",
+      "countryCd": "countryCd"
+    },
+    "holderName": "holderName",
+    "validityTerm": {
+      "effective": "$<today-2M:yyyy-MM-dd>",
+      "expiration": null
+    },
+    "bulkPaymentDay": 31,
+    "externalId": 'externalId$<rx:\d{8}>',
+    "bulkPaymentInd": false,
+    "bankAccountTypeCd": "bankAccountTypeCd123",
+    "achFormattingInd": false
+}

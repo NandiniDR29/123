@@ -1,0 +1,23 @@
+TestData: {
+  AddSuspenseActionTab: {
+    Suspense Amount: 100,
+    'Suspense Reference #': 'SuspenseReference$<rx:\d{8}>',
+  }
+}
+
+TestData_Payment Designation: {
+  AddSuspenseActionTab: {
+    Suspense Amount: 100,
+    Payment Designation: Benefits Accounts
+  }
+}
+
+TestData_PL_CL: {
+  AddSuspenseActionTab: {
+    Suspense Amount: 100,
+    'Suspense Reference #': 'SuspenseReference$<rx:\d{8}>',
+    Payment Designation: 'Personal & Commercial Lines Accounts',
+    Received From: 'ReceivedFrom$<rx:\d{8}>',
+    Payment Channel: 'Credit Card'
+  }
+}

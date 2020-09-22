@@ -1,0 +1,131 @@
+TestData_CANC1: {
+  CancellationsBenefitsTab: {
+    Products: ['Paid Family Leave', 'Statutory Disability Insurance', 'Term Life Insurance', 'Short Term Disability', 'Long Term Disability', 'Group Accident'],
+    Geography: {
+      Countries: United States,
+      States: ME
+    },
+    Direct Bill: 'true',
+    List Bill: 'true',
+    Self Administered: 'true',
+    Basis for communication schedule and cancellation timelines: 'Grace period',
+    Grace period X days after invoice due date: 30,
+    Communication and Cancel Notices: [
+    {
+      'Generate notice X days after grace period end date/invoice due date': 20,
+      Notice type: Reminder letter
+    },
+    {
+      'Generate notice X days after grace period end date/invoice due date': 30,
+      Notice type: Cancel Notice
+    }],
+    'Cancel X days after grace period end date/invoice due date': 55,
+    Set cancellation reason: 'Non Payment of Premium',
+    Cancellation effective date: 'Day after the grace period ends'
+  }
+}
+
+TestData_CANC2: {
+  CancellationsBenefitsTab: {
+    Products: ['Group Vision', 'Group Dental'],
+    Geography: {
+      Countries: United States,
+      States: ME
+    },
+    Direct Bill: 'true',
+    List Bill: 'true',
+    Self Administered: 'true',
+    Basis for communication schedule and cancellation timelines: 'Invoice due date',
+    Grace period X days after invoice due date: 30,
+    Communication and Cancel Notices: [
+    {
+      'Generate notice X days after grace period end date/invoice due date': 20,
+      Notice type: Reminder letter
+    },
+    {
+      'Generate notice X days after grace period end date/invoice due date': 30,
+      Notice type: Cancel Notice
+    }],
+    'Cancel X days after grace period end date/invoice due date': 55,
+    Set cancellation reason: 'Non Payment of Premium',
+    Cancellation effective date: 'Invoice due date'
+  }
+}
+
+TestData_Endorsement_Benefit_Increase_AC: {
+  InitiniateDialog: {},
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: {},
+  EnhancedBenefitsAtoCTab: {},
+  EnhancedBenefitsDtoFTab: {},
+  EnhancedBenefitsHtoLTab: {},
+  EnhancedBenefitsMtoTTab: {},
+  OptionalBenefitTab: {
+    'Include Optional Benefits?': 'Yes',
+    Number of Units: 10,
+    "Enhanced Physician's Office/Urgent Care Treatment Benefit": {
+      "Apply Benefit Enhanced Physician's Office/Urgent Care Treatment Benefit": true
+    }
+  },
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement_Benefit_Increase_VS: {
+  InitiniateDialog:  {},
+  PolicyInformationTab:  {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab:  {},
+  ClassificationManagementTab: {
+    Plan: A La Carte,
+    Plan Tier And Rating Info: {
+      Number of Participants: '40',
+      Coverage Tier: Employee Only
+    }
+  },
+  PremiumSummaryTab: {}
+}
+
+TestData_REN-28738_step2: {
+  CancellationsBenefitsTab: {
+    Products: ['All'],
+    Geography: {
+      Countries: United States,
+      States: ['GA', 'VT'],
+    },
+    List Bill: 'true',
+    Self Administered: 'true',
+    Grace period X days after invoice due date: 10,
+    Communication and Cancel Notices: [
+    {
+      'Generate notice X days after grace period end date/invoice due date': 0,
+      Notice type: Cancel Notice
+    }
+    ],
+    'Cancel X days after grace period end date/invoice due date': 5,
+    Cancellation effective date: 'Day after the grace period ends',
+    Set cancellation reason: 'Non Payment of Premium',
+  }
+}
+
+TestData_REN-28738_step3: {
+  CancellationsBenefitsTab: {
+    Products: ['Group Accident'],
+    Geography: {All},
+    List Bill: 'true',
+    Basis for communication schedule and cancellation timelines: 'Invoice due date',
+
+    Grace period X days after invoice due date: 10,
+    Communication and Cancel Notices: [
+    {
+      'Generate notice X days after grace period end date/invoice due date': 0,
+      Notice type: Cancel Notice
+    }
+    ],
+    'Cancel X days after grace period end date/invoice due date': 10,
+    Cancellation effective date: 'Invoice due date',
+    Set cancellation reason: 'Non Payment of Premium',
+  }
+}

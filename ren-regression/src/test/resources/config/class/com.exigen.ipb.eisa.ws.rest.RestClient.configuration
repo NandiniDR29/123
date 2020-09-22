@@ -1,0 +1,3 @@
+{
+    "uriResolver": "com.exigen.ren.rest.RenUriResolver"
+}

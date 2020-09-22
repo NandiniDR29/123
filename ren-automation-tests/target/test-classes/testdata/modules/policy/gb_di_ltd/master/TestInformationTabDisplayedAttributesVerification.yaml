@@ -1,0 +1,17 @@
+TestData: {
+  RelationshipTab: ['@RelationshipTestData1', '@RelationshipTestData2']
+}
+
+RelationshipTestData1: {
+  Type: Non-Individual,
+  Name - Legal: '$<static:nameLegal:[rx:nameLegal\d{8}]>',
+  Relationship to Customer: 'Member Company',
+  Date business started: $<today-10y>
+}
+
+RelationshipTestData2: {
+  Type: Non-Individual,
+  Name - Legal: '$<static:name:[rx:nameLegal\d{7}]>',
+  Relationship to Customer: Division,
+  Date business started: $<today-10y>
+}

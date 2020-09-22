@@ -1,0 +1,124 @@
+TestData_MasterPolicy: {
+  InitiniateDialog: '@InitiniateDialog',
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_CON'],
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today-6M>,
+  Case Profile: index=1,
+  Product: Long Term Disability,
+  Delivery Model: Group
+}
+
+SelectPlan: {
+  Plan: CON
+}
+
+PlanDefinitionTab_CON: {
+  PlanKey: CON-CON,
+  Total Number of Eligible Lives: 1,
+  Required Participation %: 100%,
+  Sponsor/Participant Funding Structure: {
+    Member Payment Mode: 12,
+    Contribution Type: Voluntary,
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 15.00,
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days,
+  },
+  Offsets: {
+    Include PERS and STRS: Yes
+  },
+  Benefit Schedule: {
+    Benefit Percentage: 60%,
+  },
+  Options: {
+    Presumptive Disability: 90 days,
+  }
+}
+
+
+
+TestData_Claim: {
+  LossEventTab: {
+    Date of Loss: '$<today-6M>'
+  },
+  PolicyInformationParticipantParticipantInformationTab: '@PolicyInformationParticipantParticipantInformationTab',
+  BenefitsLTDInjuryPartyInformationTab: '@BenefitsLTDInjuryPartyInformationTab',
+  BenefitsLTDIncidentTab: '@BenefitsLTDIncidentTab',
+  AdditionalPartiesAdditionalPartyTab: ['@Party1', '@Party2']
+}
+
+PolicyInformationParticipantParticipantInformationTab: {
+  Party Name: index=1,
+  First Name: 'John$<rx:\d{8}>',
+  Last Name: 'Smith$<rx:\d{8}>',
+  Date of Birth: $<today-25y>,
+  Contact Preference: Mail,
+  Zip / Postal Code: '94596',
+  Address Line 1: Address Line 1,
+  Preferred Payment method: Check,
+  Covered Earnings: 1000
+}
+
+BenefitsLTDInjuryPartyInformationTab: {
+  Associate Policy Party: index=1,
+  Associated Scheduled Item: 'contains=Presumptive Benefit Remaining Balance',
+}
+
+BenefitsLTDIncidentTab: {
+  'Accident?': 'No',
+  Hospital: 'No',
+  Surgery: 'No',
+  Date of Hire: $<today-6M-5d:MM/dd/yyyy>
+}
+
+Party1: {
+  Benefit: 'contains=John',
+  Party Name: 'contains=John',
+  First Name: 'Participate Party',
+  Social Security Number (SSN): 111-11-1111
+}
+
+Party2: {
+  Add Additional Party: CLICK,
+  Party Name: 'Other Company',
+  Company Name: 'Additional Party',
+  Contact Preference: Mail,
+  Add Additional Party Association Address: CLICK,
+  Zip / Postal Code: '32011',
+  Address Line 1: '$<static:customerAddressLine1:[rx:Address\d{8}]>',
+  City: '$<static:customerCity:[rx:City\d{8}]>',
+  State / Province: CA
+}
+
+
+TestData_CalculateASingleBenefitAmount: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: 'contains=Presumptive Benefit Remaining Balance',
+  Coverage: index=1
+}
+
+
+TestData_Payment: {
+  PaymentPaymentPaymentDetailsTab: '@PaymentPaymentPaymentDetailsTabFinalPayment',
+  PaymentPaymentPaymentAllocationTab: '@PaymentPaymentPaymentAllocationTabFinalPayment',
+}
+
+PaymentPaymentPaymentDetailsTabFinalPayment: {
+  'Payment To': 'contains=Participate Party',
+  'Non Provider Payment Type': index=1
+}
+
+PaymentPaymentPaymentAllocationTabFinalPayment: {
+  Reserve Type: Indemnity,
+  Associated Insurable Risk: 'Presumptive Benefit Remaining Balance',
+  Final Payment: 'Yes',
+  Ex Gratia Payment: 'No',
+}

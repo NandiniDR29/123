@@ -1,0 +1,48 @@
+TestData: {
+  GeneralTab: {
+    Non-Individual Type: 'Corporation',
+    Name - Legal: '$<static:NameLegal:[rx:NameLegal\d{8}]>',
+    Division: 'G - Retail Trade',
+    Industry: '54 - Food Stores',
+    SIC Description: 'Dairy Products Stores',
+    SIC Code: '5451',
+    EIN: '01-4727897',
+    Number of Employees: '10',
+    Address Details: ['@Address1', '@Address2'],
+    Phone Details: {
+      Phone Type: Work,
+      Phone Number: '0123456789',
+      Consent Status: Not Requested,
+      'Make Preferred?': Yes
+    }
+  },
+  DivisionsTab: {},
+  RelationshipTab: {}
+}
+
+Address1: {
+  Address Type: Head Office,
+  Country: Canada,
+  Zip/Post Code: 'A1A 1A1',
+  City: Quebec,
+  State/Province: AB,
+  Address Line 1: '$<static:addressLine1:[rx:Address1\d{8}]>',
+  'Make Preferred?': 'Yes'
+}
+
+Address2: {
+  Address Type: Mailing,
+  Country: United States,
+  Zip/Post Code: '10001',
+  City: New York,
+  State/Province: NY,
+  Address Line 1: '$<static:addressLine1:[rx:Address\d{8}]>',
+  'Make Preferred?': 'No'
+}
+
+ContactDetails_Phone_Work: {
+  Phone Type: Work,
+  Phone Number: '0123456789',
+  Consent Status: Not Requested,
+  'Make Preferred?': Yes
+}

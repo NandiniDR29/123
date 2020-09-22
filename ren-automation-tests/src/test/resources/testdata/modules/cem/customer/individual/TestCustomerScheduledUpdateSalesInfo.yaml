@@ -1,0 +1,15 @@
+TestData_SalesInfo: {
+ GeneralTab: {
+  Sales Info: true,
+  Lead Source: Other,
+  Source Description: Des,
+  Assign Owner: true,
+  Search Owner:{
+     Search For: Work Queue,
+     Work Queue: Cancel Audit,
+     OK: true
+  },
+  Rating: Hot
+  }
+}
+

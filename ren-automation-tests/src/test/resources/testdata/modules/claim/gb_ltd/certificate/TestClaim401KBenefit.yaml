@@ -1,0 +1,11 @@
+TestData_CalculateASingleBenefitAmount_401Benefit: {
+  DeductionsActionTab: {
+    Type of Deduction: 401K Contribution During Disability Benefit,
+    Beginning Date: $<today>,
+    Through Date: $<today+10y>,
+    Required Monthly 401K Contribution Amount: 1000,
+    Party: index=1,
+    Non Provider Payment Type: index=1,
+    Apply Pre-tax: No
+  }
+}

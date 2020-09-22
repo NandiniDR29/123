@@ -1,0 +1,39 @@
+TestData_Rest: {
+  channelCd: "corporate",
+  code: '$<static:AgencyCode:[rx:AgencyCode\d{8}]>',
+  commisionLevelType: "agency",
+  effectiveDate: "$<today:yyyy-MM-dd>",
+  locationTypeCd: "corporate_branch",
+  name: '$<static:AgencyName:[rx:AgencyName\d{8}]>',
+  taxId: "agent123",
+  address: {
+    addressLine1: "t1",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  }
+}
+
+TestData_UpdateContactInfo: {
+  channelCd: "corporate",
+  commisionLevelType: "agency",
+  effectiveDate: "$<today:yyyy-MM-dd>",
+  locationTypeCd: "corporate_branch",
+  name: '$<static:AgencyName:[rx:AgencyName\d{8}]>',
+  taxId: 'Tax$<rx:\d{8}>',
+  address: {
+    addressLine1: 'Address$<rx:\d{8}>',
+    countryCd: "US",
+    city: 'City$<rx:\d{8}>',
+    postalCode: "90210",
+    stateProvCd: "CA"
+  },
+  mailingAddress: {
+    addressLine1: 'Address$<rx:\d{8}>',
+    countryCd: "US",
+    city: 'City$<rx:\d{8}>',
+    postalCode: "10001",
+    stateProvCd: "CA"
+  }
+}

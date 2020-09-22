@@ -1,0 +1,10 @@
+TestData: {
+  FileIntakeManagementTab: {
+    File Type: 'Quote',
+    Record Type: 'Eligibility',
+    Upload File Dialog: {
+      File Name: 'UploadedFile$<rx:\d{8}>',
+      File Upload: '$<file:REN_Rating_Census_Sample_File_latest.xlsx>',
+    }
+  }
+}

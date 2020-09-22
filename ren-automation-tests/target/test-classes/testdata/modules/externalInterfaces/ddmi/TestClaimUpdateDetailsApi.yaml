@@ -1,0 +1,27 @@
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '821394606',
+    'License #': '4317',
+    License NPI: '1518160951',
+    License State/Province: 'NV',
+    Specialty: General Practitioner,
+    Zip/Postal Code: '89128',
+    Address Line 1: '7670 W Lake Mead Blvd Ste 130 Las Vegas, NV 89128',
+    City: 'Las Vegas',
+    State/Province: 'NV',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    DOS:  '$<today:MM/dd/yyyy h:mm a>',
+    CDT Code: 'D2971',
+    Tooth: '3',
+    Charge: '400.40'
+  }
+}

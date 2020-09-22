@@ -1,0 +1,30 @@
+TestData: {
+  GBCommissionStrategyTab: '@GBCommissionStrategyTab',
+  GBCommissionRuleTab: ['@Flat_CommissionRule_1', '@Flat_CommissionRule_2']
+}
+
+GBCommissionStrategyTab: {
+  Product Code-Name: 'GB_TL - Term Life Insurance',
+  Effective Date: $<today>,
+  Determine Commission Rate By: 'Policy Effective Date',
+}
+
+Flat_CommissionRule_1: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Agency',
+    Geography Selection: 'Defined for All locations',
+    Coverages: [Employee Voluntary Life Insurance],
+    Commission Rate: 5
+  }
+}
+
+Flat_CommissionRule_2: {
+  Commission Type: 'Flat',
+  AddCommissionRule: {
+    Sales Channel: 'Agency',
+    Geography Selection: 'Defined for All locations',
+    Coverages: [Spouse Voluntary Life Insurance],
+    Commission Rate: 6
+  }
+}

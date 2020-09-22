@@ -1,0 +1,18 @@
+TestData: {
+  BulletinTab: {
+    Bulletin Effective Date: $<today>,
+    Bulletin Expiration Date: $<today+6M>,
+    Bulletin Name: 'BulletinName$<rx:\d{8}>',
+    Priority: 3,
+    Bulletin Text: 'BulletinText$<rx:\d{8}>',
+    Channel: Agency,
+    Location Type: Agency - Agency,
+    Location Name: CCRA1
+  }
+}
+
+TestData_Update: {
+  BulletinTab: {
+    Priority: 5
+  }
+}

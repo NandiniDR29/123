@@ -1,0 +1,68 @@
+{
+  "restTargets": {
+    "FIND.FEE.SCHEDULE.FEE": {
+      "target": "/fee-schedule/findFeeScheduleFee",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FIND.UCR.FEE": {
+      "target": "/fee-schedule/findUcrFee",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FIND.FEE.SCHEDULE.FEE.FOR.ALL.PROCEDURE.CODE": {
+      "target": "/fee-schedule/findFeeScheduleFeeForAllProcedureCode",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FIND.UCR.FEE.FOR.ALL.PROCEDURE.CODE": {
+      "target": "/fee-schedule/findUCRFeeForAllProcedureCode",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FIND.FEE.BY.NAME.FOR.ALL.PROCEDURE.CODE": {
+      "target": "/fee-schedule/findFeeByNameForAllProcedureCode",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FIND.OON.FEE.FOR.ALL.PROCEDURE.CODE": {
+      "target": "/fee-schedule/findOONFeeForAllProcedureCode",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "PROVIDER.FIND.PROVIDER": {
+      "target": "/provider/findProvider",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "FIND.OON.FEE": {
+      "target": "/fee-schedule/findOonFee",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    }
+  }
+}

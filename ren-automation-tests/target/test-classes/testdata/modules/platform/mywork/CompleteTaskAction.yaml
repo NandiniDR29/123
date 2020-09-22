@@ -1,0 +1,122 @@
+TestData: {
+  CompleteTaskActionTab: {
+  }
+}
+
+TestData_Complete: {
+  CompleteTaskActionTab: {
+    Task Note: Complete task Note
+  }
+}
+
+TestData_AuditFinished: {
+  CompleteTaskActionTab: {
+    Completion Reason: 'Audit Finished'
+  }
+}
+
+TestData_AuditApproved: {
+  CompleteTaskActionTab: {
+    Completion Reason: 'Audit Approved'
+  }
+}
+
+TestData_AuditCancelled: {
+  CompleteTaskActionTab: {
+    Completion Reason: 'Audit Cancelled'
+  }
+}
+
+TestData_AuditRefused: {
+  CompleteTaskActionTab: {
+    Completion Reason: 'Audit Refused'
+  }
+}
+
+TestData_ApprovePayment: {
+  CompleteTaskActionTab: {
+    Decision: Approve Payment
+  }
+}
+
+
+TestData_Reject: {
+  CompleteTaskActionTab: {
+    User Actions: 'Reject'
+  }
+}
+
+TestData_Approve: {
+  CompleteTaskActionTab: {
+    User Actions: 'Approve'
+  }
+}
+
+TestData_CompleteIntakeDentalTaskIDPPO: {
+  CompleteTaskActionTab: {
+    Patient: '',
+    Provider: '',
+    Source: Non-EDI,
+    Payee Type: 'Service Provider',
+    Received Date: '$<today:MM/dd/yyyy>',
+    Submitted Services: [
+     {
+       DOS: '$<today:MM/dd/yyyy>',
+       CDT Code: D0110,
+       Charge: 25
+     },
+     {
+       DOS: '$<today:MM/dd/yyyy>',
+       CDT Code: D0110,
+       Charge: 25
+     }
+    ]
+  }
+}
+
+TestData_CompleteIntakeDentalTaskIDHMO: {
+  CompleteTaskActionTab: {
+    Patient: '',
+    Provider: '',
+    Source: Non-EDI,
+    Payee Type: 'Primary Insured',
+    Received Date: '$<today:MM/dd/yyyy>',
+    Submitted Services: [
+     {
+       DOS: '$<today:MM/dd/yyyy>',
+       CDT Code: D0110,
+       Charge: 25
+     },
+     {
+       DOS: '$<today:MM/dd/yyyy>',
+       CDT Code: D0110,
+       Charge: 25
+     }
+    ]
+  }
+}
+
+TestData_CompleteIntakeHealthTask: {
+  CompleteTaskActionTab: {
+    Source: Non-EDI,
+    Received Date: '$<today:MM/dd/yyyy>',
+    Patient: '',
+    Invoices: [
+    {
+      Provider: '',
+      Invoice Currency: USD,
+      Add Service: 'click',
+      Procedure: 99241,
+      Diagnosis: 'Z00.129',
+      Charge: 100
+    },
+    {
+      Provider: '',
+      Invoice Currency: USD,
+      Add Service: 'click',
+      Procedure: 99241,
+      Diagnosis: 'Z00.129',
+      Charge: 100
+    }]
+  }
+}

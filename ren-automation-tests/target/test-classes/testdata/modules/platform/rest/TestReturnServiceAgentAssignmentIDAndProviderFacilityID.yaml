@@ -1,0 +1,67 @@
+TestData_ServiceAgentAssignment_OID: {
+  "assignmentType": "string",
+  "externalId": "ExtID",
+  "effective": "1990-01-01T00:00:00.000Z",
+  "expiration": "1990-02-28T00:00:00.000Z",
+  "nonIndividualProviderIdentifiers": {
+     id: '$<static:nonIndId>',
+     "identities": {
+        "NPI":"123VS9"
+     },
+     taxId: '$<static:nonIndTaxId>'
+  },
+  "individualProviderIdentifiers": {
+     id: '$<static:indId>',
+     "identities": {
+        "NPI":"111139"
+     },
+     taxId: '$<static:indTaxId>'
+  },
+  "serviceFacilityOID":'$<static:facilityOid>',
+  "vendorFinancialInfoId":'$<static:financialInfoId>'
+}
+
+
+TestData_ProviderFacilities: {
+ "serviceFacilityOID": '$<static:facilityOidSecond>',
+ "providerFinancialInfoOID": '$<static:providerFinancialInfoOID>',
+ "providerIdentifiers": {
+    "id": '$<static:nonIndId>',
+    "taxId": '$<static:nonIndProviderTaxId>',
+    "identities": {
+      "OID":'$<static:nonIndProviderOID>',
+    }
+ },
+ "externalId": "ExtID",
+ "term": {
+    "effective": '$<today:yyyy-MM-dd>',
+    "expiration": '$<today+2y:yyyy-MM-dd>'
+ }
+}
+
+TestData_ServiceNetWork: {
+  "networkCode": '$<rx:\d{8}>',
+  "networkName": "networkName",
+  "networkType": "networkType"
+}
+
+TestData_ServiceFeeSchedule: {
+  "feeScheduleType": "fst",
+  "feeScheduleCode": '$<rx:\d{8}>',
+}
+
+TestData_NetworkJoinAgreement: {
+  "termEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "termExpirationDate": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "serviceNetworkID": '$<static:networkID>',
+  "serviceFeeScheduleID": '$<static:feeScheduleID>',
+  "serviceAgentAssignmentID": '$<static:agentAssignmentID>',
+}
+
+TestData_ServiceFeeAgreement: {
+  "termEffectiveDate": "$<today:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "termExpirationDate": "$<today+1M:yyyy-MM-dd'T'HH:mm:ss'Z'>",
+  "serviceNetworkID": '$<static:networkID>',
+  "serviceFeeScheduleID": '$<static:feeScheduleID>',
+  "serviceProviderFacilityId": '$<static:providerFacilityId>'
+}

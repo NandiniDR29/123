@@ -1,0 +1,5 @@
+TestData: {
+  ReverseWriteOffActionTab: {
+    Reason: 'Reversed due to Invoice Adjustment'
+  }
+}

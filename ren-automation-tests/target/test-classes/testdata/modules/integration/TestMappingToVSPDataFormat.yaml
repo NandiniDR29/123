@@ -1,0 +1,86 @@
+ClassificationManagementTab_COBRA: {
+  Classification Group: {
+    Class Name: COBRA,
+    Class Number: 1,
+    Relationship Type: Employment
+  },
+  Group Details: {
+    'Create Sub-Groups?': 'Yes',
+    'Create Sub-Groups Automatically?': 'No'
+  },
+  Sub Groups: ['@SubGroups']
+}
+
+SubGroups: {
+  Classification Sub-Group: {
+    Sub-Group Name: 'COBRA',
+    Sub-Group Type: index=1,
+  },
+  Sub Group Details: {
+    Gender: Male,
+    Tobacco: 'No',
+    Min Age: '30',
+    Max Age: '40'
+  }
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    'Use Brochure Rates?': 'No'
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  }
+}
+
+Issue_TestData: {
+  PolicyInformationIssueActionTab: '@PolicyInformationIssueActionTab_COBRA',
+  CaseInstallationIssueActionTab: '@CaseInstallationIssueActionTab_COBRA',
+  PlanDefinitionIssueActionTab: '@PlanDefinitionTabIssueActionTab_COBRA',
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+PolicyInformationIssueActionTab_COBRA: {
+  'Group is an Association?': 'No'
+}
+
+CaseInstallationIssueActionTab_COBRA: {
+  Include Members on COBRA: 'Yes'
+}
+
+PlanDefinitionTabIssueActionTab_COBRA: {
+  PlanKey: A La Carte-A La Carte,
+  Include Retirees: 'No',
+  'Minimum Hourly Requirement (hours per week)': 25
+}
+
+BillingGroupsActionTab: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+

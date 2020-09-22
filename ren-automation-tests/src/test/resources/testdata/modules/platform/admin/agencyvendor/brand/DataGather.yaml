@@ -1,0 +1,26 @@
+TestData: {
+  BrandTab: {
+    Add Brand: {
+      Brand Code: 'BrandCode$<rx:\d{8}>',
+      Brand Name: 'BrandName$<rx:\d{8}>',
+      Brand Type: 'index=1',
+      Underwriting Companies: 'index=1'
+    }  
+  }
+}
+
+TestData_Empty: {
+  BrandTab: {
+    Add Brand: {
+      Brand Name: ''
+    }  
+  }
+}
+
+TestData_UpdateBrandType: {
+  BrandTab: {
+    Add Brand: {
+      Brand Type: 'White Label'
+    }  
+  }
+}

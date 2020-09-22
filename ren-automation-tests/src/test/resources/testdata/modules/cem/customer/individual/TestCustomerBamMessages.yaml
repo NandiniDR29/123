@@ -1,0 +1,19 @@
+TestData_AddNewRelationship: {
+  RelationshipTab:
+  {
+    Type: Individual,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    SSN/Tax Identification: 1,
+    Relationship to Customer: Colleague
+  }
+}
+
+TestData_RelationshipUpdate: {
+  RelationshipTab: {
+    Type: Individual,
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Relationship to Customer: Colleague
+  }
+}

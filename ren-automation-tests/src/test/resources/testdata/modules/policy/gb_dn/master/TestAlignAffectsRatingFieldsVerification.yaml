@@ -1,0 +1,30 @@
+PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE']
+
+PremiumSummaryTab: {
+  Select Rating Census:  'index=1',
+  Apply: 'click'
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Sponsor/Participant Split',
+    'Required Participation %': '5',
+    'Participant Contribution % Employee Coverage': '10',
+    'Participant Contribution % Dependent Coverage': '10',
+    'Assumed Participation %': '10',
+    'Sponsor Payment Mode': '12'
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: {
+      Fluoride Treatment: 'Not Covered',
+    },
+  }
+}

@@ -1,0 +1,9 @@
+TestData: {
+  StartPremiumAdjustmentActionTab: {
+    Premium Adjustment Date: $<BOM>
+  },
+  ClassificationManagementActionTab: {
+    Total Volume: 400012‬
+  },
+  PremiumSummaryActionTab: {}
+}

@@ -1,0 +1,6 @@
+TestData: {
+  CreateEnrolledCensusFileIntakeManagementTab: {
+    Intake Profile: 'index=1',
+    Generate And Upload Census File: click
+  }
+}

@@ -1,0 +1,193 @@
+TestData_With_SitusState: {
+  PlanDefinitionTab: ['@DataGather@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE'
+}
+
+TestData_Endorsement_InNetworkEPO: {
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@PlanDefinitionTab_ALACARTE_Endorsement_InNetworkEPO'],
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+TestData_Endorsement_YearInOut: {
+  PolicyInformationTab: {},
+  CaseInstallationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@PlanDefinitionTab_ALACARTE_Endorsement_InOutYear'],
+  ClassificationManagementTab: [],
+  PremiumSummaryTab: {}
+}
+
+PlanDefinitionTab_ALACARTE: {
+  'PPO/EPO Plan?': 'No',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 25,
+    'Required Participation %': 25,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Benefit Waiting Periods: {
+    Radiographs Waiting Period: 'None',
+    Prosthodontics Waiting Period: '18 months',
+    EPCOS Waiting Period: 'None',
+    'Benefits Waiting Period is waived for current enrollees?': 'No',
+    'Documentation of Waiting Period received?': 'No'
+  },
+  Dental Maximum: {
+    Is it graded Maximum: 'Yes',
+    Number of Graded Years: '2',
+    Plan Maximum First Year - Out of Network: '$1,000',
+    Plan Maximum Second Year - Out of Network: '$1,000',
+    Plan Maximum First Year - In Network: '$1,000',
+    Plan Maximum Second Year - In Network: '$1,000'
+  },
+  Dental Deductible:{
+    Is it graded Dental Deductible: 'No',
+    Lifetime Deductible: 'Yes',
+    Lifetime Deductible - In Network: '$25',
+    Lifetime Deductible - Out of Network: '$25',
+    Deductible Carryover: 'Yes'
+  },
+  Co-Insurance: {
+    U&C Percentile Level: REN 50th,
+    Is it graded Co-Insurance: 'Yes',
+    Number of Graded Years: 4,
+    Basic First Year - In Network: 60%,
+    Basic First Year - Out of Network: 60%,
+    Basic Second Year - In Network: 60%,
+    Basic Second Year - Out of Network: 60%,
+    Basic Third Year - In Network: 60%,
+    Basic Third Year - Out of Network: 60%,
+    Basic Fourth Year - In Network: 60%,
+    Basic Fourth Year - Out of Network: 60%,
+    Major First Year - In Network: 60%,
+    Major First Year - Out of Network: 60%,
+    Major Second Year - In Network: 60%,
+    Major Second Year - Out of Network: 60%,
+    Major Third Year - In Network: 60%,
+    Major Third Year - Out of Network: 60%,
+    Major Fourth Year - In Network: 60%,
+    Major Fourth Year - Out of Network: 60%,
+
+    Prosthodontics First Year - In Network: 5%,
+    Prosthodontics First Year - Out of Network: 5%,
+    Prosthodontics Second Year - In Network: 5%,
+    Prosthodontics Second Year - Out of Network: 5%,
+    Prosthodontics Third Year - In Network: 5%,
+    Prosthodontics Third Year - Out of Network: 5%,
+    Prosthodontics Fourth Year - In Network: 5%,
+    Prosthodontics Fourth Year - Out of Network: 5%,
+    Radiographs First Year - In Network: 5%,
+    Radiographs First Year - Out of Network: 5%,
+    Radiographs Second Year - In Network: 5%,
+    Radiographs Second Year - Out of Network: 5%,
+    Radiographs Third Year - In Network: 5%,
+    Radiographs Third Year - Out of Network: 5%,
+    Radiographs Fourth Year - In Network: 5%,
+    Radiographs Fourth Year - Out of Network: 5%,
+    Preventive Fourth Year - In Network: 5%,
+    Preventive Fourth Year - Out of Network: 5%
+  },
+  Orthodontia:{
+    Ortho Coverage: 'No'
+  },
+  Service Categories: {
+    1A - Oral Exams: index=1,
+    1B - Emergency Palliative Treatment: index=1,
+    1C - Fluorides: index=1,
+    1D - Cleanings: index=1,
+    1E - Sealants: index=1,
+    2A - Bitewing Radiographs: index=1,
+    2B - Full Mouth Radiographs: index=1,
+    2C - All Other Radiographs: index=1,
+    2E - Other Restorative: index=1,
+    2H - Periodontics Prophy: index=1,
+    2G - Simple Periodontics: index=1,
+    2F - Major Periodontics: index=1,
+    2I - Root Canals (Endodontic): index=1,
+    2J - All Other Endodontic: index=1,
+    2K - Simple Extractions: index=1,
+    2L - Complex Extractions: index=1,
+    2M - All Other Oral Surgery: index=1,
+    2O - Other Adjunctive: index=1,
+    2D - Major Restorative: index=1,
+    2N - Denture Repair: index=1,
+    3A - Fixed Bridgework: index=1,
+    3B - Partial Dentures: index=1,
+    3C - Full Dentures: index=1,
+    3D - Other Dentures & Bridges: index=1
+  },
+  Limitation/Frequency: {
+    Preventative and Diagnostic: '@DataGather@PreventativeAndDiagnosticTab',
+    Basic: '@DataGather@BasicTab',
+    Major: '@DataGather@MajorTab'
+  }
+}
+
+PlanDefinitionTab_ALACARTE_Endorsement_InNetworkEPO: {
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 25,
+    'Required Participation %': 25,
+  },
+  EPCOS Waiting Period: 'None',
+  Co-Insurance: {
+    Basic In Network - EPO: 55%,
+    Major In Network - EPO: 55%
+  }
+}
+
+PlanDefinitionTab_ALACARTE_Endorsement_InOutYear: {
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    'Assumed Participation %': 25,
+    'Required Participation %': 25,
+  },
+  EPCOS Waiting Period: 'None',
+  Co-Insurance: {
+    Basic First Year - In Network: 80%,
+    Basic First Year - Out of Network: 80%,
+    Basic Second Year - In Network: 80%,
+    Basic Second Year - Out of Network: 80%,
+    Basic Third Year - In Network: 80%,
+    Basic Third Year - Out of Network: 80%,
+    Basic Fourth Year - In Network: 80%,
+    Basic Fourth Year - Out of Network: 80%,
+    Major First Year - In Network: 80%,
+    Major First Year - Out of Network: 80%,
+    Major Second Year - In Network: 80%,
+    Major Second Year - Out of Network: 80%,
+    Major Third Year - In Network: 80%,
+    Major Third Year - Out of Network: 80%,
+    Major Fourth Year - In Network: 80%,
+    Major Fourth Year - Out of Network: 80%,
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: Employment,
+  Plan Tier And Rating Info: {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 32
+    #  Rate: 200
+  }
+}
+
+
+

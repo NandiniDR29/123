@@ -1,0 +1,157 @@
+TestData: {
+  CreateTaskActionTab: {
+    Type: Quote,
+    Task Name: Request Proposal,
+    Reference ID: '',
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>'
+  }
+}
+
+TestData_Customer: {
+  CreateTaskActionTab: {
+    Type: Customer,
+    Task Name: "Opportunity's status was changed",
+    Reference ID: '',
+    Priority: 2,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>',
+    Task Description: Customer task description,
+    Task Note: Customer task Note
+  }
+}
+
+TestData_CustomerWithTaskNumber: {
+  CreateTaskActionTab: {
+    Type: Customer,
+    Task Name: '$<static:taskName:[rx:taskName\d{3}]>',
+    Reference ID: '$<static:customerNumber:[rx:taskName\d{3}]>',
+    Priority: 1,
+#    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+#    Task Description: Customer task description,
+#    Task Note: Customer task Note
+    }
+}
+
+TestData_Account: {
+  CreateTaskActionTab: {
+    Type: Account,
+    Task Name: "Task for Account Filtering",
+    Reference ID: '',
+    Priority: 1,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>',
+    Task Description: Customer task description,
+    Task Note: Customer task Note
+  }
+}
+
+TestData_Quote: {
+  CreateTaskActionTab: {
+    Type: Quote,
+    Task Name: Request Proposal,
+    Reference ID: '',
+    Priority: 5,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>',
+    Task Description: Quote task description,
+    Task Note: Quote task Note
+  }
+}
+
+TestData_Policy: {
+  CreateTaskActionTab: {
+    Type: Policy,
+    Task Name: Follow-up Referral,
+    Reference ID: '',
+    Priority: 5,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>',
+    Task Description: Policy task description,
+    Task Note: Policy task Note
+  }
+}
+
+TestData_Claim: {
+  CreateTaskActionTab: {
+    Type: Claim,
+    Task Name: Review Claims Balance,
+    Reference ID: '',
+    Priority: 3,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>',
+    Task Description: Claim task description,
+    Task Note: Claim task Note
+  }
+}
+
+TestData_Dental_Claim_Intake: {
+  CreateTaskActionTab: {
+    Type: Claim Intake,
+    Task Name: Dental Claim Intake,
+    Priority: 3,
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>'
+  }
+}
+
+TestData_Health_Claim_Intake: {
+  CreateTaskActionTab: {
+    Type: Claim Intake,
+    Task Name: Health Claim Intake,
+    Priority: 3
+  }
+}
+
+TestData_Billing: {
+  CreateTaskActionTab: {
+    Type: Billing,
+    Task Name: Commission,
+    Reference ID: '',
+    Priority: 1,
+    Warning Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>',
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>',
+    Task Description: Billing task description,
+    Task Note: Billing task Note
+  }
+}
+
+TestData_CalendarView1: {
+  CreateTaskActionTab: {
+    Type: Quote,
+    Task Name: '$<static:taskName>',
+    Reference ID: '',
+    Priority: 1,
+    Due Date/Time: '$<today+1M:MM/dd/yyyy h:mm a>'
+  }
+}
+
+TestData_CalendarView2: {
+  CreateTaskActionTab: {
+    Type: Quote,
+    Task Name: '$<static:taskName>',
+    Reference ID: '',
+    Priority: 1,
+    Due Date/Time: '$<today:MM/dd/yyyy h:mm a>'
+  }
+}
+
+TestData_CalendarView3: {
+  CreateTaskActionTab: {
+    Type: Quote,
+    Task Name: '$<static:taskName>',
+    Reference ID: '',
+    Priority: 1,
+    Due Date/Time: '$<today+2M:MM/dd/yyyy h:mm a>'
+  }
+}
+
+TestData_BOB: {
+  CreateTaskActionTab: {
+    Type: Quote,
+    Task Name: Other,
+    Reference ID: '',
+    Priority: 1,
+    Due Date/Time: '$<today:MM/dd/yyyy h:mm a>'
+  }
+}

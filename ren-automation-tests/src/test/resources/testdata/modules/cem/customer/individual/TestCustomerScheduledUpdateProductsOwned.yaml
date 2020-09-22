@@ -1,0 +1,46 @@
+TestData: {
+  GeneralTab: {
+    Add New Product Details: ['@TestData_AutoProduct','@TestData_BenefitsProduct','@TestData_CommercialProduct'],
+    First Name: 'John$<rx:\d{8}>',
+    Last Name: 'Smith$<rx:\d{8}>',
+    Associate Business Entities: true,
+    Date of Birth: 10/10/1985,
+    Address Details: {
+      Country: United States,
+      Zip/Post Code: '94596',
+      City: Walnut Creek,
+      State/Province: CA,
+      Address Line 1: 'Address$<rx:\d{8}>',
+      Communication Preferences: ["Administrative", "Claims"]
+    }
+  }
+}
+
+TestData_AutoProduct: {
+  Policy Type: Auto,
+  Carrier Name: AIGM
+}
+
+TestData_BenefitsProduct: {
+  Policy Type: Benefits,
+  Carrier Name: AMICA
+}
+
+TestData_CommercialProduct: {
+  Policy Type: Commercial,
+  Carrier Name: ALL STATE INSURANCE
+}
+
+TestData_CondoProduct: {
+  Add New Product Details:{
+     Policy Type: Condo,
+     Carrier Name: ASSIGNED RISK
+  }
+}
+
+TestData_HomeownerProduct: {
+  Add New Product Details:{
+    Policy Type: Homeowner,
+    Carrier Name: ASSIGNED RISK
+  }
+}

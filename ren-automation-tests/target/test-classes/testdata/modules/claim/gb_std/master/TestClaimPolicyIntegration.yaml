@@ -1,0 +1,89 @@
+TestDataSpecifiedAmountSingle_AdjustPlanDefinitionTab: {
+  PlanDefinitionTab: ['@SelectPlan_SpecifiedAmountSingle', '@PlanDefinitionTab_SpecifiedAmountSingle']
+}
+
+TestDataPercentageAmount_AdjustPlanDefinitionTab: {
+  PlanDefinitionTab: ['@SelectPlan_PercentageAmount', '@PlanDefinitionTab_PercentageAmount']
+}
+
+SelectPlan_SpecifiedAmountSingle: {
+  Plan: CON
+}
+
+SelectPlan_PercentageAmount: {
+  Plan: NC
+}
+
+PlanDefinitionTab_SpecifiedAmountSingle: {
+  PlanKey: CON-CON,
+  Plan Name: 'TestUpdate',
+  Contribution Type: 'Contributory',
+  'Participant Contribution %': 50,
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  Member Payment Mode: 12,
+  STAT Offset Amount: 500,
+  Eligibility:{
+    Minimum Hourly Requirement (hours per week): 15.00,
+    'Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: First of the month following (amount and mode),
+    Waiting Period: 30,
+    Waiting Period Mode: Days
+  },
+  Benefit Schedule: {
+    Benefit Type: 'Specified Weekly Benefit Amount - Single Value',
+    Weekly Benefit Amount: 500,
+    Partial Disability: 'Work Incentive Benefit',
+    Earning Test: '50%',
+    Maximum Payment Duration: 26,
+    Test Definition: 'Loss of Duties and Earnings',
+    Definition of Disability: 'Own Job',
+    End of Salary Continuation: 'Yes',
+    End of Accumulated Sick Leave: 'Yes',
+    Minimum Weekly Benefit Amount: '$25',
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Look Back Period': '6 Months',
+    'Pre-Existing Condition: Treatment Free Period': '6 Months',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months'
+  },
+  Options: {
+    ERISA Option: 'Full ERISA'
+  }
+}
+
+PlanDefinitionTab_PercentageAmount: {
+  PlanKey: NC-NC,
+  Plan Name: 'NC',
+  Contribution Type: 'Non-contributory',
+  Sponsor Payment Mode: 12,
+  Total Number of Eligible Lives: 1,
+  STAT Offset Amount: 500,
+  Eligibility: {
+  Minimum Hourly Requirement (hours per week): 15.00,
+  'Waiting Period Waived For Current Employees?': 'Yes',
+  Eligibility Waiting Period Definition: First of the month following (amount and mode),
+  Waiting Period: 30,
+  Waiting Period Mode: Days
+},
+  Benefit Schedule: {
+    Benefit Type: 'Percentage of Weekly Salary - Single Value',
+    Benefit Percentage: '60%',
+    Maximum Weekly Benefit Amount: 1000,
+    Partial Disability: 'Work Incentive Benefit',
+    Earning Test: '80%',
+    Maximum Payment Duration: 26,
+    Earning Definition: 'W-2 (12 mo)',
+    Test Definition: 'Loss of Duties and Earnings',
+    Definition of Disability: 'Regular Occupation',
+    End of Salary Continuation: 'Yes',
+    End of Accumulated Sick Leave: 'Yes',
+    Minimum Weekly Benefit Amount: '$25',
+    Pre-Existing Conditions: 'Included',
+    'Pre-Existing Condition: Look Back Period': '6 Months',
+    'Pre-Existing Condition: Treatment Free Period': '6 Months',
+    'Pre-Existing Condition: Continuously Insured Period': '12 Months'
+  },
+  Options: {
+    ERISA Option: 'Not Included'
+  }
+}

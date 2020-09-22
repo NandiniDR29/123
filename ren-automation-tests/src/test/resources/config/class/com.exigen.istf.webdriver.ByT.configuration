@@ -1,0 +1,3 @@
+{
+  "templateTransformer": "com.exigen.ipb.eisa.utils.i18n.I18NByTTransformer"
+}

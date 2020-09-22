@@ -1,0 +1,40 @@
+Note1: {
+  "category":"GENERAL_INFO",
+  "confidential": false,
+  "title": "Note1",
+  "description": "Note1 description",
+  "entityType": "Customer",
+  "entityRefNo": "Enter_Customer_ID",
+  "userNoteName": "CUSTOMER_USER_NOTE",
+  "agencyCd": "QAG",
+  "brandCd": null
+}
+
+Note2: {
+ "category":"GENERAL_INFO",
+  "confidential": true,
+  "title": "Note2",
+  "description": "Note2 description",
+  "entityType": "Customer",
+  "entityRefNo": "Enter_Customer_ID",
+  "userNoteName": "CUSTOMER_USER_NOTE",
+  "agencyCd": "QAG",
+  "brandCd": null
+}
+
+Query: {
+ path:{
+    entityType: 'Customer',
+    entityRefNo: ''
+  },
+ query: {
+   includeArchived: 'true'
+  }
+}
+
+TestData_FilterUserNotes: {
+  ActivitiesAndUserNotesTab: {
+    Date Range Start: '01/01/2018',
+    Also retrieve archived records: true,
+  }
+}

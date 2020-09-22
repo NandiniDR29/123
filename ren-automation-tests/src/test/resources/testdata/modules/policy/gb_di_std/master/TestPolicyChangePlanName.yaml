@@ -1,0 +1,11 @@
+TestDataUpdatePlanName: {
+  PolicyInformationTab: {},
+  EnrollmentTab: {},
+  PlanDefinitionTab: '@PlanDefinitionTabWithNewPlanName',
+  ClassificationManagementTab: {},
+  PremiumSummaryTab: {}
+}
+
+PlanDefinitionTabWithNewPlanName: {
+  Plan Name: 'newPlanName$<rx:\d{8}>'
+}

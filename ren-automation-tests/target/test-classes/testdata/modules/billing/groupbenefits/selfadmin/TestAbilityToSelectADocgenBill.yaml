@@ -1,0 +1,284 @@
+TestData: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@PlanDefinitionTab_NY', '@PlanDefinitionTab_CoverageEnhancedNY', '@PlanDefinitionTab_PFLNY'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab_FPL_Type'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+TestDataNJ: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@PlanDefinitionTab_NY', '@PlanDefinitionTab_CoverageEnhancedNY', '@PlanDefinitionTab_PFLNY'],
+  ClassificationManagementTab: ['@ClassificationManagementTab', '@ClassificationManagementTab', '@ClassificationManagementTab_FPL_Type'],
+  PremiumSummaryTab: '@PremiumSummaryTab'
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Statutory Disability Insurance,
+  Delivery Model: Group
+}
+
+PolicyInformationTab_NY: {
+  County Code: '001 - Albany County',
+  Policy Effective Date: $<BOM>,
+  Prior Carrier Name: InsuranceCompany,
+  Prior Carrier Policy Number: '$<rx:\d{6}>',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1,
+    Underwriter: index=1
+  },
+  Situs State: NY,
+  'Allow Independent Commissionable Producers?': No,
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+PlanDefinitionTab_NY: {
+  Plan: NY Stat,
+  Coverage Effective Date: $<today>,
+  Total Number of Eligible Lives: 10,
+  Member Payment Mode: 12,
+  Contribution Type: Mandatory,
+  Rating: {
+    'Use Experience Rating?': No
+  }
+}
+
+PlanDefinitionTab_CoverageEnhancedNY: {
+  Add Coverage: click,
+  Coverage Name: Enhanced NY,
+  Coverage Effective Date: $<today>,
+  Total Number of Eligible Lives: 10,
+  Member Payment Mode: 12,
+  Contribution Type: Mandatory,
+  Rating: {
+    'Use Experience Rating?': No
+  }
+}
+
+PlanDefinitionTab_PFLNY: {
+  Add Coverage: click,
+  Plan: NY Stat,
+  Coverage Name: PFL NY,
+  Coverage Effective Date: $<today>,
+  Contribution Type: Mandatory,
+  Taxability: Benefits Taxable,
+  Premiums Paid-Post Tax: Yes,
+  Benefit Schedule: {
+    Benefit Percentage: '55%',
+    Maximum Benefit period: 10,
+  },
+  Total Number of Eligible Lives: 2,
+  Member Payment Mode: 12,
+}
+
+ClassificationManagementTab: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Classification Group Name: 1,
+  Number of Participants: 10,
+  Total Volume: 250,
+  Classification Sub-Groups And Rating Info: [         {
+                                                         Classification SubGroup Name: Male,
+                                                         Number of Participants: 10,
+                                                         Total Volume: 250
+                                                       }, {
+                                                         Classification SubGroup Name: Female,
+                                                         Number of Participants: 11,
+                                                         Total Volume: 300
+                                                       }, {
+                                                         Classification SubGroup Name: Proprietor,
+                                                         Number of Participants: 12,
+                                                         Total Volume: 350
+                                                       }]
+}
+
+ClassificationManagementTab_FPL_Type: {
+  Add Classification Group Coverage Relationship: CLICK,
+  Coverage Name: PFL NY,
+  Classification Group Name: 1,
+  Uni-Tobacco: 'Yes',
+  Unisex: 'Yes',
+  Classification Sub-Groups And Rating Info: [
+  {
+    Classification SubGroup Name: Male,
+    Number of Participants: 10,
+    Total Volume: 250,
+  },
+  {
+    Classification SubGroup Name: Female,
+    Number of Participants: 10,
+    Total Volume: 250,
+  },
+  {
+    Classification SubGroup Name: 'Other/Not Specified',
+    Number of Participants: 0,
+    Total Volume: 0,
+  }
+  ]
+}
+
+PremiumSummaryTab: {
+  Credibility Factor: 0.5,
+  Select Rating Census: 'index=1',
+  Apply: 'click'
+}
+
+TestData_Issue_Annual: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithAnnualCalendar'],
+}
+
+TestData_Issue_Annual_Exist: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithAnnualCalendarExist'],
+}
+
+TestData_Issue_Quarterly_Exist: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithQuarterlyCalendarExist'],
+}
+
+TestData_Issue_Quarterly: {
+  PolicyInformationIssueActionTab: {},
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsSponsor',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithQuarterlyCalendar'],
+}
+
+BillingGroupsSponsor: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}
+
+BillingAccountTabWithQuarterlyCalendarExist: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=QuarterlyCalendar'
+  }
+}
+
+BillingAccountTabWithAnnualCalendarExist: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=AnnualCalendar'
+  }
+}
+
+BillingAccountTabWithAnnualCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'AnnualCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Products: [Group Accident, Statutory Disability Insurance, Paid Family Leave],
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Annual,
+      Invoicing Rule: On Time,
+      Billing Period Offset: 0,
+      Invoice Due Day: 1,
+      Generation Date Rule: 30,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=AnnualCalendar'}
+}
+
+BillingAccountTabWithQuarterlyCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Add Invoicing Calendar: {
+      Manage Invoicing Calendars: click,
+      Add Invoicing Calendar Button: click,
+      Billing Calendar: Billing Calendar1,
+      Calendar Name: 'QuarterlyCalendar$<rx:\d{8}>',
+      Self Administered: true,
+      List Bill: true,
+      Products: [ Statutory Disability Insurance, Paid Family Leave],
+      Effective Date: $<today-1y>,
+      Invoicing Frequency: Quarterly,
+      Invoicing Rule: In Arrears,
+      Billing Period Offset: 3,
+      Invoice Due Day: 1,
+      Generation Date Rule: 16,
+      Calendar Save Button: click,
+      Calendar Back Button: click
+    },
+    Invoicing Calendar: 'contains=QuarterlyCalendar'}
+}
+
+TestDataSplitCoverages: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingGroupsTab: ['@BasicCoverageCOV1AndCov2', '@BasicPFLNY'],
+  BillingAccountSetupTab: {}
+}
+
+TestDataSplitCoveragesTC3: {
+  BillingGroupsEffectiveDateTab: {
+    Billing Groups Effective Date: $<BOM>,
+    Reason: index=1
+  },
+  BillingGroupsTab: ['@Basic', '@BasicRemove', '@BasicSTNJ'],
+  BillingAccountSetupTab: {}
+}
+
+
+BasicCoverageCOV1AndCov2: {
+  Group: BG001,
+  Coverage: [Enhanced NY - NY Stat, Stat NY - NY Stat]
+}
+
+BasicPFLNY: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG002,
+  Billing Group Type: Employment,
+  Payor: Member,
+  Payment Mode: 12,
+  Coverage: PFL NY - NY Stat
+}
+
+Basic: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG002,
+  Billing Group Type: Employment,
+  Payor: Member,
+  Payment Mode: 12
+}
+
+BasicSTNJ: {
+  Group: BG002,
+  Coverage: Stat NJ - NJ Stat
+}
+
+BasicRemove: {
+  Remove: CLICK,
+  Group: BG001
+}

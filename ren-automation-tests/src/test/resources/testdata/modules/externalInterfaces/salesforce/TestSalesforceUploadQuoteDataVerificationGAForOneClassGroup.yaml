@@ -1,0 +1,101 @@
+TestData: {
+  PlanDefinitionTab: ['@SelectAllPlans',
+                      '@PlanDefinitionTab_BASEBU_Basic',
+                      '@PlanDefinitionTab_BASEBU',
+                      '@PlanDefinitionTab_ENHANCED10',
+                      '@PlanDefinitionTab_VOL10'],
+  BasicBenefitsTab: '@<ac_master>@DataGather@BasicBenefitsTab_BasicAccident',
+  EnhancedBenefitsAtoCTab: ['@<ac_master>@DataGather@EnhancedBenefitsAtoCTab_BASEBU', '@<ac_master>@DataGather@EnhancedBenefitsAtoCTab_ENHANCED10', '@<ac_master>@DataGather@EnhancedBenefitsAtoCTab_VOL10'],
+  EnhancedBenefitsDtoFTab: ['@<ac_master>@DataGather@EnhancedBenefitsDtoFTab_BASEBU', '@<ac_master>@DataGather@EnhancedBenefitsDtoFTab_ENHANCED10', '@<ac_master>@DataGather@EnhancedBenefitsDtoFTab_VOL10'],
+  EnhancedBenefitsHtoLTab: ['@<ac_master>@DataGather@EnhancedBenefitsHtoLTab_BASEBU', '@<ac_master>@DataGather@EnhancedBenefitsHtoLTab_ENHANCED10', '@<ac_master>@DataGather@EnhancedBenefitsHtoLTab_VOL10'],
+  EnhancedBenefitsMtoTTab: ['@<ac_master>@DataGather@EnhancedBenefitsMtoTTab_BASEBU', '@<ac_master>@DataGather@EnhancedBenefitsMtoTTab_ENHANCED10', '@<ac_master>@DataGather@EnhancedBenefitsMtoTTab_VOL10'],
+  OptionalBenefitTab: ['@<ac_master>@DataGather@OptionalBenefitTab_BASEBU', '@<ac_master>@DataGather@OptionalBenefitTab_BASEBU_Enhanced', '@<ac_master>@DataGather@OptionalBenefitTab_VOL10', '@<ac_master>@DataGather@OptionalBenefitTab_ENHANCED10'],
+  ClassificationManagementTab:  ['@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_BASEBU',
+                                 '@ClassificationManagementTab_ENHANCED10',
+                                 '@ClassificationManagementTab_VOL10'],
+}
+
+SelectAllPlans: {
+  Plan: [Base Buy-Up,Enhanced 10 Units,Voluntary 10 Units]
+}
+
+PlanDefinitionTab_BASEBU: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Enhanced Accident,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'Convenience Stores',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  }
+}
+
+PlanDefinitionTab_BASEBU_Basic: {
+  PlanKey: BASEBU-Base Buy-Up,
+  CoverageKey: Basic Accident,
+  Coverage Tiers: Employee Only,
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  }
+}
+
+PlanDefinitionTab_ENHANCED10: {
+  PlanKey: ENHANCED10-Enhanced 10 Units,
+  Coverage Tiers: ['Employee Only', 'Employee + Spouse', 'Employee + Children', 'Employee + Family'],
+  SIC Description: 'Convenience Stores',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  }
+}
+
+PlanDefinitionTab_VOL10: {
+  PlanKey: VOL10-Voluntary 10 Units,
+  Coverage Tiers: ['Employee Only', 'Employee + Family'],
+  Coverage Tiers Change Confirmation: click,
+  SIC Description: 'Convenience Stores',
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: 'Non-contributory',
+    Minimum Number of Participants: '12'
+  }
+}
+
+
+ClassificationManagementTab_BASEBU: {
+  Plan: BASEBU-Base Buy-Up,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'MANAGER',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 2
+}
+
+ClassificationManagementTab_VOL10: {
+  Plan: VOL10-Voluntary 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'MANAGER',
+  'Use Classification Sub-Groups?': 'No',
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 1
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 2
+  }
+  ]
+}
+
+ClassificationManagementTab_ENHANCED10: {
+  Plan: ENHANCED10-Enhanced 10 Units,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: 'CLERICAL',
+  'Use Classification Sub-Groups?': 'No',
+  Coverage Tier: Employee Only,
+  Number of Participants: 2
+}

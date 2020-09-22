@@ -1,0 +1,7 @@
+TestData: {
+  CommissionTemplateTab: {
+    AddCommissionTemplate: {
+      Template Name: '$<rx:Template-\d{5}>'
+    }
+  }
+}

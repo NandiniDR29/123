@@ -1,0 +1,34 @@
+TestData: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+TestData_ExGratia: {
+  CoveragesActionTab: '@CoveragesActionTabExGratia',
+}
+
+TestData_PremiumWaiver: {
+  CoveragesActionTab: '@CoveragesActionTab',
+}
+
+CoveragesActionTab: {
+  Associated Insurable Risk: index=1,
+  Coverage: index=1
+}
+
+CoveragesActionTabExGratia: {
+  Associated Insurable Risk: index=2,
+  Coverage: Ex Gratia
+}
+
+TestDataWithDeductions: {
+  CoveragesActionTab: '@CoveragesActionTab',
+  DeductionsActionTab: {
+    Type of Deduction: 'Accidental Death & Dismemberment Premium',
+    Party: index=1,
+    Beginning Date: $<today>,
+    Through Date: $<today+1y>,
+    Deduction Amount: '100',
+    Apply Pre-tax: 'No',
+    Memo: 'Memo for Accidental Death & Dismemberment Premium'
+  }
+}

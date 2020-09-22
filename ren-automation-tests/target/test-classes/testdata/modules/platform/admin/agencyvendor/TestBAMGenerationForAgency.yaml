@@ -1,0 +1,211 @@
+CrateAgencyUI: {
+  AgencyInfoTab: {
+    Channel: Agency,
+    Location Type: index=1,
+    Agency Code: '$<static:agencyCodeCreation:[rx:AgencyCode\d{8}]>',
+    Agency Name: '$<static:agencyNameCreation:[rx:AgencyName\d{8}]>',
+    'Agency Name - Alternate': '$<static:alternateNameCreation:[rx:AlternateName\d{8}]>',
+    Country: United States,
+    Agency Effective Date: $<today>,
+    Agency Expiration Date: $<today+5y>,
+    Tax ID: '$<static:taxIDCreation:[rx:\d{5}]>',
+    External Reference ID: '$<rx:\d{5}>',
+    Primary Agency: 'Yes',
+    Commission Groups: ['$<static:firstCommissionGroup:[rx:Group_\d{5}]>'],
+    'Applicable for commissions Extract?': 'Yes',
+    Commission Payment Sent To: Agency (Office),
+    'Eligible for Agency Billing?': 'Yes',
+    Agency Bill Due Day: 5,
+    Retain Commission From Pay: 'Yes',
+    Exclude commissions from billing: 'No'
+  },
+  ContactInfoTab: {
+    Zip / Postal Code: 94596,
+    Address Line 1: Address Line 1,
+    Address Line 2: Address Line 2,
+    Address Line 3: Address Line 3,
+    City: Walnut Creek,
+    State / Province: CA,
+    'Is Mailing Address the same as Physical Address?': 'Yes',
+    'Copy insured correspondence required?': 'No',
+    'Phone #': '1234567890',
+    'Fax #': '1234567890',
+    'Extension #': '123',
+      Add Contact: {
+        First Name: 'FName_$<rx:\d{8}>',
+        Last Name: 'LName_$<rx:\d{8}>'
+      }
+  },
+  BankingDetailsTab: {
+    Settlement Method: Check
+  },
+  SupportTeamTab: {
+    Added Support Team: {
+      First Name: ISBA,
+      Channel: Corporate
+    }
+  },
+  UsersTab: {},
+  ChildrenTab: {
+    Add Child Agency: {
+      Agency Name: '$<static:firstChildAgencyName:[rx:Group_\d{5}]>'
+    }
+  }
+}
+
+UpdateAgencyUI: {
+  AgencyInfoTab: {
+    Agency Name: '$<static:agencyNameUpdate:[rx:AgencyName\d{8}]>',
+    Tax ID: '$<static:taxIDUpdate:[rx:\d{5}]>',
+    'Agency Name - Alternate': '$<static:alternateNameUpdate:[rx:AlternateName\d{8}]>',
+    Country: United States,
+    Agency Effective Date: $<today+10d>,
+    Agency Expiration Date: $<today+7y>,
+    Commission Groups: ['$<static:secondCommissionGroup:[rx:Group_\d{5}]>'],
+  },
+  ContactInfoTab: {
+      Zip / Postal Code: 94596,
+      Address Line 1: New Address Line 1,
+      Address Line 2: New Address Line 2,
+      Address Line 3: New Address Line 3,
+      City: City,
+      State / Province: CA,
+  },
+  BankingDetailsTab: {},
+  SupportTeamTab: {},
+  UsersTab: {},
+  ChildrenTab: {
+    Add Child Agency: {
+      Agency Name: '$<static:secondChildAgencyName:[rx:Group_\d{5}]>'
+    }
+  }
+}
+
+FirstCommissionGroup: {
+  CommissionGroupTab: {
+    Group Name: '$<static:firstCommissionGroup:[rx:Group_\d{5}]>',
+    Group Type: 'Channel',
+    Agencies: {
+      Channel: Agency,
+      Agency Name: ''
+    },
+    Effective Date: $<today>
+  }
+}
+
+SecondCommissionGroup: {
+  CommissionGroupTab: {
+    Group Name: '$<static:secondCommissionGroup:[rx:Group_\d{5}]>',
+    Group Type: 'Channel',
+    Agencies: {
+      Channel: Agency,
+      Agency Name: ''
+    },
+    Effective Date: $<today>
+  }
+}
+
+Rest_FirstChildAgency: {
+  channelCd: "corporate",
+  code: '$<static:firstChildAgencyCode:[rx:AgencyCode\d{8}]>',
+  commisionLevelType: "agency",
+  effectiveDate: "$<today:yyyy-MM-dd>",
+  locationTypeCd: "corporate_branch",
+  name: '$<static:firstChildAgencyName:[rx:AgencyName\d{8}]>',
+  taxId: "agent123",
+  address: {
+    addressLine1: "Address Line 1",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  }
+}
+
+Rest_SecondChildAgency: {
+  channelCd: "corporate",
+  code: '$<static:secondChildAgencyCode:[rx:AgencyCode\d{8}]>',
+  commisionLevelType: "agency",
+  effectiveDate: "$<today:yyyy-MM-dd>",
+  locationTypeCd: "corporate_branch",
+  name: '$<static:secondChildAgencyName:[rx:AgencyName\d{8}]>',
+  taxId: "agent123",
+  address: {
+    addressLine1: "Address Line 1",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  }
+}
+
+Rest_CreateAgency: {
+  channelCd: "corporate",
+  code: 'AgencyCode$<rx:\d{8}>',
+  commisionLevelType: "agency",
+  effectiveDate: "$<today:yyyy-MM-dd>",
+  expirationDate: "$<today+5y:yyyy-MM-dd>",
+  locationTypeCd: "corporate_branch",
+  applicableForCommissionsExtract: false,
+  paymentStatus: "active",
+  commissionStatementDeliveryMethod: "mail",
+  eligibleForAgencyBilling: false,
+  name: 'AgencyName$<rx:\d{8}>',
+  nameAlternat": 'AgencyAltName$<rx:\d{8}>',
+  taxId: '$<rx:\d{5}>',
+  address: {
+    addressLine1: "Address Line 1",
+    addressLine2: "Address Line 2",
+    addressLine3: "Address Line 3",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  },
+  mailingAddress: {
+    addressLine1: "Address Line 1",
+    addressLine2: "Address Line 2",
+    addressLine3: "Address Line 3",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  }
+}
+
+Rest_UpdateAgency: {
+  effectiveDate: "$<today+1y:yyyy-MM-dd>",
+  expirationDate: "$<today+6y:yyyy-MM-dd>",
+  name: 'AgencyName$<rx:\d{8}>',
+  commisionLevelType: "agency",
+  channelCd: "corporate",
+  locationTypeCd: "corporate_branch",
+  nameAlternat": 'AgencyAltName$<rx:\d{8}>',
+  taxId: '$<rx:\d{5}>',
+  address: {
+    addressLine1: "Update Address Line 1",
+    addressLine2: "Update Address Line 2",
+    addressLine3: "Update Address Line 3",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  },
+  mailingAddress: {
+    addressLine1: "Update Address Line 1",
+    addressLine2: "Update Address Line 2",
+    addressLine3: "Update Address Line 3",
+    countryCd: "US",
+    city: "New York",
+    postalCode: "90210",
+    stateProvCd: "CA"
+  }
+}
+
+
+
+
+
+
+
+

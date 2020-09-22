@@ -1,0 +1,17 @@
+TestData: {
+  AddBulkPaymentActionTab: {
+    Bulk Amount: 150,
+    'Bulk Reference #': 'BulkReference$<rx:\d{8}>',
+    Allocation: ''
+  }
+}
+
+Allocation: {
+  Billing Account Name Type: Individual,
+  'Policy #': ''
+}
+
+Allocation_CL: {
+  Billing Account Name Type: Other,
+  'Policy #': ''
+}

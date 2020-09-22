@@ -1,0 +1,14 @@
+TestData: {
+  AgencyInfoTab: {},
+  ContactInfoTab: {},
+  BankingDetailsTab: '@BankingDetailsTab_Updated',
+  SupportTeamTab: {}
+}
+
+BankingDetailsTab_Updated: {
+  Settlement Method: EFT,
+  Bank Account Type: Checking,
+  'ABA Transit #': 322271627,
+  'Account #': '$<rx:\d{6}>',
+  Bank Name: index=1
+}

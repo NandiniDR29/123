@@ -1,0 +1,171 @@
+TestData_CancellationsDN: {
+  CancellationsBenefitsTab: '@CancellationsBenefitsTabDN'
+}
+
+CancellationsBenefitsTabDN: {
+  Products: 'Group Dental',
+  Geography: {
+    Countries: United States,
+    States: NY
+  },
+  Self Administered: 'true',
+  List Bill: 'true',
+  Basis for communication schedule and cancellation timelines: 'Invoice due date',
+  Grace period X days after invoice due date: 31,
+  'Cancel X days after grace period end date/invoice due date': 32,
+  Set cancellation reason: 'Non Payment of Premium',
+  Cancellation effective date: 'Day after the grace period ends'
+}
+
+TestData_MasterPolicy: {
+  PolicyInformationTab: '@PolicyInformationTab',
+  PlanDefinitionTab: ['@SelectPlan', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: ['@ClassificationManagementTab_ALACARTE'],
+}
+
+PolicyInformationTab: {
+  ASO Plan: No,
+  Policy Effective Date: $<BOM>,
+  Situs State: NY,
+  County Code: '001 - Albany County',
+  Internal Team: {
+    Sales Representative: 'User10001_FirstName User10001_LastName',
+    Sales Support Associate: 'User10004_FirstName User10004_LastName'
+  },
+  Prior Dental Coverage: 'No',
+  Total Number of Eligible Lives: '40',
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Split Percentage: '100',
+  Agent Sub Producer: 'index=1'
+}
+
+SelectPlan: {
+  Plan: A La Carte
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: ALACARTE-A La Carte,
+  Coverage Tiers: ['Employee Only', 'Employee + 1', 'Employee + Family'],
+  Coverage Tiers Change Confirmation: click,
+  'Sponsor/Participant Funding Structure': {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: '12',
+    'Assumed Participation %': 100,
+  },
+  Rating: {
+    Use Brochure Rates: 'No',
+    SIC Description: 'index=1',
+  },
+  Eligibility: {
+    Minimum Hourly Requirement (hours per week): 25.00,
+    'Eligibility Waiting Period Waived For Current Employees?': 'Yes',
+    Eligibility Waiting Period Definition: 'None',
+    Dependent Maximum Age: 25,
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'Yes',
+    Benefits End On: 'Last date of employment'
+  },
+  Orthodontia:{
+    Ortho Coverage: 'Yes',
+    Yearly Maximum: 'Yes'
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: 'ALACARTE-A La Carte',
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+  {
+    Coverage Tier Key: Employee Only,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + 1,
+    Number of Participants: 20
+  },
+  {
+    Coverage Tier Key: Employee + Family,
+    Number of Participants: 20
+  }
+  ]
+}
+
+TestData_Claim: {
+  LossEventTab: {},
+  LossContextTab: '@LossContextTab',
+  IntakeInformationTab: '@IntakeInformationTab',
+}
+
+LossContextTab: {
+  Save Loss As: index=1
+}
+
+IntakeInformationTab: {
+  Patient: {
+    Name: contains=Insured
+  },
+  Search Provider: {
+    TIN: '810824964',
+    'License #': '21688',
+    License NPI: '1285835660',
+    License State/Province: 'PA',
+    Specialty: Orthodontist,
+    Zip/Postal Code: '17042',
+    Address Line 1: '850 Norman Dr',
+    City: 'Lebanon',
+    State/Province: 'PA',
+    Search Vendor: 'click',
+    Add Vendor: 'click'
+  },
+  Type of Transaction: 'Actual Services',
+  Source: index=1,
+  Payee Type: index=1,
+  Submitted Services: {
+    DOS: $<today-2d>,
+    CDT Code: 'D5875',
+    Charge: '100'
+  }
+}
+
+TestData_Claim_Step8: {
+  IntakeInformationTab: {
+    Digital Image: {
+      Add: click,
+      'Digital Image #': 'any image'
+    },
+    Submitted Services: [{
+    },
+    {
+      DOS: $<today-3d>,
+      CDT Code: 'D5899'
+    }]
+  }
+}
+
+TestData_Customer_Update: {
+  GeneralTab: {
+    Additional Information: {
+      Special Claim Review: true
+    }
+  }
+}
+
+TestData_Claim_Step16: {
+  IntakeInformationTab: {
+    Search Provider: {
+      TIN: '821394606',
+      'License #': '4317',
+      License NPI: '1518160951',
+      License State/Province: 'NV',
+      Specialty: 'General Practitioner',
+      Zip/Postal Code: '89110',
+      Address Line 1: '5001 Bonanza Rd Suite 160',
+      City: 'Las Vegas',
+      State/Province: 'NV',
+      Search Vendor: 'click',
+      Add Vendor: 'click'
+    }
+  }
+}

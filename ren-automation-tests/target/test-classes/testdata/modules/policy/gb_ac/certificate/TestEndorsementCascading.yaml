@@ -1,0 +1,19 @@
+TestData_BillingGroups: {
+  BillingGroupsActionTab: ['@BasicAccidentEnhancedCopyed', '@BasicAccidentBASEBURemove']
+}
+
+BasicAccidentEnhancedCopyed: {
+  Add Billing Group: CLICK,
+  Billing Group Name: BG002,
+  Billing Group Type: Employment,
+  Payor: Member,
+  Payment Mode: 12,
+  Coverage: Enhanced Accident - Enhanced 10 Units,
+  Payroll Frequency: index=1,
+  Payroll Calendar: index=1,
+  Deduction Start Date: $<today>
+}
+
+BasicAccidentBASEBURemove: {
+  Remove: CLICK
+}

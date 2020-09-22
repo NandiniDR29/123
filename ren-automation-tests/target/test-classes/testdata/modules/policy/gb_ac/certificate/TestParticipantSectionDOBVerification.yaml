@@ -1,0 +1,31 @@
+TestDataParticipantChild: {
+  CoveragesTab: ['@SelectPlan', '@TestDataCoverage1', '@TestDataCoverage2']
+}
+
+SelectPlan: {
+  Plan: 'Base Buy-Up'
+}
+
+TestDataCoverage1: {
+  Enrollment Date: $<today>,
+  Coverage Tier: Employee Only,
+  Participants:{
+    Add Participant: CLICK,
+    Participant Selection: index=0
+  }
+}
+
+TestDataCoverage2: {
+  Coverage Name: Enhanced Accident,
+  Enrollment Date: $<today>,
+  Coverage Tier: Employee + Family,
+  Participants: {
+    Participant Selection: New Person,
+    Role Name:  Child Participant,
+    Participant General Info:{
+      First Name: 'John$<rx:\d{8}>',
+      Last Name: 'Smith$<rx:\d{8}>',
+      Date of Birth: $<today-5y>
+    }
+  }
+}

@@ -1,0 +1,20 @@
+Role1: {
+  GeneralRoleTab: {
+    Role Name: 'RoleName$<rx:\d{8}>',
+    Category: Policy creation,
+  }
+}
+
+Role1Search: {
+  RoleSearch: {
+    Role Name: '',
+    Business Domain: Agency
+  }
+}
+
+Role1Update: {
+  GeneralRoleTab: {
+    Category: Policy creation and update,
+    Privileges: ['Policy Access','Policy Renewal']
+  }
+}

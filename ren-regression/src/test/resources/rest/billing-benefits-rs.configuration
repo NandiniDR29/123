@@ -1,0 +1,127 @@
+{
+  "restTargets": {
+    "ACCOUNTS.BENEFITS.PAYMENTS": {
+       "target": "/accounts/benefits-payments",
+       "methods": {
+         "POST": {
+           "mediaType": "application/json"
+         }
+       }
+     },
+    "ACCOUNTS": {
+      "target": "/accounts",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.ACCOUNTNUMBER.INVOICES": {
+      "target": "/accounts/{accountNumber}/invoices",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.ACCOUNTNUMBER.PAYMENTS": {
+      "target": "/accounts/{accountNumber}/payments",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CUSTOMER.ACCOUNTNUMBER.INVOICES": {
+      "target": "/customers/{customerNumber}/invoices",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.INVOICES": {
+      "target": "accounts/{accountNumber}/invoices/{invoiceNumber}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.INVOICE.COVERAGE.PERIODS": {
+      "target": "/accounts/{accountNumber}/invoice-coverage-periods",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.INVOICE.COVERAGE.PERIODS.DATE": {
+      "target": "/accounts/{accountNumber}/invoice-coverage-periods/{startDate}/{endDate}",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        },
+        "PUT": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.INVOICES.GENERATE": {
+      "target": "accounts/{accountNumber}/invoices/generate",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.INVOICES.REGENERATE": {
+      "target": "accounts/{accountNumber}/invoices/{invoiceNumber}/regenerate",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.GENERATE.DRAFT.BILL": {
+      "target": "accounts/{accountNumber}/generate-draft-bill",
+      "methods": {
+        "POST": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "ACCOUNTS.DOCUMENTS.GENERATION.STATUS": {
+      "target": "accounts/documents/{docgenTicket}/generation-status",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "POLICIES.GRACE.PERIOD": {
+      "target": "policies/policies/{policyNumber}/grace-period",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "POLICIES.PAID.TO.DATE": {
+      "target": "/policies/{policyNumber}/paid-to-date",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    },
+    "CUSTOMER.INVOICES": {
+      "target": "/customers/{customerNumber}/invoices",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+        }
+      }
+    }
+  }
+}

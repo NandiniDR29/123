@@ -1,0 +1,28 @@
+{
+"restTargets": {
+  "CUSTOMERS.DERIVED-RELATIONSHIPS": {
+     "target": "/customers/{customerNumber}/derived-relationships",
+      "methods": {
+        "GET": {
+          "mediaType": "application/json"
+         }
+        }
+      },
+  "CUSTOMERS.CONTACTS": {
+       "target": "/customers/{customerNumber}/contacts",
+        "methods": {
+          "PUT": {
+            "mediaType": "application/json"
+           }
+          }
+     },
+  "CUSTOMERS.PAPERLESS": {
+         "target": "/customers/{customerNumber}/paperless",
+          "methods": {
+            "PUT": {
+              "mediaType": "application/json"
+             }
+            }
+       }
+   }
+}

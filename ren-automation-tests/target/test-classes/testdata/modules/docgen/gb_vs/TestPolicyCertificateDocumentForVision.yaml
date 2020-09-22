@@ -1,0 +1,235 @@
+TestData_Plan_Alacarte: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_Alacarte', '@PlanDefinitionTab_ALACARTE'],
+  ClassificationManagementTab: '@ClassificationManagementTab_ALACARTE',
+  PremiumSummaryTab: {}
+}
+
+TestData_Plan_B: {
+  InitiniateDialog: '@InitiniateDialog',
+  PolicyInformationTab: '@PolicyInformationTab_NY',
+  EnrollmentTab: {},
+  PlanDefinitionTab: ['@SelectPlan_PlanB', '@PlanDefinitionTab_PlanB'],
+  ClassificationManagementTab: '@ClassificationManagementTab_PlanB',
+  PremiumSummaryTab: {}
+}
+
+InitiniateDialog: {
+  Broad Line of Business: Group Insurance,
+  Coverage Effective Date: $<today>,
+  Case Profile: index=1,
+  Product: Group Vision,
+  Delivery Model: Group
+}
+
+PolicyInformationTab: {
+  Policy Effective Date: $<today>,
+  Total Number of Eligible Lives: '48',
+  'Rate Guarantee (Months)': 24,
+  'Group is Member Company': 'No',
+  'Prior Carrier Name': 'AIG',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+  'Group is an Association?': 'No',
+  Agency / Producer: 'QA Agency',
+  'Primary Agency?': 'Yes',
+  Agent Sub Producer: 'QA QA user'
+}
+
+PolicyInformationTab_NY: {
+  County Code: '001 - Albany County',
+  Prior Carrier Name: 'index=1',
+  Total Number of Eligible Lives: '100',
+  'Prior Claims Allowed?': true,
+  'Group is an Association?': 'No',
+  Blend Demographics: No,
+  Prior Claims Retroactive Effective Date: $<today-6M>,
+  Deduction by Pay Period: Semi-Monthly,
+  Agency / Producer: 'QA Agency',
+  Agent Sub Producer: 'QA QA user',
+  'Commission Split?': 'Yes',
+  Internal Team: {
+    Sales Representative: index=1,
+    Sales Support Associate: index=1
+  },
+}
+
+SelectPlan_Alacarte: {
+  Plan: A La Carte
+}
+
+SelectPlan_PlanB: {
+  Plan: '10/25 Plan B 130'
+}
+
+PlanDefinitionTab_ALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Family', 'Employee + 1', 'Employee Only'],
+  Coverage Tiers Change Confirmation: click,
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Non-contributory,
+    Sponsor Payment Mode: 12,
+  },
+  Rating: {
+    'Use Brochure Rates?': 'No'
+  },
+  Copay: {
+    'Exam/Materials': '$5 combined',
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: None,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Frequency: {
+    Exam/Lenses/Frame: Plan A (12/24/24)
+  }
+}
+
+PlanDefinitionTab_PlanB: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  Network: 'Choice',
+  VSP Division: '10',
+  Coverage Tiers: ['Employee + Child(ren)', 'Employee + Family', 'Employee + Spouse', 'Employee Only'],
+  Sponsor/Participant Funding Structure: {
+    Contribution Type: Voluntary,
+    Assumed Participation %: 90,
+    Member Payment Mode: '12',
+  },
+  Rating: {
+    Rate Type: 'Family Tier',
+    Plan Type: 'Full Feature',
+    Experience Claim Amount: 100,
+    Credibility Factor: 0.9
+  },
+  Eligibility: {
+    'Eligibility Waiting Period Waived For Current Employees?': 'No',
+    Eligibility Waiting Period Definition: Amount and Mode Only,
+    Waiting Period Amount: 12,
+    Waiting Period Mode: Days,
+    Dependent Maximum Age: 18,
+    Include Disabled Dependents: 'No',
+    'Allow Member and Spouse (Who are part of Group) on Separate Certificate?': 'No',
+    Benefits End On: Last date of employment
+  },
+  Plan Benefits: {
+    Frames - Allowance up to: '$150',
+  },
+  Special Plan Features: {
+    Scratch Coating Factor: 1,
+    Safety Glasses Factor: 1,
+    Photochromic Lenses Factor: 1
+  },
+  Copay: {
+    Progressive Lenses in Full: 'No',
+    'Exam/Materials': '$10/$25'
+  },
+  Frequency: {
+    'Exam/Lenses/Frame': 'Plan C (12/12/12)'
+  }
+}
+
+ClassificationManagementTab_ALACARTE: {
+  Plan: ALACARTE-A La Carte,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: '1',
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee + 1,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 5
+    },
+    ]
+}
+
+ClassificationManagementTab_PlanB: {
+  Plan: PlanB-10/25 Plan B 130,
+  Add Classification Group Relationship: CLICK,
+  Classification Group Name: index=1,
+  Plan Tier And Rating Info: [
+    {
+      Coverage Tier Key: Employee Only,
+      Number of Participants: 3
+    },
+    {
+      Coverage Tier Key: Employee + Spouse,
+      Number of Participants: 4
+    },
+    {
+      Coverage Tier Key: Employee + Children,
+      Number of Participants: 5
+    },
+    {
+      Coverage Tier Key: Employee + Family,
+      Number of Participants: 6
+    },
+    ]
+}
+
+TestData_Issue: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: '@CaseInstallationIssueActionTab',
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionIssueActionTabALACARTE'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+TestData_Issue_PlanB: {
+  PolicyInformationIssueActionTab: {},
+  CaseInstallationIssueActionTab: '@CaseInstallationIssueActionTab',
+  PlanDefinitionIssueActionTab: ['@PlanDefinitionIssueActionTabPlanB'],
+  PremiumSummaryIssueActionTab: {},
+  BillingGroupsActionTab: '@BillingGroupsActionTab',
+  IssueActionTab: '@IssueActionTab',
+  BillingAccountTab: ['@BillingAccountTabWithDefaultCalendar'],
+}
+
+BillingAccountTabWithDefaultCalendar: {
+  Select Action: 'Create New Account',
+  Create New Account:  {
+    Invoicing Calendar: 'contains=Calendar1'}
+}
+
+PlanDefinitionIssueActionTabALACARTE: {
+  PlanKey: A La Carte-A La Carte,
+  Include Retirees: 'No',
+  'Minimum Hourly Requirement (hours per week)': '30'
+}
+
+PlanDefinitionIssueActionTabPlanB: {
+  PlanKey: '10/25 Plan B 130-10/25 Plan B 130',
+  Include Retirees: 'No',
+  'Minimum Hourly Requirement (hours per week)': '35'
+}
+
+CaseInstallationIssueActionTab: {
+  Definition of Legal Spouse: {
+    'Includes Domestic Partner': 'true'
+  }
+}
+
+BillingGroupsActionTab: {
+  Allow Manual Setup of Billing Accounts: 'Yes'
+}
+
+IssueActionTab: {
+  Send To: Corporate Sponsor,
+  Corporate Sponsor Email: 'email$<rx:\d{8}>@test.com'
+}

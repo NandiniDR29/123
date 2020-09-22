@@ -1,0 +1,19 @@
+TestData: {
+  SearchNoteTab: {
+    Category: ''
+  }
+}
+
+TestData_Customer: {
+  SearchNoteTab: {
+    Type: Customer,
+    Category: ''
+  }
+}
+
+TestData_Title: {
+  SearchNoteTab: {
+    Title: 'AT New Category Verify'
+  }
+}
+

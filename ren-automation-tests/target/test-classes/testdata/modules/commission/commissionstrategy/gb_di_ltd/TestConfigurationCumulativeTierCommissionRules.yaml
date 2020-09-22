@@ -1,0 +1,29 @@
+Commission_Strategy: {
+  GBCommissionStrategyTab: {
+    Product Code-Name: 'GB_DI_LTD - Long Term Disability',
+    Effective Date: $<today>,
+    Determine Commission Rate By: 'Policy Effective Date',
+    Available for Override: true
+  },
+  GBCommissionRuleTab: {
+    Commission Type: 'Flat',
+    AddCommissionRule: {
+      Sales Channel: 'Agency',
+      Geography Selection: 'Defined by Master Policy State',
+      SelectGeographyMetaData: {
+        Countries: 'United States'
+      },
+      Coverages: All,
+      Commission Rate: 10
+    }
+  }
+}
+
+Cumulative_Tiered_CommissionRuleTab: {
+  Commission Type: 'Cumulative Tiered',
+  AddCommissionRule: {
+    Sales Channel: 'Agency',
+    Geography Selection: 'Defined for All locations',
+    Coverages: All
+  }
+}

@@ -1,0 +1,24 @@
+TestData: {
+  BrandTab: {
+    Add Brand Type: {
+      Brand Type Code: 'BrandCode$<rx:\d{8}>',
+      Brand Type Name: 'BrandName$<rx:\d{8}>'
+    }  
+  }
+}
+
+TestData_UpdateName: {
+  BrandTab: {
+    Add Brand Type: {
+      Brand Type Name: 'BrandName$<rx:\d{8}>'
+    }  
+  }
+}
+
+TestData_EmptyName: {
+  BrandTab: {
+    Add Brand Type: {
+      Brand Type Name: ''
+    }  
+  }
+}

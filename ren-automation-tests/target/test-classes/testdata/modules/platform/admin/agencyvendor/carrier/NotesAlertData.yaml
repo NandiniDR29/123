@@ -1,0 +1,40 @@
+TestData_Notes: {
+  NotesAndAlertsTab: {
+    'Note/Alert': 'Note',
+    Title: '$<static:TestTitle:[rx:SimpleTitle\d{3}]>',
+    'Confid.': 'No',
+    Note: '$<static:TestNote:[rx:TestNote\d{4}]>'
+  }
+}
+
+TestData_UpdateNotes: {
+  NotesAndAlertsTab: {
+    Title: '$<static:UpdatedTestTitle:[rx:SimpleTitleUpdate\d{3}]>',
+    Note: '$<static:UpdatedTestNote:[rx:TestNoteUpdate\d{4}]>'
+  }
+}
+
+TestData_FilterTypeNotes: {
+  ActivitiesAndUserNotesTab: {
+    Type: Notes
+  }
+}
+
+TestData_FilterTypeActivity: {
+  ActivitiesAndUserNotesTab: {
+    Type: Activity
+  }
+}
+
+TestData_CreateAlert: {
+  NotesAndAlertsTab: {
+    'Note/Alert': 'Alert',
+     Alert: '$<static:TestAlert:[rx:TestAlert\d{4}]>'
+  }
+}
+
+TestData_UpdateAlert: {
+  NotesAndAlertsTab: {
+    Alert: '$<static:UpdatedTestAlert:[rx:TestAlertUpdate\d{4}]>'
+  }
+}

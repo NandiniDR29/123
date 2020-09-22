@@ -1,0 +1,18 @@
+TestDataBillingTransfer: {
+   AccountMoneyTransferActionTab: {
+      Transfer Reason: index=1,
+      Search for Allocation: {
+        'Billing Account #':  'select BA',
+      }
+    }
+}
+
+TestDataPolicyTrensfer: {
+   AccountMoneyTransferActionTab: {
+      Transfer Reason: index=1,
+      Allocated Amount: 200,
+      Search for Allocation: {
+        'Policy #':  'select BA',
+      }
+    }
+}

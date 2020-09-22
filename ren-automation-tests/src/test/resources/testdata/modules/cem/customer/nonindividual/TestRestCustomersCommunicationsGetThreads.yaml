@@ -1,0 +1,7 @@
+TestData: {
+  'channelCd': 'CALL',
+  'directionCd': 'INBOUND',
+  'communicationTypeCd': 'MANUAL',
+  'entityTypeCd': 'CUSTOMER',
+  'performerDescription': 'ISBA ISBA',
+}
